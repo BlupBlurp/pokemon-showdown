@@ -209,6 +209,13 @@ function getFallbackAbilities(species) {
 	return abilities.length ? abilities : ["No Ability"];
 }
 
+function isDisallowedRandomBattleForm(species) {
+	if (!species || !species.exists) return true;
+	if (species.isMega || species.isPrimal) return true;
+	const forme = String(species.forme || "").toLowerCase();
+	return forme.includes("mega") || forme.includes("primal");
+}
+
 function inferSinglesRole(species, moveIds, dex) {
 	let physical = 0;
 	let special = 0;
@@ -529,6 +536,7 @@ function buildRelumiRandomBattleSets({
 				unmappedTrainerSpecies.add(`${monsNo}_${formNo}`);
 				continue;
 			}
+			if (isDisallowedRandomBattleForm(species)) continue;
 			if (species.nfe) {
 				ignoredNfeSpecies.add(species.id);
 				continue;
@@ -606,7 +614,8 @@ function buildRelumiRandomBattleSets({
 	for (const speciesId of mappedSpeciesIds || []) {
 		if (candidatesBySpecies.has(speciesId)) continue;
 		const species = dex.species.get(speciesId);
-		if (!species.exists || species.nfe) continue;
+		if (!species.exists || species.nfe || isDisallowedRandomBattleForm(species))
+			continue;
 		const fallbackCandidates = buildFallbackCandidates(
 			species,
 			learnsetsDiffs ? learnsetsDiffs[species.id] : null,
