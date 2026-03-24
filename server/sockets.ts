@@ -11,53 +11,54 @@
  * @license MIT
  */
 
-import * as fs from 'fs';
-import * as http from 'http';
-import * as https from 'https';
-import * as path from 'path';
-import * as ConfigLoader from './config-loader';
-import { crashlogger, ProcessManager, Streams } from '../lib';
-import { IPTools } from './ip-tools';
-import { type ChannelID, extractChannelMessages } from '../sim/battle';
-import { StaticServer } from '../lib/static-server';
+import * as fs from "fs";
+import * as http from "http";
+import * as https from "https";
+import * as path from "path";
+import * as ConfigLoader from "./config-loader";
+import { crashlogger, ProcessManager, Streams } from "../lib";
+import { IPTools } from "./ip-tools";
+import { maybeHandleBattleStatsRequest } from "./battle-stats";
+import { type ChannelID, extractChannelMessages } from "../sim/battle";
+import { StaticServer } from "../lib/static-server";
 
 type StreamWorker = ProcessManager.StreamWorker;
 
-export const Sockets = new class {
+export const Sockets = new (class {
 	async onSpawn(worker: StreamWorker) {
 		const id = worker.workerid;
 		for await (const data of worker.stream) {
 			switch (data.charAt(0)) {
-			case '*': {
-				// *socketid, ip, protocol
-				// connect
-				worker.load++;
-				const [socketid, ip, protocol] = data.substr(1).split('\n');
-				Users.socketConnect(worker, id, socketid, ip, protocol);
-				break;
-			}
+				case "*": {
+					// *socketid, ip, protocol
+					// connect
+					worker.load++;
+					const [socketid, ip, protocol] = data.substr(1).split("\n");
+					Users.socketConnect(worker, id, socketid, ip, protocol);
+					break;
+				}
 
-			case '!': {
-				// !socketid
-				// disconnect
-				worker.load--;
-				const socketid = data.substr(1);
-				Users.socketDisconnect(worker, id, socketid);
-				break;
-			}
+				case "!": {
+					// !socketid
+					// disconnect
+					worker.load--;
+					const socketid = data.substr(1);
+					Users.socketDisconnect(worker, id, socketid);
+					break;
+				}
 
-			case '<': {
-				// <socketid, message
-				// message
-				const idx = data.indexOf('\n');
-				const socketid = data.substr(1, idx - 1);
-				const message = data.substr(idx + 1);
-				Users.socketReceive(worker, id, socketid, message);
-				break;
-			}
+				case "<": {
+					// <socketid, message
+					// message
+					const idx = data.indexOf("\n");
+					const socketid = data.substr(1, idx - 1);
+					const message = data.substr(idx + 1);
+					Users.socketReceive(worker, id, socketid, message);
+					break;
+				}
 
-			default:
-			// unhandled
+				default:
+				// unhandled
 			}
 		}
 	}
@@ -65,7 +66,11 @@ export const Sockets = new class {
 		Users.socketDisconnectAll(worker, worker.workerid);
 	}
 
-	listen(port?: number, bindAddress?: string, processesCount?: ConfigLoader.SubProcessesConfig) {
+	listen(
+		port?: number,
+		bindAddress?: string,
+		processesCount?: ConfigLoader.SubProcessesConfig,
+	) {
 		if (port !== undefined && !isNaN(port)) {
 			Config.port = port;
 			Config.ssl = null;
@@ -74,9 +79,9 @@ export const Sockets = new class {
 
 			// Autoconfigure when running in cloud environments.
 			try {
-				const cloudenv = (require as any)('cloud-env');
-				bindAddress = cloudenv.get('IP', bindAddress);
-				port = cloudenv.get('PORT', port);
+				const cloudenv = (require as any)("cloud-env");
+				bindAddress = cloudenv.get("IP", bindAddress);
+				port = cloudenv.get("PORT", port);
 			} catch {}
 		}
 		if (bindAddress !== undefined) {
@@ -85,10 +90,14 @@ export const Sockets = new class {
 		if (port !== undefined) {
 			Config.port = port;
 		}
-		const workerCount = processesCount?.['network'] ?? 1;
+		const workerCount = processesCount?.["network"] ?? 1;
 
-		PM.env = { PSPORT: Config.port, PSBINDADDR: Config.bindaddress || '0.0.0.0', PSNOSSL: Config.ssl ? 0 : 1 };
-		PM.subscribeSpawn(worker => void this.onSpawn(worker));
+		PM.env = {
+			PSPORT: Config.port,
+			PSBINDADDR: Config.bindaddress || "0.0.0.0",
+			PSNOSSL: Config.ssl ? 0 : 1,
+		};
+		PM.subscribeSpawn((worker) => void this.onSpawn(worker));
 		PM.subscribeUnspawn(this.onUnspawn);
 
 		PM.spawn(workerCount);
@@ -122,7 +131,12 @@ export const Sockets = new class {
 		}
 	}
 
-	channelMove(worker: StreamWorker, roomid: RoomID, channelid: ChannelID, socketid: string) {
+	channelMove(
+		worker: StreamWorker,
+		roomid: RoomID,
+		channelid: ChannelID,
+		socketid: string,
+	) {
 		void worker.stream.write(`.${roomid}\n${channelid}\n${socketid}`);
 	}
 
@@ -133,13 +147,13 @@ export const Sockets = new class {
 	start(processCount: ConfigLoader.SubProcessesConfig) {
 		start(processCount);
 	}
-};
+})();
 
 export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 	/** socketid:Connection */
-	sockets = new Map<string, import('sockjs').Connection>();
+	sockets = new Map<string, import("sockjs").Connection>();
 	/** roomid:socketid:Connection */
-	rooms = new Map<RoomID, Map<string, import('sockjs').Connection>>();
+	rooms = new Map<RoomID, Map<string, import("sockjs").Connection>>();
 	/** roomid:socketid:channelid */
 	roomChannels = new Map<RoomID, Map<string, ChannelID>>();
 
@@ -150,12 +164,12 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 	isTrustedProxyIp: (ip: string) => boolean;
 
 	receivers: { [k: string]: (this: ServerStream, data: string) => void } = {
-		'$'(data) {
+		$(data) {
 			// $code
 			// eslint-disable-next-line no-eval
 			eval(data.substr(1));
 		},
-		'!'(data) {
+		"!"(data) {
 			// !socketid
 			// destroy
 			const socketid = data.substr(1);
@@ -173,32 +187,32 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 				}
 			}
 		},
-		'>'(data) {
+		">"(data) {
 			// >socketid, message
 			// message to single connection
-			const nlLoc = data.indexOf('\n');
+			const nlLoc = data.indexOf("\n");
 			const socketid = data.substr(1, nlLoc - 1);
 			const socket = this.sockets.get(socketid);
 			if (!socket) return;
 			const message = data.substr(nlLoc + 1);
 			socket.write(message);
 		},
-		'#'(data) {
+		"#"(data) {
 			// #roomid, message
 			// message to all connections in room
 			// #, message
 			// message to all connections
-			const nlLoc = data.indexOf('\n');
+			const nlLoc = data.indexOf("\n");
 			const roomid = data.substr(1, nlLoc - 1) as RoomID;
 			const room = roomid ? this.rooms.get(roomid) : this.sockets;
 			if (!room) return;
 			const message = data.substr(nlLoc + 1);
 			for (const curSocket of room.values()) curSocket.write(message);
 		},
-		'+'(data) {
+		"+"(data) {
 			// +roomid, socketid
 			// join room with connection
-			const nlLoc = data.indexOf('\n');
+			const nlLoc = data.indexOf("\n");
 			const socketid = data.substr(nlLoc + 1);
 			const socket = this.sockets.get(socketid);
 			if (!socket) return;
@@ -210,10 +224,10 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 			}
 			room.set(socketid, socket);
 		},
-		'-'(data) {
+		"-"(data) {
 			// -roomid, socketid
 			// leave room with connection
-			const nlLoc = data.indexOf('\n');
+			const nlLoc = data.indexOf("\n");
 			const roomid = data.slice(1, nlLoc) as RoomID;
 			const room = this.rooms.get(roomid);
 			if (!room) return;
@@ -226,12 +240,12 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 				if (roomChannel) this.roomChannels.delete(roomid);
 			}
 		},
-		'.'(data) {
+		"."(data) {
 			// .roomid, channelid, socketid
 			// move connection to different channel in room
-			const nlLoc = data.indexOf('\n');
+			const nlLoc = data.indexOf("\n");
 			const roomid = data.slice(1, nlLoc) as RoomID;
-			const nlLoc2 = data.indexOf('\n', nlLoc + 1);
+			const nlLoc2 = data.indexOf("\n", nlLoc + 1);
 			const channelid = Number(data.slice(nlLoc + 1, nlLoc2)) as ChannelID;
 			const socketid = data.slice(nlLoc2 + 1);
 
@@ -246,40 +260,50 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 				roomChannel.set(socketid, channelid);
 			}
 		},
-		':'(data) {
+		":"(data) {
 			// :roomid, message
 			// message to a room, splitting `|split` by channel
-			const nlLoc = data.indexOf('\n');
+			const nlLoc = data.indexOf("\n");
 			const roomid = data.slice(1, nlLoc) as RoomID;
 			const room = this.rooms.get(roomid);
 			if (!room) return;
 
-			const messages: [string | null, string | null, string | null, string | null, string | null] = [
-				null, null, null, null, null,
-			];
+			const messages: [
+				string | null,
+				string | null,
+				string | null,
+				string | null,
+				string | null,
+			] = [null, null, null, null, null];
 			const message = data.substr(nlLoc + 1);
-			const channelMessages = extractChannelMessages(message, [0, 1, 2, 3, 4]);
+			const channelMessages = extractChannelMessages(
+				message,
+				[0, 1, 2, 3, 4],
+			);
 			const roomChannel = this.roomChannels.get(roomid);
 			for (const [curSocketid, curSocket] of room) {
 				const channelid = roomChannel?.get(curSocketid) || 0;
-				if (!messages[channelid]) messages[channelid] = channelMessages[channelid].join('\n');
+				if (!messages[channelid])
+					messages[channelid] = channelMessages[channelid].join("\n");
 				curSocket.write(messages[channelid]);
 			}
 		},
 	};
 
 	constructor(config: {
-		port: number,
-		bindaddress?: string,
-		ssl?: typeof Config.ssl,
-		wsdeflate?: typeof Config.wsdeflate,
-		proxyip?: typeof Config.proxyip,
-		customhttpresponse?: typeof Config.customhttpresponse,
+		port: number;
+		bindaddress?: string;
+		ssl?: typeof Config.ssl;
+		wsdeflate?: typeof Config.wsdeflate;
+		proxyip?: typeof Config.proxyip;
+		customhttpresponse?: typeof Config.customhttpresponse;
 	}) {
 		super();
-		if (!config.bindaddress) config.bindaddress = '0.0.0.0';
+		if (!config.bindaddress) config.bindaddress = "0.0.0.0";
 
-		this.isTrustedProxyIp = config.proxyip ? IPTools.checker(config.proxyip) : () => false;
+		this.isTrustedProxyIp = config.proxyip
+			? IPTools.checker(config.proxyip)
+			: () => false;
 
 		// Static HTTP server
 
@@ -299,12 +323,16 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 					key = fs.readFileSync(key);
 				} catch (e: any) {
 					crashlogger(
-						new Error(`Failed to read the configured SSL private key PEM file:\n${e.stack}`),
-						`Socket process ${process.pid}`
+						new Error(
+							`Failed to read the configured SSL private key PEM file:\n${e.stack}`,
+						),
+						`Socket process ${process.pid}`,
 					);
 				}
 			} catch {
-				console.warn('SSL private key config values will not support HTTPS server option values in the future. Please set it to use the absolute path of its PEM file.');
+				console.warn(
+					"SSL private key config values will not support HTTPS server option values in the future. Please set it to use the absolute path of its PEM file.",
+				);
 				key = config.ssl.options.key;
 			}
 
@@ -316,21 +344,32 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 					cert = fs.readFileSync(cert);
 				} catch (e: any) {
 					crashlogger(
-						new Error(`Failed to read the configured SSL certificate PEM file:\n${e.stack}`),
-						`Socket process ${process.pid}`
+						new Error(
+							`Failed to read the configured SSL certificate PEM file:\n${e.stack}`,
+						),
+						`Socket process ${process.pid}`,
 					);
 				}
 			} catch {
-				console.warn('SSL certificate config values will not support HTTPS server option values in the future. Please set it to use the absolute path of its PEM file.');
+				console.warn(
+					"SSL certificate config values will not support HTTPS server option values in the future. Please set it to use the absolute path of its PEM file.",
+				);
 				cert = config.ssl.options.cert;
 			}
 
 			if (key && cert) {
 				try {
 					// In case there are additional SSL config settings besides the key and cert...
-					this.serverSsl = https.createServer({ ...config.ssl.options, key, cert });
+					this.serverSsl = https.createServer({
+						...config.ssl.options,
+						key,
+						cert,
+					});
 				} catch (e: any) {
-					crashlogger(new Error(`The SSL settings are misconfigured:\n${e.stack}`), `Socket process ${process.pid}`);
+					crashlogger(
+						new Error(`The SSL settings are misconfigured:\n${e.stack}`),
+						`Socket process ${process.pid}`,
+					);
 				}
 			}
 		}
@@ -338,42 +377,51 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		// Static server
 		try {
 			const roomidRegex = /^\/(?:[A-Za-z0-9][A-Za-z0-9-]*)\/?$/;
-			const cssServer = new StaticServer('./config');
-			const avatarServer = new StaticServer('./config/avatars');
-			const staticServer = new StaticServer('./server/static');
-			const staticRequestHandler = (req: http.IncomingMessage, res: http.ServerResponse) => {
+			const cssServer = new StaticServer("./config");
+			const avatarServer = new StaticServer("./config/avatars");
+			const staticServer = new StaticServer("./server/static");
+			const staticRequestHandler = (
+				req: http.IncomingMessage,
+				res: http.ServerResponse,
+			) => {
 				// console.log(`static rq: ${req.socket.remoteAddress}:${req.socket.remotePort} -> ${req.socket.localAddress}:${req.socket.localPort} - ${req.method} ${req.url} ${req.httpVersion} - ${req.rawHeaders.join('|')}`);
 				req.resume();
-				req.addListener('end', () => {
+				req.addListener("end", () => {
 					if (config.customhttpresponse?.(req, res)) {
+						return;
+					}
+					if (maybeHandleBattleStatsRequest(req, res)) {
 						return;
 					}
 
 					let server = staticServer;
 					if (req.url) {
-						if (req.url === '/custom.css' || req.url.startsWith('/custom.css?')) {
+						if (
+							req.url === "/custom.css" ||
+							req.url.startsWith("/custom.css?")
+						) {
 							server = cssServer;
-						} else if (req.url.startsWith('/avatars/')) {
+						} else if (req.url.startsWith("/avatars/")) {
 							req.url = req.url.slice(8);
 							server = avatarServer;
 						} else if (roomidRegex.test(req.url)) {
-							req.url = '/';
+							req.url = "/";
 						}
 					}
 
-					void server.serve(req, res, e => {
+					void server.serve(req, res, (e) => {
 						if (e.status === 404) {
-							void staticServer.serveFile('404.html', 404, {}, req, res);
+							void staticServer.serveFile("404.html", 404, {}, req, res);
 							return true;
 						}
 					});
 				});
 			};
 
-			this.server.on('request', staticRequestHandler);
-			if (this.serverSsl) this.serverSsl.on('request', staticRequestHandler);
+			this.server.on("request", staticRequestHandler);
+			if (this.serverSsl) this.serverSsl.on("request", staticRequestHandler);
 		} catch {
-			console.log('Could not start static server');
+			console.log("Could not start static server");
 		}
 
 		// SockJS server
@@ -381,47 +429,59 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		// This is the main server that handles users connecting to our server
 		// and doing things on our server.
 
-		const sockjs: typeof import('sockjs') = (require as any)('sockjs');
-		const options: import('sockjs').ServerOptions & { faye_server_options?: { [key: string]: any } } = {
+		const sockjs: typeof import("sockjs") = (require as any)("sockjs");
+		const options: import("sockjs").ServerOptions & {
+			faye_server_options?: { [key: string]: any };
+		} = {
 			sockjs_url: `//play.pokemonshowdown.com/js/lib/sockjs-1.4.0-nwjsfix.min.js`,
-			prefix: '/showdown',
+			prefix: "/showdown",
 			log(severity: string, message: string) {
-				if (severity === 'error') console.log(`ERROR: ${message}`);
+				if (severity === "error") console.log(`ERROR: ${message}`);
 			},
 		};
 
 		if (config.wsdeflate !== null) {
 			try {
-				const deflate = (require as any)('permessage-deflate').configure(config.wsdeflate);
+				const deflate = (require as any)("permessage-deflate").configure(
+					config.wsdeflate,
+				);
 				options.faye_server_options = { extensions: [deflate] };
 			} catch {
 				crashlogger(
-					new Error("Dependency permessage-deflate is not installed or is otherwise unaccessable. No message compression will take place until server restart."),
-					"Sockets"
+					new Error(
+						"Dependency permessage-deflate is not installed or is otherwise unaccessable. No message compression will take place until server restart.",
+					),
+					"Sockets",
 				);
 			}
 		}
 
 		const server = sockjs.createServer(options);
 
-		process.once('disconnect', () => this.cleanup());
-		process.once('exit', () => this.cleanup());
+		process.once("disconnect", () => this.cleanup());
+		process.once("exit", () => this.cleanup());
 
 		// this is global so it can be hotpatched if necessary
-		server.on('connection', connection => this.onConnection(connection));
+		server.on("connection", (connection) => this.onConnection(connection));
 		server.installHandlers(this.server, {});
 		this.server.listen(config.port, config.bindaddress);
-		console.log(`Worker ${PM.workerid} now listening on ${config.bindaddress}:${config.port}`);
+		console.log(
+			`Worker ${PM.workerid} now listening on ${config.bindaddress}:${config.port}`,
+		);
 
 		if (this.serverSsl) {
 			server.installHandlers(this.serverSsl, {});
 			// @ts-expect-error if appssl exists, then `config.ssl` must also exist
 			this.serverSsl.listen(config.ssl.port, config.bindaddress);
 			// @ts-expect-error if appssl exists, then `config.ssl` must also exist
-			console.log(`Worker ${PM.workerid} now listening for SSL on port ${config.ssl.port}`);
+			console.log(
+				`Worker ${PM.workerid} now listening for SSL on port ${config.ssl.port}`,
+			);
 		}
 
-		console.log(`Test your server at http://${config.bindaddress === '0.0.0.0' ? 'localhost' : config.bindaddress}:${config.port}`);
+		console.log(
+			`Test your server at http://${config.bindaddress === "0.0.0.0" ? "localhost" : config.bindaddress}:${config.port}`,
+		);
 	}
 
 	/**
@@ -446,7 +506,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		setImmediate(() => process.exit(0));
 	}
 
-	onConnection(socket: import('sockjs').Connection) {
+	onConnection(socket: import("sockjs").Connection) {
 		// For reasons that are not entirely clear, SockJS sometimes triggers
 		// this event with a null `socket` argument.
 		if (!socket) return;
@@ -465,7 +525,9 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 
 		let socketip = socket.remoteAddress;
 		if (this.isTrustedProxyIp(socketip)) {
-			const ips = (socket.headers['x-forwarded-for'] || '').split(',').reverse();
+			const ips = (socket.headers["x-forwarded-for"] || "")
+				.split(",")
+				.reverse();
 			for (const ip of ips) {
 				const proxy = ip.trim();
 				if (!this.isTrustedProxyIp(proxy)) {
@@ -477,26 +539,28 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 
 		this.push(`*${socketid}\n${socketip}\n${socket.protocol}`);
 
-		socket.on('data', message => {
+		socket.on("data", (message) => {
 			// drop empty messages (DDoS?)
 			if (!message) return;
 			// drop messages over 100KB
-			if (message.length > (100 * 1024)) {
+			if (message.length > 100 * 1024) {
 				socket.write(`|popup|Your message must be below 100KB`);
-				console.log(`Dropping client message ${message.length / 1024} KB...`);
+				console.log(
+					`Dropping client message ${message.length / 1024} KB...`,
+				);
 				console.log(message.slice(0, 160));
 				return;
 			}
 			// drop legacy JSON messages
-			if (typeof message !== 'string' || message.startsWith('{')) return;
+			if (typeof message !== "string" || message.startsWith("{")) return;
 			// drop blank messages (DDoS?)
-			const pipeIndex = message.indexOf('|');
+			const pipeIndex = message.indexOf("|");
 			if (pipeIndex < 0 || pipeIndex === message.length - 1) return;
 
 			this.push(`<${socketid}\n${message}`);
 		});
 
-		socket.once('close', () => {
+		socket.once("close", () => {
 			this.push(`!${socketid}`);
 			this.sockets.delete(socketid);
 			for (const room of this.rooms.values()) room.delete(socketid);
@@ -516,7 +580,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
  *********************************************************/
 
 export const PM = new ProcessManager.RawProcessManager({
-	id: 'sockets',
+	id: "sockets",
 	module,
 	setupChild: () => new ServerStream(Config),
 	isCluster: true,
@@ -526,27 +590,30 @@ if (!PM.isParentProcess) {
 	ConfigLoader.ensureLoaded();
 	if (Config.crashguard) {
 		// graceful crash - allow current battles to finish before restarting
-		process.on('uncaughtException', err => {
+		process.on("uncaughtException", (err) => {
 			crashlogger(err, `Socket process ${PM.workerid} (${process.pid})`);
 		});
-		process.on('unhandledRejection', err => {
-			crashlogger(err as any || {}, `Socket process ${PM.workerid} (${process.pid}) Promise`);
+		process.on("unhandledRejection", (err) => {
+			crashlogger(
+				(err as any) || {},
+				`Socket process ${PM.workerid} (${process.pid}) Promise`,
+			);
 		});
 	}
 
 	if (Config.ofesockets) {
 		try {
-			require.resolve('node-oom-heapdump');
+			require.resolve("node-oom-heapdump");
 		} catch (e: any) {
-			if (e.code !== 'MODULE_NOT_FOUND') throw e; // should never happen
+			if (e.code !== "MODULE_NOT_FOUND") throw e; // should never happen
 			throw new Error(
-				'node-oom-heapdump is not installed, but it is a required dependency if Config.ofesockets is set to true! ' +
-				'Run npm install node-oom-heapdump and restart the server.'
+				"node-oom-heapdump is not installed, but it is a required dependency if Config.ofesockets is set to true! " +
+					"Run npm install node-oom-heapdump and restart the server.",
 			);
 		}
 
 		// Create a heapdump if the process runs out of memory.
-		(global as any).nodeOomHeapdump = (require as any)('node-oom-heapdump')({
+		(global as any).nodeOomHeapdump = (require as any)("node-oom-heapdump")({
 			addTimestamp: true,
 		});
 	}
@@ -557,7 +624,10 @@ if (!PM.isParentProcess) {
 	if (process.env.PSNOSSL && parseInt(process.env.PSNOSSL)) Config.ssl = null;
 
 	// eslint-disable-next-line no-eval
-	PM.startRepl({ filename: `sockets-${PM.workerid}-${process.pid}`, eval: cmd => eval(cmd) });
+	PM.startRepl({
+		filename: `sockets-${PM.workerid}-${process.pid}`,
+		eval: (cmd) => eval(cmd),
+	});
 }
 
 function start(processCount: ConfigLoader.SubProcessesConfig) {
