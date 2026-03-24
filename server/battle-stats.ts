@@ -192,6 +192,17 @@ export function normalizeRelumiFormat(
 }
 
 /**
+ * Returns whether a battle should be included in public Relumi battle stats.
+ */
+export function shouldLogBattleStats(battle: RoomBattle): boolean {
+	if (!battle.rated) return false;
+	if (battle.challengeType !== "rated") return false;
+	if (battle.room.settings.isPrivate) return false;
+	if (battle.room.hideReplay) return false;
+	return true;
+}
+
+/**
  * Maps a tracked format ID to its API category key.
  */
 export function getCategoryForFormat(
@@ -641,6 +652,8 @@ export const BattleStats = new (class {
 	 * Captures a battle completion into the battle stats datastore.
 	 */
 	async logBattleFromRoomBattle(battle: RoomBattle, winner: ID) {
+		if (!shouldLogBattleStats(battle)) return;
+
 		const format = normalizeRelumiFormat(battle.format);
 		if (!format) return;
 
