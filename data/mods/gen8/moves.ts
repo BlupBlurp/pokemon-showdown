@@ -2,7 +2,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	allyswitch: {
 		inherit: true,
 		// Prevents setting the volatile used to check for Ally Switch failure
-		onPrepareHit: undefined, // no inherit
+		onPrepareHit() {},
 	},
 	anchorshot: {
 		inherit: true,
@@ -59,7 +59,19 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	charge: {
 		inherit: true,
 		condition: {
-			inherit: true,
+			onStart(pokemon, source, effect) {
+				this.add('-start', pokemon, 'Charge');
+			},
+			onRestart(pokemon, source, effect) {
+				this.add('-start', pokemon, 'Charge');
+			},
+			onBasePowerPriority: 9,
+			onBasePower(basePower, attacker, defender, move) {
+				if (move.type === 'Electric') {
+					this.debug('charge boost');
+					return this.chainModify(2);
+				}
+			},
 			onMoveAborted(pokemon, target, move) {
 				if (move.id !== 'charge') {
 					pokemon.removeVolatile('charge');
@@ -69,6 +81,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				if (move.id !== 'charge') {
 					pokemon.removeVolatile('charge');
 				}
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Charge', '[silent]');
 			},
 		},
 	},
@@ -511,7 +526,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	stickyweb: {
 		inherit: true,
 		condition: {
-			inherit: true,
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Sticky Web');
+			},
 			onSwitchIn(pokemon) {
 				if (!pokemon.isGrounded() || pokemon.hasItem('heavydutyboots')) return;
 				this.add('-activate', pokemon, 'move: Sticky Web');

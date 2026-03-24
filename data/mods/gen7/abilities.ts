@@ -34,7 +34,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	innerfocus: {
 		inherit: true,
 		rating: 1,
-		onTryBoost: undefined, // no inherit
+		onTryBoost() {},
 	},
 	moody: {
 		inherit: true,
@@ -65,19 +65,25 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	oblivious: {
 		inherit: true,
-		onTryBoost: undefined, // no inherit
+		onTryBoost() {},
 	},
 	owntempo: {
 		inherit: true,
-		onTryBoost: undefined, // no inherit
+		onTryBoost() {},
 	},
 	rattled: {
-		inherit: true,
-		onAfterBoost: undefined, // no inherit
+		onDamagingHit(damage, target, source, move) {
+			if (['Dark', 'Bug', 'Ghost'].includes(move.type)) {
+				this.boost({ spe: 1 });
+			}
+		},
+		name: "Rattled",
+		rating: 1.5,
+		num: 155,
 	},
 	scrappy: {
 		inherit: true,
-		onTryBoost: undefined, // no inherit
+		onTryBoost() {},
 	},
 	slowstart: {
 		inherit: true,

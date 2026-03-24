@@ -13,8 +13,8 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	illuminate: {
 		inherit: true,
-		onTryBoost: undefined, // no inherit
-		onModifyMove: undefined, // no inherit
+		onTryBoost() {},
+		onModifyMove() {},
 		flags: {},
 		rating: 0,
 	},

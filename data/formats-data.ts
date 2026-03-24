@@ -6162,10 +6162,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		isNonstandard: "CAP",
 		tier: "CAP",
 	},
-	flox: {
-		isNonstandard: "CAP",
-		tier: "CAP LC",
-	},
 	shox: {
 		isNonstandard: "CAP",
 		tier: "CAP",
