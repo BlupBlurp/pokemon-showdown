@@ -2,7 +2,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	ancientpower: {
 		inherit: true,
 		category: "Physical",
-		secondary: undefined, // no inherit
+		secondary: null,
 		// Ancient Power is physical and boosts on-kill
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (!target || target.fainted || target.hp <= 0) {
@@ -44,6 +44,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', source, 'Crunch', target);
 			this.add('-anim', source, 'Rock Slide', target);
 		},
+		secondary: null,
 		target: "normal",
 		type: "Rock",
 		contestType: "Clever",
@@ -59,6 +60,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
 		target: "normal",
 		type: "Poison",
 		contestType: "Tough",
@@ -195,6 +197,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				this.field.setWeather('snowscape');
 			},
 		},
+		secondary: null,
 		target: "normal",
 		type: "Ice",
 		contestType: "Clever",
@@ -251,6 +254,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		onAfterSubDamage(damage, target, source, move) {
 			if (!source.isAlly(target)) this.hint(move.category + " Geyser");
 		},
+		secondary: null,
 		target: "normal",
 		type: "Water",
 		desc: "This move is Special + no contact if it would be stronger.",
@@ -277,6 +281,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			target.addVolatile('encore');
 		},
 		weather: 'raindance',
+		secondary: null,
 		target: "normal",
 		type: "Water",
 		zMove: { boost: { spe: 1 } },
@@ -338,6 +343,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', source, 'Ivy Cudgel Rock', target);
 			this.add('-anim', source, 'Splash');
 		},
+		secondary: null,
 		target: "normal",
 		type: "Rock",
 		contestType: "Beautiful",
@@ -360,6 +366,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		onPrepareHit(target, source, move) {
 			this.add('-anim', source, 'Metal Claw', target);
 		},
+		secondary: null,
 		target: "normal",
 		type: "Steel",
 		contestType: "Beautiful",
@@ -388,7 +395,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thunderouskick: {
 		inherit: true,
-		secondary: undefined, // no inherit
+		secondary: null,
 		onHit(target, source, move) {
 			// random # 0 or 1
 			const randomNum = this.random(2);
@@ -437,6 +444,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				}
 			},
 		},
+		secondary: null,
 		target: "foeSide",
 		type: "Rock",
 		zMove: { boost: { def: 1 } },
@@ -479,6 +487,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				}
 			},
 		},
+		secondary: null,
 		target: "foeSide",
 		type: "Ground",
 		zMove: { boost: { def: 1 } },
@@ -648,6 +657,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', source, 'Spirit Shackle', target);
 		},
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
 		target: "normal",
 		type: "Ghost",
 		contestType: "Clever",
@@ -676,6 +686,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			}
 		},
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
 		target: "normal",
 		type: "Fighting",
 		contestType: "Clever",
@@ -821,6 +832,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			return success;
 		},
 		flags: { protect: 1, mirror: 1, metronome: 1, wind: 1 },
+		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Dragon",
 		contestType: "Cool",
@@ -840,6 +852,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-start', target, 'typechange', 'Steel');
 		},
 		flags: { protect: 1, mirror: 1, metronome: 1, bullet: 1 },
+		secondary: null,
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
@@ -876,7 +889,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', source, 'Extreme Speed', target);
 			this.add('-anim', source, 'Thunder', target);
 		},
-		secondary: undefined, // no inherit
+		secondary: null,
 		desc: "Nearly always goes first.",
 		shortDesc: "Nearly always goes first.",
 	},
@@ -924,6 +937,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		selfSwitch: true,
+		secondary: null,
 		target: "normal",
 		type: "Fire",
 		contestType: "Cute",
@@ -1063,6 +1077,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
 		target: "normal",
 		type: "Rock",
 		contestType: "Tough",
@@ -1158,6 +1173,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		drain: [1, 2],
+		secondary: null,
 		target: "normal",
 		type: "Fire",
 		zMove: { basePower: 160 },
@@ -1192,6 +1208,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		secondary: null,
 		target: "normal",
 		type: "Grass",
 		contestType: "Tough",
@@ -1257,6 +1274,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				}
 			},
 		},
+		secondary: null,
 		target: "self",
 		type: "Normal",
 		zMove: { effect: 'clearnegativeboost' },
@@ -1300,6 +1318,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		multihit: [10, 10],
+		secondary: null,
 		target: "normal",
 		type: "Dark",
 		zMove: { basePower: 140 },
@@ -1348,6 +1367,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			return null;
 		},
 		callsMove: true,
+		secondary: null,
 		target: "normal",
 		type: "Normal",
 		contestType: "Beautiful",
@@ -1374,6 +1394,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				return priority + 1;
 			}
 		},
+		secondary: null,
 		target: "normal",
 		type: "Fairy",
 		contestType: "Cool",
@@ -1400,6 +1421,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				return priority + 1;
 			}
 		},
+		secondary: null,
 		target: "normal",
 		type: "Electric",
 		contestType: "Cool",
@@ -1427,6 +1449,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				this.boost({ spe: 1 }, source, source);
 			}
 		},
+		secondary: null,
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
@@ -1593,6 +1616,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', source, 'Explosion', target);
 			this.add('-anim', source, 'Mind Blown', target);
 		},
+		secondary: null,
 		target: "normal",
 		type: "Normal",
 		contestType: "Cute",
@@ -1670,6 +1694,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				}
 			},
 		},
+		secondary: null,
 		target: "normal",
 		type: "Ghost",
 		contestType: "Clever",
@@ -1713,6 +1738,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.add('-anim', source, 'Curse', target);
 			this.add('-anim', source, 'Bug Bite', target);
 		},
+		secondary: null,
 		target: "normal",
 		type: "Ghost",
 		contestType: "Cute",

@@ -1,15 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
+<meta charset="utf-8" />
+<meta
+	http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate"
+/>
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Pokemon Showdown Server</title>
+<style>
+	body {
+		font-family: Verdana, sans-serif;
+		margin: 2rem;
+		max-width: 56rem;
+		line-height: 1.4;
+	}
+	a {
+		word-break: break-all;
+	}
+	code {
+		background: #f3f3f3;
+		padding: 0.1rem 0.3rem;
+		border-radius: 0.2rem;
+	}
+</style>
+<h1>Pokemon Showdown Server</h1>
+<p>This server is running correctly.</p>
+<p id="client-link">Loading client link...</p>
+<p>This page redirects to the default client automatically.</p>
 <script>
-var host = document.location.hostname.replace(/-/g, '=').replace(/\./g, '-').replace(/:/g, '--').replace(/=/g, '---');
-var currentPort = document.location.port || (document.location.protocol === 'https:' ? '443' : '80');
-var defaultPort = document.location.protocol === 'https:' ? '443' : '8000';
-var suffix = (currentPort !== defaultPort ? '--' + currentPort : '');
-var protocol = 'https:';
-if (document.location.protocol !== 'https:' && host !== 'localhost') {
-	protocol = 'http:';
-	suffix += '.insecure';
-}
-document.location.replace(protocol + '//' + host + suffix + '.psim.us' + document.location.pathname);
+	var host = document.location.hostname;
+	var currentPort =
+		document.location.port ||
+		(document.location.protocol === "https:" ? "443" : "80");
+	var defaultPort = document.location.protocol === "https:" ? "443" : "8000";
+	var serverAddress =
+		host + (currentPort !== defaultPort ? ":" + currentPort : "");
+	var protocol = document.location.protocol === "https:" ? "https:" : "http:";
+	var target = protocol + "//" + host + ":8080/index.html?local=1";
+	document.getElementById("client-link").innerHTML =
+		"Default client link: " + '<a href="' + target + '">' + target + "</a>";
+	window.setTimeout(function () {
+		document.location.replace(target);
+	}, 500);
 </script>
-<p>This is a <a href="http://www.pokemonshowdown.com">Pok&eacute;mon Showdown</a> server!</p>
-<noscript><p>You'll need to <a href="http://enable-javascript.com/en/">enable JavaScript</a> to play.</p></noscript>

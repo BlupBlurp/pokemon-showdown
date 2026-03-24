@@ -3007,7 +3007,7 @@ export class Battle {
 			if (choice) this.inputLog.push(`>${side.id} ${choice}`);
 		}
 		for (const side of this.sides) {
-			side.commitChoices();
+			this.queue.addChoice(side.choice.actions);
 		}
 		this.clearRequest();
 

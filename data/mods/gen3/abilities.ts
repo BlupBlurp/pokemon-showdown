@@ -91,8 +91,6 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		},
 	},
 	lightningrod: {
-		inherit: true,
-		onAnyRedirectTarget: undefined, // no inherit
 		onFoeRedirectTarget(target, source, source2, move) {
 			// don't count Hidden Power as Electric-type
 			if (this.dex.moves.get(move.id).type !== 'Electric') return;
@@ -100,11 +98,15 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 				return this.effectState.target;
 			}
 		},
+		flags: { breakable: 1 },
+		name: "Lightning Rod",
+		rating: 0,
+		num: 32,
 	},
 	magnetpull: {
 		inherit: true,
-		onFoeTrapPokemon: undefined, // no inherit
-		onFoeMaybeTrapPokemon: undefined, // no inherit
+		onFoeTrapPokemon() {},
+		onFoeMaybeTrapPokemon() {},
 		onAnyTrapPokemon(pokemon) {
 			if (pokemon.hasType('Steel') && pokemon.isAdjacent(this.effectState.target)) {
 				pokemon.tryTrap(true);
@@ -156,7 +158,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	raindish: {
 		inherit: true,
-		onWeather: undefined, // no inherit
+		onWeather() {},
 		onResidualOrder: 10,
 		onResidualSubOrder: 3,
 		onResidual(pokemon) {
@@ -191,7 +193,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	trace: {
 		inherit: true,
-		onUpdate: undefined, // no inherit
+		onUpdate() {},
 		onStart(pokemon) {
 			const target = pokemon.side.randomFoe();
 			if (!target || target.fainted) return;
@@ -202,7 +204,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 	},
 	truant: {
 		inherit: true,
-		onStart: undefined, // no inherit
+		onStart() {},
 		onSwitchIn(pokemon) {
 			pokemon.truantTurn = this.turn !== 0;
 		},

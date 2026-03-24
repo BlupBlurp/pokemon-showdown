@@ -182,12 +182,46 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	electricterrain: {
 		inherit: true,
 		condition: {
-			inherit: true,
+			effectType: 'Terrain',
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onSetStatus(status, target, source, effect) {
+				if (status.id === 'slp' && target.isGrounded() && !target.isSemiInvulnerable()) {
+					if (effect.id === 'yawn' || (effect.effectType === 'Move' && !effect.secondaries)) {
+						this.add('-activate', target, 'move: Electric Terrain');
+					}
+					return false;
+				}
+			},
+			onTryAddVolatile(status, target) {
+				if (!target.isGrounded() || target.isSemiInvulnerable()) return;
+				if (status.id === 'yawn') {
+					this.add('-activate', target, 'move: Electric Terrain');
+					return null;
+				}
+			},
 			onBasePower(basePower, attacker, defender, move) {
 				if (move.type === 'Electric' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
 					this.debug('electric terrain boost');
 					return this.chainModify(1.5);
 				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect && effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Electric Terrain', `[from] ability: ${effect}`, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Electric Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Electric Terrain');
 			},
 		},
 	},
@@ -273,7 +307,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	grassknot: {
 		inherit: true,
-		onTryHit: undefined, // no inherit
+		onTryHit() {},
 	},
 	grasswhistle: {
 		inherit: true,
@@ -282,7 +316,14 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	grassyterrain: {
 		inherit: true,
 		condition: {
-			inherit: true,
+			effectType: 'Terrain',
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
 			onBasePower(basePower, attacker, defender, move) {
 				const weakenedMoves = ['earthquake', 'bulldoze', 'magnitude'];
 				if (weakenedMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
@@ -293,6 +334,27 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 					this.debug('grassy terrain boost');
 					return this.chainModify(1.5);
 				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect && effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Grassy Terrain', `[from] ability: ${effect}`, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Grassy Terrain');
+				}
+			},
+			onResidualOrder: 5,
+			onResidualSubOrder: 2,
+			onResidual(pokemon) {
+				if (pokemon.isGrounded() && !pokemon.isSemiInvulnerable()) {
+					this.heal(pokemon.baseMaxhp / 16, pokemon, pokemon);
+				} else {
+					this.debug(`Pokemon semi-invuln or not grounded; Grassy Terrain skipped`);
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Grassy Terrain');
 			},
 		},
 	},
@@ -367,11 +429,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	heatcrash: {
 		inherit: true,
-		onTryHit: undefined, // no inherit
+		onTryHit() {},
 	},
 	heavyslam: {
 		inherit: true,
-		onTryHit: undefined, // no inherit
+		onTryHit() {},
 	},
 	hiddenpower: {
 		inherit: true,
@@ -496,7 +558,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	kingsshield: {
 		inherit: true,
 		condition: {
-			inherit: true,
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Protect');
+			},
+			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
 				if (!move.flags['protect'] || move.category === 'Status') {
 					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
@@ -536,7 +602,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	lowkick: {
 		inherit: true,
-		onTryHit: undefined, // no inherit
+		onTryHit() {},
 	},
 	luckychant: {
 		inherit: true,
@@ -714,12 +780,47 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	psychicterrain: {
 		inherit: true,
 		condition: {
-			inherit: true,
+			effectType: 'Terrain',
+			duration: 5,
+			durationCallback(source, effect) {
+				if (source?.hasItem('terrainextender')) {
+					return 8;
+				}
+				return 5;
+			},
+			onTryHitPriority: 4,
+			onTryHit(target, source, effect) {
+				if (effect && (effect.priority <= 0.1 || effect.target === 'self')) {
+					return;
+				}
+				if (target.isSemiInvulnerable() || target.isAlly(source)) return;
+				if (!target.isGrounded()) {
+					const baseMove = this.dex.moves.get(effect.id);
+					if (baseMove.priority > 0) {
+						this.hint("Psychic Terrain doesn't affect Pokémon immune to Ground.");
+					}
+					return;
+				}
+				this.add('-activate', target, 'move: Psychic Terrain');
+				return null;
+			},
 			onBasePower(basePower, attacker, defender, move) {
 				if (move.type === 'Psychic' && attacker.isGrounded() && !attacker.isSemiInvulnerable()) {
 					this.debug('psychic terrain boost');
 					return this.chainModify(1.5);
 				}
+			},
+			onFieldStart(field, source, effect) {
+				if (effect && effect.effectType === 'Ability') {
+					this.add('-fieldstart', 'move: Psychic Terrain', `[from] ability: ${effect}`, `[of] ${source}`);
+				} else {
+					this.add('-fieldstart', 'move: Psychic Terrain');
+				}
+			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 7,
+			onFieldEnd() {
+				this.add('-fieldend', 'move: Psychic Terrain');
 			},
 		},
 	},
@@ -775,7 +876,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	rapidspin: {
 		inherit: true,
 		basePower: 20,
-		secondary: undefined, // no inherit
+		secondary: null,
 	},
 	razorwind: {
 		inherit: true,
@@ -1081,6 +1182,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		basePower: 50,
 		pp: 15,
 		willCrit: true,
-		secondary: undefined, // no inherit
+		secondary: null,
 	},
 };
