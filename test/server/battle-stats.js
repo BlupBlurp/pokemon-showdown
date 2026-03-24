@@ -5,6 +5,7 @@ const assert = require("assert").strict;
 const {
 	aggregateBattleStats,
 	normalizeRelumiFormat,
+	shouldLogBattleStats,
 } = require("../../dist/server/battle-stats");
 
 describe("Battle stats aggregation", () => {
@@ -159,5 +160,37 @@ describe("Battle stats aggregation", () => {
 		assert(doubles);
 		assert.equal(doubles.battleStats.totalBattlesAllTime, 1);
 		assert.equal(doubles.userLeaderboard.topByBattles[0].user, "Dexter");
+	});
+
+	it("only logs public rated matchmaking battles", () => {
+		const baseBattle = {
+			rated: 1200,
+			challengeType: "rated",
+			room: {
+				settings: { isPrivate: false },
+				hideReplay: false,
+			},
+		};
+
+		assert.equal(shouldLogBattleStats(baseBattle), true);
+		assert.equal(shouldLogBattleStats({ ...baseBattle, rated: 0 }), false);
+		assert.equal(
+			shouldLogBattleStats({ ...baseBattle, challengeType: "challenge" }),
+			false,
+		);
+		assert.equal(
+			shouldLogBattleStats({
+				...baseBattle,
+				room: { ...baseBattle.room, settings: { isPrivate: "hidden" } },
+			}),
+			false,
+		);
+		assert.equal(
+			shouldLogBattleStats({
+				...baseBattle,
+				room: { ...baseBattle.room, hideReplay: true },
+			}),
+			false,
+		);
 	});
 });
