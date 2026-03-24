@@ -614,7 +614,11 @@ function buildRelumiRandomBattleSets({
 	for (const speciesId of mappedSpeciesIds || []) {
 		if (candidatesBySpecies.has(speciesId)) continue;
 		const species = dex.species.get(speciesId);
-		if (!species.exists || species.nfe || isDisallowedRandomBattleForm(species))
+		if (
+			!species.exists ||
+			species.nfe ||
+			isDisallowedRandomBattleForm(species)
+		)
 			continue;
 		const fallbackCandidates = buildFallbackCandidates(
 			species,
