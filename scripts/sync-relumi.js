@@ -199,8 +199,9 @@ function mapWazaNoToMoveId(wazaNo, moveNames, dex, cache, unmappedMoves) {
 		cache.set(wazaNo, null);
 		return null;
 	}
-	cache.set(wazaNo, move.id);
-	return move.id;
+	const resolvedMoveId = move.id === "hail" ? "snowscape" : move.id;
+	cache.set(wazaNo, resolvedMoveId);
+	return resolvedMoveId;
 }
 
 function sortedUniqueNumbers(list) {
@@ -883,6 +884,26 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 		armorcannon: { pulse: 1 },
 	};
 
+	// Hardcoded weather/legality overrides so Relumi always uses Gen 9 snow behavior.
+	const moveOverrides = {
+		hail: {
+			name: "Snowscape",
+			shortDesc: "For 5 turns, snow begins to fall.",
+			weather: "snowscape",
+		},
+		maxhailstorm: {
+			weather: "snowscape",
+		},
+		snowscape: {
+			gen: 8,
+			isNonstandard: null,
+		},
+		chillyreception: {
+			gen: 8,
+			isNonstandard: null,
+		},
+	};
+
 	for (const row of wazaRows) {
 		if (!row || row.isValid !== 1) continue;
 		if (!row.wazaNo || row.wazaNo <= 0) continue;
@@ -939,6 +960,16 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 		const baseFlags = move.flags || {};
 		const mergedFlags = { ...baseFlags, ...flagAdds };
 		movesDiffs[move.id].flags = mergedFlags;
+	}
+
+	// Apply hardcoded move overrides that should persist across syncs.
+	for (const [moveId, override] of Object.entries(moveOverrides)) {
+		const move = dex.moves.get(moveId);
+		if (!move.exists) continue;
+		if (!movesDiffs[move.id]) {
+			movesDiffs[move.id] = { inherit: true };
+		}
+		Object.assign(movesDiffs[move.id], override);
 	}
 
 	return { movesDiffs, unmappedMoves };

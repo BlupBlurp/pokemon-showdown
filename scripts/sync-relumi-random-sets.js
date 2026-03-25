@@ -550,9 +550,11 @@ function buildRelumiRandomBattleSets({
 				const moveName = (moveNames.get(moveNo) || "").trim();
 				if (!moveName || moveName === "\u2014\u2014\u2014") continue;
 				const move = dex.moves.get(moveName);
-				if (!move.exists || seenMoves.has(move.id)) continue;
-				seenMoves.add(move.id);
-				moveIds.push(move.id);
+				if (!move.exists) continue;
+				const moveId = move.id === "hail" ? "snowscape" : move.id;
+				if (seenMoves.has(moveId)) continue;
+				seenMoves.add(moveId);
+				moveIds.push(moveId);
 			}
 			if (!moveIds.length) continue;
 			if (species.id !== "ditto" && moveIds.length < MIN_NON_DITTO_MOVES)
