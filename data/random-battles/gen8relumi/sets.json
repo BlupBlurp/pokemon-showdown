@@ -5756,7 +5756,7 @@
                     "Weather Ball",
                     "Scald",
                     "Energy Ball",
-                    "Hail"
+                    "Snowscape"
                 ],
                 "abilities": [
                     "Forecast"
@@ -15114,7 +15114,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Hail",
+                    "Snowscape",
                     "Ice Beam",
                     "Sheer Cold",
                     "Crunch"
@@ -42187,7 +42187,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Hail",
+                    "Snowscape",
                     "Body Press",
                     "Hydro Pump",
                     "Blizzard"

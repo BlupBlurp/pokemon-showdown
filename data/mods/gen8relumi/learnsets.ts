@@ -82,9 +82,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassyglide: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -203,6 +200,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9M",
+			],
 			solarbeam: [
 				"9M",
 			],
@@ -314,9 +314,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -414,6 +411,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -777,9 +777,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hex: [
 				"9E",
 				"9M",
@@ -904,6 +901,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -1053,9 +1053,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hex: [
 				"9M",
 			],
@@ -1158,6 +1155,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -5610,9 +5610,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L1",
 				"9L57",
@@ -5717,6 +5714,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L33",
@@ -6289,10 +6289,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L48",
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -6402,6 +6398,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L48",
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -9238,9 +9238,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -9433,6 +9430,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -9677,9 +9677,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -9872,6 +9869,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -10113,9 +10113,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -10308,6 +10305,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -10549,9 +10549,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -10744,6 +10741,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -10985,9 +10985,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -11180,6 +11177,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -11421,9 +11421,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -11616,6 +11613,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -11857,9 +11857,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -12052,6 +12049,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -12293,9 +12293,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -12488,6 +12485,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -12729,9 +12729,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -12924,6 +12921,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -13165,9 +13165,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -13360,6 +13357,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -13601,9 +13601,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -13796,6 +13793,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -14037,9 +14037,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -14232,6 +14229,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -14473,9 +14473,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -14668,6 +14665,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -14909,9 +14909,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -15104,6 +15101,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -15345,9 +15345,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -15540,6 +15537,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -15781,9 +15781,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -15976,6 +15973,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -16217,9 +16217,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -16412,6 +16409,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -16653,9 +16653,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healingwish: [
 				"9L50",
 			],
@@ -16848,6 +16845,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -17637,9 +17637,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -17710,6 +17707,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stoneedge: [
 				"9M",
@@ -17788,9 +17788,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -17866,6 +17863,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stompingtantrum: [
 				"9T",
@@ -19167,10 +19167,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gust: [
 				"9L1",
 			],
-			hail: [
-				"9L26",
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -19262,6 +19258,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L26",
+				"9M",
 			],
 			steelwing: [
 				"9M",
@@ -20130,10 +20130,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L54",
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -20254,6 +20250,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9L54",
+				"9M",
+			],
 			stealthrock: [
 				"9M",
 			],
@@ -20365,9 +20365,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -20463,6 +20460,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stompingtantrum: [
 				"9T",
@@ -21256,9 +21256,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L1",
 				"9L19",
@@ -21353,6 +21350,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9L1",
@@ -21471,9 +21471,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L14",
 				"9T",
@@ -21542,6 +21539,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -22795,9 +22795,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			futuresight: [
 				"9L34",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -22868,6 +22865,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9L22",
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spark: [
 				"9E",
@@ -23359,9 +23359,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -23429,6 +23426,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L28",
@@ -23562,9 +23562,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -23632,6 +23629,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L28",
@@ -23749,9 +23749,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -23802,6 +23799,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L44",
 			],
 			sleeptalk: [
+				"9M",
+			],
+			snowscape: [
 				"9M",
 			],
 			soak: [
@@ -24541,10 +24541,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L30",
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -24647,6 +24643,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L30",
+				"9M",
 			],
 			stoneedge: [
 				"9M",
@@ -26175,9 +26175,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -26255,6 +26252,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stoneedge: [
 				"9M",
@@ -27678,9 +27678,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -27791,6 +27788,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -27951,9 +27951,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -28064,6 +28061,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -28221,9 +28221,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -28334,6 +28331,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -28488,9 +28488,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -28589,6 +28586,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -29327,9 +29327,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -29458,6 +29455,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			softboiled: [
 				"9L13",
@@ -31928,9 +31928,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -31997,6 +31994,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -33139,9 +33139,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9E",
 			],
@@ -33227,6 +33224,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -35434,9 +35434,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growth: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			healpulse: [
 				"9L72",
 			],
@@ -35517,6 +35514,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			snarl: [
+				"9M",
+			],
+			snowscape: [
 				"9M",
 			],
 			solarbeam: [
@@ -36390,9 +36390,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -36493,6 +36490,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -37223,9 +37223,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			furycutter: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -37296,6 +37293,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -37427,10 +37427,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9E",
 			],
-			hail: [
-				"9L20",
-				"9M",
-			],
 			headbutt: [
 				"9L15",
 			],
@@ -37503,6 +37499,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L20",
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -37614,10 +37614,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9E",
 			],
-			hail: [
-				"9L20",
-				"9M",
-			],
 			headbutt: [
 				"9L15",
 			],
@@ -37690,6 +37686,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L20",
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -37801,10 +37801,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9E",
 			],
-			hail: [
-				"9L20",
-				"9M",
-			],
 			headbutt: [
 				"9L15",
 			],
@@ -37877,6 +37873,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L20",
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -37988,10 +37988,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9E",
 			],
-			hail: [
-				"9L20",
-				"9M",
-			],
 			headbutt: [
 				"9L15",
 			],
@@ -38064,6 +38060,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L20",
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -39683,9 +39683,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9E",
 				"9T",
@@ -39825,6 +39822,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			softboiled: [
 				"9L13",
@@ -44356,9 +44356,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -44418,6 +44415,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -45538,9 +45538,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -45581,6 +45578,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -47569,9 +47569,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -47666,6 +47663,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikecannon: [
 				"9L1",
@@ -49713,9 +49713,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guillotine: [
 				"9L50",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -49794,6 +49791,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -49922,9 +49922,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L49",
 			],
 			frustration: [
-				"9M",
-			],
-			hail: [
 				"9M",
 			],
 			harden: [
@@ -50056,6 +50053,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9M",
+			],
 			spikecannon: [
 				"9L22",
 			],
@@ -50184,9 +50184,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grudge: [
 				"9L19",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -50311,6 +50308,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikecannon: [
 				"9L22",
@@ -51065,9 +51065,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9L1",
 			],
@@ -51174,6 +51171,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stompingtantrum: [
 				"9T",
@@ -52485,9 +52485,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guillotine: [
 				"9L57",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -52574,6 +52571,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -53549,9 +53549,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			furycutter: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -53649,6 +53646,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -53963,9 +53963,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9L20",
 			],
@@ -54060,6 +54057,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9L56",
@@ -54171,10 +54171,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L30",
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -54259,6 +54255,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L30",
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -54785,9 +54785,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grudge: [
 				"9L19",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -54894,6 +54891,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikecannon: [
 				"9L22",
@@ -59644,10 +59644,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9L33",
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -59733,6 +59729,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L33",
+				"9M",
 			],
 			spikes: [
 				"9E",
@@ -61370,10 +61370,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L45",
-				"9M",
-			],
 			headbutt: [
 				"9L1",
 			],
@@ -61454,6 +61450,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L45",
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -61583,9 +61583,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -61650,6 +61647,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -62660,9 +62660,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -62775,6 +62772,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -62891,9 +62891,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -62991,6 +62988,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9L70",
@@ -65285,9 +65285,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -65365,6 +65362,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -65684,9 +65684,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -65750,6 +65747,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -65929,9 +65929,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heatwave: [
 				"9T",
 			],
@@ -66045,6 +66042,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9M",
@@ -66874,9 +66874,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -66946,6 +66943,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -69033,9 +69033,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gust: [
 				"9E",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -69095,6 +69092,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9E",
@@ -73398,10 +73398,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9L42",
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -73469,6 +73465,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L42",
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -73551,10 +73551,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9L42",
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -73621,6 +73617,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L42",
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -76151,9 +76151,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -76255,6 +76252,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -80146,9 +80146,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -80199,6 +80196,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9L1",
@@ -80552,9 +80552,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -80678,6 +80675,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -81483,9 +81483,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gust: [
 				"9L15",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -81558,6 +81555,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L54",
@@ -83820,9 +83820,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -83914,6 +83911,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -86750,9 +86750,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigadrain: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hex: [
 				"9L20",
 				"9M",
@@ -86838,6 +86835,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -87379,10 +87379,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9L46",
-				"9M",
-			],
 			headbutt: [
 				"9L1",
 			],
@@ -87496,6 +87492,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L46",
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -87615,10 +87615,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9L28",
-				"9M",
-			],
 			helpinghand: [
 				"9L1",
 				"9T",
@@ -87696,6 +87692,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L28",
+				"9M",
 			],
 			strugglebug: [
 				"9L1",
@@ -92848,9 +92848,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 				"9L7",
@@ -92946,6 +92943,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -93057,9 +93057,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 				"9L7",
@@ -93155,6 +93152,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -97399,9 +97399,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -97491,6 +97488,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -97612,10 +97612,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9L46",
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -97734,6 +97730,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9L46",
+				"9M",
+			],
 			spikes: [
 				"9T",
 			],
@@ -97850,10 +97850,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9L47",
-				"9M",
-			],
 			headbutt: [
 				"9L54",
 			],
@@ -97955,6 +97951,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L47",
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -98230,9 +98230,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hyperbeam: [
 				"9M",
 			],
@@ -98278,6 +98275,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stomp: [
 				"9L18",
@@ -99819,9 +99819,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			furycutter: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -99903,6 +99900,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L40",
@@ -100044,9 +100044,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -100161,6 +100158,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L27",
@@ -101052,9 +101052,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9E",
 			],
@@ -101162,6 +101159,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9E",
@@ -101604,9 +101604,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -101689,6 +101686,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stompingtantrum: [
 				"9T",
@@ -102140,9 +102140,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -102212,6 +102209,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -110241,9 +110241,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -110330,6 +110327,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -110474,9 +110474,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -110553,6 +110550,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -110887,9 +110887,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9E",
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9E",
 				"9T",
@@ -110975,6 +110972,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -116989,9 +116989,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -117061,6 +117058,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9E",
@@ -117967,9 +117967,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -118034,6 +118031,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -122675,9 +122675,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hex: [
 				"9L20",
 				"9M",
@@ -122766,6 +122763,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -124138,9 +124138,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -124276,6 +124273,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9M",
+			],
 			substitute: [
 				"9M",
 			],
@@ -124391,9 +124391,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigadrain: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -124500,6 +124497,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -124617,9 +124617,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			gigaimpact: [
-				"9M",
-			],
-			hail: [
 				"9M",
 			],
 			harden: [
@@ -124747,6 +124744,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9M",
+			],
 			stealthrock: [
 				"9M",
 			],
@@ -124856,9 +124856,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			gigaimpact: [
-				"9M",
-			],
-			hail: [
 				"9M",
 			],
 			harden: [
@@ -124979,6 +124976,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -125400,9 +125400,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9L40",
 				"9E",
@@ -125510,6 +125507,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -125673,9 +125673,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -125769,6 +125766,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -126491,9 +126491,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L1",
 				"9T",
@@ -126578,6 +126575,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stoneedge: [
 				"9M",
@@ -126704,9 +126704,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L1",
 				"9T",
@@ -126794,6 +126791,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stoneedge: [
 				"9M",
@@ -127240,9 +127240,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -127321,6 +127318,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -127440,9 +127440,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guillotine: [
 				"9L34",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9L1",
 				"9L28",
@@ -127529,6 +127526,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stomp: [
 				"9L20",
@@ -127654,9 +127654,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guillotine: [
 				"9L60",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9L1",
 			],
@@ -127738,6 +127735,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stomp: [
 				"9L24",
@@ -130060,9 +130060,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guillotine: [
 				"9L32",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9E",
 			],
@@ -130151,6 +130148,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stomp: [
 				"9L20",
@@ -131159,9 +131159,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -131251,6 +131248,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -131359,9 +131359,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -131450,6 +131447,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -131580,9 +131580,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			glaciate: [
 				"9L80",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -131695,6 +131692,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9M",
@@ -131815,9 +131815,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -131929,6 +131926,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9M",
@@ -132046,9 +132046,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -132163,6 +132160,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9M",
@@ -133120,9 +133120,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -133178,6 +133175,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spark: [
 				"9L12",
@@ -133342,9 +133342,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -133453,6 +133450,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -133578,9 +133578,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -133679,6 +133676,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -139060,9 +139060,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -139130,6 +139127,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -139780,9 +139780,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -139831,6 +139828,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -140760,9 +140760,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -140839,6 +140836,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -141008,9 +141008,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gust: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -141136,6 +141133,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9M",
@@ -141276,9 +141276,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L15",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -141354,6 +141351,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L1",
@@ -141719,9 +141719,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -141858,6 +141855,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -142168,9 +142168,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healpulse: [
 				"9E",
 			],
@@ -142225,6 +142222,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L42",
@@ -147035,9 +147035,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -147144,6 +147141,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -147259,9 +147259,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -147343,6 +147340,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -148328,9 +148328,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -148420,6 +148417,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9E",
@@ -148544,9 +148544,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -148606,6 +148603,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9E",
@@ -148885,9 +148885,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -148965,6 +148962,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -149292,9 +149292,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L1",
 				"9L18",
@@ -149396,6 +149393,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -150507,9 +150507,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -150600,6 +150597,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -156730,9 +156730,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -157062,6 +157059,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9M",
+			],
 			solarbeam: [
 				"9M",
 			],
@@ -157364,9 +157364,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9L26",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -157547,6 +157544,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -157753,9 +157753,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9L56",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -157931,6 +157928,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -158136,9 +158136,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9L56",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -158314,6 +158311,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -159228,9 +159228,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -159320,6 +159317,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9L1",
@@ -165033,9 +165033,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -165175,6 +165172,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -165344,9 +165344,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -165467,6 +165464,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -165749,9 +165749,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -165830,6 +165827,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stomp: [
 				"9E",
@@ -171384,9 +171384,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grudge: [
 				"9L68",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -171479,6 +171476,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9L13",
@@ -174958,9 +174958,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -175055,6 +175052,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9E",
@@ -175171,9 +175171,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -175270,6 +175267,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikecannon: [
 				"9L1",
@@ -175654,9 +175654,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -175778,6 +175775,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -177352,9 +177352,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -177416,6 +177413,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -178255,9 +178255,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gravity: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -178349,6 +178346,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spacialrend: [
 				"9L50",
@@ -178515,9 +178515,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gravity: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -178609,6 +178606,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spacialrend: [
 				"9L40",
@@ -178918,9 +178918,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -178982,6 +178979,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -179657,9 +179657,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -179755,6 +179752,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -181871,9 +181871,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -181955,6 +181952,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L1",
@@ -183616,9 +183616,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -183679,6 +183676,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -188072,9 +188072,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -188165,6 +188162,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -189065,9 +189065,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -189130,6 +189127,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9E",
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -189593,9 +189593,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -189686,6 +189683,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -189792,9 +189792,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -189866,6 +189863,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			splash: [
 				"9E",
@@ -189975,9 +189975,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -190054,6 +190051,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -190191,9 +190191,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9L1",
 			],
@@ -190313,6 +190310,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -191442,9 +191442,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -191511,6 +191508,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -192271,9 +192271,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -192370,6 +192367,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			sparklingaria: [
 				"9L1",
@@ -192765,9 +192765,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -192836,6 +192833,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -193231,9 +193231,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L39",
 				"9E",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -193342,6 +193339,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L27",
@@ -195114,9 +195114,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gastroacid: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -195174,6 +195171,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			sleeptalk: [
+				"9M",
+			],
+			snowscape: [
 				"9M",
 			],
 			soak: [
@@ -195292,9 +195292,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9L51",
 			],
@@ -195398,6 +195395,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -196361,9 +196361,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L9",
 			],
@@ -196457,6 +196454,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9L1",
@@ -196610,9 +196610,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L51",
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -196716,6 +196713,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9L5",
@@ -200382,10 +200382,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gravity: [
 				"9T",
 			],
-			hail: [
-				"9L38",
-				"9M",
-			],
 			hammerarm: [
 				"9L30",
 			],
@@ -200478,6 +200474,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L38",
+				"9M",
 			],
 			stomp: [
 				"9L1",
@@ -201524,9 +201524,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -201624,6 +201621,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9E",
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -209289,9 +209289,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -209377,6 +209374,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L1",
@@ -209536,9 +209536,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -209620,6 +209617,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 			],
 			sleeptalk: [
+				"9M",
+			],
+			snowscape: [
 				"9M",
 			],
 			substitute: [
@@ -210586,10 +210586,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L30",
 				"9M",
 			],
-			hail: [
-				"9L36",
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -210708,6 +210704,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L36",
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -211083,10 +211083,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L41",
 				"9M",
 			],
-			hail: [
-				"9L56",
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -211196,6 +211192,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L56",
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -214608,9 +214608,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -214679,6 +214676,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -214778,9 +214778,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -214850,6 +214847,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L44",
@@ -214951,10 +214951,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L30",
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -215022,6 +215018,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9L26",
 				"9T",
+			],
+			snowscape: [
+				"9L30",
+				"9M",
 			],
 			steelroller: [
 				"9T",
@@ -215324,10 +215324,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L41",
-				"9M",
-			],
 			headbutt: [
 				"9L1",
 			],
@@ -215400,6 +215396,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L41",
+				"9M",
 			],
 			spitup: [
 				"9E",
@@ -215533,9 +215533,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -215624,6 +215621,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -216817,9 +216817,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -216916,6 +216913,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -217039,9 +217039,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -217123,6 +217120,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -217945,9 +217945,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -218030,6 +218027,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -218142,9 +218142,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L7",
 			],
@@ -218222,6 +218219,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spitup: [
 				"9E",
@@ -218319,9 +218319,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L7",
 			],
@@ -218399,6 +218396,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spitup: [
 				"9E",
@@ -220724,9 +220724,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -220844,6 +220841,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -220988,9 +220988,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -221108,6 +221105,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -221252,9 +221252,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -221372,6 +221369,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -221516,9 +221516,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -221636,6 +221633,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -221780,9 +221780,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -221900,6 +221897,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -222044,9 +222044,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -222164,6 +222161,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -222308,9 +222308,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -222428,6 +222425,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -222572,9 +222572,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -222692,6 +222689,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -222836,9 +222836,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -222956,6 +222953,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -223100,9 +223100,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -223220,6 +223217,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -223364,9 +223364,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -223484,6 +223481,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -223628,9 +223628,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -223748,6 +223745,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -223892,9 +223892,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -224012,6 +224009,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -224156,9 +224156,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -224276,6 +224273,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -224420,9 +224420,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -224540,6 +224537,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -224684,9 +224684,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -224804,6 +224801,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -224948,9 +224948,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -225068,6 +225065,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -225212,9 +225212,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grasspledge: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -225332,6 +225329,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelbeam: [
 				"9T",
@@ -225486,9 +225486,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -225589,6 +225586,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -228108,9 +228108,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -228184,6 +228181,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -229689,9 +229689,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L16",
 			],
@@ -229802,6 +229799,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -229995,9 +229995,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L16",
 			],
@@ -230115,6 +230112,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -230287,9 +230287,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L21",
 			],
@@ -230388,6 +230385,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -230575,9 +230575,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L16",
 			],
@@ -230697,6 +230694,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -230877,9 +230877,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L16",
 			],
@@ -230982,6 +230979,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stompingtantrum: [
 				"9T",
@@ -231142,9 +231142,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L4",
 			],
-			hail: [
-				"9M",
-			],
 			headbutt: [
 				"9L16",
 			],
@@ -231235,6 +231232,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9E",
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stomp: [
 				"9E",
@@ -232168,9 +232168,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassknot: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -232288,6 +232285,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -232429,9 +232429,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			furyswipes: [
 				"9L16",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -232555,6 +232552,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9E",
@@ -232706,9 +232706,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -232810,6 +232807,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9E",
@@ -234069,10 +234069,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9L42",
-				"9M",
-			],
 			headbutt: [
 				"9L24",
 			],
@@ -234144,6 +234140,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L42",
+				"9M",
 			],
 			spikes: [
 				"9E",
@@ -234232,9 +234232,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			growth: [
 				"9E",
-			],
-			hail: [
-				"9M",
 			],
 			helpinghand: [
 				"9T",
@@ -234336,6 +234333,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			solarbeam: [
 				"9M",
@@ -235931,10 +235931,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L28",
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -235998,6 +235994,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9L25",
 				"9T",
+			],
+			snowscape: [
+				"9L28",
+				"9M",
 			],
 			spitup: [
 				"9E",
@@ -238047,9 +238047,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -238147,6 +238144,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -239227,9 +239227,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L29",
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -239325,6 +239322,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -239443,9 +239443,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L23",
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -239526,6 +239523,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -241753,9 +241753,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L10",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -241863,6 +241860,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -243143,9 +243143,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9L1",
 				"9L36",
@@ -243264,6 +243261,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -243405,9 +243405,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hammerarm: [
 				"9L1",
 			],
@@ -243504,6 +243501,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -243640,9 +243640,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gust: [
 				"9E",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -243711,6 +243708,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9E",
@@ -243998,9 +243998,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -244088,6 +244085,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stealthrock: [
 				"9M",
@@ -248267,9 +248267,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -248359,6 +248356,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -248485,9 +248485,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			hex: [
 				"9L28",
 				"9M",
@@ -248579,6 +248576,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -253932,9 +253932,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -254031,6 +254028,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -254345,9 +254345,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gunkshot: [
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9E",
 			],
@@ -254431,6 +254428,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -257749,9 +257749,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			hiddenpower: [
 				"9M",
 			],
@@ -257811,6 +257808,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -257905,9 +257905,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			healblock: [
 				"9T",
 			],
@@ -257982,6 +257979,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			stoneedge: [
 				"9M",
@@ -261988,10 +261988,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9L20",
-				"9M",
-			],
 			harden: [
 				"9L1",
 			],
@@ -262071,6 +262067,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9L20",
+				"9M",
+			],
 			substitute: [
 				"9M",
 			],
@@ -262141,10 +262141,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			frustration: [
-				"9M",
-			],
-			hail: [
-				"9L20",
 				"9M",
 			],
 			harden: [
@@ -262226,6 +262222,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9T",
 			],
+			snowscape: [
+				"9L20",
+				"9M",
+			],
 			substitute: [
 				"9M",
 			],
@@ -262302,10 +262302,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			gigaimpact: [
-				"9M",
-			],
-			hail: [
-				"9L20",
 				"9M",
 			],
 			harden: [
@@ -262390,6 +262386,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9L20",
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -262502,9 +262502,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9L13",
 			],
@@ -262592,6 +262589,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -271212,9 +271212,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grudge: [
 				"9L43",
 			],
-			hail: [
-				"9M",
-			],
 			healbell: [
 				"9T",
 			],
@@ -271305,6 +271302,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9L12",
@@ -271411,9 +271411,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9L21",
 				"9M",
@@ -271475,6 +271472,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9E",
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -271608,9 +271608,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			heavyslam: [
 				"9L21",
 				"9M",
@@ -271682,6 +271679,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L1",
@@ -271909,10 +271909,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9L30",
-				"9M",
-			],
 			heavyslam: [
 				"9M",
 			],
@@ -271993,6 +271989,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			snore: [
 				"9L26",
 				"9T",
+			],
+			snowscape: [
+				"9L30",
+				"9M",
 			],
 			steelroller: [
 				"9T",
@@ -272101,9 +272101,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gyroball: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -272190,6 +272187,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			strength: [
 				"9M",
@@ -272697,9 +272697,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -272836,6 +272833,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spite: [
 				"9T",
@@ -273949,9 +273949,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -274030,6 +274027,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L22",
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -274747,9 +274747,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			frustration: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			harden: [
 				"9E",
 			],
@@ -274794,6 +274791,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9E",
@@ -274887,9 +274887,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gust: [
 				"9E",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9T",
 			],
@@ -274962,6 +274959,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9E",
@@ -275077,9 +275077,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L4",
 				"9T",
@@ -275128,6 +275125,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L24",
@@ -275232,9 +275232,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			growl: [
 				"9L1",
 			],
-			hail: [
-				"9M",
-			],
 			helpinghand: [
 				"9L4",
 				"9T",
@@ -275283,6 +275280,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			soak: [
 				"9L24",
@@ -275957,9 +275957,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			guardswap: [
 				"9E",
 			],
-			hail: [
-				"9M",
-			],
 			haze: [
 				"9L43",
 			],
@@ -276049,6 +276046,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			spikes: [
 				"9T",
@@ -277557,9 +277557,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9T",
 			],
-			hail: [
-				"9M",
-			],
 			healpulse: [
 				"9L65",
 			],
@@ -277650,6 +277647,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			substitute: [
 				"9M",
@@ -280118,9 +280118,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			gigaimpact: [
 				"9M",
 			],
-			hail: [
-				"9M",
-			],
 			heatwave: [
 				"9L50",
 				"9T",
@@ -280203,6 +280200,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			snore: [
 				"9T",
+			],
+			snowscape: [
+				"9M",
 			],
 			steelwing: [
 				"9M",

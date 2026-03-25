@@ -57,6 +57,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 90,
 		inherit: true,
 	},
+	chillyreception: {
+		gen: 8,
+		inherit: true,
+		isNonstandard: null,
+	},
 	covet: {
 		inherit: true,
 		type: "Fairy",
@@ -174,6 +179,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 70,
 		inherit: true,
 	},
+	hail: {
+		inherit: true,
+		name: "Snowscape",
+		shortDesc: "For 5 turns, snow begins to fall.",
+		weather: "snowscape",
+	},
 	heartstamp: {
 		basePower: 75,
 		inherit: true,
@@ -210,6 +221,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	leafstorm: {
 		accuracy: 100,
 		inherit: true,
+	},
+	maxhailstorm: {
+		inherit: true,
+		weather: "snowscape",
 	},
 	megadrain: {
 		basePower: 60,
@@ -341,6 +356,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 100,
 		inherit: true,
 		type: "Steel",
+	},
+	snowscape: {
+		gen: 8,
+		inherit: true,
+		isNonstandard: null,
 	},
 	steameruption: {
 		accuracy: 100,
