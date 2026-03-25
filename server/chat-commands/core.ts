@@ -1144,6 +1144,9 @@ export const commands: Chat.ChatCommands = {
 
 	uploadreplay: 'savereplay',
 	async savereplay(target, room, user, connection) {
+		if (Config.disablereplayuploads) {
+			throw new Chat.ErrorMessage(this.tr`Replay uploads are disabled on this server.`);
+		}
 		if (!room?.battle) {
 			throw new Chat.ErrorMessage(this.tr`You can only save replays for battles.`);
 		}
