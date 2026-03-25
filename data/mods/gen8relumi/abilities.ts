@@ -50,33 +50,13 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		runaway: {
 			inherit: true,
+			onTrapPokemonPriority: -10,
 			onTrapPokemon(pokemon) {
-				pokemon.tryTrap(false);
+				pokemon.trapped = false;
 			},
+			onMaybeTrapPokemonPriority: -10,
 			onMaybeTrapPokemon(pokemon) {
 				pokemon.maybeTrapped = false;
-			},
-		},
-		shadowtag: {
-			inherit: true,
-			onFoeTrapPokemon(pokemon) {
-				if (
-					!pokemon.hasAbility("shadowtag") &&
-					!pokemon.hasAbility("runaway") &&
-					pokemon.isAdjacent(this.effectState.target)
-				) {
-					pokemon.tryTrap(true);
-				}
-			},
-			onFoeMaybeTrapPokemon(pokemon, source) {
-				if (!source) source = this.effectState.target;
-				if (!source || !pokemon.isAdjacent(source)) return;
-				if (
-					!pokemon.hasAbility("shadowtag") &&
-					!pokemon.hasAbility("runaway")
-				) {
-					pokemon.maybeTrapped = true;
-				}
 			},
 		},
 		protean: {
