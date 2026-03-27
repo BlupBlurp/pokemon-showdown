@@ -38,7 +38,7 @@
     "export-relumi-client": "node scripts/export-relumi-client-overrides.js",
     "build-relumi-client": "npm --prefix ../pokemon-showdown-client run build",
     "serve-relumi-client": "node scripts/serve-relumi-client.js",
-    "dev-relumi": "bash -lc 'set -euo pipefail; trap \"kill 0\" EXIT INT TERM; npm run export-relumi-client; npm run build-relumi-client; npm run build; npm run serve-relumi-client & CLIENT_PID=$!; sleep 2; if ! kill -0 \"$CLIENT_PID\" 2>/dev/null; then echo \"Relumi client host failed to start (check port 8001 usage).\"; exit 1; fi; node pokemon-showdown start'",
+    "dev-relumi": "bash -lc 'set -euo pipefail; trap \"kill 0\" EXIT INT TERM; npm run export-relumi-client; npm run build-relumi-client; npm run build; npm --prefix ../damage-calc run dev-relumi & CALC_PID=$!; sleep 2; if ! kill -0 \"$CALC_PID\" 2>/dev/null; then echo \"Relumi damage-calc failed to start (check port 3000 usage).\"; exit 1; fi; npm run serve-relumi-client & CLIENT_PID=$!; sleep 2; if ! kill -0 \"$CLIENT_PID\" 2>/dev/null; then echo \"Relumi client host failed to start (check port 8001 usage).\"; exit 1; fi; node pokemon-showdown start'",
     "dev-relumi-fresh": "npm run sync-relumi && npm run dev-relumi",
     "build-npm": "node build && npx tsc sim/global-types.ts sim/index.ts --declaration --emitDeclarationOnly --declarationDir dist/ --target es2020 --strict --moduleResolution node --types node --lib es2020",
     "test-npm": "npx tsc sim/global-types.ts sim/index.ts --noEmit --target es2020 --strict --moduleResolution node --types node --lib es2020",
