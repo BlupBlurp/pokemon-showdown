@@ -707,43 +707,6 @@
             }
         ]
     },
-    "alcremiegmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Misty Explosion",
-                    "Giga Impact",
-                    "Recover",
-                    "Calm Mind"
-                ],
-                "abilities": [
-                    "Sweet Veil",
-                    "Aroma Veil"
-                ],
-                "teraTypes": [
-                    "Fairy"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Misty Explosion",
-                    "Moonblast",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Sweet Veil",
-                    "Aroma Veil"
-                ],
-                "teraTypes": [
-                    "Fairy"
-                ]
-            }
-        ]
-    },
     "alcremielemoncream": {
         "level": 86,
         "sets": [
@@ -1420,47 +1383,6 @@
                     "spd": 60,
                     "spe": 60
                 }
-            }
-        ]
-    },
-    "appletungmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Recover",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Ripen",
-                    "Gluttony",
-                    "Thick Fat"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Dragon"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Draco Meteor",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Ripen",
-                    "Gluttony",
-                    "Thick Fat"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Dragon"
-                ]
             }
         ]
     },
@@ -4377,43 +4299,6 @@
             }
         ]
     },
-    "blastoisegmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Water Spout",
-                    "Focus Punch",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Torrent",
-                    "Rain Dish"
-                ],
-                "teraTypes": [
-                    "Water"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Water Spout",
-                    "Hydro Cannon",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Torrent",
-                    "Rain Dish"
-                ],
-                "teraTypes": [
-                    "Water"
-                ]
-            }
-        ]
-    },
     "blaziken": {
         "level": 84,
         "sets": [
@@ -5245,45 +5130,6 @@
             }
         ]
     },
-    "butterfreegmax": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hurricane",
-                    "Bug Buzz",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Compound Eyes",
-                    "Tinted Lens"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Flying"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hurricane",
-                    "Giga Impact",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Compound Eyes",
-                    "Tinted Lens"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Flying"
-                ]
-            }
-        ]
-    },
     "buzzwole": {
         "level": 82,
         "sets": [
@@ -6074,47 +5920,6 @@
             }
         ]
     },
-    "centiskorchgmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Burn Up",
-                    "Giga Impact",
-                    "Rest",
-                    "Coil"
-                ],
-                "abilities": [
-                    "Flash Fire",
-                    "White Smoke",
-                    "Flame Body"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Bug"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Burn Up",
-                    "Overheat",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Flash Fire",
-                    "White Smoke",
-                    "Flame Body"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Bug"
-                ]
-            }
-        ]
-    },
     "ceruledge": {
         "level": 84,
         "sets": [
@@ -6377,45 +6182,6 @@
                     "spd": 6,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "charizardgmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Blast Burn",
-                    "Focus Punch",
-                    "Rest",
-                    "Belly Drum"
-                ],
-                "abilities": [
-                    "Blaze",
-                    "Solar Power"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Flying"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Blast Burn",
-                    "Overheat",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Blaze",
-                    "Solar Power"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Flying"
-                ]
             }
         ]
     },
@@ -6871,43 +6637,6 @@
             }
         ]
     },
-    "cinderacegmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Blast Burn",
-                    "Giga Impact",
-                    "Rest",
-                    "Agility"
-                ],
-                "abilities": [
-                    "Blaze",
-                    "Libero"
-                ],
-                "teraTypes": [
-                    "Fire"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Blast Burn",
-                    "Overheat",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Blaze",
-                    "Libero"
-                ],
-                "teraTypes": [
-                    "Fire"
-                ]
-            }
-        ]
-    },
     "clawitzer": {
         "level": 86,
         "sets": [
@@ -7350,47 +7079,6 @@
             }
         ]
     },
-    "coalossalgmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Burn Up",
-                    "Explosion",
-                    "Spikes",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Steam Engine",
-                    "Flame Body",
-                    "Flash Fire"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Fire"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Burn Up",
-                    "Overheat",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Steam Engine",
-                    "Flame Body",
-                    "Flash Fire"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Fire"
-                ]
-            }
-        ]
-    },
     "cobalion": {
         "level": 82,
         "sets": [
@@ -7648,43 +7336,6 @@
             }
         ]
     },
-    "copperajahgmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Steel Beam",
-                    "Giga Impact",
-                    "Stealth Rock",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Sheer Force",
-                    "Heavy Metal"
-                ],
-                "teraTypes": [
-                    "Steel"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Steel Roller",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Sheer Force",
-                    "Heavy Metal"
-                ],
-                "teraTypes": [
-                    "Steel"
-                ]
-            }
-        ]
-    },
     "corsola": {
         "level": 90,
         "sets": [
@@ -7812,47 +7463,6 @@
                     "spd": 252,
                     "spe": 0
                 }
-            }
-        ]
-    },
-    "corviknightgmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Sky Attack",
-                    "Giga Impact",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Pressure",
-                    "Unnerve",
-                    "Mirror Armor"
-                ],
-                "teraTypes": [
-                    "Flying",
-                    "Steel"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Sky Attack",
-                    "Steel Beam",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Pressure",
-                    "Unnerve",
-                    "Mirror Armor"
-                ],
-                "teraTypes": [
-                    "Flying",
-                    "Steel"
-                ]
             }
         ]
     },
@@ -10247,47 +9857,6 @@
             }
         ]
     },
-    "drednawgmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Head Smash",
-                    "Giga Impact",
-                    "Stealth Rock",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Strong Jaw",
-                    "Shell Armor",
-                    "Swift Swim"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Rock"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Head Smash",
-                    "Meteor Beam",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Strong Jaw",
-                    "Shell Armor",
-                    "Swift Swim"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Rock"
-                ]
-            }
-        ]
-    },
     "drifblim": {
         "level": 86,
         "sets": [
@@ -10709,47 +10278,6 @@
             }
         ]
     },
-    "duraludongmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Steel Beam",
-                    "Giga Impact",
-                    "Stealth Rock",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Light Metal",
-                    "Heavy Metal",
-                    "Stalwart"
-                ],
-                "teraTypes": [
-                    "Steel",
-                    "Dragon"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Steel Roller",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Light Metal",
-                    "Heavy Metal",
-                    "Stalwart"
-                ],
-                "teraTypes": [
-                    "Steel",
-                    "Dragon"
-                ]
-            }
-        ]
-    },
     "durant": {
         "level": 86,
         "sets": [
@@ -11061,45 +10589,6 @@
                     "spd": 0,
                     "spe": 6
                 }
-            }
-        ]
-    },
-    "eeveegmax": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Last Resort",
-                    "Double-Edge",
-                    "Iron Tail",
-                    "Dig"
-                ],
-                "abilities": [
-                    "Run Away",
-                    "Adaptability",
-                    "Anticipation"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Last Resort",
-                    "Iron Tail",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Run Away",
-                    "Adaptability",
-                    "Anticipation"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ]
             }
         ]
     },
@@ -12811,47 +12300,6 @@
             }
         ]
     },
-    "flapplegmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Rest",
-                    "Dragon Dance"
-                ],
-                "abilities": [
-                    "Ripen",
-                    "Gluttony",
-                    "Hustle"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Dragon"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Draco Meteor",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Ripen",
-                    "Gluttony",
-                    "Hustle"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Dragon"
-                ]
-            }
-        ]
-    },
     "flareon": {
         "level": 84,
         "sets": [
@@ -14104,45 +13552,6 @@
             }
         ]
     },
-    "garbodorgmax": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Belch",
-                    "Explosion",
-                    "Spikes",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Stench",
-                    "Weak Armor",
-                    "Aftermath"
-                ],
-                "teraTypes": [
-                    "Poison"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Belch",
-                    "Gunk Shot",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Stench",
-                    "Weak Armor",
-                    "Aftermath"
-                ],
-                "teraTypes": [
-                    "Poison"
-                ]
-            }
-        ]
-    },
     "garchomp": {
         "level": 81,
         "sets": [
@@ -14777,43 +14186,6 @@
                     "spd": 6,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "gengargmax": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Gunk Shot",
-                    "Explosion",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Cursed Body"
-                ],
-                "teraTypes": [
-                    "Ghost",
-                    "Poison"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Gunk Shot",
-                    "Poltergeist",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Cursed Body"
-                ],
-                "teraTypes": [
-                    "Ghost",
-                    "Poison"
-                ]
             }
         ]
     },
@@ -16598,47 +15970,6 @@
             }
         ]
     },
-    "grimmsnarlgmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Foul Play",
-                    "Focus Punch",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Prankster",
-                    "Frisk",
-                    "Pickpocket"
-                ],
-                "teraTypes": [
-                    "Dark",
-                    "Fairy"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Foul Play",
-                    "Play Rough",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Prankster",
-                    "Frisk",
-                    "Pickpocket"
-                ],
-                "teraTypes": [
-                    "Dark",
-                    "Fairy"
-                ]
-            }
-        ]
-    },
     "groudon": {
         "level": 77,
         "sets": [
@@ -17059,47 +16390,6 @@
                     "spd": 0,
                     "spe": 2
                 }
-            }
-        ]
-    },
-    "hatterenegmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Misty Explosion",
-                    "Giga Impact",
-                    "Rest",
-                    "Calm Mind"
-                ],
-                "abilities": [
-                    "Healer",
-                    "Anticipation",
-                    "Magic Bounce"
-                ],
-                "teraTypes": [
-                    "Psychic",
-                    "Fairy"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Misty Explosion",
-                    "Moonblast",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Healer",
-                    "Anticipation",
-                    "Magic Bounce"
-                ],
-                "teraTypes": [
-                    "Psychic",
-                    "Fairy"
-                ]
             }
         ]
     },
@@ -18709,43 +17999,6 @@
             }
         ]
     },
-    "inteleongmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Hydro Cannon",
-                    "Giga Impact",
-                    "Rest",
-                    "Swords Dance"
-                ],
-                "abilities": [
-                    "Torrent",
-                    "Sniper"
-                ],
-                "teraTypes": [
-                    "Water"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Hydro Cannon",
-                    "Hydro Pump",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Torrent",
-                    "Sniper"
-                ],
-                "teraTypes": [
-                    "Water"
-                ]
-            }
-        ]
-    },
     "ironboulder": {
         "level": 81,
         "sets": [
@@ -20029,45 +19282,6 @@
             }
         ]
     },
-    "kinglergmax": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Crabhammer",
-                    "Giga Impact",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Hyper Cutter",
-                    "Shell Armor",
-                    "Sheer Force"
-                ],
-                "teraTypes": [
-                    "Water"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Crabhammer",
-                    "Surf",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Hyper Cutter",
-                    "Shell Armor",
-                    "Sheer Force"
-                ],
-                "teraTypes": [
-                    "Water"
-                ]
-            }
-        ]
-    },
     "klawf": {
         "level": 88,
         "sets": [
@@ -20925,47 +20139,6 @@
                     "spd": 6,
                     "spe": 0
                 }
-            }
-        ]
-    },
-    "laprasgmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hydro Pump",
-                    "Blizzard",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Water Absorb",
-                    "Shell Armor",
-                    "Hydration"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ice"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hydro Pump",
-                    "Giga Impact",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Water Absorb",
-                    "Shell Armor",
-                    "Hydration"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ice"
-                ]
             }
         ]
     },
@@ -22526,45 +21699,6 @@
             }
         ]
     },
-    "machampgmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Focus Punch",
-                    "Close Combat",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Guts",
-                    "No Guard",
-                    "Steadfast"
-                ],
-                "teraTypes": [
-                    "Fighting"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Focus Punch",
-                    "Giga Impact",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Guts",
-                    "No Guard",
-                    "Steadfast"
-                ],
-                "teraTypes": [
-                    "Fighting"
-                ]
-            }
-        ]
-    },
     "magcargo": {
         "level": 89,
         "sets": [
@@ -23967,41 +23101,6 @@
             }
         ]
     },
-    "melmetalgmax": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Steel Beam",
-                    "Self-Destruct",
-                    "Rest",
-                    "Iron Defense"
-                ],
-                "abilities": [
-                    "Iron Fist"
-                ],
-                "teraTypes": [
-                    "Steel"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Steel Roller",
-                    "Self-Destruct",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Iron Fist"
-                ],
-                "teraTypes": [
-                    "Steel"
-                ]
-            }
-        ]
-    },
     "meloetta": {
         "level": 81,
         "sets": [
@@ -24243,45 +23342,6 @@
                 ],
                 "teraTypes": [
                     "Psychic"
-                ]
-            }
-        ]
-    },
-    "meowthgmax": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Last Resort",
-                    "Gunk Shot",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Pickup",
-                    "Technician",
-                    "Unnerve"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Last Resort",
-                    "Hyper Voice",
-                    "Gunk Shot",
-                    "Zap Cannon"
-                ],
-                "abilities": [
-                    "Pickup",
-                    "Technician",
-                    "Unnerve"
-                ],
-                "teraTypes": [
-                    "Normal"
                 ]
             }
         ]
@@ -27452,47 +26512,6 @@
             }
         ]
     },
-    "orbeetlegmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Bug Buzz",
-                    "Giga Impact",
-                    "Recover",
-                    "Agility"
-                ],
-                "abilities": [
-                    "Swarm",
-                    "Frisk",
-                    "Telepathy"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Psychic"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Bug Buzz",
-                    "Psychic",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Swarm",
-                    "Frisk",
-                    "Telepathy"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Psychic"
-                ]
-            }
-        ]
-    },
     "oricorio": {
         "level": 87,
         "sets": [
@@ -28754,43 +27773,6 @@
                     "Iron Tail"
                 ],
                 "abilities": [
-                    "Lightning Rod"
-                ],
-                "teraTypes": [
-                    "Electric"
-                ]
-            }
-        ]
-    },
-    "pikachugmax": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Zap Cannon",
-                    "Focus Punch",
-                    "Rest",
-                    "Agility"
-                ],
-                "abilities": [
-                    "Static",
-                    "Lightning Rod"
-                ],
-                "teraTypes": [
-                    "Electric"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Zap Cannon",
-                    "Thunder",
-                    "Focus Punch",
-                    "Iron Tail"
-                ],
-                "abilities": [
-                    "Static",
                     "Lightning Rod"
                 ],
                 "teraTypes": [
@@ -31447,43 +30429,6 @@
             }
         ]
     },
-    "rillaboomgmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Frenzy Plant",
-                    "Focus Punch",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Overgrow",
-                    "Grassy Surge"
-                ],
-                "teraTypes": [
-                    "Grass"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Frenzy Plant",
-                    "Solar Blade",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Overgrow",
-                    "Grassy Surge"
-                ],
-                "teraTypes": [
-                    "Grass"
-                ]
-            }
-        ]
-    },
     "roaringmoon": {
         "level": 81,
         "sets": [
@@ -32569,45 +31514,6 @@
                     "spd": 0,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "sandacondagmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Earthquake",
-                    "Giga Impact",
-                    "Stealth Rock",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Sand Spit",
-                    "Shed Skin",
-                    "Sand Veil"
-                ],
-                "teraTypes": [
-                    "Ground"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "High Horsepower",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Sand Spit",
-                    "Shed Skin",
-                    "Sand Veil"
-                ],
-                "teraTypes": [
-                    "Ground"
-                ]
             }
         ]
     },
@@ -35833,45 +34739,6 @@
                     "spd": 0,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "snorlaxgmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Self-Destruct",
-                    "Focus Punch",
-                    "Rest",
-                    "Belly Drum"
-                ],
-                "abilities": [
-                    "Immunity",
-                    "Thick Fat",
-                    "Gluttony"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Self-Destruct",
-                    "Giga Impact",
-                    "Focus Punch",
-                    "Steel Roller"
-                ],
-                "abilities": [
-                    "Immunity",
-                    "Thick Fat",
-                    "Gluttony"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ]
             }
         ]
     },
@@ -39215,47 +38082,6 @@
             }
         ]
     },
-    "toxtricitylowkeygmax": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Belch",
-                    "Giga Impact",
-                    "Rest",
-                    "Helping Hand"
-                ],
-                "abilities": [
-                    "Punk Rock",
-                    "Minus",
-                    "Technician"
-                ],
-                "teraTypes": [
-                    "Electric",
-                    "Poison"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Belch",
-                    "Gunk Shot",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Punk Rock",
-                    "Minus",
-                    "Technician"
-                ],
-                "teraTypes": [
-                    "Electric",
-                    "Poison"
-                ]
-            }
-        ]
-    },
     "trevenant": {
         "level": 87,
         "sets": [
@@ -40110,43 +38936,6 @@
             }
         ]
     },
-    "urshifugmax": {
-        "level": 83,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Focus Punch",
-                    "Close Combat",
-                    "Giga Impact",
-                    "Stone Edge"
-                ],
-                "abilities": [
-                    "Unseen Fist"
-                ],
-                "teraTypes": [
-                    "Fighting",
-                    "Dark"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Focus Punch",
-                    "Giga Impact",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Unseen Fist"
-                ],
-                "teraTypes": [
-                    "Fighting",
-                    "Dark"
-                ]
-            }
-        ]
-    },
     "urshifurapidstrike": {
         "level": 83,
         "sets": [
@@ -40179,43 +38968,6 @@
                     "spd": 252,
                     "spe": 202
                 }
-            }
-        ]
-    },
-    "urshifurapidstrikegmax": {
-        "level": 83,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Focus Punch",
-                    "Close Combat",
-                    "Giga Impact",
-                    "Stone Edge"
-                ],
-                "abilities": [
-                    "Unseen Fist"
-                ],
-                "teraTypes": [
-                    "Fighting",
-                    "Water"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Focus Punch",
-                    "Giga Impact",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Unseen Fist"
-                ],
-                "teraTypes": [
-                    "Fighting",
-                    "Water"
-                ]
             }
         ]
     },
@@ -40656,45 +39408,6 @@
                     "spd": 252,
                     "spe": 6
                 }
-            }
-        ]
-    },
-    "venusaurgmax": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Frenzy Plant",
-                    "Giga Impact",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Overgrow",
-                    "Chlorophyll"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Poison"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Frenzy Plant",
-                    "Leaf Storm",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Overgrow",
-                    "Chlorophyll"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Poison"
-                ]
             }
         ]
     },

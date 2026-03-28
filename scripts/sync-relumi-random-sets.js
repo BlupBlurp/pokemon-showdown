@@ -212,8 +212,15 @@ function getFallbackAbilities(species) {
 function isDisallowedRandomBattleForm(species) {
 	if (!species || !species.exists) return true;
 	if (species.isMega || species.isPrimal) return true;
+	if (species.isNonstandard === "Gigantamax") return true;
+	if (String(species.id || "").includes("gmax")) return true;
 	const forme = String(species.forme || "").toLowerCase();
-	return forme.includes("mega") || forme.includes("primal");
+	return (
+		forme.includes("mega") ||
+		forme.includes("primal") ||
+		forme.includes("gmax") ||
+		forme.includes("gigantamax")
+	);
 }
 
 function inferSinglesRole(species, moveIds, dex) {
