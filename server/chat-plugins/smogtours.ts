@@ -190,10 +190,10 @@ export const commands: Chat.ChatCommands = {
 			const section = tours[sectionID];
 			if (!section) return this.popupReply(`Invalid section: "${sectionID}"`);
 			const idx = section.tours.findIndex(t => t.id === tourID);
-			const title = section.tours[idx].title;
 			if (idx < 0) {
 				return this.popupReply(`Tour with ID "${tourID}" not found.`);
 			}
+			const title = section.tours[idx].title;
 			section.tours.splice(idx, 1);
 			this.refreshPage(`tournaments-view-${sectionID}-${tourID}`);
 			this.popupReply(`Tour "${title}" ended.`);
