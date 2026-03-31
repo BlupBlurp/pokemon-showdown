@@ -87,6 +87,29 @@ const FALLBACK_BASE_ONLY_SPECIES = new Set([
 	"minior",
 	"vivillon",
 ]);
+const TRAINER_FORM_NUMBER_SPECIES_OVERRIDES = {
+	25: {
+		1: "Pikachu-Cosplay",
+		2: "Pikachu-Rock-Star",
+		3: "Pikachu-Belle",
+		4: "Pikachu-Pop-Star",
+		5: "Pikachu-PhD",
+		6: "Pikachu-Libre",
+		7: "Pikachu-Original",
+		8: "Pikachu-Starter",
+		9: "Pikachu-Gmax",
+		10: "Pikachu-Clone",
+	},
+	892: {
+		0: "Urshifu",
+		1: "Urshifu-Rapid-Strike",
+		2: "Urshifu-Gmax",
+		3: "Urshifu-Rapid-Strike-Gmax",
+	},
+};
+const STRICT_TRAINER_FORM_SPECIES = new Set(
+	Object.keys(TRAINER_FORM_NUMBER_SPECIES_OVERRIDES).map((n) => Number(n)),
+);
 const NATURE_NAMES_BY_ID = [
 	"Hardy",
 	"Lonely",
@@ -298,6 +321,24 @@ function shouldSkipFallbackForSpecies(species) {
 	}
 
 	return false;
+}
+
+function resolveTrainerSpeciesId(monsNo, formNo, speciesIdByMonsForm, dex) {
+	const speciesOverrides = TRAINER_FORM_NUMBER_SPECIES_OVERRIDES[monsNo];
+	if (speciesOverrides && speciesOverrides[formNo]) {
+		const overrideSpecies = dex.species.get(speciesOverrides[formNo]);
+		if (overrideSpecies.exists) return overrideSpecies.id;
+		return null;
+	}
+
+	const exactSpeciesId = speciesIdByMonsForm.get(`${monsNo}_${formNo}`);
+	if (exactSpeciesId) return exactSpeciesId;
+
+	if (formNo > 0 && STRICT_TRAINER_FORM_SPECIES.has(monsNo)) {
+		return null;
+	}
+
+	return speciesIdByMonsForm.get(`${monsNo}_0`) || null;
 }
 
 function inferSinglesRole(species, moveIds, dex) {
@@ -617,9 +658,12 @@ function buildRelumiRandomBattleSets({
 			if (!monsNo) continue;
 
 			const formNo = Number(trainer[`P${slot}FormNo`] || 0);
-			const speciesId =
-				speciesIdByMonsForm.get(`${monsNo}_${formNo}`) ||
-				speciesIdByMonsForm.get(`${monsNo}_0`);
+			const speciesId = resolveTrainerSpeciesId(
+				monsNo,
+				formNo,
+				speciesIdByMonsForm,
+				dex,
+			);
 			if (!speciesId) {
 				unmappedTrainerSpecies.add(`${monsNo}_${formNo}`);
 				continue;
