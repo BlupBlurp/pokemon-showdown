@@ -210,6 +210,47 @@ function getFallbackAbilities(species) {
 	return abilities.length ? abilities : ["No Ability"];
 }
 
+function getFallbackLevelUpMoveIds(species, trainerLevel, dex, learnsetsDiffs) {
+	if (!species || !species.id) return [];
+	const learnsetData =
+		(learnsetsDiffs && learnsetsDiffs[species.id]) ||
+		dex.species.getLearnsetData(species.id);
+	const learnset = learnsetData && learnsetData.learnset;
+	if (!learnset) return [];
+
+	const maxLevel = Number(trainerLevel) || 100;
+	const learnedAtLevel = [];
+
+	for (const [moveId, sources] of Object.entries(learnset)) {
+		if (!Array.isArray(sources) || !sources.length) continue;
+
+		let bestLevel = -1;
+		for (const source of sources) {
+			if (typeof source !== "string") continue;
+			const match = source.match(/^(?:\d+)L(\d+)$/);
+			if (!match) continue;
+			const sourceLevel = Number(match[1]);
+			if (!Number.isFinite(sourceLevel) || sourceLevel > maxLevel) continue;
+			if (sourceLevel > bestLevel) bestLevel = sourceLevel;
+		}
+		if (bestLevel < 0) continue;
+
+		const move = dex.moves.get(moveId);
+		if (!move.exists) continue;
+		learnedAtLevel.push({
+			id: move.id === "hail" ? "snowscape" : move.id,
+			level: bestLevel,
+		});
+	}
+
+	learnedAtLevel.sort((a, b) => {
+		if (a.level !== b.level) return a.level - b.level;
+		return a.id.localeCompare(b.id);
+	});
+
+	return learnedAtLevel.slice(-4).map((entry) => entry.id);
+}
+
 function isDisallowedRandomBattleForm(species) {
 	if (!species || !species.exists) return true;
 	if (species.isMega || species.isPrimal) return true;
@@ -533,6 +574,9 @@ function buildRelumiRandomBattleSets({
 	const itemNameByNo = buildItemNameByNo(dex);
 
 	for (const trainer of trainerRows) {
+		const trainerId = Number(trainer.ID || 0);
+		if (trainerId > MAX_TRAINER_ID) continue;
+
 		for (let slot = 1; slot <= 6; slot++) {
 			const monsNo = Number(trainer[`P${slot}MonsNo`] || 0);
 			if (!monsNo) continue;
@@ -559,6 +603,7 @@ function buildRelumiRandomBattleSets({
 
 			const moveIds = [];
 			const seenMoves = new Set();
+			const trainerLevel = Number(trainer[`P${slot}Level`] || 1);
 			for (let moveSlot = 1; moveSlot <= 4; moveSlot++) {
 				const moveNo = Number(trainer[`P${slot}Waza${moveSlot}`] || 0);
 				if (!moveNo) continue;
@@ -570,6 +615,18 @@ function buildRelumiRandomBattleSets({
 				if (seenMoves.has(moveId)) continue;
 				seenMoves.add(moveId);
 				moveIds.push(moveId);
+			}
+			if (!moveIds.length) {
+				for (const moveId of getFallbackLevelUpMoveIds(
+					species,
+					trainerLevel,
+					dex,
+					learnsetsDiffs,
+				)) {
+					if (seenMoves.has(moveId)) continue;
+					seenMoves.add(moveId);
+					moveIds.push(moveId);
+				}
 			}
 			if (!moveIds.length) continue;
 			if (species.id !== "ditto" && moveIds.length < MIN_NON_DITTO_MOVES)
@@ -583,9 +640,7 @@ function buildRelumiRandomBattleSets({
 				if (ability.exists) abilityList = [ability.name];
 			}
 
-			const trainerLevel = Number(trainer[`P${slot}Level`] || 1);
 			const trainerSetData = {};
-			const trainerId = Number(trainer.ID || 0);
 
 			const itemNo = Number(trainer[`P${slot}Item`] || 0);
 			if (itemNo > 0) {
