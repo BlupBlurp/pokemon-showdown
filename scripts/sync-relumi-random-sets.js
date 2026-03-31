@@ -81,6 +81,12 @@ const MAX_GENERATED_SETS_PER_SPECIES = 3;
 const MAX_TRAINER_ID = 2000;
 const EV_CAP = 510;
 const EV_STAT_CAP = 252;
+const FALLBACK_BASE_ONLY_SPECIES = new Set([
+	"alcremie",
+	"furfrou",
+	"minior",
+	"vivillon",
+]);
 const NATURE_NAMES_BY_ID = [
 	"Hardy",
 	"Lonely",
@@ -108,6 +114,10 @@ const NATURE_NAMES_BY_ID = [
 	"Careful",
 	"Quirky",
 ];
+
+function toId(text) {
+	return String(text || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
 
 function clampStatEv(value) {
 	const n = Number(value);
@@ -263,6 +273,31 @@ function isDisallowedRandomBattleForm(species) {
 		forme.includes("gmax") ||
 		forme.includes("gigantamax")
 	);
+}
+
+function isExcludedRelumiRandomBattleSpecies(species) {
+	if (!species || !species.exists) return true;
+
+	// Relumi has no tera mechanic in battle formats, so exclude all Ogerpon tera formes.
+	if (species.baseSpecies === "Ogerpon" && String(species.id || "").endsWith("tera")) {
+		return true;
+	}
+
+	return false;
+}
+
+function shouldSkipFallbackForSpecies(species) {
+	if (!species || !species.exists) return true;
+
+	// These species should only include sets for their base forme.
+	if (
+		FALLBACK_BASE_ONLY_SPECIES.has(species.baseSpecies.toLowerCase()) &&
+		species.id !== toId(species.baseSpecies)
+	) {
+		return true;
+	}
+
+	return false;
 }
 
 function inferSinglesRole(species, moveIds, dex) {
@@ -595,6 +630,8 @@ function buildRelumiRandomBattleSets({
 				unmappedTrainerSpecies.add(`${monsNo}_${formNo}`);
 				continue;
 			}
+			if (isExcludedRelumiRandomBattleSpecies(species)) continue;
+			if (shouldSkipFallbackForSpecies(species)) continue;
 			if (isDisallowedRandomBattleForm(species)) continue;
 			if (species.nfe) {
 				ignoredNfeSpecies.add(species.id);
@@ -692,6 +729,8 @@ function buildRelumiRandomBattleSets({
 		const species = dex.species.get(speciesId);
 		if (
 			!species.exists ||
+			isExcludedRelumiRandomBattleSpecies(species) ||
+			shouldSkipFallbackForSpecies(species) ||
 			species.nfe ||
 			isDisallowedRandomBattleForm(species)
 		)
