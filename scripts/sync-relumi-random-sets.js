@@ -78,6 +78,7 @@ const SINGLES_SUPPORT_MOVES = new Set([
 
 const MIN_NON_DITTO_MOVES = 3;
 const MAX_GENERATED_SETS_PER_SPECIES = 3;
+const MAX_TRAINER_ID = 2000;
 const EV_CAP = 510;
 const EV_STAT_CAP = 252;
 const NATURE_NAMES_BY_ID = [
@@ -471,6 +472,13 @@ function buildSetFromCandidate(candidate, isDoubles) {
 		abilities: candidate.abilities,
 		teraTypes: candidate.teraTypes,
 	};
+	if (
+		Number.isInteger(candidate.trainerId) &&
+		candidate.trainerId > 0 &&
+		candidate.trainerId <= MAX_TRAINER_ID
+	) {
+		set.trainerId = candidate.trainerId;
+	}
 	if (candidate.trainerSetData) {
 		if (candidate.trainerSetData.item) {
 			set.item = [candidate.trainerSetData.item];
@@ -577,6 +585,7 @@ function buildRelumiRandomBattleSets({
 
 			const trainerLevel = Number(trainer[`P${slot}Level`] || 1);
 			const trainerSetData = {};
+			const trainerId = Number(trainer.ID || 0);
 
 			const itemNo = Number(trainer[`P${slot}Item`] || 0);
 			if (itemNo > 0) {
@@ -612,6 +621,9 @@ function buildRelumiRandomBattleSets({
 				dex,
 				trainerSetData,
 			);
+			if (trainerId > 0 && trainerId <= MAX_TRAINER_ID) {
+				candidate.trainerId = trainerId;
+			}
 
 			if (!candidatesBySpecies.has(species.id)) {
 				candidatesBySpecies.set(species.id, []);

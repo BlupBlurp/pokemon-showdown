@@ -17,6 +17,7 @@
                     "Grass",
                     "Ice"
                 ],
+                "trainerId": 1056,
                 "item": [
                     "Icy Rock"
                 ],
@@ -47,6 +48,7 @@
                     "Grass",
                     "Ice"
                 ],
+                "trainerId": 916,
                 "item": [
                     "Focus Sash"
                 ],
@@ -77,6 +79,7 @@
                     "Grass",
                     "Ice"
                 ],
+                "trainerId": 915,
                 "item": [
                     "Focus Sash"
                 ],
@@ -111,6 +114,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 813,
                 "item": [
                     "Focus Sash"
                 ],
@@ -169,6 +173,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 1048,
                 "item": [
                     "Scope Lens"
                 ],
@@ -203,6 +208,7 @@
                 "teraTypes": [
                     "Bug"
                 ],
+                "trainerId": 923,
                 "item": [
                     "Focus Sash"
                 ],
@@ -232,6 +238,7 @@
                 "teraTypes": [
                     "Bug"
                 ],
+                "trainerId": 855,
                 "item": [
                     "Damp Rock"
                 ],
@@ -267,6 +274,7 @@
                     "Steel",
                     "Ghost"
                 ],
+                "trainerId": 1002,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -297,6 +305,7 @@
                     "Steel",
                     "Ghost"
                 ],
+                "trainerId": 889,
                 "item": [
                     "Life Orb"
                 ],
@@ -399,6 +408,7 @@
                     "Rock",
                     "Flying"
                 ],
+                "trainerId": 1044,
                 "item": [
                     "Choice Band"
                 ],
@@ -429,6 +439,7 @@
                     "Rock",
                     "Flying"
                 ],
+                "trainerId": 892,
                 "item": [
                     "Assault Vest"
                 ],
@@ -494,6 +505,7 @@
                     "Steel",
                     "Rock"
                 ],
+                "trainerId": 1053,
                 "item": [
                     "Assault Vest"
                 ],
@@ -524,6 +536,7 @@
                     "Steel",
                     "Rock"
                 ],
+                "trainerId": 1081,
                 "item": [
                     "Focus Sash"
                 ],
@@ -558,6 +571,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 937,
                 "item": [
                     "Life Orb"
                 ],
@@ -587,6 +601,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 818,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -1023,6 +1038,7 @@
                     "Dragon",
                     "Flying"
                 ],
+                "trainerId": 1010,
                 "item": [
                     "Leftovers"
                 ],
@@ -1146,6 +1162,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 813,
                 "item": [
                     "Life Orb"
                 ],
@@ -1210,6 +1227,7 @@
                     "Grass",
                     "Poison"
                 ],
+                "trainerId": 210,
                 "nature": [
                     "Modest"
                 ],
@@ -1334,6 +1352,7 @@
                     "Fighting",
                     "Ghost"
                 ],
+                "trainerId": 899,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -1369,6 +1388,7 @@
                     "Grass",
                     "Dragon"
                 ],
+                "trainerId": 827,
                 "item": [
                     "Eject Pack"
                 ],
@@ -1404,6 +1424,7 @@
                     "Water",
                     "Bug"
                 ],
+                "trainerId": 925,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -1434,6 +1455,7 @@
                     "Water",
                     "Bug"
                 ],
+                "trainerId": 171,
                 "nature": [
                     "Hardy"
                 ],
@@ -1567,6 +1589,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 1034,
                 "item": [
                     "Life Orb"
                 ],
@@ -1596,6 +1619,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 1037,
                 "item": [
                     "Life Orb"
                 ],
@@ -1631,6 +1655,7 @@
                     "Fire",
                     "Rock"
                 ],
+                "trainerId": 893,
                 "item": [
                     "Focus Sash"
                 ],
@@ -1661,6 +1686,7 @@
                     "Fire",
                     "Rock"
                 ],
+                "trainerId": 980,
                 "item": [
                     "Passho Berry"
                 ],
@@ -1691,6 +1717,7 @@
                     "Fire",
                     "Rock"
                 ],
+                "trainerId": 872,
                 "item": [
                     "Choice Band"
                 ],
@@ -2356,6 +2383,7 @@
                     "Steel",
                     "Dragon"
                 ],
+                "trainerId": 914,
                 "item": [
                     "Assault Vest"
                 ],
@@ -2391,6 +2419,7 @@
                     "Rock",
                     "Flying"
                 ],
+                "trainerId": 893,
                 "item": [
                     "Flying Gem"
                 ],
@@ -2426,6 +2455,7 @@
                     "Water",
                     "Ice"
                 ],
+                "trainerId": 850,
                 "item": [
                     "Life Orb"
                 ],
@@ -2461,6 +2491,7 @@
                     "Electric",
                     "Ice"
                 ],
+                "trainerId": 918,
                 "item": [
                     "Wide Lens"
                 ],
@@ -2491,6 +2522,7 @@
                     "Electric",
                     "Ice"
                 ],
+                "trainerId": 847,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -2591,6 +2623,7 @@
                     "Rock",
                     "Bug"
                 ],
+                "trainerId": 816,
                 "item": [
                     "Choice Band"
                 ],
@@ -2724,6 +2757,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 544,
                 "nature": [
                     "Bold"
                 ],
@@ -2756,6 +2790,7 @@
                     "Ice",
                     "Flying"
                 ],
+                "trainerId": 915,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -2786,6 +2821,7 @@
                     "Ice",
                     "Flying"
                 ],
+                "trainerId": 1056,
                 "item": [
                     "Light Clay"
                 ],
@@ -2821,6 +2857,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 935,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -2895,6 +2932,7 @@
                     "Rock",
                     "Ice"
                 ],
+                "trainerId": 891,
                 "item": [
                     "Focus Sash"
                 ],
@@ -2925,6 +2963,7 @@
                     "Rock",
                     "Ice"
                 ],
+                "trainerId": 376,
                 "nature": [
                     "Hardy"
                 ],
@@ -2956,6 +2995,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 299,
                 "nature": [
                     "Hardy"
                 ],
@@ -2988,6 +3028,7 @@
                     "Ice",
                     "Rock"
                 ],
+                "trainerId": 1023,
                 "item": [
                     "Assault Vest"
                 ],
@@ -3018,6 +3059,7 @@
                     "Ice",
                     "Rock"
                 ],
+                "trainerId": 485,
                 "item": [
                     "Chople Berry"
                 ],
@@ -3052,6 +3094,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 812,
                 "item": [
                     "Choice Band"
                 ],
@@ -3081,6 +3124,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 935,
                 "item": [
                     "Focus Sash"
                 ],
@@ -3116,6 +3160,7 @@
                     "Water",
                     "Fairy"
                 ],
+                "trainerId": 1052,
                 "item": [
                     "Choice Band"
                 ],
@@ -3146,6 +3191,7 @@
                     "Water",
                     "Fairy"
                 ],
+                "trainerId": 811,
                 "item": [
                     "Choice Band"
                 ],
@@ -3176,6 +3222,7 @@
                     "Water",
                     "Fairy"
                 ],
+                "trainerId": 996,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -3210,6 +3257,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 1048,
                 "item": [
                     "Life Orb"
                 ],
@@ -3239,6 +3287,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 1047,
                 "item": [
                     "Aguav Berry"
                 ],
@@ -3343,6 +3392,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 538,
                 "nature": [
                     "Adamant"
                 ],
@@ -3369,6 +3419,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 842,
                 "item": [
                     "Choice Band"
                 ],
@@ -3404,6 +3455,7 @@
                     "Water",
                     "Ghost"
                 ],
+                "trainerId": 1061,
                 "item": [
                     "Life Orb"
                 ],
@@ -3434,6 +3486,7 @@
                     "Water",
                     "Ghost"
                 ],
+                "trainerId": 1030,
                 "item": [
                     "Life Orb"
                 ],
@@ -3469,6 +3522,7 @@
                     "Water",
                     "Ghost"
                 ],
+                "trainerId": 707,
                 "item": [
                     "Expert Belt"
                 ],
@@ -3499,6 +3553,7 @@
                     "Water",
                     "Ghost"
                 ],
+                "trainerId": 484,
                 "nature": [
                     "Docile"
                 ],
@@ -3530,6 +3585,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 767,
                 "item": [
                     "Eviolite"
                 ],
@@ -3604,6 +3660,7 @@
                     "Rock",
                     "Steel"
                 ],
+                "trainerId": 1054,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -3664,6 +3721,7 @@
                     "Rock",
                     "Steel"
                 ],
+                "trainerId": 822,
                 "item": [
                     "Choice Specs"
                 ],
@@ -3737,6 +3795,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 917,
                 "item": [
                     "Focus Sash"
                 ],
@@ -3766,6 +3825,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 296,
                 "nature": [
                     "Hardy"
                 ],
@@ -3927,6 +3987,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 869,
                 "item": [
                     "Life Orb"
                 ],
@@ -3956,6 +4017,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 208,
                 "nature": [
                     "Hardy"
                 ],
@@ -4026,6 +4088,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 677,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -4055,6 +4118,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 454,
                 "nature": [
                     "Modest"
                 ],
@@ -4087,6 +4151,7 @@
                     "Normal",
                     "Fighting"
                 ],
+                "trainerId": 971,
                 "item": [
                     "Assault Vest"
                 ],
@@ -4117,6 +4182,7 @@
                     "Normal",
                     "Fighting"
                 ],
+                "trainerId": 951,
                 "item": [
                     "Assault Vest"
                 ],
@@ -4193,6 +4259,7 @@
                     "Fire",
                     "Ghost"
                 ],
+                "trainerId": 899,
                 "item": [
                     "Focus Sash"
                 ],
@@ -4227,6 +4294,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 907,
                 "item": [
                     "White Herb"
                 ],
@@ -4285,6 +4353,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 950,
                 "nature": [
                     "Jolly"
                 ],
@@ -4317,6 +4386,7 @@
                     "Fire",
                     "Fighting"
                 ],
+                "trainerId": 932,
                 "item": [
                     "Wide Lens"
                 ],
@@ -4377,6 +4447,7 @@
                     "Fire",
                     "Fighting"
                 ],
+                "trainerId": 815,
                 "item": [
                     "Life Orb"
                 ],
@@ -4440,6 +4511,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 998,
                 "item": [
                     "Rocky Helmet"
                 ],
@@ -4503,6 +4575,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 854,
                 "item": [
                     "Life Orb"
                 ],
@@ -4532,6 +4605,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 227,
                 "nature": [
                     "Hardy"
                 ],
@@ -4604,6 +4678,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 442,
                 "nature": [
                     "Adamant"
                 ],
@@ -4630,6 +4705,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 808,
                 "item": [
                     "Assault Vest"
                 ],
@@ -4704,6 +4780,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 802,
                 "item": [
                     "White Herb"
                 ],
@@ -4734,6 +4811,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 157,
                 "nature": [
                     "Hardy"
                 ],
@@ -4766,6 +4844,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 871,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -4796,6 +4875,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 166,
                 "nature": [
                     "Hardy"
                 ],
@@ -4888,6 +4968,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 1046,
                 "item": [
                     "Toxic Orb"
                 ],
@@ -4953,6 +5034,7 @@
                     "Steel",
                     "Psychic"
                 ],
+                "trainerId": 911,
                 "item": [
                     "Occa Berry"
                 ],
@@ -5055,6 +5137,7 @@
                     "Water",
                     "Psychic"
                 ],
+                "trainerId": 971,
                 "item": [
                     "Expert Belt"
                 ],
@@ -5090,6 +5173,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 450,
                 "nature": [
                     "Modest"
                 ],
@@ -5116,6 +5200,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 224,
                 "nature": [
                     "Bashful"
                 ],
@@ -5148,6 +5233,7 @@
                     "Bug",
                     "Fighting"
                 ],
+                "trainerId": 923,
                 "item": [
                     "Assault Vest"
                 ],
@@ -5183,6 +5269,7 @@
                     "Grass",
                     "Dark"
                 ],
+                "trainerId": 544,
                 "nature": [
                     "Adamant"
                 ],
@@ -5210,6 +5297,7 @@
                     "Grass",
                     "Dark"
                 ],
+                "trainerId": 765,
                 "item": [
                     "Focus Sash"
                 ],
@@ -5245,6 +5333,7 @@
                     "Psychic",
                     "Grass"
                 ],
+                "trainerId": 915,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -5275,6 +5364,7 @@
                     "Psychic",
                     "Grass"
                 ],
+                "trainerId": 895,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -5310,6 +5400,7 @@
                     "Psychic",
                     "Ice"
                 ],
+                "trainerId": 916,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -5442,6 +5533,7 @@
                     "Fire",
                     "Ground"
                 ],
+                "trainerId": 1026,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -5541,6 +5633,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 829,
                 "item": [
                     "Scope Lens"
                 ],
@@ -5576,6 +5669,7 @@
                     "Water",
                     "Rock"
                 ],
+                "trainerId": 991,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -5610,6 +5704,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 299,
                 "nature": [
                     "Hardy"
                 ],
@@ -5636,6 +5731,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 193,
                 "nature": [
                     "Hardy"
                 ],
@@ -5803,6 +5899,7 @@
                     "Psychic",
                     "Grass"
                 ],
+                "trainerId": 897,
                 "item": [
                     "Assault Vest"
                 ],
@@ -5838,6 +5935,7 @@
                     "Steel",
                     "Flying"
                 ],
+                "trainerId": 914,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -5873,6 +5971,7 @@
                     "Fire",
                     "Bug"
                 ],
+                "trainerId": 858,
                 "item": [
                     "Life Orb"
                 ],
@@ -5903,6 +6002,7 @@
                     "Fire",
                     "Bug"
                 ],
+                "trainerId": 943,
                 "item": [
                     "Passho Berry"
                 ],
@@ -6016,6 +6116,7 @@
                     "Ghost",
                     "Fire"
                 ],
+                "trainerId": 934,
                 "item": [
                     "Focus Sash"
                 ],
@@ -6046,6 +6147,7 @@
                     "Ghost",
                     "Fire"
                 ],
+                "trainerId": 949,
                 "item": [
                     "Focus Sash"
                 ],
@@ -6076,6 +6178,7 @@
                     "Ghost",
                     "Fire"
                 ],
+                "trainerId": 447,
                 "nature": [
                     "Timid"
                 ],
@@ -6138,6 +6241,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 931,
                 "item": [
                     "Focus Sash"
                 ],
@@ -6203,6 +6307,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 879,
                 "item": [
                     "Life Orb"
                 ],
@@ -6295,6 +6400,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 1045,
                 "item": [
                     "Heat Rock"
                 ],
@@ -6365,6 +6471,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 62,
                 "nature": [
                     "Adamant"
                 ],
@@ -6392,6 +6499,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 837,
                 "item": [
                     "Leftovers"
                 ],
@@ -6492,6 +6600,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 167,
                 "nature": [
                     "Bashful"
                 ],
@@ -6560,6 +6669,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 54,
                 "nature": [
                     "Jolly"
                 ],
@@ -6591,6 +6701,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 931,
                 "item": [
                     "Wide Lens"
                 ],
@@ -6620,6 +6731,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 807,
                 "item": [
                     "Wide Lens"
                 ],
@@ -6654,6 +6766,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 803,
                 "item": [
                     "Expert Belt"
                 ],
@@ -6683,6 +6796,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 761,
                 "item": [
                     "Expert Belt"
                 ],
@@ -6718,6 +6832,7 @@
                     "Ground",
                     "Psychic"
                 ],
+                "trainerId": 935,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -6812,6 +6927,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 820,
                 "item": [
                     "Leftovers"
                 ],
@@ -6905,6 +7021,7 @@
                     "Poison",
                     "Ground"
                 ],
+                "trainerId": 945,
                 "item": [
                     "Heavy-Duty Boots"
                 ],
@@ -6970,6 +7087,7 @@
                     "Water",
                     "Ice"
                 ],
+                "trainerId": 1056,
                 "item": [
                     "White Herb"
                 ],
@@ -7035,6 +7153,7 @@
                     "Rock",
                     "Fire"
                 ],
+                "trainerId": 1022,
                 "item": [
                     "Power Herb"
                 ],
@@ -7065,6 +7184,7 @@
                     "Rock",
                     "Fire"
                 ],
+                "trainerId": 672,
                 "nature": [
                     "Quirky"
                 ],
@@ -7097,6 +7217,7 @@
                     "Steel",
                     "Fighting"
                 ],
+                "trainerId": 911,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -7131,6 +7252,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 1002,
                 "item": [
                     "Lum Berry"
                 ],
@@ -7160,6 +7282,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 459,
                 "nature": [
                     "Calm"
                 ],
@@ -7230,6 +7353,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 903,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -7259,6 +7383,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 338,
                 "nature": [
                     "Hardy"
                 ],
@@ -7290,6 +7415,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 995,
                 "item": [
                     "Life Orb"
                 ],
@@ -7319,6 +7445,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 844,
                 "item": [
                     "Leftovers"
                 ],
@@ -7389,6 +7516,7 @@
                     "Flying",
                     "Steel"
                 ],
+                "trainerId": 1018,
                 "item": [
                     "Leftovers"
                 ],
@@ -7419,6 +7547,7 @@
                     "Flying",
                     "Steel"
                 ],
+                "trainerId": 874,
                 "item": [
                     "Rocky Helmet"
                 ],
@@ -7449,6 +7578,7 @@
                     "Flying",
                     "Steel"
                 ],
+                "trainerId": 666,
                 "item": [
                     "Occa Berry"
                 ],
@@ -7484,6 +7614,7 @@
                     "Fighting",
                     "Ice"
                 ],
+                "trainerId": 465,
                 "nature": [
                     "Adamant"
                 ],
@@ -7511,6 +7642,7 @@
                     "Fighting",
                     "Ice"
                 ],
+                "trainerId": 335,
                 "nature": [
                     "Hardy"
                 ],
@@ -7543,6 +7675,7 @@
                     "Rock",
                     "Grass"
                 ],
+                "trainerId": 1044,
                 "item": [
                     "Leftovers"
                 ],
@@ -7573,6 +7706,7 @@
                     "Rock",
                     "Grass"
                 ],
+                "trainerId": 1081,
                 "item": [
                     "Leftovers"
                 ],
@@ -7608,6 +7742,7 @@
                     "Flying",
                     "Water"
                 ],
+                "trainerId": 787,
                 "item": [
                     "Focus Sash"
                 ],
@@ -7638,6 +7773,7 @@
                     "Flying",
                     "Water"
                 ],
+                "trainerId": 760,
                 "item": [
                     "Focus Sash"
                 ],
@@ -7747,6 +7883,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 947,
                 "item": [
                     "Focus Sash"
                 ],
@@ -7807,6 +7944,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 889,
                 "item": [
                     "Focus Sash"
                 ],
@@ -7877,6 +8015,7 @@
                     "Poison",
                     "Flying"
                 ],
+                "trainerId": 822,
                 "item": [
                     "Choice Band"
                 ],
@@ -7907,6 +8046,7 @@
                     "Poison",
                     "Flying"
                 ],
+                "trainerId": 1050,
                 "item": [
                     "Focus Sash"
                 ],
@@ -7972,6 +8112,7 @@
                     "Bug",
                     "Rock"
                 ],
+                "trainerId": 443,
                 "nature": [
                     "Adamant"
                 ],
@@ -8151,6 +8292,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 1048,
                 "item": [
                     "Focus Sash"
                 ],
@@ -8180,6 +8322,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 947,
                 "item": [
                     "Life Orb"
                 ],
@@ -8214,6 +8357,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 932,
                 "item": [
                     "Life Orb"
                 ],
@@ -8248,6 +8392,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 915,
                 "item": [
                     "Focus Sash"
                 ],
@@ -8277,6 +8422,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 848,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -8386,6 +8532,7 @@
                     "Grass",
                     "Ghost"
                 ],
+                "trainerId": 901,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -8416,6 +8563,7 @@
                     "Grass",
                     "Ghost"
                 ],
+                "trainerId": 431,
                 "nature": [
                     "Adamant"
                 ],
@@ -8448,6 +8596,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 905,
                 "item": [
                     "Focus Sash"
                 ],
@@ -8478,6 +8627,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 872,
                 "item": [
                     "Heavy-Duty Boots"
                 ],
@@ -8653,6 +8803,7 @@
                     "Ice",
                     "Flying"
                 ],
+                "trainerId": 848,
                 "item": [
                     "Light Clay"
                 ],
@@ -8688,6 +8839,7 @@
                     "Fire",
                     "Psychic"
                 ],
+                "trainerId": 934,
                 "item": [
                     "Life Orb"
                 ],
@@ -8718,6 +8870,7 @@
                     "Fire",
                     "Psychic"
                 ],
+                "trainerId": 302,
                 "nature": [
                     "Hardy"
                 ],
@@ -8919,6 +9072,7 @@
                     "Water",
                     "Ice"
                 ],
+                "trainerId": 916,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -8949,6 +9103,7 @@
                     "Water",
                     "Ice"
                 ],
+                "trainerId": 847,
                 "item": [
                     "Leftovers"
                 ],
@@ -8984,6 +9139,7 @@
                     "Ghost",
                     "Grass"
                 ],
+                "trainerId": 204,
                 "nature": [
                     "Hardy"
                 ],
@@ -9043,6 +9199,7 @@
                     "Steel",
                     "Dragon"
                 ],
+                "trainerId": 886,
                 "nature": [
                     "Hardy"
                 ],
@@ -9114,6 +9271,7 @@
                     "Rock",
                     "Fairy"
                 ],
+                "trainerId": 892,
                 "item": [
                     "Babiri Berry"
                 ],
@@ -9149,6 +9307,7 @@
                     "Normal",
                     "Ground"
                 ],
+                "trainerId": 806,
                 "item": [
                     "Assault Vest"
                 ],
@@ -9179,6 +9338,7 @@
                     "Normal",
                     "Ground"
                 ],
+                "trainerId": 764,
                 "item": [
                     "Assault Vest"
                 ],
@@ -9210,6 +9370,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 998,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -9344,6 +9505,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 1912,
                 "item": [
                     "Rindo Berry"
                 ],
@@ -9379,6 +9541,7 @@
                     "Water",
                     "Dragon"
                 ],
+                "trainerId": 170,
                 "nature": [
                     "Hardy"
                 ],
@@ -9411,6 +9574,7 @@
                     "Electric",
                     "Dragon"
                 ],
+                "trainerId": 975,
                 "item": [
                     "Expert Belt"
                 ],
@@ -9441,6 +9605,7 @@
                     "Electric",
                     "Dragon"
                 ],
+                "trainerId": 171,
                 "nature": [
                     "Hardy"
                 ],
@@ -9514,6 +9679,7 @@
                     "Dragon",
                     "Ghost"
                 ],
+                "trainerId": 949,
                 "item": [
                     "Assault Vest"
                 ],
@@ -9544,6 +9710,7 @@
                     "Dragon",
                     "Ghost"
                 ],
+                "trainerId": 1010,
                 "item": [
                     "Life Orb"
                 ],
@@ -9579,6 +9746,7 @@
                     "Dragon",
                     "Flying"
                 ],
+                "trainerId": 1050,
                 "item": [
                     "Expert Belt"
                 ],
@@ -9609,6 +9777,7 @@
                     "Dragon",
                     "Flying"
                 ],
+                "trainerId": 819,
                 "item": [
                     "Heavy-Duty Boots"
                 ],
@@ -9715,6 +9884,7 @@
                     "Poison",
                     "Dark"
                 ],
+                "trainerId": 923,
                 "item": [
                     "Assault Vest"
                 ],
@@ -9810,6 +9980,7 @@
                     "Water",
                     "Rock"
                 ],
+                "trainerId": 891,
                 "item": [
                     "Focus Sash"
                 ],
@@ -9840,6 +10011,7 @@
                     "Water",
                     "Rock"
                 ],
+                "trainerId": 666,
                 "item": [
                     "Assault Vest"
                 ],
@@ -9875,6 +10047,7 @@
                     "Ghost",
                     "Flying"
                 ],
+                "trainerId": 817,
                 "item": [
                     "Flame Orb"
                 ],
@@ -9935,6 +10108,7 @@
                     "Ghost",
                     "Flying"
                 ],
+                "trainerId": 1047,
                 "item": [
                     "Flame Orb"
                 ],
@@ -9969,6 +10143,7 @@
                 "teraTypes": [
                     "Dragon"
                 ],
+                "trainerId": 161,
                 "nature": [
                     "Hardy"
                 ],
@@ -10000,6 +10175,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 651,
                 "nature": [
                     "Jolly"
                 ],
@@ -10026,6 +10202,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 1108,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -10167,6 +10344,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 697,
                 "item": [
                     "Choice Band"
                 ],
@@ -10231,6 +10409,7 @@
                     "Ground",
                     "Steel"
                 ],
+                "trainerId": 859,
                 "item": [
                     "Focus Sash"
                 ],
@@ -10261,6 +10440,7 @@
                     "Ground",
                     "Steel"
                 ],
+                "trainerId": 945,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -10296,6 +10476,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 926,
                 "item": [
                     "Focus Sash"
                 ],
@@ -10326,6 +10507,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 855,
                 "item": [
                     "Life Orb"
                 ],
@@ -10360,6 +10542,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 901,
                 "item": [
                     "Assault Vest"
                 ],
@@ -10389,6 +10572,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 815,
                 "item": [
                     "Choice Band"
                 ],
@@ -10483,6 +10667,7 @@
                     "Bug",
                     "Poison"
                 ],
+                "trainerId": 1910,
                 "item": [
                     "Light Clay"
                 ],
@@ -10517,6 +10702,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 939,
                 "item": [
                     "Focus Sash"
                 ],
@@ -10546,6 +10732,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 982,
                 "item": [
                     "Assault Vest"
                 ],
@@ -10575,6 +10762,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 874,
                 "item": [
                     "Assault Vest"
                 ],
@@ -10648,6 +10836,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 109,
                 "nature": [
                     "Hardy"
                 ],
@@ -10714,6 +10903,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 830,
                 "item": [
                     "Eject Button"
                 ],
@@ -10748,6 +10938,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 919,
                 "item": [
                     "Focus Sash"
                 ],
@@ -10869,6 +11060,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 1057,
                 "item": [
                     "Assault Vest"
                 ],
@@ -10932,6 +11124,7 @@
                     "Electric",
                     "Grass"
                 ],
+                "trainerId": 897,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -10962,6 +11155,7 @@
                     "Electric",
                     "Grass"
                 ],
+                "trainerId": 1030,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -10997,6 +11191,7 @@
                     "Fire",
                     "Fighting"
                 ],
+                "trainerId": 865,
                 "item": [
                     "Life Orb"
                 ],
@@ -11027,6 +11222,7 @@
                     "Fire",
                     "Fighting"
                 ],
+                "trainerId": 837,
                 "item": [
                     "Choice Band"
                 ],
@@ -11062,6 +11258,7 @@
                     "Electric",
                     "Flying"
                 ],
+                "trainerId": 255,
                 "nature": [
                     "Quirky"
                 ],
@@ -11154,6 +11351,7 @@
                     "Water",
                     "Steel"
                 ],
+                "trainerId": 815,
                 "item": [
                     "Leftovers"
                 ],
@@ -11264,6 +11462,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 931,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -11328,6 +11527,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 925,
                 "item": [
                     "Wide Lens"
                 ],
@@ -11358,6 +11558,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 297,
                 "nature": [
                     "Hardy"
                 ],
@@ -11457,6 +11658,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 938,
                 "item": [
                     "Life Orb"
                 ],
@@ -11486,6 +11688,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 699,
                 "item": [
                     "Salac Berry"
                 ],
@@ -11595,6 +11798,7 @@
                     "Ground",
                     "Steel"
                 ],
+                "trainerId": 927,
                 "item": [
                     "Expert Belt"
                 ],
@@ -11625,6 +11829,7 @@
                     "Ground",
                     "Steel"
                 ],
+                "trainerId": 859,
                 "item": [
                     "Expert Belt"
                 ],
@@ -11789,6 +11994,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 446,
                 "nature": [
                     "Modest"
                 ],
@@ -11846,6 +12052,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 838,
                 "item": [
                     "Choice Band"
                 ],
@@ -11943,6 +12150,7 @@
                     "Normal",
                     "Psychic"
                 ],
+                "trainerId": 935,
                 "item": [
                     "Throat Spray"
                 ],
@@ -11978,6 +12186,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 813,
                 "item": [
                     "Scope Lens"
                 ],
@@ -12042,6 +12251,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 908,
                 "item": [
                     "Life Orb"
                 ],
@@ -12071,6 +12281,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 813,
                 "item": [
                     "Life Orb"
                 ],
@@ -12132,6 +12343,7 @@
                     "Grass",
                     "Steel"
                 ],
+                "trainerId": 874,
                 "item": [
                     "Leftovers"
                 ],
@@ -12162,6 +12374,7 @@
                     "Grass",
                     "Steel"
                 ],
+                "trainerId": 846,
                 "item": [
                     "Rocky Helmet"
                 ],
@@ -12346,6 +12559,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 933,
                 "item": [
                     "Flame Orb"
                 ],
@@ -12375,6 +12589,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 1068,
                 "item": [
                     "Toxic Orb"
                 ],
@@ -12409,6 +12624,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 1052,
                 "item": [
                     "Life Orb"
                 ],
@@ -12438,6 +12654,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 907,
                 "item": [
                     "Focus Sash"
                 ],
@@ -12643,6 +12860,7 @@
                     "Ground",
                     "Dragon"
                 ],
+                "trainerId": 926,
                 "item": [
                     "Life Orb"
                 ],
@@ -12673,6 +12891,7 @@
                     "Ground",
                     "Dragon"
                 ],
+                "trainerId": 812,
                 "item": [
                     "Leftovers"
                 ],
@@ -12708,6 +12927,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 1054,
                 "item": [
                     "Leftovers"
                 ],
@@ -12768,6 +12988,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 1053,
                 "item": [
                     "Leftovers"
                 ],
@@ -12803,6 +13024,7 @@
                     "Ice",
                     "Ghost"
                 ],
+                "trainerId": 901,
                 "item": [
                     "Focus Sash"
                 ],
@@ -12833,6 +13055,7 @@
                     "Ice",
                     "Ghost"
                 ],
+                "trainerId": 1056,
                 "item": [
                     "Choice Specs"
                 ],
@@ -12898,6 +13121,7 @@
                     "Ice",
                     "Bug"
                 ],
+                "trainerId": 632,
                 "nature": [
                     "Serious"
                 ],
@@ -12925,6 +13149,7 @@
                     "Ice",
                     "Bug"
                 ],
+                "trainerId": 855,
                 "item": [
                     "Focus Sash"
                 ],
@@ -12959,6 +13184,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 973,
                 "item": [
                     "Assault Vest"
                 ],
@@ -12988,6 +13214,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 953,
                 "item": [
                     "Assault Vest"
                 ],
@@ -13162,6 +13389,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 220,
                 "item": [
                     "Muscle Band"
                 ],
@@ -13376,6 +13604,7 @@
                     "Psychic",
                     "Fighting"
                 ],
+                "trainerId": 1050,
                 "item": [
                     "Choice Band"
                 ],
@@ -13406,6 +13635,7 @@
                     "Psychic",
                     "Fighting"
                 ],
+                "trainerId": 937,
                 "item": [
                     "Focus Sash"
                 ],
@@ -13471,6 +13701,7 @@
                     "Bug",
                     "Electric"
                 ],
+                "trainerId": 924,
                 "item": [
                     "Focus Sash"
                 ],
@@ -13501,6 +13732,7 @@
                     "Bug",
                     "Electric"
                 ],
+                "trainerId": 856,
                 "item": [
                     "Throat Spray"
                 ],
@@ -13535,6 +13767,7 @@
                 "teraTypes": [
                     "Poison"
                 ],
+                "trainerId": 810,
                 "item": [
                     "Air Balloon"
                 ],
@@ -13570,6 +13803,7 @@
                     "Dragon",
                     "Ground"
                 ],
+                "trainerId": 939,
                 "item": [
                     "Focus Sash"
                 ],
@@ -13665,6 +13899,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 949,
                 "item": [
                     "Focus Sash"
                 ],
@@ -13725,6 +13960,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 1979,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -13929,6 +14165,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 923,
                 "item": [
                     "Douse Drive"
                 ],
@@ -14112,6 +14349,7 @@
                     "Ghost",
                     "Poison"
                 ],
+                "trainerId": 900,
                 "item": [
                     "Focus Sash"
                 ],
@@ -14172,6 +14410,7 @@
                     "Ghost",
                     "Poison"
                 ],
+                "trainerId": 814,
                 "item": [
                     "Choice Specs"
                 ],
@@ -14243,6 +14482,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 958,
                 "item": [
                     "Smooth Rock"
                 ],
@@ -14278,6 +14518,7 @@
                     "Ghost",
                     "Dragon"
                 ],
+                "trainerId": 942,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -14347,6 +14588,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 1056,
                 "item": [
                     "Choice Specs"
                 ],
@@ -14376,6 +14618,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 942,
                 "item": [
                     "Assault Vest"
                 ],
@@ -14633,6 +14876,7 @@
                     "Ground",
                     "Flying"
                 ],
+                "trainerId": 697,
                 "item": [
                     "Toxic Orb"
                 ],
@@ -14663,6 +14907,7 @@
                     "Ground",
                     "Flying"
                 ],
+                "trainerId": 457,
                 "nature": [
                     "Adamant"
                 ],
@@ -14694,6 +14939,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 539,
                 "nature": [
                     "Careful"
                 ],
@@ -14720,6 +14966,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 800,
                 "item": [
                     "Life Orb"
                 ],
@@ -14754,6 +15001,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 974,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -14783,6 +15031,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 954,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -14878,6 +15127,7 @@
                     "Rock",
                     "Ground"
                 ],
+                "trainerId": 1043,
                 "item": [
                     "Assault Vest"
                 ],
@@ -14913,6 +15163,7 @@
                     "Rock",
                     "Electric"
                 ],
+                "trainerId": 168,
                 "nature": [
                     "Hardy"
                 ],
@@ -14940,6 +15191,7 @@
                     "Rock",
                     "Electric"
                 ],
+                "trainerId": 854,
                 "item": [
                     "Muscle Band"
                 ],
@@ -14975,6 +15227,7 @@
                     "Bug",
                     "Water"
                 ],
+                "trainerId": 857,
                 "item": [
                     "Assault Vest"
                 ],
@@ -15005,6 +15258,7 @@
                     "Bug",
                     "Water"
                 ],
+                "trainerId": 206,
                 "nature": [
                     "Adamant"
                 ],
@@ -15037,6 +15291,7 @@
                     "Ground",
                     "Ghost"
                 ],
+                "trainerId": 902,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -15067,6 +15322,7 @@
                     "Ground",
                     "Ghost"
                 ],
+                "trainerId": 440,
                 "nature": [
                     "Adamant"
                 ],
@@ -15098,6 +15354,7 @@
                 "teraTypes": [
                     "Dragon"
                 ],
+                "trainerId": 441,
                 "nature": [
                     "Hasty"
                 ],
@@ -15130,6 +15387,7 @@
                     "Steel",
                     "Dragon"
                 ],
+                "trainerId": 911,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -15160,6 +15418,7 @@
                     "Steel",
                     "Dragon"
                 ],
+                "trainerId": 1010,
                 "item": [
                     "Assault Vest"
                 ],
@@ -15257,6 +15516,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 459,
                 "nature": [
                     "Quiet"
                 ],
@@ -15283,6 +15543,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 870,
                 "item": [
                     "Life Orb"
                 ],
@@ -15355,6 +15616,7 @@
                     "Ghost",
                     "Grass"
                 ],
+                "trainerId": 1003,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -15385,6 +15647,7 @@
                     "Ghost",
                     "Grass"
                 ],
+                "trainerId": 1002,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -15583,6 +15846,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 1070,
                 "item": [
                     "Expert Belt"
                 ],
@@ -15641,6 +15905,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 1980,
                 "item": [
                     "Expert Belt"
                 ],
@@ -15675,6 +15940,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 799,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -15784,6 +16050,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 1026,
                 "item": [
                     "Heavy-Duty Boots"
                 ],
@@ -15814,6 +16081,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 1006,
                 "item": [
                     "Expert Belt"
                 ],
@@ -15923,6 +16191,7 @@
                     "Dark",
                     "Fairy"
                 ],
+                "trainerId": 1014,
                 "item": [
                     "Chesto Berry"
                 ],
@@ -15953,6 +16222,7 @@
                     "Dark",
                     "Fairy"
                 ],
+                "trainerId": 1108,
                 "item": [
                     "Expert Belt"
                 ],
@@ -16162,6 +16432,7 @@
                     "Water",
                     "Flying"
                 ],
+                "trainerId": 1052,
                 "item": [
                     "Leftovers"
                 ],
@@ -16192,6 +16463,7 @@
                     "Water",
                     "Flying"
                 ],
+                "trainerId": 909,
                 "item": [
                     "Life Orb"
                 ],
@@ -16256,6 +16528,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 1050,
                 "item": [
                     "Flame Orb"
                 ],
@@ -16311,6 +16584,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 810,
                 "item": [
                     "Flame Orb"
                 ],
@@ -16346,6 +16620,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 1014,
                 "item": [
                     "Leftovers"
                 ],
@@ -16376,6 +16651,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 869,
                 "item": [
                     "Assault Vest"
                 ],
@@ -16411,6 +16687,7 @@
                     "Fighting",
                     "Flying"
                 ],
+                "trainerId": 837,
                 "item": [
                     "White Herb"
                 ],
@@ -16445,6 +16722,7 @@
                 "teraTypes": [
                     "Dragon"
                 ],
+                "trainerId": 993,
                 "item": [
                     "Focus Sash"
                 ],
@@ -16474,6 +16752,7 @@
                 "teraTypes": [
                     "Dragon"
                 ],
+                "trainerId": 803,
                 "item": [
                     "Focus Sash"
                 ],
@@ -16508,6 +16787,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 976,
                 "item": [
                     "Focus Sash"
                 ],
@@ -16537,6 +16817,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 956,
                 "item": [
                     "Focus Sash"
                 ],
@@ -16572,6 +16853,7 @@
                     "Fire",
                     "Steel"
                 ],
+                "trainerId": 911,
                 "item": [
                     "Air Balloon"
                 ],
@@ -16637,6 +16919,7 @@
                     "Electric",
                     "Normal"
                 ],
+                "trainerId": 805,
                 "item": [
                     "Focus Sash"
                 ],
@@ -16667,6 +16950,7 @@
                     "Electric",
                     "Normal"
                 ],
+                "trainerId": 852,
                 "item": [
                     "Choice Specs"
                 ],
@@ -16732,6 +17016,7 @@
                     "Bug",
                     "Fighting"
                 ],
+                "trainerId": 924,
                 "item": [
                     "Wide Lens"
                 ],
@@ -16854,6 +17139,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 927,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -16943,6 +17229,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 835,
                 "item": [
                     "Expert Belt"
                 ],
@@ -16977,6 +17264,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 1050,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -17035,6 +17323,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 443,
                 "nature": [
                     "Jolly"
                 ],
@@ -17287,6 +17576,7 @@
                     "Psychic",
                     "Ghost"
                 ],
+                "trainerId": 935,
                 "item": [
                     "Focus Sash"
                 ],
@@ -17419,6 +17709,7 @@
                     "Dark",
                     "Fire"
                 ],
+                "trainerId": 819,
                 "item": [
                     "Life Orb"
                 ],
@@ -17595,6 +17886,7 @@
                     "Dark",
                     "Dragon"
                 ],
+                "trainerId": 163,
                 "nature": [
                     "Hardy"
                 ],
@@ -17626,6 +17918,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 937,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -17655,6 +17948,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 821,
                 "item": [
                     "Leftovers"
                 ],
@@ -17684,6 +17978,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 1922,
                 "item": [
                     "Light Clay"
                 ],
@@ -17753,6 +18048,7 @@
                     "Fire",
                     "Dark"
                 ],
+                "trainerId": 933,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -17783,6 +18079,7 @@
                     "Fire",
                     "Dark"
                 ],
+                "trainerId": 703,
                 "item": [
                     "Air Balloon"
                 ],
@@ -17818,6 +18115,7 @@
                     "Psychic",
                     "Normal"
                 ],
+                "trainerId": 938,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -17853,6 +18151,7 @@
                     "Psychic",
                     "Normal"
                 ],
+                "trainerId": 944,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -17918,6 +18217,7 @@
                     "Fire",
                     "Fighting"
                 ],
+                "trainerId": 814,
                 "item": [
                     "Life Orb"
                 ],
@@ -17982,6 +18282,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 910,
                 "item": [
                     "Focus Sash"
                 ],
@@ -18387,6 +18688,7 @@
                     "Water",
                     "Ghost"
                 ],
+                "trainerId": 159,
                 "nature": [
                     "Hardy"
                 ],
@@ -18414,6 +18716,7 @@
                     "Water",
                     "Ghost"
                 ],
+                "trainerId": 839,
                 "item": [
                     "Choice Specs"
                 ],
@@ -18479,6 +18782,7 @@
                     "Steel",
                     "Psychic"
                 ],
+                "trainerId": 913,
                 "item": [
                     "Wide Lens"
                 ],
@@ -18542,6 +18846,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 1057,
                 "item": [
                     "Magnet"
                 ],
@@ -18571,6 +18876,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 1067,
                 "item": [
                     "Magnet"
                 ],
@@ -18698,6 +19004,7 @@
                     "Ice",
                     "Psychic"
                 ],
+                "trainerId": 817,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -18763,6 +19070,7 @@
                     "Rock",
                     "Water"
                 ],
+                "trainerId": 1044,
                 "item": [
                     "Focus Sash"
                 ],
@@ -18793,6 +19101,7 @@
                     "Rock",
                     "Water"
                 ],
+                "trainerId": 894,
                 "item": [
                     "Focus Sash"
                 ],
@@ -18856,6 +19165,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 1026,
                 "item": [
                     "Choice Band"
                 ],
@@ -18920,6 +19230,7 @@
                     "Grass",
                     "Steel"
                 ],
+                "trainerId": 895,
                 "item": [
                     "Focus Sash"
                 ],
@@ -18954,6 +19265,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 667,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -19018,6 +19330,7 @@
                     "Water",
                     "Fighting"
                 ],
+                "trainerId": 907,
                 "item": [
                     "Assault Vest"
                 ],
@@ -19131,6 +19444,7 @@
                     "Dark",
                     "Steel"
                 ],
+                "trainerId": 912,
                 "item": [
                     "Focus Sash"
                 ],
@@ -19196,6 +19510,7 @@
                     "Water",
                     "Dragon"
                 ],
+                "trainerId": 817,
                 "item": [
                     "Life Orb"
                 ],
@@ -19226,6 +19541,7 @@
                     "Water",
                     "Dragon"
                 ],
+                "trainerId": 907,
                 "item": [
                     "Life Orb"
                 ],
@@ -19339,6 +19655,7 @@
                     "Bug",
                     "Rock"
                 ],
+                "trainerId": 894,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -19369,6 +19686,7 @@
                     "Bug",
                     "Rock"
                 ],
+                "trainerId": 856,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -19404,6 +19722,7 @@
                     "Steel",
                     "Fairy"
                 ],
+                "trainerId": 302,
                 "item": [
                     "Lagging Tail"
                 ],
@@ -19438,6 +19757,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 160,
                 "nature": [
                     "Hardy"
                 ],
@@ -19464,6 +19784,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 846,
                 "item": [
                     "Life Orb"
                 ],
@@ -19498,6 +19819,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 535,
                 "nature": [
                     "Adamant"
                 ],
@@ -19530,6 +19852,7 @@
                     "Dragon",
                     "Fighting"
                 ],
+                "trainerId": 903,
                 "item": [
                     "Throat Spray"
                 ],
@@ -19560,6 +19883,7 @@
                     "Dragon",
                     "Fighting"
                 ],
+                "trainerId": 437,
                 "nature": [
                     "Timid"
                 ],
@@ -19587,6 +19911,7 @@
                     "Dragon",
                     "Fighting"
                 ],
+                "trainerId": 650,
                 "nature": [
                     "Adamant"
                 ],
@@ -19693,6 +20018,7 @@
                     "Ground",
                     "Dark"
                 ],
+                "trainerId": 987,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -19723,6 +20049,7 @@
                     "Ground",
                     "Dark"
                 ],
+                "trainerId": 860,
                 "item": [
                     "Focus Sash"
                 ],
@@ -19904,6 +20231,7 @@
                     "Ground",
                     "Flying"
                 ],
+                "trainerId": 927,
                 "item": [
                     "Life Orb"
                 ],
@@ -20036,6 +20364,7 @@
                     "Water",
                     "Electric"
                 ],
+                "trainerId": 442,
                 "nature": [
                     "Modest"
                 ],
@@ -20128,6 +20457,7 @@
                     "Water",
                     "Ice"
                 ],
+                "trainerId": 950,
                 "nature": [
                     "Modest"
                 ],
@@ -20160,6 +20490,7 @@
                     "Dragon",
                     "Psychic"
                 ],
+                "trainerId": 936,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -20255,6 +20586,7 @@
                     "Dragon",
                     "Psychic"
                 ],
+                "trainerId": 935,
                 "item": [
                     "Soul Dew"
                 ],
@@ -20318,6 +20650,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 897,
                 "item": [
                     "Assault Vest"
                 ],
@@ -20347,6 +20680,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 1045,
                 "item": [
                     "Miracle Seed"
                 ],
@@ -20382,6 +20716,7 @@
                     "Bug",
                     "Grass"
                 ],
+                "trainerId": 943,
                 "item": [
                     "Expert Belt"
                 ],
@@ -20510,6 +20845,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 1070,
                 "item": [
                     "Leftovers"
                 ],
@@ -20570,6 +20906,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 305,
                 "nature": [
                     "Hardy"
                 ],
@@ -20601,6 +20938,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 480,
                 "nature": [
                     "Modest"
                 ],
@@ -20627,6 +20965,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 827,
                 "item": [
                     "Occa Berry"
                 ],
@@ -20662,6 +21001,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 1026,
                 "item": [
                     "Big Root"
                 ],
@@ -20692,6 +21032,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 873,
                 "item": [
                     "Wide Lens"
                 ],
@@ -20833,6 +21174,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 905,
                 "item": [
                     "Wide Lens"
                 ],
@@ -20862,6 +21204,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 818,
                 "item": [
                     "Choice Band"
                 ],
@@ -20897,6 +21240,7 @@
                     "Fighting",
                     "Steel"
                 ],
+                "trainerId": 903,
                 "item": [
                     "Focus Sash"
                 ],
@@ -20957,6 +21301,7 @@
                     "Fighting",
                     "Steel"
                 ],
+                "trainerId": 941,
                 "item": [
                     "Wide Lens"
                 ],
@@ -21052,6 +21397,7 @@
                     "Water",
                     "Grass"
                 ],
+                "trainerId": 1051,
                 "item": [
                     "Life Orb"
                 ],
@@ -21087,6 +21433,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 706,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -21286,6 +21633,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 206,
                 "nature": [
                     "Brave"
                 ],
@@ -21380,6 +21728,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 919,
                 "item": [
                     "Flame Orb"
                 ],
@@ -21653,6 +22002,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 1049,
                 "item": [
                     "Flame Orb"
                 ],
@@ -21682,6 +22032,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 679,
                 "item": [
                     "Flame Orb"
                 ],
@@ -21812,6 +22163,7 @@
                     "Steel",
                     "Fairy"
                 ],
+                "trainerId": 939,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -21912,6 +22264,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 698,
                 "item": [
                     "Expert Belt"
                 ],
@@ -22006,6 +22359,7 @@
                     "Electric",
                     "Steel"
                 ],
+                "trainerId": 920,
                 "item": [
                     "Assault Vest"
                 ],
@@ -22071,6 +22425,7 @@
                     "Dark",
                     "Psychic"
                 ],
+                "trainerId": 1006,
                 "item": [
                     "Assault Vest"
                 ],
@@ -22101,6 +22456,7 @@
                     "Dark",
                     "Psychic"
                 ],
+                "trainerId": 867,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -22136,6 +22492,7 @@
                     "Ice",
                     "Ground"
                 ],
+                "trainerId": 819,
                 "item": [
                     "Choice Band"
                 ],
@@ -22166,6 +22523,7 @@
                     "Ice",
                     "Ground"
                 ],
+                "trainerId": 916,
                 "item": [
                     "Wide Lens"
                 ],
@@ -22230,6 +22588,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 907,
                 "item": [
                     "Wacan Berry"
                 ],
@@ -22265,6 +22624,7 @@
                     "Dark",
                     "Flying"
                 ],
+                "trainerId": 431,
                 "nature": [
                     "Bold"
                 ],
@@ -22325,6 +22685,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 440,
                 "nature": [
                     "Timid"
                 ],
@@ -22553,6 +22914,7 @@
                     "Fire",
                     "Ghost"
                 ],
+                "trainerId": 303,
                 "item": [
                     "Thick Club"
                 ],
@@ -22625,6 +22987,7 @@
                     "Fighting",
                     "Ghost"
                 ],
+                "trainerId": 899,
                 "item": [
                     "Life Orb"
                 ],
@@ -22660,6 +23023,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 821,
                 "item": [
                     "Focus Sash"
                 ],
@@ -22690,6 +23054,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 1910,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -22803,6 +23168,7 @@
                     "Steel",
                     "Fairy"
                 ],
+                "trainerId": 1054,
                 "item": [
                     "Choice Band"
                 ],
@@ -22958,6 +23324,7 @@
                     "Fighting",
                     "Psychic"
                 ],
+                "trainerId": 904,
                 "item": [
                     "Wide Lens"
                 ],
@@ -23021,6 +23388,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 815,
                 "item": [
                     "Leftovers"
                 ],
@@ -23050,6 +23418,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 1035,
                 "item": [
                     "Big Root"
                 ],
@@ -23084,6 +23453,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 911,
                 "item": [
                     "Assault Vest"
                 ],
@@ -23119,6 +23489,7 @@
                     "Normal",
                     "Psychic"
                 ],
+                "trainerId": 940,
                 "item": [
                     "Throat Spray"
                 ],
@@ -23264,6 +23635,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 972,
                 "item": [
                     "Light Clay"
                 ],
@@ -23293,6 +23665,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 500,
                 "nature": [
                     "Bashful"
                 ],
@@ -23363,6 +23736,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 818,
                 "item": [
                     "Leftovers"
                 ],
@@ -23392,6 +23766,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 938,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -23457,6 +23832,7 @@
                     "Steel",
                     "Psychic"
                 ],
+                "trainerId": 936,
                 "item": [
                     "Assault Vest"
                 ],
@@ -23521,6 +23897,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 706,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -23592,6 +23969,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 904,
                 "item": [
                     "Wide Lens"
                 ],
@@ -23621,6 +23999,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 337,
                 "nature": [
                     "Hardy"
                 ],
@@ -23652,6 +24031,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 1083,
                 "item": [
                     "Black Glasses"
                 ],
@@ -23686,6 +24066,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 940,
                 "item": [
                     "Flame Orb"
                 ],
@@ -23744,6 +24125,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 700,
                 "item": [
                     "Flame Orb"
                 ],
@@ -23778,6 +24160,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 543,
                 "nature": [
                     "Adamant"
                 ],
@@ -23836,6 +24219,7 @@
                     "Ghost",
                     "Fairy"
                 ],
+                "trainerId": 900,
                 "item": [
                     "Life Orb"
                 ],
@@ -23866,6 +24250,7 @@
                     "Ghost",
                     "Fairy"
                 ],
+                "trainerId": 992,
                 "item": [
                     "Life Orb"
                 ],
@@ -23938,6 +24323,7 @@
                     "Rock",
                     "Flying"
                 ],
+                "trainerId": 444,
                 "nature": [
                     "Adamant"
                 ],
@@ -24328,6 +24714,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 899,
                 "item": [
                     "Expert Belt"
                 ],
@@ -24357,6 +24744,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 1048,
                 "item": [
                     "Choice Specs"
                 ],
@@ -24421,6 +24809,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 933,
                 "item": [
                     "Focus Sash"
                 ],
@@ -24451,6 +24840,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 698,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -24486,6 +24876,7 @@
                     "Dark",
                     "Flying"
                 ],
+                "trainerId": 1006,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -24521,6 +24912,7 @@
                     "Electric",
                     "Dark"
                 ],
+                "trainerId": 973,
                 "item": [
                     "Focus Sash"
                 ],
@@ -24551,6 +24943,7 @@
                     "Electric",
                     "Dark"
                 ],
+                "trainerId": 255,
                 "nature": [
                     "Docile"
                 ],
@@ -24685,6 +25078,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 699,
                 "item": [
                     "Light Clay"
                 ],
@@ -24780,6 +25174,7 @@
                     "Ice",
                     "Psychic"
                 ],
+                "trainerId": 915,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -24810,6 +25205,7 @@
                     "Ice",
                     "Psychic"
                 ],
+                "trainerId": 867,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -24844,6 +25240,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 929,
                 "item": [
                     "Assault Vest"
                 ],
@@ -24918,6 +25315,7 @@
                     "Poison",
                     "Dark"
                 ],
+                "trainerId": 651,
                 "nature": [
                     "Adamant"
                 ],
@@ -24988,6 +25386,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 869,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -25023,6 +25422,7 @@
                     "Poison",
                     "Dragon"
                 ],
+                "trainerId": 939,
                 "item": [
                     "Focus Sash"
                 ],
@@ -25234,6 +25634,7 @@
                     "Poison",
                     "Ground"
                 ],
+                "trainerId": 930,
                 "item": [
                     "Life Orb"
                 ],
@@ -25264,6 +25665,7 @@
                     "Poison",
                     "Ground"
                 ],
+                "trainerId": 811,
                 "item": [
                     "Life Orb"
                 ],
@@ -25356,6 +25758,7 @@
                     "Poison",
                     "Ground"
                 ],
+                "trainerId": 862,
                 "item": [
                     "Life Orb"
                 ],
@@ -25391,6 +25794,7 @@
                     "Rock",
                     "Poison"
                 ],
+                "trainerId": 891,
                 "item": [
                     "Air Balloon"
                 ],
@@ -25454,6 +25858,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 932,
                 "item": [
                     "Focus Sash"
                 ],
@@ -25483,6 +25888,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 698,
                 "item": [
                     "Wide Lens"
                 ],
@@ -25518,6 +25924,7 @@
                     "Ice",
                     "Fairy"
                 ],
+                "trainerId": 1014,
                 "item": [
                     "Light Clay"
                 ],
@@ -25548,6 +25955,7 @@
                     "Ice",
                     "Fairy"
                 ],
+                "trainerId": 871,
                 "item": [
                     "Light Clay"
                 ],
@@ -25740,6 +26148,7 @@
                     "Flying",
                     "Dragon"
                 ],
+                "trainerId": 453,
                 "nature": [
                     "Timid"
                 ],
@@ -25767,6 +26176,7 @@
                     "Flying",
                     "Dragon"
                 ],
+                "trainerId": 156,
                 "nature": [
                     "Hardy"
                 ],
@@ -25799,6 +26209,7 @@
                     "Dark",
                     "Normal"
                 ],
+                "trainerId": 1006,
                 "item": [
                     "Flame Orb"
                 ],
@@ -25829,6 +26240,7 @@
                     "Dark",
                     "Normal"
                 ],
+                "trainerId": 998,
                 "item": [
                     "Flame Orb"
                 ],
@@ -25863,6 +26275,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 821,
                 "item": [
                     "Life Orb"
                 ],
@@ -26430,6 +26843,7 @@
                     "Normal",
                     "Psychic"
                 ],
+                "trainerId": 870,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -26465,6 +26879,7 @@
                     "Bug",
                     "Psychic"
                 ],
+                "trainerId": 925,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -26495,6 +26910,7 @@
                     "Bug",
                     "Psychic"
                 ],
+                "trainerId": 857,
                 "item": [
                     "Light Clay"
                 ],
@@ -26530,6 +26946,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 540,
                 "nature": [
                     "Timid"
                 ],
@@ -26557,6 +26974,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 130,
                 "nature": [
                     "Timid"
                 ],
@@ -26663,6 +27081,7 @@
                     "Ghost",
                     "Flying"
                 ],
+                "trainerId": 833,
                 "item": [
                     "Leftovers"
                 ],
@@ -26735,6 +27154,7 @@
                     "Dark",
                     "Poison"
                 ],
+                "trainerId": 958,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -26798,6 +27218,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 921,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -26827,6 +27248,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 708,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -26932,6 +27354,7 @@
                     "Water",
                     "Dragon"
                 ],
+                "trainerId": 886,
                 "nature": [
                     "Docile"
                 ],
@@ -27030,6 +27453,7 @@
                     "Ghost",
                     "Ground"
                 ],
+                "trainerId": 1002,
                 "item": [
                     "Assault Vest"
                 ],
@@ -27060,6 +27484,7 @@
                     "Ghost",
                     "Ground"
                 ],
+                "trainerId": 862,
                 "item": [
                     "Leftovers"
                 ],
@@ -27095,6 +27520,7 @@
                     "Fighting",
                     "Dark"
                 ],
+                "trainerId": 974,
                 "item": [
                     "Expert Belt"
                 ],
@@ -27160,6 +27586,7 @@
                     "Bug",
                     "Grass"
                 ],
+                "trainerId": 1046,
                 "item": [
                     "Leftovers"
                 ],
@@ -27194,6 +27621,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 905,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -27398,6 +27826,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 845,
                 "item": [
                     "Choice Band"
                 ],
@@ -27432,6 +27861,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 451,
                 "nature": [
                     "Jolly"
                 ],
@@ -27529,6 +27959,7 @@
                     "Bug",
                     "Fighting"
                 ],
+                "trainerId": 903,
                 "item": [
                     "Focus Sash"
                 ],
@@ -27634,6 +28065,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 815,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -28012,6 +28444,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 852,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -28075,6 +28508,7 @@
                 "teraTypes": [
                     "Bug"
                 ],
+                "trainerId": 926,
                 "item": [
                     "Wide Lens"
                 ],
@@ -28104,6 +28538,7 @@
                 "teraTypes": [
                     "Bug"
                 ],
+                "trainerId": 990,
                 "item": [
                     "Expert Belt"
                 ],
@@ -28201,6 +28636,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 1051,
                 "item": [
                     "Damp Rock"
                 ],
@@ -28292,6 +28728,7 @@
                     "Water",
                     "Fighting"
                 ],
+                "trainerId": 678,
                 "item": [
                     "Leftovers"
                 ],
@@ -28322,6 +28759,7 @@
                     "Water",
                     "Fighting"
                 ],
+                "trainerId": 974,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -28393,6 +28831,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 899,
                 "item": [
                     "White Herb"
                 ],
@@ -28422,6 +28861,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 832,
                 "item": [
                     "Focus Sash"
                 ],
@@ -28456,6 +28896,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 821,
                 "item": [
                     "Choice Specs"
                 ],
@@ -28549,6 +28990,7 @@
                     "Water",
                     "Fairy"
                 ],
+                "trainerId": 910,
                 "item": [
                     "Throat Spray"
                 ],
@@ -28579,6 +29021,7 @@
                     "Water",
                     "Fairy"
                 ],
+                "trainerId": 841,
                 "item": [
                     "Leftovers"
                 ],
@@ -28674,6 +29117,7 @@
                     "Rock",
                     "Steel"
                 ],
+                "trainerId": 1043,
                 "item": [
                     "Leftovers"
                 ],
@@ -28708,6 +29152,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 1026,
                 "item": [
                     "Leftovers"
                 ],
@@ -28909,6 +29354,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 1051,
                 "item": [
                     "Leftovers"
                 ],
@@ -28939,6 +29385,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 678,
                 "item": [
                     "Damp Rock"
                 ],
@@ -29013,6 +29460,7 @@
                     "Water",
                     "Poison"
                 ],
+                "trainerId": 812,
                 "item": [
                     "Black Sludge"
                 ],
@@ -29153,6 +29601,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 919,
                 "item": [
                     "Focus Sash"
                 ],
@@ -29211,6 +29660,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 683,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -29246,6 +29696,7 @@
                     "Electric",
                     "Psychic"
                 ],
+                "trainerId": 303,
                 "nature": [
                     "Hardy"
                 ],
@@ -29273,6 +29724,7 @@
                     "Electric",
                     "Psychic"
                 ],
+                "trainerId": 853,
                 "item": [
                     "Focus Sash"
                 ],
@@ -29370,6 +29822,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 1044,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -29399,6 +29852,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 891,
                 "item": [
                     "Focus Sash"
                 ],
@@ -29428,6 +29882,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 1043,
                 "item": [
                     "Life Orb"
                 ],
@@ -29462,6 +29917,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 822,
                 "item": [
                     "Choice Band"
                 ],
@@ -29520,6 +29976,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 698,
                 "item": [
                     "Power Herb"
                 ],
@@ -29555,6 +30012,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 942,
                 "item": [
                     "Life Orb"
                 ],
@@ -29585,6 +30043,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 305,
                 "nature": [
                     "Hardy"
                 ],
@@ -29748,6 +30207,7 @@
                     "Dragon",
                     "Flying"
                 ],
+                "trainerId": 939,
                 "item": [
                     "Life Orb"
                 ],
@@ -29782,6 +30242,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 917,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -29915,6 +30376,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 706,
                 "item": [
                     "Life Orb"
                 ],
@@ -29949,6 +30411,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 892,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -30012,6 +30475,7 @@
                 "teraTypes": [
                     "Steel"
                 ],
+                "trainerId": 913,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -30177,6 +30641,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 989,
                 "item": [
                     "Leftovers"
                 ],
@@ -30206,6 +30671,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 461,
                 "nature": [
                     "Modest"
                 ],
@@ -30412,6 +30878,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 895,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -30544,6 +31011,7 @@
                     "Grass",
                     "Poison"
                 ],
+                "trainerId": 895,
                 "item": [
                     "Focus Sash"
                 ],
@@ -30579,6 +31047,7 @@
                     "Electric",
                     "Ghost"
                 ],
+                "trainerId": 1057,
                 "item": [
                     "Sticky Barb"
                 ],
@@ -30609,6 +31078,7 @@
                     "Electric",
                     "Ghost"
                 ],
+                "trainerId": 1057,
                 "item": [
                     "Leftovers"
                 ],
@@ -30639,6 +31109,7 @@
                     "Electric",
                     "Ghost"
                 ],
+                "trainerId": 683,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -30739,6 +31210,7 @@
                     "Electric",
                     "Ice"
                 ],
+                "trainerId": 1056,
                 "item": [
                     "Heavy-Duty Boots"
                 ],
@@ -30864,6 +31336,7 @@
                     "Electric",
                     "Fire"
                 ],
+                "trainerId": 708,
                 "item": [
                     "Choice Specs"
                 ],
@@ -30899,6 +31372,7 @@
                     "Electric",
                     "Grass"
                 ],
+                "trainerId": 852,
                 "item": [
                     "White Herb"
                 ],
@@ -30964,6 +31438,7 @@
                     "Electric",
                     "Water"
                 ],
+                "trainerId": 851,
                 "item": [
                     "Light Clay"
                 ],
@@ -30994,6 +31469,7 @@
                     "Electric",
                     "Water"
                 ],
+                "trainerId": 245,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -31024,6 +31500,7 @@
                     "Electric",
                     "Water"
                 ],
+                "trainerId": 709,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -31059,6 +31536,7 @@
                     "Ground",
                     "Ghost"
                 ],
+                "trainerId": 929,
                 "item": [
                     "Leftovers"
                 ],
@@ -31089,6 +31567,7 @@
                     "Ground",
                     "Ghost"
                 ],
+                "trainerId": 832,
                 "item": [
                     "Leftovers"
                 ],
@@ -31124,6 +31603,7 @@
                     "Dark",
                     "Ghost"
                 ],
+                "trainerId": 902,
                 "item": [
                     "Life Orb"
                 ],
@@ -31154,6 +31634,7 @@
                     "Dark",
                     "Ghost"
                 ],
+                "trainerId": 817,
                 "item": [
                     "Damp Rock"
                 ],
@@ -31184,6 +31665,7 @@
                     "Dark",
                     "Ghost"
                 ],
+                "trainerId": 947,
                 "item": [
                     "Lagging Tail"
                 ],
@@ -31279,6 +31761,7 @@
                     "Dragon",
                     "Flying"
                 ],
+                "trainerId": 818,
                 "item": [
                     "Lum Berry"
                 ],
@@ -31314,6 +31797,7 @@
                     "Poison",
                     "Fire"
                 ],
+                "trainerId": 865,
                 "item": [
                     "Focus Sash"
                 ],
@@ -31348,6 +31832,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 206,
                 "nature": [
                     "Adamant"
                 ],
@@ -31380,6 +31865,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 909,
                 "item": [
                     "Focus Sash"
                 ],
@@ -31410,6 +31896,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 981,
                 "item": [
                     "Life Orb"
                 ],
@@ -31440,6 +31927,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 871,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -31474,6 +31962,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 443,
                 "nature": [
                     "Adamant"
                 ],
@@ -31500,6 +31989,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 862,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -31563,6 +32053,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
+                "trainerId": 816,
                 "item": [
                     "Choice Band"
                 ],
@@ -31627,6 +32118,7 @@
                     "Ice",
                     "Steel"
                 ],
+                "trainerId": 299,
                 "nature": [
                     "Hardy"
                 ],
@@ -31654,6 +32146,7 @@
                     "Ice",
                     "Steel"
                 ],
+                "trainerId": 653,
                 "nature": [
                     "Hardy"
                 ],
@@ -31722,6 +32215,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 906,
                 "item": [
                     "Expert Belt"
                 ],
@@ -31751,6 +32245,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 237,
                 "nature": [
                     "Hardy"
                 ],
@@ -31783,6 +32278,7 @@
                     "Normal",
                     "Grass"
                 ],
+                "trainerId": 452,
                 "nature": [
                     "Adamant"
                 ],
@@ -31810,6 +32306,7 @@
                     "Normal",
                     "Grass"
                 ],
+                "trainerId": 972,
                 "item": [
                     "Wide Lens"
                 ],
@@ -31844,6 +32341,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 811,
                 "item": [
                     "Life Orb"
                 ],
@@ -31899,6 +32397,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 538,
                 "nature": [
                     "Hasty"
                 ],
@@ -31961,6 +32460,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 923,
                 "item": [
                     "Focus Sash"
                 ],
@@ -32026,6 +32526,7 @@
                     "Bug",
                     "Poison"
                 ],
+                "trainerId": 943,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -32102,6 +32603,7 @@
                     "Dark",
                     "Fighting"
                 ],
+                "trainerId": 800,
                 "item": [
                     "Expert Belt"
                 ],
@@ -32132,6 +32634,7 @@
                     "Dark",
                     "Fighting"
                 ],
+                "trainerId": 335,
                 "nature": [
                     "Hardy"
                 ],
@@ -32235,6 +32738,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 927,
                 "item": [
                     "Focus Sash"
                 ],
@@ -32265,6 +32769,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 859,
                 "item": [
                     "Throat Spray"
                 ],
@@ -32298,6 +32803,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 896,
                 "item": [
                     "Life Orb"
                 ],
@@ -32358,6 +32864,7 @@
                 "teraTypes": [
                     "Poison"
                 ],
+                "trainerId": 451,
                 "nature": [
                     "Adamant"
                 ],
@@ -32449,6 +32956,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 1051,
                 "item": [
                     "Assault Vest"
                 ],
@@ -32479,6 +32987,7 @@
                     "Water",
                     "Dark"
                 ],
+                "trainerId": 678,
                 "item": [
                     "Focus Sash"
                 ],
@@ -32513,6 +33022,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 1046,
                 "item": [
                     "Choice Specs"
                 ],
@@ -32577,6 +33087,7 @@
                     "Grass",
                     "Flying"
                 ],
+                "trainerId": 898,
                 "item": [
                     "Focus Sash"
                 ],
@@ -32672,6 +33183,7 @@
                     "Bug",
                     "Ghost"
                 ],
+                "trainerId": 833,
                 "item": [
                     "Focus Sash"
                 ],
@@ -32799,6 +33311,7 @@
                     "Grass",
                     "Fairy"
                 ],
+                "trainerId": 829,
                 "item": [
                     "Leftovers"
                 ],
@@ -32929,6 +33442,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 870,
                 "item": [
                     "Life Orb"
                 ],
@@ -33138,6 +33652,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 882,
                 "item": [
                     "King's Rock"
                 ],
@@ -33167,6 +33682,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 308,
                 "item": [
                     "King's Rock"
                 ],
@@ -33236,6 +33752,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 889,
                 "item": [
                     "Choice Band"
                 ],
@@ -33340,6 +33857,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 888,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -33584,6 +34102,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 942,
                 "item": [
                     "Water Memory"
                 ],
@@ -33613,6 +34132,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 887,
                 "item": [
                     "Choice Specs"
                 ],
@@ -33684,6 +34204,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 453,
                 "nature": [
                     "Hasty"
                 ],
@@ -33830,6 +34351,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 464,
                 "nature": [
                     "Adamant"
                 ],
@@ -33856,6 +34378,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 801,
                 "item": [
                     "Scope Lens"
                 ],
@@ -33921,6 +34444,7 @@
                     "Steel",
                     "Flying"
                 ],
+                "trainerId": 820,
                 "item": [
                     "Leftovers"
                 ],
@@ -33951,6 +34475,7 @@
                     "Steel",
                     "Flying"
                 ],
+                "trainerId": 1081,
                 "item": [
                     "Occa Berry"
                 ],
@@ -34025,6 +34550,7 @@
                     "Poison",
                     "Dark"
                 ],
+                "trainerId": 947,
                 "item": [
                     "Flame Orb"
                 ],
@@ -34119,6 +34645,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 974,
                 "item": [
                     "Assault Vest"
                 ],
@@ -34315,6 +34842,7 @@
                     "Poison",
                     "Psychic"
                 ],
+                "trainerId": 1022,
                 "item": [
                     "Leftovers"
                 ],
@@ -34380,6 +34908,7 @@
                     "Water",
                     "Psychic"
                 ],
+                "trainerId": 1052,
                 "item": [
                     "Leftovers"
                 ],
@@ -34445,6 +34974,7 @@
                     "Poison",
                     "Psychic"
                 ],
+                "trainerId": 871,
                 "item": [
                     "Assault Vest"
                 ],
@@ -34479,6 +35009,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 1030,
                 "item": [
                     "Grassy Seed"
                 ],
@@ -34508,6 +35039,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 1014,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -34542,6 +35074,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 998,
                 "item": [
                     "Leftovers"
                 ],
@@ -34606,6 +35139,7 @@
                     "Fighting",
                     "Poison"
                 ],
+                "trainerId": 985,
                 "item": [
                     "Expert Belt"
                 ],
@@ -34636,6 +35170,7 @@
                     "Fighting",
                     "Poison"
                 ],
+                "trainerId": 1030,
                 "item": [
                     "Choice Band"
                 ],
@@ -34670,6 +35205,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 1034,
                 "item": [
                     "Leftovers"
                 ],
@@ -34699,6 +35235,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 950,
                 "nature": [
                     "Sassy"
                 ],
@@ -34858,6 +35395,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
+                "trainerId": 902,
                 "item": [
                     "Focus Sash"
                 ],
@@ -34999,6 +35537,7 @@
                     "Ghost",
                     "Dark"
                 ],
+                "trainerId": 1048,
                 "item": [
                     "Leftovers"
                 ],
@@ -35029,6 +35568,7 @@
                     "Ghost",
                     "Dark"
                 ],
+                "trainerId": 1047,
                 "item": [
                     "Lax Incense"
                 ],
@@ -35228,6 +35768,7 @@
                     "Rock",
                     "Steel"
                 ],
+                "trainerId": 891,
                 "item": [
                     "Air Balloon"
                 ],
@@ -35323,6 +35864,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 816,
                 "item": [
                     "Life Orb"
                 ],
@@ -35388,6 +35930,7 @@
                     "Water",
                     "Psychic"
                 ],
+                "trainerId": 909,
                 "item": [
                     "Focus Sash"
                 ],
@@ -35418,6 +35961,7 @@
                     "Water",
                     "Psychic"
                 ],
+                "trainerId": 949,
                 "item": [
                     "Focus Sash"
                 ],
@@ -35513,6 +36057,7 @@
                     "Steel",
                     "Ground"
                 ],
+                "trainerId": 1053,
                 "item": [
                     "Ganlon Berry"
                 ],
@@ -35547,6 +36092,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 894,
                 "item": [
                     "Assault Vest"
                 ],
@@ -35581,6 +36127,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 799,
                 "item": [
                     "Life Orb"
                 ],
@@ -35610,6 +36157,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 757,
                 "item": [
                     "Life Orb"
                 ],
@@ -35645,6 +36193,7 @@
                     "Ground",
                     "Electric"
                 ],
+                "trainerId": 266,
                 "nature": [
                     "Hardy"
                 ],
@@ -35713,6 +36262,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 1043,
                 "item": [
                     "Aguav Berry"
                 ],
@@ -35742,6 +36292,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
+                "trainerId": 676,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -35776,6 +36327,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 1052,
                 "item": [
                     "Leftovers"
                 ],
@@ -35805,6 +36357,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 908,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -35942,6 +36495,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 822,
                 "item": [
                     "Salac Berry"
                 ],
@@ -35972,6 +36526,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 907,
                 "item": [
                     "Rindo Berry"
                 ],
@@ -36002,6 +36557,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 1052,
                 "item": [
                     "Life Orb"
                 ],
@@ -36078,6 +36634,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 819,
                 "item": [
                     "Choice Specs"
                 ],
@@ -36173,6 +36730,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 306,
                 "nature": [
                     "Hardy"
                 ],
@@ -36200,6 +36758,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 764,
                 "item": [
                     "Throat Spray"
                 ],
@@ -36234,6 +36793,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 157,
                 "item": [
                     "Thick Club"
                 ],
@@ -36263,6 +36823,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 878,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -36298,6 +36859,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 538,
                 "nature": [
                     "Jolly"
                 ],
@@ -36325,6 +36887,7 @@
                     "Fire",
                     "Flying"
                 ],
+                "trainerId": 864,
                 "item": [
                     "Flying Gem"
                 ],
@@ -36417,6 +36980,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 1046,
                 "item": [
                     "Rocky Helmet"
                 ],
@@ -36452,6 +37016,7 @@
                     "Grass",
                     "Fairy"
                 ],
+                "trainerId": 896,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -36487,6 +37052,7 @@
                     "Water",
                     "Fairy"
                 ],
+                "trainerId": 941,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -36522,6 +37088,7 @@
                     "Electric",
                     "Fairy"
                 ],
+                "trainerId": 939,
                 "item": [
                     "Air Balloon"
                 ],
@@ -36557,6 +37124,7 @@
                     "Psychic",
                     "Fairy"
                 ],
+                "trainerId": 940,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -36708,6 +37276,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 997,
                 "item": [
                     "Life Orb"
                 ],
@@ -36769,6 +37338,7 @@
                     "Fighting",
                     "Water"
                 ],
+                "trainerId": 809,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -36804,6 +37374,7 @@
                     "Fighting",
                     "Fire"
                 ],
+                "trainerId": 863,
                 "item": [
                     "Wide Lens"
                 ],
@@ -36838,6 +37409,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 706,
                 "item": [
                     "Focus Sash"
                 ],
@@ -36867,6 +37439,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 906,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -37072,6 +37645,7 @@
                     "Rock",
                     "Fighting"
                 ],
+                "trainerId": 903,
                 "item": [
                     "Expert Belt"
                 ],
@@ -37145,6 +37719,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 804,
                 "item": [
                     "Flame Orb"
                 ],
@@ -37174,6 +37749,7 @@
                 "teraTypes": [
                     "Fighting"
                 ],
+                "trainerId": 237,
                 "nature": [
                     "Hardy"
                 ],
@@ -37245,6 +37821,7 @@
                     "Electric",
                     "Flying"
                 ],
+                "trainerId": 919,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -37317,6 +37894,7 @@
                     "Fairy",
                     "Steel"
                 ],
+                "trainerId": 912,
                 "item": [
                     "Focus Sash"
                 ],
@@ -37347,6 +37925,7 @@
                     "Fairy",
                     "Steel"
                 ],
+                "trainerId": 843,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -37419,6 +37998,7 @@
                     "Electric",
                     "Steel"
                 ],
+                "trainerId": 209,
                 "nature": [
                     "Serious"
                 ],
@@ -37481,6 +38061,7 @@
                     "Fairy",
                     "Flying"
                 ],
+                "trainerId": 949,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -37511,6 +38092,7 @@
                     "Fairy",
                     "Flying"
                 ],
+                "trainerId": 812,
                 "item": [
                     "Heavy-Duty Boots"
                 ],
@@ -37545,6 +38127,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 934,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -37710,6 +38293,7 @@
                     "Grass",
                     "Ground"
                 ],
+                "trainerId": 822,
                 "item": [
                     "White Herb"
                 ],
@@ -37770,6 +38354,7 @@
                     "Grass",
                     "Ground"
                 ],
+                "trainerId": 819,
                 "item": [
                     "Focus Sash"
                 ],
@@ -37805,6 +38390,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 974,
                 "item": [
                     "Wide Lens"
                 ],
@@ -37835,6 +38421,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 742,
                 "item": [
                     "Wide Lens"
                 ],
@@ -37971,6 +38558,7 @@
                     "Poison",
                     "Fighting"
                 ],
+                "trainerId": 1049,
                 "item": [
                     "Leftovers"
                 ],
@@ -38006,6 +38594,7 @@
                     "Electric",
                     "Poison"
                 ],
+                "trainerId": 922,
                 "item": [
                     "Throat Spray"
                 ],
@@ -38036,6 +38625,7 @@
                     "Electric",
                     "Poison"
                 ],
+                "trainerId": 228,
                 "nature": [
                     "Quirky"
                 ],
@@ -38068,6 +38658,7 @@
                     "Electric",
                     "Poison"
                 ],
+                "trainerId": 226,
                 "nature": [
                     "Docile"
                 ],
@@ -38100,6 +38691,7 @@
                     "Ghost",
                     "Grass"
                 ],
+                "trainerId": 443,
                 "nature": [
                     "Adamant"
                 ],
@@ -38127,6 +38719,7 @@
                     "Ghost",
                     "Grass"
                 ],
+                "trainerId": 834,
                 "item": [
                     "Sitrus Berry"
                 ],
@@ -38192,6 +38785,7 @@
                     "Grass",
                     "Flying"
                 ],
+                "trainerId": 543,
                 "nature": [
                     "Hasty"
                 ],
@@ -38250,6 +38844,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 895,
                 "item": [
                     "Wide Lens"
                 ],
@@ -38279,6 +38874,7 @@
                 "teraTypes": [
                     "Grass"
                 ],
+                "trainerId": 983,
                 "item": [
                     "Life Orb"
                 ],
@@ -38314,6 +38910,7 @@
                     "Fire",
                     "Dragon"
                 ],
+                "trainerId": 865,
                 "item": [
                     "Assault Vest"
                 ],
@@ -38344,6 +38941,7 @@
                     "Fire",
                     "Dragon"
                 ],
+                "trainerId": 162,
                 "nature": [
                     "Hardy"
                 ],
@@ -38404,6 +39002,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 866,
                 "item": [
                     "Wide Lens"
                 ],
@@ -38433,6 +39032,7 @@
                 "teraTypes": [
                     "Fire"
                 ],
+                "trainerId": 1919,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -38468,6 +39068,7 @@
                     "Fire",
                     "Ghost"
                 ],
+                "trainerId": 900,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -38498,6 +39099,7 @@
                     "Fire",
                     "Ghost"
                 ],
+                "trainerId": 873,
                 "item": [
                     "Choice Scarf"
                 ],
@@ -38563,6 +39165,7 @@
                     "Rock",
                     "Dark"
                 ],
+                "trainerId": 927,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -38628,6 +39231,7 @@
                     "Rock",
                     "Dragon"
                 ],
+                "trainerId": 893,
                 "item": [
                     "Assault Vest"
                 ],
@@ -38658,6 +39262,7 @@
                     "Rock",
                     "Dragon"
                 ],
+                "trainerId": 163,
                 "nature": [
                     "Hardy"
                 ],
@@ -38689,6 +39294,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 947,
                 "item": [
                     "Leftovers"
                 ],
@@ -38753,6 +39359,7 @@
                     "Normal",
                     "Flying"
                 ],
+                "trainerId": 286,
                 "nature": [
                     "Hardy"
                 ],
@@ -38819,6 +39426,7 @@
                     "Ground",
                     "Normal"
                 ],
+                "trainerId": 929,
                 "item": [
                     "Flame Orb"
                 ],
@@ -38849,6 +39457,7 @@
                     "Ground",
                     "Normal"
                 ],
+                "trainerId": 958,
                 "item": [
                     "Flame Orb"
                 ],
@@ -38884,6 +39493,7 @@
                     "Ground",
                     "Normal"
                 ],
+                "trainerId": 998,
                 "item": [
                     "Assault Vest"
                 ],
@@ -38919,6 +39529,7 @@
                     "Fighting",
                     "Dark"
                 ],
+                "trainerId": 903,
                 "item": [
                     "Assault Vest"
                 ],
@@ -38954,6 +39565,7 @@
                     "Fighting",
                     "Water"
                 ],
+                "trainerId": 908,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -38988,6 +39600,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 822,
                 "item": [
                     "Light Clay"
                 ],
@@ -39017,6 +39630,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 820,
                 "item": [
                     "Leftovers"
                 ],
@@ -39051,6 +39665,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 918,
                 "item": [
                     "Focus Sash"
                 ],
@@ -39080,6 +39695,7 @@
                 "teraTypes": [
                     "Ice"
                 ],
+                "trainerId": 447,
                 "nature": [
                     "Quiet"
                 ],
@@ -39111,6 +39727,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 1069,
                 "item": [
                     "Leftovers"
                 ],
@@ -39140,6 +39757,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 1980,
                 "item": [
                     "Petaya Berry"
                 ],
@@ -39169,6 +39787,7 @@
                 "teraTypes": [
                     "Water"
                 ],
+                "trainerId": 210,
                 "nature": [
                     "Modest"
                 ],
@@ -39240,6 +39859,7 @@
                     "Bug",
                     "Poison"
                 ],
+                "trainerId": 1909,
                 "item": [
                     "Wide Lens"
                 ],
@@ -39300,6 +39920,7 @@
                     "Bug",
                     "Poison"
                 ],
+                "trainerId": 801,
                 "item": [
                     "Focus Sash"
                 ],
@@ -39364,6 +39985,7 @@
                     "Grass",
                     "Poison"
                 ],
+                "trainerId": 898,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -39394,6 +40016,7 @@
                     "Grass",
                     "Poison"
                 ],
+                "trainerId": 1046,
                 "item": [
                     "Terrain Extender"
                 ],
@@ -39459,6 +40082,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 185,
                 "item": [
                     "Leftovers"
                 ],
@@ -39524,6 +40148,7 @@
                     "Psychic",
                     "Fire"
                 ],
+                "trainerId": 931,
                 "item": [
                     "Wide Lens"
                 ],
@@ -39621,6 +40246,7 @@
                     "Bug",
                     "Electric"
                 ],
+                "trainerId": 855,
                 "item": [
                     "Charti Berry"
                 ],
@@ -39651,6 +40277,7 @@
                     "Bug",
                     "Electric"
                 ],
+                "trainerId": 205,
                 "nature": [
                     "Quirky"
                 ],
@@ -39710,6 +40337,7 @@
                     "Grass",
                     "Poison"
                 ],
+                "trainerId": 540,
                 "nature": [
                     "Modest"
                 ],
@@ -39772,6 +40400,7 @@
                     "Grass",
                     "Fighting"
                 ],
+                "trainerId": 895,
                 "item": [
                     "Wide Lens"
                 ],
@@ -40649,6 +41278,7 @@
                     "Fire",
                     "Water"
                 ],
+                "trainerId": 934,
                 "item": [
                     "Assault Vest"
                 ],
@@ -40679,6 +41309,7 @@
                     "Fire",
                     "Water"
                 ],
+                "trainerId": 931,
                 "item": [
                     "Lum Berry"
                 ],
@@ -40714,6 +41345,7 @@
                     "Bug",
                     "Fire"
                 ],
+                "trainerId": 923,
                 "item": [
                     "Life Orb"
                 ],
@@ -40744,6 +41376,7 @@
                     "Bug",
                     "Fire"
                 ],
+                "trainerId": 453,
                 "nature": [
                     "Timid"
                 ],
@@ -40882,6 +41515,7 @@
                     "Ice",
                     "Water"
                 ],
+                "trainerId": 918,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -40912,6 +41546,7 @@
                     "Ice",
                     "Water"
                 ],
+                "trainerId": 984,
                 "item": [
                     "Leftovers"
                 ],
@@ -40986,6 +41621,7 @@
                     "Dark",
                     "Ice"
                 ],
+                "trainerId": 917,
                 "item": [
                     "Focus Sash"
                 ],
@@ -41185,6 +41821,7 @@
                     "Grass",
                     "Fairy"
                 ],
+                "trainerId": 829,
                 "item": [
                     "Leftovers"
                 ],
@@ -41280,6 +41917,7 @@
                     "Water",
                     "Ground"
                 ],
+                "trainerId": 186,
                 "item": [
                     "Life Orb"
                 ],
@@ -41315,6 +41953,7 @@
                     "Normal",
                     "Fairy"
                 ],
+                "trainerId": 456,
                 "nature": [
                     "Modest"
                 ],
@@ -41443,6 +42082,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 306,
                 "nature": [
                     "Hardy"
                 ],
@@ -41469,6 +42109,7 @@
                 "teraTypes": [
                     "Psychic"
                 ],
+                "trainerId": 396,
                 "nature": [
                     "Quirky"
                 ],
@@ -41638,6 +42279,7 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 1054,
                 "item": [
                     "Leftovers"
                 ],
@@ -41742,6 +42384,7 @@
                     "Normal",
                     "Psychic"
                 ],
+                "trainerId": 868,
                 "item": [
                     "Wide Lens"
                 ],
@@ -41772,6 +42415,7 @@
                     "Normal",
                     "Psychic"
                 ],
+                "trainerId": 707,
                 "item": [
                     "Life Orb"
                 ],
@@ -41837,6 +42481,7 @@
                     "Psychic",
                     "Flying"
                 ],
+                "trainerId": 461,
                 "nature": [
                     "Timid"
                 ],
@@ -41898,6 +42543,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 706,
                 "item": [
                     "Power Herb"
                 ],
@@ -41932,6 +42578,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 919,
                 "item": [
                     "Air Balloon"
                 ],
@@ -41961,6 +42608,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 921,
                 "item": [
                     "Focus Sash"
                 ],
@@ -42026,6 +42674,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 696,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -42056,6 +42705,7 @@
                     "Bug",
                     "Flying"
                 ],
+                "trainerId": 1911,
                 "item": [
                     "Wise Glasses"
                 ],
@@ -42127,6 +42777,7 @@
                 "teraTypes": [
                     "Fairy"
                 ],
+                "trainerId": 706,
                 "item": [
                     "Rusted Sword"
                 ],
@@ -42270,6 +42921,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 820,
                 "item": [
                     "Toxic Orb"
                 ],
@@ -42299,6 +42951,7 @@
                 "teraTypes": [
                     "Normal"
                 ],
+                "trainerId": 976,
                 "item": [
                     "Toxic Orb"
                 ],
@@ -42363,6 +43016,7 @@
                     "Electric",
                     "Flying"
                 ],
+                "trainerId": 922,
                 "item": [
                     "Life Orb"
                 ],
@@ -42428,6 +43082,7 @@
                     "Fighting",
                     "Flying"
                 ],
+                "trainerId": 904,
                 "item": [
                     "Expert Belt"
                 ],
@@ -42463,6 +43118,7 @@
                     "Dark",
                     "Grass"
                 ],
+                "trainerId": 898,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -42534,6 +43190,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 808,
                 "item": [
                     "Expert Belt"
                 ],
@@ -42563,6 +43220,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 781,
                 "item": [
                     "Expert Belt"
                 ],
@@ -42634,6 +43292,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 919,
                 "item": [
                     "Air Balloon"
                 ],
@@ -42668,6 +43327,7 @@
                 "teraTypes": [
                     "Dark"
                 ],
+                "trainerId": 651,
                 "nature": [
                     "Timid"
                 ],
@@ -42700,6 +43360,7 @@
                     "Normal",
                     "Ghost"
                 ],
+                "trainerId": 941,
                 "item": [
                     "Focus Sash"
                 ],
@@ -42730,6 +43391,7 @@
                     "Normal",
                     "Ghost"
                 ],
+                "trainerId": 485,
                 "item": [
                     "Lum Berry"
                 ],
@@ -42760,6 +43422,7 @@
                     "Normal",
                     "Ghost"
                 ],
+                "trainerId": 1002,
                 "item": [
                     "Focus Sash"
                 ],
@@ -42795,6 +43458,7 @@
                     "Dragon",
                     "Ground"
                 ],
+                "trainerId": 928,
                 "item": [
                     "Assault Vest"
                 ],

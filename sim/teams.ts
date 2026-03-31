@@ -113,6 +113,14 @@ export interface PokemonSet {
 	 * Tera Type
 	 */
 	teraType?: string;
+	/**
+	 * Random-battle role metadata.
+	 */
+	role?: string;
+	/**
+	 * Source trainer metadata for in-game trainer-derived random sets.
+	 */
+	trainerId?: number;
 }
 
 export const Teams = new class Teams {

@@ -1158,6 +1158,10 @@ export class Pokemon {
 			entry.teraType = this.teraType;
 			entry.terastallized = this.terastallized || '';
 		}
+		if (this.set.role) entry.role = this.set.role;
+		if (Number.isInteger(this.set.trainerId) && this.set.trainerId > 0) {
+			entry.trainerId = this.set.trainerId;
+		}
 		return entry;
 	}
 

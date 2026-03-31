@@ -2523,6 +2523,7 @@ export class RandomTeams {
 		}
 		const set = this.sampleIfArray(possibleSets);
 		const role = set.role;
+		const trainerId = Number.isInteger(set.trainerId) ? set.trainerId : undefined;
 		const movePool: string[] = [];
 		for (const movename of set.movepool) {
 			movePool.push(this.dex.moves.get(movename).id);
@@ -2745,6 +2746,7 @@ export class RandomTeams {
 			nature,
 			teraType,
 			role,
+			trainerId,
 		};
 	}
 

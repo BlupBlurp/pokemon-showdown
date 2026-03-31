@@ -940,6 +940,7 @@ declare namespace RandomTeamsTypes {
 		gigantamax?: boolean;
 		teraType?: string;
 		role?: Role;
+		trainerId?: number;
 	}
 	export interface RandomFactorySet {
 		name: string;
@@ -979,6 +980,7 @@ declare namespace RandomTeamsTypes {
 	}
 	export interface RandomSetData {
 		role: Role;
+		trainerId?: number;
 		movepool: string[];
 		abilities?: string[];
 		item?: string[];
