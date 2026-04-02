@@ -68,6 +68,8 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		banlist: [
 			"pokemontag:mega",
 			"pokemontag:gigantamax",
+			"pokemontag:teraforme",
+			"pokemontag:stellarforme",
 			"Revavroom-Caph Starmobile",
 			"Revavroom-Navi Starmobile",
 			"Revavroom-Ruchbah Starmobile",
@@ -90,6 +92,8 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		banlist: [
 			"pokemontag:mega",
 			"pokemontag:gigantamax",
+			"pokemontag:teraforme",
+			"pokemontag:stellarforme",
 			"Revavroom-Caph Starmobile",
 			"Revavroom-Navi Starmobile",
 			"Revavroom-Ruchbah Starmobile",

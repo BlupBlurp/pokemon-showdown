@@ -2357,13 +2357,15 @@ export class TeamValidator {
 		setHas["pokemon:" + species.id] = true;
 		setHas["basepokemon:" + toID(species.baseSpecies)] = true;
 
-		let isMega = false;
+		const isMega = !!(
+			species.isMega || species.isPrimal ||
+			tierSpecies.isMega || tierSpecies.isPrimal
+		);
+		if (isMega) {
+			setHas["pokemontag:mega"] = true;
+		}
 		if (tierSpecies !== species) {
 			setHas["pokemon:" + tierSpecies.id] = true;
-			if (tierSpecies.isMega || tierSpecies.isPrimal) {
-				setHas["pokemontag:mega"] = true;
-				isMega = true;
-			}
 		}
 
 		let isGmax = false;
@@ -2382,6 +2384,20 @@ export class TeamValidator {
 			tierSpecies.forme.startsWith("Gigantamax ");
 		if (isGmax || isGigantamaxForm) {
 			setHas["pokemontag:gigantamax"] = true;
+		}
+		const isTeraForm =
+			species.forme.endsWith("Tera") ||
+			species.forme.endsWith("Terastal") ||
+			tierSpecies.forme.endsWith("Tera") ||
+			tierSpecies.forme.endsWith("Terastal");
+		if (isTeraForm) {
+			setHas["pokemontag:teraforme"] = true;
+		}
+		const isStellarForm =
+			species.forme.endsWith("Stellar") ||
+			tierSpecies.forme.endsWith("Stellar");
+		if (isStellarForm) {
+			setHas["pokemontag:stellarforme"] = true;
 		}
 		if (
 			tierSpecies.baseSpecies === "Greninja" &&
@@ -2458,6 +2474,20 @@ export class TeamValidator {
 
 		if (isGigantamaxForm) {
 			banReason = ruleTable.check("pokemontag:gigantamax", setHas);
+			if (banReason) {
+				return `${tierSpecies.name} is ${banReason}.`;
+			}
+		}
+
+		if (isTeraForm) {
+			banReason = ruleTable.check("pokemontag:teraforme", setHas);
+			if (banReason) {
+				return `${tierSpecies.name} is ${banReason}.`;
+			}
+		}
+
+		if (isStellarForm) {
+			banReason = ruleTable.check("pokemontag:stellarforme", setHas);
 			if (banReason) {
 				return `${tierSpecies.name} is ${banReason}.`;
 			}

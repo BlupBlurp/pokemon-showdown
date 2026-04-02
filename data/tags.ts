@@ -43,6 +43,15 @@ export const Tags: { [id: IDEntry]: TagData } = {
 			species.forme.startsWith("Gigantamax ") ||
 			species.forme === "Gmax",
 	},
+	teraforme: {
+		name: "Tera Forme",
+		speciesFilter: (species) =>
+			species.forme.endsWith("Tera") || species.forme.endsWith("Terastal"),
+	},
+	stellarforme: {
+		name: "Stellar Forme",
+		speciesFilter: (species) => species.forme.endsWith("Stellar"),
+	},
 	mythical: {
 		name: "Mythical",
 		speciesFilter: (species) => species.tags.includes("Mythical"),
