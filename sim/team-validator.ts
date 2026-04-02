@@ -2399,6 +2399,21 @@ export class TeamValidator {
 		if (isStellarForm) {
 			setHas["pokemontag:stellarforme"] = true;
 		}
+		const isPikachuCapForm =
+			tierSpecies.baseSpecies === "Pikachu" &&
+			[
+				"Original",
+				"Hoenn",
+				"Sinnoh",
+				"Unova",
+				"Kalos",
+				"Alola",
+				"Partner",
+				"World",
+			].includes(tierSpecies.forme);
+		if (isPikachuCapForm) {
+			setHas["pokemontag:pikachucap"] = true;
+		}
 		if (
 			tierSpecies.baseSpecies === "Greninja" &&
 			toID(set.ability) === "battlebond"
@@ -2488,6 +2503,13 @@ export class TeamValidator {
 
 		if (isStellarForm) {
 			banReason = ruleTable.check("pokemontag:stellarforme", setHas);
+			if (banReason) {
+				return `${tierSpecies.name} is ${banReason}.`;
+			}
+		}
+
+		if (isPikachuCapForm) {
+			banReason = ruleTable.check("pokemontag:pikachucap", setHas);
 			if (banReason) {
 				return `${tierSpecies.name} is ${banReason}.`;
 			}

@@ -52,6 +52,21 @@ export const Tags: { [id: IDEntry]: TagData } = {
 		name: "Stellar Forme",
 		speciesFilter: (species) => species.forme.endsWith("Stellar"),
 	},
+	pikachucap: {
+		name: "Pikachu Cap",
+		speciesFilter: (species) =>
+			species.baseSpecies === "Pikachu" &&
+			[
+				"Original",
+				"Hoenn",
+				"Sinnoh",
+				"Unova",
+				"Kalos",
+				"Alola",
+				"Partner",
+				"World",
+			].includes(species.forme),
+	},
 	mythical: {
 		name: "Mythical",
 		speciesFilter: (species) => species.tags.includes("Mythical"),
