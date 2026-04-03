@@ -93,7 +93,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	direclaw: {
 		accuracy: 80,
-		basePower: 15,
 		inherit: true,
 	},
 	doublehit: {
@@ -283,10 +282,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	powergem: {
 		basePower: 90,
-		inherit: true,
-	},
-	psyshieldbash: {
-		basePower: 10,
 		inherit: true,
 	},
 	ragefist: {

@@ -3318,10 +3318,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Skull Bash",
                     "Thrash",
                     "Double-Edge",
-                    "Head Smash"
+                    "Head Smash",
+                    "Hydro Pump"
                 ],
                 "abilities": [
                     "Rattled"
@@ -5560,10 +5560,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Iron Head",
                     "Energy Ball",
                     "Leech Seed",
-                    "Power Whip"
+                    "Power Whip",
+                    "Snap Trap"
                 ],
                 "abilities": [
                     "Levitate"

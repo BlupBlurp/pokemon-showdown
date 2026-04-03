@@ -2055,6 +2055,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	groudonmeta: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	groudonprimal: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -2687,6 +2691,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	lugiashadow: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	lumineon: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -2984,6 +2992,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	mewtwomegay: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	mewtwoshadow: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3816,6 +3828,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	rayquaza: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	rayquazaillusory: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},

@@ -657,6 +657,17 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	basculegionf: {
+		baseStats: {
+			atk: 80,
+			def: 65,
+			hp: 120,
+			spa: 112,
+			spd: 75,
+			spe: 78,
+		},
+		inherit: true,
+	},
 	basculin: {
 		baseStats: {
 			atk: 102,
@@ -1656,6 +1667,17 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"Water",
 		],
 	},
+	clodsire: {
+		baseStats: {
+			atk: 75,
+			def: 60,
+			hp: 130,
+			spa: 65,
+			spd: 100,
+			spe: 20,
+		},
+		inherit: true,
+	},
 	cloyster: {
 		abilities: {
 			"0": "Skill Link",
@@ -1946,6 +1968,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 	},
 	cursola: {
+		abilities: {
+			"0": "Sticky Hold",
+			H: "Perish Body",
+		},
 		baseStats: {
 			atk: 60,
 			def: 85,
@@ -2858,6 +2884,17 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	farigiraf: {
+		baseStats: {
+			atk: 90,
+			def: 70,
+			hp: 120,
+			spa: 110,
+			spd: 70,
+			spe: 85,
+		},
+		inherit: true,
+	},
 	fearow: {
 		abilities: {
 			"0": "Keen Eye",
@@ -2969,6 +3006,12 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"0": "Swift Swim",
 			"1": "Water Veil",
 			H: "Propeller Tail",
+		},
+		inherit: true,
+	},
+	floetteeternal: {
+		abilities: {
+			"0": "Adaptability",
 		},
 		inherit: true,
 	},
@@ -3722,12 +3765,12 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	greninjabond: {
 		baseStats: {
-			atk: 145,
+			atk: 100,
 			def: 67,
 			hp: 72,
-			spa: 153,
+			spa: 103,
 			spd: 71,
-			spe: 132,
+			spe: 122,
 		},
 		inherit: true,
 	},
@@ -3783,6 +3826,34 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Desolate Land",
 		},
 		inherit: true,
+	},
+	groudonmeta: {
+		abilities: {
+			"0": "Poison Touch",
+			H: "Berserk",
+		},
+		baseSpecies: "Groudon",
+		baseStats: {
+			atk: 150,
+			def: 140,
+			hp: 100,
+			spa: 100,
+			spd: 90,
+			spe: 90,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Meta",
+		gen: 8,
+		heightm: 3.5,
+		name: "Groudon-Meta",
+		num: 383,
+		types: [
+			"Dark",
+			"Poison",
+		],
+		weightkg: 950,
 	},
 	grovyle: {
 		abilities: {
@@ -4400,6 +4471,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	kingambit: {
+		abilities: {
+			"0": "Defiant",
+			"1": "Supreme Overlord",
+			H: "Sharpness",
+		},
+		inherit: true,
+	},
 	kingler: {
 		abilities: {
 			"0": "Hyper Cutter",
@@ -4761,6 +4840,34 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Justified",
 		},
 		inherit: true,
+	},
+	lugiashadow: {
+		abilities: {
+			"0": "Pressure",
+			H: "Shadow Shield",
+		},
+		baseSpecies: "Lugia",
+		baseStats: {
+			atk: 130,
+			def: 90,
+			hp: 106,
+			spa: 154,
+			spd: 90,
+			spe: 110,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Shadow",
+		gen: 8,
+		heightm: 5.2,
+		name: "Lugia-Shadow",
+		num: 249,
+		types: [
+			"Dark",
+			"Flying",
+		],
+		weightkg: 216,
 	},
 	lumineon: {
 		abilities: {
@@ -5226,6 +5333,34 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Trace",
 		},
 		inherit: true,
+	},
+	mewtwoshadow: {
+		abilities: {
+			"0": "Pressure",
+			H: "Unnerve",
+		},
+		baseSpecies: "Mewtwo",
+		baseStats: {
+			atk: 154,
+			def: 90,
+			hp: 106,
+			spa: 110,
+			spd: 90,
+			spe: 130,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Shadow",
+		gen: 8,
+		heightm: 2,
+		name: "Mewtwo-Shadow",
+		num: 150,
+		types: [
+			"Psychic",
+			"Dark",
+		],
+		weightkg: 122,
 	},
 	mightyena: {
 		abilities: {
@@ -6699,6 +6834,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"1": "Flash Fire",
 			H: "Reckless",
 		},
+		baseStats: {
+			atk: 105,
+			def: 70,
+			hp: 65,
+			spa: 80,
+			spd: 80,
+			spe: 115,
+		},
 		inherit: true,
 	},
 	rapidashgalar: {
@@ -6708,12 +6851,12 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Magic Guard",
 		},
 		baseStats: {
-			atk: 90,
+			atk: 105,
 			def: 70,
 			hp: 65,
-			spa: 90,
+			spa: 80,
 			spd: 80,
-			spe: 105,
+			spe: 115,
 		},
 		inherit: true,
 		types: [
@@ -6775,6 +6918,34 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Delta Stream",
 		},
 		inherit: true,
+	},
+	rayquazaillusory: {
+		abilities: {
+			"0": "Magic Bounce",
+			H: "Misty Surge",
+		},
+		baseSpecies: "Rayquaza",
+		baseStats: {
+			atk: 150,
+			def: 90,
+			hp: 105,
+			spa: 150,
+			spd: 90,
+			spe: 95,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Illusory",
+		gen: 8,
+		heightm: 7,
+		name: "Rayquaza-Illusory",
+		num: 384,
+		types: [
+			"Dragon",
+			"Fairy",
+		],
+		weightkg: 206.5,
 	},
 	regice: {
 		abilities: {
