@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
 const { Dex, toID } = require("../dist/sim/dex");
+const { buildMoveDiffs } = require("./sync-relumi-moves");
 const { buildRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -864,115 +865,6 @@ function buildLearnsetsDiffs({
 		unmappedMoveNumbers: Array.from(unmappedMoveNumbers).sort(),
 		missingSpeciesRefs: Array.from(missingSpeciesRefs).sort(),
 	};
-}
-
-function buildMoveDiffs({ moveNames, wazaRows, dex }) {
-	const movesDiffs = {};
-	const unmappedMoves = [];
-
-	// Hardcoded flag overrides for Relumi abilities
-	// These flags are preserved even after sync to ensure consistent ability interactions
-	const flagOverrides = {
-		// Sharpness moves (slicing flag)
-		smartstrike: { slicing: 1 },
-		shadowclaw: { slicing: 1 },
-		dragonclaw: { slicing: 1 },
-		metalclaw: { slicing: 1 },
-		crushclaw: { slicing: 1 },
-		// Mega Launcher moves (pulse flag)
-		flashcannon: { pulse: 1 },
-		armorcannon: { pulse: 1 },
-	};
-
-	// Hardcoded weather/legality overrides so Relumi always uses Gen 9 snow behavior.
-	const moveOverrides = {
-		hail: {
-			name: "Snowscape",
-			shortDesc: "For 5 turns, snow begins to fall.",
-			weather: "snowscape",
-		},
-		maxhailstorm: {
-			weather: "snowscape",
-		},
-		snowscape: {
-			gen: 8,
-			isNonstandard: null,
-		},
-		chillyreception: {
-			gen: 8,
-			isNonstandard: null,
-		},
-	};
-
-	for (const row of wazaRows) {
-		if (!row || row.isValid !== 1) continue;
-		if (!row.wazaNo || row.wazaNo <= 0) continue;
-		const moveName = (moveNames.get(row.wazaNo) || "").trim();
-		if (!moveName || moveName === "———") continue;
-
-		const move = dex.moves.get(moveName);
-		if (!move.exists) {
-			unmappedMoves.push({ wazaNo: row.wazaNo, moveName });
-			continue;
-		}
-
-		const type = TYPE_ID_TO_NAME[row.type] || move.type;
-		const basePower = row.power;
-		const rawAccuracy = row.hitPer;
-		const accuracy = rawAccuracy === 101 ? true : rawAccuracy;
-		const updates = { inherit: true };
-		let changed = false;
-
-		if (
-			typeof basePower === "number" &&
-			basePower !== 1 &&
-			basePower !== move.basePower
-		) {
-			updates.basePower = basePower;
-			changed = true;
-		}
-		if (type && type !== move.type) {
-			updates.type = type;
-			changed = true;
-		}
-		if (
-			typeof accuracy === "number"
-				? accuracy !== 0 && accuracy !== move.accuracy
-				: accuracy !== move.accuracy
-		) {
-			updates.accuracy = accuracy;
-			changed = true;
-		}
-		if (changed) movesDiffs[move.id] = updates;
-	}
-
-	// Apply hardcoded flag overrides to ensure Relumi ability interactions work
-	for (const [moveId, flagAdds] of Object.entries(flagOverrides)) {
-		const move = dex.moves.get(moveId);
-		if (!move.exists) continue;
-
-		// Create or update the entry with preserved flags
-		if (!movesDiffs[move.id]) {
-			movesDiffs[move.id] = { inherit: true };
-		}
-
-		// Merge all flags: base flags + our overrides
-		const baseFlags = move.flags || {};
-		const mergedFlags = { ...baseFlags, ...flagAdds };
-		movesDiffs[move.id].flags = mergedFlags;
-	}
-
-	// Apply hardcoded move overrides that should persist across syncs.
-	for (const [moveId, override] of Object.entries(moveOverrides)) {
-		const move = dex.moves.get(moveId);
-		if (!move.exists) continue;
-		if (!movesDiffs[move.id]) {
-			movesDiffs[move.id] = { inherit: true };
-		}
-		Object.assign(movesDiffs[move.id], override);
-	}
-
-	return { movesDiffs, unmappedMoves };
 }
 
 function buildFormatsDataDiffs({ mappedSpeciesIds, dex }) {
