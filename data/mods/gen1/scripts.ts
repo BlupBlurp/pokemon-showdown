@@ -25,17 +25,11 @@ export const Scripts: ModdedBattleScriptsData = {
 	// BattlePokemon scripts.
 	pokemon: {
 		inherit: true,
-		// In gen 1, a Pokémon can have two instances of the same move using Mimic
-		// we need to make sure to deduct PP from a move that has PP left
-		deductPP(move, amount, target) {
-			move = this.battle.dex.moves.get(move);
-			// first loop: get the first instance with PP left
-			// second loop: get the first instance, even if it has no PP left
-			for (let i = 0; i < 2; i++) {
-				for (const ppData of this.moveSlots) {
-					if (ppData.id !== move.id) continue;
-					ppData.used = true;
-					if (!ppData.pp && i === 0) continue;
+		deductPP(move, amount) {
+			// deduct PP based on side.lastSelectedMoveSlot
+			const ppData = this.getMoveSlot(this.side.lastSelectedMoveSlot);
+			if (!ppData) return 0;
+			ppData.used = true;
 
 			if (!amount) amount = 1;
 			ppData.pp -= amount;
@@ -224,11 +218,6 @@ export const Scripts: ModdedBattleScriptsData = {
 			}
 
 			this.useMove(move, pokemon, { target, sourceEffect });
-
-			if (pokemon.volatiles['twoturnmove']) {
-				pokemon.deductPP(move, -1, target);
-				pokemon.volatiles['twoturnmove'].ppMove = move.id;
-			}
 		},
 		// This function deals with AfterMoveSelf events.
 		// This leads with partial trapping moves shenanigans after the move has been used.
