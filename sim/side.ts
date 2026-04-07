@@ -197,6 +197,13 @@ export class Side {
 	 * This is also used for checking Self-KO clause in Pokemon Stadium 2.
 	 */
 	lastMove: Move | null;
+	/**
+	 * The move and the slot are chosen during move selection
+	 * lastSelectedMove never resets
+	 * lastSelectedMoveSlot resets on every switch
+	 */
+	lastSelectedMove: ID = '00' as ID;
+	lastSelectedMoveSlot = 0;
 
 	constructor(name: string, battle: Battle, sideNum: number, team: PokemonSet[]) {
 		const sideScripts = battle.dex.data.Scripts.side;
@@ -639,7 +646,7 @@ export class Side {
 			}
 		}
 
-		const lockedMove = pokemon.getLockedMove();
+		const lockedMove = pokemon.getLockedMove() || pokemon.getSemiLockedMove();
 		if (lockedMove) {
 			let lockedMoveTargetLoc = pokemon.lastMoveTargetLoc || 0;
 			const lockedMoveID = toID(lockedMove);
@@ -652,6 +659,15 @@ export class Side {
 				pokemon,
 				targetLoc: lockedMoveTargetLoc,
 				moveid: lockedMoveID,
+			});
+			return true;
+		} else if (this.battle.gen === 1 &&
+			(['frz', 'slp'].includes(pokemon.status) || pokemon.volatiles['partiallytrapped'])) {
+			if (pokemon.maybeLocked) this.choice.cantUndo = true;
+			this.choice.actions.push({
+				choice: 'move',
+				pokemon,
+				moveid: 'fight',
 			});
 			return true;
 		} else if (!moves.length) {
@@ -1078,6 +1094,38 @@ export class Side {
 		};
 	}
 
+	commitChoices() {
+		if (this.battle.gen === 1) {
+			for (const choice of this.choice.actions) {
+				if (choice.choice !== 'move' || !choice.pokemon) continue;
+				const move = choice.moveid;
+				if (move === 'fight') {
+					const pokemon = choice.pokemon;
+					if (['frz', 'slp'].includes(pokemon.status)) {
+						// do nothing
+					} else if (pokemon.volatiles['partiallytrapped']) {
+						// 'cannotmove' is what is set in the cartridge
+						this.lastSelectedMove = 'cannotmove' as ID;
+					}
+				} else if (move === 'struggle') {
+					// saves Struggle
+					this.lastSelectedMove = move as ID;
+				} else if (typeof choice.moveSlot === 'number') {
+					// not locked
+					this.lastSelectedMove = move as ID;
+					this.lastSelectedMoveSlot = choice.moveSlot;
+				}
+				/**
+				 * choice.moveid should be synced with lastSelectedMove
+				 * if a Pokémon is frozen or asleep, this ensures it tries to use the last move used
+				 * if a Pokémon is recharging, this ensures it tries to use Hyper Beam again
+				 */
+				choice.moveid = this.lastSelectedMove;
+			}
+		}
+		this.battle.queue.addChoice(this.choice.actions);
+	}
+
 	choose(input: string) {
 		if (!this.requestState) {
 			return this.emitChoiceError(
@@ -1169,7 +1217,7 @@ export class Side {
 				if (!this.chooseMove(data, targetLoc, event)) return false;
 				break;
 			case 'switch':
-				this.chooseSwitch(data);
+				if (!this.chooseSwitch(data)) return false;
 				break;
 			case 'shift':
 				if (data) return this.emitChoiceError(`Unrecognized data after "shift": ${data}`);
@@ -1185,7 +1233,7 @@ export class Side {
 				break;
 			case 'auto':
 			case 'default':
-				this.autoChoose();
+				if (!this.autoChoose()) return false;
 				break;
 			default:
 				this.emitChoiceError(`Unrecognized choice: ${choiceString}`);

@@ -55,60 +55,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			durationCallback(target, source, effect) {
 				return this.random(3, 5);
 			},
-			onLockMove: 'bide',
-			onStart(pokemon) {
-				this.effectState.totalDamage = 0;
-				this.add('-start', pokemon, 'move: Bide');
-			},
-			onDamagePriority: -101,
-			onDamage(damage, target, source, move) {
-				if (!move || move.effectType !== 'Move' || !source) return;
-				this.effectState.totalDamage += damage;
-				this.effectState.lastDamageSource = source;
-			},
-			onBeforeMove(pokemon, target, move) {
-				if (this.effectState.duration === 1) {
-					this.add('-end', pokemon, 'move: Bide');
-					if (!this.effectState.totalDamage) {
-						this.add('-fail', pokemon);
-						return false;
-					}
-					target = this.effectState.lastDamageSource;
-					if (!target) {
-						this.add('-fail', pokemon);
-						return false;
-					}
-					if (!target.isActive) {
-						const possibleTarget = this.getRandomTarget(pokemon, this.dex.moves.get('pound'));
-						if (!possibleTarget) {
-							this.add('-miss', pokemon);
-							return false;
-						}
-						target = possibleTarget;
-					}
-					const moveData = {
-						id: 'bide',
-						name: "Bide",
-						accuracy: 100,
-						damage: this.effectState.totalDamage * 2,
-						category: "Physical",
-						priority: 0,
-						flags: { contact: 1, protect: 1 },
-						effectType: 'Move',
-						type: 'Normal',
-					} as unknown as ActiveMove;
-					this.actions.tryMoveHit(target, pokemon, moveData);
-					pokemon.removeVolatile('bide');
-					return false;
-				}
-				this.add('-activate', pokemon, 'move: Bide');
-			},
-			onMoveAborted(pokemon) {
-				pokemon.removeVolatile('bide');
-			},
-			onEnd(pokemon) {
-				this.add('-end', pokemon, 'move: Bide', '[silent]');
-			},
+			onLockMove: undefined, // no inherit
+			onSemiLockMove: 'bide',
 		},
 	},
 	counter: {
