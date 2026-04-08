@@ -10,8 +10,8 @@ const STATS_PATH = runtimeGlobals.Monitor?.logPath
 const STATS_CACHE_TTL = 5 * 60 * 1000;
 
 export const RELUMI_TRACKED_FORMATS = [
-	"gen8relumirandomsingles",
-	"gen8relumirandomdoubles",
+	"gen8relumisinglesrandom",
+	"gen8relumidoublesrandom",
 	"gen8relumisinglesanythinggoes",
 	"gen8relumisinglesubers",
 	"gen8relumisinglesou",
@@ -147,13 +147,13 @@ const CATEGORY_CONFIG: Record<
 > = {
 	"random-singles": {
 		label: "Random Singles",
-		displayFormat: "[Gen 8] Relumi Random Singles",
-		formats: ["gen8relumirandomsingles"],
+		displayFormat: "[Gen 8] Relumi Singles Random",
+		formats: ["gen8relumisinglesrandom"],
 	},
 	"random-doubles": {
 		label: "Random Doubles",
-		displayFormat: "[Gen 8] Relumi Random Doubles",
-		formats: ["gen8relumirandomdoubles"],
+		displayFormat: "[Gen 8] Relumi Doubles Random",
+		formats: ["gen8relumidoublesrandom"],
 	},
 	singles: {
 		label: "Singles",
@@ -183,8 +183,8 @@ const CATEGORY_IDS: StatsCategoryId[] = [
 ];
 
 const FORMAT_TO_CATEGORY: Record<RelumiTrackedFormat, StatsCategoryId> = {
-	gen8relumirandomsingles: "random-singles",
-	gen8relumirandomdoubles: "random-doubles",
+	gen8relumisinglesrandom: "random-singles",
+	gen8relumidoublesrandom: "random-doubles",
 	gen8relumisinglesanythinggoes: "singles",
 	gen8relumisinglesubers: "singles",
 	gen8relumisinglesou: "singles",

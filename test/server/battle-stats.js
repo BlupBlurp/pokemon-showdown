@@ -11,8 +11,8 @@ const {
 describe("Battle stats aggregation", () => {
 	it("normalizes tracked formats and skips testing formats", () => {
 		assert.equal(
-			normalizeRelumiFormat("gen8relumirandombattle"),
-			"gen8relumirandombattle",
+			normalizeRelumiFormat("gen8relumisinglesrandom"),
+			"gen8relumisinglesrandom",
 		);
 		assert.equal(normalizeRelumiFormat("Gen8RelumiSinglesTesting"), null);
 		assert.equal(normalizeRelumiFormat("gen9ou"), null);
@@ -25,7 +25,7 @@ describe("Battle stats aggregation", () => {
 		const records = [
 			{
 				battleId: "battle-a",
-				format: "gen8relumirandombattle",
+				format: "gen8relumisinglesrandom",
 				timestamp: now - 2 * hour,
 				playerA: "Alice",
 				playerB: "Bob",
@@ -70,7 +70,7 @@ describe("Battle stats aggregation", () => {
 			},
 			{
 				battleId: "battle-b",
-				format: "gen8relumirandombattle",
+				format: "gen8relumisinglesrandom",
 				timestamp: now - 28 * hour,
 				playerA: "Alice",
 				playerB: "Cara",
