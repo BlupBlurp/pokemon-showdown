@@ -10,10 +10,14 @@ const STATS_PATH = runtimeGlobals.Monitor?.logPath
 const STATS_CACHE_TTL = 5 * 60 * 1000;
 
 export const RELUMI_TRACKED_FORMATS = [
-	"gen8relumirandombattle",
-	"gen8relumirandomdoublesbattle",
-	"gen8relumisingles",
-	"gen8relumidoubles",
+	"gen8relumirandomsingles",
+	"gen8relumirandomdoubles",
+	"gen8relumisinglesanythinggoes",
+	"gen8relumisinglesubers",
+	"gen8relumisinglesou",
+	"gen8relumidoublesanythinggoes",
+	"gen8relumidoublesubers",
+	"gen8relumidoublesou",
 ] as const;
 
 export type RelumiTrackedFormat = (typeof RELUMI_TRACKED_FORMATS)[number];
@@ -143,23 +147,31 @@ const CATEGORY_CONFIG: Record<
 > = {
 	"random-singles": {
 		label: "Random Singles",
-		displayFormat: "[Gen 8 Relumi] Random Battle",
-		formats: ["gen8relumirandombattle"],
+		displayFormat: "[Gen 8] Relumi Random Singles",
+		formats: ["gen8relumirandomsingles"],
 	},
 	"random-doubles": {
 		label: "Random Doubles",
-		displayFormat: "[Gen 8 Relumi] Random Doubles Battle",
-		formats: ["gen8relumirandomdoublesbattle"],
+		displayFormat: "[Gen 8] Relumi Random Doubles",
+		formats: ["gen8relumirandomdoubles"],
 	},
 	singles: {
 		label: "Singles",
-		displayFormat: "[Gen 8 Relumi] Singles",
-		formats: ["gen8relumisingles"],
+		displayFormat: "[Gen 8] Relumi Singles (AG/Ubers/OU)",
+		formats: [
+			"gen8relumisinglesanythinggoes",
+			"gen8relumisinglesubers",
+			"gen8relumisinglesou",
+		],
 	},
 	doubles: {
 		label: "Doubles",
-		displayFormat: "[Gen 8 Relumi] Doubles",
-		formats: ["gen8relumidoubles"],
+		displayFormat: "[Gen 8] Relumi Doubles (AG/Ubers/OU)",
+		formats: [
+			"gen8relumidoublesanythinggoes",
+			"gen8relumidoublesubers",
+			"gen8relumidoublesou",
+		],
 	},
 };
 
@@ -171,10 +183,14 @@ const CATEGORY_IDS: StatsCategoryId[] = [
 ];
 
 const FORMAT_TO_CATEGORY: Record<RelumiTrackedFormat, StatsCategoryId> = {
-	gen8relumirandombattle: "random-singles",
-	gen8relumirandomdoublesbattle: "random-doubles",
-	gen8relumisingles: "singles",
-	gen8relumidoubles: "doubles",
+	gen8relumirandomsingles: "random-singles",
+	gen8relumirandomdoubles: "random-doubles",
+	gen8relumisinglesanythinggoes: "singles",
+	gen8relumisinglesubers: "singles",
+	gen8relumisinglesou: "singles",
+	gen8relumidoublesanythinggoes: "doubles",
+	gen8relumidoublesubers: "doubles",
+	gen8relumidoublesou: "doubles",
 };
 
 /**
