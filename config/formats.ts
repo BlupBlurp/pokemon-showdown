@@ -23,6 +23,8 @@ const RELUMI_BASE_BANLIST = [
 	"Salazzle-Totem",
 	"Togedemaru-Totem",
 	"Vikavolt-Totem",
+	"Cramorant-Gorging",
+	"Cramorant-Gulping",
 ] as const;
 
 const RELUMI_GEN9_UNBANLIST = [
@@ -126,7 +128,6 @@ const RELUMI_OU_BANLIST = [
 	"Necrozma-Ultra",
 	"Dialga-Origin",
 	"Palkia-Origin",
-	"Melmetal",
 ] as const;
 
 export const Formats: import("../sim/dex-formats").FormatList = [
