@@ -12,6 +12,17 @@ const RELUMI_BASE_BANLIST = [
 	"Revavroom-Ruchbah Starmobile",
 	"Revavroom-Schedar Starmobile",
 	"Revavroom-Segin Starmobile",
+	"Araquanid-Totem",
+	"Gumshoos-Totem",
+	"Kommo-o-Totem",
+	"Lurantis-Totem",
+	"Mimikyu-Busted-Totem",
+	"Mimikyu-Totem",
+	"Raticate-Alola-Totem",
+	"Ribombee-Totem",
+	"Salazzle-Totem",
+	"Togedemaru-Totem",
+	"Vikavolt-Totem",
 ] as const;
 
 const RELUMI_GEN9_UNBANLIST = [
@@ -91,6 +102,7 @@ const RELUMI_OU_BANLIST = [
 	"Genesect-Douse",
 	"Genesect-Shock",
 	"Xerneas",
+	"Xerneas-Neutral",
 	"Yveltal",
 	"Zygarde-Complete",
 	"Solgaleo",
@@ -107,6 +119,7 @@ const RELUMI_OU_BANLIST = [
 	"Zamazenta",
 	"Zamazenta-Crowned",
 	"Urshifu",
+	"Spectrier",
 	"Calyrex-Ice",
 	"Calyrex-Shadow",
 ] as const;
