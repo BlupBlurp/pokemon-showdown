@@ -122,6 +122,11 @@ const RELUMI_OU_BANLIST = [
 	"Spectrier",
 	"Calyrex-Ice",
 	"Calyrex-Shadow",
+	"Eternatus",
+	"Necrozma-Ultra",
+	"Dialga-Origin",
+	"Palkia-Origin",
+	"Melmetal",
 ] as const;
 
 export const Formats: import("../sim/dex-formats").FormatList = [
