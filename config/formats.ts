@@ -129,7 +129,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		section: "Relumi Singles",
 	},
 	{
-		name: "[Gen 8] Relumi Random Singles",
+		name: "[Gen 8] Relumi Singles Random",
 		desc: `Randomized teams for the Relumi metagame.`,
 		mod: "gen8relumi",
 		team: "random",
@@ -201,7 +201,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		section: "Relumi Doubles",
 	},
 	{
-		name: "[Gen 8] Relumi Random Doubles",
+		name: "[Gen 8] Relumi Doubles Random",
 		mod: "gen8relumi",
 		gameType: "doubles",
 		team: "random",
