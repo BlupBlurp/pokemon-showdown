@@ -51,6 +51,7 @@ const RELUMI_GEN9_UNBANLIST = [
 	"Dipplin",
 	"Hydrapple",
 	"Archaludon",
+	"Urshifu-Rapid-Strike",
 ] as const;
 
 const RELUMI_OU_BANLIST = [
