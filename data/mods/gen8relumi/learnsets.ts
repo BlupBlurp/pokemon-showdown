@@ -146437,6 +146437,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 	},
 	magmortar: {
 		learnset: {
+			armorcannon: [
+				"9L61",
+			],
 			attract: [
 				"9M",
 			],
@@ -146452,9 +146455,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			burningjealousy: [
 				"9T",
-			],
-			burnup: [
-				"9L61",
 			],
 			clearsmog: [
 				"9L12",
@@ -193817,6 +193817,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			pursuit: [
 				"9T",
+			],
+			ragefist: [
+				"9L40",
 			],
 			raindance: [
 				"9M",

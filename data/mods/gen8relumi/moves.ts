@@ -17,9 +17,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	armorcannon: {
 		basePower: 100,
-		category: "Physical",
 		flags: {
-			contact: 1,
 			metronome: 1,
 			mirror: 1,
 			protect: 1,
@@ -112,7 +110,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		isNonstandard: null,
 	},
 	chloroblast: {
-		category: "Physical",
+		accuracy: 100,
 		inherit: true,
 	},
 	collisioncourse: {
@@ -288,6 +286,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
+	firstimpression: {
+		basePower: 100,
+		inherit: true,
+	},
 	flamewheel: {
 		basePower: 75,
 		inherit: true,
@@ -339,6 +341,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 70,
 		inherit: true,
 	},
+	gravapple: {
+		basePower: 90,
+		inherit: true,
+	},
+	gunkshot: {
+		accuracy: 85,
+		inherit: true,
+	},
 	hail: {
 		inherit: true,
 		name: "Snowscape",
@@ -353,6 +363,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	holdback: {
 		inherit: true,
 		type: "Fighting",
+	},
+	hydropump: {
+		accuracy: 85,
+		inherit: true,
 	},
 	hydrosteam: {
 		category: "Physical",
@@ -609,6 +623,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	protect: {
+		inherit: true,
+		pp: 5,
+	},
 	psyblade: {
 		category: "Status",
 		inherit: true,
@@ -625,8 +643,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	ragefist: {
-		basePower: 25,
-		category: "Status",
 		flags: {
 			contact: 1,
 			metronome: 1,
@@ -838,6 +854,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	submission: {
 		accuracy: 100,
 		basePower: 110,
+		inherit: true,
+	},
+	supercellslam: {
+		basePower: 130,
 		inherit: true,
 	},
 	syrupbomb: {
