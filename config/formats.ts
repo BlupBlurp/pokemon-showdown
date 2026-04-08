@@ -180,7 +180,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:future"],
+		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon"],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	{
@@ -194,7 +194,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:future", ...RELUMI_OU_BANLIST],
+		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon", ...RELUMI_OU_BANLIST],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	{
@@ -255,7 +255,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:future"],
+		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon"],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	{
@@ -270,7 +270,7 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:future", ...RELUMI_OU_BANLIST],
+		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon", ...RELUMI_OU_BANLIST],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 ];

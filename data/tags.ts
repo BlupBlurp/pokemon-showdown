@@ -325,6 +325,10 @@ export const Tags: { [id: IDEntry]: TagData } = {
 		name: "Future",
 		genericFilter: (thing) => thing.isNonstandard === "Future",
 	},
+	futurepokemon: {
+		name: "Future Pokemon",
+		speciesFilter: (species) => species.isNonstandard === "Future",
+	},
 	lgpe: {
 		name: "LGPE",
 		genericFilter: (thing) => thing.isNonstandard === "LGPE",
