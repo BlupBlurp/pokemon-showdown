@@ -44,6 +44,14 @@ function usersToNames(users: TournamentPlayer[]) {
 	return users.map(user => user.name);
 }
 
+function isUnreliableAltCheckIp(ip: string) {
+	if (!ip || ip === '0.0.0.0') return true;
+	if (ip.startsWith('127.') || ip.startsWith('10.') || ip.startsWith('192.168.')) return true;
+	const secondOctet = Utils.parseExactInt(ip.split('.')[1]);
+	if (ip.startsWith('172.') && secondOctet >= 16 && secondOctet <= 31) return true;
+	return false;
+}
+
 export class TournamentPlayer extends Rooms.RoomGamePlayer<Tournament> {
 	readonly availableMatches: Set<TournamentPlayer>;
 	isBusy: boolean;
@@ -427,11 +435,11 @@ export class Tournament extends Rooms.RoomGame<TournamentPlayer> {
 			throw new Chat.ErrorMessage("Due to high load, you are limited to 4 games at the same time.");
 		}
 
-		if (!Config.noipchecks && user.latestIp) {
+		if (!Config.noipchecks && user.latestIp && !isUnreliableAltCheckIp(user.latestIp)) {
 			for (const otherPlayer of this.players) {
 				if (!otherPlayer) continue;
 				const otherUser = Users.get(otherPlayer.id);
-				if (otherUser?.latestIp && otherUser.latestIp === user.latestIp) {
+				if (otherUser?.latestIp && !isUnreliableAltCheckIp(otherUser.latestIp) && otherUser.latestIp === user.latestIp) {
 					output.sendReply('|tournament|error|AltUserAlreadyAdded');
 					return;
 				}
@@ -502,11 +510,12 @@ export class Tournament extends Rooms.RoomGame<TournamentPlayer> {
 			return;
 		}
 
-		if (!Config.noipchecks && replacementUser.latestIp) {
+		if (!Config.noipchecks && replacementUser.latestIp && !isUnreliableAltCheckIp(replacementUser.latestIp)) {
 			for (const otherPlayer of this.players) {
 				if (!otherPlayer) continue;
 				const otherUser = Users.get(otherPlayer.id);
-				if (otherUser?.latestIp && otherUser.latestIp === replacementUser.latestIp &&
+				if (otherUser?.latestIp && !isUnreliableAltCheckIp(otherUser.latestIp) &&
+					otherUser.latestIp === replacementUser.latestIp &&
 					replacementUser.latestIp !== user.latestIp) {
 					throw new Chat.ErrorMessage(`${replacementUser.name} already has an alt in the tournament.`);
 				}
@@ -1088,13 +1097,16 @@ export class Tournament extends Rooms.RoomGame<TournamentPlayer> {
 	}
 	onBattleJoin(room: GameRoom, user: User) {
 		if (!room.p1 || !room.p2) return;
-		if (this.allowScouting || this.ended || !user.latestIp || user.latestIp === room.p1.latestIp || user.latestIp === room.p2.latestIp) {
+		if (
+			this.allowScouting || this.ended || !user.latestIp || isUnreliableAltCheckIp(user.latestIp) ||
+			user.latestIp === room.p1.latestIp || user.latestIp === room.p2.latestIp
+		) {
 			return;
 		}
 		if (user.can('makeroom')) return;
 		for (const otherPlayer of this.getRemainingPlayers()) {
 			const otherUser = Users.get(otherPlayer.id);
-			if (otherUser?.latestIp && otherUser.latestIp === user.latestIp) {
+			if (otherUser?.latestIp && !isUnreliableAltCheckIp(otherUser.latestIp) && otherUser.latestIp === user.latestIp) {
 				return "Scouting is banned: tournament players can't watch other tournament battles.";
 			}
 		}
