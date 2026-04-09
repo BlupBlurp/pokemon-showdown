@@ -99,6 +99,26 @@ const CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS = new Set([
 	"florges",
 ]);
 
+// Manual learnset overrides that must persist across sync runs.
+// These are not always represented in extracted learnset tables.
+const MANUAL_LEARNSET_OVERRIDES = {
+	rotomheat: {
+		overheat: ["9L1"],
+	},
+	rotomwash: {
+		hydropump: ["9L1"],
+	},
+	rotomfrost: {
+		blizzard: ["9L1"],
+	},
+	rotomfan: {
+		airslash: ["9L1"],
+	},
+	rotommow: {
+		leafstorm: ["9L1"],
+	},
+};
+
 function readJson(filePath) {
 	return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -841,6 +861,16 @@ function buildLearnsetsDiffs({
 		}
 	}
 
+	for (const [speciesId, learnset] of Object.entries(
+		MANUAL_LEARNSET_OVERRIDES,
+	)) {
+		for (const [moveId, sources] of Object.entries(learnset)) {
+			for (const source of sources) {
+				addSource(speciesId, moveId, source);
+			}
+		}
+	}
+
 	const speciesWithRows = new Set();
 	for (const row of personalRows) {
 		if (!row || row.valid_flag !== 1 || !row.monsno || row.monsno <= 0)
@@ -848,6 +878,10 @@ function buildLearnsetsDiffs({
 		const formNo = deriveFormNo(row);
 		const speciesId = speciesIdByMonsForm.get(`${row.monsno}_${formNo}`);
 		if (speciesId) speciesWithRows.add(speciesId);
+	}
+
+	for (const speciesId of Object.keys(MANUAL_LEARNSET_OVERRIDES)) {
+		speciesWithRows.add(speciesId);
 	}
 
 	for (const speciesId of Array.from(speciesWithRows).sort()) {
