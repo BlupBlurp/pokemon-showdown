@@ -266,8 +266,18 @@ function main() {
 		`\t}\n` +
 		`\tvar speciesOverrides = ${JSON.stringify(speciesOverrides)};\n` +
 		`\tvar moveOverrides = ${JSON.stringify(moveOverrides)};\n` +
+		`\tvar vanillaSpeciesData = {};\n` +
+		`\tvar vanillaMoveData = {};\n` +
 		`\tif (typeof exports !== "undefined") {\n` +
 		`\t\tif (exports.BattlePokedex) {\n` +
+		`\t\t\tfor (var vanillaSid in speciesOverrides) {\n` +
+		`\t\t\t\tvar vanillaSpecies = exports.BattlePokedex[vanillaSid];\n` +
+		`\t\t\t\tif (!vanillaSpecies) continue;\n` +
+		`\t\t\t\tvanillaSpeciesData[vanillaSid] = {\n` +
+		`\t\t\t\t\tabilities: Object.assign({}, vanillaSpecies.abilities || {}),\n` +
+		`\t\t\t\t\tbaseStats: Object.assign({}, vanillaSpecies.baseStats || {}),\n` +
+		`\t\t\t\t};\n` +
+		`\t\t\t}\n` +
 		`\t\t\tfor (var sid in speciesOverrides) {\n` +
 		`\t\t\t\tvar speciesData = speciesOverrides[sid];\n` +
 		`\t\t\t\tif (!exports.BattlePokedex[sid]) {\n` +
@@ -285,6 +295,14 @@ function main() {
 		`\t\t\t}\n` +
 		`\t\t}\n` +
 		`\t\tif (exports.BattleMovedex) {\n` +
+		`\t\t\tfor (var vanillaMid in moveOverrides) {\n` +
+		`\t\t\t\tvar vanillaMove = exports.BattleMovedex[vanillaMid];\n` +
+		`\t\t\t\tif (!vanillaMove) continue;\n` +
+		`\t\t\t\tvanillaMoveData[vanillaMid] = {\n` +
+		`\t\t\t\t\taccuracy: vanillaMove.accuracy,\n` +
+		`\t\t\t\t\tbasePower: vanillaMove.basePower,\n` +
+		`\t\t\t\t};\n` +
+		`\t\t\t}\n` +
 		`\t\t\tfor (var mid in moveOverrides) {\n` +
 		`\t\t\t\tif (!exports.BattleMovedex[mid]) continue;\n` +
 		`\t\t\t\tObject.assign(exports.BattleMovedex[mid], moveOverrides[mid]);\n` +
@@ -352,6 +370,8 @@ function main() {
 		`\t\toverrideMoveData: Object.assign({}, base.overrideMoveData || {}, moveOverrides, moveTextOverrides),\n` +
 		`\t\toverrideAbilityData: Object.assign({}, base.overrideAbilityData || {}, abilityOverrides),\n` +
 		`\t\toverrideItemData: Object.assign({}, base.overrideItemData || {}),\n` +
+		`\t\tvanillaSpeciesData: vanillaSpeciesData,\n` +
+		`\t\tvanillaMoveData: vanillaMoveData,\n` +
 		`\t\trelumiBanConfig: relumiBanConfig,\n` +
 		`\t};\n` +
 		`})();\n`;
