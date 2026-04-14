@@ -25,6 +25,8 @@ const RELUMI_BASE_BANLIST = [
 	"Vikavolt-Totem",
 	"Cramorant-Gorging",
 	"Cramorant-Gulping",
+	"Eiscue-Noice",
+	"Morpeko-Hangry",
 ] as const;
 
 const RELUMI_GEN9_UNBANLIST = [
