@@ -263,19 +263,13 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	wideguard: {
 		inherit: true,
 		condition: {
-			duration: 1,
-			onSideStart(target, source) {
-				this.add('-singleturn', source, 'Wide Guard');
-			},
-			onTryHitPriority: 4,
-			onTryHit(target, source, effect) {
+			inherit: true,
+			onTryHit(target, source, move) {
 				// Wide Guard blocks damaging spread moves
-				if (
-					effect &&
-					(effect.category === 'Status' || (effect.target !== 'allAdjacent' && effect.target !== 'allAdjacentFoes'))
-				) {
+				if (move.category === 'Status' || (move?.target !== 'allAdjacent' && move.target !== 'allAdjacentFoes')) {
 					return;
 				}
+				if (this.checkMoveBypassesProtect(move, source, target, false)) return;
 				this.add('-activate', target, 'move: Wide Guard');
 				const lockedmove = source.getVolatile('lockedmove');
 				if (lockedmove) {
