@@ -381,6 +381,15 @@ exports.laddermodchat = false;
 exports.forcetimer = false;
 
 /**
+ * maxconcurrentbattles - cap ladder/challenge battle starts and queue overflow
+ *   Set to 0 to disable queueing behavior.
+ *   When this cap is reached, new ladder/challenge starts are queued until a battle ends.
+ *
+ * @type {number}
+ */
+exports.maxconcurrentbattles = 0;
+
+/**
  * force register ELO - unregistered users cannot search for ladder battles
  * in formats where their ELO is at or above this value.
  * @type {false | number}

@@ -27,12 +27,155 @@ const searches = new Map<string, {
 	searches: Map<ID, BattleReady>,
 }>();
 
+interface QueuedBattleMatch {
+	id: number;
+	enqueuedAt: number;
+	readies: BattleReady[];
+}
+
+const queuedBattleMatches: QueuedBattleMatch[] = [];
+const queuedBattleUsers = new Set<ID>();
+let nextQueuedBattleId = 1;
+
 /**
  * This keeps track of searches for battles, creating a new battle for a newly
  * added search if a valid match can be made, otherwise periodically
  * attempting to make a match with looser restrictions until one can be made.
  */
 class Ladder extends LadderStore {
+	static getConcurrentBattleCap() {
+		const configured = Number(Config.maxconcurrentbattles ?? Config.maxConcurrentBattles ?? 0);
+		if (!Number.isFinite(configured)) return 0;
+		return Math.max(0, Math.floor(configured));
+	}
+
+	static getActiveBattleCount() {
+		let activeBattles = 0;
+		for (const room of Rooms.rooms.values()) {
+			if (room.type !== 'battle') continue;
+			if (!room.battle || room.battle.ended) continue;
+			activeBattles++;
+		}
+		return activeBattles;
+	}
+
+	static getQueuedPosition(userid: ID) {
+		for (let i = 0; i < queuedBattleMatches.length; i++) {
+			if (queuedBattleMatches[i].readies.some(ready => ready.userid === userid)) {
+				return i + 1;
+			}
+		}
+		return null;
+	}
+
+	static canStartBattleNow() {
+		const cap = Ladder.getConcurrentBattleCap();
+		if (!cap) return true;
+		return Ladder.getActiveBattleCount() < cap;
+	}
+
+	static notifyQueuedPosition(match: QueuedBattleMatch) {
+		const position = queuedBattleMatches.indexOf(match) + 1;
+		if (position <= 0) return;
+		for (const ready of match.readies) {
+			const user = Users.get(ready.userid);
+			if (!user) continue;
+			user.popup(`The server is busy. You are #${position} in queue.`);
+		}
+	}
+
+	static startBattle(readies: BattleReady[]) {
+		const formatid = readies[0].formatid;
+		if (readies.some(ready => ready.formatid !== formatid)) throw new Error(`Format IDs don't match`);
+		const players = [];
+		let missingUser = null;
+		let minRating = Infinity;
+		for (const ready of readies) {
+			const user = Users.get(ready.userid);
+			if (!user) {
+				missingUser = ready.userid;
+				break;
+			}
+			players.push({
+				user,
+				team: ready.settings.team,
+				rating: ready.rating,
+				hidden: ready.settings.hidden,
+				inviteOnly: ready.settings.inviteOnly,
+			});
+			if (ready.rating < minRating) minRating = ready.rating;
+		}
+		if (missingUser) {
+			for (const ready of readies) {
+				Users.get(ready.userid)?.popup(`Sorry, your opponent ${missingUser} went offline before your battle could start.`);
+			}
+			return undefined;
+		}
+		const format = Dex.formats.get(formatid);
+		const delayedStart = format.playerCount > players.length ? 'multi' : false;
+		return Rooms.createBattle({
+			format: formatid,
+			players,
+			rated: minRating,
+			challengeType: readies[0].challengeType,
+			delayedStart,
+		});
+	}
+
+	static enqueueBattle(readies: BattleReady[]) {
+		for (const ready of readies) {
+			if (!queuedBattleUsers.has(ready.userid)) continue;
+			const existingPosition = Ladder.getQueuedPosition(ready.userid);
+			if (existingPosition) {
+				Users.get(ready.userid)?.popup(`The server is busy. You are #${existingPosition} in queue.`);
+			}
+			return undefined;
+		}
+
+		const queuedMatch: QueuedBattleMatch = {
+			id: nextQueuedBattleId++,
+			enqueuedAt: Date.now(),
+			readies,
+		};
+		queuedBattleMatches.push(queuedMatch);
+		for (const ready of readies) {
+			queuedBattleUsers.add(ready.userid);
+		}
+		Ladder.notifyQueuedPosition(queuedMatch);
+		return undefined;
+	}
+
+	static processQueuedBattles() {
+		while (queuedBattleMatches.length && Ladder.canStartBattleNow()) {
+			const nextMatch = queuedBattleMatches.shift()!;
+			for (const ready of nextMatch.readies) {
+				queuedBattleUsers.delete(ready.userid);
+			}
+
+			const room = Ladder.startBattle(nextMatch.readies);
+			if (!room) continue;
+
+			for (const ready of nextMatch.readies) {
+				const user = Users.get(ready.userid);
+				if (user) user.popup(`Your queued battle is starting now.`);
+			}
+		}
+
+		for (const queuedMatch of queuedBattleMatches) {
+			Ladder.notifyQueuedPosition(queuedMatch);
+		}
+	}
+
+	static getQueueInfo() {
+		return {
+			cap: Ladder.getConcurrentBattleCap(),
+			activeBattles: Ladder.getActiveBattleCount(),
+			queuedMatches: queuedBattleMatches.length,
+			queuedUsers: queuedBattleUsers.size,
+			oldestQueueMs: queuedBattleMatches.length ? Date.now() - queuedBattleMatches[0].enqueuedAt : 0,
+		};
+	}
+
 	async prepBattle(connection: Connection, challengeType: ChallengeType, team: string | null = null, isRated = false) {
 		// all validation for a battle goes through here
 		const user = connection.user;
@@ -442,41 +585,10 @@ class Ladder extends LadderStore {
 	}
 
 	static match(readies: BattleReady[]) {
-		const formatid = readies[0].formatid;
-		if (readies.some(ready => ready.formatid !== formatid)) throw new Error(`Format IDs don't match`);
-		const players = [];
-		let missingUser = null;
-		let minRating = Infinity;
-		for (const ready of readies) {
-			const user = Users.get(ready.userid);
-			if (!user) {
-				missingUser = ready.userid;
-				break;
-			}
-			players.push({
-				user,
-				team: ready.settings.team,
-				rating: ready.rating,
-				hidden: ready.settings.hidden,
-				inviteOnly: ready.settings.inviteOnly,
-			});
-			if (ready.rating < minRating) minRating = ready.rating;
+		if (Ladder.canStartBattleNow()) {
+			return Ladder.startBattle(readies);
 		}
-		if (missingUser) {
-			for (const ready of readies) {
-				Users.get(ready.userid)?.popup(`Sorry, your opponent ${missingUser} went offline before your battle could start.`);
-			}
-			return undefined;
-		}
-		const format = Dex.formats.get(formatid);
-		const delayedStart = format.playerCount > players.length ? 'multi' : false;
-		return Rooms.createBattle({
-			format: formatid,
-			players,
-			rated: minRating,
-			challengeType: readies[0].challengeType,
-			delayedStart,
-		});
+		return Ladder.enqueueBattle(readies);
 	}
 }
 
@@ -504,6 +616,8 @@ export const Ladders = Object.assign(getLadder, {
 	visualizeAll: Ladder.visualizeAll,
 	getSearches: Ladder.getSearches,
 	match: Ladder.match,
+	processQueuedBattles: Ladder.processQueuedBattles,
+	getQueueInfo: Ladder.getQueueInfo,
 
 	searches,
 	challenges,
