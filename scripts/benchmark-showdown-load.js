@@ -68,6 +68,24 @@ function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function normalizeErrorReason(err) {
+	if (!err) return 'unknown';
+	if (err.code && err.message) return `${err.code}: ${err.message}`;
+	if (err.code) return String(err.code);
+	if (err.message) return String(err.message);
+	return String(err);
+}
+
+function countReason(map, reason) {
+	map.set(reason, (map.get(reason) || 0) + 1);
+}
+
+function formatReasonSummary(map, max = 3) {
+	if (!map.size) return '';
+	const pairs = [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, max);
+	return pairs.map(([reason, count]) => `${count}x ${reason}`).join(' | ');
+}
+
 class PSClient {
 	constructor(url, id, options) {
 		this.url = url;
@@ -84,20 +102,33 @@ class PSClient {
 	connect(timeoutMs) {
 		return new Promise((resolve, reject) => {
 			const started = performance.now();
-			const ws = new WebSocket(this.url, {
+			let settled = false;
+			const wsOptions = {
 				headers: {
 					'User-Agent': 'relumi-load-bench/1.0',
 				},
-			});
+			};
+			if (this.options.allowInsecureTls) wsOptions.rejectUnauthorized = false;
+			const ws = new WebSocket(this.url, wsOptions);
 			this.ws = ws;
 
+			const finishReject = (err) => {
+				if (settled) return;
+				settled = true;
+				clearTimeout(timer);
+				this.lastError = err;
+				reject(err);
+			};
+
 			const timer = setTimeout(() => {
-				this.lastError = new Error('connect timeout');
+				const timeoutErr = new Error('connect timeout');
 				try { ws.close(); } catch {}
-				reject(this.lastError);
+				finishReject(timeoutErr);
 			}, timeoutMs);
 
 			ws.on('open', () => {
+				if (settled) return;
+				settled = true;
 				this.connected = true;
 				clearTimeout(timer);
 				resolve(performance.now() - started);
@@ -108,13 +139,16 @@ class PSClient {
 				this._handlePacket(text);
 			});
 
-			ws.on('error', err => {
-				this.lastError = err;
+			ws.on('error', err => finishReject(err));
+
+			ws.on('unexpected-response', (_req, res) => {
+				finishReject(new Error(`unexpected HTTP ${res.statusCode || 'response'}`));
 			});
 
 			ws.on('close', () => {
 				this.closed = true;
 				this.connected = false;
+				if (!settled) finishReject(new Error('closed before open'));
 			});
 		});
 	}
@@ -188,6 +222,7 @@ async function runConnectionRamp(url, ramp, options) {
 		const clients = [];
 		const latencies = [];
 		let failures = 0;
+		const failureReasons = new Map();
 
 		for (let i = 0; i < n; i++) {
 			clients.push(new PSClient(url, `conn-${n}-${i}`, options));
@@ -197,8 +232,9 @@ async function runConnectionRamp(url, ramp, options) {
 			try {
 				const ms = await c.connect(options.connectTimeoutMs);
 				latencies.push(ms);
-			} catch {
+			} catch (err) {
 				failures++;
+				countReason(failureReasons, normalizeErrorReason(err));
 			}
 		}));
 
@@ -211,6 +247,7 @@ async function runConnectionRamp(url, ramp, options) {
 			failures,
 			avgConnectMs: avg(latencies),
 			p95ConnectMs: percentile(latencies, 95),
+			failureSummary: formatReasonSummary(failureReasons),
 		});
 
 		await sleep(options.stepPauseMs);
@@ -227,6 +264,7 @@ async function runBattleRamp(url, ramp, format, options) {
 		let errors = 0;
 		let timedOut = false;
 		let queuedPopups = 0;
+		const connectFailureReasons = new Map();
 
 		for (let i = 0; i < battles * 2; i++) {
 			clients.push(new PSClient(url, `battle-${battles}-${i}`, options));
@@ -235,8 +273,9 @@ async function runBattleRamp(url, ramp, format, options) {
 		await Promise.all(clients.map(async c => {
 			try {
 				await c.connect(options.connectTimeoutMs);
-			} catch {
+			} catch (err) {
 				errors++;
+				countReason(connectFailureReasons, normalizeErrorReason(err));
 			}
 		}));
 
@@ -298,6 +337,7 @@ async function runBattleRamp(url, ramp, format, options) {
 			errors,
 			timedOut,
 			queuePopups: queuedPopups,
+			connectFailureSummary: formatReasonSummary(connectFailureReasons),
 		});
 
 		await sleep(options.stepPauseMs);
@@ -337,6 +377,18 @@ function maybeReadHostSample(sshHost) {
 	}
 }
 
+async function runProbe(url, options) {
+	const probeClient = new PSClient(url, 'probe-1', options);
+	try {
+		const ms = await probeClient.connect(options.connectTimeoutMs);
+		console.log(`Probe success: connected in ${fmtMs(ms)}`);
+		await sleep(500);
+		probeClient.close();
+	} catch (err) {
+		console.log(`Probe failed: ${normalizeErrorReason(err)}`);
+	}
+}
+
 async function main() {
 	const args = parseArgs(process.argv);
 	const host = args.host || 'relumishowdown.dpdns.org';
@@ -348,6 +400,7 @@ async function main() {
 		holdMs: Number(args['hold-ms'] || 1500),
 		stepPauseMs: Number(args['step-pause-ms'] || 4000),
 		waveTimeoutMs: Number(args['wave-timeout-ms'] || 120000),
+		allowInsecureTls: args['allow-insecure-tls'] === 'true',
 	};
 
 	const connRamp = parseRamp(args['conn-ramp'], [10, 25, 50, 100]);
@@ -358,7 +411,15 @@ async function main() {
 	console.log(`Format: ${format}`);
 	console.log(`Connection ramp: ${connRamp.join(', ')}`);
 	console.log(`Battle ramp: ${battleRamp.join(', ')}`);
+	if (options.allowInsecureTls) {
+		console.log('TLS verification: disabled (--allow-insecure-tls true)');
+	}
 	console.log('Tip: if using Cloudflare Tunnel, keep step sizes conservative to avoid edge rate limits.');
+
+	if (args.probe === 'true') {
+		console.log('\n=== Probe ===');
+		await runProbe(url, options);
+	}
 
 	const connRaw = await runConnectionRamp(url, connRamp, options);
 	const connRows = connRaw.map(r => ({
@@ -367,6 +428,7 @@ async function main() {
 		failures: r.failures,
 		avg_connect: fmtMs(r.avgConnectMs),
 		p95_connect: fmtMs(r.p95ConnectMs),
+		failure_reason: r.failureSummary || '-',
 	}));
 	printTable('Concurrent Connections', connRows);
 
@@ -380,6 +442,7 @@ async function main() {
 		errors: r.errors,
 		timed_out: r.timedOut,
 		queue_popups: r.queuePopups,
+		connect_failure_reason: r.connectFailureSummary || '-',
 	}));
 	printTable('Concurrent Battles', battleRows);
 
