@@ -1674,7 +1674,8 @@ export class GlobalRoomState {
 			// 32 was previously used for Multi Battles
 			if (format.bestOfDefault) displayCode |= 64;
 			if (format.teraPreviewDefault) displayCode |= 128;
-			this.formatList += "," + displayCode.toString(16);
+			if (format.itemClauseDefault) displayCode |= 256;
+			this.formatList += ',' + displayCode.toString(16);
 		}
 		return this.formatList;
 	}
