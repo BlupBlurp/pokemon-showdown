@@ -22,11 +22,7 @@ export const RELUMI_TRACKED_FORMATS = [
 
 export type RelumiTrackedFormat = (typeof RELUMI_TRACKED_FORMATS)[number];
 
-export type StatsCategoryId =
-	| "random-singles"
-	| "random-doubles"
-	| "singles"
-	| "doubles";
+export type StatsCategoryId = RelumiTrackedFormat;
 
 export interface BattleStatsPokemon {
 	species: string;
@@ -145,52 +141,59 @@ const CATEGORY_CONFIG: Record<
 	StatsCategoryId,
 	{ label: string; displayFormat: string; formats: RelumiTrackedFormat[] }
 > = {
-	"random-singles": {
+	gen8relumisinglesrandom: {
 		label: "Random Singles",
-		displayFormat: "[Gen 8] Relumi Singles Random",
+		displayFormat: "[Gen 8] Relumi Random Singles",
 		formats: ["gen8relumisinglesrandom"],
 	},
-	"random-doubles": {
+	gen8relumidoublesrandom: {
 		label: "Random Doubles",
-		displayFormat: "[Gen 8] Relumi Doubles Random",
+		displayFormat: "[Gen 8] Relumi Random Doubles",
 		formats: ["gen8relumidoublesrandom"],
 	},
-	singles: {
-		label: "Singles",
-		displayFormat: "[Gen 8] Relumi Singles (AG/Ubers/OU)",
-		formats: [
-			"gen8relumisinglesanythinggoes",
-			"gen8relumisinglesubers",
-			"gen8relumisinglesou",
-		],
+	gen8relumisinglesanythinggoes: {
+		label: "Singles Anything Goes",
+		displayFormat: "[Gen 8] Relumi Singles Anything Goes",
+		formats: ["gen8relumisinglesanythinggoes"],
 	},
-	doubles: {
-		label: "Doubles",
-		displayFormat: "[Gen 8] Relumi Doubles (AG/Ubers/OU)",
-		formats: [
-			"gen8relumidoublesanythinggoes",
-			"gen8relumidoublesubers",
-			"gen8relumidoublesou",
-		],
+	gen8relumisinglesubers: {
+		label: "Singles Ubers",
+		displayFormat: "[Gen 8] Relumi Singles Ubers",
+		formats: ["gen8relumisinglesubers"],
+	},
+	gen8relumisinglesou: {
+		label: "Singles OU",
+		displayFormat: "[Gen 8] Relumi Singles OU",
+		formats: ["gen8relumisinglesou"],
+	},
+	gen8relumidoublesanythinggoes: {
+		label: "Doubles Anything Goes",
+		displayFormat: "[Gen 8] Relumi Doubles Anything Goes",
+		formats: ["gen8relumidoublesanythinggoes"],
+	},
+	gen8relumidoublesubers: {
+		label: "Doubles Ubers",
+		displayFormat: "[Gen 8] Relumi Doubles Ubers",
+		formats: ["gen8relumidoublesubers"],
+	},
+	gen8relumidoublesou: {
+		label: "Doubles OU",
+		displayFormat: "[Gen 8] Relumi Doubles OU",
+		formats: ["gen8relumidoublesou"],
 	},
 };
 
-const CATEGORY_IDS: StatsCategoryId[] = [
-	"random-singles",
-	"random-doubles",
-	"singles",
-	"doubles",
-];
+const CATEGORY_IDS: StatsCategoryId[] = [...RELUMI_TRACKED_FORMATS];
 
 const FORMAT_TO_CATEGORY: Record<RelumiTrackedFormat, StatsCategoryId> = {
-	gen8relumisinglesrandom: "random-singles",
-	gen8relumidoublesrandom: "random-doubles",
-	gen8relumisinglesanythinggoes: "singles",
-	gen8relumisinglesubers: "singles",
-	gen8relumisinglesou: "singles",
-	gen8relumidoublesanythinggoes: "doubles",
-	gen8relumidoublesubers: "doubles",
-	gen8relumidoublesou: "doubles",
+	gen8relumisinglesrandom: "gen8relumisinglesrandom",
+	gen8relumidoublesrandom: "gen8relumidoublesrandom",
+	gen8relumisinglesanythinggoes: "gen8relumisinglesanythinggoes",
+	gen8relumisinglesubers: "gen8relumisinglesubers",
+	gen8relumisinglesou: "gen8relumisinglesou",
+	gen8relumidoublesanythinggoes: "gen8relumidoublesanythinggoes",
+	gen8relumidoublesubers: "gen8relumidoublesubers",
+	gen8relumidoublesou: "gen8relumidoublesou",
 };
 
 /**
