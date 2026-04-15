@@ -61,6 +61,7 @@ const RELUMI_GEN9_UNBANLIST = [
 ] as const;
 
 const RELUMI_OU_BANLIST = [
+	"Pikachu-Starter",
 	"Mewtwo",
 	"Mewtwo-Shadow",
 	"Lugia",
