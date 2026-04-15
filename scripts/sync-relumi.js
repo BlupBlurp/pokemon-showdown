@@ -88,6 +88,22 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		2: "Urshifu-Gmax",
 		3: "Urshifu-Rapid-Strike-Gmax",
 	},
+	774: {
+		0: "Minior-Meteor",
+		1: "Minior-Meteor",
+		2: "Minior-Meteor",
+		3: "Minior-Meteor",
+		4: "Minior-Meteor",
+		5: "Minior-Meteor",
+		6: "Minior-Meteor",
+		7: "Minior",
+		8: "Minior-Orange",
+		9: "Minior-Yellow",
+		10: "Minior-Green",
+		11: "Minior-Blue",
+		12: "Minior-Indigo",
+		13: "Minior-Violet",
+	},
 };
 
 // These species have form entries in extracted game files that should stay
@@ -97,6 +113,9 @@ const CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS = new Set([
 	"unown",
 	"sawsbuck",
 	"florges",
+	"alcremie",
+	"furfrou",
+	"vivillon",
 ]);
 
 // Manual learnset overrides that must persist across sync runs.
@@ -402,7 +421,6 @@ function findMappedSpeciesForForm(
 	dex,
 ) {
 	if (!baseSpecies.exists) return null;
-	if (formNo === 0) return baseSpecies;
 
 	const speciesOverrides = FORM_NUMBER_SPECIES_OVERRIDES[monsNo];
 	if (speciesOverrides && speciesOverrides[formNo]) {
@@ -411,6 +429,8 @@ function findMappedSpeciesForForm(
 		// Strict mode: do not fall back to formeOrder for explicitly mapped forms.
 		return null;
 	}
+
+	if (formNo === 0) return baseSpecies;
 
 	if (
 		Array.isArray(baseSpecies.formeOrder) &&
@@ -605,6 +625,12 @@ function buildSpeciesDiffs({
 	const unmappedRows = [];
 	const speciesIdByRowId = new Map();
 	const speciesIdByMonsForm = new Map();
+	// Keep a separate learnset mapping so cosmetic forms can validate moves
+	// without forcing mechanics/stat diffs onto cosmetic IDs.
+	const learnsetSpeciesIdByRowId = new Map();
+	const learnsetSpeciesIdByMonsForm = new Map();
+	// Track all species IDs that should receive Relumi tier tags in formats-data.
+	const relumiTaggedSpeciesIds = new Set();
 
 	for (const row of personalRows) {
 		if (!row || row.valid_flag !== 1) continue;
@@ -641,10 +667,19 @@ function buildSpeciesDiffs({
 			baseStats,
 			dex,
 		);
+		const mappedSpeciesIsCosmeticForm = !!(
+			mappedSpecies &&
+			mappedSpecies.exists &&
+			mappedSpecies.isCosmeticForme &&
+			toID(mappedSpecies.baseSpecies) === baseSpecies.id
+		);
 		const useBaseSpeciesForCosmeticForm =
 			formNo > 0 &&
 			baseSpecies.exists &&
-			CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS.has(baseSpecies.id);
+			(
+				mappedSpeciesIsCosmeticForm ||
+				CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS.has(baseSpecies.id)
+			);
 		let mappedOrBaseSpecies = null;
 		if (useBaseSpeciesForCosmeticForm) {
 			mappedOrBaseSpecies = baseSpecies;
@@ -654,6 +689,13 @@ function buildSpeciesDiffs({
 		const abilitySet = buildAbilitiesObject(row, abilityNames);
 
 		if (mappedOrBaseSpecies && mappedOrBaseSpecies.exists) {
+			// Cosmetic forms should still map to their own learnsets even when
+			// stats/types/abilities are inherited from the base species entry.
+			const learnsetSpeciesId =
+				mappedSpeciesIsCosmeticForm && mappedSpecies?.exists
+					? mappedSpecies.id
+					: mappedOrBaseSpecies.id;
+
 			const statsDiff = !compareJson(
 				mappedOrBaseSpecies.baseStats,
 				baseStats,
@@ -668,6 +710,15 @@ function buildSpeciesDiffs({
 				`${row.monsno}_${formNo}`,
 				mappedOrBaseSpecies.id,
 			);
+			learnsetSpeciesIdByRowId.set(row.id, learnsetSpeciesId);
+			learnsetSpeciesIdByMonsForm.set(
+				`${row.monsno}_${formNo}`,
+				learnsetSpeciesId,
+			);
+			relumiTaggedSpeciesIds.add(mappedOrBaseSpecies.id);
+			if (mappedSpeciesIsCosmeticForm) {
+				relumiTaggedSpeciesIds.add(mappedSpecies.id);
+			}
 
 			if (statsDiff || typesDiff || abilitiesDiff) {
 				const entry = { inherit: true };
@@ -712,6 +763,9 @@ function buildSpeciesDiffs({
 			customForms.push(customId);
 			speciesIdByRowId.set(row.id, customId);
 			speciesIdByMonsForm.set(`${row.monsno}_${formNo}`, customId);
+			learnsetSpeciesIdByRowId.set(row.id, customId);
+			learnsetSpeciesIdByMonsForm.set(`${row.monsno}_${formNo}`, customId);
+			relumiTaggedSpeciesIds.add(customId);
 			continue;
 		}
 
@@ -730,9 +784,12 @@ function buildSpeciesDiffs({
 		unmappedRows,
 		speciesIdByRowId,
 		speciesIdByMonsForm,
+		learnsetSpeciesIdByRowId,
+		learnsetSpeciesIdByMonsForm,
 		mappedSpeciesIds: Array.from(
 			new Set(speciesIdByMonsForm.values()),
 		).sort(),
+		relumiTaggedSpeciesIds: Array.from(relumiTaggedSpeciesIds).sort(),
 	};
 }
 
@@ -743,8 +800,8 @@ function buildLearnsetsDiffs({
 	moveNames,
 	dex,
 	machineMoveMap,
-	speciesIdByRowId,
-	speciesIdByMonsForm,
+	learnsetSpeciesIdByRowId,
+	learnsetSpeciesIdByMonsForm,
 	tmLearnsetDir,
 	moveTutorLearnsetDir,
 }) {
@@ -767,7 +824,11 @@ function buildLearnsetsDiffs({
 	for (const entry of tamagoRows) {
 		if (!entry || !entry.no || !Array.isArray(entry.wazaNo)) continue;
 		const formNo = Number(entry.formNo || 0);
-		const speciesId = speciesIdByMonsForm.get(`${entry.no}_${formNo}`);
+		// Learnsets are keyed by the learnset mapping, not the stats mapping,
+		// so cosmetic forms get explicit learnset entries when needed.
+		const speciesId = learnsetSpeciesIdByMonsForm.get(
+			`${entry.no}_${formNo}`,
+		);
 		if (!speciesId) {
 			missingSpeciesRefs.add(`egg:${entry.no}_${formNo}`);
 			continue;
@@ -788,7 +849,7 @@ function buildLearnsetsDiffs({
 		if (!entry || typeof entry.id !== "number" || !Array.isArray(entry.ar)) {
 			continue;
 		}
-		const speciesId = speciesIdByRowId.get(entry.id);
+		const speciesId = learnsetSpeciesIdByRowId.get(entry.id);
 		if (!speciesId) {
 			missingSpeciesRefs.add(`level:${entry.id}`);
 			continue;
@@ -816,7 +877,7 @@ function buildLearnsetsDiffs({
 		if (!fileName.endsWith(".json")) continue;
 		const parsed = parseMonFormFromFilename(fileName);
 		if (!parsed) continue;
-		const speciesId = speciesIdByMonsForm.get(
+		const speciesId = learnsetSpeciesIdByMonsForm.get(
 			`${parsed.monsNo}_${parsed.formNo}`,
 		);
 		if (!speciesId) {
@@ -841,7 +902,7 @@ function buildLearnsetsDiffs({
 		if (!fileName.endsWith(".json")) continue;
 		const parsed = parseMonFormFromFilename(fileName);
 		if (!parsed) continue;
-		const speciesId = speciesIdByMonsForm.get(
+		const speciesId = learnsetSpeciesIdByMonsForm.get(
 			`${parsed.monsNo}_${parsed.formNo}`,
 		);
 		if (!speciesId) {
@@ -876,7 +937,9 @@ function buildLearnsetsDiffs({
 		if (!row || row.valid_flag !== 1 || !row.monsno || row.monsno <= 0)
 			continue;
 		const formNo = deriveFormNo(row);
-		const speciesId = speciesIdByMonsForm.get(`${row.monsno}_${formNo}`);
+		const speciesId = learnsetSpeciesIdByMonsForm.get(
+			`${row.monsno}_${formNo}`,
+		);
 		if (speciesId) speciesWithRows.add(speciesId);
 	}
 
@@ -904,26 +967,47 @@ function buildLearnsetsDiffs({
 function buildFormatsDataDiffs({ mappedSpeciesIds, dex }) {
 	const formatsDataDiffs = {};
 	const mappedBaseSpeciesIds = new Set();
+	const taggedSpeciesIds = new Set();
 
-	for (const speciesId of mappedSpeciesIds) {
-		const species = dex.species.get(speciesId);
-		if (species.exists) {
-			mappedBaseSpeciesIds.add(toID(species.baseSpecies || species.name));
-		}
+	function addRelumiTag(speciesId) {
+		if (!speciesId || taggedSpeciesIds.has(speciesId)) return;
+		taggedSpeciesIds.add(speciesId);
 		formatsDataDiffs[speciesId] = {
 			tier: "Relumi",
 			doublesTier: "Relumi",
 		};
 	}
 
+	for (const speciesId of mappedSpeciesIds) {
+		const species = dex.species.get(speciesId);
+		if (species.exists) {
+			mappedBaseSpeciesIds.add(toID(species.baseSpecies || species.name));
+			const baseSpecies = dex.species.get(
+				species.baseSpecies || species.name,
+			);
+			// Ensure exception species keep all cosmetic/alternate formes tagged
+			// even when extracted rows only touched a subset of their formes.
+			if (
+				baseSpecies.exists &&
+				CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS.has(baseSpecies.id)
+			) {
+				for (const formeName of [
+					...(baseSpecies.cosmeticFormes || []),
+					...(baseSpecies.otherFormes || []),
+				]) {
+					const forme = dex.species.get(formeName);
+					if (forme.exists) addRelumiTag(forme.id);
+				}
+			}
+		}
+		addRelumiTag(speciesId);
+	}
+
 	for (const species of dex.species.all()) {
 		if (!species.exists || !species.id.endsWith("gmax")) continue;
 		const baseId = toID(species.baseSpecies || species.name);
 		if (!mappedBaseSpeciesIds.has(baseId)) continue;
-		formatsDataDiffs[species.id] = {
-			tier: "Relumi",
-			doublesTier: "Relumi",
-		};
+		addRelumiTag(species.id);
 	}
 
 	return formatsDataDiffs;
@@ -984,7 +1068,10 @@ function main() {
 		unmappedRows,
 		speciesIdByRowId,
 		speciesIdByMonsForm,
+		learnsetSpeciesIdByRowId,
+		learnsetSpeciesIdByMonsForm,
 		mappedSpeciesIds,
+		relumiTaggedSpeciesIds,
 	} = buildSpeciesDiffs({
 		monsNames,
 		formNames,
@@ -1005,12 +1092,17 @@ function main() {
 			moveNames,
 			dex,
 			machineMoveMap,
-			speciesIdByRowId,
-			speciesIdByMonsForm,
+			learnsetSpeciesIdByRowId,
+			learnsetSpeciesIdByMonsForm,
 			tmLearnsetDir: PATHS.tmLearnsetDir,
 			moveTutorLearnsetDir: PATHS.moveTutorLearnsetDir,
 		});
-	const formatsDataDiffs = buildFormatsDataDiffs({ mappedSpeciesIds, dex });
+	// Use the tagged species set so cosmetic forms remain visible as Relumi
+	// in teambuilder/search even when their mechanics map to base species.
+	const formatsDataDiffs = buildFormatsDataDiffs({
+		mappedSpeciesIds: relumiTaggedSpeciesIds,
+		dex,
+	});
 
 	const nextPokedex = deepSort(pokedexDiffs);
 	const nextMoves = deepSort(movesDiffs);

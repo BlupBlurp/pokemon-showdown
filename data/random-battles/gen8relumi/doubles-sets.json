@@ -14100,47 +14100,6 @@
             }
         ]
     },
-    "gastrodoneast": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Earthquake",
-                    "Earth Power",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Sticky Hold",
-                    "Storm Drain",
-                    "Sand Force"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ground"
-                ]
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Earthquake",
-                    "Giga Impact",
-                    "Spikes",
-                    "Recover"
-                ],
-                "abilities": [
-                    "Sticky Hold",
-                    "Storm Drain",
-                    "Sand Force"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ground"
-                ]
-            }
-        ]
-    },
     "genesect": {
         "level": 81,
         "sets": [
@@ -24610,10 +24569,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Rock Slide",
-                    "Acrobatics",
-                    "Iron Head",
-                    "Shell Smash"
+                    "Meteor Beam",
+                    "Explosion",
+                    "Stealth Rock",
+                    "Rest"
                 ],
                 "abilities": [
                     "Shields Down"
@@ -24621,19 +24580,23 @@
                 "teraTypes": [
                     "Rock",
                     "Flying"
+                ]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Meteor Beam",
+                    "Stone Edge",
+                    "Explosion",
+                    "Self-Destruct"
                 ],
-                "trainerId": 444,
-                "nature": [
-                    "Adamant"
+                "abilities": [
+                    "Shields Down"
                 ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 6,
-                    "spe": 252
-                }
+                "teraTypes": [
+                    "Rock",
+                    "Flying"
+                ]
             }
         ]
     },

@@ -442,7 +442,42 @@ export class DexSpecies {
 
 		const alias = this.dex.getAlias(id);
 		if (alias) {
-			if (this.dex.data.FormatsData.hasOwnProperty(id)) {
+			const cosmeticForme = this.dex.data.Pokedex?.[id];
+			// Cosmetic aliases can have formats-data tier overrides, so detect
+			// cosmetic IDs from the alias target before using special-event logic.
+			const aliasDexEntry = this.dex.data.Pokedex?.[alias];
+			const isCosmeticAliasFromTarget = !!(
+				aliasDexEntry &&
+				Array.isArray(aliasDexEntry.cosmeticFormes) &&
+				aliasDexEntry.cosmeticFormes.some(forme => toID(forme) === id)
+			);
+			// Cosmetic aliases need base species data plus cosmetic overrides,
+			// not the special-event alias path that rewrites abilities.
+			if (cosmeticForme?.isCosmeticForme || isCosmeticAliasFromTarget) {
+				species = this.get(alias);
+				const cosmeticName =
+					cosmeticForme?.name ||
+					species.cosmeticFormes?.find(forme => toID(forme) === id) ||
+					id;
+				const cosmeticBaseSpecies = species.baseSpecies;
+				const cosmeticFormeName =
+					cosmeticForme?.forme ||
+					(cosmeticName.startsWith(`${cosmeticBaseSpecies}-`)
+						? cosmeticName.slice(cosmeticBaseSpecies.length + 1)
+						: "");
+				species = new Species({
+					...species,
+					...cosmeticForme,
+					...this.dex.data.FormatsData[id],
+					name: cosmeticName,
+					forme: cosmeticFormeName,
+					baseForme: "",
+					baseSpecies: cosmeticBaseSpecies,
+					otherFormes: null,
+					cosmeticFormes: null,
+					isCosmeticForme: true,
+				});
+			} else if (this.dex.data.FormatsData.hasOwnProperty(id)) {
 				// special event ID
 				species = new Species({
 					...this.dex.data.Pokedex[alias],
@@ -452,8 +487,7 @@ export class DexSpecies {
 				species.abilities = { 0: species.abilities['S']! };
 			} else {
 				species = this.get(alias);
-				if (this.dex.data.Pokedex?.[id]?.isCosmeticForme) {
-					const cosmeticForme = this.dex.data.Pokedex[id];
+				if (cosmeticForme?.isCosmeticForme) {
 					species = new Species({
 						...species,
 						...cosmeticForme,

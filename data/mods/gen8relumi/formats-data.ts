@@ -1627,6 +1627,22 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	florgesblue: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	florgesorange: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	florgeswhite: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	florgesyellow: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	fluttermane: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -4079,6 +4095,18 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	sawsbuckautumn: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	sawsbucksummer: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	sawsbuckwinter: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	scatterbug: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -5043,6 +5071,114 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	unownb: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownc: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownd: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unowne: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownexclamation: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownf: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unowng: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownh: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unowni: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownj: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownk: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownl: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownm: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownn: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unowno: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownp: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownq: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownquestion: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownr: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unowns: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownt: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownu: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownv: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownw: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownx: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unowny: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	unownz: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	ursaluna: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -5184,6 +5320,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	vivillonhighplains: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	vivillonicysnow: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},

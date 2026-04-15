@@ -4241,171 +4241,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
-	alcremiegmax: {
-		learnset: {
-			acidarmor: [
-				"9L35",
-			],
-			aromatherapy: [
-				"9L25",
-				"9T",
-			],
-			aromaticmist: [
-				"9L1",
-			],
-			attract: [
-				"9L30",
-				"9M",
-			],
-			babydolleyes: [
-				"9E",
-			],
-			calmmind: [
-				"9M",
-			],
-			charm: [
-				"9M",
-			],
-			dazzlinggleam: [
-				"9L40",
-				"9M",
-			],
-			decorate: [
-				"9L1",
-			],
-			drainingkiss: [
-				"9L15",
-			],
-			drainpunch: [
-				"9M",
-			],
-			endeavor: [
-				"9T",
-			],
-			endure: [
-				"9M",
-			],
-			energyball: [
-				"9M",
-			],
-			entrainment: [
-				"9L55",
-			],
-			facade: [
-				"9M",
-			],
-			faketears: [
-				"9M",
-			],
-			fling: [
-				"9M",
-			],
-			frustration: [
-				"9M",
-			],
-			gigadrain: [
-				"9M",
-			],
-			gigaimpact: [
-				"9M",
-			],
-			helpinghand: [
-				"9T",
-			],
-			hiddenpower: [
-				"9M",
-			],
-			hyperbeam: [
-				"9M",
-			],
-			imprison: [
-				"9M",
-			],
-			lastresort: [
-				"9E",
-				"9T",
-			],
-			lightscreen: [
-				"9M",
-			],
-			magicroom: [
-				"9T",
-			],
-			metronome: [
-				"9T",
-			],
-			mistyexplosion: [
-				"9T",
-			],
-			mistyterrain: [
-				"9L50",
-				"9M",
-			],
-			moonblast: [
-				"9L60",
-			],
-			mysticalfire: [
-				"9M",
-			],
-			painsplit: [
-				"9T",
-			],
-			playrough: [
-				"9M",
-			],
-			protect: [
-				"9M",
-			],
-			psychic: [
-				"9M",
-			],
-			psychup: [
-				"9M",
-			],
-			psyshock: [
-				"9M",
-			],
-			recover: [
-				"9L45",
-			],
-			rest: [
-				"9M",
-			],
-			return: [
-				"9M",
-			],
-			safeguard: [
-				"9M",
-			],
-			sleeptalk: [
-				"9M",
-			],
-			snore: [
-				"9T",
-			],
-			solarbeam: [
-				"9M",
-			],
-			storedpower: [
-				"9L20",
-			],
-			substitute: [
-				"9M",
-			],
-			sweetkiss: [
-				"9L1",
-			],
-			sweetscent: [
-				"9L1",
-			],
-			tackle: [
-				"9L1",
-			],
-			wonderroom: [
-				"9T",
-			],
-		},
-	},
 	alcremielemoncream: {
 		learnset: {
 			acidarmor: [
@@ -85471,6 +85306,822 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 		},
 	},
 	florges: {
+		learnset: {
+			afteryou: [
+				"9T",
+			],
+			allyswitch: [
+				"9T",
+			],
+			aromatherapy: [
+				"9L41",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			camouflage: [
+				"9E",
+			],
+			captivate: [
+				"9E",
+			],
+			charm: [
+				"9M",
+			],
+			copycat: [
+				"9E",
+			],
+			covet: [
+				"9T",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defog: [
+				"9M",
+			],
+			disarmingvoice: [
+				"9L1",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			fairywind: [
+				"9L1",
+				"9L6",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grassyterrain: [
+				"9L30",
+				"9M",
+			],
+			healbell: [
+				"9T",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			lightscreen: [
+				"9M",
+			],
+			luckychant: [
+				"9L10",
+			],
+			magicalleaf: [
+				"9L28",
+			],
+			magiccoat: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			mistyexplosion: [
+				"9T",
+			],
+			mistyterrain: [
+				"9L46",
+				"9M",
+			],
+			moonblast: [
+				"9L49",
+			],
+			petalblizzard: [
+				"9L36",
+			],
+			petaldance: [
+				"9L54",
+			],
+			pollenpuff: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			razorleaf: [
+				"9L15",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			seedbomb: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9L61",
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			synthesis: [
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			tearfullook: [
+				"9E",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			vinewhip: [
+				"9L1",
+			],
+			wish: [
+				"9L23",
+			],
+			worryseed: [
+				"9T",
+			],
+		},
+	},
+	florgesblue: {
+		learnset: {
+			afteryou: [
+				"9T",
+			],
+			allyswitch: [
+				"9T",
+			],
+			aromatherapy: [
+				"9L41",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			camouflage: [
+				"9E",
+			],
+			captivate: [
+				"9E",
+			],
+			charm: [
+				"9M",
+			],
+			copycat: [
+				"9E",
+			],
+			covet: [
+				"9T",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defog: [
+				"9M",
+			],
+			disarmingvoice: [
+				"9L1",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			fairywind: [
+				"9L1",
+				"9L6",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grassyterrain: [
+				"9L30",
+				"9M",
+			],
+			healbell: [
+				"9T",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			lightscreen: [
+				"9M",
+			],
+			luckychant: [
+				"9L10",
+			],
+			magicalleaf: [
+				"9L28",
+			],
+			magiccoat: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			mistyexplosion: [
+				"9T",
+			],
+			mistyterrain: [
+				"9L46",
+				"9M",
+			],
+			moonblast: [
+				"9L49",
+			],
+			petalblizzard: [
+				"9L36",
+			],
+			petaldance: [
+				"9L54",
+			],
+			pollenpuff: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			razorleaf: [
+				"9L15",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			seedbomb: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9L61",
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			synthesis: [
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			tearfullook: [
+				"9E",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			vinewhip: [
+				"9L1",
+			],
+			wish: [
+				"9L23",
+			],
+			worryseed: [
+				"9T",
+			],
+		},
+	},
+	florgesorange: {
+		learnset: {
+			afteryou: [
+				"9T",
+			],
+			allyswitch: [
+				"9T",
+			],
+			aromatherapy: [
+				"9L41",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			camouflage: [
+				"9E",
+			],
+			captivate: [
+				"9E",
+			],
+			charm: [
+				"9M",
+			],
+			copycat: [
+				"9E",
+			],
+			covet: [
+				"9T",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defog: [
+				"9M",
+			],
+			disarmingvoice: [
+				"9L1",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			fairywind: [
+				"9L1",
+				"9L6",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grassyterrain: [
+				"9L30",
+				"9M",
+			],
+			healbell: [
+				"9T",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			lightscreen: [
+				"9M",
+			],
+			luckychant: [
+				"9L10",
+			],
+			magicalleaf: [
+				"9L28",
+			],
+			magiccoat: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			mistyexplosion: [
+				"9T",
+			],
+			mistyterrain: [
+				"9L46",
+				"9M",
+			],
+			moonblast: [
+				"9L49",
+			],
+			petalblizzard: [
+				"9L36",
+			],
+			petaldance: [
+				"9L54",
+			],
+			pollenpuff: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			razorleaf: [
+				"9L15",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			seedbomb: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9L61",
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			synthesis: [
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			tearfullook: [
+				"9E",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			vinewhip: [
+				"9L1",
+			],
+			wish: [
+				"9L23",
+			],
+			worryseed: [
+				"9T",
+			],
+		},
+	},
+	florgeswhite: {
+		learnset: {
+			afteryou: [
+				"9T",
+			],
+			allyswitch: [
+				"9T",
+			],
+			aromatherapy: [
+				"9L41",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			camouflage: [
+				"9E",
+			],
+			captivate: [
+				"9E",
+			],
+			charm: [
+				"9M",
+			],
+			copycat: [
+				"9E",
+			],
+			covet: [
+				"9T",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defog: [
+				"9M",
+			],
+			disarmingvoice: [
+				"9L1",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			fairywind: [
+				"9L1",
+				"9L6",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grassyterrain: [
+				"9L30",
+				"9M",
+			],
+			healbell: [
+				"9T",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			lightscreen: [
+				"9M",
+			],
+			luckychant: [
+				"9L10",
+			],
+			magicalleaf: [
+				"9L28",
+			],
+			magiccoat: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			mistyexplosion: [
+				"9T",
+			],
+			mistyterrain: [
+				"9L46",
+				"9M",
+			],
+			moonblast: [
+				"9L49",
+			],
+			petalblizzard: [
+				"9L36",
+			],
+			petaldance: [
+				"9L54",
+			],
+			pollenpuff: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			razorleaf: [
+				"9L15",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			seedbomb: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9L61",
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			synthesis: [
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			tearfullook: [
+				"9E",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			vinewhip: [
+				"9L1",
+			],
+			wish: [
+				"9L23",
+			],
+			worryseed: [
+				"9T",
+			],
+		},
+	},
+	florgesyellow: {
 		learnset: {
 			afteryou: [
 				"9T",
@@ -213601,6 +214252,711 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	sawsbuckautumn: {
+		learnset: {
+			agility: [
+				"9E",
+			],
+			aromatherapy: [
+				"9L28",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			batonpass: [
+				"9E",
+			],
+			bounce: [
+				"9T",
+			],
+			bulldoze: [
+				"9M",
+			],
+			bulletseed: [
+				"9M",
+			],
+			camouflage: [
+				"9L1",
+			],
+			charm: [
+				"9L36",
+				"9M",
+			],
+			curse: [
+				"9T",
+			],
+			cut: [
+				"9M",
+			],
+			dig: [
+				"9M",
+			],
+			doubleedge: [
+				"9L52",
+			],
+			doublekick: [
+				"9L10",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9L32",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			faketears: [
+				"9E",
+				"9M",
+			],
+			feintattack: [
+				"9L16",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grasswhistle: [
+				"9E",
+			],
+			grassyglide: [
+				"9T",
+			],
+			grassyterrain: [
+				"9M",
+			],
+			growl: [
+				"9L1",
+				"9L4",
+			],
+			headbutt: [
+				"9E",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			highhorsepower: [
+				"9M",
+			],
+			hornleech: [
+				"9L1",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			jumpkick: [
+				"9L24",
+			],
+			lastresort: [
+				"9T",
+			],
+			leechseed: [
+				"9L13",
+			],
+			lightscreen: [
+				"9M",
+			],
+			megahorn: [
+				"9L1",
+			],
+			naturalgift: [
+				"9E",
+			],
+			naturepower: [
+				"9L44",
+			],
+			odorsleuth: [
+				"9E",
+			],
+			playrough: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandattack: [
+				"9L1",
+				"9L7",
+			],
+			seedbomb: [
+				"9T",
+			],
+			shadowball: [
+				"9M",
+			],
+			sleeptalk: [
+				"9E",
+				"9M",
+			],
+			smartstrike: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swordsdance: [
+				"9M",
+			],
+			synthesis: [
+				"9E",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L20",
+			],
+			thunderwave: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			wildcharge: [
+				"9M",
+			],
+			woodhammer: [
+				"9L60",
+			],
+			workup: [
+				"9M",
+			],
+			worryseed: [
+				"9E",
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	sawsbucksummer: {
+		learnset: {
+			agility: [
+				"9E",
+			],
+			aromatherapy: [
+				"9L28",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			batonpass: [
+				"9E",
+			],
+			bounce: [
+				"9T",
+			],
+			bulldoze: [
+				"9M",
+			],
+			bulletseed: [
+				"9M",
+			],
+			camouflage: [
+				"9L1",
+			],
+			charm: [
+				"9L36",
+				"9M",
+			],
+			curse: [
+				"9T",
+			],
+			cut: [
+				"9M",
+			],
+			dig: [
+				"9M",
+			],
+			doubleedge: [
+				"9L52",
+			],
+			doublekick: [
+				"9L10",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9L32",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			faketears: [
+				"9E",
+				"9M",
+			],
+			feintattack: [
+				"9L16",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grasswhistle: [
+				"9E",
+			],
+			grassyglide: [
+				"9T",
+			],
+			grassyterrain: [
+				"9M",
+			],
+			growl: [
+				"9L1",
+				"9L4",
+			],
+			headbutt: [
+				"9E",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			highhorsepower: [
+				"9M",
+			],
+			hornleech: [
+				"9L1",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			jumpkick: [
+				"9L24",
+			],
+			lastresort: [
+				"9T",
+			],
+			leechseed: [
+				"9L13",
+			],
+			lightscreen: [
+				"9M",
+			],
+			megahorn: [
+				"9L1",
+			],
+			naturalgift: [
+				"9E",
+			],
+			naturepower: [
+				"9L44",
+			],
+			odorsleuth: [
+				"9E",
+			],
+			playrough: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandattack: [
+				"9L1",
+				"9L7",
+			],
+			seedbomb: [
+				"9T",
+			],
+			shadowball: [
+				"9M",
+			],
+			sleeptalk: [
+				"9E",
+				"9M",
+			],
+			smartstrike: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swordsdance: [
+				"9M",
+			],
+			synthesis: [
+				"9E",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L20",
+			],
+			thunderwave: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			wildcharge: [
+				"9M",
+			],
+			woodhammer: [
+				"9L60",
+			],
+			workup: [
+				"9M",
+			],
+			worryseed: [
+				"9E",
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	sawsbuckwinter: {
+		learnset: {
+			agility: [
+				"9E",
+			],
+			aromatherapy: [
+				"9L28",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			batonpass: [
+				"9E",
+			],
+			bounce: [
+				"9T",
+			],
+			bulldoze: [
+				"9M",
+			],
+			bulletseed: [
+				"9M",
+			],
+			camouflage: [
+				"9L1",
+			],
+			charm: [
+				"9L36",
+				"9M",
+			],
+			curse: [
+				"9T",
+			],
+			cut: [
+				"9M",
+			],
+			dig: [
+				"9M",
+			],
+			doubleedge: [
+				"9L52",
+			],
+			doublekick: [
+				"9L10",
+			],
+			doubleteam: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9L32",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			faketears: [
+				"9E",
+				"9M",
+			],
+			feintattack: [
+				"9L16",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grasswhistle: [
+				"9E",
+			],
+			grassyglide: [
+				"9T",
+			],
+			grassyterrain: [
+				"9M",
+			],
+			growl: [
+				"9L1",
+				"9L4",
+			],
+			headbutt: [
+				"9E",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			highhorsepower: [
+				"9M",
+			],
+			hornleech: [
+				"9L1",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			jumpkick: [
+				"9L24",
+			],
+			lastresort: [
+				"9T",
+			],
+			leechseed: [
+				"9L13",
+			],
+			lightscreen: [
+				"9M",
+			],
+			megahorn: [
+				"9L1",
+			],
+			naturalgift: [
+				"9E",
+			],
+			naturepower: [
+				"9L44",
+			],
+			odorsleuth: [
+				"9E",
+			],
+			playrough: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandattack: [
+				"9L1",
+				"9L7",
+			],
+			seedbomb: [
+				"9T",
+			],
+			shadowball: [
+				"9M",
+			],
+			sleeptalk: [
+				"9E",
+				"9M",
+			],
+			smartstrike: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swordsdance: [
+				"9M",
+			],
+			synthesis: [
+				"9E",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L20",
+			],
+			thunderwave: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			wildcharge: [
+				"9M",
+			],
+			woodhammer: [
+				"9L60",
+			],
+			workup: [
+				"9M",
+			],
+			worryseed: [
+				"9E",
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
 	scatterbug: {
 		learnset: {
 			bugbite: [
@@ -261838,6 +263194,519 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	unownb: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownc: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownd: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unowne: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownexclamation: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownf: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unowng: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownh: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unowni: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownj: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownk: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownl: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownm: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownn: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unowno: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownp: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownq: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownquestion: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownr: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unowns: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownt: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownu: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownv: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownw: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownx: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unowny: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
+	unownz: {
+		learnset: {
+			ancientpower: [
+				"9L1",
+			],
+			cosmicpower: [
+				"9L1",
+			],
+			earthpower: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9L1",
+			],
+			naturepower: [
+				"9L1",
+			],
+		},
+	},
 	ursaluna: {
 		learnset: {
 			aerialace: [
@@ -268519,191 +270388,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
-	vivillonfancy: {
-		learnset: {
-			aerialace: [
-				"9M",
-			],
-			aircutter: [
-				"9T",
-			],
-			airslash: [
-				"9M",
-			],
-			aromatherapy: [
-				"9L31",
-				"9T",
-			],
-			attract: [
-				"9M",
-			],
-			bugbuzz: [
-				"9L35",
-				"9M",
-			],
-			calmmind: [
-				"9M",
-			],
-			defog: [
-				"9M",
-			],
-			doubleteam: [
-				"9M",
-			],
-			drainingkiss: [
-				"9L25",
-			],
-			dreameater: [
-				"9M",
-			],
-			electroweb: [
-				"9T",
-			],
-			endeavor: [
-				"9T",
-			],
-			endure: [
-				"9M",
-			],
-			energyball: [
-				"9M",
-			],
-			facade: [
-				"9M",
-			],
-			flash: [
-				"9M",
-			],
-			frustration: [
-				"9M",
-			],
-			gigadrain: [
-				"9M",
-			],
-			gigaimpact: [
-				"9M",
-			],
-			gust: [
-				"9L1",
-			],
-			hiddenpower: [
-				"9M",
-			],
-			hurricane: [
-				"9L50",
-				"9M",
-			],
-			hyperbeam: [
-				"9M",
-			],
-			infestation: [
-				"9M",
-			],
-			irondefense: [
-				"9T",
-			],
-			laserfocus: [
-				"9T",
-			],
-			lightscreen: [
-				"9L12",
-				"9M",
-			],
-			poisonpowder: [
-				"9L1",
-			],
-			pollenpuff: [
-				"9M",
-			],
-			powder: [
-				"9L1",
-				"9L55",
-			],
-			protect: [
-				"9M",
-			],
-			psybeam: [
-				"9L17",
-			],
-			psychic: [
-				"9M",
-			],
-			psychup: [
-				"9M",
-			],
-			quiverdance: [
-				"9L45",
-			],
-			raindance: [
-				"9M",
-			],
-			rest: [
-				"9M",
-			],
-			return: [
-				"9M",
-			],
-			roost: [
-				"9M",
-			],
-			safeguard: [
-				"9L41",
-				"9M",
-			],
-			signalbeam: [
-				"9T",
-			],
-			skittersmack: [
-				"9T",
-			],
-			sleeppowder: [
-				"9L1",
-			],
-			sleeptalk: [
-				"9M",
-			],
-			snore: [
-				"9T",
-			],
-			solarbeam: [
-				"9M",
-			],
-			strugglebug: [
-				"9L1",
-				"9M",
-			],
-			stunspore: [
-				"9L1",
-			],
-			substitute: [
-				"9M",
-			],
-			sunnyday: [
-				"9M",
-			],
-			supersonic: [
-				"9L21",
-			],
-			swagger: [
-				"9M",
-			],
-			swift: [
-				"9T",
-			],
-			tailwind: [
-				"9T",
-			],
-			thief: [
-				"9M",
-			],
-			toxic: [
-				"9M",
-			],
-			uturn: [
-				"9M",
-			],
-		},
-	},
 	vivillongarden: {
 		learnset: {
 			aerialace: [
@@ -269815,191 +271499,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 		},
 	},
 	vivillonocean: {
-		learnset: {
-			aerialace: [
-				"9M",
-			],
-			aircutter: [
-				"9T",
-			],
-			airslash: [
-				"9M",
-			],
-			aromatherapy: [
-				"9L31",
-				"9T",
-			],
-			attract: [
-				"9M",
-			],
-			bugbuzz: [
-				"9L35",
-				"9M",
-			],
-			calmmind: [
-				"9M",
-			],
-			defog: [
-				"9M",
-			],
-			doubleteam: [
-				"9M",
-			],
-			drainingkiss: [
-				"9L25",
-			],
-			dreameater: [
-				"9M",
-			],
-			electroweb: [
-				"9T",
-			],
-			endeavor: [
-				"9T",
-			],
-			endure: [
-				"9M",
-			],
-			energyball: [
-				"9M",
-			],
-			facade: [
-				"9M",
-			],
-			flash: [
-				"9M",
-			],
-			frustration: [
-				"9M",
-			],
-			gigadrain: [
-				"9M",
-			],
-			gigaimpact: [
-				"9M",
-			],
-			gust: [
-				"9L1",
-			],
-			hiddenpower: [
-				"9M",
-			],
-			hurricane: [
-				"9L50",
-				"9M",
-			],
-			hyperbeam: [
-				"9M",
-			],
-			infestation: [
-				"9M",
-			],
-			irondefense: [
-				"9T",
-			],
-			laserfocus: [
-				"9T",
-			],
-			lightscreen: [
-				"9L12",
-				"9M",
-			],
-			poisonpowder: [
-				"9L1",
-			],
-			pollenpuff: [
-				"9M",
-			],
-			powder: [
-				"9L1",
-				"9L55",
-			],
-			protect: [
-				"9M",
-			],
-			psybeam: [
-				"9L17",
-			],
-			psychic: [
-				"9M",
-			],
-			psychup: [
-				"9M",
-			],
-			quiverdance: [
-				"9L45",
-			],
-			raindance: [
-				"9M",
-			],
-			rest: [
-				"9M",
-			],
-			return: [
-				"9M",
-			],
-			roost: [
-				"9M",
-			],
-			safeguard: [
-				"9L41",
-				"9M",
-			],
-			signalbeam: [
-				"9T",
-			],
-			skittersmack: [
-				"9T",
-			],
-			sleeppowder: [
-				"9L1",
-			],
-			sleeptalk: [
-				"9M",
-			],
-			snore: [
-				"9T",
-			],
-			solarbeam: [
-				"9M",
-			],
-			strugglebug: [
-				"9L1",
-				"9M",
-			],
-			stunspore: [
-				"9L1",
-			],
-			substitute: [
-				"9M",
-			],
-			sunnyday: [
-				"9M",
-			],
-			supersonic: [
-				"9L21",
-			],
-			swagger: [
-				"9M",
-			],
-			swift: [
-				"9T",
-			],
-			tailwind: [
-				"9T",
-			],
-			thief: [
-				"9M",
-			],
-			toxic: [
-				"9M",
-			],
-			uturn: [
-				"9M",
-			],
-		},
-	},
-	vivillonpokeball: {
 		learnset: {
 			aerialace: [
 				"9M",
