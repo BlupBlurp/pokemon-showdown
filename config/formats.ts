@@ -27,6 +27,10 @@ const RELUMI_BASE_BANLIST = [
 	"Cramorant-Gulping",
 	"Eiscue-Noice",
 	"Morpeko-Hangry",
+	"Darmanitan-Galar-Zen",
+	"Darmanitan-Zen",
+	"Greninja-Ash",
+	"Minior-Meteor",
 ] as const;
 
 const RELUMI_GEN9_UNBANLIST = [
@@ -156,7 +160,6 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		debug: true,
 		battle: { trunc: Math.trunc },
 		ruleset: [
-			"Dynamax Clause",
 			"Team Preview",
 			"Cancel Mod",
 			"Max Team Size = 24",
@@ -229,7 +232,6 @@ export const Formats: import("../sim/dex-formats").FormatList = [
 		debug: true,
 		battle: { trunc: Math.trunc },
 		ruleset: [
-			"Dynamax Clause",
 			"Team Preview",
 			"Cancel Mod",
 			"Max Team Size = 24",
