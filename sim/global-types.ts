@@ -803,6 +803,9 @@ interface ModdedBattleScriptsData extends Partial<BattleScriptsData> {
 		targetLoc: number,
 		originalTarget?: Pokemon,
 	) => Pokemon | null;
+
+	// OM
+	resolveTargetLoc?: (this: Battle, targetLoc: number, action: Action, move: ActiveMove) => number;
 }
 
 type TypeInfo = import("./dex-data").TypeInfo;
