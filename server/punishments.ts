@@ -1723,7 +1723,6 @@ export const Punishments = new class {
 
 	checkIp(user: User, connection: Connection) {
 		const ip = connection.ip;
-		const lookupIp = connection.rawIp || ip;
 		let punishments = Punishments.ipSearch(ip);
 
 		if (!punishments && Punishments.checkRangeBanned(ip)) {
@@ -1755,7 +1754,7 @@ export const Punishments = new class {
 			if (!sharedAndHasPunishment) Punishments.checkPunishmentTime(user, Punishments.byWeight(punishments)[0]);
 		}
 
-		return IPTools.lookup(lookupIp).then(({ dnsbl, host, hostType }) => {
+		return IPTools.lookup(ip).then(({ dnsbl, host, hostType }) => {
 			user = connection.user || user;
 
 			if (hostType === 'proxy' && !user.trusted && !user.locked) {

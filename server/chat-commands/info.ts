@@ -263,11 +263,7 @@ export const commands: Chat.ChatCommands = {
 			}
 		}
 		if (user === targetUser ? user.can('ipself') : user.can('ip', targetUser)) {
-			// Prefer the live raw source IP when users view their own /ip output.
-			const selfRawIp = user === targetUser ? (connection.rawIp || connection.ip) : null;
-			const selfCompatIp = user === targetUser ? connection.ip : null;
 			const ips = targetUser.ips.map(ip => {
-				const displayIp = selfRawIp && ip === selfCompatIp ? selfRawIp : ip;
 				const status = [];
 				const punishments = Punishments.ips.get(ip);
 				if (user.can('alts') && punishments) {
@@ -285,16 +281,14 @@ export const commands: Chat.ChatCommands = {
 					}
 					status.push(sharedStr);
 				}
-				const extra = selfRawIp && selfCompatIp && selfRawIp !== selfCompatIp && ip === selfCompatIp ? ` (compat: ${selfCompatIp})` : '';
-				return `<a href="https://whatismyipaddress.com/ip/${displayIp}" target="_blank">${displayIp}</a>${extra}` + (status.length ? ` (${status.join('; ')})` : '');
+				return `<a href="https://whatismyipaddress.com/ip/${ip}" target="_blank">${ip}</a>` + (status.length ? ` (${status.join('; ')})` : '');
 			});
 			buf += `<br /> IP${Chat.plural(ips)}: ${ips.join(", ")}`;
 			if (user.tempGroup !== ' ' && targetUser.latestHost) {
 				buf += Utils.html`<br />Host: ${targetUser.latestHost} [${targetUser.latestHostType}]`;
 			}
 		} else if (user === targetUser) {
-			const ownIp = connection.rawIp || connection.ip;
-			buf += `<br /> IP: <a href="https://whatismyipaddress.com/ip/${ownIp}" target="_blank">${ownIp}</a>`;
+			buf += `<br /> IP: <a href="https://whatismyipaddress.com/ip/${connection.ip}" target="_blank">${connection.ip}</a>`;
 		}
 		if ((user === targetUser || canViewAlts) && hiddenrooms) {
 			buf += `<br />Hidden rooms: ${hiddenrooms}`;

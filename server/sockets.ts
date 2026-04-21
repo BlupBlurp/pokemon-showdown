@@ -54,11 +54,11 @@ export const Sockets = new (class {
 		for await (const data of worker.stream) {
 			switch (data.charAt(0)) {
 				case "*": {
-					// *socketid, ip, protocol, rawip
+					// *socketid, ip, protocol
 					// connect
 					worker.load++;
-					const [socketid, ip, protocol, rawIp] = data.substr(1).split("\n");
-					Users.socketConnect(worker, id, socketid, ip, protocol, rawIp || ip);
+					const [socketid, ip, protocol] = data.substr(1).split("\n");
+					Users.socketConnect(worker, id, socketid, ip, protocol);
 					break;
 				}
 
@@ -186,7 +186,6 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 	socketCounter = 0;
 
 	isTrustedProxyIp: (ip: string) => boolean;
-	isTrustedProxy: (ip: string) => boolean;
 
 	receivers: { [k: string]: (this: ServerStream, data: string) => void } = {
 		$(data) {
@@ -329,13 +328,6 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		this.isTrustedProxyIp = config.proxyip
 			? IPTools.checker(config.proxyip)
 			: () => false;
-		// Normalize common proxy source forms (IPv6 loopback and IPv4-mapped IPv6) for trust checks.
-		this.isTrustedProxy = (ip: string) => {
-			if (this.isTrustedProxyIp(ip)) return true;
-			if (ip === '::1') return this.isTrustedProxyIp('127.0.0.1');
-			if (ip.startsWith('::ffff:')) return this.isTrustedProxyIp(ip.slice(7));
-			return false;
-		};
 
 		// Static HTTP server
 
@@ -501,12 +493,13 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 			`Worker ${PM.workerid} now listening on ${config.bindaddress}:${config.port}`,
 		);
 
-		const sslConfig = config.ssl;
-		if (this.serverSsl && sslConfig) {
+		if (this.serverSsl) {
 			server.installHandlers(this.serverSsl, {});
-			this.serverSsl.listen(sslConfig.port, config.bindaddress);
+			// @ts-expect-error if appssl exists, then `config.ssl` must also exist
+			this.serverSsl.listen(config.ssl.port, config.bindaddress);
+			// @ts-expect-error if appssl exists, then `config.ssl` must also exist
 			console.log(
-				`Worker ${PM.workerid} now listening for SSL on port ${sslConfig.port}`,
+				`Worker ${PM.workerid} now listening for SSL on port ${config.ssl.port}`,
 			);
 		}
 
@@ -555,22 +548,21 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		this.sockets.set(socketid, socket);
 
 		let socketip = socket.remoteAddress;
-		if (this.isTrustedProxy(socketip)) {
+		if (this.isTrustedProxyIp(socketip)) {
 			const ips = (socket.headers["x-forwarded-for"] || "")
 				.split(",")
 				.reverse();
 			for (const ip of ips) {
 				const proxy = ip.trim();
-				if (!this.isTrustedProxy(proxy)) {
+				if (!this.isTrustedProxyIp(proxy)) {
 					socketip = proxy;
 					break;
 				}
 			}
 		}
-		const rawSocketIp = socketip.trim();
-		socketip = toCompatibleIp(rawSocketIp);
+		socketip = toCompatibleIp(socketip);
 
-		this.push(`*${socketid}\n${socketip}\n${socket.protocol}\n${rawSocketIp}`);
+		this.push(`*${socketid}\n${socketip}\n${socket.protocol}`);
 
 		socket.on("data", (message) => {
 			// drop empty messages (DDoS?)
