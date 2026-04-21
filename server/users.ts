@@ -212,6 +212,60 @@ function isPublicBot(userid: ID) {
 
 const connections = new Map<string, Connection>();
 
+// Keep IPv6 compatibility mappings centralized in the main process to avoid cross-worker collisions.
+// Use a literal base value so this file does not depend on global IPTools during module load.
+const IPV6_COMPAT_BASE = 3323068416; // 198.18.0.0
+const IPV6_COMPAT_SIZE = 1 << 17;
+const ipv6CompatByRawIp = new Map<string, string>();
+const usedCompatIps = new Set<string>();
+
+function allocateCompatibleIpv4(rawIp: string) {
+	const normalizedIp = rawIp.toLowerCase();
+	const existing = ipv6CompatByRawIp.get(normalizedIp);
+	if (existing) return existing;
+
+	// Start from a deterministic hash slot so reconnecting users keep stable compatibility IPs.
+	let hash = 2166136261;
+	for (const char of normalizedIp) {
+		hash ^= char.charCodeAt(0);
+		hash = Math.imul(hash, 16777619);
+	}
+	let index = hash % IPV6_COMPAT_SIZE;
+	if (index < 0) index += IPV6_COMPAT_SIZE;
+
+	// Resolve hash collisions with linear probing to guarantee unique active mappings.
+	for (let offset = 0; offset < IPV6_COMPAT_SIZE; offset++) {
+		const num = IPV6_COMPAT_BASE + ((index + offset) % IPV6_COMPAT_SIZE);
+		const candidate = IPTools.numberToIP(num);
+		if (!candidate || usedCompatIps.has(candidate)) continue;
+		ipv6CompatByRawIp.set(normalizedIp, candidate);
+		usedCompatIps.add(candidate);
+		return candidate;
+	}
+
+	throw new Error(`Exhausted IPv6 compatibility IP pool.`);
+}
+
+function toCompatibleIp(rawIp: string) {
+	const ip = rawIp.trim();
+	const asNumber = IPTools.ipToNumber(ip);
+	if (asNumber !== null) {
+		usedCompatIps.add(ip);
+		return ip;
+	}
+
+	// Preserve IPv4 identity when the source arrives as IPv4-mapped IPv6.
+	if (ip.startsWith('::ffff:')) {
+		const mapped = ip.slice(7);
+		if (IPTools.ipToNumber(mapped) !== null) {
+			usedCompatIps.add(mapped);
+			return mapped;
+		}
+	}
+
+	return allocateCompatibleIpv4(ip);
+}
+
 export class Connection {
 	/**
 	 * Connection IDs are mostly meaningless, beyond being known to be
@@ -224,6 +278,7 @@ export class Connection {
 	readonly worker: ProcessManager.StreamWorker;
 	readonly inRooms: Set<RoomID>;
 	readonly ip: string;
+	readonly rawIp: string;
 	readonly protocol: string;
 	readonly connectedAt: number;
 	/**
@@ -252,7 +307,8 @@ export class Connection {
 		socketid: string,
 		user: User | null,
 		ip: string | null,
-		protocol: string | null
+		protocol: string | null,
+		rawIp?: string | null,
 	) {
 		const now = Date.now();
 
@@ -262,6 +318,7 @@ export class Connection {
 		this.inRooms = new Set();
 
 		this.ip = ip || '';
+		this.rawIp = rawIp || this.ip;
 		this.protocol = protocol || '';
 
 		this.connectedAt = now;
@@ -1631,10 +1688,12 @@ function socketConnect(
 	workerid: number,
 	socketid: string,
 	ip: string,
-	protocol: string
+	protocol: string,
+	rawIp: string,
 ) {
 	const id = `${workerid}-${socketid}`;
-	const connection = new Connection(id, worker, socketid, null, ip, protocol);
+	const compatibleIp = toCompatibleIp(rawIp || ip);
+	const connection = new Connection(id, worker, socketid, null, compatibleIp, protocol, rawIp || ip);
 	connections.set(id, connection);
 
 	const banned = Punishments.checkIpBanned(connection);
@@ -1643,7 +1702,7 @@ function socketConnect(
 	}
 	// Emergency mode connections logging
 	if (Config.emergency) {
-		void Monitor.logPath('cons.emergency.log').append('[' + ip + ']\n');
+		void Monitor.logPath('cons.emergency.log').append('[' + compatibleIp + ']\n');
 	}
 
 	const user = new User(connection);

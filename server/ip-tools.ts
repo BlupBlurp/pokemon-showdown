@@ -48,6 +48,16 @@ export const IPTools = new class {
 	readonly ipRangeRegex = /^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]|\*)){0,2}\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]|\*)$/;
 	readonly hostRegex = /^.+\..{2,}$/;
 
+	// Build stable fallback host labels for addresses without usable RDNS.
+	getUnknownHostLabel(ip: string, type: 'unknown' | 'proxy') {
+		if (this.ipRegex.test(ip)) {
+			return `${ip.split('.').slice(0, 2).join('.')}?/${type}`;
+		}
+		const hextets = ip.toLowerCase().split(':').filter(Boolean);
+		const prefix = hextets.slice(0, 2).join(':') || ip.toLowerCase();
+		return `${prefix}?/${type}`;
+	}
+
 	async lookup(ip: string) {
 		const [dnsbl, host] = await Promise.all([
 			IPTools.queryDnsbl(ip),
@@ -90,6 +100,7 @@ export const IPTools = new class {
 	 */
 	queryDnsbl(ip: string) {
 		if (!Config.dnsbl) return Promise.resolve(null);
+		if (IPTools.ipToNumber(ip) === null) return Promise.resolve(null);
 		if (IPTools.dnsblCache.has(ip)) {
 			return Promise.resolve(IPTools.dnsblCache.get(ip) || null);
 		}
@@ -480,29 +491,30 @@ export const IPTools = new class {
 			}
 
 			const ipNumber = IPTools.ipToNumber(ip);
-			if (ipNumber === null) throw new Error(`Bad IP address: '${ip}'`);
-			for (const range of IPTools.ranges) {
-				if (ipNumber >= range.minIP && ipNumber <= range.maxIP) {
-					resolve(range.host);
-					return;
+			if (ipNumber !== null) {
+				for (const range of IPTools.ranges) {
+					if (ipNumber >= range.minIP && ipNumber <= range.maxIP) {
+						resolve(range.host);
+						return;
+					}
 				}
 			}
 			dns.reverse(ip, (err, hosts) => {
 				if (err) {
-					resolve(`${ip.split('.').slice(0, 2).join('.')}?/unknown`);
+					resolve(this.getUnknownHostLabel(ip, 'unknown'));
 					return;
 				}
 				if (!hosts?.[0]) {
 					if (ip.startsWith('50.')) {
 						resolve('comcast.net?/res');
-					} else if (ipNumber >= telstraRange.minIP && ipNumber <= telstraRange.maxIP) {
+					} else if (ipNumber !== null && ipNumber >= telstraRange.minIP && ipNumber <= telstraRange.maxIP) {
 						resolve(telstraRange.host);
 					} else {
 						this.testConnection(ip, result => {
 							if (result) {
-								resolve(`${ip.split('.').slice(0, 2).join('.')}?/proxy`);
+								resolve(this.getUnknownHostLabel(ip, 'proxy'));
 							} else {
-								resolve(`${ip.split('.').slice(0, 2).join('.')}?/unknown`);
+								resolve(this.getUnknownHostLabel(ip, 'unknown'));
 							}
 						});
 					}
