@@ -146,7 +146,7 @@ function getLabelString(entry) {
 	if (!entry || !entry.wordDataArray || !entry.wordDataArray.length) return "";
 	const firstWord = entry.wordDataArray[0];
 	if (!firstWord || typeof firstWord.str !== "string") return "";
-	return firstWord.str.trim();
+	return firstWord.str.trim().replace(/\u2019/g, "'"); // Avoid typographic apostrophes in labels since they often don't match Showdown's move/species names.
 }
 
 function extractIndexedNames(labelDataArray) {

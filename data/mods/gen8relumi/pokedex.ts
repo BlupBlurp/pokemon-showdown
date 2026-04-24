@@ -6669,12 +6669,6 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
-	regidrago: {
-		abilities: {
-			"0": "Dragon’s Maw",
-		},
-		inherit: true,
-	},
 	regigigas: {
 		abilities: {
 			"0": "Friend Guard",
