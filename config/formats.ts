@@ -31,6 +31,7 @@ const RELUMI_BASE_BANLIST = [
 	"Darmanitan-Zen",
 	"Greninja-Ash",
 	"Minior-Meteor",
+	"Wishiwashi-School",
 ] as const;
 
 const RELUMI_GEN9_UNBANLIST = [
