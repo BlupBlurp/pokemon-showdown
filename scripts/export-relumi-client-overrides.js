@@ -14,22 +14,23 @@ const CLIENT_ROOT_CANDIDATES = [
 	path.join(ROOT, "pokemon-showdown-client"),
 ];
 const CLIENT_ROOT =
-	CLIENT_ROOT_CANDIDATES.find((candidate) => fs.existsSync(candidate)) ||
+	CLIENT_ROOT_CANDIDATES.find(candidate => fs.existsSync(candidate)) ||
 	CLIENT_ROOT_CANDIDATES[0];
 const CLIENT_REL_PATH = path.join(
 	"play.pokemonshowdown.com",
 	"data",
-	"relumi-overrides.js",
+	"relumi-overrides.js"
 );
 const CLIENT_OUT_PATH = path.join(CLIENT_ROOT, CLIENT_REL_PATH);
 const CLIENT_LOG_PATH = path.join(
 	path.basename(CLIENT_ROOT),
 	"play.pokemonshowdown.com",
 	"data",
-	"relumi-overrides.js",
+	"relumi-overrides.js"
 );
 const ABILITIES_TEXT_PATH = path.join(ROOT, "data", "text", "abilities.ts");
 const MOVES_TEXT_PATH = path.join(ROOT, "data", "text", "moves.ts");
+const RELUMI_ABILITIES_TEXT_PATH = path.join(SERVER_MOD_DIR, "text", "abilities.ts");
 const RELUMI_GEN9_SNOW_ABILITY_IDS = [
 	"snowcloak",
 	"icebody",
@@ -51,8 +52,8 @@ function parseExportedObject(tsPath, exportName) {
 	if (!fs.existsSync(tsPath)) return {};
 	const source = fs.readFileSync(tsPath, "utf8");
 	const exportRegex = new RegExp(
-		`export\\s+const\\s+${exportName}\\s*:[^=]*=`,
-		"m",
+		`export\\s+const\\s+${exportName}\\s*(?::[^=]*)?\\s*=`,
+		"m"
 	);
 	const match = source.match(exportRegex);
 	if (!match) return {};
@@ -152,6 +153,21 @@ function buildAbilityTextOverrides(textTable, ids) {
 	return deepSort(out);
 }
 
+function buildRelumiAbilityTextOverrides(relumiTextTable) {
+	const out = {};
+	for (const [id, entry] of Object.entries(relumiTextTable || {})) {
+		if (!entry || typeof entry !== "object") continue;
+		const override = {};
+		if (typeof entry.name === "string" && entry.name) override.name = entry.name;
+		if (typeof entry.shortDesc === "string" && entry.shortDesc) {
+			override.shortDesc = entry.shortDesc;
+		}
+		if (typeof entry.desc === "string" && entry.desc) override.desc = entry.desc;
+		if (Object.keys(override).length) out[id] = override;
+	}
+	return deepSort(out);
+}
+
 function buildMoveTextOverrides(textTable, ids) {
 	const out = {};
 	for (const id of ids) {
@@ -177,7 +193,7 @@ function parseConstStringArray(tsPath, constName) {
 	const source = fs.readFileSync(tsPath, "utf8");
 	const arrayRegex = new RegExp(
 		`const\\s+${constName}\\s*=\\s*\\[([\\s\\S]*?)\\]\\s*as\\s+const\\s*;`,
-		"m",
+		"m"
 	);
 	const match = source.match(arrayRegex);
 	if (!match) return [];
@@ -195,7 +211,7 @@ function buildRelumiBanConfig(formatsPath) {
 	const baseBanlist = parseConstStringArray(formatsPath, RELUMI_BAN_CONSTANTS.base);
 	const gen9Allowlist = parseConstStringArray(
 		formatsPath,
-		RELUMI_BAN_CONSTANTS.gen9Allowlist,
+		RELUMI_BAN_CONSTANTS.gen9Allowlist
 	);
 	const ouBanlist = parseConstStringArray(formatsPath, RELUMI_BAN_CONSTANTS.ou);
 
@@ -215,34 +231,37 @@ function buildRelumiBanConfig(formatsPath) {
 function main() {
 	const pokedex = parseExportedObject(
 		path.join(SERVER_MOD_DIR, "pokedex.ts"),
-		"Pokedex",
+		"Pokedex"
 	);
 	const moves = parseExportedObject(
 		path.join(SERVER_MOD_DIR, "moves.ts"),
-		"Moves",
+		"Moves"
 	);
 	const learnsets = parseExportedObject(
 		path.join(SERVER_MOD_DIR, "learnsets.ts"),
-		"Learnsets",
+		"Learnsets"
 	);
 	const formatsData = parseExportedObject(
 		path.join(SERVER_MOD_DIR, "formats-data.ts"),
-		"FormatsData",
+		"FormatsData"
 	);
 	const abilitiesText = parseExportedObject(ABILITIES_TEXT_PATH, "AbilitiesText");
 	const movesText = parseExportedObject(MOVES_TEXT_PATH, "MovesText");
+	const relumiAbilitiesText = parseExportedObject(RELUMI_ABILITIES_TEXT_PATH, "AbilitiesText");
 
 	const speciesOverrides = buildOverrideMap(pokedex);
 	const moveOverrides = buildOverrideMap(moves);
 	const relumiLearnsets = buildTeambuilderLearnsets(learnsets);
 	const tierOverrides = buildTierOverrides(formatsData);
-	const abilityOverrides = buildAbilityTextOverrides(
+	const snowAbilityOverrides = buildAbilityTextOverrides(
 		abilitiesText,
-		RELUMI_GEN9_SNOW_ABILITY_IDS,
+		RELUMI_GEN9_SNOW_ABILITY_IDS
 	);
+	const relumiAbilityOverrides = buildRelumiAbilityTextOverrides(relumiAbilitiesText);
+	const abilityOverrides = { ...snowAbilityOverrides, ...relumiAbilityOverrides };
 	const moveTextOverrides = buildMoveTextOverrides(
 		movesText,
-		RELUMI_GEN9_SNOW_MOVE_IDS,
+		RELUMI_GEN9_SNOW_MOVE_IDS
 	);
 	const relumiBanConfig = buildRelumiBanConfig(FORMATS_PATH);
 

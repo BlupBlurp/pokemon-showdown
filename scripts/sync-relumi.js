@@ -35,14 +35,14 @@ const PATHS = {
 		"data",
 		"random-battles",
 		"gen8relumi",
-		"sets.json",
+		"sets.json"
 	),
 	relumiRandomDoublesSets: path.join(
 		ROOT,
 		"data",
 		"random-battles",
 		"gen8relumi",
-		"doubles-sets.json",
+		"doubles-sets.json"
 	),
 };
 
