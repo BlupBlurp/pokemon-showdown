@@ -30,7 +30,7 @@
         "./data/*",
         "./data/text/*",
         "./data/random-battles/**/*",
-        "./data/mods/*/*",
+        "./data/mods/**/*",
         "./dev-tools/*.ts",
         "./lib/*.ts",
         "./server/**/*.ts",
