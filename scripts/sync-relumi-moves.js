@@ -96,6 +96,34 @@ const MANUAL_MOVE_OVERRIDES = {
 	cut: {
 		shortDesc: "High critical hit ratio.",
 	},
+	dragonhammer: {
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 33% recoil.",
+	},
+	mirrorshot: {
+		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
+		shortDesc: "30% chance to lower the target's speed by 1.",
+	},
+	mudbomb: {
+		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
+		shortDesc: "30% chance to lower the target's speed by 1.",
+	},
+	muddywater: {
+		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
+		shortDesc: "30% chance to lower the foe(s) speed by 1.",
+	},
+	mudslap: {
+		desc: "Has a 100% chance to lower the target's speed by 2 stages.",
+		shortDesc: "100% chance to lower the target's speed by 2.",
+	},
+	rockclimb: {
+		desc: "Has a 10% chance to confuse the target.",
+		shortDesc: "10% chance to confuse the target.",
+	},
+	submission: {
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		shortDesc: "Has 1/3 recoil.",
+	},
 };
 
 function gcd(a, b) {

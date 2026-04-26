@@ -254,11 +254,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	dragonhammer: {
 		basePower: 120,
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		inherit: true,
 		recoil: [
 			33,
 			100,
 		],
+		shortDesc: "Has 33% recoil.",
 	},
 	dragonrush: {
 		accuracy: 85,
@@ -545,6 +547,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	mirrorshot: {
+		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
 		inherit: true,
 		secondary: {
 			boosts: {
@@ -552,12 +555,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 30,
 		},
+		shortDesc: "30% chance to lower the target's speed by 1.",
 	},
 	mortalspin: {
 		category: "Status",
 		inherit: true,
 	},
 	mudbomb: {
+		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
 		inherit: true,
 		secondary: {
 			boosts: {
@@ -565,8 +570,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 30,
 		},
+		shortDesc: "30% chance to lower the target's speed by 1.",
 	},
 	muddywater: {
+		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
 		inherit: true,
 		secondary: {
 			boosts: {
@@ -574,8 +581,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 30,
 		},
+		shortDesc: "30% chance to lower the foe(s) speed by 1.",
 	},
 	mudslap: {
+		desc: "Has a 100% chance to lower the target's speed by 2 stages.",
 		inherit: true,
 		secondary: {
 			boosts: {
@@ -583,6 +592,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 100,
 		},
+		shortDesc: "100% chance to lower the target's speed by 2.",
 	},
 	needlearm: {
 		basePower: 90,
@@ -748,12 +758,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	rockclimb: {
 		accuracy: 100,
+		desc: "Has a 10% chance to confuse the target.",
 		inherit: true,
 		pp: 10,
 		secondary: {
 			chance: 10,
 			volatileStatus: "confusion",
 		},
+		shortDesc: "10% chance to confuse the target.",
 		type: "Rock",
 	},
 	rocksmash: {
@@ -913,11 +925,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	submission: {
 		accuracy: 100,
 		basePower: 110,
+		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		inherit: true,
 		recoil: [
 			33,
 			100,
 		],
+		shortDesc: "Has 1/3 recoil.",
 	},
 	supercellslam: {
 		basePower: 130,
