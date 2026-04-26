@@ -78,6 +78,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		pp: 15,
 	},
+	burningjealousy: {
+		inherit: true,
+		secondary: {
+			chance: 100,
+			status: "brn",
+		},
+	},
 	chargebeam: {
 		accuracy: 100,
 		inherit: true,
@@ -248,6 +255,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	dragonhammer: {
 		basePower: 120,
 		inherit: true,
+		recoil: [
+			33,
+			100,
+		],
 	},
 	dragonrush: {
 		accuracy: 85,
@@ -270,6 +281,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			protect: 1,
 		},
 		inherit: true,
+	},
+	electroshot: {
+		inherit: true,
+		self: {
+			boosts: {
+				spa: 1,
+			},
+		},
 	},
 	filletaway: {
 		category: "Special",
@@ -525,9 +544,45 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	mirrorshot: {
+		inherit: true,
+		secondary: {
+			boosts: {
+				spe: -1,
+			},
+			chance: 30,
+		},
+	},
 	mortalspin: {
 		category: "Status",
 		inherit: true,
+	},
+	mudbomb: {
+		inherit: true,
+		secondary: {
+			boosts: {
+				spe: -1,
+			},
+			chance: 30,
+		},
+	},
+	muddywater: {
+		inherit: true,
+		secondary: {
+			boosts: {
+				spe: -1,
+			},
+			chance: 30,
+		},
+	},
+	mudslap: {
+		inherit: true,
+		secondary: {
+			boosts: {
+				spe: -2,
+			},
+			chance: 100,
+		},
 	},
 	needlearm: {
 		basePower: 90,
@@ -695,6 +750,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 		pp: 10,
+		secondary: {
+			chance: 10,
+			volatileStatus: "confusion",
+		},
 		type: "Rock",
 	},
 	rocksmash: {
@@ -855,6 +914,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		basePower: 110,
 		inherit: true,
+		recoil: [
+			33,
+			100,
+		],
 	},
 	supercellslam: {
 		basePower: 130,

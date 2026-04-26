@@ -48,6 +48,18 @@ const FLAG_BITS = [
 	"metronome",
 ];
 
+const RANK_EFF_TYPE_TO_STAT = [
+	null,
+	"atk",
+	"def",
+	"spa",
+	"spd",
+	"spe",
+	"accuracy",
+	"evasion",
+	"allStats",
+];
+
 const FLAG_OVERRIDES = {
 	// Sharpness moves (slicing flag)
 	smartstrike: { slicing: 1 },
@@ -80,16 +92,6 @@ const MANUAL_MOVE_OVERRIDES = {
 	},
 	triplearrows: {
 		shortDesc: "High crit. Target: 50% -1 Sp. Defense, 30% flinch.",
-		secondaries: [
-			{
-				chance: 50,
-				boosts: { spd: -1 },
-			},
-			{
-				chance: 30,
-				volatileStatus: "flinch",
-			},
-		],
 	},
 	cut: {
 		shortDesc: "High critical hit ratio.",
@@ -126,6 +128,112 @@ function buildMoveFlags(rawFlags, baseFlags = {}) {
 		}
 	}
 	return flags;
+}
+
+const SICK_ID_TO_STATUS = {
+	1: "par",
+	2: "slp",
+	3: "frz",
+	4: "brn",
+	5: "psn",
+	6: "confusion",
+};
+
+// Extract secondary effects (stat boosts, status, flinch) from game file fields.
+function extractRankEffects(row) {
+	// Map chance -> boosts object for grouping rank effects by chance
+	const effectsByChance = {};
+
+	if (row.category === 6 || row.category === 7) {
+		// Process up to 3 rank effects per move
+		for (let i = 1; i <= 3; i++) {
+			const effType = row[`rankEffType${i}`];
+			const effValue = row[`rankEffValue${i}`];
+			const effPer = row[`rankEffPer${i}`];
+
+			// Skip if no valid effect type
+			if (!effType || effType === 0) continue;
+
+			// Stat name mapping
+			const statName = RANK_EFF_TYPE_TO_STAT[effType];
+			if (!statName) continue;
+
+			const chance = effPer || 100;
+			if (!effectsByChance[chance]) {
+				effectsByChance[chance] = {};
+			}
+
+			// If stat is "allStats", expand to all individual stats
+			if (statName === "allStats") {
+				Object.assign(effectsByChance[chance], {
+					atk: effValue,
+					def: effValue,
+					spa: effValue,
+					spd: effValue,
+					spe: effValue,
+				});
+			} else {
+				effectsByChance[chance][statName] = effValue;
+			}
+		}
+	}
+
+	const effects = [];
+
+	// Build effects array from grouped boosts
+	for (const chanceStr of Object.keys(effectsByChance)) {
+		const chance = parseInt(chanceStr);
+		const boosts = effectsByChance[chance];
+		const effect = { chance };
+
+		// Category 7 = user stats change, use self wrapper
+		if (row.category === 7) {
+			effect.self = { boosts };
+		} else {
+			effect.boosts = boosts;
+		}
+
+		effects.push(effect);
+	}
+
+	if (row.category === 4 && row.sickID && row.sickPer) {
+		let statusName = SICK_ID_TO_STATUS[row.sickID];
+		// Special case: Toxic poison uses sickID 5 with duration 15
+		if (row.sickID === 5 && row.sickTurnMin === 15 && row.sickTurnMax === 15) {
+			statusName = "tox";
+		}
+		if (statusName) {
+			const effect = { chance: row.sickPer };
+			if (statusName === "confusion") {
+				effect.volatileStatus = statusName;
+			} else {
+				effect.status = statusName;
+			}
+			effects.push(effect);
+		}
+	}
+
+	// Chance of 1 to flinch is a special case, so we ignore it.
+	if (row.shrinkPer && row.shrinkPer > 1) {
+		effects.push({
+			chance: row.shrinkPer,
+			volatileStatus: "flinch",
+		});
+	}
+
+	if (effects.length === 0) return null;
+
+	// Special case: 100% user stat change with single chance level
+	// Return as direct self object without secondary wrapper
+	if (effects.length === 1 && effects[0].chance === 100 && row.category === 7 && effects[0].self) {
+		return {
+			self: {
+				boosts: effects[0].self.boosts,
+			},
+		};
+	}
+
+	return effects.length === 1 ? effects[0] : effects;
 }
 
 function buildMoveDiffs({ moveNames, wazaRows, dex }) {
@@ -224,11 +332,85 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 					updates.drain = fraction;
 					changed = true;
 				}
+			} else {
+				if (!compareJson(fraction, move.recoil)) {
+					updates.recoil = fraction;
+					changed = true;
+				}
 			}
 		}
 
 		if (row.hpRecoverRatio) {
-			// Intentionally ignored for now.
+			// Intentionally ignored. Showdown handles max HP healing and recoil natively via code, so emitting them creates false positives.
+		}
+
+		// Extract rank effects (stat boosts/debuffs) from game file data.
+		const rankEffects = extractRankEffects(row);
+		if (rankEffects) {
+			// Check if this is a direct self effect (100% user stat change, no secondary wrapper)
+			if (rankEffects.self && !rankEffects.chance) {
+				let isUnchanged = false;
+
+				// Check 1: Compare against direct move.self
+				if (compareJson(rankEffects.self, move.self)) {
+					isUnchanged = true;
+				} else if (
+					// Check 2: Compare against secondary wrapper (100% chance) - semantically equivalent
+					move.secondary &&
+					move.secondary.chance === 100 &&
+					compareJson(rankEffects.self, move.secondary.self)
+				) {
+					isUnchanged = true;
+				} else if (
+					// Check 3: Compare against move.selfBoost
+					compareJson(rankEffects.self, move.selfBoost)
+				) {
+					isUnchanged = true;
+				}
+
+				if (!isUnchanged) {
+					if (move.selfBoost) {
+						updates.selfBoost = rankEffects.self;
+					} else {
+						updates.self = rankEffects.self;
+					}
+					changed = true;
+				}
+			} else if (Array.isArray(rankEffects)) {
+				// Multiple effects with different chances
+				if (!compareJson(rankEffects, move.secondaries)) {
+					updates.secondaries = rankEffects;
+					changed = true;
+				}
+			} else {
+				// Single effect with chance field
+				let isUnchanged = false;
+
+				if (compareJson(rankEffects, move.secondary)) {
+					isUnchanged = true;
+				} else if (
+					rankEffects.self &&
+					rankEffects.chance &&
+					move.self &&
+					move.self.chance === rankEffects.chance &&
+					compareJson(rankEffects.self.boosts, move.self.boosts)
+				) {
+					isUnchanged = true;
+				}
+
+				if (!isUnchanged) {
+					if (rankEffects.self && move.self && move.self.chance) {
+						updates.self = {
+							chance: rankEffects.chance,
+							boosts: rankEffects.self.boosts,
+						};
+						updates.secondary = {}; // Sheer Force stub
+					} else {
+						updates.secondary = rankEffects;
+					}
+					changed = true;
+				}
+			}
 		}
 
 		const baseFlags = move.flags || {};
