@@ -122,19 +122,19 @@ const CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS = new Set([
 // These are not always represented in extracted learnset tables.
 const MANUAL_LEARNSET_OVERRIDES = {
 	rotomheat: {
-		overheat: ["9L1"],
+		overheat: ["8L1"],
 	},
 	rotomwash: {
-		hydropump: ["9L1"],
+		hydropump: ["8L1"],
 	},
 	rotomfrost: {
-		blizzard: ["9L1"],
+		blizzard: ["8L1"],
 	},
 	rotomfan: {
-		airslash: ["9L1"],
+		airslash: ["8L1"],
 	},
 	rotommow: {
-		leafstorm: ["9L1"],
+		leafstorm: ["8L1"],
 	},
 };
 
@@ -841,7 +841,7 @@ function buildLearnsetsDiffs({
 				moveIdCache,
 				unmappedMoveNumbers,
 			);
-			if (moveId) addSource(speciesId, moveId, "9E");
+			if (moveId) addSource(speciesId, moveId, "8E");
 		}
 	}
 
@@ -869,7 +869,7 @@ function buildLearnsetsDiffs({
 			const sourceLevel = Number.isFinite(level)
 				? Math.max(1, Math.trunc(level))
 				: 1;
-			addSource(speciesId, moveId, `9L${sourceLevel}`);
+			addSource(speciesId, moveId, `8L${sourceLevel}`);
 		}
 	}
 
@@ -894,7 +894,7 @@ function buildLearnsetsDiffs({
 				moveIdCache,
 				unmappedMoveNumbers,
 			);
-			if (moveId) addSource(speciesId, moveId, "9M");
+			if (moveId) addSource(speciesId, moveId, "8M");
 		}
 	}
 
@@ -918,7 +918,7 @@ function buildLearnsetsDiffs({
 				moveIdCache,
 				unmappedMoveNumbers,
 			);
-			if (moveId) addSource(speciesId, moveId, "9T");
+			if (moveId) addSource(speciesId, moveId, "8T");
 		}
 	}
 
@@ -1049,7 +1049,7 @@ function main() {
 	const wazaRows = wazaJson.Waza || [];
 	const trainerRows = trainerJson.TrainerPoke || [];
 
-	const dex = Dex.mod("gen9");
+	const dex = Dex.mod("gen8");
 
 	const previousPokedex = parseExportedObject(PATHS.pokedexTs, "Pokedex");
 	const previousMoves = parseExportedObject(PATHS.movesTs, "Moves");

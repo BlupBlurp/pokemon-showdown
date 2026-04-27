@@ -239,6 +239,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 	},
 	arcaninehisui: {
+		abilities: {
+			"0": "Intimidate",
+			"1": "Flash Fire",
+			H: "Rock Head",
+		},
 		baseStats: {
 			atk: 120,
 			def: 85,
@@ -513,7 +518,20 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	basculegion: {
+		abilities: {
+			"0": "Swift Swim",
+			"1": "Adaptability",
+			H: "Mold Breaker",
+		},
+		inherit: true,
+	},
 	basculegionf: {
+		abilities: {
+			"0": "Swift Swim",
+			"1": "Adaptability",
+			H: "Mold Breaker",
+		},
 		baseStats: {
 			atk: 80,
 			def: 65,
@@ -852,6 +870,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 	},
 	braviaryhisui: {
+		abilities: {
+			"0": "Keen Eye",
+			"1": "Sheer Force",
+			H: "Tinted Lens",
+		},
 		baseStats: {
 			atk: 57,
 			def: 80,
@@ -1696,17 +1719,6 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spa: 90,
 			spd: 55,
 			spe: 67,
-		},
-		inherit: true,
-	},
-	cresselia: {
-		baseStats: {
-			atk: 70,
-			def: 120,
-			hp: 120,
-			spa: 75,
-			spd: 130,
-			spe: 85,
 		},
 		inherit: true,
 	},
@@ -2594,6 +2606,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	enamorus: {
+		abilities: {
+			"0": "Cute Charm",
+			H: "Contrary",
+		},
+		inherit: true,
+	},
 	enamorustherian: {
 		abilities: {
 			"0": "Natural Cure",
@@ -3307,6 +3326,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"Poison",
 		],
 	},
+	goodrahisui: {
+		abilities: {
+			"0": "Sap Sipper",
+			"1": "Shell Armor",
+			H: "Gooey",
+		},
+		inherit: true,
+	},
 	gorebyss: {
 		abilities: {
 			"0": "Swift Swim",
@@ -3593,6 +3620,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"0": "Intimidate",
 			"1": "Flash Fire",
 			H: "Ball Fetch",
+		},
+		inherit: true,
+	},
+	growlithehisui: {
+		abilities: {
+			"0": "Intimidate",
+			"1": "Flash Fire",
+			H: "Rock Head",
 		},
 		inherit: true,
 	},
@@ -7841,6 +7876,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"Poison",
 		],
 	},
+	sliggoohisui: {
+		abilities: {
+			"0": "Sap Sipper",
+			"1": "Shell Armor",
+			H: "Gooey",
+		},
+		inherit: true,
+	},
 	slugma: {
 		baseStats: {
 			atk: 50,
@@ -9464,6 +9507,50 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spa: 116,
 			spd: 76,
 			spe: 95,
+		},
+		inherit: true,
+	},
+	zacian: {
+		baseStats: {
+			atk: 120,
+			def: 115,
+			hp: 92,
+			spa: 80,
+			spd: 115,
+			spe: 138,
+		},
+		inherit: true,
+	},
+	zaciancrowned: {
+		baseStats: {
+			atk: 150,
+			def: 115,
+			hp: 92,
+			spa: 80,
+			spd: 115,
+			spe: 148,
+		},
+		inherit: true,
+	},
+	zamazenta: {
+		baseStats: {
+			atk: 120,
+			def: 115,
+			hp: 92,
+			spa: 80,
+			spd: 115,
+			spe: 138,
+		},
+		inherit: true,
+	},
+	zamazentacrowned: {
+		baseStats: {
+			atk: 120,
+			def: 140,
+			hp: 92,
+			spa: 80,
+			spd: 140,
+			spe: 128,
 		},
 		inherit: true,
 	},

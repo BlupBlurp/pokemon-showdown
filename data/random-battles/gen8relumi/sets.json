@@ -4179,6 +4179,70 @@
             }
         ]
     },
+    "bisharp": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Iron Head",
+                    "Brick Break",
+                    "Night Slash",
+                    "Psycho Cut"
+                ],
+                "abilities": [
+                    "Sharpness"
+                ],
+                "teraTypes": [
+                    "Dark",
+                    "Steel"
+                ],
+                "trainerId": 1006,
+                "item": [
+                    "Eviolite"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Iron Head",
+                    "Sucker Punch",
+                    "Knock Off",
+                    "Stone Edge"
+                ],
+                "abilities": [
+                    "Defiant"
+                ],
+                "teraTypes": [
+                    "Dark",
+                    "Steel"
+                ],
+                "trainerId": 450,
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
+            }
+        ]
+    },
     "blacephalon": {
         "level": 82,
         "sets": [
@@ -7951,7 +8015,7 @@
         ]
     },
     "cresselia": {
-        "level": 82,
+        "level": 81,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -10559,6 +10623,98 @@
             }
         ]
     },
+    "dunsparce": {
+        "level": 90,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Ancient Power",
+                    "Body Slam",
+                    "Drill Run",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Serene Grace"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 32,
+                "nature": [
+                    "Bashful"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Ancient Power",
+                    "Body Slam",
+                    "Drill Run",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Serene Grace"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 32,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            }
+        ]
+    },
+    "duraludon": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Flash Cannon",
+                    "Body Press",
+                    "Thunderbolt",
+                    "Dragon Pulse"
+                ],
+                "abilities": [
+                    "Light Metal"
+                ],
+                "teraTypes": [
+                    "Steel",
+                    "Dragon"
+                ],
+                "trainerId": 207,
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 252
+                }
+            }
+        ]
+    },
     "durant": {
         "level": 86,
         "sets": [
@@ -11563,7 +11719,7 @@
                     "Calm Mind"
                 ],
                 "abilities": [
-                    "Cute Charm",
+                    "Healer",
                     "Contrary"
                 ],
                 "teraTypes": [
@@ -11580,7 +11736,7 @@
                     "Hyper Beam"
                 ],
                 "abilities": [
-                    "Cute Charm",
+                    "Healer",
                     "Contrary"
                 ],
                 "teraTypes": [
@@ -14450,6 +14606,70 @@
                     "spa": 2,
                     "spd": 0,
                     "spe": 4
+                }
+            }
+        ]
+    },
+    "girafarig": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Psychic",
+                    "Thunderbolt",
+                    "Shadow Ball",
+                    "Earthquake"
+                ],
+                "abilities": [
+                    "Inner Focus"
+                ],
+                "teraTypes": [
+                    "Normal",
+                    "Psychic"
+                ],
+                "trainerId": 704,
+                "item": [
+                    "Colbur Berry"
+                ],
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Psychic",
+                    "Baton Pass",
+                    "Hyper Voice",
+                    "Nasty Plot"
+                ],
+                "abilities": [
+                    "Inner Focus"
+                ],
+                "teraTypes": [
+                    "Normal",
+                    "Psychic"
+                ],
+                "trainerId": 550,
+                "nature": [
+                    "Bashful"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 88,
+                    "spd": 84,
+                    "spe": 86
                 }
             }
         ]
@@ -29080,6 +29300,65 @@
             }
         ]
     },
+    "primeape": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Screech",
+                    "Outrage",
+                    "Final Gambit",
+                    "Close Combat"
+                ],
+                "abilities": [
+                    "Vital Spirit"
+                ],
+                "teraTypes": [
+                    "Fighting"
+                ],
+                "trainerId": 574,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Cross Chop",
+                    "Night Slash",
+                    "Focus Energy",
+                    "Swagger"
+                ],
+                "abilities": [
+                    "Vital Spirit"
+                ],
+                "teraTypes": [
+                    "Fighting"
+                ],
+                "trainerId": 235,
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
+                }
+            }
+        ]
+    },
     "probopass": {
         "level": 84,
         "sets": [
@@ -35873,6 +36152,68 @@
             }
         ]
     },
+    "stantler": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Double-Edge",
+                    "Jump Kick",
+                    "Zen Headbutt",
+                    "Sucker Punch"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 457,
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 8,
+                    "spe": 250
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Zen Headbutt",
+                    "Take Down",
+                    "Confuse Ray",
+                    "Double Kick"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 761,
+                "item": [
+                    "Eviolite"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 36,
+                    "atk": 114,
+                    "def": 36,
+                    "spa": 36,
+                    "spd": 36,
+                    "spe": 252
+                }
+            }
+        ]
+    },
     "staraptor": {
         "level": 86,
         "sets": [
@@ -39638,6 +39979,68 @@
             }
         ]
     },
+    "ursaring": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Earthquake",
+                    "Facade",
+                    "Thunder Punch",
+                    "Ice Punch"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 814,
+                "item": [
+                    "Flame Orb"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 250,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 8
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Slash",
+                    "Hammer Arm",
+                    "Payback",
+                    "Thrash"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 63,
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 250,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 8
+                }
+            }
+        ]
+    },
     "urshifu": {
         "level": 83,
         "sets": [
@@ -42063,7 +42466,7 @@
         ]
     },
     "zacian": {
-        "level": 78,
+        "level": 77,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -42098,7 +42501,7 @@
         ]
     },
     "zaciancrowned": {
-        "level": 76,
+        "level": 75,
         "sets": [
             {
                 "role": "Setup Sweeper",
@@ -42135,7 +42538,7 @@
         ]
     },
     "zamazenta": {
-        "level": 78,
+        "level": 77,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -42170,7 +42573,7 @@
         ]
     },
     "zamazentacrowned": {
-        "level": 76,
+        "level": 75,
         "sets": [
             {
                 "role": "Fast Attacker",

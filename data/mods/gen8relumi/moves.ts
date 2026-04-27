@@ -255,6 +255,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	dragonhammer: {
 		basePower: 120,
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
+		flags: {
+			contact: 1,
+			metronome: 1,
+			mirror: 1,
+			protect: 1,
+		},
 		inherit: true,
 		recoil: [
 			33,
@@ -354,12 +360,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
-	glaiverush: {
-		category: "Status",
+	glaciallance: {
+		basePower: 120,
 		inherit: true,
 	},
-	grassyglide: {
-		basePower: 70,
+	glaiverush: {
+		category: "Status",
 		inherit: true,
 	},
 	gravapple: {
@@ -479,6 +485,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	lusterpurge: {
+		basePower: 95,
+		inherit: true,
+	},
 	magicaltorque: {
 		category: "Status",
 		flags: {
@@ -546,6 +556,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	milkdrink: {
+		inherit: true,
+		pp: 5,
+	},
 	mirrorshot: {
 		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
 		inherit: true,
@@ -556,6 +570,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			chance: 30,
 		},
 		shortDesc: "30% chance to lower the target's speed by 1.",
+	},
+	mistball: {
+		basePower: 95,
+		inherit: true,
 	},
 	mortalspin: {
 		category: "Status",
@@ -736,6 +754,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	recover: {
+		inherit: true,
+		pp: 5,
+	},
+	rest: {
+		inherit: true,
+		pp: 5,
+	},
 	return: {
 		basePower: 70,
 		inherit: true,
@@ -779,6 +805,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	rocktomb: {
 		accuracy: 100,
 		inherit: true,
+	},
+	roost: {
+		inherit: true,
+		pp: 5,
 	},
 	ruination: {
 		category: "Physical",
@@ -830,6 +860,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	shoreup: {
+		inherit: true,
+		pp: 5,
+	},
 	silktrap: {
 		category: "Special",
 		flags: {
@@ -840,6 +874,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 		priority: 0,
+	},
+	slackoff: {
+		inherit: true,
+		pp: 5,
 	},
 	sludge: {
 		basePower: 75,
@@ -873,6 +911,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		gen: 8,
 		inherit: true,
 		isNonstandard: null,
+	},
+	softboiled: {
+		inherit: true,
+		pp: 5,
 	},
 	spicyextract: {
 		category: "Special",
@@ -1025,10 +1067,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	waterpulse: {
 		basePower: 70,
-		inherit: true,
-	},
-	wickedblow: {
-		basePower: 80,
 		inherit: true,
 	},
 	wickedtorque: {
