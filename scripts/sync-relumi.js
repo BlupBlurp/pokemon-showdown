@@ -138,6 +138,21 @@ const MANUAL_LEARNSET_OVERRIDES = {
 	},
 };
 
+// Manual pokedex overrides that must persist across sync runs.
+// Use for hardcoding species data not represented in extracted game files.
+const MANUAL_POKEDEX_OVERRIDES = {
+	calyrexice: {
+		abilities: {
+			"0": "As One (Glastrier)",
+		},
+	},
+	calyrexshadow: {
+		abilities: {
+			"0": "As One (Spectrier)",
+		},
+	},
+};
+
 function readJson(filePath) {
 	return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -1088,6 +1103,16 @@ function main() {
 		personalRows,
 		dex,
 	});
+
+	// Apply manual pokedex overrides on top of generated diffs
+	for (const [speciesId, override] of Object.entries(MANUAL_POKEDEX_OVERRIDES)) {
+		if (pokedexDiffs[speciesId]) {
+			Object.assign(pokedexDiffs[speciesId], override);
+		} else {
+			pokedexDiffs[speciesId] = override;
+		}
+	}
+
 	const { movesDiffs, unmappedMoves } = buildMoveDiffs({
 		moveNames,
 		wazaRows,

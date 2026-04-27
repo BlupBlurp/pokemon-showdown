@@ -1043,13 +1043,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	calyrexice: {
 		abilities: {
-			"0": "As One",
+			"0": "As One (Glastrier)",
 		},
 		inherit: true,
 	},
 	calyrexshadow: {
 		abilities: {
-			"0": "As One",
+			"0": "As One (Spectrier)",
 		},
 		inherit: true,
 	},
