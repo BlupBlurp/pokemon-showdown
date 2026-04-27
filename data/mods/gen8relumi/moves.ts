@@ -202,7 +202,16 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	direclaw: {
 		accuracy: 80,
+		desc: "Has a 30% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
 		inherit: true,
+		secondary: {
+			chance: 30,
+			onHit: function onHit(target, source) {
+				const status = this.sample(['psn', 'par', 'slp']);
+				target.trySetStatus(status, source);
+			},
+		},
+		shortDesc: "30% chance to sleep, poison, or paralyze target.",
 	},
 	doodle: {
 		category: "Special",
@@ -340,6 +349,24 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 100,
 		inherit: true,
 	},
+	freezeshock: {
+		desc: "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. Raises the user's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+		inherit: true,
+		onTryMove: function onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({ atk: 1 }, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		prepare: "  [POKEMON] became cloaked in a freezing light!",
+		shortDesc: "Raises Atk by 1 on turn 1. Hits turn 2. 30% paralyze.",
+	},
 	furyattack: {
 		accuracy: 100,
 		basePower: 20,
@@ -418,6 +445,24 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
+	iceburn: {
+		desc: "Has a 30% chance to burn the target. This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
+		inherit: true,
+		onTryMove: function onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({ spa: 1 }, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		prepare: "  [POKEMON] became cloaked in freezing air!",
+		shortDesc: "Raises Sp. Atk by 1 on turn 1. Hits turn 2. 30% burn.",
+	},
 	icefang: {
 		accuracy: 100,
 		inherit: true,
@@ -462,7 +507,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	lastrespects: {
 		basePower: 30,
-		category: "Status",
+		basePowerCallback: function basePowerCallback(pokemon, target, move) {
+			return 50 + 30 * pokemon.side.totalFainted;
+		},
+		category: "Physical",
+		desc: "Power is equal to 50+(X*30), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
 		flags: {
 			contact: 1,
 			metronome: 1,
@@ -470,6 +519,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			protect: 1,
 		},
 		inherit: true,
+		shortDesc: "+30 power for each time a party member fainted.",
 	},
 	leafstorm: {
 		accuracy: 100,
@@ -726,6 +776,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	ragefist: {
+		basePowerCallback: function basePowerCallback(pokemon) {
+			return Math.min(200, 50 + 25 * pokemon.timesAttacked);
+		},
+		desc: "Power is equal to 50+(X*25), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. X cannot be greater than 6 and does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted.",
 		flags: {
 			contact: 1,
 			metronome: 1,
@@ -734,6 +788,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			punch: 1,
 		},
 		inherit: true,
+		shortDesc: "+25 power for each time user was hit. Max 6 hits.",
 	},
 	ragingbull: {
 		category: "Status",
