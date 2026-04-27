@@ -787,7 +787,7 @@ function buildSpeciesDiffs({
 		learnsetSpeciesIdByRowId,
 		learnsetSpeciesIdByMonsForm,
 		mappedSpeciesIds: Array.from(
-			new Set(speciesIdByMonsForm.values()),
+			new Set(speciesIdByMonsForm.values())
 		).sort(),
 		relumiTaggedSpeciesIds: Array.from(relumiTaggedSpeciesIds).sort(),
 	};
@@ -827,7 +827,7 @@ function buildLearnsetsDiffs({
 		// Learnsets are keyed by the learnset mapping, not the stats mapping,
 		// so cosmetic forms get explicit learnset entries when needed.
 		const speciesId = learnsetSpeciesIdByMonsForm.get(
-			`${entry.no}_${formNo}`,
+			`${entry.no}_${formNo}`
 		);
 		if (!speciesId) {
 			missingSpeciesRefs.add(`egg:${entry.no}_${formNo}`);
@@ -839,9 +839,9 @@ function buildLearnsetsDiffs({
 				moveNames,
 				dex,
 				moveIdCache,
-				unmappedMoveNumbers,
+				unmappedMoveNumbers
 			);
-			if (moveId) addSource(speciesId, moveId, "8E");
+			if (moveId) addSource(speciesId, moveId, "9E");
 		}
 	}
 
@@ -863,13 +863,13 @@ function buildLearnsetsDiffs({
 				moveNames,
 				dex,
 				moveIdCache,
-				unmappedMoveNumbers,
+				unmappedMoveNumbers
 			);
 			if (!moveId) continue;
 			const sourceLevel = Number.isFinite(level)
 				? Math.max(1, Math.trunc(level))
 				: 1;
-			addSource(speciesId, moveId, `8L${sourceLevel}`);
+			addSource(speciesId, moveId, `9L${sourceLevel}`);
 		}
 	}
 
@@ -878,7 +878,7 @@ function buildLearnsetsDiffs({
 		const parsed = parseMonFormFromFilename(fileName);
 		if (!parsed) continue;
 		const speciesId = learnsetSpeciesIdByMonsForm.get(
-			`${parsed.monsNo}_${parsed.formNo}`,
+			`${parsed.monsNo}_${parsed.formNo}`
 		);
 		if (!speciesId) {
 			missingSpeciesRefs.add(`tm:${parsed.monsNo}_${parsed.formNo}`);
@@ -892,9 +892,9 @@ function buildLearnsetsDiffs({
 				moveNames,
 				dex,
 				moveIdCache,
-				unmappedMoveNumbers,
+				unmappedMoveNumbers
 			);
-			if (moveId) addSource(speciesId, moveId, "8M");
+			if (moveId) addSource(speciesId, moveId, "9M");
 		}
 	}
 
@@ -903,7 +903,7 @@ function buildLearnsetsDiffs({
 		const parsed = parseMonFormFromFilename(fileName);
 		if (!parsed) continue;
 		const speciesId = learnsetSpeciesIdByMonsForm.get(
-			`${parsed.monsNo}_${parsed.formNo}`,
+			`${parsed.monsNo}_${parsed.formNo}`
 		);
 		if (!speciesId) {
 			missingSpeciesRefs.add(`tutor:${parsed.monsNo}_${parsed.formNo}`);
@@ -916,14 +916,14 @@ function buildLearnsetsDiffs({
 				moveNames,
 				dex,
 				moveIdCache,
-				unmappedMoveNumbers,
+				unmappedMoveNumbers
 			);
-			if (moveId) addSource(speciesId, moveId, "8T");
+			if (moveId) addSource(speciesId, moveId, "9T");
 		}
 	}
 
 	for (const [speciesId, learnset] of Object.entries(
-		MANUAL_LEARNSET_OVERRIDES,
+		MANUAL_LEARNSET_OVERRIDES
 	)) {
 		for (const [moveId, sources] of Object.entries(learnset)) {
 			for (const source of sources) {
@@ -938,7 +938,7 @@ function buildLearnsetsDiffs({
 			continue;
 		const formNo = deriveFormNo(row);
 		const speciesId = learnsetSpeciesIdByMonsForm.get(
-			`${row.monsno}_${formNo}`,
+			`${row.monsno}_${formNo}`
 		);
 		if (speciesId) speciesWithRows.add(speciesId);
 	}
