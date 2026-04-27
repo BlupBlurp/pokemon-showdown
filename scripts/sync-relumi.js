@@ -104,19 +104,19 @@ const CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS = new Set([
 // These are not always represented in extracted learnset tables.
 const MANUAL_LEARNSET_OVERRIDES = {
 	rotomheat: {
-		overheat: ["8L1"],
+		overheat: ["9L1"],
 	},
 	rotomwash: {
-		hydropump: ["8L1"],
+		hydropump: ["9L1"],
 	},
 	rotomfrost: {
-		blizzard: ["8L1"],
+		blizzard: ["9L1"],
 	},
 	rotomfan: {
-		airslash: ["8L1"],
+		airslash: ["9L1"],
 	},
 	rotommow: {
-		leafstorm: ["8L1"],
+		leafstorm: ["9L1"],
 	},
 };
 

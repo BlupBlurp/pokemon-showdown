@@ -208478,7 +208478,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 	rotomfan: {
 		learnset: {
 			airslash: [
-				"8L1",
+				"9L1",
 			],
 			allyswitch: [
 				"9T",
@@ -208663,7 +208663,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 			],
 			blizzard: [
-				"8L1",
+				"9L1",
 			],
 			charge: [
 				"9L15",
@@ -208913,7 +208913,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			overheat: [
-				"8L1",
+				"9L1",
 			],
 			painsplit: [
 				"9T",
@@ -209080,7 +209080,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			leafstorm: [
-				"8L1",
+				"9L1",
 			],
 			lightscreen: [
 				"9M",
@@ -209256,7 +209256,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			hydropump: [
-				"8L1",
+				"9L1",
 			],
 			hypervoice: [
 				"9M",
