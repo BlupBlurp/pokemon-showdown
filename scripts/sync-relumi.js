@@ -4,12 +4,15 @@
 
 const fs = require("fs");
 const path = require("path");
-const vm = require("vm");
 const { Dex, toID } = require("../dist/sim/dex");
 const { buildMoveDiffs } = require("./sync-relumi-moves");
 const { buildRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
+const { getRelumiRepoRoot } = require("./lib/relumi-paths");
+const { TYPE_ID_TO_NAME } = require("./lib/bdsp-type-id-to-name");
+const { deepSort, compareJson } = require("./lib/relumi-deep-sort");
+const { parseExportedObject } = require("./lib/relumi-parse-exported-object");
 
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = getRelumiRepoRoot();
 const GAME_FILES_DIR = path.join(ROOT, "game-files");
 const RELUMI_MOD_DIR = path.join(ROOT, "data", "mods", "gen8relumi");
 
@@ -45,27 +48,6 @@ const PATHS = {
 		"doubles-sets.json"
 	),
 };
-
-const TYPE_ID_TO_NAME = [
-	"Normal",
-	"Fighting",
-	"Flying",
-	"Poison",
-	"Ground",
-	"Rock",
-	"Bug",
-	"Ghost",
-	"Steel",
-	"Fire",
-	"Water",
-	"Grass",
-	"Electric",
-	"Psychic",
-	"Ice",
-	"Dragon",
-	"Dark",
-	"Fairy",
-];
 
 // Some species have game-file form indices that do not align with Showdown's
 // formeOrder/otherFormes ordering. Keep these mappings explicit and strict.
@@ -154,7 +136,13 @@ const MANUAL_POKEDEX_OVERRIDES = {
 };
 
 function readJson(filePath) {
-	return JSON.parse(fs.readFileSync(filePath, "utf8"));
+	try {
+		return JSON.parse(fs.readFileSync(filePath, "utf8"));
+	} catch (err) {
+		console.error(`Failed to read or parse JSON: ${filePath}`);
+		console.error(err.message);
+		process.exit(1);
+	}
 }
 
 function getLabelString(entry) {
@@ -285,16 +273,6 @@ function sourceSort(a, b) {
 	return a.localeCompare(b);
 }
 
-function deepSort(value) {
-	if (Array.isArray(value)) return value.map(deepSort);
-	if (!value || typeof value !== "object") return value;
-	const sorted = {};
-	for (const key of Object.keys(value).sort()) {
-		sorted[key] = deepSort(value[key]);
-	}
-	return sorted;
-}
-
 function formatTsKey(key) {
 	if (/^[$A-Z_a-z][$0-9A-Z_a-z]*$/.test(key)) return key;
 	return JSON.stringify(key);
@@ -337,32 +315,6 @@ function formatTsExport(exportName, importPath, typeName, value) {
 	const sortedValue = deepSort(value);
 	const body = formatTsValue(sortedValue);
 	return `export const ${exportName}: import(${JSON.stringify(importPath)}).${typeName} = ${body};\n`;
-}
-
-function parseExportedObject(tsPath, exportName) {
-	if (!fs.existsSync(tsPath)) return {};
-	const source = fs.readFileSync(tsPath, "utf8");
-	const exportRegex = new RegExp(
-		`export\\s+const\\s+${exportName}\\s*:[^=]*=`,
-		"m",
-	);
-	const match = source.match(exportRegex);
-	if (!match) return {};
-	const start = match.index + match[0].length;
-	const tail = source.slice(start).trim();
-	const semicolonIndex = tail.lastIndexOf(";");
-	const objectExpression = (
-		semicolonIndex >= 0 ? tail.slice(0, semicolonIndex) : tail
-	).trim();
-	if (!objectExpression) return {};
-	try {
-		return (
-			vm.runInNewContext(`(${objectExpression})`, {}, { timeout: 1000 }) ||
-			{}
-		);
-	} catch {
-		return {};
-	}
 }
 
 function normalizeForTokenization(str) {
@@ -611,10 +563,6 @@ function deriveFormNo(row) {
 		if (formNo >= 1 && formNo <= row.form_max - 1) return formNo;
 	}
 	return 0;
-}
-
-function compareJson(a, b) {
-	return JSON.stringify(deepSort(a)) === JSON.stringify(deepSort(b));
 }
 
 function diffSummary(prevObj, nextObj) {
@@ -1048,6 +996,19 @@ function ensureGameFilesExist() {
 	}
 }
 
+function logDiffSummary(title, diff) {
+	console.log(`${title} diff summary:`);
+	console.log(`- Added: ${diff.added.length}`);
+	console.log(`- Changed: ${diff.changed.length}`);
+	console.log(`- Removed: ${diff.removed.length}`);
+	if (diff.added.length) console.log(`  added keys: ${diff.added.join(", ")}`);
+	if (diff.changed.length)
+		console.log(`  changed keys: ${diff.changed.join(", ")}`);
+	if (diff.removed.length)
+		console.log(`  removed keys: ${diff.removed.join(", ")}`);
+	console.log("");
+}
+
 function main() {
 	ensureGameFilesExist();
 
@@ -1199,50 +1160,10 @@ function main() {
 	console.log(`- ${path.relative(ROOT, PATHS.relumiRandomSets)}`);
 	console.log(`- ${path.relative(ROOT, PATHS.relumiRandomDoublesSets)}`);
 	console.log("");
-	console.log("Pokedex diff summary:");
-	console.log(`- Added: ${pokedexDiff.added.length}`);
-	console.log(`- Changed: ${pokedexDiff.changed.length}`);
-	console.log(`- Removed: ${pokedexDiff.removed.length}`);
-	if (pokedexDiff.added.length)
-		console.log(`  added keys: ${pokedexDiff.added.join(", ")}`);
-	if (pokedexDiff.changed.length)
-		console.log(`  changed keys: ${pokedexDiff.changed.join(", ")}`);
-	if (pokedexDiff.removed.length)
-		console.log(`  removed keys: ${pokedexDiff.removed.join(", ")}`);
-	console.log("");
-	console.log("Moves diff summary:");
-	console.log(`- Added: ${movesDiff.added.length}`);
-	console.log(`- Changed: ${movesDiff.changed.length}`);
-	console.log(`- Removed: ${movesDiff.removed.length}`);
-	if (movesDiff.added.length)
-		console.log(`  added keys: ${movesDiff.added.join(", ")}`);
-	if (movesDiff.changed.length)
-		console.log(`  changed keys: ${movesDiff.changed.join(", ")}`);
-	if (movesDiff.removed.length)
-		console.log(`  removed keys: ${movesDiff.removed.join(", ")}`);
-	console.log("");
-	console.log("Learnsets diff summary:");
-	console.log(`- Added: ${learnsetsDiff.added.length}`);
-	console.log(`- Changed: ${learnsetsDiff.changed.length}`);
-	console.log(`- Removed: ${learnsetsDiff.removed.length}`);
-	if (learnsetsDiff.added.length)
-		console.log(`  added keys: ${learnsetsDiff.added.join(", ")}`);
-	if (learnsetsDiff.changed.length)
-		console.log(`  changed keys: ${learnsetsDiff.changed.join(", ")}`);
-	if (learnsetsDiff.removed.length)
-		console.log(`  removed keys: ${learnsetsDiff.removed.join(", ")}`);
-	console.log("");
-	console.log("FormatsData diff summary:");
-	console.log(`- Added: ${formatsDataDiff.added.length}`);
-	console.log(`- Changed: ${formatsDataDiff.changed.length}`);
-	console.log(`- Removed: ${formatsDataDiff.removed.length}`);
-	if (formatsDataDiff.added.length)
-		console.log(`  added keys: ${formatsDataDiff.added.join(", ")}`);
-	if (formatsDataDiff.changed.length)
-		console.log(`  changed keys: ${formatsDataDiff.changed.join(", ")}`);
-	if (formatsDataDiff.removed.length)
-		console.log(`  removed keys: ${formatsDataDiff.removed.join(", ")}`);
-	console.log("");
+	logDiffSummary("Pokedex", pokedexDiff);
+	logDiffSummary("Moves", movesDiff);
+	logDiffSummary("Learnsets", learnsetsDiff);
+	logDiffSummary("FormatsData", formatsDataDiff);
 	console.log(`Custom forms generated: ${customForms.length}`);
 	if (customForms.length) console.log(`- ${customForms.join(", ")}`);
 	console.log(`Unmapped personal rows: ${unmappedRows.length}`);
@@ -1302,4 +1223,9 @@ function main() {
 	}
 }
 
-main();
+try {
+	main();
+} catch (err) {
+	console.error(err);
+	process.exit(1);
+}

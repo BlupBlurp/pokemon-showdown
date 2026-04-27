@@ -4,9 +4,11 @@
 
 const fs = require("fs");
 const path = require("path");
-const vm = require("vm");
+const { getRelumiRepoRoot } = require("./lib/relumi-paths");
+const { deepSort } = require("./lib/relumi-deep-sort");
+const { parseExportedObject } = require("./lib/relumi-parse-exported-object");
 
-const ROOT = path.resolve(__dirname, "..");
+const ROOT = getRelumiRepoRoot();
 const SERVER_MOD_DIR = path.join(ROOT, "data", "mods", "gen8relumi");
 const FORMATS_PATH = path.join(ROOT, "config", "formats.ts");
 const CLIENT_ROOT_CANDIDATES = [
@@ -48,30 +50,16 @@ const RELUMI_BAN_CONSTANTS = {
 	ou: "RELUMI_OU_BANLIST",
 };
 
-function parseExportedObject(tsPath, exportName) {
-	if (!fs.existsSync(tsPath)) return {};
-	const source = fs.readFileSync(tsPath, "utf8");
-	const exportRegex = new RegExp(
-		`export\\s+const\\s+${exportName}\\s*(?::[^=]*)?\\s*=`,
-		"m"
-	);
-	const match = source.match(exportRegex);
-	if (!match) return {};
-	const start = match.index + match[0].length;
-	const tail = source.slice(start).trim();
-	const semicolonIndex = tail.lastIndexOf(";");
-	const objectExpression = (
-		semicolonIndex >= 0 ? tail.slice(0, semicolonIndex) : tail
-	).trim();
-	if (!objectExpression) return {};
-	try {
-		return (
-			vm.runInNewContext(`(${objectExpression})`, {}, { timeout: 1000 }) ||
-			{}
-		);
-	} catch {
-		return {};
+/** Shared name/shortDesc/desc extraction for abilities and moves text tables. */
+function pickBattleTextFields(entry) {
+	if (!entry || typeof entry !== "object") return null;
+	const override = {};
+	if (typeof entry.name === "string" && entry.name) override.name = entry.name;
+	if (typeof entry.shortDesc === "string" && entry.shortDesc) {
+		override.shortDesc = entry.shortDesc;
 	}
+	if (typeof entry.desc === "string" && entry.desc) override.desc = entry.desc;
+	return Object.keys(override).length ? override : null;
 }
 
 function stripInheritAndEmpty(entry) {
@@ -83,16 +71,6 @@ function stripInheritAndEmpty(entry) {
 		out[key] = value;
 	}
 	return out;
-}
-
-function deepSort(value) {
-	if (Array.isArray(value)) return value.map(deepSort);
-	if (!value || typeof value !== "object") return value;
-	const sorted = {};
-	for (const key of Object.keys(value).sort()) {
-		sorted[key] = deepSort(value[key]);
-	}
-	return sorted;
 }
 
 function buildOverrideMap(table) {
@@ -140,15 +118,8 @@ function buildTierOverrides(table) {
 function buildAbilityTextOverrides(textTable, ids) {
 	const out = {};
 	for (const id of ids) {
-		const entry = textTable?.[id];
-		if (!entry || typeof entry !== "object") continue;
-		const override = {};
-		if (typeof entry.name === "string" && entry.name) override.name = entry.name;
-		if (typeof entry.shortDesc === "string" && entry.shortDesc) {
-			override.shortDesc = entry.shortDesc;
-		}
-		if (typeof entry.desc === "string" && entry.desc) override.desc = entry.desc;
-		if (Object.keys(override).length) out[id] = override;
+		const picked = pickBattleTextFields(textTable?.[id]);
+		if (picked) out[id] = picked;
 	}
 	return deepSort(out);
 }
@@ -156,14 +127,8 @@ function buildAbilityTextOverrides(textTable, ids) {
 function buildRelumiAbilityTextOverrides(relumiTextTable) {
 	const out = {};
 	for (const [id, entry] of Object.entries(relumiTextTable || {})) {
-		if (!entry || typeof entry !== "object") continue;
-		const override = {};
-		if (typeof entry.name === "string" && entry.name) override.name = entry.name;
-		if (typeof entry.shortDesc === "string" && entry.shortDesc) {
-			override.shortDesc = entry.shortDesc;
-		}
-		if (typeof entry.desc === "string" && entry.desc) override.desc = entry.desc;
-		if (Object.keys(override).length) out[id] = override;
+		const picked = pickBattleTextFields(entry);
+		if (picked) out[id] = picked;
 	}
 	return deepSort(out);
 }
@@ -171,15 +136,8 @@ function buildRelumiAbilityTextOverrides(relumiTextTable) {
 function buildMoveTextOverrides(textTable, ids) {
 	const out = {};
 	for (const id of ids) {
-		const entry = textTable?.[id];
-		if (!entry || typeof entry !== "object") continue;
-		const override = {};
-		if (typeof entry.name === "string" && entry.name) override.name = entry.name;
-		if (typeof entry.shortDesc === "string" && entry.shortDesc) {
-			override.shortDesc = entry.shortDesc;
-		}
-		if (typeof entry.desc === "string" && entry.desc) override.desc = entry.desc;
-		if (Object.keys(override).length) out[id] = override;
+		const picked = pickBattleTextFields(textTable?.[id]);
+		if (picked) out[id] = picked;
 	}
 	return deepSort(out);
 }
@@ -388,7 +346,7 @@ function main() {
 		`\t\t\t\tbaseId: toID(speciesOverrides[tid].baseSpecies || ""),\n` +
 		`\t\t\t});\n` +
 		`\t\t}\n` +
-		`}\n` +
+		`\t}\n` +
 		`\tvar tiers = base.tiers;\n` +
 		`\tif (extraTierSpecies.length) {\n` +
 		`\t\tvar seen = Object.create(null);\n` +
@@ -420,7 +378,7 @@ function main() {
 		`\t\t\t\tif (tierIndexById[existingId] >= insertAt) tierIndexById[existingId]++;\n` +
 		`\t\t\t}\n` +
 		`\t\t}\n` +
-		`}\n` +
+		`\t}\n` +
 		`\ttable.gen8relumi = {\n` +
 		`\t\tlearnsets: relumiLearnsets,\n` +
 		`\t\ttiers: tiers,\n` +
@@ -450,4 +408,9 @@ function main() {
 	console.log(`- Move overrides: ${Object.keys(moveOverrides).length}`);
 }
 
-main();
+try {
+	main();
+} catch (err) {
+	console.error(err);
+	process.exit(1);
+}

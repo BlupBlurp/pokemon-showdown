@@ -1,25 +1,7 @@
 "use strict";
 
-const TYPE_ID_TO_NAME = [
-	"Normal",
-	"Fighting",
-	"Flying",
-	"Poison",
-	"Ground",
-	"Rock",
-	"Bug",
-	"Ghost",
-	"Steel",
-	"Fire",
-	"Water",
-	"Grass",
-	"Electric",
-	"Psychic",
-	"Ice",
-	"Dragon",
-	"Dark",
-	"Fairy",
-];
+const { TYPE_ID_TO_NAME } = require("./lib/bdsp-type-id-to-name");
+const { compareJson } = require("./lib/relumi-deep-sort");
 
 const DAMAGE_TYPE_TO_CATEGORY = {
 	0: "Status",
@@ -202,10 +184,6 @@ function fractionFromPercent(percent) {
 	const denominator = 100;
 	const divisor = gcd(percent, denominator);
 	return [percent / divisor, denominator / divisor];
-}
-
-function compareJson(a, b) {
-	return JSON.stringify(a) === JSON.stringify(b);
 }
 
 function buildMoveFlags(rawFlags, baseFlags = {}) {

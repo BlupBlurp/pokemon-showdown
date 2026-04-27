@@ -481,21 +481,27 @@ function buildCandidate(
 	for (const moveId of moveIds) {
 		if (!dedupedMoveIds.includes(moveId)) dedupedMoveIds.push(moveId);
 	}
-	const movepool = dedupedMoveIds.map((moveId) => dex.moves.get(moveId).name);
-	const signature = `${dedupedMoveIds.join("|")}::${abilities.join("|")}::${
+	const validMoveIds = [];
+	for (const moveId of dedupedMoveIds) {
+		const move = dex.moves.get(moveId);
+		if (!move.exists) continue;
+		validMoveIds.push(moveId);
+	}
+	const movepool = validMoveIds.map((moveId) => dex.moves.get(moveId).name);
+	const signature = `${validMoveIds.join("|")}::${abilities.join("|")}::${
 		trainerSetData ? JSON.stringify(trainerSetData) : ""
 	}`;
 	return {
 		trainerLevel,
 		trainerSetData,
-		moveIds: dedupedMoveIds,
+		moveIds: validMoveIds,
 		movepool,
 		abilities,
 		teraTypes: species.types.slice(),
 		signature,
 		balancedLevel: getBalancedLevel(species),
-		singlesRole: inferSinglesRole(species, dedupedMoveIds, dex),
-		doublesRole: inferDoublesRole(species, dedupedMoveIds),
+		singlesRole: inferSinglesRole(species, validMoveIds, dex),
+		doublesRole: inferDoublesRole(species, validMoveIds),
 	};
 }
 
@@ -630,7 +636,26 @@ function buildSetsObject(candidatesBySpecies, isDoubles) {
 	return output;
 }
 
-function buildRelumiRandomBattleSets({
+function writeRelumiRandomBattleSetsFiles(
+	singlesSets,
+	doublesSets,
+	singlesSetsPath,
+	doublesSetsPath
+) {
+	fs.writeFileSync(
+		singlesSetsPath,
+		`${JSON.stringify(singlesSets, null, 4)}\n`,
+		"utf8"
+	);
+	fs.writeFileSync(
+		doublesSetsPath,
+		`${JSON.stringify(doublesSets, null, 4)}\n`,
+		"utf8"
+	);
+}
+
+/** Build random battle JSON objects without writing (for tests / dry runs). */
+function computeRelumiRandomBattleSets({
 	trainerRows,
 	abilityNames,
 	moveNames,
@@ -638,8 +663,6 @@ function buildRelumiRandomBattleSets({
 	speciesIdByMonsForm,
 	mappedSpeciesIds,
 	learnsetsDiffs,
-	singlesSetsPath,
-	doublesSetsPath,
 }) {
 	const candidatesBySpecies = new Map();
 	const unmappedTrainerSpecies = new Set();
@@ -793,18 +816,9 @@ function buildRelumiRandomBattleSets({
 	const singlesSets = buildSetsObject(candidatesBySpecies, false);
 	const doublesSets = buildSetsObject(candidatesBySpecies, true);
 
-	fs.writeFileSync(
-		singlesSetsPath,
-		`${JSON.stringify(singlesSets, null, 4)}\n`,
-		"utf8",
-	);
-	fs.writeFileSync(
-		doublesSetsPath,
-		`${JSON.stringify(doublesSets, null, 4)}\n`,
-		"utf8",
-	);
-
 	return {
+		singlesSets,
+		doublesSets,
 		singlesSpeciesCount: Object.keys(singlesSets).length,
 		doublesSpeciesCount: Object.keys(doublesSets).length,
 		totalSetCount: Object.values(singlesSets).reduce(
@@ -821,6 +835,38 @@ function buildRelumiRandomBattleSets({
 	};
 }
 
+function buildRelumiRandomBattleSets({
+	trainerRows,
+	abilityNames,
+	moveNames,
+	dex,
+	speciesIdByMonsForm,
+	mappedSpeciesIds,
+	learnsetsDiffs,
+	singlesSetsPath,
+	doublesSetsPath,
+}) {
+	const result = computeRelumiRandomBattleSets({
+		trainerRows,
+		abilityNames,
+		moveNames,
+		dex,
+		speciesIdByMonsForm,
+		mappedSpeciesIds,
+		learnsetsDiffs,
+	});
+	writeRelumiRandomBattleSetsFiles(
+		result.singlesSets,
+		result.doublesSets,
+		singlesSetsPath,
+		doublesSetsPath
+	);
+	const { singlesSets, doublesSets, ...summary } = result;
+	return summary;
+}
+
 module.exports = {
 	buildRelumiRandomBattleSets,
+	computeRelumiRandomBattleSets,
+	writeRelumiRandomBattleSetsFiles,
 };

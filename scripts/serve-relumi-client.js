@@ -123,13 +123,6 @@ function rewriteLanLocalDevChecks(source) {
 	return text;
 }
 
-function shouldProxyMissingAsset(normalized) {
-	// In local dev, any missing static path should fall back to upstream.
-	// This keeps legacy assets (sprites, fx, etc.) working without mirroring
-	// the full CDN tree locally.
-	return true;
-}
-
 function shouldServeIndexFallback(req, normalized) {
 	if (req.method !== "GET" && req.method !== "HEAD") return false;
 	if (normalized === "/" || normalized === "/index.html") return true;
@@ -211,7 +204,8 @@ function proxyRemoteAsset(req, reqUrl, res) {
 		},
 	);
 
-	upstream.on("error", () => {
+	upstream.on("error", (err) => {
+		console.error("[relumi-client] upstream proxy error:", err.message);
 		send(res, 502, "Bad Gateway\n", {
 			"Content-Type": "text/plain; charset=utf-8",
 		});
@@ -263,12 +257,8 @@ const server = http.createServer((req, res) => {
 			}
 		}
 
-		if (shouldProxyMissingAsset(normalized)) {
-			return proxyRemoteAsset(req, reqUrl, res);
-		}
-		return send(res, 404, "Not Found\n", {
-			"Content-Type": "text/plain; charset=utf-8",
-		});
+		// Missing static assets proxy to upstream (sprites, fx, etc.).
+		return proxyRemoteAsset(req, reqUrl, res);
 	}
 
 	if (normalized === "/config/config.js") {
@@ -323,6 +313,11 @@ const server = http.createServer((req, res) => {
 				"Cache-Control": "no-store",
 			}),
 		);
+});
+
+server.on("error", (err) => {
+	console.error("Relumi client server error:", err.message);
+	process.exit(1);
 });
 
 server.listen(PORT, "0.0.0.0", () => {
