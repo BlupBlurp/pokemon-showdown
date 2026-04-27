@@ -510,7 +510,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePowerCallback: function basePowerCallback(pokemon, target, move) {
 			return 50 + 30 * pokemon.side.totalFainted;
 		},
-		category: "Physical",
+		category: "Status",
 		desc: "Power is equal to 50+(X*30), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
 		flags: {
 			contact: 1,

@@ -15,6 +15,8 @@ import { RoomSections } from './room-settings';
 
 const ONLINE_SYMBOL = ` \u25C9 `;
 const OFFLINE_SYMBOL = ` \u25CC `;
+const RELUMI_ABILITIES_TEXT: Record<string, {shortDesc?: string, desc?: string}> =
+	(require('../../data/mods/gen8relumi/text/abilities').AbilitiesText ?? {});
 
 interface DexResources {
 	url: string;
@@ -585,7 +587,20 @@ export const commands: Chat.ChatCommands = {
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
 
-		const { dex, format, targets } = this.splitFormat(target, true, true);
+		// Detect whether the user explicitly supplied a format/mod so we can keep existing behavior.
+		const rawTargets = target.split(',');
+		let hasExplicitFormat = false;
+		if (rawTargets.length > 1) {
+			const firstMatch = this.extractFormat(rawTargets[0].trim(), true).isMatch;
+			const lastMatch = this.extractFormat(rawTargets[rawTargets.length - 1].trim(), true).isMatch;
+			hasExplicitFormat = firstMatch || lastMatch;
+		}
+		let { dex, format, targets } = this.splitFormat(target, true, true);
+		// Use Relumi by default for non-battle /data when no format/mod was explicitly specified.
+		if (!hasExplicitFormat && !room?.battle) {
+			dex = Dex.mod('gen8relumi');
+			format = null;
+		}
 
 		const prefix = `|c|${user.getIdentity(room)}|/raw `;
 		let buffer = '';
@@ -852,13 +867,18 @@ export const commands: Chat.ChatCommands = {
 				break;
 			case 'ability':
 				const ability = dex.abilities.get(newTarget.name);
-				buffer += `${prefix}${Chat.getDataAbilityHTML(ability)}\n`;
+				// Use Relumi ability text overrides because Dex text loading is global/base-only.
+				const abilityDescs = dex.currentMod === 'gen8relumi' ? RELUMI_ABILITIES_TEXT[ability.id] : null;
+				const relumiAbility = dex.deepClone(ability);
+				if (abilityDescs?.shortDesc) relumiAbility.shortDesc = abilityDescs.shortDesc;
+				if (abilityDescs?.desc) relumiAbility.desc = abilityDescs.desc;
+				buffer += `${prefix}${Chat.getDataAbilityHTML(relumiAbility)}\n`;
 				if (showDetails) {
 					details = {
-						Gen: String(ability.gen) || 'CAP',
+						Gen: String(relumiAbility.gen) || 'CAP',
 					};
-					if (ability.flags['cantsuppress']) details["&#10003; Not affected by Gastro Acid"] = "";
-					if (ability.flags['breakable']) details["&#10003; Ignored by Mold Breaker"] = "";
+					if (relumiAbility.flags['cantsuppress']) details["&#10003; Not affected by Gastro Acid"] = "";
+					if (relumiAbility.flags['breakable']) details["&#10003; Ignored by Mold Breaker"] = "";
 				}
 				break;
 			default:
