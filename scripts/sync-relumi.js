@@ -295,6 +295,15 @@ function formatTsValue(value, indentLevel = 0) {
 		);
 		return `[\n${lines.join("\n")}\n${indent}]`;
 	}
+	if (typeof value === "function") {
+		const fnStr = value.toString();
+		// Ensure function is output as a valid function expression (with 'function' keyword)
+		// rather than method shorthand which may not parse correctly in object contexts
+		if (!fnStr.startsWith("function") && !fnStr.startsWith("(")) {
+			return `function ${fnStr}`;
+		}
+		return fnStr;
+	}
 	if (!value || typeof value !== "object") {
 		return JSON.stringify(value);
 	}
