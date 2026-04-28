@@ -9141,6 +9141,38 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	vivillonfancy: {
+		abilities: {
+			"0": "Shield Dust",
+			"1": "Compound Eyes",
+			H: "Friend Guard",
+		},
+		baseStats: {
+			atk: 52,
+			def: 66,
+			hp: 80,
+			spa: 97,
+			spd: 66,
+			spe: 89,
+		},
+		inherit: true,
+	},
+	vivillonpokeball: {
+		abilities: {
+			"0": "Shield Dust",
+			"1": "Compound Eyes",
+			H: "Friend Guard",
+		},
+		baseStats: {
+			atk: 52,
+			def: 66,
+			hp: 80,
+			spa: 97,
+			spd: 66,
+			spe: 89,
+		},
+		inherit: true,
+	},
 	volbeat: {
 		abilities: {
 			"0": "Swarm",

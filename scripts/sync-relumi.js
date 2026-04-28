@@ -86,6 +86,11 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		12: "Minior-Indigo",
 		13: "Minior-Violet",
 	},
+	// Other cosmetic forms are mapped to the base species, they could be added here if there are ever individual balance changes
+	666: {
+		18: "Vivillon-Fancy",
+		19: "Vivillon-Pokeball",
+	},
 };
 
 // These species have form entries in extracted game files that should stay
@@ -645,9 +650,15 @@ function buildSpeciesDiffs({
 			mappedSpecies.isCosmeticForme &&
 			toID(mappedSpecies.baseSpecies) === baseSpecies.id
 		);
+		// Check if this form has an explicit override - if so, don't fall back to base
+		const hasExplicitOverride = !!(
+			FORM_NUMBER_SPECIES_OVERRIDES[row.monsno] &&
+			FORM_NUMBER_SPECIES_OVERRIDES[row.monsno][formNo]
+		);
 		const useBaseSpeciesForCosmeticForm =
 			formNo > 0 &&
 			baseSpecies.exists &&
+			!hasExplicitOverride &&
 			(
 				mappedSpeciesIsCosmeticForm ||
 				CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS.has(baseSpecies.id)

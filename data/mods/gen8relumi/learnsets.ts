@@ -270388,6 +270388,191 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	vivillonfancy: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			aircutter: [
+				"9T",
+			],
+			airslash: [
+				"9M",
+			],
+			aromatherapy: [
+				"9L31",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			bugbuzz: [
+				"9L35",
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			defog: [
+				"9M",
+			],
+			doubleteam: [
+				"9M",
+			],
+			drainingkiss: [
+				"9L25",
+			],
+			dreameater: [
+				"9M",
+			],
+			electroweb: [
+				"9T",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gust: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hurricane: [
+				"9L50",
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			infestation: [
+				"9M",
+			],
+			irondefense: [
+				"9T",
+			],
+			laserfocus: [
+				"9T",
+			],
+			lightscreen: [
+				"9L12",
+				"9M",
+			],
+			poisonpowder: [
+				"9L1",
+			],
+			pollenpuff: [
+				"9M",
+			],
+			powder: [
+				"9L1",
+				"9L55",
+			],
+			protect: [
+				"9M",
+			],
+			psybeam: [
+				"9L17",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			quiverdance: [
+				"9L45",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			roost: [
+				"9M",
+			],
+			safeguard: [
+				"9L41",
+				"9M",
+			],
+			signalbeam: [
+				"9T",
+			],
+			skittersmack: [
+				"9T",
+			],
+			sleeppowder: [
+				"9L1",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			strugglebug: [
+				"9L1",
+				"9M",
+			],
+			stunspore: [
+				"9L1",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			supersonic: [
+				"9L21",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			tailwind: [
+				"9T",
+			],
+			thief: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+		},
+	},
 	vivillongarden: {
 		learnset: {
 			aerialace: [
@@ -271499,6 +271684,191 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 		},
 	},
 	vivillonocean: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			aircutter: [
+				"9T",
+			],
+			airslash: [
+				"9M",
+			],
+			aromatherapy: [
+				"9L31",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			bugbuzz: [
+				"9L35",
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			defog: [
+				"9M",
+			],
+			doubleteam: [
+				"9M",
+			],
+			drainingkiss: [
+				"9L25",
+			],
+			dreameater: [
+				"9M",
+			],
+			electroweb: [
+				"9T",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gust: [
+				"9L1",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hurricane: [
+				"9L50",
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			infestation: [
+				"9M",
+			],
+			irondefense: [
+				"9T",
+			],
+			laserfocus: [
+				"9T",
+			],
+			lightscreen: [
+				"9L12",
+				"9M",
+			],
+			poisonpowder: [
+				"9L1",
+			],
+			pollenpuff: [
+				"9M",
+			],
+			powder: [
+				"9L1",
+				"9L55",
+			],
+			protect: [
+				"9M",
+			],
+			psybeam: [
+				"9L17",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			quiverdance: [
+				"9L45",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			roost: [
+				"9M",
+			],
+			safeguard: [
+				"9L41",
+				"9M",
+			],
+			signalbeam: [
+				"9T",
+			],
+			skittersmack: [
+				"9T",
+			],
+			sleeppowder: [
+				"9L1",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			strugglebug: [
+				"9L1",
+				"9M",
+			],
+			stunspore: [
+				"9L1",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			supersonic: [
+				"9L21",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			tailwind: [
+				"9T",
+			],
+			thief: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+		},
+	},
+	vivillonpokeball: {
 		learnset: {
 			aerialace: [
 				"9M",
