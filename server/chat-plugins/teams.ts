@@ -174,6 +174,8 @@ export const TeamsHandler = new class {
 		if (sets.length > 50) {
 			connection.popup("Your team has too many Pokemon (max 50).");
 		}
+		// Use mod-specific Dex for format to support custom Pokemon/moves from mods like gen8relumi
+		const modDex = Dex.forFormat(format);
 		let unownWord = '';
 		for (const set of sets) {
 			const filtered = context.filter(set.name);
@@ -184,7 +186,7 @@ export const TeamsHandler = new class {
 			// Trim empty moveslots
 			set.moves = set.moves.filter(Boolean);
 
-			if (!Dex.species.get(set.species).exists) {
+			if (!modDex.species.get(set.species).exists) {
 				connection.popup(`Invalid Pokemon ${set.species} in team.`);
 				return null;
 			}
@@ -197,7 +199,7 @@ export const TeamsHandler = new class {
 				return null;
 			}
 			for (const m of set.moves) {
-				if (!Dex.moves.get(m).exists) {
+				if (!modDex.moves.get(m).exists) {
 					connection.popup(`Invalid move ${m} on ${set.species}.`);
 					return null;
 				}
@@ -209,7 +211,7 @@ export const TeamsHandler = new class {
 			}
 			// oms sometimes swap these around so just check them all
 			const strValid = (str: string) => [
-				Dex.abilities, Dex.moves, Dex.species, Dex.items, Dex.types, Dex.natures,
+				modDex.abilities, modDex.moves, modDex.species, modDex.items, modDex.types, modDex.natures,
 			].some(x => x.get(str).exists);
 
 			if (set.ability && !strValid(set.ability)) {
@@ -326,7 +328,7 @@ export const TeamsHandler = new class {
 		buf += `</a><br /><a href="/${link}">${!isFull ? 'View full team' : 'Shareable link to team'}</a><br />`;
 		const url = `${teamData.teamid}${teamData.private ? `-${teamData.private}` : ''}`;
 		buf += ` <small>(you can also copy/paste <code>&lt;&lt;view-team-${url}&gt;&gt;</code> on-site `;
-		const fullUrl = `https://psim.us/t/${url}`;
+		const fullUrl = `https://teams.relumishowdown.dpdns.org/${url}`;
 		buf += `or share <code><a href="${fullUrl}">${fullUrl}</a></code> off-site!)</small>`;
 
 		if (user && (teamData.ownerid === user.id || user.can('rangeban'))) {
