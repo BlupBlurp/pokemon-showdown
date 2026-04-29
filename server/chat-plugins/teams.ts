@@ -724,7 +724,7 @@ export const pages: Chat.PageTable = {
 				buf += `<strong>Search metadata:</strong><br />`;
 				buf += `<span style="display: ${isPersonal ? 'none' : ""}">`;
 				buf += `<Team owner: <input name="owner" /></span><br />`;
-				buf += `Team format: <formatselect name="tier" format="gen${Dex.gen}ou">[Gen ${Dex.gen}] OU</formatselect><br /><br />`;
+				buf += `Team format: <formatselect name="tier" format="gen8relumisinglesou">[Gen 8] Relumi Singles OU</formatselect><br /><br />`;
 				buf += `<strong>Search in team:</strong> (separate different searches with commas)<br />`;
 				buf += `Generation: <input name="gen" /><br />`;
 				buf += `Pokemon: <input name="pokemon" /><br />`;
@@ -739,9 +739,7 @@ export const pages: Chat.PageTable = {
 				throw new Chat.ErrorMessage(`Invalid owner name. Names must be under 18 characters long.`);
 			}
 			const format = toID(rawFormat);
-			if (format && !Dex.formats.get(format).exists) {
-				throw new Chat.ErrorMessage(`Format ${format} not found.`);
-			}
+			// Skip existence check - mod formats (e.g. gen8relumisinglesou) aren't in base Dex
 			const gen = Number(rawGen);
 			if (rawGen && (isNaN(gen) || (gen < 1 || gen > Dex.gen))) {
 				throw new Chat.ErrorMessage(`Invalid generation: '${rawGen}'`);
