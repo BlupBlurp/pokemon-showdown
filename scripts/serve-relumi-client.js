@@ -139,6 +139,46 @@ function sendIndexHtml(res, indexPath) {
 	});
 }
 
+function proxyToGameServer(req, reqUrl, res) {
+	// Forward act=getteams / act=getteam to the local game server (port 8000)
+	// which handles them via customhttpresponse in config.js.
+	const headers = { ...req.headers };
+	delete headers.host;
+	delete headers["content-length"];
+
+	const upstream = http.request(
+		{
+			host: "127.0.0.1",
+			port: SERVER_PORT,
+			method: req.method || "GET",
+			path: reqUrl,
+			headers,
+		},
+		(upstreamRes) => {
+			const status = upstreamRes.statusCode || 502;
+			res.writeHead(status, {
+				"Content-Type": upstreamRes.headers["content-type"] || "text/plain; charset=utf-8",
+				"Cache-Control": "no-store",
+				"Access-Control-Allow-Origin": "*",
+			});
+			upstreamRes.pipe(res);
+		},
+	);
+
+	upstream.on("error", (err) => {
+		console.error("[relumi-client] game server proxy error:", err.message);
+		send(res, 502, "]" + JSON.stringify({ actionerror: "Game server unavailable." }), {
+			"Content-Type": "text/plain; charset=utf-8",
+		});
+	});
+
+	if (req.method === "POST" || req.method === "PUT" || req.method === "PATCH") {
+		req.pipe(upstream);
+	} else {
+		upstream.end();
+	}
+}
+
 function proxyRemoteAsset(req, reqUrl, res) {
 	let upstreamPath = reqUrl;
 	if (/^\/~~relumi\/action\.php(?:\?|$)/.test(upstreamPath)) {
@@ -254,6 +294,17 @@ const server = http.createServer((req, res) => {
 			const indexPath = path.join(CLIENT_PLAY_DIR, "index.html");
 			if (fs.existsSync(indexPath)) {
 				return sendIndexHtml(res, indexPath);
+			}
+		}
+
+		// Route getteams/getteam to the local game server so the teambuilder
+		// loads teams from our own Neon database instead of the official PS one.
+		if (normalized.startsWith("/~~") && normalized.includes("action.php")) {
+			const qs = reqUrl.includes("?") ? reqUrl.slice(reqUrl.indexOf("?") + 1) : "";
+			const params = new URLSearchParams(qs);
+			const act = params.get("act");
+			if (act === "getteams" || act === "getteam") {
+				return proxyToGameServer(req, reqUrl, res);
 			}
 		}
 
