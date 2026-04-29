@@ -108,7 +108,7 @@ const TRAINER_FORM_NUMBER_SPECIES_OVERRIDES = {
 	},
 };
 const STRICT_TRAINER_FORM_SPECIES = new Set(
-	Object.keys(TRAINER_FORM_NUMBER_SPECIES_OVERRIDES).map((n) => Number(n)),
+	Object.keys(TRAINER_FORM_NUMBER_SPECIES_OVERRIDES).map(n => Number(n))
 );
 const NATURE_NAMES_BY_ID = [
 	"Hardy",
@@ -176,7 +176,7 @@ function normalizeTrainerEvs(rawEvs, species) {
 	total = totalEvs();
 	if (total < EV_CAP) {
 		const existingPriority = Object.keys(evs)
-			.filter((stat) => evs[stat] > 0)
+			.filter(stat => evs[stat] > 0)
 			.sort((a, b) => evs[b] - evs[a]);
 		let offensivePriority = ["spa", "spe", "hp", "atk", "def", "spd"];
 		if (species.baseStats.atk >= species.baseStats.spa) {
@@ -281,7 +281,7 @@ function getFallbackLevelUpMoveIds(species, trainerLevel, dex, learnsetsDiffs) {
 		return a.id.localeCompare(b.id);
 	});
 
-	return learnedAtLevel.slice(-4).map((entry) => entry.id);
+	return learnedAtLevel.slice(-4).map(entry => entry.id);
 }
 
 function isDisallowedRandomBattleForm(species) {
@@ -376,8 +376,8 @@ function inferSinglesRole(species, moveIds, dex) {
 }
 
 function inferDoublesRole(species, moveIds) {
-	const hasSupportMove = moveIds.some((moveId) =>
-		DOUBLES_SUPPORT_MOVES.has(moveId),
+	const hasSupportMove = moveIds.some(moveId =>
+		DOUBLES_SUPPORT_MOVES.has(moveId)
 	);
 	if (hasSupportMove) return "Doubles Support";
 	if (species.baseStats.spe <= 70) return "Doubles Wallbreaker";
@@ -402,7 +402,7 @@ function sortMovesByPower(moveIds, dex) {
 		.sort(
 			(a, b) =>
 				rankDamagingMove(dex.moves.get(b)) -
-				rankDamagingMove(dex.moves.get(a)),
+				rankDamagingMove(dex.moves.get(a))
 		);
 }
 
@@ -439,7 +439,7 @@ function chooseDiverseCandidates(candidates) {
 
 	const targetCount = Math.min(
 		MAX_GENERATED_SETS_PER_SPECIES,
-		Math.max(1, deduped.length >= 6 ? 3 : deduped.length >= 2 ? 2 : 1),
+		Math.max(1, deduped.length >= 6 ? 3 : deduped.length >= 2 ? 2 : 1)
 	);
 	const chosen = [deduped[0]];
 
@@ -451,7 +451,7 @@ function chooseDiverseCandidates(candidates) {
 			const overlapPenalty = chosen.reduce(
 				(total, existing) =>
 					total + computeMoveOverlapScore(existing, candidate),
-				0,
+				0
 			);
 			const score =
 				candidate.trainerLevel * 10 +
@@ -475,7 +475,7 @@ function buildCandidate(
 	abilities,
 	trainerLevel,
 	dex,
-	trainerSetData = null,
+	trainerSetData = null
 ) {
 	const dedupedMoveIds = [];
 	for (const moveId of moveIds) {
@@ -487,7 +487,7 @@ function buildCandidate(
 		if (!move.exists) continue;
 		validMoveIds.push(moveId);
 	}
-	const movepool = validMoveIds.map((moveId) => dex.moves.get(moveId).name);
+	const movepool = validMoveIds.map(moveId => dex.moves.get(moveId).name);
 	const signature = `${validMoveIds.join("|")}::${abilities.join("|")}::${
 		trainerSetData ? JSON.stringify(trainerSetData) : ""
 	}`;
@@ -536,12 +536,12 @@ function buildFallbackCandidates(species, learnsetEntry, dex) {
 
 	if (!damaging.length && species.id !== "ditto") return [];
 
-	const setupMoves = status.filter((moveId) => SETUP_MOVES.has(moveId));
-	const recoveryMoves = status.filter((moveId) => RECOVERY_MOVES.has(moveId));
-	const hazardMoves = status.filter((moveId) => HAZARD_MOVES.has(moveId));
+	const setupMoves = status.filter(moveId => SETUP_MOVES.has(moveId));
+	const recoveryMoves = status.filter(moveId => RECOVERY_MOVES.has(moveId));
+	const hazardMoves = status.filter(moveId => HAZARD_MOVES.has(moveId));
 	const supportMoves = status.filter(
-		(moveId) =>
-			SINGLES_SUPPORT_MOVES.has(moveId) || DOUBLES_SUPPORT_MOVES.has(moveId),
+		moveId =>
+			SINGLES_SUPPORT_MOVES.has(moveId) || DOUBLES_SUPPORT_MOVES.has(moveId)
 	);
 
 	const offenseMoves = [];
@@ -620,15 +620,15 @@ function buildSetsObject(candidatesBySpecies, isDoubles) {
 	const output = {};
 
 	for (const [speciesId, candidates] of Array.from(
-		candidatesBySpecies.entries(),
+		candidatesBySpecies.entries()
 	).sort(([a], [b]) => a.localeCompare(b))) {
 		const chosen = chooseDiverseCandidates(candidates);
 		if (!chosen.length) continue;
 
 		output[speciesId] = {
 			level: chosen[0].balancedLevel,
-			sets: chosen.map((candidate) =>
-				buildSetFromCandidate(candidate, isDoubles),
+			sets: chosen.map(candidate =>
+				buildSetFromCandidate(candidate, isDoubles)
 			),
 		};
 	}
@@ -685,7 +685,7 @@ function computeRelumiRandomBattleSets({
 				monsNo,
 				formNo,
 				speciesIdByMonsForm,
-				dex,
+				dex
 			);
 			if (!speciesId) {
 				unmappedTrainerSpecies.add(`${monsNo}_${formNo}`);
@@ -725,7 +725,7 @@ function computeRelumiRandomBattleSets({
 					species,
 					trainerLevel,
 					dex,
-					learnsetsDiffs,
+					learnsetsDiffs
 				)) {
 					if (seenMoves.has(moveId)) continue;
 					seenMoves.add(moveId);
@@ -769,7 +769,7 @@ function computeRelumiRandomBattleSets({
 					spd: clampStatEv(trainer[`P${slot}EffortSpDef`]),
 					spe: clampStatEv(trainer[`P${slot}EffortAgi`]),
 				},
-				species,
+				species
 			);
 
 			const candidate = buildCandidate(
@@ -778,7 +778,7 @@ function computeRelumiRandomBattleSets({
 				abilityList,
 				trainerLevel,
 				dex,
-				trainerSetData,
+				trainerSetData
 			);
 			if (trainerId > 0 && trainerId <= MAX_TRAINER_ID) {
 				candidate.trainerId = trainerId;
@@ -805,7 +805,7 @@ function computeRelumiRandomBattleSets({
 		const fallbackCandidates = buildFallbackCandidates(
 			species,
 			learnsetsDiffs ? learnsetsDiffs[species.id] : null,
-			dex,
+			dex
 		);
 		if (!fallbackCandidates.length) continue;
 		candidatesBySpecies.set(species.id, fallbackCandidates);
@@ -823,11 +823,11 @@ function computeRelumiRandomBattleSets({
 		doublesSpeciesCount: Object.keys(doublesSets).length,
 		totalSetCount: Object.values(singlesSets).reduce(
 			(total, data) => total + (data.sets ? data.sets.length : 0),
-			0,
+			0
 		),
 		unmappedTrainerSpecies: Array.from(unmappedTrainerSpecies).sort(),
 		unmappedTrainerItems: Array.from(unmappedTrainerItems)
-			.map((n) => Number(n))
+			.map(n => Number(n))
 			.sort((a, b) => a - b),
 		ignoredNfeSpeciesCount: ignoredNfeSpecies.size,
 		fallbackSpeciesAdded,

@@ -289,7 +289,7 @@ function formatTsValue(value, indentLevel = 0) {
 		const indent = "\t".repeat(indentLevel);
 		const childIndent = "\t".repeat(indentLevel + 1);
 		const lines = value.map(
-			(entry) => `${childIndent}${formatTsValue(entry, indentLevel + 1)},`,
+			entry => `${childIndent}${formatTsValue(entry, indentLevel + 1)},`
 		);
 		return `[\n${lines.join("\n")}\n${indent}]`;
 	}
@@ -310,8 +310,8 @@ function formatTsValue(value, indentLevel = 0) {
 	const indent = "\t".repeat(indentLevel);
 	const childIndent = "\t".repeat(indentLevel + 1);
 	const lines = keys.map(
-		(key) =>
-			`${childIndent}${formatTsKey(key)}: ${formatTsValue(value[key], indentLevel + 1)},`,
+		key =>
+			`${childIndent}${formatTsKey(key)}: ${formatTsValue(value[key], indentLevel + 1)},`
 	);
 	return `{\n${lines.join("\n")}\n${indent}}`;
 }
@@ -354,7 +354,7 @@ function buildFormMatchVariants(label, baseSpeciesName) {
 	if (!normalizedLabel || !baseTokens.length) return Array.from(variants);
 
 	const labelTokens = normalizedLabel.split(" ").filter(Boolean);
-	const stripped = labelTokens.filter((token) => !baseTokens.includes(token));
+	const stripped = labelTokens.filter(token => !baseTokens.includes(token));
 	if (stripped.length) variants.add(stripped.join(" "));
 
 	return Array.from(variants);
@@ -364,7 +364,7 @@ function collectBaseFormCandidates(baseSpecies, dex) {
 	const candidates = [];
 	const seen = new Set();
 
-	const tryPush = (speciesName) => {
+	const tryPush = speciesName => {
 		const species = dex.species.get(speciesName);
 		if (!species.exists || seen.has(species.id)) return;
 		if (species.baseSpecies !== baseSpecies.baseSpecies) return;
@@ -399,7 +399,7 @@ function findMappedSpeciesForForm(
 	formLabel,
 	types,
 	baseStats,
-	dex,
+	dex
 ) {
 	if (!baseSpecies.exists) return null;
 
@@ -430,7 +430,7 @@ function findMappedSpeciesForForm(
 
 	const labelVariants = buildFormMatchVariants(
 		formLabel || "",
-		baseSpecies.baseSpecies,
+		baseSpecies.baseSpecies
 	);
 	if (!labelVariants.length) return null;
 
@@ -441,11 +441,7 @@ function findMappedSpeciesForForm(
 		const formeToken = normalizeFormForMatch(candidate.forme || "");
 		if (formeToken) candidateTokens.add(formeToken);
 
-		const nameSuffix = candidate.name.startsWith(
-			`${baseSpecies.baseSpecies}-`,
-		)
-			? candidate.name.slice(baseSpecies.baseSpecies.length + 1)
-			: candidate.name;
+		const nameSuffix = candidate.name.startsWith(`${baseSpecies.baseSpecies}-`) ? candidate.name.slice(baseSpecies.baseSpecies.length + 1) : candidate.name;
 		const nameToken = normalizeFormForMatch(nameSuffix);
 		if (nameToken) candidateTokens.add(nameToken);
 
@@ -455,7 +451,7 @@ function findMappedSpeciesForForm(
 		if (idToken) candidateTokens.add(idToken);
 
 		// Sort tokens for order-independent matching (e.g., "gmax rapid strike" vs "rapid strike gmax")
-		const sortTokens = (str) =>
+		const sortTokens = str =>
 			str.split(" ").filter(Boolean).sort().join(" ");
 
 		for (const labelVariant of labelVariants) {
@@ -470,9 +466,9 @@ function findMappedSpeciesForForm(
 	// fall back to matching an existing forme by exact stats + typing.
 	if (types && baseStats) {
 		const byData = candidates.filter(
-			(candidate) =>
+			candidate =>
 				compareJson(candidate.types, types) &&
-				compareJson(candidate.baseStats, baseStats),
+				compareJson(candidate.baseStats, baseStats)
 		);
 		if (byData.length === 1) return byData[0];
 	}
@@ -483,30 +479,24 @@ function findMappedSpeciesForForm(
 function buildFormeFromLabel(formLabel, baseName, formNo) {
 	const normalizedLabel = normalizeForTokenization(formLabel || "");
 	const normalizedBase = normalizeForTokenization(baseName || "");
-	let tokens = normalizedLabel
-		? normalizedLabel.split(" ").filter(Boolean)
-		: [];
-	const baseTokens = normalizedBase
-		? normalizedBase.split(" ").filter(Boolean)
-		: [];
+	let tokens = normalizedLabel ? normalizedLabel.split(" ").filter(Boolean) : [];
+	const baseTokens = normalizedBase ? normalizedBase.split(" ").filter(Boolean) : [];
 
 	if (baseTokens.length && tokens.length >= baseTokens.length) {
-		const startsWithBase = baseTokens.every(
-			(token, index) => tokens[index] === token,
-		);
+		const startsWithBase = baseTokens.every((token, index) => tokens[index] === token);
 		if (startsWithBase) tokens = tokens.slice(baseTokens.length);
 	}
 
 	const genericWords = new Set(["form", "forme", "mode", "style"]);
 	const baseWords = new Set(baseTokens);
 	tokens = tokens.filter(
-		(token) => !genericWords.has(token) && !baseWords.has(token),
+		token => !genericWords.has(token) && !baseWords.has(token)
 	);
 
 	if (!tokens.length) return `Form ${formNo}`;
 
 	const forme = tokens
-		.map((part) => part[0].toUpperCase() + part.slice(1))
+		.map(part => part[0].toUpperCase() + part.slice(1))
 		.join(" ")
 		.trim();
 
@@ -519,12 +509,12 @@ function makeUniqueCustomFormId(
 	formNo,
 	rowId,
 	currentDiffs,
-	dex,
+	dex
 ) {
 	const normalizedFormId = toID(forme);
-	let candidate = normalizedFormId
-		? `${baseId}${normalizedFormId}`
-		: `${baseId}form${formNo}`;
+	let candidate = normalizedFormId ?
+		`${baseId}${normalizedFormId}` :
+		`${baseId}form${formNo}`;
 
 	if (!candidate || candidate === baseId) {
 		candidate = `${baseId}form${formNo}`;
@@ -547,11 +537,11 @@ function makeUniqueCustomFormId(
 
 function buildAbilitiesObject(row, abilityNames) {
 	const ids = [row.tokusei1, row.tokusei2, row.tokusei3];
-	const names = ids.map((id) =>
-		typeof id === "number" ? (abilityNames.get(id) || "").trim() : "",
+	const names = ids.map(id =>
+		typeof id === "number" ? (abilityNames.get(id) || "").trim() : ""
 	);
-	const clean = names.map((name) =>
-		name.replace(/^[-\u2014\u2015\s]+$/, "").trim(),
+	const clean = names.map(name =>
+		name.replace(/^[-\u2014\u2015\s]+$/, "").trim()
 	);
 	const result = {};
 	if (clean[0]) result["0"] = clean[0];
@@ -642,7 +632,7 @@ function buildSpeciesDiffs({
 			formLabel,
 			types,
 			baseStats,
-			dex,
+			dex
 		);
 		const mappedSpeciesIsCosmeticForm = !!(
 			mappedSpecies &&
@@ -675,13 +665,13 @@ function buildSpeciesDiffs({
 			// Cosmetic forms should still map to their own learnsets even when
 			// stats/types/abilities are inherited from the base species entry.
 			const learnsetSpeciesId =
-				mappedSpeciesIsCosmeticForm && mappedSpecies?.exists
-					? mappedSpecies.id
-					: mappedOrBaseSpecies.id;
+				mappedSpeciesIsCosmeticForm && mappedSpecies?.exists ?
+					mappedSpecies.id :
+					mappedOrBaseSpecies.id;
 
 			const statsDiff = !compareJson(
 				mappedOrBaseSpecies.baseStats,
-				baseStats,
+				baseStats
 			);
 			const typesDiff = !compareJson(mappedOrBaseSpecies.types, types);
 			const abilitiesDiff =
@@ -691,12 +681,12 @@ function buildSpeciesDiffs({
 			speciesIdByRowId.set(row.id, mappedOrBaseSpecies.id);
 			speciesIdByMonsForm.set(
 				`${row.monsno}_${formNo}`,
-				mappedOrBaseSpecies.id,
+				mappedOrBaseSpecies.id
 			);
 			learnsetSpeciesIdByRowId.set(row.id, learnsetSpeciesId);
 			learnsetSpeciesIdByMonsForm.set(
 				`${row.monsno}_${formNo}`,
-				learnsetSpeciesId,
+				learnsetSpeciesId
 			);
 			relumiTaggedSpeciesIds.add(mappedOrBaseSpecies.id);
 			if (mappedSpeciesIsCosmeticForm) {
@@ -718,7 +708,7 @@ function buildSpeciesDiffs({
 			const forme = buildFormeFromLabel(
 				formLabel,
 				baseSpecies.baseSpecies,
-				formNo,
+				formNo
 			);
 			const customName = `${baseSpecies.baseSpecies}-${forme}`;
 			const customId = makeUniqueCustomFormId(
@@ -727,7 +717,7 @@ function buildSpeciesDiffs({
 				formNo,
 				row.id,
 				pokedexDiffs,
-				dex,
+				dex
 			);
 			const customEntry = {
 				name: customName,
@@ -849,9 +839,8 @@ function buildLearnsetsDiffs({
 				unmappedMoveNumbers
 			);
 			if (!moveId) continue;
-			const sourceLevel = Number.isFinite(level)
-				? Math.max(1, Math.trunc(level))
-				: 1;
+			const sourceLevel = Number.isFinite(level) ?
+				Math.max(1, Math.trunc(level)) : 1;
 			addSource(speciesId, moveId, `9L${sourceLevel}`);
 		}
 	}
@@ -966,7 +955,7 @@ function buildFormatsDataDiffs({ mappedSpeciesIds, dex }) {
 		if (species.exists) {
 			mappedBaseSpeciesIds.add(toID(species.baseSpecies || species.name));
 			const baseSpecies = dex.species.get(
-				species.baseSpecies || species.name,
+				species.baseSpecies || species.name
 			);
 			// Ensure exception species keep all cosmetic/alternate formes tagged
 			// even when extracted rows only touched a subset of their formes.
@@ -1001,7 +990,7 @@ function ensureGameFilesExist() {
 		if (!filePath.startsWith(GAME_FILES_DIR)) continue;
 		if (!fs.existsSync(filePath)) {
 			throw new Error(
-				`Missing required game file: ${path.relative(ROOT, filePath)}`,
+				`Missing required game file: ${path.relative(ROOT, filePath)}`
 			);
 		}
 	}
@@ -1051,11 +1040,11 @@ function main() {
 	const previousMoves = parseExportedObject(PATHS.movesTs, "Moves");
 	const previousLearnsets = parseExportedObject(
 		PATHS.learnsetsTs,
-		"Learnsets",
+		"Learnsets"
 	);
 	const previousFormatsData = parseExportedObject(
 		PATHS.formatsDataTs,
-		"FormatsData",
+		"FormatsData"
 	);
 
 	const {
@@ -1119,25 +1108,25 @@ function main() {
 		"Pokedex",
 		"../../../sim/dex-species",
 		"ModdedSpeciesDataTable",
-		nextPokedex,
+		nextPokedex
 	);
 	const movesText = formatTsExport(
 		"Moves",
 		"../../../sim/dex-moves",
 		"ModdedMoveDataTable",
-		nextMoves,
+		nextMoves
 	);
 	const learnsetsText = formatTsExport(
 		"Learnsets",
 		"../../../sim/dex-species",
 		"ModdedLearnsetDataTable",
-		nextLearnsets,
+		nextLearnsets
 	);
 	const formatsDataText = formatTsExport(
 		"FormatsData",
 		"../../../sim/dex-species",
 		"ModdedSpeciesFormatsDataTable",
-		nextFormatsData,
+		nextFormatsData
 	);
 	const randomSetSummary = buildRelumiRandomBattleSets({
 		trainerRows,
@@ -1181,14 +1170,14 @@ function main() {
 	if (unmappedRows.length) {
 		const preview = unmappedRows
 			.slice(0, 20)
-			.map((r) => `${r.id}:${r.baseName}#${r.formNo}`);
+			.map(r => `${r.id}:${r.baseName}#${r.formNo}`);
 		console.log(`- sample: ${preview.join(", ")}`);
 	}
 	console.log(`Unmapped moves: ${unmappedMoves.length}`);
 	if (unmappedMoves.length) {
 		const preview = unmappedMoves
 			.slice(0, 20)
-			.map((r) => `${r.wazaNo}:${r.moveName}`);
+			.map(r => `${r.wazaNo}:${r.moveName}`);
 		console.log(`- sample: ${preview.join(", ")}`);
 	}
 	console.log(`Unmapped learnset moves: ${unmappedMoveNumbers.length}`);
@@ -1204,32 +1193,32 @@ function main() {
 	console.log(`- Doubles species: ${randomSetSummary.doublesSpeciesCount}`);
 	console.log(`- Total generated sets: ${randomSetSummary.totalSetCount}`);
 	console.log(
-		`- Ignored NFE species: ${randomSetSummary.ignoredNfeSpeciesCount}`,
+		`- Ignored NFE species: ${randomSetSummary.ignoredNfeSpeciesCount}`
 	);
 	console.log(
-		`- Unmapped trainer species refs: ${randomSetSummary.unmappedTrainerSpecies.length}`,
+		`- Unmapped trainer species refs: ${randomSetSummary.unmappedTrainerSpecies.length}`
 	);
 	console.log(
-		`- Unmapped trainer item IDs: ${(randomSetSummary.unmappedTrainerItems || []).length}`,
+		`- Unmapped trainer item IDs: ${(randomSetSummary.unmappedTrainerItems || []).length}`
 	);
 	console.log(
-		`- Fallback species added: ${randomSetSummary.fallbackSpeciesAdded}`,
+		`- Fallback species added: ${randomSetSummary.fallbackSpeciesAdded}`
 	);
 	console.log(
-		`- Fallback sets generated: ${randomSetSummary.fallbackSetCount}`,
+		`- Fallback sets generated: ${randomSetSummary.fallbackSetCount}`
 	);
 	if (randomSetSummary.unmappedTrainerSpecies.length) {
 		console.log(
 			`- sample: ${randomSetSummary.unmappedTrainerSpecies
 				.slice(0, 20)
-				.join(", ")}`,
+				.join(", ")}`
 		);
 	}
 	if (randomSetSummary.unmappedTrainerItems?.length) {
 		console.log(
 			`- unmapped item sample: ${randomSetSummary.unmappedTrainerItems
 				.slice(0, 20)
-				.join(", ")}`,
+				.join(", ")}`
 		);
 	}
 }

@@ -83,6 +83,7 @@ function buildMoveFlags(rawFlags, baseFlags = {}) {
 	return flags;
 }
 
+// There are a few more but I don't think they will actually be used
 const SICK_ID_TO_STATUS = {
 	1: "par",
 	2: "slp",
