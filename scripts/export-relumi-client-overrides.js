@@ -172,7 +172,7 @@ function parseConstStringArray(tsPath, constName) {
  * These are the forms that need BattlePokemonSprites + BattlePokemonIconIndexes entries.
  */
 function buildRelumiSpriteData(speciesOverrides) {
-	// Gather all custom form IDs, sorted for stable slot assignment.
+	// Gather all custom form IDs, sorted by Pokédex number (then ID) for stable slot assignment.
 	const customFormIds = Object.keys(speciesOverrides)
 		.filter(sid => {
 			const data = speciesOverrides[sid];
@@ -185,7 +185,11 @@ function buildRelumiSpriteData(speciesOverrides) {
 				toID(data.baseSpecies) !== sid
 			);
 		})
-		.sort();
+		.sort((a, b) => {
+			const numA = speciesOverrides[a].num ?? Infinity;
+			const numB = speciesOverrides[b].num ?? Infinity;
+			return numA !== numB ? numA - numB : a < b ? -1 : a > b ? 1 : 0;
+		});
 
 	// Assign icon sheet slots starting after the last upstream slot (1560+80=1640).
 	// Sorted order ensures the same form always gets the same slot across re-runs.
@@ -358,6 +362,13 @@ function main() {
 		`\t\t\tfor (var iconSid in relumiIconIndexes) {\n` +
 		`\t\t\t\tif (!(iconSid in BattlePokemonIconIndexes)) {\n` +
 		`\t\t\t\t\tBattlePokemonIconIndexes[iconSid] = relumiIconIndexes[iconSid];\n` +
+		`\t\t\t\t}\n` +
+		`\t\t\t}\n` +
+		`\t\t\t// Clear stale icon caches so teams re-render with the correct custom icons.\n` +
+		`\t\t\t// The app may have built iconCache before this script ran, using num=0 for unknown IDs.\n` +
+		`\t\t\tif (typeof Storage !== "undefined" && Array.isArray(Storage.teams)) {\n` +
+		`\t\t\t\tfor (var ti = 0; ti < Storage.teams.length; ti++) {\n` +
+		`\t\t\t\t\tif (Storage.teams[ti]) Storage.teams[ti].iconCache = "";\n` +
 		`\t\t\t\t}\n` +
 		`\t\t\t}\n` +
 		`\t\t}\n` +
