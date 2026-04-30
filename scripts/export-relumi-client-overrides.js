@@ -199,17 +199,36 @@ function buildRelumiSpriteData(speciesOverrides) {
 		iconIndexes[sid] = RELUMI_ICON_BASE + i;
 	});
 
-	// Build BattlePokemonSprites entries so the battle scene can find the GIF.
-	// We use 96x96 as the default dimensions; actual GIF files in sprites/ani/
-	// will be used at whatever size they are — the dimensions here only affect
-	// the initial layout box, not the rendered image.
+	// Read actual GIF dimensions from the sprite files on disk.
+	// BattlePokemonSprites w/h are used directly as rendered size, so they must match the real GIF.
+	// Falls back to 96x96 if the file is missing or unreadable.
+	const ANI_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani");
+	const ANI_BACK_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani-back");
+
+	function readGifDimensions(gifPath) {
+		try {
+			// GIF header: bytes 6-7 = width (LE uint16), bytes 8-9 = height (LE uint16)
+			const buf = Buffer.alloc(10);
+			const fd = fs.openSync(gifPath, "r");
+			fs.readSync(fd, buf, 0, 10, 0);
+			fs.closeSync(fd);
+			return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
+		} catch {
+			return null;
+		}
+	}
+
 	const spriteEntries = {};
 	customFormIds.forEach(sid => {
 		const data = speciesOverrides[sid];
+		// spriteid follows the same logic as the client: baseSpecies-forme (lowercased, no spaces)
+		const spriteid = toID(data.baseSpecies) + "-" + toID(data.forme);
+		const frontDims = readGifDimensions(path.join(ANI_DIR, spriteid + ".gif")) || { w: 96, h: 96 };
+		const backDims = readGifDimensions(path.join(ANI_BACK_DIR, spriteid + ".gif")) || frontDims;
 		spriteEntries[sid] = {
 			num: data.num,
-			front: { w: 96, h: 96 },
-			back: { w: 96, h: 96 },
+			front: frontDims,
+			back: backDims,
 		};
 	});
 
@@ -345,7 +364,7 @@ function main() {
 		`\t\t\t\t}\n` +
 		`\t\t\t}\n` +
 		`\t\t}\n` +
-		`\t\t// Inject sprite dimensions so the battle scene can find animated GIFs for custom forms.\n` +
+		`\t\t// Inject sprite dimensions so the battle scene renders animated GIFs at their actual size.\n` +
 		`\t\t// Keys match species.id (e.g. "charizardclone"); the GIF file must be named\n` +
 		`\t\t// after species.spriteid (e.g. "charizard-clone.gif") in sprites/ani/ and sprites/ani-back/.\n` +
 		`\t\tif (exports.BattlePokemonSprites) {\n` +
