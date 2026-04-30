@@ -165,6 +165,53 @@ function parseConstStringArray(tsPath, constName) {
 	return values;
 }
 
+/**
+ * Collect custom form species IDs from speciesOverrides.
+ * A "custom form" is any entry that has both baseSpecies and forme,
+ * where the entry's ID is not the same as toID(baseSpecies).
+ * These are the forms that need BattlePokemonSprites + BattlePokemonIconIndexes entries.
+ */
+function buildRelumiSpriteData(speciesOverrides) {
+	// Gather all custom form IDs, sorted for stable slot assignment.
+	const customFormIds = Object.keys(speciesOverrides)
+		.filter(sid => {
+			const data = speciesOverrides[sid];
+			return (
+				data &&
+				typeof data.baseSpecies === "string" &&
+				data.baseSpecies &&
+				typeof data.forme === "string" &&
+				data.forme &&
+				toID(data.baseSpecies) !== sid
+			);
+		})
+		.sort();
+
+	// Assign icon sheet slots starting after the last upstream slot (1560+80=1640).
+	// Sorted order ensures the same form always gets the same slot across re-runs.
+	const RELUMI_ICON_BASE = 1641;
+	const iconIndexes = {};
+	customFormIds.forEach((sid, i) => {
+		iconIndexes[sid] = RELUMI_ICON_BASE + i;
+	});
+
+	// Build BattlePokemonSprites entries so the battle scene can find the GIF.
+	// We use 96x96 as the default dimensions; actual GIF files in sprites/ani/
+	// will be used at whatever size they are — the dimensions here only affect
+	// the initial layout box, not the rendered image.
+	const spriteEntries = {};
+	customFormIds.forEach(sid => {
+		const data = speciesOverrides[sid];
+		spriteEntries[sid] = {
+			num: data.num,
+			front: { w: 96, h: 96 },
+			back: { w: 96, h: 96 },
+		};
+	});
+
+	return { iconIndexes, spriteEntries, customFormIds };
+}
+
 function buildRelumiBanConfig(formatsPath) {
 	const baseBanlist = parseConstStringArray(formatsPath, RELUMI_BAN_CONSTANTS.base);
 	const gen9Allowlist = parseConstStringArray(
@@ -222,6 +269,7 @@ function main() {
 		RELUMI_GEN9_SNOW_MOVE_IDS
 	);
 	const relumiBanConfig = buildRelumiBanConfig(FORMATS_PATH);
+	const { iconIndexes, spriteEntries } = buildRelumiSpriteData(speciesOverrides);
 
 	// Precompute gen 8 shortDesc for moves/abilities so the client compares
 	// against the correct baseline (gen 8, not gen 9).
@@ -265,6 +313,8 @@ function main() {
 		`\tvar vanillaSpeciesData = {};\n` +
 		`\tvar vanillaMoveData = {};\n` +
 		`\tvar vanillaAbilityData = {};\n` +
+		`\tvar relumiIconIndexes = ${JSON.stringify(iconIndexes)};\n` +
+		`\tvar relumiSpriteEntries = ${JSON.stringify(spriteEntries)};\n` +
 		`\tif (typeof exports !== "undefined") {\n` +
 		`\t\tif (exports.BattlePokedex) {\n` +
 		`\t\t\tfor (var vanillaSid in speciesOverrides) {\n` +
@@ -288,6 +338,26 @@ function main() {
 		`\t\t\t\t\tif (baseSpecies) {\n` +
 		`\t\t\t\t\t\tbaseSpecies.otherFormes = pushUnique(baseSpecies.otherFormes, speciesData.name || sid);\n` +
 		`\t\t\t\t\t}\n` +
+		`\t\t\t\t}\n` +
+		`\t\t\t}\n` +
+		`\t\t}\n` +
+		`\t\t// Inject sprite dimensions so the battle scene can find animated GIFs for custom forms.\n` +
+		`\t\t// Keys match species.id (e.g. "charizardclone"); the GIF file must be named\n` +
+		`\t\t// after species.spriteid (e.g. "charizard-clone.gif") in sprites/ani/ and sprites/ani-back/.\n` +
+		`\t\tif (exports.BattlePokemonSprites) {\n` +
+		`\t\t\tfor (var spriteSid in relumiSpriteEntries) {\n` +
+		`\t\t\t\tif (!exports.BattlePokemonSprites[spriteSid]) {\n` +
+		`\t\t\t\t\texports.BattlePokemonSprites[spriteSid] = relumiSpriteEntries[spriteSid];\n` +
+		`\t\t\t\t}\n` +
+		`\t\t\t}\n` +
+		`\t\t}\n` +
+		`\t\t// Inject icon sheet slot indexes for custom forms.\n` +
+		`\t\t// Slots start at 1641 (after the last upstream slot 1640).\n` +
+		`\t\t// Add the corresponding 40x30 icon at that position in pokemonicons-sheet.png.\n` +
+		`\t\tif (typeof BattlePokemonIconIndexes !== "undefined") {\n` +
+		`\t\t\tfor (var iconSid in relumiIconIndexes) {\n` +
+		`\t\t\t\tif (!(iconSid in BattlePokemonIconIndexes)) {\n` +
+		`\t\t\t\t\tBattlePokemonIconIndexes[iconSid] = relumiIconIndexes[iconSid];\n` +
 		`\t\t\t\t}\n` +
 		`\t\t\t}\n` +
 		`\t\t}\n` +
@@ -406,6 +476,7 @@ function main() {
 	console.log(`- ${CLIENT_LOG_PATH}`);
 	console.log(`- Species overrides: ${Object.keys(speciesOverrides).length}`);
 	console.log(`- Move overrides: ${Object.keys(moveOverrides).length}`);
+	console.log(`- Custom form sprite/icon entries: ${Object.keys(spriteEntries).length}`);
 }
 
 try {
