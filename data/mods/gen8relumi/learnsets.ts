@@ -151469,7 +151469,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
-	marowakalolatotem: {
+	marowakghost: {
 		learnset: {
 			aerialace: [
 				"9M",

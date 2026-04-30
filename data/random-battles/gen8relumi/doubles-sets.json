@@ -23357,43 +23357,6 @@
             }
         ]
     },
-    "marowakalolatotem": {
-        "level": 89,
-        "sets": [
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Flare Blitz",
-                    "Fire Blast",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Rock Head"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Ghost"
-                ]
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Flare Blitz",
-                    "Focus Punch",
-                    "Stealth Rock",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Rock Head"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Ghost"
-                ]
-            }
-        ]
-    },
     "marshadow": {
         "level": 81,
         "sets": [

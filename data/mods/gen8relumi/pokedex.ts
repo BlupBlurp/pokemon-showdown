@@ -4924,14 +4924,31 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
-	marowakalolatotem: {
+	marowakghost: {
 		abilities: {
 			"0": "Cursed Body",
 		},
-		inherit: true,
+		baseSpecies: "Marowak",
+		baseStats: {
+			atk: 80,
+			def: 110,
+			hp: 60,
+			spa: 50,
+			spd: 80,
+			spe: 45,
+		},
+		eggGroups: [
+			"Monster",
+		],
+		forme: "Ghost",
+		gen: 8,
+		heightm: 1.7,
+		name: "Marowak-Ghost",
+		num: 105,
 		types: [
 			"Ghost",
 		],
+		weightkg: 98,
 	},
 	marshtomp: {
 		abilities: {

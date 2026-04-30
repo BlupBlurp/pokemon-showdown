@@ -2875,7 +2875,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	marowakalolatotem: {
+	marowakghost: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},

@@ -64,6 +64,13 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		9: "Pikachu-Gmax",
 		10: "Pikachu-Clone",
 	},
+	// formNo 2 is the custom "GHOST" form; map it to a non-existent name so
+	// the strict-override path returns null and triggers custom form creation.
+	105: {
+		0: "Marowak",
+		1: "Marowak-Alola",
+		2: "Marowak-Ghost"
+	},
 	892: {
 		0: "Urshifu",
 		1: "Urshifu-Rapid-Strike",
