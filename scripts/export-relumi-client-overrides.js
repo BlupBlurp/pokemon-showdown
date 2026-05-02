@@ -165,6 +165,56 @@ function parseConstStringArray(tsPath, constName) {
 	return values;
 }
 
+/** Read GIF dimensions from the file header (bytes 6-9, LE uint16 width then height). */
+function readGifDimensions(gifPath) {
+	try {
+		// GIF header: bytes 6-7 = width (LE uint16), bytes 8-9 = height (LE uint16)
+		const buf = Buffer.alloc(10);
+		const fd = fs.openSync(gifPath, "r");
+		fs.readSync(fd, buf, 0, 10, 0);
+		fs.closeSync(fd);
+		return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Scan sprites/ani and sprites/ani-back for all GIFs and return a map of
+ * speciesId → { front?, frontf?, back?, backf? } with actual pixel dimensions.
+ * This lets the client override stale dimensions in the static pokedex-mini.js.
+ */
+function buildAllSpriteDimensions() {
+	const ANI_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani");
+	const ANI_BACK_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani-back");
+	const result = {};
+
+	function scanDir(dir, facing) {
+		let files;
+		try {
+			files = fs.readdirSync(dir);
+		} catch {
+			return; // directory missing — skip silently
+		}
+		for (const file of files) {
+			if (!file.endsWith(".gif")) continue;
+			const base = file.slice(0, -4); // strip .gif
+			// Female variants: base ends with "-f" → key uses "frontf"/"backf"
+			const isFemale = base.endsWith("-f");
+			const spriteId = isFemale ? base.slice(0, -2) : base;
+			const id = toID(spriteId);
+			const dims = readGifDimensions(path.join(dir, file));
+			if (!dims) continue;
+			if (!result[id]) result[id] = {};
+			result[id][isFemale ? facing + "f" : facing] = dims;
+		}
+	}
+
+	scanDir(ANI_DIR, "front");
+	scanDir(ANI_BACK_DIR, "back");
+	return deepSort(result);
+}
+
 /**
  * Collect custom form species IDs from speciesOverrides.
  * A "custom form" is any entry that has both baseSpecies and forme,
@@ -199,24 +249,8 @@ function buildRelumiSpriteData(speciesOverrides) {
 		iconIndexes[sid] = RELUMI_ICON_BASE + i;
 	});
 
-	// Read actual GIF dimensions from the sprite files on disk.
-	// BattlePokemonSprites w/h are used directly as rendered size, so they must match the real GIF.
-	// Falls back to 96x96 if the file is missing or unreadable.
 	const ANI_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani");
 	const ANI_BACK_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani-back");
-
-	function readGifDimensions(gifPath) {
-		try {
-			// GIF header: bytes 6-7 = width (LE uint16), bytes 8-9 = height (LE uint16)
-			const buf = Buffer.alloc(10);
-			const fd = fs.openSync(gifPath, "r");
-			fs.readSync(fd, buf, 0, 10, 0);
-			fs.closeSync(fd);
-			return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
-		} catch {
-			return null;
-		}
-	}
 
 	const spriteEntries = {};
 	customFormIds.forEach(sid => {
@@ -293,6 +327,7 @@ function main() {
 	);
 	const relumiBanConfig = buildRelumiBanConfig(FORMATS_PATH);
 	const { iconIndexes, spriteEntries } = buildRelumiSpriteData(speciesOverrides);
+	const allSpriteDims = buildAllSpriteDimensions();
 
 	// Precompute gen 8 shortDesc for moves/abilities so the client compares
 	// against the correct baseline (gen 8, not gen 9).
@@ -338,6 +373,7 @@ function main() {
 		`\tvar vanillaAbilityData = {};\n` +
 		`\tvar relumiIconIndexes = ${JSON.stringify(iconIndexes)};\n` +
 		`\tvar relumiSpriteEntries = ${JSON.stringify(spriteEntries)};\n` +
+		`\tvar relumiAllSpriteDims = ${JSON.stringify(allSpriteDims)};\n` +
 		`\tif (typeof exports !== "undefined") {\n` +
 		`\t\tif (exports.BattlePokedex) {\n` +
 		`\t\t\tfor (var vanillaSid in speciesOverrides) {\n` +
@@ -372,6 +408,17 @@ function main() {
 		`\t\t\t\tif (!exports.BattlePokemonSprites[spriteSid]) {\n` +
 		`\t\t\t\t\texports.BattlePokemonSprites[spriteSid] = relumiSpriteEntries[spriteSid];\n` +
 		`\t\t\t\t}\n` +
+		`\t\t\t}\n` +
+		`\t\t\t// Patch dimensions for all sprites whose GIFs have been updated on disk.\n` +
+		`\t\t\t// Overwrites stale front/back/frontf/backf values in the static pokedex-mini.js.\n` +
+		`\t\t\tfor (var dimSid in relumiAllSpriteDims) {\n` +
+		`\t\t\t\tvar dimEntry = relumiAllSpriteDims[dimSid];\n` +
+		`\t\t\t\tif (!exports.BattlePokemonSprites[dimSid]) exports.BattlePokemonSprites[dimSid] = {};\n` +
+		`\t\t\t\tvar target = exports.BattlePokemonSprites[dimSid];\n` +
+		`\t\t\t\tif (dimEntry.front) target.front = dimEntry.front;\n` +
+		`\t\t\t\tif (dimEntry.frontf) target.frontf = dimEntry.frontf;\n` +
+		`\t\t\t\tif (dimEntry.back) target.back = dimEntry.back;\n` +
+		`\t\t\t\tif (dimEntry.backf) target.backf = dimEntry.backf;\n` +
 		`\t\t\t}\n` +
 		`\t\t}\n` +
 		`\t\t// Inject icon sheet slot indexes for custom forms.\n` +
@@ -507,6 +554,7 @@ function main() {
 	console.log(`- Species overrides: ${Object.keys(speciesOverrides).length}`);
 	console.log(`- Move overrides: ${Object.keys(moveOverrides).length}`);
 	console.log(`- Custom form sprite/icon entries: ${Object.keys(spriteEntries).length}`);
+	console.log(`- Sprite dimension overrides: ${Object.keys(allSpriteDims).length}`);
 }
 
 try {
