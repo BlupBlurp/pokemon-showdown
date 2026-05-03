@@ -547,10 +547,12 @@ function main() {
 		`\t// Patch getSpriteData to render back sprites at their actual GIF pixel dimensions.\n` +
 		`\t// The static pokedex-mini.js may have stale back dimensions; this overrides them\n` +
 		`\t// directly on the returned spriteData so no BattlePokemonSprites mutation is needed.\n` +
-		`\tif (typeof Dex !== "undefined" && typeof Dex.getSpriteData === "function") {\n` +
-		`\t\tvar _origGetSpriteData = Dex.getSpriteData.bind(Dex);\n` +
-		`\t\tDex.getSpriteData = function relumiGetSpriteData(pokemon, isFront, options) {\n` +
-		`\t\t\tvar result = _origGetSpriteData(pokemon, isFront, options);\n` +
+		`\t// Patched on the prototype so it survives any Dex instance replacement (e.g. battle-dex.js).\n` +
+		`\tif (typeof Dex !== "undefined" && Dex.constructor && Dex.constructor.prototype && typeof Dex.constructor.prototype.getSpriteData === "function") {\n` +
+		`\t\tvar _proto = Dex.constructor.prototype;\n` +
+		`\t\tvar _origGetSpriteData = _proto.getSpriteData;\n` +
+		`\t\t_proto.getSpriteData = function relumiGetSpriteData(pokemon, isFront, options) {\n` +
+		`\t\t\tvar result = _origGetSpriteData.call(this, pokemon, isFront, options);\n` +
 		`\t\t\tif (isFront) return result;\n` +
 		`\t\t\t// Only override if the URL points to our ani-back directory.\n` +
 		`\t\t\tif (!result.url || result.url.indexOf("ani-back") === -1) return result;\n` +
