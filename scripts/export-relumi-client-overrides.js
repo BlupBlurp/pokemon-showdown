@@ -544,32 +544,6 @@ function main() {
 		`\t\tvanillaAbilityData: vanillaAbilityData,\n` +
 		`\t\trelumiBanConfig: relumiBanConfig,\n` +
 		`\t};\n` +
-		`\t// Patch getSpriteData to render back sprites at their actual GIF pixel dimensions.\n` +
-		`\t// The static pokedex-mini.js may have stale back dimensions; this overrides them\n` +
-		`\t// directly on the returned spriteData so no BattlePokemonSprites mutation is needed.\n` +
-		`\t// Patched on the prototype so it survives any Dex instance replacement (e.g. battle-dex.js).\n` +
-		`\tif (typeof Dex !== "undefined" && Dex.constructor && Dex.constructor.prototype && typeof Dex.constructor.prototype.getSpriteData === "function") {\n` +
-		`\t\tvar _proto = Dex.constructor.prototype;\n` +
-		`\t\tvar _origGetSpriteData = _proto.getSpriteData;\n` +
-		`\t\t_proto.getSpriteData = function relumiGetSpriteData(pokemon, isFront, options) {\n` +
-		`\t\t\tvar result = _origGetSpriteData.call(this, pokemon, isFront, options);\n` +
-		`\t\t\tif (isFront) return result;\n` +
-		`\t\t\t// Only override if the URL points to our ani-back directory.\n` +
-		`\t\t\tif (!result.url || result.url.indexOf("ani-back") === -1) return result;\n` +
-		`\t\t\tvar urlParts = result.url.split("/");\n` +
-		`\t\t\tvar filename = urlParts[urlParts.length - 1];\n` +
-		`\t\t\tvar isFemale = filename.endsWith("-f.gif");\n` +
-		`\t\t\tvar spriteName = isFemale ? filename.slice(0, -6) : filename.slice(0, -4);\n` +
-		`\t\t\tvar sid = toID(spriteName);\n` +
-		`\t\t\tvar dimEntry = relumiAllSpriteDims[sid];\n` +
-		`\t\t\tif (!dimEntry) return result;\n` +
-		`\t\t\tvar dims = isFemale ? (dimEntry.backf || dimEntry.back) : dimEntry.back;\n` +
-		`\t\t\tif (!dims) return result;\n` +
-		`\t\t\tresult.w = dims.w;\n` +
-		`\t\t\tresult.h = dims.h;\n` +
-		`\t\t\treturn result;\n` +
-		`\t\t};\n` +
-		`\t}\n` +
 		`})();\n`;
 
 	fs.mkdirSync(path.dirname(CLIENT_OUT_PATH), { recursive: true });
