@@ -249,6 +249,16 @@ function buildRelumiSpriteData(speciesOverrides) {
 		iconIndexes[sid] = RELUMI_ICON_BASE + i;
 	});
 
+	// Log the icon index mapping for reference when updating pokemonicons-sheet.png
+	console.log(`\nCustom form icon indexes (add 40x30 icons to pokemonicons-sheet.png at these positions):`);
+	console.log(`-`.repeat(50));
+	customFormIds.forEach((sid, i) => {
+		const data = speciesOverrides[sid];
+		console.log(`  ${RELUMI_ICON_BASE + i}: ${sid} (${data.baseSpecies}-${data.forme})`);
+	});
+	console.log(`-`.repeat(50));
+	console.log(`Total custom forms: ${customFormIds.length}\n`);
+
 	const ANI_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani");
 	const ANI_BACK_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani-back");
 
