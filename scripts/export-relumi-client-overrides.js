@@ -361,6 +361,7 @@ function main() {
 		`\t\tif (!speciesData || typeof speciesData !== "object") return false;\n` +
 		`\t\tif (!speciesData.baseSpecies || !speciesData.forme) return false;\n` +
 		`\t\tif (speciesData.cosmeticFormes || speciesData.baseForme) return false;\n` +
+		`\t\tif (speciesData.isCosmeticForme) return false;\n` +
 		`\t\tif (speciesData.battleOnly || speciesData.isNonstandard) return false;\n` +
 		`\t\treturn toID(speciesData.baseSpecies) !== speciesId;\n` +
 		`\t}\n` +

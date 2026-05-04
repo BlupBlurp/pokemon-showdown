@@ -135,4 +135,51 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 				}
 			},
 		},
+		shieldsdown: {
+			inherit: true,
+			onStart(pokemon) {
+				if (pokemon.baseSpecies.baseSpecies !== 'Minior' || pokemon.transformed) return;
+				if (pokemon.hp > pokemon.maxhp / 2) {
+					// Transform to meteor forme if not already in any meteor forme.
+					if (!pokemon.species.forme.startsWith('Meteor')) {
+						const coloredMeteor = 'Minior-Meteor-' + pokemon.species.forme;
+						const target = this.dex.species.get(coloredMeteor).exists ? coloredMeteor : 'Minior-Meteor';
+						pokemon.formeChange(target);
+					}
+				} else {
+					if (pokemon.species.forme.startsWith('Meteor')) {
+						pokemon.formeChange(pokemon.set.species);
+					}
+				}
+			},
+			onResidualOrder: 29,
+			onResidual(pokemon) {
+				if (pokemon.baseSpecies.baseSpecies !== 'Minior' || pokemon.transformed || !pokemon.hp) return;
+				if (pokemon.hp > pokemon.maxhp / 2) {
+					if (!pokemon.species.forme.startsWith('Meteor')) {
+						const coloredMeteor = 'Minior-Meteor-' + pokemon.species.forme;
+						const target = this.dex.species.get(coloredMeteor).exists ? coloredMeteor : 'Minior-Meteor';
+						pokemon.formeChange(target);
+					}
+				} else {
+					if (pokemon.species.forme.startsWith('Meteor')) {
+						pokemon.formeChange(pokemon.set.species);
+					}
+				}
+			},
+			// Match all meteor formes (base + colored) for status immunity.
+			onSetStatus(status, target, source, effect) {
+				if (!target.species.id.startsWith('miniormeteor') || target.transformed) return;
+				if ((effect as Move)?.status) {
+					this.add('-immune', target, '[from] ability: Shields Down');
+				}
+				return false;
+			},
+			onTryAddVolatile(status, target) {
+				if (!target.species.id.startsWith('miniormeteor') || target.transformed) return;
+				if (status.id !== 'yawn') return;
+				this.add('-immune', target, '[from] ability: Shields Down');
+				return null;
+			},
+		},
 	};
