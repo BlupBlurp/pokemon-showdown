@@ -259105,7 +259105,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
-	toxtricitygigantamaxamped: {
+	toxtricitygmax: {
 		learnset: {
 			acid: [
 				"9L1",

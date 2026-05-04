@@ -9249,35 +9249,6 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
-	toxtricitygigantamaxamped: {
-		abilities: {
-			"0": "Punk Rock",
-			"1": "Plus",
-			H: "Technician",
-		},
-		baseSpecies: "Toxtricity",
-		baseStats: {
-			atk: 98,
-			def: 70,
-			hp: 75,
-			spa: 114,
-			spd: 70,
-			spe: 75,
-		},
-		eggGroups: [
-			"Human-Like",
-		],
-		forme: "Gigantamax Amped",
-		gen: 8,
-		heightm: 1.6,
-		name: "Toxtricity-Gigantamax Amped",
-		num: 849,
-		types: [
-			"Electric",
-			"Poison",
-		],
-		weightkg: 40,
-	},
 	toxtricitylowkey: {
 		baseStats: {
 			atk: 83,

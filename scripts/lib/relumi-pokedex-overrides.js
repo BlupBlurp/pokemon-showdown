@@ -44,6 +44,12 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		18: "Vivillon-Fancy",
 		19: "Vivillon-Pokeball",
 	},
+	849: {
+		0: "Toxtricity",
+		1: "Toxtricity-Low-Key",
+		2: "Toxtricity-Gmax",
+		3: "Toxtricity-Low-Key-Gmax",
+	},
 };
 
 // Species that have form entries in extracted game files that should stay

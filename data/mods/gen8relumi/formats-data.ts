@@ -4987,10 +4987,6 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	toxtricitygigantamaxamped: {
-		doublesTier: "Relumi",
-		tier: "Relumi",
-	},
 	toxtricitygmax: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
