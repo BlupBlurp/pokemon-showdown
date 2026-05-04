@@ -162839,6 +162839,198 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	miniorbluemeteor: {
+		learnset: {
+			airslash: [
+				"9M",
+			],
+			ancientpower: [
+				"9L17",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			autotomize: [
+				"9L31",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confuseray: [
+				"9L10",
+			],
+			cosmicpower: [
+				"9L36",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defensecurl: [
+				"9L3",
+			],
+			doubleedge: [
+				"9L43",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			explosion: [
+				"9L55",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			gyroball: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			ironhead: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			meteorbeam: [
+				"9L50",
+				"9T",
+			],
+			powergem: [
+				"9L38",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockblast: [
+				"9M",
+			],
+			rockpolish: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			rollout: [
+				"9L8",
+				"9T",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scorchingsands: [
+				"9T",
+			],
+			selfdestruct: [
+				"9L22",
+				"9T",
+			],
+			shellsmash: [
+				"9L45",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stealthrock: [
+				"9L24",
+				"9M",
+			],
+			stoneedge: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L15",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L29",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
 	miniorgreen: {
 		learnset: {
 			airslash: [
@@ -163031,7 +163223,391 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	miniorgreenmeteor: {
+		learnset: {
+			airslash: [
+				"9M",
+			],
+			ancientpower: [
+				"9L17",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			autotomize: [
+				"9L31",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confuseray: [
+				"9L10",
+			],
+			cosmicpower: [
+				"9L36",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defensecurl: [
+				"9L3",
+			],
+			doubleedge: [
+				"9L43",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			explosion: [
+				"9L55",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			gyroball: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			ironhead: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			meteorbeam: [
+				"9L50",
+				"9T",
+			],
+			powergem: [
+				"9L38",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockblast: [
+				"9M",
+			],
+			rockpolish: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			rollout: [
+				"9L8",
+				"9T",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scorchingsands: [
+				"9T",
+			],
+			selfdestruct: [
+				"9L22",
+				"9T",
+			],
+			shellsmash: [
+				"9L45",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stealthrock: [
+				"9L24",
+				"9M",
+			],
+			stoneedge: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L15",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L29",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
 	miniorindigo: {
+		learnset: {
+			airslash: [
+				"9M",
+			],
+			ancientpower: [
+				"9L17",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			autotomize: [
+				"9L31",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confuseray: [
+				"9L10",
+			],
+			cosmicpower: [
+				"9L36",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defensecurl: [
+				"9L3",
+			],
+			doubleedge: [
+				"9L43",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			explosion: [
+				"9L55",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			gyroball: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			ironhead: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			meteorbeam: [
+				"9L50",
+				"9T",
+			],
+			powergem: [
+				"9L38",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockblast: [
+				"9M",
+			],
+			rockpolish: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			rollout: [
+				"9L8",
+				"9T",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scorchingsands: [
+				"9T",
+			],
+			selfdestruct: [
+				"9L22",
+				"9T",
+			],
+			shellsmash: [
+				"9L45",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stealthrock: [
+				"9L24",
+				"9M",
+			],
+			stoneedge: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L15",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L29",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	miniorindigometeor: {
 		learnset: {
 			airslash: [
 				"9M",
@@ -163607,6 +164183,198 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	miniororangemeteor: {
+		learnset: {
+			airslash: [
+				"9M",
+			],
+			ancientpower: [
+				"9L17",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			autotomize: [
+				"9L31",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confuseray: [
+				"9L10",
+			],
+			cosmicpower: [
+				"9L36",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defensecurl: [
+				"9L3",
+			],
+			doubleedge: [
+				"9L43",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			explosion: [
+				"9L55",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			gyroball: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			ironhead: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			meteorbeam: [
+				"9L50",
+				"9T",
+			],
+			powergem: [
+				"9L38",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockblast: [
+				"9M",
+			],
+			rockpolish: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			rollout: [
+				"9L8",
+				"9T",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scorchingsands: [
+				"9T",
+			],
+			selfdestruct: [
+				"9L22",
+				"9T",
+			],
+			shellsmash: [
+				"9L45",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stealthrock: [
+				"9L24",
+				"9M",
+			],
+			stoneedge: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L15",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L29",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
 	miniorviolet: {
 		learnset: {
 			airslash: [
@@ -163799,7 +164567,391 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	miniorvioletmeteor: {
+		learnset: {
+			airslash: [
+				"9M",
+			],
+			ancientpower: [
+				"9L17",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			autotomize: [
+				"9L31",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confuseray: [
+				"9L10",
+			],
+			cosmicpower: [
+				"9L36",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defensecurl: [
+				"9L3",
+			],
+			doubleedge: [
+				"9L43",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			explosion: [
+				"9L55",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			gyroball: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			ironhead: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			meteorbeam: [
+				"9L50",
+				"9T",
+			],
+			powergem: [
+				"9L38",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockblast: [
+				"9M",
+			],
+			rockpolish: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			rollout: [
+				"9L8",
+				"9T",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scorchingsands: [
+				"9T",
+			],
+			selfdestruct: [
+				"9L22",
+				"9T",
+			],
+			shellsmash: [
+				"9L45",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stealthrock: [
+				"9L24",
+				"9M",
+			],
+			stoneedge: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L15",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L29",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
 	minioryellow: {
+		learnset: {
+			airslash: [
+				"9M",
+			],
+			ancientpower: [
+				"9L17",
+				"9T",
+			],
+			attract: [
+				"9M",
+			],
+			autotomize: [
+				"9L31",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confuseray: [
+				"9L10",
+			],
+			cosmicpower: [
+				"9L36",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			defensecurl: [
+				"9L3",
+			],
+			doubleedge: [
+				"9L43",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			explosion: [
+				"9L55",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			gyroball: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			ironhead: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			meteorbeam: [
+				"9L50",
+				"9T",
+			],
+			powergem: [
+				"9L38",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockblast: [
+				"9M",
+			],
+			rockpolish: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			rollout: [
+				"9L8",
+				"9T",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scorchingsands: [
+				"9T",
+			],
+			selfdestruct: [
+				"9L22",
+				"9T",
+			],
+			shellsmash: [
+				"9L45",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			stealthrock: [
+				"9L24",
+				"9M",
+			],
+			stoneedge: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L15",
+				"9T",
+			],
+			tackle: [
+				"9L1",
+			],
+			takedown: [
+				"9L29",
+			],
+			toxic: [
+				"9M",
+			],
+			uturn: [
+				"9M",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	minioryellowmeteor: {
 		learnset: {
 			airslash: [
 				"9M",

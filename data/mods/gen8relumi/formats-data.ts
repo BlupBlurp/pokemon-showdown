@@ -3063,11 +3063,23 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	miniorbluemeteor: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	miniorgreen: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	miniorgreenmeteor: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	miniorindigo: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	miniorindigometeor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3079,11 +3091,23 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	miniororangemeteor: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	miniorviolet: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	miniorvioletmeteor: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	minioryellow: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	minioryellowmeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},

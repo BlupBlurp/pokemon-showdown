@@ -5536,15 +5536,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 		otherFormes: [
 			"Minior-Meteor",
-			"Minior-Meteor-Orange",
-			"Minior-Meteor-Yellow",
-			"Minior-Meteor-Green",
-			"Minior-Meteor-Blue",
-			"Minior-Meteor-Indigo",
-			"Minior-Meteor-Violet",
+			"Minior-Blue Meteor",
+			"Minior-Yellow Meteor",
+			"Minior-Green Meteor",
+			"Minior-Indigo Meteor",
+			"Minior-Orange Meteor",
+			"Minior-Violet Meteor",
 		],
 	},
-	miniormeteorblue: {
+	miniorbluemeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5558,22 +5558,21 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Blue",
-		color: "Brown",
 		eggGroups: [
 			"Mineral",
 		],
-		forme: "Meteor-Blue",
-		gender: "N",
+		forme: "Blue Meteor",
+		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Meteor-Blue",
-		requiredAbility: "Shields Down",
+		name: "Minior-Blue Meteor",
+		num: 774,
 		types: [
 			"Rock",
 			"Flying",
 		],
 		weightkg: 40,
 	},
-	miniormeteorgreen: {
+	miniorgreenmeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5587,22 +5586,21 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Green",
-		color: "Brown",
 		eggGroups: [
 			"Mineral",
 		],
-		forme: "Meteor-Green",
-		gender: "N",
+		forme: "Green Meteor",
+		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Meteor-Green",
-		requiredAbility: "Shields Down",
+		name: "Minior-Green Meteor",
+		num: 774,
 		types: [
 			"Rock",
 			"Flying",
 		],
 		weightkg: 40,
 	},
-	miniormeteorindigo: {
+	miniorindigometeor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5616,22 +5614,21 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Indigo",
-		color: "Brown",
 		eggGroups: [
 			"Mineral",
 		],
-		forme: "Meteor-Indigo",
-		gender: "N",
+		forme: "Indigo Meteor",
+		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Meteor-Indigo",
-		requiredAbility: "Shields Down",
+		name: "Minior-Indigo Meteor",
+		num: 774,
 		types: [
 			"Rock",
 			"Flying",
 		],
 		weightkg: 40,
 	},
-	miniormeteororange: {
+	miniororangemeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5645,22 +5642,21 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Orange",
-		color: "Brown",
 		eggGroups: [
 			"Mineral",
 		],
-		forme: "Meteor-Orange",
-		gender: "N",
+		forme: "Orange Meteor",
+		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Meteor-Orange",
-		requiredAbility: "Shields Down",
+		name: "Minior-Orange Meteor",
+		num: 774,
 		types: [
 			"Rock",
 			"Flying",
 		],
 		weightkg: 40,
 	},
-	miniormeteorviolet: {
+	miniorvioletmeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5674,22 +5670,21 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Violet",
-		color: "Brown",
 		eggGroups: [
 			"Mineral",
 		],
-		forme: "Meteor-Violet",
-		gender: "N",
+		forme: "Violet Meteor",
+		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Meteor-Violet",
-		requiredAbility: "Shields Down",
+		name: "Minior-Violet Meteor",
+		num: 774,
 		types: [
 			"Rock",
 			"Flying",
 		],
 		weightkg: 40,
 	},
-	miniormeteoryellow: {
+	minioryellowmeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5703,15 +5698,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Yellow",
-		color: "Brown",
 		eggGroups: [
 			"Mineral",
 		],
-		forme: "Meteor-Yellow",
-		gender: "N",
+		forme: "Yellow Meteor",
+		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Meteor-Yellow",
-		requiredAbility: "Shields Down",
+		name: "Minior-Yellow Meteor",
+		num: 774,
 		types: [
 			"Rock",
 			"Flying",
