@@ -364,7 +364,11 @@ export const Teams = new class Teams {
 		if (!name) return '';
 		if (dexTable) {
 			const obj = dexTable.get(name);
-			if (obj.exists) return obj.name;
+			if (obj.exists) {
+				// If canonicalized name differs from input, input might be a modded cosmetic
+				// forme not in base dex - preserve the original to allow mod validation to work
+				return obj.name === name ? obj.name : name;
+			}
 		}
 		return name.replace(/([0-9]+)/g, ' $1 ').replace(/([A-Z])/g, ' $1').replace(/[ ][ ]/g, ' ').trim();
 	}
@@ -481,10 +485,18 @@ export const Teams = new class Teams {
 			}
 			if (line.endsWith(')') && line.includes('(')) {
 				const [name, species] = line.slice(0, -1).split('(');
-				set.species = Dex.species.get(species).name;
+				const speciesObj = Dex.species.get(species);
+				// Preserve custom cosmetic formes: if input differs from canonicalized name,
+				// the input might be a modded cosmetic forme not in base dex
+				const inputSpecies = species.trim();
+				set.species = speciesObj.name === inputSpecies ? speciesObj.name : inputSpecies;
 				set.name = name.trim();
 			} else {
-				set.species = Dex.species.get(line).name;
+				const speciesObj = Dex.species.get(line);
+				const inputSpecies = line.trim();
+				// Preserve custom cosmetic formes: if input differs from canonicalized name,
+				// the input might be a modded cosmetic forme not in base dex
+				set.species = speciesObj.name === inputSpecies ? speciesObj.name : inputSpecies;
 				set.name = '';
 			}
 		} else if (line.startsWith('Trait: ')) {
