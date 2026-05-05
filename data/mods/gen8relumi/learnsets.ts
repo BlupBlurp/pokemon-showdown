@@ -4241,6 +4241,171 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	alcremiegmax: {
+		learnset: {
+			acidarmor: [
+				"9L35",
+			],
+			aromatherapy: [
+				"9L25",
+				"9T",
+			],
+			aromaticmist: [
+				"9L1",
+			],
+			attract: [
+				"9L30",
+				"9M",
+			],
+			babydolleyes: [
+				"9E",
+			],
+			calmmind: [
+				"9M",
+			],
+			charm: [
+				"9M",
+			],
+			dazzlinggleam: [
+				"9L40",
+				"9M",
+			],
+			decorate: [
+				"9L1",
+			],
+			drainingkiss: [
+				"9L15",
+			],
+			drainpunch: [
+				"9M",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			entrainment: [
+				"9L55",
+			],
+			facade: [
+				"9M",
+			],
+			faketears: [
+				"9M",
+			],
+			fling: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			imprison: [
+				"9M",
+			],
+			lastresort: [
+				"9E",
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			magicroom: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			mistyexplosion: [
+				"9T",
+			],
+			mistyterrain: [
+				"9L50",
+				"9M",
+			],
+			moonblast: [
+				"9L60",
+			],
+			mysticalfire: [
+				"9M",
+			],
+			painsplit: [
+				"9T",
+			],
+			playrough: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			psyshock: [
+				"9M",
+			],
+			recover: [
+				"9L45",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			storedpower: [
+				"9L20",
+			],
+			substitute: [
+				"9M",
+			],
+			sweetkiss: [
+				"9L1",
+			],
+			sweetscent: [
+				"9L1",
+			],
+			tackle: [
+				"9L1",
+			],
+			wonderroom: [
+				"9T",
+			],
+		},
+	},
 	alcremielemoncream: {
 		learnset: {
 			acidarmor: [
