@@ -22,6 +22,21 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		1: "Marowak-Alola",
 		2: "Marowak-Ghost",
 	},
+	150: {
+		0: "Mewtwo",
+		1: "Mewtwo-Mega-X",
+		2: "Mewtwo-Mega-Y",
+		3: "Mewtwo-MkII",
+		4: "Mewtwo-MkI",
+		5: "Mewtwo-Shadow",
+		6: "Mewtwo-Mega-Shadow",
+	},
+	492: {
+		0: "Shaymin",
+		1: "Shaymin-Sky",
+		2: "Shaymin-Polluted",
+		3: "Shaymin-Sky-Polluted",
+	},
 	892: {
 		0: "Urshifu",
 		1: "Urshifu-Rapid-Strike",
@@ -43,6 +58,15 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 	666: {
 		18: "Vivillon-Fancy",
 		19: "Vivillon-Pokeball",
+	},
+	718: {
+		0: "Zygarde",
+		1: "Zygarde-10%",
+		2: "Zygarde-10%",
+		3: "Zygarde",
+		4: "Zygarde-Complete",
+		5: "Zygarde-Core",
+		6: "Zygarde-Cell",
 	},
 	849: {
 		0: "Toxtricity",
@@ -178,7 +202,7 @@ const MANUAL_POKEDEX_OVERRIDES = {
 	alcremie: {
 		cosmeticFormes: [
 			"Alcremie-Berry", "Alcremie-Love", "Alcremie-Star",
-			"Alcremie-Clover", "Alcremie-Flower", "Alcremie-Ribbon", 
+			"Alcremie-Clover", "Alcremie-Flower", "Alcremie-Ribbon",
 			"Alcremie-Ruby-Cream", "Alcremie-Matcha-Cream", "Alcremie-Mint-Cream",
 			"Alcremie-Lemon-Cream", "Alcremie-Salted-Cream", "Alcremie-Ruby-Swirl",
 			"Alcremie-Caramel-Swirl", "Alcremie-Rainbow-Swirl",

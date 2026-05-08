@@ -3011,7 +3011,19 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	mewtwomkiarmored: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	mewtwomkiiarmored: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	mewtwoshadow: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	mewtwoshadowmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -4232,6 +4244,14 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	shaymin: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	shayminpollutedland: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	shayminpollutedsky: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -5703,7 +5723,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	zygardemega: {
+	zygardecore: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},

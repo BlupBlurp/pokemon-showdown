@@ -6021,6 +6021,60 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	mewtwomkiarmored: {
+		abilities: {
+			"0": "Pressure",
+			H: "Unnerve",
+		},
+		baseSpecies: "Mewtwo",
+		baseStats: {
+			atk: 110,
+			def: 90,
+			hp: 106,
+			spa: 154,
+			spd: 90,
+			spe: 130,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Mk I Armored",
+		gen: 8,
+		heightm: 2,
+		name: "Mewtwo-Mk I Armored",
+		num: 150,
+		types: [
+			"Psychic",
+		],
+		weightkg: 122,
+	},
+	mewtwomkiiarmored: {
+		abilities: {
+			"0": "Pressure",
+			H: "Unnerve",
+		},
+		baseSpecies: "Mewtwo",
+		baseStats: {
+			atk: 110,
+			def: 90,
+			hp: 106,
+			spa: 154,
+			spd: 90,
+			spe: 130,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Mk Ii Armored",
+		gen: 8,
+		heightm: 2,
+		name: "Mewtwo-Mk Ii Armored",
+		num: 150,
+		types: [
+			"Psychic",
+		],
+		weightkg: 122,
+	},
 	mewtwoshadow: {
 		abilities: {
 			"0": "Pressure",
@@ -6046,6 +6100,33 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		types: [
 			"Psychic",
 			"Dark",
+		],
+		weightkg: 122,
+	},
+	mewtwoshadowmega: {
+		abilities: {
+			"0": "Pressure",
+			H: "Unnerve",
+		},
+		baseSpecies: "Mewtwo",
+		baseStats: {
+			atk: 110,
+			def: 90,
+			hp: 106,
+			spa: 154,
+			spd: 90,
+			spe: 130,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Shadow Mega",
+		gen: 8,
+		heightm: 2,
+		name: "Mewtwo-Shadow Mega",
+		num: 150,
+		types: [
+			"Psychic",
 		],
 		weightkg: 122,
 	},
@@ -8515,6 +8596,59 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	shayminpollutedland: {
+		abilities: {
+			"0": "Natural Cure",
+		},
+		baseSpecies: "Shaymin",
+		baseStats: {
+			atk: 100,
+			def: 100,
+			hp: 100,
+			spa: 100,
+			spd: 100,
+			spe: 100,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Polluted Land",
+		gen: 8,
+		heightm: 0.2,
+		name: "Shaymin-Polluted Land",
+		num: 492,
+		types: [
+			"Grass",
+		],
+		weightkg: 2.1,
+	},
+	shayminpollutedsky: {
+		abilities: {
+			"0": "Serene Grace",
+		},
+		baseSpecies: "Shaymin",
+		baseStats: {
+			atk: 103,
+			def: 75,
+			hp: 100,
+			spa: 120,
+			spd: 75,
+			spe: 127,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Polluted Sky",
+		gen: 8,
+		heightm: 0.4,
+		name: "Shaymin-Polluted Sky",
+		num: 492,
+		types: [
+			"Grass",
+			"Flying",
+		],
+		weightkg: 5.2,
+	},
 	shelgon: {
 		abilities: {
 			"0": "Rock Head",
@@ -10895,7 +11029,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		],
 		weightkg: 1,
 	},
-	zygardemega: {
+	zygardecore: {
+		abilities: {
+			"0": "Aura Break",
+		},
+		baseSpecies: "Zygarde",
 		baseStats: {
 			atk: 10,
 			def: 10,
@@ -10904,6 +11042,18 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 10,
 			spe: 10,
 		},
-		inherit: true,
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Core",
+		gen: 8,
+		heightm: 0.3,
+		name: "Zygarde-Core",
+		num: 718,
+		types: [
+			"Dragon",
+			"Ground",
+		],
+		weightkg: 1,
 	},
 };

@@ -159128,7 +159128,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			psychocut: [
-				"9L16",
 				"9L22",
 				"9M",
 			],
@@ -160060,6 +160059,788 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	mewtwomkiarmored: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			allyswitch: [
+				"9T",
+			],
+			amnesia: [
+				"9L34",
+			],
+			ancientpower: [
+				"9L8",
+				"9T",
+			],
+			aquatail: [
+				"9T",
+			],
+			aurasphere: [
+				"9L50",
+			],
+			avalanche: [
+				"9M",
+			],
+			barrier: [
+				"9L46",
+			],
+			blizzard: [
+				"9M",
+			],
+			brickbreak: [
+				"9M",
+			],
+			bulkup: [
+				"9M",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confusion: [
+				"9L1",
+			],
+			curse: [
+				"9T",
+			],
+			disable: [
+				"9L1",
+			],
+			dive: [
+				"9T",
+			],
+			doubleteam: [
+				"9M",
+			],
+			drainpunch: [
+				"9M",
+			],
+			dreameater: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			expandingforce: [
+				"9T",
+			],
+			facade: [
+				"9M",
+			],
+			fireblast: [
+				"9M",
+			],
+			firepunch: [
+				"9T",
+			],
+			flamethrower: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			fling: [
+				"9M",
+			],
+			focusblast: [
+				"9M",
+			],
+			focuspunch: [
+				"9M",
+			],
+			foulplay: [
+				"9T",
+			],
+			frustration: [
+				"9M",
+			],
+			futuresight: [
+				"9L10",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			guardswap: [
+				"9L26",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hurricane: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			icebeam: [
+				"9M",
+			],
+			icepunch: [
+				"9T",
+			],
+			icywind: [
+				"9T",
+			],
+			imprison: [
+				"9M",
+			],
+			irontail: [
+				"9M",
+			],
+			knockoff: [
+				"9T",
+			],
+			laserfocus: [
+				"9L1",
+				"9T",
+			],
+			lashout: [
+				"9T",
+			],
+			lifedew: [
+				"9L1",
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			lowkick: [
+				"9T",
+			],
+			lowsweep: [
+				"9M",
+			],
+			magiccoat: [
+				"9T",
+			],
+			magicroom: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			miracleeye: [
+				"9L29",
+			],
+			mist: [
+				"9L42",
+			],
+			mudslap: [
+				"9T",
+			],
+			nastyplot: [
+				"9M",
+			],
+			pluck: [
+				"9M",
+			],
+			poisonjab: [
+				"9M",
+			],
+			powergem: [
+				"9M",
+			],
+			powerswap: [
+				"9L26",
+			],
+			poweruppunch: [
+				"9T",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9L38",
+				"9M",
+			],
+			psychicterrain: [
+				"9M",
+			],
+			psychocut: [
+				"9L22",
+				"9M",
+			],
+			psychup: [
+				"9L14",
+				"9M",
+			],
+			psyshock: [
+				"9M",
+			],
+			psystrike: [
+				"9L72",
+			],
+			raindance: [
+				"9M",
+			],
+			recover: [
+				"9L30",
+			],
+			recycle: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockclimb: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			roleplay: [
+				"9T",
+			],
+			safeguard: [
+				"9L1",
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scaryface: [
+				"9M",
+			],
+			seismictoss: [
+				"9T",
+			],
+			selfdestruct: [
+				"9T",
+			],
+			shadowball: [
+				"9M",
+			],
+			shockwave: [
+				"9M",
+			],
+			signalbeam: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			snowscape: [
+				"9M",
+			],
+			solarbeam: [
+				"9M",
+			],
+			spite: [
+				"9T",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			stoneedge: [
+				"9M",
+			],
+			strength: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L6",
+				"9T",
+			],
+			taunt: [
+				"9M",
+			],
+			teleport: [
+				"9L1",
+				"9T",
+			],
+			thunder: [
+				"9M",
+			],
+			thunderbolt: [
+				"9M",
+			],
+			thunderpunch: [
+				"9T",
+			],
+			thunderwave: [
+				"9M",
+			],
+			torment: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			trickroom: [
+				"9M",
+			],
+			waterpulse: [
+				"9M",
+			],
+			weatherball: [
+				"9M",
+			],
+			willowisp: [
+				"9M",
+			],
+			wonderroom: [
+				"9T",
+			],
+			zapcannon: [
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	mewtwomkiiarmored: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			allyswitch: [
+				"9T",
+			],
+			amnesia: [
+				"9L34",
+			],
+			ancientpower: [
+				"9L8",
+				"9T",
+			],
+			aquatail: [
+				"9T",
+			],
+			aurasphere: [
+				"9L50",
+			],
+			avalanche: [
+				"9M",
+			],
+			barrier: [
+				"9L46",
+			],
+			blizzard: [
+				"9M",
+			],
+			brickbreak: [
+				"9M",
+			],
+			bulkup: [
+				"9M",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confusion: [
+				"9L1",
+			],
+			curse: [
+				"9T",
+			],
+			disable: [
+				"9L1",
+			],
+			dive: [
+				"9T",
+			],
+			doubleteam: [
+				"9M",
+			],
+			drainpunch: [
+				"9M",
+			],
+			dreameater: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			expandingforce: [
+				"9T",
+			],
+			facade: [
+				"9M",
+			],
+			fireblast: [
+				"9M",
+			],
+			firepunch: [
+				"9T",
+			],
+			flamethrower: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			fling: [
+				"9M",
+			],
+			focusblast: [
+				"9M",
+			],
+			focuspunch: [
+				"9M",
+			],
+			foulplay: [
+				"9T",
+			],
+			frustration: [
+				"9M",
+			],
+			futuresight: [
+				"9L10",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			guardswap: [
+				"9L26",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hurricane: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			icebeam: [
+				"9M",
+			],
+			icepunch: [
+				"9T",
+			],
+			icywind: [
+				"9T",
+			],
+			imprison: [
+				"9M",
+			],
+			irontail: [
+				"9M",
+			],
+			knockoff: [
+				"9T",
+			],
+			laserfocus: [
+				"9L1",
+				"9T",
+			],
+			lashout: [
+				"9T",
+			],
+			lifedew: [
+				"9L1",
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			lowkick: [
+				"9T",
+			],
+			lowsweep: [
+				"9M",
+			],
+			magiccoat: [
+				"9T",
+			],
+			magicroom: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			miracleeye: [
+				"9L29",
+			],
+			mist: [
+				"9L42",
+			],
+			mudslap: [
+				"9T",
+			],
+			nastyplot: [
+				"9M",
+			],
+			pluck: [
+				"9M",
+			],
+			poisonjab: [
+				"9M",
+			],
+			powergem: [
+				"9M",
+			],
+			powerswap: [
+				"9L26",
+			],
+			poweruppunch: [
+				"9T",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9L38",
+				"9M",
+			],
+			psychicterrain: [
+				"9M",
+			],
+			psychocut: [
+				"9L16",
+				"9M",
+			],
+			psychup: [
+				"9L14",
+				"9M",
+			],
+			psyshock: [
+				"9M",
+			],
+			psystrike: [
+				"9L72",
+			],
+			raindance: [
+				"9M",
+			],
+			recover: [
+				"9L30",
+			],
+			recycle: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockclimb: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			roleplay: [
+				"9T",
+			],
+			safeguard: [
+				"9L1",
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scaryface: [
+				"9M",
+			],
+			seismictoss: [
+				"9T",
+			],
+			selfdestruct: [
+				"9T",
+			],
+			shadowball: [
+				"9M",
+			],
+			shockwave: [
+				"9M",
+			],
+			signalbeam: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			snowscape: [
+				"9M",
+			],
+			solarbeam: [
+				"9M",
+			],
+			spite: [
+				"9T",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			stoneedge: [
+				"9M",
+			],
+			strength: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L6",
+				"9T",
+			],
+			taunt: [
+				"9M",
+			],
+			teleport: [
+				"9L1",
+				"9T",
+			],
+			thunder: [
+				"9M",
+			],
+			thunderbolt: [
+				"9M",
+			],
+			thunderpunch: [
+				"9T",
+			],
+			thunderwave: [
+				"9M",
+			],
+			torment: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			trickroom: [
+				"9M",
+			],
+			waterpulse: [
+				"9M",
+			],
+			weatherball: [
+				"9M",
+			],
+			willowisp: [
+				"9M",
+			],
+			wonderroom: [
+				"9T",
+			],
+			zapcannon: [
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
 	mewtwoshadow: {
 		learnset: {
 			aerialace: [
@@ -160409,6 +161190,397 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			thief: [
 				"9M",
+			],
+			thunder: [
+				"9M",
+			],
+			thunderbolt: [
+				"9M",
+			],
+			thunderpunch: [
+				"9T",
+			],
+			thunderwave: [
+				"9M",
+			],
+			torment: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			trickroom: [
+				"9M",
+			],
+			waterpulse: [
+				"9M",
+			],
+			weatherball: [
+				"9M",
+			],
+			willowisp: [
+				"9M",
+			],
+			wonderroom: [
+				"9T",
+			],
+			zapcannon: [
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	mewtwoshadowmega: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			allyswitch: [
+				"9T",
+			],
+			amnesia: [
+				"9L34",
+			],
+			ancientpower: [
+				"9L8",
+				"9T",
+			],
+			aquatail: [
+				"9T",
+			],
+			aurasphere: [
+				"9L50",
+			],
+			avalanche: [
+				"9M",
+			],
+			barrier: [
+				"9L46",
+			],
+			blizzard: [
+				"9M",
+			],
+			brickbreak: [
+				"9M",
+			],
+			bulkup: [
+				"9M",
+			],
+			bulldoze: [
+				"9M",
+			],
+			calmmind: [
+				"9M",
+			],
+			chargebeam: [
+				"9M",
+			],
+			confusion: [
+				"9L1",
+			],
+			curse: [
+				"9T",
+			],
+			disable: [
+				"9L1",
+			],
+			dive: [
+				"9T",
+			],
+			doubleteam: [
+				"9M",
+			],
+			drainpunch: [
+				"9M",
+			],
+			dreameater: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9M",
+			],
+			expandingforce: [
+				"9T",
+			],
+			facade: [
+				"9M",
+			],
+			fireblast: [
+				"9M",
+			],
+			firepunch: [
+				"9T",
+			],
+			flamethrower: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			fling: [
+				"9M",
+			],
+			focusblast: [
+				"9M",
+			],
+			focuspunch: [
+				"9M",
+			],
+			foulplay: [
+				"9T",
+			],
+			frustration: [
+				"9M",
+			],
+			futuresight: [
+				"9L10",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			guardswap: [
+				"9L26",
+			],
+			helpinghand: [
+				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hurricane: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			icebeam: [
+				"9M",
+			],
+			icepunch: [
+				"9T",
+			],
+			icywind: [
+				"9T",
+			],
+			imprison: [
+				"9M",
+			],
+			irontail: [
+				"9M",
+			],
+			knockoff: [
+				"9T",
+			],
+			laserfocus: [
+				"9L1",
+				"9T",
+			],
+			lashout: [
+				"9T",
+			],
+			lifedew: [
+				"9L1",
+				"9T",
+			],
+			lightscreen: [
+				"9M",
+			],
+			lowkick: [
+				"9T",
+			],
+			lowsweep: [
+				"9M",
+			],
+			magiccoat: [
+				"9T",
+			],
+			magicroom: [
+				"9T",
+			],
+			metronome: [
+				"9T",
+			],
+			miracleeye: [
+				"9L29",
+			],
+			mist: [
+				"9L42",
+			],
+			mudslap: [
+				"9T",
+			],
+			nastyplot: [
+				"9M",
+			],
+			pluck: [
+				"9M",
+			],
+			poisonjab: [
+				"9M",
+			],
+			powergem: [
+				"9M",
+			],
+			powerswap: [
+				"9L26",
+			],
+			poweruppunch: [
+				"9T",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9L38",
+				"9M",
+			],
+			psychicterrain: [
+				"9M",
+			],
+			psychocut: [
+				"9L22",
+				"9M",
+			],
+			psychup: [
+				"9L14",
+				"9M",
+			],
+			psyshock: [
+				"9M",
+			],
+			psystrike: [
+				"9L72",
+			],
+			raindance: [
+				"9M",
+			],
+			recover: [
+				"9L30",
+			],
+			recycle: [
+				"9M",
+			],
+			reflect: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			rockclimb: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			roleplay: [
+				"9T",
+			],
+			safeguard: [
+				"9L1",
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scaryface: [
+				"9M",
+			],
+			seismictoss: [
+				"9T",
+			],
+			selfdestruct: [
+				"9T",
+			],
+			shadowball: [
+				"9M",
+			],
+			shockwave: [
+				"9M",
+			],
+			signalbeam: [
+				"9T",
+			],
+			skillswap: [
+				"9M",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			snowscape: [
+				"9M",
+			],
+			solarbeam: [
+				"9M",
+			],
+			spite: [
+				"9T",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			stoneedge: [
+				"9M",
+			],
+			strength: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9L6",
+				"9T",
+			],
+			taunt: [
+				"9M",
+			],
+			teleport: [
+				"9L1",
+				"9T",
 			],
 			thunder: [
 				"9M",
@@ -221442,7 +222614,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			airslash: [
-				"9L64",
 				"9M",
 			],
 			aromatherapy: [
@@ -221473,7 +222644,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			energyball: [
 				"9L34",
-				"9L73",
 				"9M",
 			],
 			facade: [
@@ -221508,7 +222678,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			healingwish: [
 				"9L1",
-				"9L46",
 			],
 			hiddenpower: [
 				"9M",
@@ -221524,14 +222693,184 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			leafstorm: [
 				"9L46",
-				"9L91",
 			],
 			leechseed: [
 				"9L10",
-				"9L19",
 			],
 			magicalleaf: [
 				"9L6",
+			],
+			mudslap: [
+				"9T",
+			],
+			ominouswind: [
+				"9T",
+			],
+			playrough: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			seedbomb: [
+				"9T",
+			],
+			seedflare: [
+				"9L50",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			sweetkiss: [
+				"9L42",
+			],
+			sweetscent: [
+				"9L18",
+			],
+			swift: [
+				"9T",
+			],
+			swordsdance: [
+				"9M",
+			],
+			synthesis: [
+				"9L14",
+				"9T",
+			],
+			tailwind: [
+				"9T",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			worryseed: [
+				"9L26",
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	shayminpollutedland: {
+		learnset: {
+			aircutter: [
+				"9T",
+			],
+			airslash: [
+				"9L64",
+				"9M",
+			],
+			aromatherapy: [
+				"9T",
+			],
+			bulletseed: [
+				"9M",
+			],
+			covet: [
+				"9T",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9L73",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grassyglide: [
+				"9T",
+			],
+			grassyterrain: [
+				"9M",
+			],
+			growth: [
+				"9L1",
+			],
+			healingwish: [
+				"9L46",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			laserfocus: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			leafstorm: [
+				"9L91",
+			],
+			leechseed: [
+				"9L19",
+			],
+			magicalleaf: [
 				"9L10",
 			],
 			mudslap: [
@@ -221568,7 +222907,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			seedflare: [
-				"9L50",
 				"9L100",
 			],
 			sleeptalk: [
@@ -221590,11 +222928,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			sweetkiss: [
-				"9L42",
 				"9L82",
 			],
 			sweetscent: [
-				"9L18",
 				"9L37",
 			],
 			swift: [
@@ -221604,7 +222940,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			synthesis: [
-				"9L14",
 				"9T",
 			],
 			tailwind: [
@@ -221617,7 +222952,178 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			worryseed: [
-				"9L26",
+				"9L55",
+				"9T",
+			],
+			zenheadbutt: [
+				"9T",
+			],
+		},
+	},
+	shayminpollutedsky: {
+		learnset: {
+			aircutter: [
+				"9T",
+			],
+			airslash: [
+				"9L64",
+				"9M",
+			],
+			bulletseed: [
+				"9M",
+			],
+			covet: [
+				"9T",
+			],
+			dazzlinggleam: [
+				"9M",
+			],
+			doubleteam: [
+				"9M",
+			],
+			earthpower: [
+				"9T",
+			],
+			endeavor: [
+				"9T",
+			],
+			endure: [
+				"9M",
+			],
+			energyball: [
+				"9L73",
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			gigadrain: [
+				"9M",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			grassknot: [
+				"9M",
+			],
+			grassyglide: [
+				"9T",
+			],
+			grassyterrain: [
+				"9M",
+			],
+			growth: [
+				"9L1",
+			],
+			healingwish: [
+				"9L46",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			laserfocus: [
+				"9T",
+			],
+			lastresort: [
+				"9T",
+			],
+			leafstorm: [
+				"9L91",
+			],
+			leechseed: [
+				"9L19",
+			],
+			magicalleaf: [
+				"9L10",
+			],
+			mudslap: [
+				"9T",
+			],
+			ominouswind: [
+				"9T",
+			],
+			playrough: [
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychic: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			quickattack: [
+				"9L28",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			seedbomb: [
+				"9T",
+			],
+			seedflare: [
+				"9L100",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			solarbeam: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			sweetkiss: [
+				"9L82",
+			],
+			sweetscent: [
+				"9L37",
+			],
+			swift: [
+				"9T",
+			],
+			swordsdance: [
+				"9M",
+			],
+			synthesis: [
+				"9T",
+			],
+			tailwind: [
+				"9T",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
+			],
+			worryseed: [
 				"9L55",
 				"9T",
 			],
@@ -288717,7 +290223,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
-	zygardemega: {
+	zygardecore: {
 		learnset: {
 			bind: [
 				"9T",
