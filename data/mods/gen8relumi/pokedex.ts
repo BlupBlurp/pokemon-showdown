@@ -2697,6 +2697,35 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	dialgaprimal: {
+		abilities: {
+			"0": "Pressure",
+			"1": "Full Metal Body",
+			H: "Telepathy",
+		},
+		baseSpecies: "Dialga",
+		baseStats: {
+			atk: 120,
+			def: 120,
+			hp: 100,
+			spa: 150,
+			spd: 100,
+			spe: 90,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Primal",
+		gen: 8,
+		heightm: 5.4,
+		name: "Dialga-Primal",
+		num: 483,
+		types: [
+			"Steel",
+			"Dragon",
+		],
+		weightkg: 683,
+	},
 	diancie: {
 		abilities: {
 			"0": "Clear Body",
@@ -6934,6 +6963,35 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 100,
 		},
 		inherit: true,
+	},
+	palkiaprimal: {
+		abilities: {
+			"0": "Pressure",
+			"1": "Clear Body",
+			H: "Telepathy",
+		},
+		baseSpecies: "Palkia",
+		baseStats: {
+			atk: 120,
+			def: 100,
+			hp: 90,
+			spa: 150,
+			spd: 120,
+			spe: 100,
+		},
+		eggGroups: [
+			"Undiscovered",
+		],
+		forme: "Primal",
+		gen: 8,
+		heightm: 4.2,
+		name: "Palkia-Primal",
+		num: 484,
+		types: [
+			"Water",
+			"Dragon",
+		],
+		weightkg: 336,
 	},
 	palossand: {
 		abilities: {

@@ -31,6 +31,12 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		5: "Mewtwo-Shadow",
 		6: "Mewtwo-Mega-Shadow",
 	},
+	483: {
+		2: "Dialga-Primal",
+	},
+	484: {
+		2: "Palkia-Primal",
+	},
 	492: {
 		0: "Shaymin",
 		1: "Shaymin-Sky",

@@ -62781,6 +62781,252 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 		},
 	},
+	dialgaprimal: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			ancientpower: [
+				"9L10",
+				"9T",
+			],
+			aurasphere: [
+				"9L38",
+			],
+			blizzard: [
+				"9M",
+			],
+			bodypress: [
+				"9M",
+			],
+			breakingswipe: [
+				"9T",
+			],
+			brickbreak: [
+				"9M",
+			],
+			bulkup: [
+				"9M",
+			],
+			bulldoze: [
+				"9M",
+			],
+			cut: [
+				"9M",
+			],
+			doubleteam: [
+				"9M",
+			],
+			dracometeor: [
+				"9T",
+			],
+			dragonbreath: [
+				"9L1",
+			],
+			dragonclaw: [
+				"9L26",
+				"9M",
+			],
+			dragonpulse: [
+				"9L30",
+				"9M",
+			],
+			earthpower: [
+				"9L42",
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endure: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			fireblast: [
+				"9M",
+			],
+			flamethrower: [
+				"9M",
+			],
+			flash: [
+				"9M",
+			],
+			flashcannon: [
+				"9L46",
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			furycutter: [
+				"9T",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			healblock: [
+				"9T",
+			],
+			heavyslam: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			hypervoice: [
+				"9M",
+			],
+			icebeam: [
+				"9M",
+			],
+			irondefense: [
+				"9T",
+			],
+			ironhead: [
+				"9T",
+			],
+			irontail: [
+				"9L34",
+				"9M",
+			],
+			magnetrise: [
+				"9T",
+			],
+			metalburst: [
+				"9L22",
+			],
+			metalclaw: [
+				"9L6",
+			],
+			mudslap: [
+				"9T",
+			],
+			outrage: [
+				"9T",
+			],
+			overheat: [
+				"9M",
+			],
+			powergem: [
+				"9L18",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			roar: [
+				"9M",
+			],
+			roaroftime: [
+				"9L50",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scaleshot: [
+				"9T",
+			],
+			scaryface: [
+				"9L1",
+				"9M",
+			],
+			shadowclaw: [
+				"9M",
+			],
+			shockwave: [
+				"9M",
+			],
+			slash: [
+				"9L14",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			stealthrock: [
+				"9M",
+			],
+			steelbeam: [
+				"9T",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			stoneedge: [
+				"9M",
+			],
+			strength: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			thunder: [
+				"9M",
+			],
+			thunderbolt: [
+				"9M",
+			],
+			thunderwave: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			trickroom: [
+				"9M",
+			],
+			twister: [
+				"9T",
+			],
+		},
+	},
 	diancie: {
 		learnset: {
 			afteryou: [
@@ -183045,6 +183291,267 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			waterpulse: [
 				"9L1",
+				"9M",
+			],
+			whirlpool: [
+				"9M",
+			],
+		},
+	},
+	palkiaprimal: {
+		learnset: {
+			aerialace: [
+				"9M",
+			],
+			ancientpower: [
+				"9L10",
+				"9T",
+			],
+			aquaring: [
+				"9L22",
+			],
+			aquatail: [
+				"9L34",
+				"9T",
+			],
+			aurasphere: [
+				"9L38",
+			],
+			avalanche: [
+				"9M",
+			],
+			blizzard: [
+				"9M",
+			],
+			bodypress: [
+				"9M",
+			],
+			breakingswipe: [
+				"9T",
+			],
+			brickbreak: [
+				"9M",
+			],
+			brine: [
+				"9M",
+			],
+			bulkup: [
+				"9M",
+			],
+			bulldoze: [
+				"9M",
+			],
+			cut: [
+				"9M",
+			],
+			dive: [
+				"9T",
+			],
+			doubleteam: [
+				"9M",
+			],
+			dracometeor: [
+				"9T",
+			],
+			dragonbreath: [
+				"9L1",
+			],
+			dragonclaw: [
+				"9L26",
+				"9M",
+			],
+			dragonpulse: [
+				"9L30",
+				"9M",
+			],
+			dualwingbeat: [
+				"9T",
+			],
+			earthpower: [
+				"9L42",
+				"9T",
+			],
+			earthquake: [
+				"9M",
+			],
+			endure: [
+				"9M",
+			],
+			facade: [
+				"9M",
+			],
+			fireblast: [
+				"9M",
+			],
+			flamethrower: [
+				"9M",
+			],
+			fling: [
+				"9M",
+			],
+			focusblast: [
+				"9M",
+			],
+			focuspunch: [
+				"9M",
+			],
+			frustration: [
+				"9M",
+			],
+			furycutter: [
+				"9T",
+			],
+			gigaimpact: [
+				"9M",
+			],
+			gravity: [
+				"9T",
+			],
+			healblock: [
+				"9T",
+			],
+			heavyslam: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			hydropump: [
+				"9L46",
+			],
+			hyperbeam: [
+				"9M",
+			],
+			hypervoice: [
+				"9M",
+			],
+			icebeam: [
+				"9M",
+			],
+			icywind: [
+				"9T",
+			],
+			liquidation: [
+				"9T",
+			],
+			mudslap: [
+				"9T",
+			],
+			outrage: [
+				"9T",
+			],
+			powergem: [
+				"9L18",
+				"9M",
+			],
+			protect: [
+				"9M",
+			],
+			psychup: [
+				"9M",
+			],
+			raindance: [
+				"9M",
+			],
+			rest: [
+				"9M",
+			],
+			return: [
+				"9M",
+			],
+			roar: [
+				"9M",
+			],
+			rockslide: [
+				"9M",
+			],
+			rocksmash: [
+				"9M",
+			],
+			rocktomb: [
+				"9M",
+			],
+			safeguard: [
+				"9M",
+			],
+			sandstorm: [
+				"9M",
+			],
+			scaleshot: [
+				"9T",
+			],
+			scaryface: [
+				"9L1",
+				"9M",
+			],
+			shadowclaw: [
+				"9M",
+			],
+			shockwave: [
+				"9M",
+			],
+			slash: [
+				"9L14",
+			],
+			sleeptalk: [
+				"9M",
+			],
+			snore: [
+				"9T",
+			],
+			snowscape: [
+				"9M",
+			],
+			spacialrend: [
+				"9L50",
+			],
+			stompingtantrum: [
+				"9T",
+			],
+			stoneedge: [
+				"9M",
+			],
+			strength: [
+				"9M",
+			],
+			substitute: [
+				"9M",
+			],
+			sunnyday: [
+				"9M",
+			],
+			surf: [
+				"9M",
+			],
+			swagger: [
+				"9M",
+			],
+			swift: [
+				"9T",
+			],
+			thunder: [
+				"9M",
+			],
+			thunderbolt: [
+				"9M",
+			],
+			thunderwave: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trick: [
+				"9T",
+			],
+			trickroom: [
+				"9M",
+			],
+			twister: [
+				"9T",
+			],
+			waterpulse: [
+				"9L6",
 				"9M",
 			],
 			whirlpool: [

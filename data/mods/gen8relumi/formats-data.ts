@@ -1151,6 +1151,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	dialgaprimal: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	diancie: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -3460,6 +3464,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	palkiaorigin: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	palkiaprimal: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
