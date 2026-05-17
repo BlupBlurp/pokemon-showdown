@@ -11,6 +11,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
+	anchorshot: {
+		basePower: 90,
+		inherit: true,
+	},
+	appleacid: {
+		basePower: 90,
+		inherit: true,
+	},
 	aquatail: {
 		accuracy: 100,
 		inherit: true,
@@ -29,10 +37,22 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 25,
 		inherit: true,
 	},
+	astralbarrage: {
+		basePower: 110,
+		inherit: true,
+	},
+	aurasphere: {
+		basePower: 90,
+		inherit: true,
+	},
 	aurorabeam: {
 		basePower: 75,
 		inherit: true,
 		pp: 15,
+	},
+	beakblast: {
+		basePower: 120,
+		inherit: true,
 	},
 	beatup: {
 		inherit: true,
@@ -162,6 +182,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		type: "Fairy",
 	},
 	crabhammer: {
+		accuracy: 95,
 		flags: {
 			contact: 1,
 			metronome: 1,
@@ -201,7 +222,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	direclaw: {
-		accuracy: 80,
 		desc: "Has a 30% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
 		inherit: true,
 		secondary: {
@@ -322,8 +342,16 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
+	firelash: {
+		basePower: 90,
+		inherit: true,
+	},
 	firstimpression: {
 		basePower: 100,
+		inherit: true,
+	},
+	fishiousrend: {
+		basePower: 80,
 		inherit: true,
 	},
 	flamewheel: {
@@ -399,6 +427,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 90,
 		inherit: true,
 	},
+	growth: {
+		inherit: true,
+		type: "Grass",
+	},
 	gunkshot: {
 		accuracy: 85,
 		inherit: true,
@@ -434,6 +466,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	hyperdrill: {
+		basePower: 120,
 		flags: {
 			contact: 1,
 			metronome: 1,
@@ -474,6 +507,19 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	iciclecrash: {
 		accuracy: 100,
 		inherit: true,
+	},
+	infernalparade: {
+		basePower: 65,
+		inherit: true,
+	},
+	ironhead: {
+		desc: "Has a 20% chance to make the target flinch.",
+		inherit: true,
+		secondary: {
+			chance: 20,
+			volatileStatus: "flinch",
+		},
+		shortDesc: "20% chance to make the target flinch.",
 	},
 	irontail: {
 		accuracy: 85,
@@ -625,8 +671,23 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 95,
 		inherit: true,
 	},
+	moonblast: {
+		desc: "Has a 10% chance to lower the target's Special Attack by 1 stage.",
+		inherit: true,
+		secondary: {
+			boosts: {
+				spa: -1,
+			},
+			chance: 10,
+		},
+		shortDesc: "10% chance to lower the target's Sp. Atk by 1.",
+	},
 	mortalspin: {
 		category: "Status",
+		inherit: true,
+	},
+	mountaingale: {
+		basePower: 120,
 		inherit: true,
 	},
 	mudbomb: {
@@ -668,6 +729,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	nightdaze: {
 		accuracy: 100,
+		basePower: 90,
 		inherit: true,
 	},
 	noxioustorque: {
@@ -696,6 +758,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			mirror: 1,
 			protect: 1,
 		},
+		inherit: true,
+	},
+	overdrive: {
+		basePower: 90,
 		inherit: true,
 	},
 	overheat: {
@@ -775,6 +841,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		inherit: true,
 	},
+	psyshieldbash: {
+		basePower: 90,
+		inherit: true,
+	},
 	ragefist: {
 		basePowerCallback: function basePowerCallback(pokemon) {
 			return Math.min(200, 50 + 25 * pokemon.timesAttacked);
@@ -819,6 +889,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	return: {
 		basePower: 70,
+		inherit: true,
+	},
+	revelationdance: {
+		basePower: 100,
 		inherit: true,
 	},
 	revivalblessing: {
@@ -955,6 +1029,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		type: "Steel",
 	},
+	snipeshot: {
+		basePower: 85,
+		inherit: true,
+	},
 	snowscape: {
 		category: "Special",
 		flags: {
@@ -984,6 +1062,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	spinout: {
 		category: "Status",
+		inherit: true,
+	},
+	spiritshackle: {
+		basePower: 90,
 		inherit: true,
 	},
 	springtidestorm: {
@@ -1105,7 +1187,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		shortDesc: "High crit. Target: 50% -1 Sp. Defense, 30% flinch.",
 	},
 	tripledive: {
-		category: "Status",
+		basePower: 35,
+		inherit: true,
+	},
+	tropkick: {
+		basePower: 85,
 		inherit: true,
 	},
 	twinbeam: {

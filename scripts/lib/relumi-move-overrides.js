@@ -113,6 +113,14 @@ const MANUAL_MOVE_OVERRIDES = {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		shortDesc: "Has 1/3 recoil.",
 	},
+	ironhead: {
+		desc: "Has a 20% chance to make the target flinch.",
+		shortDesc: "20% chance to make the target flinch.",
+	},
+	moonblast: {
+		desc: "Has a 10% chance to lower the target's Special Attack by 1 stage.",
+		shortDesc: "10% chance to lower the target's Sp. Atk by 1.",
+	},
 };
 
 module.exports = { MANUAL_MOVE_OVERRIDES };
