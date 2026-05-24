@@ -7743,6 +7743,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			attract: [
 				"9M",
 			],
+			bodypress: [
+				"9M",
+			],
 			bodyslam: [
 				"9L24",
 			],
@@ -7790,16 +7793,25 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassyglide: [
 				"9T",
 			],
+			grassyterrain: [
+				"9M",
+			],
 			growth: [
 				"9L1",
 			],
 			gyroball: [
 				"9M",
 			],
+			heavyslam: [
+				"9M",
+			],
 			helpinghand: [
 				"9T",
 			],
 			hiddenpower: [
+				"9M",
+			],
+			highhorsepower: [
 				"9M",
 			],
 			hyperbeam: [
@@ -7883,6 +7895,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 			],
 			toxic: [
+				"9M",
+			],
+			trailblaze: [
 				"9M",
 			],
 			withdraw: [
@@ -17275,6 +17290,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			bounce: [
 				"9T",
 			],
+			bulldoze: [
+				"9M",
+			],
 			crunch: [
 				"9L30",
 				"9M",
@@ -17302,6 +17320,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			dragonpulse: [
 				"9E",
 				"9M",
+			],
+			drillpeck: [
+				"9L1",
 			],
 			dualwingbeat: [
 				"9T",
@@ -17371,6 +17392,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			pluck: [
 				"9L15",
+				"9M",
 			],
 			powergem: [
 				"9M",
@@ -17394,6 +17416,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			rockblast: [
+				"9M",
+			],
+			rockclimb: [
 				"9M",
 			],
 			rockpolish: [
@@ -22950,8 +22975,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			brickbreak: [
 				"9M",
 			],
+			closecombat: [
+				"9M",
+			],
 			crunch: [
 				"9L41",
+				"9M",
 			],
 			dive: [
 				"9L24",
@@ -22972,11 +23001,18 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			flipturn: [
 				"9L32",
+				"9M",
+			],
+			frustration: [
+				"9M",
 			],
 			furyattack: [
 				"9L1",
 			],
 			gigaimpact: [
+				"9M",
+			],
+			hiddenpower: [
 				"9M",
 			],
 			hyperbeam: [
@@ -22987,6 +23023,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			icefang: [
 				"9L1",
+				"9M",
 			],
 			laserfocus: [
 				"9L36",
@@ -23008,10 +23045,16 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			protect: [
 				"9M",
 			],
+			psychicfangs: [
+				"9M",
+			],
 			raindance: [
 				"9M",
 			],
 			rest: [
+				"9M",
+			],
+			return: [
 				"9M",
 			],
 			scald: [
@@ -23023,6 +23066,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			scaryface: [
 				"9L28",
+				"9M",
 			],
 			sleeptalk: [
 				"9M",
@@ -50568,7 +50612,13 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			aircutter: [
 				"9T",
 			],
+			airslash: [
+				"9M",
+			],
 			attract: [
+				"9M",
+			],
+			bodypress: [
 				"9M",
 			],
 			bravebird: [
@@ -50598,10 +50648,19 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fly: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			furyattack: [
 				"9L12",
 			],
 			gigaimpact: [
+				"9M",
+			],
+			heavyslam: [
+				"9M",
+			],
+			hiddenpower: [
 				"9M",
 			],
 			honeclaws: [
@@ -50657,8 +50716,15 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			scaryface: [
 				"9L28",
+				"9M",
+			],
+			screech: [
+				"9M",
 			],
 			skyattack: [
 				"9T",
@@ -50700,6 +50766,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			thief: [
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 			uturn: [
@@ -50718,7 +50787,13 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			aircutter: [
 				"9T",
 			],
+			airslash: [
+				"9M",
+			],
 			attract: [
+				"9M",
+			],
+			bodypress: [
 				"9M",
 			],
 			bravebird: [
@@ -50748,10 +50823,19 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fly: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			furyattack: [
 				"9L12",
 			],
 			gigaimpact: [
+				"9M",
+			],
+			heavyslam: [
+				"9M",
+			],
+			hiddenpower: [
 				"9M",
 			],
 			honeclaws: [
@@ -50807,8 +50891,15 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			scaryface: [
 				"9L28",
+				"9M",
+			],
+			screech: [
+				"9M",
 			],
 			skyattack: [
 				"9T",
@@ -50852,6 +50943,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thief: [
 				"9M",
 			],
+			toxic: [
+				"9M",
+			],
 			uturn: [
 				"9M",
 			],
@@ -50867,6 +50961,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			aircutter: [
 				"9T",
+			],
+			airslash: [
+				"9M",
 			],
 			attract: [
 				"9M",
@@ -50889,8 +50986,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fly: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			furyattack: [
 				"9L12",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			honeclaws: [
 				"9L1",
@@ -50923,8 +51026,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			scaryface: [
 				"9L28",
+				"9M",
 			],
 			sleeptalk: [
 				"9M",
@@ -50956,6 +51063,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			thief: [
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 			uturn: [
@@ -65950,6 +66060,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fly: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigaimpact: [
 				"9M",
 			],
@@ -65961,12 +66074,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			hex: [
 				"9L18",
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
 			],
 			infestation: [
 				"9L1",
+				"9M",
 			],
 			lastresort: [
 				"9L78",
@@ -65987,6 +66105,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			protect: [
 				"9M",
 			],
+			psychicfangs: [
+				"9M",
+			],
 			quickattack: [
 				"9L1",
 			],
@@ -65994,6 +66115,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			rest: [
+				"9M",
+			],
+			return: [
 				"9M",
 			],
 			scald: [
@@ -66645,6 +66769,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			flamethrower: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			grudge: [
 				"9E",
 			],
@@ -66653,9 +66780,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			hex: [
 				"9L18",
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			infestation: [
 				"9L1",
+				"9M",
 			],
 			lastresort: [
 				"9L72",
@@ -66676,6 +66808,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			protect: [
 				"9M",
 			],
+			psychicfangs: [
+				"9M",
+			],
 			quickattack: [
 				"9L1",
 			],
@@ -66683,6 +66818,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			rest: [
+				"9M",
+			],
+			return: [
 				"9M",
 			],
 			scald: [
@@ -66728,6 +66866,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			thunderwave: [
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 			uturn: [
@@ -67924,6 +68065,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			thunderwave: [
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 		},
@@ -83333,6 +83477,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			airslash: [
 				"9L24",
+				"9M",
 			],
 			astonish: [
 				"9L1",
@@ -83351,6 +83496,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			dragondance: [
 				"9L36",
+				"9M",
 			],
 			dragonpulse: [
 				"9L28",
@@ -83378,6 +83524,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L48",
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigadrain: [
 				"9M",
 			],
@@ -83390,11 +83539,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassyglide: [
 				"9T",
 			],
+			grassyterrain: [
+				"9M",
+			],
 			gravapple: [
 				"9L32",
 			],
 			growth: [
 				"9L1",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -83426,6 +83581,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			seedbomb: [
 				"9T",
 			],
@@ -83442,6 +83600,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			sunnyday: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
 				"9M",
 			],
 			twister: [
@@ -83466,6 +83630,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			airslash: [
 				"9L24",
+				"9M",
 			],
 			astonish: [
 				"9L1",
@@ -83484,6 +83649,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			dragondance: [
 				"9L36",
+				"9M",
 			],
 			dragonpulse: [
 				"9L28",
@@ -83511,6 +83677,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L48",
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigadrain: [
 				"9M",
 			],
@@ -83523,11 +83692,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			grassyglide: [
 				"9T",
 			],
+			grassyterrain: [
+				"9M",
+			],
 			gravapple: [
 				"9L32",
 			],
 			growth: [
 				"9L1",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -83559,6 +83734,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			seedbomb: [
 				"9T",
 			],
@@ -83575,6 +83753,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			sunnyday: [
+				"9M",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
 				"9M",
 			],
 			twister: [
@@ -168695,8 +168879,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			crunch: [
 				"9L60",
+				"9M",
 			],
 			darkpulse: [
+				"9M",
+			],
+			electricterrain: [
 				"9M",
 			],
 			electroweb: [
@@ -168714,6 +168902,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fakeout: [
 				"9E",
 			],
+			faketears: [
+				"9M",
+			],
+			firefang: [
+				"9M",
+			],
 			flatter: [
 				"9L20",
 			],
@@ -168722,6 +168916,15 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			foulplay: [
 				"9T",
+			],
+			frustration: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			icefang: [
+				"9M",
 			],
 			knockoff: [
 				"9T",
@@ -168750,6 +168953,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			protect: [
 				"9M",
 			],
+			psychicfangs: [
+				"9M",
+			],
 			quash: [
 				"9E",
 			],
@@ -168762,8 +168968,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			risingvoltage: [
 				"9T",
+			],
+			scaryface: [
+				"9M",
 			],
 			seedbomb: [
 				"9T",
@@ -168818,6 +169030,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thunderbolt: [
 				"9M",
 			],
+			thunderfang: [
+				"9M",
+			],
 			thunderpunch: [
 				"9T",
 			],
@@ -168832,6 +169047,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			torment: [
 				"9L35",
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 			uproar: [
@@ -168877,8 +169095,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			crunch: [
 				"9L60",
+				"9M",
 			],
 			darkpulse: [
+				"9M",
+			],
+			electricterrain: [
 				"9M",
 			],
 			electroweb: [
@@ -168896,6 +169118,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fakeout: [
 				"9E",
 			],
+			faketears: [
+				"9M",
+			],
+			firefang: [
+				"9M",
+			],
 			flatter: [
 				"9L20",
 			],
@@ -168904,6 +169132,15 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			foulplay: [
 				"9T",
+			],
+			frustration: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			icefang: [
+				"9M",
 			],
 			knockoff: [
 				"9T",
@@ -168932,6 +169169,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			protect: [
 				"9M",
 			],
+			psychicfangs: [
+				"9M",
+			],
 			quash: [
 				"9E",
 			],
@@ -168944,8 +169184,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			risingvoltage: [
 				"9T",
+			],
+			scaryface: [
+				"9M",
 			],
 			seedbomb: [
 				"9T",
@@ -168998,6 +169244,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			thunderbolt: [
+				"9M",
+			],
+			thunderfang: [
 				"9M",
 			],
 			thunderpunch: [
@@ -194052,7 +194301,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			watergun: [
-				"9L6",
+				"9L5",
 			],
 			waterpledge: [
 				"9T",
@@ -203856,9 +204105,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			dig: [
 				"9M",
 			],
-			dizzypunch: [
-				"9L16",
-			],
 			doubleedge: [
 				"9L39",
 			],
@@ -203898,6 +204144,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			hyperbeam: [
 				"9M",
+			],
+			hyperfang: [
+				"9L16",
 			],
 			icebeam: [
 				"9M",
@@ -210762,6 +211011,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			aircutter: [
 				"9T",
 			],
+			airslash: [
+				"9M",
+			],
 			attract: [
 				"9M",
 			],
@@ -210787,8 +211039,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fly: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			furyattack: [
 				"9L12",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			honeclaws: [
 				"9L8",
@@ -210818,6 +211076,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			rocksmash: [
 				"9E",
 				"9M",
@@ -210831,6 +211092,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			scaryface: [
 				"9L24",
+				"9M",
 			],
 			skyattack: [
 				"9E",
@@ -210865,6 +211127,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			thief: [
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 			uturn: [
@@ -214006,7 +214271,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			dragonpulse: [
-				"9L40",
 				"9M",
 			],
 			ember: [
@@ -214031,11 +214295,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			firefang: [
 				"9M",
 			],
+			flameburst: [
+				"9L30",
+			],
 			flamecharge: [
 				"9M",
 			],
 			flamethrower: [
-				"9L50",
+				"9L40",
 				"9M",
 			],
 			fling: [
@@ -214048,6 +214315,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			gunkshot: [
+				"9L50",
 				"9T",
 			],
 			heatwave: [
@@ -214058,9 +214326,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			hiddenpower: [
 				"9M",
-			],
-			incinerate: [
-				"9L30",
 			],
 			irontail: [
 				"9M",
@@ -214130,6 +214395,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			sludgebomb: [
 				"9M",
 			],
+			sludgewave: [
+				"9L35",
+			],
 			smog: [
 				"9L5",
 			],
@@ -214177,7 +214445,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L45",
 			],
 			venoshock: [
-				"9L35",
 				"9M",
 			],
 			willowisp: [
@@ -214215,7 +214482,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			dragonpulse: [
-				"9L44",
 				"9M",
 			],
 			ember: [
@@ -214246,11 +214512,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			firelash: [
 				"9L1",
 			],
+			flameburst: [
+				"9L30",
+			],
 			flamecharge: [
 				"9M",
 			],
 			flamethrower: [
-				"9L58",
+				"9L44",
 				"9M",
 			],
 			fling: [
@@ -214266,6 +214535,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			gunkshot: [
+				"9L58",
 				"9T",
 			],
 			heatwave: [
@@ -214284,7 +214554,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			incinerate: [
-				"9L30",
+				"9L1",
 			],
 			irontail: [
 				"9M",
@@ -214361,6 +214631,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			sludgebomb: [
 				"9M",
 			],
+			sludgewave: [
+				"9L37",
+			],
 			smog: [
 				"9L1",
 			],
@@ -214410,7 +214683,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L51",
 			],
 			venoshock: [
-				"9L37",
 				"9M",
 			],
 			willowisp: [
@@ -225330,6 +225602,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			solarblade: [
+				"9L1",
 				"9T",
 			],
 			spite: [
@@ -246540,6 +246813,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9T",
 			],
+			bodypress: [
+				"9M",
+			],
 			bodyslam: [
 				"9L42",
 			],
@@ -246574,6 +246850,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			facade: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigaimpact: [
 				"9M",
 			],
@@ -246581,13 +246860,23 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L18",
 				"9T",
 			],
+			heatcrash: [
+				"9M",
+			],
 			heavyslam: [
 				"9L54",
+				"9M",
 			],
 			hiddenpower: [
 				"9M",
 			],
+			highhorsepower: [
+				"9M",
+			],
 			hyperbeam: [
+				"9M",
+			],
+			imprison: [
 				"9M",
 			],
 			irondefense: [
@@ -246605,14 +246894,24 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			meteorbeam: [
 				"9T",
 			],
+			powergem: [
+				"9M",
+			],
 			protect: [
 				"9M",
 			],
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			rockblast: [
 				"9E",
+				"9M",
+			],
+			rockclimb: [
+				"9M",
 			],
 			rockpolish: [
 				"9L6",
@@ -246679,6 +246978,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			swagger: [
+				"9M",
+			],
+			toxic: [
 				"9M",
 			],
 			trickroom: [
@@ -261107,6 +261409,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			chargebeam: [
 				"9M",
 			],
+			charm: [
+				"9M",
+			],
 			discharge: [
 				"9L36",
 			],
@@ -261115,6 +261420,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			eerieimpulse: [
 				"9L1",
+			],
+			electricterrain: [
+				"9M",
 			],
 			electroweb: [
 				"9T",
@@ -261138,6 +261446,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fling: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigaimpact: [
 				"9M",
 			],
@@ -261149,6 +261460,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			helpinghand: [
 				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -261181,7 +261498,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			poisonjab: [
-				"9L40",
 				"9M",
 			],
 			poweruppunch: [
@@ -261196,14 +261512,19 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			risingvoltage: [
 				"9T",
 			],
 			scaryface: [
 				"9L12",
+				"9M",
 			],
 			screech: [
 				"9L24",
+				"9M",
 			],
 			shiftgear: [
 				"9L52",
@@ -261217,6 +261538,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			sludgebomb: [
 				"9M",
+			],
+			sludgewave: [
+				"9L40",
 			],
 			snarl: [
 				"9M",
@@ -261256,6 +261580,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thunderbolt: [
 				"9M",
 			],
+			thunderfang: [
+				"9M",
+			],
 			thunderpunch: [
 				"9T",
 			],
@@ -261269,11 +261596,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L32",
 				"9M",
 			],
+			trailblaze: [
+				"9M",
+			],
 			uproar: [
 				"9T",
 			],
 			venomdrench: [
 				"9L20",
+			],
+			venoshock: [
+				"9M",
 			],
 			voltswitch: [
 				"9M",
@@ -261309,6 +261642,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			chargebeam: [
 				"9M",
 			],
+			charm: [
+				"9M",
+			],
 			discharge: [
 				"9L36",
 			],
@@ -261317,6 +261653,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			eerieimpulse: [
 				"9L1",
+			],
+			electricterrain: [
+				"9M",
 			],
 			electroweb: [
 				"9T",
@@ -261339,6 +261678,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fling: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigaimpact: [
 				"9M",
 			],
@@ -261350,6 +261692,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			helpinghand: [
 				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -261388,14 +261736,19 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			risingvoltage: [
 				"9T",
 			],
 			scaryface: [
 				"9L12",
+				"9M",
 			],
 			screech: [
 				"9L24",
+				"9M",
 			],
 			shiftgear: [
 				"9L52",
@@ -261448,6 +261801,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thunderbolt: [
 				"9M",
 			],
+			thunderfang: [
+				"9M",
+			],
 			thunderpunch: [
 				"9T",
 			],
@@ -261461,11 +261817,15 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L32",
 				"9M",
 			],
+			trailblaze: [
+				"9M",
+			],
 			uproar: [
 				"9T",
 			],
 			venoshock: [
 				"9L20",
+				"9M",
 			],
 			voltswitch: [
 				"9M",
@@ -261501,6 +261861,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			chargebeam: [
 				"9M",
 			],
+			charm: [
+				"9M",
+			],
 			discharge: [
 				"9L36",
 			],
@@ -261509,6 +261872,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			eerieimpulse: [
 				"9L1",
+			],
+			electricterrain: [
+				"9M",
 			],
 			electroweb: [
 				"9T",
@@ -261532,6 +261898,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fling: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigaimpact: [
 				"9M",
 			],
@@ -261543,6 +261912,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			helpinghand: [
 				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -261590,14 +261965,19 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			risingvoltage: [
 				"9T",
 			],
 			scaryface: [
 				"9L12",
+				"9M",
 			],
 			screech: [
 				"9L24",
+				"9M",
 			],
 			shiftgear: [
 				"9L52",
@@ -261650,6 +262030,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thunderbolt: [
 				"9M",
 			],
+			thunderfang: [
+				"9M",
+			],
 			thunderpunch: [
 				"9T",
 			],
@@ -261663,11 +262046,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L32",
 				"9M",
 			],
+			trailblaze: [
+				"9M",
+			],
 			uproar: [
 				"9T",
 			],
 			venomdrench: [
 				"9L20",
+			],
+			venoshock: [
+				"9M",
 			],
 			voltswitch: [
 				"9M",
@@ -261703,6 +262092,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			chargebeam: [
 				"9M",
 			],
+			charm: [
+				"9M",
+			],
 			discharge: [
 				"9L36",
 			],
@@ -261711,6 +262103,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			eerieimpulse: [
 				"9L1",
+			],
+			electricterrain: [
+				"9M",
 			],
 			electroweb: [
 				"9T",
@@ -261733,6 +262128,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			fling: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			gigaimpact: [
 				"9M",
 			],
@@ -261744,6 +262142,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			helpinghand: [
 				"9T",
+			],
+			hex: [
+				"9M",
+			],
+			hiddenpower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -261782,14 +262186,19 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			rest: [
 				"9M",
 			],
+			return: [
+				"9M",
+			],
 			risingvoltage: [
 				"9T",
 			],
 			scaryface: [
 				"9L12",
+				"9M",
 			],
 			screech: [
 				"9L24",
+				"9M",
 			],
 			shiftgear: [
 				"9L52",
@@ -261842,6 +262251,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thunderbolt: [
 				"9M",
 			],
+			thunderfang: [
+				"9M",
+			],
 			thunderpunch: [
 				"9T",
 			],
@@ -261855,11 +262267,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L32",
 				"9M",
 			],
+			trailblaze: [
+				"9M",
+			],
 			uproar: [
 				"9T",
 			],
 			venomdrench: [
 				"9L20",
+			],
+			venoshock: [
+				"9M",
 			],
 			voltswitch: [
 				"9M",
@@ -267048,6 +267466,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			babydolleyes: [
 				"9L1",
 			],
+			bodypress: [
+				"9M",
+			],
 			brickbreak: [
 				"9M",
 			],
@@ -267060,9 +267481,11 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			charm: [
 				"9L1",
+				"9M",
 			],
 			closecombat: [
 				"9L59",
+				"9M",
 			],
 			covet: [
 				"9L12",
@@ -267073,6 +267496,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			crunch: [
 				"9L42",
+				"9M",
 			],
 			curse: [
 				"9T",
@@ -267101,6 +267525,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			faketears: [
 				"9L1",
+				"9M",
 			],
 			feintattack: [
 				"9L15",
@@ -267117,6 +267542,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			focuspunch: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			furyswipes: [
 				"9L6",
 			],
@@ -267130,8 +267558,20 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L50",
 			],
+			headlongrush: [
+				"9L1",
+			],
+			heavyslam: [
+				"9M",
+			],
 			helpinghand: [
 				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			highhorsepower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -267169,6 +267609,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			playrough: [
 				"9L56",
+				"9M",
 			],
 			protect: [
 				"9M",
@@ -267178,6 +267619,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			rest: [
 				"9L35",
+				"9M",
+			],
+			return: [
 				"9M",
 			],
 			roar: [
@@ -267243,6 +267687,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			thunderpunch: [
 				"9T",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
 			],
 			uproar: [
 				"9T",
@@ -267266,6 +267716,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			babydolleyes: [
 				"9L1",
 			],
+			bloodmoon: [
+				"9L64",
+			],
+			bodypress: [
+				"9M",
+			],
 			brickbreak: [
 				"9M",
 			],
@@ -267278,9 +267734,11 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			charm: [
 				"9L1",
+				"9M",
 			],
 			closecombat: [
 				"9L59",
+				"9M",
 			],
 			covet: [
 				"9L12",
@@ -267291,6 +267749,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			crunch: [
 				"9L42",
+				"9M",
 			],
 			curse: [
 				"9T",
@@ -267305,10 +267764,10 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9M",
 			],
 			earthpower: [
+				"9L38",
 				"9T",
 			],
 			earthquake: [
-				"9L38",
 				"9M",
 			],
 			endure: [
@@ -267319,6 +267778,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			faketears: [
 				"9L1",
+				"9M",
 			],
 			feintattack: [
 				"9L15",
@@ -267335,6 +267795,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			focuspunch: [
 				"9M",
 			],
+			frustration: [
+				"9M",
+			],
 			furyswipes: [
 				"9L6",
 			],
@@ -267348,8 +267811,17 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 				"9L50",
 			],
+			heavyslam: [
+				"9M",
+			],
 			helpinghand: [
 				"9T",
+			],
+			hiddenpower: [
+				"9M",
+			],
+			highhorsepower: [
+				"9M",
 			],
 			hyperbeam: [
 				"9M",
@@ -267375,6 +267847,12 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			metronome: [
 				"9T",
 			],
+			moonblast: [
+				"9L46",
+			],
+			moonlight: [
+				"9L1",
+			],
 			nightslash: [
 				"9L24",
 			],
@@ -267387,6 +267865,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			playrough: [
 				"9L56",
+				"9M",
 			],
 			protect: [
 				"9M",
@@ -267396,6 +267875,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			rest: [
 				"9L35",
+				"9M",
+			],
+			return: [
 				"9M",
 			],
 			roar: [
@@ -267409,6 +267891,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			scaryface: [
 				"9L21",
+				"9M",
 			],
 			scratch: [
 				"9L1",
@@ -267456,11 +267939,14 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			thief: [
 				"9M",
 			],
-			thrash: [
-				"9L46",
-			],
 			thunderpunch: [
 				"9T",
+			],
+			toxic: [
+				"9M",
+			],
+			trailblaze: [
+				"9M",
 			],
 			uproar: [
 				"9T",

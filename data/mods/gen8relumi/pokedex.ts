@@ -90,8 +90,16 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	aggron: {
 		abilities: {
 			"0": "Rock Head",
-			"1": "Sturdy",
+			"1": "Rocky Payload",
 			H: "Heavy Metal",
+		},
+		baseStats: {
+			atk: 120,
+			def: 160,
+			hp: 90,
+			spa: 40,
+			spd: 80,
+			spe: 60,
 		},
 		inherit: true,
 		types: [
@@ -994,8 +1002,16 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	aron: {
 		abilities: {
 			"0": "Rock Head",
-			"1": "Sturdy",
+			"1": "Rocky Payload",
 			H: "Heavy Metal",
+		},
+		baseStats: {
+			atk: 80,
+			def: 80,
+			hp: 60,
+			spa: 20,
+			spd: 50,
+			spe: 40,
 		},
 		inherit: true,
 		types: [
@@ -3532,7 +3548,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	floetteeternal: {
 		abilities: {
-			"0": "Adaptability",
+			"0": "Fairy Aura",
 		},
 		inherit: true,
 	},
@@ -5053,8 +5069,16 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	lairon: {
 		abilities: {
 			"0": "Rock Head",
-			"1": "Sturdy",
+			"1": "Rocky Payload",
 			H: "Heavy Metal",
+		},
+		baseStats: {
+			atk: 100,
+			def: 120,
+			hp: 70,
+			spa: 30,
+			spd: 60,
+			spe: 50,
 		},
 		inherit: true,
 		types: [
@@ -8742,8 +8766,16 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	shiftry: {
 		abilities: {
 			"0": "Chlorophyll",
-			"1": "Wind Rider",
-			H: "Unburden",
+			"1": "Pickpocket",
+			H: "Wind Rider",
+		},
+		baseStats: {
+			atk: 120,
+			def: 60,
+			hp: 90,
+			spa: 110,
+			spd: 60,
+			spe: 80,
 		},
 		inherit: true,
 	},
@@ -10160,7 +10192,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		baseStats: {
 			atk: 75,
 			def: 135,
-			hp: 65,
+			hp: 80,
 			spa: 90,
 			spd: 85,
 			spe: 35,

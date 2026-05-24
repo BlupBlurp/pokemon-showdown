@@ -32035,9 +32035,9 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Incinerate",
-                    "Venoshock",
-                    "Dragon Pulse",
+                    "Flame Burst",
+                    "Sludge Wave",
+                    "Flamethrower",
                     "Venom Drench"
                 ],
                 "abilities": [
