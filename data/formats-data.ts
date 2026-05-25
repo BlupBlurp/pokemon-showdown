@@ -1411,7 +1411,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	yanmega: {
-		tier: "RUBL",
+		tier: "RU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -2536,7 +2536,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	empoleon: {
 		tier: "RU",
 		doublesTier: "(DUU)",
-		natDexTier: "UU",
+		natDexTier: "RU",
 	},
 	starly: {
 		tier: "LC",
@@ -3294,7 +3294,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	scrafty: {
-		tier: "PU",
+		tier: "PUBL",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
@@ -3403,7 +3403,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NFE",
 	},
 	reuniclus: {
-		tier: "NU",
+		tier: "NUBL",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -4173,7 +4173,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	zygarde10: {
 		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "UU",
+		natDexTier: "RU",
 	},
 	zygardecomplete: {
 		isNonstandard: "Past",
@@ -4442,7 +4442,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	comfey: {
-		tier: "RUBL",
+		tier: "RU",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
@@ -5114,7 +5114,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	frosmoth: {
-		tier: "PUBL",
+		tier: "PU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -5251,7 +5251,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	regieleki: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
@@ -5724,7 +5724,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	armarouge: {
-		tier: "RU",
+		tier: "RUBL",
 		doublesTier: "DUU",
 		natDexTier: "RU",
 	},
@@ -6177,6 +6177,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	ramnarokradiant: {
 		isNonstandard: "CAP",
 		tier: "Illegal",
+	},
+	obliteryx: {
+		isNonstandard: "CAP",
+		tier: "CAP",
 	},
 	pokestarsmeargle: {
 		isNonstandard: "Custom",

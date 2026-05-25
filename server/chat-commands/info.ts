@@ -759,7 +759,7 @@ export const commands: Chat.ChatCommands = {
 				break;
 			case 'move':
 				const move = dex.moves.get(newTarget.name);
-				buffer += `${prefix}${Chat.getDataMoveHTML(move)}\n`;
+				buffer += `${prefix}${Chat.getDataMoveHTML(move, dex.currentMod === 'champions')}\n`;
 				if (showDetails) {
 					details = {
 						Priority: String(move.priority),
@@ -879,6 +879,9 @@ export const commands: Chat.ChatCommands = {
 					};
 					if (relumiAbility.flags['cantsuppress']) details["&#10003; Not affected by Gastro Acid"] = "";
 					if (relumiAbility.flags['breakable']) details["&#10003; Ignored by Mold Breaker"] = "";
+					if (relumiAbility.isNonstandard) {
+						details[`Unobtainable in Gen ${dex.gen}`] = "";
+					}
 				}
 				break;
 			default:
