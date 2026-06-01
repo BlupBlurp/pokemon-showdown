@@ -318,7 +318,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon", ...RELUMI_OU_BANLIST],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
-
+	/*
 	{
 		section: "Coronet Platinum (SoonTM)",
 	},
@@ -349,7 +349,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"+LGPE",
 		],
 	},
-
+	*/
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 	/*
