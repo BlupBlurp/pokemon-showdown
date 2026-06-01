@@ -319,6 +319,37 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 
+	{
+		section: "Coronet Platinum (SoonTM)",
+	},
+	{
+		name: "[Gen 8] Coronet Singles",
+		mod: "gen8coronet",
+		banlist: [...RELUMI_BASE_BANLIST],
+		ruleset: [
+			"Standard",
+			"Dynamax Clause",
+			"Allow Tradeback",
+			"+Past",
+			"+Future",
+			"+LGPE",
+		],
+	},
+	{
+		name: "[Gen 8] Coronet Doubles",
+		mod: "gen8coronet",
+		gameType: "doubles",
+		banlist: [...RELUMI_BASE_BANLIST],
+		ruleset: [
+			"Standard Doubles",
+			"Dynamax Clause",
+			"Allow Tradeback",
+			"+Past",
+			"+Future",
+			"+LGPE",
+		],
+	},
+
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 	/*
