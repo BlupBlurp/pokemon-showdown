@@ -214,7 +214,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		critRatio: 2,
 		inherit: true,
 		pp: 25,
-		shortDesc: "High critical hit ratio.",
+		shortDesc: "[buff]High critical hit ratio.[/buff]",
 		type: "Grass",
 	},
 	darkvoid: {
@@ -231,7 +231,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 				target.trySetStatus(status, source);
 			},
 		},
-		shortDesc: "30% chance to sleep, poison, or paralyze target.",
+		shortDesc: "[nerf]30% chance[/nerf] to sleep, poison, or paralyze target.",
 	},
 	doodle: {
 		category: "Special",
@@ -295,7 +295,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			33,
 			100,
 		],
-		shortDesc: "Has 33% recoil.",
+		shortDesc: "[nerf]Has 33% recoil.[/nerf]",
 	},
 	dragonrush: {
 		accuracy: 85,
@@ -393,7 +393,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			return null;
 		},
 		prepare: "  [POKEMON] became cloaked in a freezing light!",
-		shortDesc: "Raises Atk by 1 on turn 1. Hits turn 2. 30% paralyze.",
+		shortDesc: "[buff]Raises Atk by 1 on turn 1.[/buff] Hits turn 2. 30% paralyze.",
 	},
 	furyattack: {
 		accuracy: 100,
@@ -494,7 +494,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			return null;
 		},
 		prepare: "  [POKEMON] became cloaked in freezing air!",
-		shortDesc: "Raises Sp. Atk by 1 on turn 1. Hits turn 2. 30% burn.",
+		shortDesc: "[buff]Raises Sp. Atk by 1 on turn 1.[/buff] Hits turn 2. 30% burn.",
 	},
 	icefang: {
 		accuracy: 100,
@@ -519,7 +519,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			chance: 20,
 			volatileStatus: "flinch",
 		},
-		shortDesc: "20% chance to make the target flinch.",
+		shortDesc: "[nerf]20% chance[/nerf] to make the target flinch.",
 	},
 	irontail: {
 		accuracy: 85,
@@ -565,7 +565,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			protect: 1,
 		},
 		inherit: true,
-		shortDesc: "+30 power for each time a party member fainted.",
+		shortDesc: "[nerf]+30 power[/nerf] for each time a party member fainted.",
 	},
 	leafstorm: {
 		accuracy: 100,
@@ -665,7 +665,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 30,
 		},
-		shortDesc: "30% chance to lower the target's speed by 1.",
+		shortDesc: "[buff]30% chance to lower the target's speed by 1.[/buff]",
 	},
 	mistball: {
 		basePower: 95,
@@ -680,7 +680,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 10,
 		},
-		shortDesc: "10% chance to lower the target's Sp. Atk by 1.",
+		shortDesc: "[nerf]10% chance[/nerf] to lower the target's Sp. Atk by 1.",
 	},
 	mortalspin: {
 		category: "Status",
@@ -699,7 +699,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 30,
 		},
-		shortDesc: "30% chance to lower the target's speed by 1.",
+		shortDesc: "[buff]30% chance to lower the target's speed by 1.[/buff]",
 	},
 	muddywater: {
 		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
@@ -710,7 +710,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 30,
 		},
-		shortDesc: "30% chance to lower the foe(s) speed by 1.",
+		shortDesc: "[buff]30% chance to lower the foe(s) speed by 1.[/buff]",
 	},
 	mudslap: {
 		desc: "Has a 100% chance to lower the target's speed by 2 stages.",
@@ -721,7 +721,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			},
 			chance: 100,
 		},
-		shortDesc: "100% chance to lower the target's speed by 2.",
+		shortDesc: "[buff]100% chance to lower the target's speed by 2.[/buff]",
 	},
 	needlearm: {
 		basePower: 90,
@@ -858,7 +858,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			punch: 1,
 		},
 		inherit: true,
-		shortDesc: "+25 power for each time user was hit. Max 6 hits.",
+		shortDesc: "[nerf]+25 power[/nerf] for each time user was hit. Max 6 hits.",
 	},
 	ragingbull: {
 		category: "Status",
@@ -920,7 +920,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			chance: 10,
 			volatileStatus: "confusion",
 		},
-		shortDesc: "10% chance to confuse the target.",
+		shortDesc: "[buff]10% chance to confuse the target.[/buff]",
 		type: "Rock",
 	},
 	rocksmash: {
@@ -1110,7 +1110,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			33,
 			100,
 		],
-		shortDesc: "Has 1/3 recoil.",
+		shortDesc: "Has [buff]1/3[/buff] recoil.",
 	},
 	supercellslam: {
 		basePower: 130,
@@ -1184,7 +1184,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 				volatileStatus: "flinch",
 			},
 		],
-		shortDesc: "High crit. Target: 50% -1 Sp. Defense, 30% flinch.",
+		shortDesc: "High crit. Target: [buff]50% -1 Sp. Defense[/buff], 30% flinch.",
 	},
 	tripledive: {
 		basePower: 35,

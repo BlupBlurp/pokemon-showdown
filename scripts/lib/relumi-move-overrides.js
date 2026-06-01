@@ -27,21 +27,21 @@ const MANUAL_MOVE_OVERRIDES = {
 			},
 		},
 		desc: "Has a 30% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
-		shortDesc: "30% chance to sleep, poison, or paralyze target.",
+		shortDesc: "[nerf]30% chance[/nerf] to sleep, poison, or paralyze target.",
 	},
 	ragefist: {
 		basePowerCallback(pokemon) {
 			return Math.min(200, 50 + 25 * pokemon.timesAttacked);
 		},
 		desc: "Power is equal to 50+(X*25), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. X cannot be greater than 6 and does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted.",
-		shortDesc: "+25 power for each time user was hit. Max 6 hits.",
+		shortDesc: "[nerf]+25 power[/nerf] for each time user was hit. Max 6 hits.",
 	},
 	lastrespects: {
 		basePowerCallback(pokemon, target, move) {
 			return 50 + 30 * pokemon.side.totalFainted;
 		},
 		desc: "Power is equal to 50+(X*30), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
-		shortDesc: "+30 power for each time a party member fainted.",
+		shortDesc: "[nerf]+30 power[/nerf] for each time a party member fainted.",
 	},
 	iceburn: {
 		onTryMove(attacker, defender, move) {
@@ -57,7 +57,7 @@ const MANUAL_MOVE_OVERRIDES = {
 			return null;
 		},
 		desc: "Has a 30% chance to burn the target. This attack charges on the first turn and executes on the second. Raises the user's Special Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Raises Sp. Atk by 1 on turn 1. Hits turn 2. 30% burn.",
+		shortDesc: "[buff]Raises Sp. Atk by 1 on turn 1.[/buff] Hits turn 2. 30% burn.",
 
 		prepare: "  [POKEMON] became cloaked in freezing air!",
 	},
@@ -75,51 +75,51 @@ const MANUAL_MOVE_OVERRIDES = {
 			return null;
 		},
 		desc: "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. Raises the user's Attack by 1 stage on the first turn. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Raises Atk by 1 on turn 1. Hits turn 2. 30% paralyze.",
+		shortDesc: "[buff]Raises Atk by 1 on turn 1.[/buff] Hits turn 2. 30% paralyze.",
 
 		prepare: "  [POKEMON] became cloaked in a freezing light!",
 	},
 	triplearrows: {
-		shortDesc: "High crit. Target: 50% -1 Sp. Defense, 30% flinch.",
+		shortDesc: "High crit. Target: [buff]50% -1 Sp. Defense[/buff], 30% flinch.",
 	},
 	cut: {
-		shortDesc: "High critical hit ratio.",
+		shortDesc: "[buff]High critical hit ratio.[/buff]",
 	},
 	dragonhammer: {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 33% recoil.",
+		shortDesc: "[nerf]Has 33% recoil.[/nerf]",
 	},
 	mirrorshot: {
 		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
-		shortDesc: "30% chance to lower the target's speed by 1.",
+		shortDesc: "[buff]30% chance to lower the target's speed by 1.[/buff]",
 	},
 	mudbomb: {
 		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
-		shortDesc: "30% chance to lower the target's speed by 1.",
+		shortDesc: "[buff]30% chance to lower the target's speed by 1.[/buff]",
 	},
 	muddywater: {
 		desc: "Has a 30% chance to lower the target's speed by 1 stage.",
-		shortDesc: "30% chance to lower the foe(s) speed by 1.",
+		shortDesc: "[buff]30% chance to lower the foe(s) speed by 1.[/buff]",
 	},
 	mudslap: {
 		desc: "Has a 100% chance to lower the target's speed by 2 stages.",
-		shortDesc: "100% chance to lower the target's speed by 2.",
+		shortDesc: "[buff]100% chance to lower the target's speed by 2.[/buff]",
 	},
 	rockclimb: {
 		desc: "Has a 10% chance to confuse the target.",
-		shortDesc: "10% chance to confuse the target.",
+		shortDesc: "[buff]10% chance to confuse the target.[/buff]",
 	},
 	submission: {
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
-		shortDesc: "Has 1/3 recoil.",
+		shortDesc: "Has [buff]1/3[/buff] recoil.",
 	},
 	ironhead: {
 		desc: "Has a 20% chance to make the target flinch.",
-		shortDesc: "20% chance to make the target flinch.",
+		shortDesc: "[nerf]20% chance[/nerf] to make the target flinch.",
 	},
 	moonblast: {
 		desc: "Has a 10% chance to lower the target's Special Attack by 1 stage.",
-		shortDesc: "10% chance to lower the target's Sp. Atk by 1.",
+		shortDesc: "[nerf]10% chance[/nerf] to lower the target's Sp. Atk by 1.",
 	},
 };
 
