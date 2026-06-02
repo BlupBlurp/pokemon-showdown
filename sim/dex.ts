@@ -385,7 +385,9 @@ export class ModdedDex {
 		let searchResults: AnyObject[] | null = [];
 		for (const table of searchIn) {
 			const res = this[searchObjects[table]].get(target);
-			if (res.exists && res.gen <= this.gen) {
+			// Relumi includes gen 9 species despite being gen 8 based
+			const maxGen = this.currentMod === 'gen8relumi' ? 9 : this.gen;
+			if (res.exists && res.gen <= maxGen) {
 				searchResults.push({
 					isInexact,
 					searchType: searchTypes[table],
@@ -399,10 +401,12 @@ export class ModdedDex {
 		this.loadAliases();
 		const fuzzyAliases = Dex.fuzzyAliases!.get(toID(target));
 		if (fuzzyAliases) {
+			// Relumi includes gen 9 species despite being gen 8 based
+			const maxGen = this.currentMod === 'gen8relumi' ? 9 : this.gen;
 			for (const table of searchIn) {
 				for (const alias of fuzzyAliases) {
 					const res = this[searchObjects[table]].get(alias);
-					if (res.exists && res.gen <= this.gen) {
+					if (res.exists && res.gen <= maxGen) {
 						searchResults.push({
 							isInexact: true,
 							searchType: searchTypes[table],
