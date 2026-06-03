@@ -16,7 +16,7 @@
     "better-sqlite3": "^11.10.0",
     "cloud-env": "^0.2.3",
     "githubhook": "^1.9.3",
-    "nodemailer": "^7.0.5",
+    "nodemailer": "^7.0.13",
     "permessage-deflate": "^0.1.7",
     "pg": "^8.16.3",
     "probe-image-size": "^7.2.3",
