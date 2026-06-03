@@ -115,6 +115,16 @@ export interface PokemonSet {
 	 */
 	teraType?: string;
 	/**
+	 * Custom base stats override for Relumi testing formats.
+	 * When present, these values override the species' baseStats.
+	 */
+	customBaseStats?: StatsTable;
+	/**
+	 * Custom types override for Relumi testing formats.
+	 * When present, these values override the species' types.
+	 */
+	customTypes?: string[];
+	/**
 	 * Random-battle role metadata.
 	 */
 	role?: string;
@@ -208,12 +218,15 @@ export const Teams = new class Teams {
 			}
 
 			if (set.pokeball || set.hpType || set.gigantamax ||
-				(set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10) || set.teraType) {
+				(set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10) || set.teraType ||
+				set.customBaseStats || set.customTypes) {
 				buf += `,${set.hpType || ''}`;
 				buf += `,${this.packName(set.pokeball || '')}`;
 				buf += `,${set.gigantamax ? 'G' : ''}`;
 				buf += `,${set.dynamaxLevel !== undefined && set.dynamaxLevel !== 10 ? set.dynamaxLevel : ''}`;
 				buf += `,${set.teraType || ''}`;
+				buf += `,${set.customBaseStats ? set.customBaseStats.hp + ':' + set.customBaseStats.atk + ':' + set.customBaseStats.def + ':' + set.customBaseStats.spa + ':' + set.customBaseStats.spd + ':' + set.customBaseStats.spe : ''}`;
+				buf += `,${set.customTypes ? set.customTypes.join(':') : ''}`;
 			}
 		}
 
@@ -334,9 +347,9 @@ export const Teams = new class Teams {
 			j = buf.indexOf(']', i);
 			let misc;
 			if (j < 0) {
-				if (i < buf.length) misc = buf.substring(i).split(',', 6);
+				if (i < buf.length) misc = buf.substring(i).split(',', 9);
 			} else {
-				if (i !== j) misc = buf.substring(i, j).split(',', 6);
+				if (i !== j) misc = buf.substring(i, j).split(',', 9);
 			}
 			if (misc) {
 				set.happiness = (misc[0] ? Number(misc[0]) : 255);
@@ -345,6 +358,22 @@ export const Teams = new class Teams {
 				set.gigantamax = !!misc[3];
 				set.dynamaxLevel = (misc[4] ? Number(misc[4]) : 10);
 				set.teraType = misc[5];
+				if (misc[6]) {
+					const cbs = misc[6].split(':');
+					if (cbs.length === 6) {
+						set.customBaseStats = {
+							hp: parseInt(cbs[0]) || 0,
+							atk: parseInt(cbs[1]) || 0,
+							def: parseInt(cbs[2]) || 0,
+							spa: parseInt(cbs[3]) || 0,
+							spd: parseInt(cbs[4]) || 0,
+							spe: parseInt(cbs[5]) || 0,
+						};
+					}
+				}
+				if (misc[7]) {
+					set.customTypes = misc[7].split(':').filter(t => t);
+				}
 			}
 			if (j < 0) break;
 			i = j + 1;

@@ -443,7 +443,9 @@ export class Pokemon {
 
 		this.formeRegression = false;
 
-		this.types = this.baseSpecies.types;
+		this.types = this.battle.format.id.includes('testing') && this.set.customTypes?.length
+			? this.set.customTypes
+			: this.baseSpecies.types;
 		this.baseTypes = this.types;
 		this.addedType = '';
 		this.knownType = true;
@@ -1388,13 +1390,23 @@ export class Pokemon {
 		if (!species) return null;
 		this.species = species;
 
-		this.setType(species.types, true);
+		let types = species.types;
+		/* Apply custom type overrides from the set (used by Relumi testing formats) */
+		if (this.battle.format.id.includes('testing') && this.set.customTypes?.length) {
+			types = this.set.customTypes;
+		}
+		this.setType(types, true);
 		this.apparentType = rawSpecies.types.join('/');
 		this.addedType = species.addedType || '';
 		this.knownType = true;
 		this.weighthg = species.weighthg;
 
-		const stats = this.battle.spreadModify(this.species.baseStats, this.set);
+		/* Apply custom base stat overrides from the set (used by Relumi testing formats) */
+		let baseStats = species.baseStats;
+		if (this.battle.format.id.includes('testing') && this.set.customBaseStats) {
+			baseStats = {...baseStats, ...this.set.customBaseStats};
+		}
+		const stats = this.battle.spreadModify(baseStats, this.set);
 		if (this.species.maxHP) stats.hp = this.species.maxHP;
 
 		if (!this.maxhp) {
