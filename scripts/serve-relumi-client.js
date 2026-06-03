@@ -466,7 +466,7 @@ server.on("error", (err) => {
 
 server.listen(PORT, "0.0.0.0", () => {
 	console.log(
-		`Relumi client host ready at http://localhost:${PORT}/ (resolves to index-old.html by default)`,
+		`Relumi client host ready at http://localhost:${PORT}/ and http://localhost:${PORT}/index-new.html`,
 	);
 	console.log(`Serving files from: ${CLIENT_PLAY_DIR}`);
 });
