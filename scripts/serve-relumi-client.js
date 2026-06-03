@@ -12,12 +12,19 @@ const CLIENT_PLAY_DIR = path.resolve(
 	ROOT,
 	"..",
 	"pokemon-showdown-client",
-	"play.pokemonshowdown.com",
+	"play.pokemonshowdown.com"
 );
 const PORT = Number(process.env.RELUMI_CLIENT_PORT || 8001);
 const SERVER_HOST = process.env.RELUMI_SERVER_HOST || "";
 const SERVER_PORT = Number(process.env.RELUMI_SERVER_PORT || 8000);
 const REMOTE_FALLBACK_HOST = "play.pokemonshowdown.com";
+const NEWS_INC_PATH = path.resolve(
+	ROOT,
+	"..",
+	"pokemon-showdown-client",
+	"config",
+	"news.inc.php"
+);
 
 const MIME_TYPES = {
 	".css": "text/css; charset=utf-8",
@@ -54,9 +61,7 @@ function send(res, status, body, headers = {}) {
 }
 
 function buildLocalConfigInjection() {
-	const serverHostExpr = SERVER_HOST
-		? JSON.stringify(SERVER_HOST)
-		: '(window.location.hostname.startsWith("play.") ? window.location.hostname.replace(/^play\\./, "server.") : window.location.hostname)';
+	const serverHostExpr = SERVER_HOST ? JSON.stringify(SERVER_HOST) : '(window.location.hostname.startsWith("play.") ? window.location.hostname.replace(/^play\\./, "server.") : window.location.hostname)';
 	const localClientRouteExpr = "window.location.host";
 	return (
 		"\n;(() => {\n" +
@@ -89,6 +94,91 @@ function buildLocalConfigInjection() {
 	);
 }
 
+/**
+ * Parse config/news.inc.php and render news HTML.
+ * Mirrors the PHP renderNews()/getNewsId() logic from
+ * pokemonshowdown.com/news/include.php without running PHP.
+ */
+function loadNewsFromPhp() {
+	try {
+		const php = fs.readFileSync(NEWS_INC_PATH, "utf8");
+
+		// Extract ordered topic IDs from $latestNewsCache.
+		const idsMatch = php.match(
+			/\$latestNewsCache\s*=\s*\[([^\]]+)\]/
+		);
+		if (!idsMatch) return { newsid: "", news: "" };
+		const topicIds = idsMatch[1]
+			.match(/'([^']+)'/g)
+			.map(s => s.replace(/'/g, ""));
+
+		// Extract each news entry keyed by its topic_id.
+		const entries = {};
+		const entryRe =
+			/'(\d+)'\s*=>\s*\[([\s\S]*?)\]\s*(?:,\s*(?='|\])|\])/g;
+		let m;
+		while ((m = entryRe.exec(php)) !== null) {
+			const id = m[1];
+			const block = m[2];
+			const field = key => {
+				// Match single-quoted string values.
+				const strRe = new RegExp(
+					"'" + key + "'\\s*=>\\s*'((?:[^'\\\\]|\\\\.)*)'"
+				);
+				const strMatch = block.match(strRe);
+				if (strMatch) return strMatch[1].replace(/\\'/g, "'");
+				// Match bare numeric values (e.g. 'date' => 1774939138).
+				const numRe = new RegExp(
+					"'" + key + "'\\s*=>\\s*(\\d+)"
+				);
+				const numMatch = block.match(numRe);
+				return numMatch ? numMatch[1] : "";
+			};
+			entries[id] = {
+				title_html: field("title_html"),
+				summary_html: field("summary_html"),
+				authorname: field("authorname"),
+				date: Number(field("date")) || 0,
+			};
+		}
+
+		const newsid = topicIds[0] || "";
+		let html = "";
+		let count = 0;
+		for (const tid of topicIds) {
+			const e = entries[tid];
+			if (!e) continue;
+			const dateStr = e.date
+				? new Date(e.date * 1000).toLocaleDateString("en-US", {
+					month: "short",
+					day: "numeric",
+					year: "numeric",
+				})
+				: "";
+			html +=
+				`<div class="newsentry" data-newsid="${tid}" data-date="${e.date}">` +
+				`<h4>${e.title_html}</h4>` +
+				e.summary_html +
+				`<p>&mdash;<strong>${e.authorname}</strong> ` +
+				`<small class="date">on ${dateStr}</small></p>` +
+				`</div>`;
+			if (++count >= 2) break;
+		}
+		return { newsid, news: html };
+	} catch {
+		return { newsid: "", news: "" };
+	}
+}
+
+// Cache news at startup; re-read on each request would be wasteful.
+const cachedNews = loadNewsFromPhp();
+
+function injectNews(html) {
+	html = html.replace(/<!-- newsid -->/g, cachedNews.newsid);
+	html = html.replace(/<!-- news -->/g, cachedNews.news);
+	return html;
+}
+
 function rewriteHostedClientUrls(html) {
 	return html
 		.replace(/https?:\/\/play\.pokemonshowdown\.com\//g, "/")
@@ -102,7 +192,7 @@ function injectLocalDexOverride(html) {
 	if (!marker.test(html)) return html;
 	return html.replace(
 		marker,
-		'$1\n<script src="/js/battle-dex.js?relumi-local-battle-dex=1"></script>',
+		'$1\n<script src="/js/battle-dex.js?relumi-local-battle-dex=1"></script>'
 	);
 }
 
@@ -112,12 +202,12 @@ function rewriteLanLocalDevChecks(source) {
 
 	let text = source.replace(
 		/location\.hostname === "localhost" \|\| location\.hostname === "127\.0\.0\.1"/g,
-		localDevExpr,
+		localDevExpr
 	);
 
 	text = text.replace(
 		/location\.hostname==="localhost"\|\|location\.hostname==="127\.0\.0\.1"/g,
-		localDevExpr,
+		localDevExpr
 	);
 
 	return text;
@@ -131,8 +221,10 @@ function shouldServeIndexFallback(req, normalized) {
 }
 
 function sendIndexHtml(res, indexPath) {
-	const text = injectLocalDexOverride(
-		rewriteHostedClientUrls(fs.readFileSync(indexPath, "utf8")),
+	const text = injectNews(
+		injectLocalDexOverride(
+			rewriteHostedClientUrls(fs.readFileSync(indexPath, "utf8"))
+		)
 	);
 	return send(res, 200, text, {
 		"Content-Type": "text/html; charset=utf-8",
@@ -154,7 +246,7 @@ function proxyToGameServer(req, reqUrl, res) {
 			path: reqUrl,
 			headers,
 		},
-		(upstreamRes) => {
+		upstreamRes => {
 			const status = upstreamRes.statusCode || 502;
 			res.writeHead(status, {
 				"Content-Type": upstreamRes.headers["content-type"] || "text/plain; charset=utf-8",
@@ -162,10 +254,10 @@ function proxyToGameServer(req, reqUrl, res) {
 				"Access-Control-Allow-Origin": "*",
 			});
 			upstreamRes.pipe(res);
-		},
+		}
 	);
 
-	upstream.on("error", (err) => {
+	upstream.on("error", err => {
 		console.error("[relumi-client] game server proxy error:", err.message);
 		send(res, 502, "]" + JSON.stringify({ actionerror: "Game server unavailable." }), {
 			"Content-Type": "text/plain; charset=utf-8",
@@ -196,7 +288,7 @@ function proxyRemoteAsset(req, reqUrl, res) {
 			path: upstreamPath,
 			headers,
 		},
-		(upstreamRes) => {
+		upstreamRes => {
 			const status = upstreamRes.statusCode || 502;
 			if (status >= 400) {
 				upstreamRes.resume();
@@ -229,7 +321,7 @@ function proxyRemoteAsset(req, reqUrl, res) {
 			// Rewrite them to host-only local cookies so login state persists in dev.
 			const setCookie = responseHeaders["set-cookie"];
 			if (setCookie) {
-				const rewriteCookie = (cookie) =>
+				const rewriteCookie = cookie =>
 					cookie
 						.replace(/;\s*Domain=[^;]*/gi, "")
 						.replace(/;\s*Secure/gi, "")
@@ -241,7 +333,7 @@ function proxyRemoteAsset(req, reqUrl, res) {
 
 			res.writeHead(status, responseHeaders);
 			upstreamRes.pipe(res);
-		},
+		}
 	);
 
 	upstream.on("error", (err) => {
@@ -274,7 +366,7 @@ const server = http.createServer((req, res) => {
 		return;
 	}
 	const normalized = decodeURIComponent(
-		rawPath === "/" ? "/index.html" : rawPath,
+		rawPath === "/" ? "/index.html" : rawPath
 	);
 	const resolved = path.resolve(CLIENT_PLAY_DIR, `.${normalized}`);
 
@@ -286,12 +378,12 @@ const server = http.createServer((req, res) => {
 
 	let filePath = resolved;
 	if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-		filePath = path.join(filePath, "index.html");
+		filePath = path.join(filePath, "index-old.html");
 	}
 
 	if (!fs.existsSync(filePath)) {
 		if (shouldServeIndexFallback(req, normalized)) {
-			const indexPath = path.join(CLIENT_PLAY_DIR, "index.html");
+			const indexPath = path.join(CLIENT_PLAY_DIR, "index-old.html");
 			if (fs.existsSync(indexPath)) {
 				return sendIndexHtml(res, indexPath);
 			}
@@ -341,11 +433,11 @@ const server = http.createServer((req, res) => {
 			"// Local relumi dev: noop clean-cookies script to avoid parser errors.\n",
 			{
 				"Content-Type": "application/javascript; charset=utf-8",
-			},
+			}
 		);
 	}
 
-	if (normalized === "/index.html") {
+	if (normalized.endsWith(".html")) {
 		return sendIndexHtml(res, filePath);
 	}
 
@@ -356,13 +448,13 @@ const server = http.createServer((req, res) => {
 		.on("error", () =>
 			send(res, 500, "Internal Server Error\n", {
 				"Content-Type": "text/plain; charset=utf-8",
-			}),
+			})
 		)
 		.pipe(
 			res.writeHead(200, {
 				"Content-Type": type,
 				"Cache-Control": "no-store",
-			}),
+			})
 		);
 });
 
@@ -373,7 +465,7 @@ server.on("error", (err) => {
 
 server.listen(PORT, "0.0.0.0", () => {
 	console.log(
-		`Relumi client host ready at http://localhost:${PORT}/index.html`,
+		`Relumi client host ready at http://localhost:${PORT}/ (resolves to index-old.html by default)`,
 	);
 	console.log(`Serving files from: ${CLIENT_PLAY_DIR}`);
 });
