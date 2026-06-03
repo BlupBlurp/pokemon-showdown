@@ -77,7 +77,8 @@ function buildLocalConfigInjection() {
 		"\t\tid: 'showdown',\n" +
 		"\t\thost: relumiHost,\n" +
 		"\t\tport: relumiPort,\n" +
-		"\t\thttpport: relumiPort,\n" +
+		"\t\t// httpport being truthy is PSServer's signal to set protocol='https'; omit it on HTTP.\n" +
+		"\t\thttpport: (relumiProtocol === 'https' ? relumiPort : undefined),\n" +
 		"\t\taltport: relumiPort,\n" +
 		"\t\tprotocol: relumiProtocol,\n" +
 		"\t\thttps: (relumiProtocol === 'https'),\n" +
