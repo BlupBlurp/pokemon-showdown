@@ -7,6 +7,7 @@
 import { SQL, PGDatabase, type DatabaseTable } from '../../lib/database';
 import { FS, Utils } from '../../lib';
 import * as crypto from 'crypto';
+import * as pg from 'pg';
 
 /** Maximum amount of teams a user can have stored at once. */
 const MAX_TEAMS = 200;
@@ -16,6 +17,8 @@ const ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz'.split('');
 
 let teamsDB: null | PGDatabase = null;
 let teamsTable: undefined | DatabaseTable<StoredTeam, PGDatabase>;
+/** Shared pg.Pool for use by config.js's customhttpresponse handler. */
+export let teamsPool: pg.Pool | null = null;
 
 export interface StoredTeam {
 	teamid: string;
@@ -827,6 +830,7 @@ export function start() {
 	if (Config.usepostgres && Config.usepostgresteams) {
 		teamsDB = new PGDatabase(Config.usepostgres);
 		teamsTable = teamsDB.getTable<StoredTeam>('teams', 'teamid');
+		teamsPool = (teamsDB.connection as pg.Pool);
 	}
 	Chat.multiLinePattern.register('/teams save ', '/teams update ');
 }

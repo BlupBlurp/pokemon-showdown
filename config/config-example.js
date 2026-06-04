@@ -64,7 +64,7 @@ exports.ssl = {
 		cert: './config/ssl/fullchain.pem',
 	},
 };
-*/
+ */
 
 /*
 Main's SSL deploy script from Let's Encrypt looks like:
@@ -72,7 +72,7 @@ Main's SSL deploy script from Let's Encrypt looks like:
 	cp /etc/letsencrypt/live/sim.psim.us/fullchain.pem ~user/Pokemon-Showdown/config/ssl/
 	chown user:user ~user/Pokemon-Showdown/config/ssl/privkey.pem
 	chown user:user ~user/Pokemon-Showdown/config/ssl/fullchain.pem
-*/
+ */
 
 /**
  * proxyip - proxy IPs with trusted X-Forwarded-For headers
@@ -82,7 +82,7 @@ Main's SSL deploy script from Let's Encrypt looks like:
  *   know what you are doing
  * @type {false | string[]}.
  */
-exports.proxyip = false;
+exports.proxyip = ['127.0.0.1'];
 
 // subprocesses - the number of child processes to use for various tasks.
 //   Can be set to `0` instead of `{...}` to stop using subprocesses, if you're running out of RAM.
@@ -102,7 +102,7 @@ exports.subprocesses = {
 	 *   this means or you are unfamiliar with PS' networking code, leave this set
 	 *   to 1.
 	 */
-	network: 1,
+	network: 2,
 	/**
 	 * for simulating battles
 	 *   You should leave this at 1 unless your server has a very large
@@ -217,6 +217,21 @@ exports.routes = {
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 };
+
+// Relumi local deployment: disable replay uploads to external replay services.
+exports.disablereplayuploads = true;
+
+// Relumi teams - PostgreSQL database configuration
+exports.usepostgres = {
+	host: 'localhost',
+	port: 5432,
+	user: '-',
+	password: '-',
+	database: '-',
+	ssl: { rejectUnauthorized: false },
+};
+// Enable teams feature for all users
+exports.usepostgresteams = '*';
 
 /**
  * crashguardemail - if the server has been running for more than an hour
@@ -339,7 +354,7 @@ exports.punishmentautolock = false;
  *   If this is set to `true`, only autoconfirmed users can send links to either chatrooms or other users, except for staff members.
  *   This option can be used if your server has trouble with spammers mass PMing links to users, or trolls sending malicious links.
  */
-exports.restrictLinks = false;
+exports.restrictLinks = true;
 
 /**
  * whitelist - prevent users below a certain group from doing things
@@ -351,8 +366,8 @@ exports.restrictLinks = false;
  *   voice every user you want whitelisted on the server.
 
 /**
-  * chat modchat - default minimum group for speaking in chatrooms; changeable with /modchat
-  * @type {false | string}
+ * chat modchat - default minimum group for speaking in chatrooms; changeable with /modchat
+ * @type {false | string}
  */
 exports.chatmodchat = false;
 /**
@@ -387,7 +402,7 @@ exports.forcetimer = false;
  *
  * @type {number}
  */
-exports.maxconcurrentbattles = 0;
+exports.maxconcurrentbattles = 500;
 
 /**
  * force register ELO - unregistered users cannot search for ladder battles
@@ -406,7 +421,7 @@ exports.forceregisterelo = false;
  *   etc. If you do not trust Pokemon Showdown with admin access, you should
  *   disable this feature.
  */
-exports.backdoor = true;
+exports.backdoor = false;
 
 /**
  * List of IPs and user IDs with dev console (>> and >>>) access.
@@ -414,43 +429,43 @@ exports.backdoor = true;
  * arbitrary commands on the local computer (as the user running the
  * server). If an account with the console permission were compromised,
  * it could possibly be used to take over the server computer. As such,
- * you should only specify a small range of trusted IPs and users here,
- * or none at all. By default, only localhost can use the dev console.
- * In addition to connecting from a valid IP, a user must *also* have
- * the `console` permission in order to use the dev console.
- * Setting this to an empty array ([]) will disable the dev console.
- */
-exports.consoleips = ['127.0.0.1'];
+  * you should only specify a small range of trusted IPs and users here,
+  * or none at all. By default, only localhost can use the dev console.
+  * In addition to connecting from a valid IP, a user must *also* have
+  * the `console` permission in order to use the dev console.
+  * Setting this to an empty array ([]) will disable the dev console.
+  */
+exports.consoleips = ["127.0.0.1", "lilypadribbit"];
 
 /**
- * Whether to watch the config file for changes. If this is enabled,
- * then the config.js file will be reloaded when it is changed.
- * This can be used to change some settings using a text editor on
- * the server.
- */
+* Whether to watch the config file for changes. If this is enabled,
+* then the config.js file will be reloaded when it is changed.
+* This can be used to change some settings using a text editor on
+* the server.
+*/
 exports.watchconfig = true;
 
 /**
- * logchat - whether to log chat rooms.
- */
+* logchat - whether to log chat rooms.
+*/
 exports.logchat = false;
 
 /**
- * logchallenges - whether to log challenge battles. Useful for tournament servers.
- */
+* logchallenges - whether to log challenge battles. Useful for tournament servers.
+*/
 exports.logchallenges = false;
 
 /**
- * loguserstats - how often (in milliseconds) to write user stats to the
- * lobby log. This has no effect if `logchat` is disabled.
- */
+* loguserstats - how often (in milliseconds) to write user stats to the
+* lobby log. This has no effect if `logchat` is disabled.
+*/
 exports.loguserstats = 1000 * 60 * 10; // 10 minutes
 
 /**
- * inactiveuserthreshold - how long a user must be inactive before being pruned
- * from the `users` array. The default is 1 hour.
- */
-exports.inactiveuserthreshold = 1000 * 60 * 60;
+* inactiveuserthreshold - how long a user must be inactive before being pruned
+  * from the `users` array. The default is 1 hour.
+  */
+ exports.inactiveuserthreshold = 1000 * 60 * 60;
 
 /**
  * autolockdown - whether or not to automatically kill the server when it is
@@ -601,7 +616,7 @@ exports.grouplist = [
 		console: true,
 		bypassall: true,
 		lockdown: true,
-		promote: '~u',
+		promote: "~u",
 		roomowner: true,
 		roombot: true,
 		roommod: true,
@@ -695,12 +710,12 @@ exports.grouplist = [
 		minigame: true,
 		modchat: true,
 		hiderank: true,
-	},
-	{
-		// Bots are ranked below Driver/Mod so that Global Bots can be kept out
-		// of modjoin % rooms (namely, Staff).
-		// (They were previously above Driver/Mod so they can have game management
-		// permissions drivers don't, but these permissions can be manually given.)
+},
+{
+	// Bots are ranked below Driver/Mod so that Global Bots can be kept out
+	// of modjoin % rooms (namely, Staff).
+	// (They were previously above Driver/Mod so they can have game management
+	// permissions drivers don't, but these permissions can be manually given.)
 		symbol: '*',
 		id: "bot",
 		name: "Bot",
@@ -782,3 +797,140 @@ exports.grouplist = [
 		punishgroup: 'MUTE',
 	},
 ];
+
+// Relumi: serve getteams/getteam from the local teams DB so the client teambuilder
+// loads teams uploaded to our own server instead of the official PS login server.
+(function () {
+	// Try the teams plugin's pool first (avoids duplicate connections in main process);
+	// fall back to our own pool for socket workers where the plugin isn't loaded.
+	let ownPool = null;
+	let teamsMod = null;
+	try {
+		teamsMod = require('../dist/server/chat-plugins/teams');
+	} catch (e) {}
+
+	function getPool() {
+		if (teamsMod && teamsMod.teamsPool) return teamsMod.teamsPool;
+		if (!ownPool) {
+			const { Pool } = require('pg');
+			ownPool = new Pool({
+				host: exports.usepostgres.host,
+				port: exports.usepostgres.port,
+				user: exports.usepostgres.user,
+				password: exports.usepostgres.password,
+				database: exports.usepostgres.database,
+				ssl: exports.usepostgres.ssl || { rejectUnauthorized: false },
+				max: 5,
+			});
+		}
+		return ownPool;
+	}
+
+	// Parse "userid,token" from the sid cookie set by the PS login server.
+	function getUseridFromCookies(cookieHeader) {
+		if (!cookieHeader) return null;
+		for (const part of cookieHeader.split(';')) {
+			const [k, ...rest] = part.trim().split('=');
+			if (k.trim() === 'sid') {
+				const val = decodeURIComponent(rest.join('='));
+				// sid format: "userid,token"
+				const userid = val.split(',')[0].toLowerCase().replace(/[^a-z0-9]/g, '');
+				return userid || null;
+			}
+		}
+		return null;
+	}
+
+	function sendJSON(res, data) {
+		const body = ']' + JSON.stringify(data);
+		res.writeHead(200, {
+			'Content-Type': 'text/plain; charset=utf-8',
+			'Cache-Control': 'no-store',
+			'Access-Control-Allow-Origin': '*',
+		});
+		res.end(body);
+	}
+
+	exports.customhttpresponse = function (req, res) {
+		const reqUrl = new URL(req.url, 'http://localhost');
+		const act = reqUrl.searchParams.get('act');
+		if (act !== 'getteams' && act !== 'getteam') return false;
+
+		const userid = getUseridFromCookies(req.headers.cookie);
+		if (!userid) {
+			sendJSON(res, { actionerror: 'Not logged in.' });
+			return true;
+		}
+
+		if (act === 'getteams') {
+			// Return a lightweight list: teamid, name, format, species list, privacy.
+			getPool().query(
+				'SELECT teamid, title, format, team, private FROM teams WHERE ownerid = $1 ORDER BY date DESC LIMIT 200',
+				[userid]
+			).then(result => {
+				const teams = result.rows.map(row => {
+					// Unpack packed team to extract species names for the bandwidth-saving format.
+					const species = [];
+					let buf = row.team;
+					// Strip team metadata prefix if present (pipeCount check).
+					const endIdx = buf.indexOf(']');
+					if (endIdx > 0) {
+						const firstPart = buf.slice(0, endIdx);
+						const pipeCount = firstPart.split('|').length - 1;
+						if (pipeCount === 12 || pipeCount === 1) buf = buf.slice(buf.indexOf('|') + 1);
+					}
+					// Each set is separated by ']'; within a set, fields are '|'-separated.
+					// Field 0 = name, field 1 = species (or name if blank).
+					for (const setStr of buf.split(']')) {
+						if (!setStr) continue;
+						const fields = setStr.split('|');
+						species.push(fields[1] || fields[0] || '');
+					}
+					return {
+						teamid: row.teamid,
+						name: row.title || `Untitled ${row.teamid}`,
+						format: row.format,
+						team: species.join(','),
+						private: row.private || null,
+					};
+				});
+				sendJSON(res, { teams });
+			}).catch(err => {
+				console.error('[Relumi] getteams DB error:', err.message);
+				sendJSON(res, { actionerror: 'Database error.' });
+			});
+			return true;
+		}
+
+		if (act === 'getteam') {
+			const teamid = parseInt(reqUrl.searchParams.get('teamid'), 10);
+			if (isNaN(teamid)) {
+				sendJSON(res, { actionerror: 'Invalid team ID.' });
+				return true;
+			}
+			getPool().query(
+				'SELECT team, private, ownerid FROM teams WHERE teamid = $1',
+				[teamid]
+			).then(result => {
+				const row = result.rows[0];
+				if (!row) {
+					sendJSON(res, { actionerror: 'Team not found.' });
+					return;
+				}
+				// Only the owner can load a private team without a password.
+				const password = reqUrl.searchParams.get('password') || '';
+				if (row.private && row.ownerid !== userid && password !== row.private) {
+					sendJSON(res, { actionerror: 'That team is private.' });
+					return;
+				}
+				sendJSON(res, { team: row.team, privacy: row.private || null });
+			}).catch(err => {
+				console.error('[Relumi] getteam DB error:', err.message);
+				sendJSON(res, { actionerror: 'Database error.' });
+			});
+			return true;
+		}
+
+		return false;
+	};
+})();
