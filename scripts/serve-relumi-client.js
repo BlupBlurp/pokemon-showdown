@@ -74,7 +74,7 @@ function buildLocalConfigInjection() {
 		serverHostExpr +
 		";\n" +
 		"\tConfig.defaultserver = Object.assign({}, Config.defaultserver || {}, {\n" +
-		"\t\tid: 'showdown',\n" +
+		"\t\tid: 'relumi',\n" +
 		"\t\thost: relumiHost,\n" +
 		"\t\tport: relumiPort,\n" +
 		"\t\t// httpport being truthy is PSServer's signal to set protocol='https'; omit it on HTTP.\n" +
@@ -399,6 +399,12 @@ const server = http.createServer((req, res) => {
 			if (act === "getteams" || act === "getteam") {
 				return proxyToGameServer(req, reqUrl, res);
 			}
+		}
+
+		// Route replay .json requests to the local game server
+		// which serves them from the replays Postgres table.
+		if (/^\/(.+)\.json$/.test(normalized)) {
+			return proxyToGameServer(req, reqUrl, res);
 		}
 
 		// Missing static assets proxy to upstream (sprites, fx, etc.).

@@ -212,11 +212,15 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
  *   Don't change this setting - there aren't any other options right now
  */
 exports.routes = {
-	root: 'pokemonshowdown.com',
-	client: 'play.pokemonshowdown.com',
-	dex: 'dex.pokemonshowdown.com',
-	replays: 'replay.pokemonshowdown.com',
+	root: "pokemonshowdown.com",
+	client: "play.pokemonshowdown.com",
+	dex: "dex.pokemonshowdown.com",
+	replays: "play.relumishowdown.dpdns.org",
 };
+
+// Relumi: server identifier used for replay ID prefixes.
+// Avoids "undefined-{id}" when storing replays locally.
+exports.serverid = "relumi";
 
 // Relumi local deployment: disable replay uploads to external replay services.
 exports.disablereplayuploads = false;
@@ -864,6 +868,38 @@ exports.grouplist = [
 	exports.customhttpresponse = function (req, res) {
 		const reqUrl = new URL(req.url, 'http://localhost');
 		const act = reqUrl.searchParams.get('act');
+
+		// Serve replay JSON data for the client's built-in battle viewer.
+		// Client fetches /{replayid}.json from routes.replays.
+		const replayJsonMatch = req.url.match(/^\/(.+)\.json$/);
+		if (replayJsonMatch) {
+			const replayid = replayJsonMatch[1];
+			getPool().query(
+				'SELECT log, players, id FROM replays WHERE id = $1',
+				[replayid]
+			).then(result => {
+				const row = result.rows[0];
+				if (!row) {
+					res.writeHead(404, { 'Content-Type': 'application/json' });
+					res.end(JSON.stringify({ error: 'Replay not found' }));
+					return;
+				}
+				res.writeHead(200, {
+					'Content-Type': 'application/json',
+					'Access-Control-Allow-Origin': '*',
+				});
+				res.end(JSON.stringify({
+					players: row.players.split(','),
+					log: row.log,
+				}));
+			}).catch(err => {
+				console.error('[Relumi] replay JSON error:', err.message);
+				res.writeHead(500, { 'Content-Type': 'application/json' });
+				res.end(JSON.stringify({ error: 'Database error' }));
+			});
+			return true;
+		}
+
 		if (act !== 'getteams' && act !== 'getteam') return false;
 
 		const userid = getUseridFromCookies(req.headers.cookie);
