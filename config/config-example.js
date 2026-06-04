@@ -218,9 +218,10 @@ exports.routes = {
 	replays: "play.relumishowdown.dpdns.org",
 };
 
-// Relumi: server identifier used for replay ID prefixes.
-// Avoids "undefined-{id}" when storing replays locally.
-exports.serverid = "relumi";
+// Relumi: server identifier for replay ID prefixes.
+// Set to "showdown" so stored replay IDs have no prefix,
+// avoiding double-prefixing when the client loads them.
+exports.serverid = "showdown";
 
 // Relumi local deployment: disable replay uploads to external replay services.
 exports.disablereplayuploads = false;

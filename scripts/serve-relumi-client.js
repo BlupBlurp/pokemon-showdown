@@ -74,7 +74,7 @@ function buildLocalConfigInjection() {
 		serverHostExpr +
 		";\n" +
 		"\tConfig.defaultserver = Object.assign({}, Config.defaultserver || {}, {\n" +
-		"\t\tid: 'relumi',\n" +
+		"\t\tid: 'showdown',\n" +
 		"\t\thost: relumiHost,\n" +
 		"\t\tport: relumiPort,\n" +
 		"\t\t// httpport being truthy is PSServer's signal to set protocol='https'; omit it on HTTP.\n" +

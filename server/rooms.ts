@@ -2397,7 +2397,7 @@ export class GameRoom extends BasicRoom {
 					inputlog: battle.inputLog?.join("\n") || null,
 					uploadtime: Math.trunc(Date.now() / 1000),
 				});
-				const url = `https://${Config.routes.replays}/${fullid}`;
+				const url = `https://${Config.routes.replays}/battle-${fullid}`;
 				connection?.popup(
 					`|html|<p>Your replay has been uploaded! It's available at:</p><p> ` +
 						`<a class="no-panel-intercept" href="${url}" target="_blank">${url}</a> ` +
