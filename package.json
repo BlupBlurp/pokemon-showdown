@@ -5,7 +5,6 @@
   "main": "dist/sim/index.js",
   "types": "dist/sim/index.d.ts",
   "dependencies": {
-    "better-sqlite3": "^12.10.0",
     "esbuild": "^0.25.0",
     "mysql2": "^3.14.2",
     "preact": "^10.5.15",
@@ -14,9 +13,10 @@
     "ts-chacha20": "^1.2.0"
   },
   "optionalDependencies": {
+    "better-sqlite3": "^11.10.0",
     "cloud-env": "^0.2.3",
     "githubhook": "^1.9.3",
-    "nodemailer": "^7.0.13",
+    "nodemailer": "^7.0.5",
     "permessage-deflate": "^0.1.7",
     "pg": "^8.16.3",
     "probe-image-size": "^7.2.3",
