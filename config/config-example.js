@@ -219,7 +219,17 @@ exports.routes = {
 };
 
 // Relumi local deployment: disable replay uploads to external replay services.
-exports.disablereplayuploads = true;
+exports.disablereplayuploads = false;
+
+// Direct PostgreSQL connection for replay storage (bypasses login server)
+exports.replaysdb = {
+	host: 'localhost',
+	port: 5432,
+	user: '-',
+	password: '-',
+	database: '-',
+	ssl: { rejectUnauthorized: false },
+};
 
 // Relumi teams - PostgreSQL database configuration
 exports.usepostgres = {
