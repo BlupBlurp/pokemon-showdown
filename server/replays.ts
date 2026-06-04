@@ -110,7 +110,8 @@ export const Replays = new class {
 				});
 			}
 		} catch (e: any) {
-			if (e?.routine !== 'NewUniquenessConstraintViolationError') throw e;
+			// PG error code 23505 = unique_violation; MySQL uses routine name.
+			if (e?.code !== '23505' && e?.routine !== 'NewUniquenessConstraintViolationError') throw e;
 			await replays.update(replay.id, {
 				log: replayData.log,
 				inputlog: replayData.inputlog,
