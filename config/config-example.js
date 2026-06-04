@@ -248,6 +248,10 @@ exports.usepostgres = {
 // Enable teams feature for all users
 exports.usepostgresteams = '*';
 
+// Requires better-sqlite3
+exports.usesqlite = true;
+exports.usesqlitefriends = '*';
+
 /**
  * crashguardemail - if the server has been running for more than an hour
  *   and crashes, send an email using these settings, rather than locking down
