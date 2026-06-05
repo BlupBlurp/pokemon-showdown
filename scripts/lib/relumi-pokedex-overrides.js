@@ -388,6 +388,19 @@ const MANUAL_POKEDEX_OVERRIDES = {
 	miniorvioletmeteor: {
 		battleOnly: "Minior-Violet",
 	},
+
+	// Vivillon: surface Fancy/Pokeball variants in the cosmetic form picker.
+	// Upstream keeps them in otherFormes; the override promotes them to cosmeticFormes
+	// alongside the 17 vanilla pattern variants.
+	vivillon: {
+		cosmeticFormes: [
+			"Vivillon-Archipelago", "Vivillon-Continental", "Vivillon-Elegant", "Vivillon-Garden",
+			"Vivillon-High Plains", "Vivillon-Icy Snow", "Vivillon-Jungle", "Vivillon-Marine",
+			"Vivillon-Modern", "Vivillon-Monsoon", "Vivillon-Ocean", "Vivillon-Polar",
+			"Vivillon-River", "Vivillon-Sandstorm", "Vivillon-Savanna", "Vivillon-Sun",
+			"Vivillon-Tundra", "Vivillon-Fancy", "Vivillon-Pokeball",
+		],
+	},
 };
 
 module.exports = {
