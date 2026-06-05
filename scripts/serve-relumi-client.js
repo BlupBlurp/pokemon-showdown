@@ -197,6 +197,23 @@ function injectLocalDexOverride(html) {
 	);
 }
 
+// The legacy Backbone router rewrites the URL via history.pushState when joining
+// the main menu (see client.js Backbone.history.start + navigate). The upstream
+// testclient pages opt out of pushState by setting Config.testclient = true.
+// Mirror that for index-old.html so refreshing the page keeps the old client
+// at /index-old.html instead of being silently rewritten to /.
+function injectTestclientFlag(html, indexPath) {
+	if (!indexPath.endsWith("index-old.html")) return html;
+	if (html.includes("Config.testclient = true")) return html;
+	const marker =
+		/(<script[^>]+src=["']\/config\/config\.js[^"']*["'][^>]*><\/script>)/i;
+	if (!marker.test(html)) return html;
+	return html.replace(
+		marker,
+		'$1\n<script>Config.testclient = true;</script>'
+	);
+}
+
 function rewriteLanLocalDevChecks(source) {
 	const localDevExpr =
 		'(location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "::1" || location.hostname.endsWith(".local") || /^10\\./.test(location.hostname) || /^192\\.168\\./.test(location.hostname) || /^172\\.(1[6-9]|2\\d|3[0-1])\\./.test(location.hostname) || /^169\\.254\\./.test(location.hostname) || /^100\\.(6[4-9]|[78]\\d|9\\d|1[01]\\d|12[0-7])\\./.test(location.hostname))';
@@ -224,7 +241,10 @@ function shouldServeIndexFallback(req, normalized) {
 function sendIndexHtml(res, indexPath) {
 	const text = injectNews(
 		injectLocalDexOverride(
-			rewriteHostedClientUrls(fs.readFileSync(indexPath, "utf8"))
+			injectTestclientFlag(
+				rewriteHostedClientUrls(fs.readFileSync(indexPath, "utf8")),
+				indexPath
+			)
 		)
 	);
 	return send(res, 200, text, {
@@ -379,12 +399,14 @@ const server = http.createServer((req, res) => {
 
 	let filePath = resolved;
 	if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-		filePath = path.join(filePath, "index-old.html");
+		// New preact-alpha client is the default; the legacy Backbone index is
+		// still reachable at its explicit `/index-old.html` URL.
+		filePath = path.join(filePath, "index-new.html");
 	}
 
 	if (!fs.existsSync(filePath)) {
 		if (shouldServeIndexFallback(req, normalized)) {
-			const indexPath = path.join(CLIENT_PLAY_DIR, "index-old.html");
+			const indexPath = path.join(CLIENT_PLAY_DIR, "index-new.html");
 			if (fs.existsSync(indexPath)) {
 				return sendIndexHtml(res, indexPath);
 			}
@@ -472,7 +494,7 @@ server.on("error", (err) => {
 
 server.listen(PORT, "0.0.0.0", () => {
 	console.log(
-		`Relumi client host ready at http://localhost:${PORT}/ and http://localhost:${PORT}/index-new.html`,
+		`Relumi client host ready at http://localhost:${PORT}/ (preact-alpha) and http://localhost:${PORT}/index-old.html (legacy Backbone)`,
 	);
 	console.log(`Serving files from: ${CLIENT_PLAY_DIR}`);
 });
