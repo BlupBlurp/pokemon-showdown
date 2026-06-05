@@ -11039,6 +11039,35 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"Fighting",
 		],
 	},
+	ziglett: {
+		abilities: {
+			"0": "Analytic",
+			"1": "Magnet Pull",
+			H: "Infiltrator",
+		},
+		baseSpecies: "Diglett",
+		baseStats: {
+			atk: 35,
+			def: 50,
+			hp: 10,
+			spa: 55,
+			spd: 45,
+			spe: 70,
+		},
+		eggGroups: [
+			"Amorphous",
+		],
+		forme: "ziglett",
+		gen: 8,
+		heightm: 1.5,
+		name: "Ziglett",
+		num: 50,
+		types: [
+			"Electric",
+			"Flying",
+		],
+		weightkg: 40.5,
+	},
 	zigzagoon: {
 		baseStats: {
 			atk: 40,
@@ -11079,6 +11108,35 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Infiltrator",
 		},
 		inherit: true,
+	},
+	zugtrio: {
+		abilities: {
+			"0": "Analytic",
+			"1": "Magnet Pull",
+			H: "Infiltrator",
+		},
+		baseSpecies: "Dugtrio",
+		baseStats: {
+			atk: 130,
+			def: 60,
+			hp: 60,
+			spa: 65,
+			spd: 75,
+			spe: 110,
+		},
+		eggGroups: [
+			"Amorphous",
+		],
+		forme: "zugtrio",
+		gen: 8,
+		heightm: 1.5,
+		name: "Zugtrio",
+		num: 51,
+		types: [
+			"Electric",
+			"Flying",
+		],
+		weightkg: 40.5,
 	},
 	zygarde: {
 		abilities: {

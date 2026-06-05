@@ -15,6 +15,12 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		9: "Pikachu-Gmax",
 		10: "Pikachu-Clone",
 	},
+	50: {
+		2: "Ziglett",
+	},
+	51: {
+		2: "Zugtrio",
+	},
 	// formNo 2 is the custom "GHOST" form; map it to a non-existent name so
 	// the strict-override path returns null and triggers custom form creation.
 	105: {
@@ -134,6 +140,67 @@ const MANUAL_LEARNSET_OVERRIDES = {
 // Manual pokedex overrides that must persist across sync runs.
 // Use for hardcoding species data not represented in extracted game files.
 const MANUAL_POKEDEX_OVERRIDES = {
+
+	ziglett: {
+		abilities: {
+			"0": "Analytic",
+			"1": "Magnet Pull",
+			H: "Infiltrator",
+		},
+		types: [
+			"Electric",
+			"Flying",
+		],
+		baseSpecies: "Diglett",
+		baseStats: {
+			atk: 35,
+			def: 50,
+			hp: 10,
+			spa: 55,
+			spd: 45,
+			spe: 70,
+		},
+		eggGroups: [
+			"Amorphous",
+		],
+		forme: "ziglett",
+		gen: 8,
+		heightm: 1.5,
+		name: "Ziglett",
+		num: 50,
+		weightkg: 40.5,
+	},
+
+	zugtrio: {
+		abilities: {
+			"0": "Analytic",
+			"1": "Magnet Pull",
+			H: "Infiltrator",
+		},
+		types: [
+			"Electric",
+			"Flying",
+		],
+		baseSpecies: "Dugtrio",
+		baseStats: {
+			atk: 130,
+			def: 60,
+			hp: 60,
+			spa: 65,
+			spd: 75,
+			spe: 110,
+		},
+		eggGroups: [
+			"Amorphous",
+		],
+		forme: "zugtrio",
+		gen: 8,
+		heightm: 1.5,
+		name: "Zugtrio",
+		num: 51,
+		weightkg: 40.5,
+	},
+
 	calyrexice: {
 		abilities: {
 			"0": "As One (Glastrier)",
