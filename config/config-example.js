@@ -255,6 +255,8 @@ exports.usesqlitefriends = '*';
 // If a user send a message to an offline user, send the message back when they come online
 exports.usesqlitepms = '*';
 
+exports.usesqlitemodlog = true;
+
 /**
  * crashguardemail - if the server has been running for more than an hour
  *   and crashes, send an email using these settings, rather than locking down
