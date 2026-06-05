@@ -197,6 +197,27 @@ function injectLocalDexOverride(html) {
 	);
 }
 
+// Force pushState off when the URL ends in .html so the legacy Backbone
+// router doesn't rewrite /index-old.html to / via history.pushState. The
+// upstream caches/index-old.html references the upstream's client.js
+// directly, so a source-only fix in src/oldclient/client.js isn't enough
+// on every path. This guard runs at HTML serve time and works no matter
+// which client.js the browser ends up loading.
+function injectBackbonePushStateGuard(html) {
+	if (html.includes("relumi-backbone-pushstate-guard")) return html;
+	const guard =
+		'<script>/* relumi-backbone-pushstate-guard */' +
+		'(function(){' +
+		'if(!window.Backbone||location.pathname.slice(-5)!==".html")return;' +
+		'var s=Backbone.history.start;' +
+		'Backbone.history.start=function(o){return s.call(this,Object.assign({},o,{pushState:false}));};' +
+		'})();</script>';
+	const marker =
+		/(<script[^>]+src=["']\/js\/lib\/backbone\.js[^"']*["'][^>]*><\/script>)/i;
+	if (!marker.test(html)) return html;
+	return html.replace(marker, `$1\n${guard}`);
+}
+
 function rewriteLanLocalDevChecks(source) {
 	const localDevExpr =
 		'(location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "::1" || location.hostname.endsWith(".local") || /^10\\./.test(location.hostname) || /^192\\.168\\./.test(location.hostname) || /^172\\.(1[6-9]|2\\d|3[0-1])\\./.test(location.hostname) || /^169\\.254\\./.test(location.hostname) || /^100\\.(6[4-9]|[78]\\d|9\\d|1[01]\\d|12[0-7])\\./.test(location.hostname))';
@@ -223,8 +244,10 @@ function shouldServeIndexFallback(req, normalized) {
 
 function sendIndexHtml(res, indexPath) {
 	const text = injectNews(
-		injectLocalDexOverride(
-			rewriteHostedClientUrls(fs.readFileSync(indexPath, "utf8"))
+		injectBackbonePushStateGuard(
+			injectLocalDexOverride(
+				rewriteHostedClientUrls(fs.readFileSync(indexPath, "utf8"))
+			)
 		)
 	);
 	return send(res, 200, text, {
