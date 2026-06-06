@@ -156,7 +156,6 @@ function main() {
 				species: displayName,
 				moves: setEntry.movepool || [],
 				ability,
-				level: data.level || 100,
 			};
 			if (setEntry.item && setEntry.item.length) {
 				pokemonSet.item = setEntry.item[0];
