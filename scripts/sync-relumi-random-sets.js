@@ -663,6 +663,7 @@ function computeRelumiRandomBattleSets({
 	speciesIdByMonsForm,
 	mappedSpeciesIds,
 	learnsetsDiffs,
+	includeNfe = false,
 }) {
 	const candidatesBySpecies = new Map();
 	const unmappedTrainerSpecies = new Set();
@@ -700,7 +701,7 @@ function computeRelumiRandomBattleSets({
 			if (isExcludedRelumiRandomBattleSpecies(species)) continue;
 			if (shouldSkipFallbackForSpecies(species)) continue;
 			if (isDisallowedRandomBattleForm(species)) continue;
-			if (species.nfe) {
+			if (!includeNfe && species.nfe) {
 				ignoredNfeSpecies.add(species.id);
 				continue;
 			}
