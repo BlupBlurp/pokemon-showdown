@@ -243,7 +243,7 @@ function getFallbackAbilities(species) {
 	return abilities.length ? abilities : ["No Ability"];
 }
 
-function getFallbackLevelUpMoveIds(species, trainerLevel, dex, learnsetsDiffs) {
+function collectLevelUpMovesForTrainer(species, trainerLevel, dex, learnsetsDiffs) {
 	if (!species || !species.id) return [];
 	const learnsetData =
 		(learnsetsDiffs && learnsetsDiffs[species.id]) ||
@@ -281,7 +281,13 @@ function getFallbackLevelUpMoveIds(species, trainerLevel, dex, learnsetsDiffs) {
 		return a.id.localeCompare(b.id);
 	});
 
-	return learnedAtLevel.slice(-4).map(entry => entry.id);
+	return learnedAtLevel;
+}
+
+function getFallbackLevelUpMoveIds(species, trainerLevel, dex, learnsetsDiffs) {
+	return collectLevelUpMovesForTrainer(species, trainerLevel, dex, learnsetsDiffs)
+		.slice(-4)
+		.map(entry => entry.id);
 }
 
 function isDisallowedRandomBattleForm(species) {
@@ -411,9 +417,11 @@ function pickBestMoves(moveIds, count, dex) {
 }
 
 function computeMoveOverlapScore(a, b) {
-	const aSet = new Set(a.moveIds);
+	const aMoves = a.realMoveIds || a.moveIds;
+	const bMoves = b.realMoveIds || b.moveIds;
+	const aSet = new Set(aMoves);
 	let overlap = 0;
-	for (const moveId of b.moveIds) {
+	for (const moveId of bMoves) {
 		if (aSet.has(moveId)) overlap++;
 	}
 	return overlap;
@@ -424,8 +432,9 @@ function chooseDiverseCandidates(candidates) {
 	const sorted = candidates.slice().sort((a, b) => {
 		if (a.trainerLevel !== b.trainerLevel)
 			return b.trainerLevel - a.trainerLevel;
-		if (a.moveIds.length !== b.moveIds.length)
-			return b.moveIds.length - a.moveIds.length;
+		const aRealLen = (a.realMoveIds || a.moveIds).length;
+		const bRealLen = (b.realMoveIds || b.moveIds).length;
+		if (aRealLen !== bRealLen) return bRealLen - aRealLen;
 		return a.signature.localeCompare(b.signature);
 	});
 
@@ -443,28 +452,33 @@ function chooseDiverseCandidates(candidates) {
 	);
 	const chosen = [deduped[0]];
 
-	while (chosen.length < targetCount) {
-		let best = null;
-		let bestScore = -1;
-		for (const candidate of deduped) {
-			if (chosen.includes(candidate)) continue;
-			const overlapPenalty = chosen.reduce(
-				(total, existing) =>
-					total + computeMoveOverlapScore(existing, candidate),
-				0
-			);
-			const score =
-				candidate.trainerLevel * 10 +
-				candidate.moveIds.length * 2 -
-				overlapPenalty * 6;
-			if (score > bestScore) {
-				bestScore = score;
-				best = candidate;
+		while (chosen.length < targetCount) {
+			let best = null;
+			let bestScore = -1;
+			for (const candidate of deduped) {
+				if (chosen.includes(candidate)) continue;
+				const overlapPenalty = chosen.reduce(
+					(total, existing) =>
+						total + computeMoveOverlapScore(existing, candidate),
+					0
+				);
+				const trainerIdPenalty = chosen.some(
+					existing => existing.trainerId && candidate.trainerId &&
+						existing.trainerId === candidate.trainerId
+				) ? 10000 : 0;
+				const score =
+					candidate.trainerLevel * 10 +
+					((candidate.realMoveIds || candidate.moveIds).length) * 2 -
+					overlapPenalty * 6 -
+					trainerIdPenalty;
+				if (score > bestScore) {
+					bestScore = score;
+					best = candidate;
+				}
 			}
+			if (!best) break;
+			chosen.push(best);
 		}
-		if (!best) break;
-		chosen.push(best);
-	}
 
 	return chosen;
 }
@@ -475,7 +489,8 @@ function buildCandidate(
 	abilities,
 	trainerLevel,
 	dex,
-	trainerSetData = null
+	trainerSetData = null,
+	realMoveIds = null
 ) {
 	const dedupedMoveIds = [];
 	for (const moveId of moveIds) {
@@ -488,13 +503,23 @@ function buildCandidate(
 		validMoveIds.push(moveId);
 	}
 	const movepool = validMoveIds.map(moveId => dex.moves.get(moveId).name);
-	const signature = `${validMoveIds.join("|")}::${abilities.join("|")}::${
+	const dedupedRealMoveIds = [];
+	if (Array.isArray(realMoveIds)) {
+		for (const moveId of realMoveIds) {
+			if (!dedupedRealMoveIds.includes(moveId)) dedupedRealMoveIds.push(moveId);
+		}
+	}
+	const signatureMoves = dedupedRealMoveIds.length ?
+		dedupedRealMoveIds :
+		validMoveIds;
+	const signature = `${signatureMoves.join("|")}::${abilities.join("|")}::${
 		trainerSetData ? JSON.stringify(trainerSetData) : ""
 	}`;
 	return {
 		trainerLevel,
 		trainerSetData,
 		moveIds: validMoveIds,
+		realMoveIds: dedupedRealMoveIds.length ? dedupedRealMoveIds : validMoveIds,
 		movepool,
 		abilities,
 		teraTypes: species.types.slice(),
@@ -708,18 +733,41 @@ function computeRelumiRandomBattleSets({
 
 			const moveIds = [];
 			const seenMoves = new Set();
+			const realMoveIds = [];
+			const seenRealMoves = new Set();
 			const trainerLevel = Number(trainer[`P${slot}Level`] || 1);
+			const levelUpMovePool = getFallbackLevelUpMoveIds(
+				species,
+				trainerLevel,
+				dex,
+				learnsetsDiffs
+			);
 			for (let moveSlot = 1; moveSlot <= 4; moveSlot++) {
 				const moveNo = Number(trainer[`P${slot}Waza${moveSlot}`] || 0);
-				if (!moveNo) continue;
-				const moveName = (moveNames.get(moveNo) || "").trim();
-				if (!moveName || moveName === "\u2014\u2014\u2014") continue;
-				const move = dex.moves.get(moveName);
-				if (!move.exists) continue;
-				const moveId = move.id === "hail" ? "snowscape" : move.id;
-				if (seenMoves.has(moveId)) continue;
+				let moveId = null;
+				if (moveNo) {
+					const moveName = (moveNames.get(moveNo) || "").trim();
+					if (moveName && moveName !== "\u2014\u2014\u2014") {
+						const move = dex.moves.get(moveName);
+						if (move.exists) {
+							moveId = move.id === "hail" ? "snowscape" : move.id;
+						}
+					}
+				} else {
+					for (const poolMove of levelUpMovePool) {
+						if (!seenMoves.has(poolMove)) {
+							moveId = poolMove;
+							break;
+						}
+					}
+				}
+				if (!moveId || seenMoves.has(moveId)) continue;
 				seenMoves.add(moveId);
 				moveIds.push(moveId);
+				if (moveNo && !seenRealMoves.has(moveId)) {
+					seenRealMoves.add(moveId);
+					realMoveIds.push(moveId);
+				}
 			}
 			if (!moveIds.length) {
 				for (const moveId of getFallbackLevelUpMoveIds(
@@ -779,7 +827,8 @@ function computeRelumiRandomBattleSets({
 				abilityList,
 				trainerLevel,
 				dex,
-				trainerSetData
+				trainerSetData,
+				realMoveIds
 			);
 			if (trainerId > 0 && trainerId <= MAX_TRAINER_ID) {
 				candidate.trainerId = trainerId;

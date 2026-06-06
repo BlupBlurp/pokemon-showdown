@@ -34,7 +34,7 @@
   "scripts": {
     "start": "node pokemon-showdown start",
     "build": "node build",
-    "sync-relumi": "node scripts/sync-relumi.js && node scripts/export-relumi-client-overrides.js",
+    "sync-relumi": "node scripts/sync-relumi.js && node build && node scripts/export-relumi-client-overrides.js && node scripts/generate-relumi-sample-sets.js && node ../damage-calc/scripts/generate-relumi-data.js",
     "export-relumi-client": "node scripts/export-relumi-client-overrides.js",
     "build-relumi-client": "npm --prefix ../pokemon-showdown-client run build",
     "serve-relumi-client": "node scripts/serve-relumi-client.js",

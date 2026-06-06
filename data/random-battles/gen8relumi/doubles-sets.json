@@ -4472,6 +4472,36 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Healing Wish",
+                    "Egg Bomb",
+                    "Counter",
+                    "Double-Edge"
+                ],
+                "abilities": [
+                    "Serene Grace"
+                ],
+                "teraTypes": [
+                    "Normal"
+                ],
+                "trainerId": 1079,
+                "item": [
+                    "Toxic Orb"
+                ],
+                "nature": [
+                    "Bashful"
+                ],
+                "evs": {
+                    "hp": 89,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 85,
+                    "spd": 84,
+                    "spe": 84
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
                     "Seismic Toss",
                     "Shadow Ball",
                     "Thunder Wave",
@@ -4502,58 +4532,31 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Healing Wish",
                     "Egg Bomb",
                     "Counter",
-                    "Double-Edge",
-                    "Last Resort"
+                    "Double-Edge"
                 ],
                 "abilities": [
-                    "Natural Cure"
+                    "Serene Grace"
                 ],
                 "teraTypes": [
                     "Normal"
                 ],
-                "trainerId": 1109,
+                "trainerId": 529,
                 "item": [
-                    "Expert Belt"
+                    "Toxic Orb"
                 ],
                 "nature": [
-                    "Hardy"
+                    "Serious"
                 ],
                 "evs": {
-                    "hp": 84,
+                    "hp": 89,
                     "atk": 84,
                     "def": 84,
-                    "spa": 88,
+                    "spa": 85,
                     "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Soft-Boiled",
-                    "Stealth Rock",
-                    "Tri Attack",
-                    "Thunder Wave"
-                ],
-                "abilities": [
-                    "Natural Cure"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ],
-                "trainerId": 157,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 6,
-                    "spd": 252,
-                    "spe": 0
+                    "spe": 84
                 }
             }
         ]
@@ -5527,7 +5530,8 @@
                 "movepool": [
                     "Earthquake",
                     "Eruption",
-                    "Rock Slide"
+                    "Rock Slide",
+                    "Double-Edge"
                 ],
                 "abilities": [
                     "Drought"
@@ -9137,7 +9141,8 @@
                 "movepool": [
                     "Blizzard",
                     "Surf",
-                    "Hidden Power"
+                    "Hidden Power",
+                    "Icicle Crash"
                 ],
                 "abilities": [
                     "Snow Warning"
@@ -9627,29 +9632,32 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Brutal Swing",
-                    "Ancient Power",
+                    "Fishious Rend",
                     "Bite",
-                    "Dragon Breath"
+                    "Dragon Breath",
+                    "Stomp"
                 ],
                 "abilities": [
-                    "Sand Rush"
+                    "Strong Jaw"
                 ],
                 "teraTypes": [
                     "Water",
                     "Dragon"
                 ],
-                "trainerId": 93,
+                "trainerId": 839,
+                "item": [
+                    "Choice Band"
+                ],
                 "nature": [
-                    "Bashful"
+                    "Jolly"
                 ],
                 "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
                 }
             }
         ]
@@ -10652,33 +10660,6 @@
                     "spd": 84,
                     "spe": 86
                 }
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Ancient Power",
-                    "Body Slam",
-                    "Drill Run",
-                    "Roost"
-                ],
-                "abilities": [
-                    "Serene Grace"
-                ],
-                "teraTypes": [
-                    "Normal"
-                ],
-                "trainerId": 32,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
             }
         ]
     },
@@ -11454,7 +11435,8 @@
                 "movepool": [
                     "Thunderbolt",
                     "Energy Ball",
-                    "Hidden Power"
+                    "Hidden Power",
+                    "Thunder"
                 ],
                 "abilities": [
                     "Grassy Surge"
@@ -14578,6 +14560,33 @@
     "gigalith": {
         "level": 85,
         "sets": [
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Explosion",
+                    "Rock Blast",
+                    "Sandstorm",
+                    "Meteor Beam"
+                ],
+                "abilities": [
+                    "Sand Stream"
+                ],
+                "teraTypes": [
+                    "Rock"
+                ],
+                "trainerId": 168,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
+            },
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
@@ -30136,6 +30145,36 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Rock Climb",
+                    "Earthquake",
+                    "Iron Head",
+                    "Stone Edge"
+                ],
+                "abilities": [
+                    "Mold Breaker"
+                ],
+                "teraTypes": [
+                    "Rock"
+                ],
+                "trainerId": 893,
+                "item": [
+                    "Choice Scarf"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
                     "Stone Edge",
                     "Zen Headbutt",
                     "Thunder Punch",
@@ -30161,36 +30200,6 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 0
-                }
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Brick Break",
-                    "Zen Headbutt",
-                    "Iron Head",
-                    "Facade"
-                ],
-                "abilities": [
-                    "Sheer Force"
-                ],
-                "teraTypes": [
-                    "Rock"
-                ],
-                "trainerId": 1043,
-                "item": [
-                    "Life Orb"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 6
                 }
             }
         ]
@@ -30585,34 +30594,34 @@
         "level": 82,
         "sets": [
             {
-                "role": "Doubles Support",
-                "movepool": [
-                    "Zap Cannon",
-                    "Explosion",
-                    "Rest",
-                    "Light Screen"
-                ],
-                "abilities": [
-                    "Transistor"
-                ],
-                "teraTypes": [
-                    "Electric"
-                ]
-            },
-            {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Zap Cannon",
-                    "Thunder",
-                    "Explosion",
-                    "Self-Destruct"
+                    "Ancient Power",
+                    "Thunder Cage",
+                    "Lock-On",
+                    "Zap Cannon"
                 ],
                 "abilities": [
                     "Transistor"
                 ],
                 "teraTypes": [
                     "Electric"
-                ]
+                ],
+                "trainerId": 921,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -31348,37 +31357,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Hydro Pump",
-                    "Volt Switch",
-                    "Nasty Plot",
-                    "Pain Split"
-                ],
-                "abilities": [
-                    "Levitate"
-                ],
-                "teraTypes": [
-                    "Electric",
-                    "Ghost"
-                ],
-                "trainerId": 1057,
-                "item": [
-                    "Leftovers"
-                ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 0,
-                    "def": 138,
-                    "spa": 0,
-                    "spd": 252,
-                    "spe": 120
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Thunderbolt",
                     "Hydro Pump",
                     "Shadow Ball",
@@ -31405,6 +31383,37 @@
                     "spa": 8,
                     "spd": 0,
                     "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Discharge",
+                    "Shadow Ball",
+                    "Volt Switch",
+                    "Will-O-Wisp"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "teraTypes": [
+                    "Electric",
+                    "Ghost"
+                ],
+                "trainerId": 831,
+                "item": [
+                    "Magnet"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 36,
+                    "atk": 36,
+                    "def": 36,
+                    "spa": 252,
+                    "spd": 36,
+                    "spe": 114
                 }
             }
         ]
@@ -33119,7 +33128,8 @@
                 "movepool": [
                     "Leaf Storm",
                     "Dragon Pulse",
-                    "Hidden Power"
+                    "Hidden Power",
+                    "Giga Drain"
                 ],
                 "abilities": [
                     "Contrary"
@@ -40468,7 +40478,8 @@
                 "movepool": [
                     "Energy Ball",
                     "Sludge Bomb",
-                    "Hidden Power"
+                    "Hidden Power",
+                    "Double-Edge"
                 ],
                 "abilities": [
                     "Grassy Surge"
@@ -40656,6 +40667,34 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Vine Whip",
+                    "Leaf Tornado",
+                    "Weather Ball",
+                    "Wrap"
+                ],
+                "abilities": [
+                    "Chlorophyll"
+                ],
+                "teraTypes": [
+                    "Grass",
+                    "Poison"
+                ],
+                "trainerId": 501,
+                "nature": [
+                    "Bashful"
+                ],
+                "evs": {
+                    "hp": 89,
+                    "atk": 85,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 84
+                }
             }
         ]
     },
@@ -40780,6 +40819,37 @@
                     "spa": 8,
                     "spd": 250,
                     "spe": 0
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Giga Drain",
+                    "Hidden Power",
+                    "Sludge Bomb",
+                    "Strength Sap"
+                ],
+                "abilities": [
+                    "Effect Spore"
+                ],
+                "teraTypes": [
+                    "Grass",
+                    "Poison"
+                ],
+                "trainerId": 827,
+                "item": [
+                    "Black Sludge"
+                ],
+                "nature": [
+                    "Hasty"
+                ],
+                "evs": {
+                    "hp": 158,
+                    "atk": 60,
+                    "def": 60,
+                    "spa": 112,
+                    "spd": 60,
+                    "spe": 60
                 }
             }
         ]
