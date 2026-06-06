@@ -83,7 +83,7 @@ function buildLocalConfigInjection() {
 		"\t\tprotocol: relumiProtocol,\n" +
 		"\t\thttps: (relumiProtocol === 'https'),\n" +
 		"\t\tprefix: '/showdown',\n" +
-		"\t\tregistered: false,\n" +
+		"\t\tregistered: true,\n" +
 		"\t});\n" +
 		"\tconsole.log('[Relumi LocalConfig] Injecting server config:', Config.defaultserver);\n" +
 		"\tConfig.server = Object.assign({}, Config.defaultserver);\n" +

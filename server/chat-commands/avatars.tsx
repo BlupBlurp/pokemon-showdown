@@ -1770,7 +1770,6 @@ for (const avatar of OFFICIAL_AVATARS_WISTERIAPURPLE)
 	OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_FLAMIBANE) OFFICIAL_AVATARS.add(avatar);
 for (const avatar of OFFICIAL_AVATARS_RADU) OFFICIAL_AVATARS.add(avatar);
-OFFICIAL_AVATARS.add("politoed-f");
 
 export const commands: Chat.ChatCommands = {
 	avatar(target, room, user) {
