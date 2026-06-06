@@ -89,6 +89,11 @@ export const Avatars = new (class {
 		avatar = avatar.toLowerCase().replace(/[^a-z0-9-.#]+/g, "");
 		if (OFFICIAL_AVATARS.has(avatar)) return avatar;
 
+		// Allow any .png file in config/avatars/ for all users (side-server avatars)
+		if (avatar.includes('.') && FS(`config/avatars/${avatar}`).existsSync()) {
+			return avatar;
+		}
+
 		const customs = customAvatars[userid]?.allowed;
 		if (!customs) return null;
 

@@ -26,6 +26,8 @@ const NEWS_INC_PATH = path.resolve(
 	"news.inc.php"
 );
 
+const AVATARS_DIR = path.resolve(ROOT, "config", "avatars");
+
 const MIME_TYPES = {
 	".css": "text/css; charset=utf-8",
 	".gif": "image/gif",
@@ -60,6 +62,13 @@ function send(res, status, body, headers = {}) {
 	res.end(body);
 }
 
+function buildServerAvatarsList() {
+	try {
+		const files = fs.readdirSync(AVATARS_DIR).filter(f => /\.png$/i.test(f));
+		return JSON.stringify(files);
+	} catch { return "[]"; }
+}
+
 function buildLocalConfigInjection() {
 	const serverHostExpr = SERVER_HOST ? JSON.stringify(SERVER_HOST) : '(window.location.hostname.startsWith("play.") ? window.location.hostname.replace(/^play\\./, "server.") : window.location.hostname)';
 	const localClientRouteExpr = "window.location.host";
@@ -90,6 +99,7 @@ function buildLocalConfigInjection() {
 		"\tConfig.routes = Object.assign({}, Config.routes || {}, {client: " +
 		localClientRouteExpr +
 		"});\n" +
+		"\tConfig.serverAvatars = " + buildServerAvatarsList() + ";\n" +
 		"\tconsole.log('[Relumi LocalConfig] Config.defaultserver set to:', Config.defaultserver);\n" +
 		"})();\n"
 	);
