@@ -77,7 +77,7 @@ const SINGLES_SUPPORT_MOVES = new Set([
 ]);
 
 const MIN_NON_DITTO_MOVES = 3;
-const MAX_GENERATED_SETS_PER_SPECIES = 3;
+const MAX_GENERATED_SETS_PER_SPECIES = 5;
 const MAX_TRAINER_ID = 2000;
 const EV_CAP = 510;
 const EV_STAT_CAP = 252;
@@ -86,27 +86,14 @@ const FALLBACK_BASE_ONLY_SPECIES = new Set([
 	"furfrou",
 	"minior",
 	"vivillon",
+	"minior",
+	"flabebe",
+	"florges",
+	"sawsbuck",
+	"deerling",
 ]);
-const TRAINER_FORM_NUMBER_SPECIES_OVERRIDES = {
-	25: {
-		1: "Pikachu-Cosplay",
-		2: "Pikachu-Rock-Star",
-		3: "Pikachu-Belle",
-		4: "Pikachu-Pop-Star",
-		5: "Pikachu-PhD",
-		6: "Pikachu-Libre",
-		7: "Pikachu-Original",
-		8: "Pikachu-Starter",
-		9: "Pikachu-Gmax",
-		10: "Pikachu-Clone",
-	},
-	892: {
-		0: "Urshifu",
-		1: "Urshifu-Rapid-Strike",
-		2: "Urshifu-Gmax",
-		3: "Urshifu-Rapid-Strike-Gmax",
-	},
-};
+const { FORM_NUMBER_SPECIES_OVERRIDES } = require("./lib/relumi-pokedex-overrides");
+const TRAINER_FORM_NUMBER_SPECIES_OVERRIDES = FORM_NUMBER_SPECIES_OVERRIDES;
 const STRICT_TRAINER_FORM_SPECIES = new Set(
 	Object.keys(TRAINER_FORM_NUMBER_SPECIES_OVERRIDES).map(n => Number(n))
 );
@@ -448,37 +435,37 @@ function chooseDiverseCandidates(candidates) {
 
 	const targetCount = Math.min(
 		MAX_GENERATED_SETS_PER_SPECIES,
-		Math.max(1, deduped.length >= 6 ? 3 : deduped.length >= 2 ? 2 : 1)
+		deduped.length
 	);
 	const chosen = [deduped[0]];
 
-		while (chosen.length < targetCount) {
-			let best = null;
-			let bestScore = -1;
-			for (const candidate of deduped) {
-				if (chosen.includes(candidate)) continue;
-				const overlapPenalty = chosen.reduce(
-					(total, existing) =>
-						total + computeMoveOverlapScore(existing, candidate),
-					0
-				);
-				const trainerIdPenalty = chosen.some(
-					existing => existing.trainerId && candidate.trainerId &&
-						existing.trainerId === candidate.trainerId
-				) ? 10000 : 0;
-				const score =
-					candidate.trainerLevel * 10 +
-					((candidate.realMoveIds || candidate.moveIds).length) * 2 -
-					overlapPenalty * 6 -
-					trainerIdPenalty;
-				if (score > bestScore) {
-					bestScore = score;
-					best = candidate;
-				}
+	while (chosen.length < targetCount) {
+		let best = null;
+		let bestScore = -1;
+		for (const candidate of deduped) {
+			if (chosen.includes(candidate)) continue;
+			const overlapPenalty = chosen.reduce(
+				(total, existing) =>
+					total + computeMoveOverlapScore(existing, candidate),
+				0
+			);
+			const trainerIdPenalty = chosen.some(
+				existing => existing.trainerId && candidate.trainerId &&
+					existing.trainerId === candidate.trainerId
+			) ? 10000 : 0;
+			const score =
+				candidate.trainerLevel * 10 +
+				((candidate.realMoveIds || candidate.moveIds).length) * 2 -
+				overlapPenalty * 6 -
+				trainerIdPenalty;
+			if (score > bestScore) {
+				bestScore = score;
+				best = candidate;
 			}
-			if (!best) break;
-			chosen.push(best);
 		}
+		if (!best) break;
+		chosen.push(best);
+	}
 
 	return chosen;
 }
