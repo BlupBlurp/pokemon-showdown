@@ -1,4 +1,5 @@
 opencode.json
+AGENTS.md
 /config/*
 !/config/formats.ts
 !/config/avatars/

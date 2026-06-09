@@ -1,22 +1,22 @@
-CREATE TABLE public.roomlogs (
-	type STRING NOT NULL,
-	roomid STRING NOT NULL,
-	userid STRING NULL,
+CREATE TABLE IF NOT EXISTS public.roomlogs (
+	type TEXT NOT NULL,
+	roomid TEXT NOT NULL,
+	userid TEXT NULL,
 	time TIMESTAMP(6) NOT NULL,
-	log STRING NOT NULL,
-	INDEX linecount (userid, roomid, time),
-	INDEX month (roomid, time),
-	INDEX type (roomid, type, time),
-	INDEX rename_idx (roomid)
+	log TEXT NOT NULL
 );
+CREATE INDEX IF NOT EXISTS linecount ON roomlogs (userid, roomid, time);
+CREATE INDEX IF NOT EXISTS month ON roomlogs (roomid, time);
+CREATE INDEX IF NOT EXISTS type ON roomlogs (roomid, type, time);
+CREATE INDEX IF NOT EXISTS rename_idx ON roomlogs (roomid);
 -- computed columns have to be added after apparently
-ALTER TABLE roomlogs ADD COLUMN content TSVECTOR AS (to_tsvector('english', log)) STORED;
+ALTER TABLE roomlogs ADD COLUMN IF NOT EXISTS content TSVECTOR GENERATED ALWAYS AS (to_tsvector('english', log)) STORED;
 
-CREATE TABLE public.roomlog_dates (
-	roomid STRING NOT NULL,
+CREATE TABLE IF NOT EXISTS public.roomlog_dates (
+	roomid TEXT NOT NULL,
 	-- YYYY-MM
-	month STRING NOT NULL,
+	month TEXT NOT NULL,
 	-- YYYY-MM-DD
-	date STRING NOT NULL,
+	date TEXT NOT NULL,
 	PRIMARY KEY (roomid, date)
 );
