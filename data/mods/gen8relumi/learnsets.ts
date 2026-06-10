@@ -20341,6 +20341,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L18",
 				"9M",
 			],
+			barrier: [
+				"9L27",
+			],
 			bite: [
 				"9L21",
 			],
@@ -20546,6 +20549,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			avalanche: [
 				"9L18",
 				"9M",
+			],
+			barrier: [
+				"9L27",
 			],
 			bite: [
 				"9L21",
@@ -26333,6 +26339,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L18",
 				"9M",
 			],
+			barrier: [
+				"9L27",
+			],
 			bite: [
 				"9L21",
 			],
@@ -29724,6 +29733,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			wildcharge: [
 				"9M",
+			],
+			wish: [
+				"9L50",
 			],
 			workup: [
 				"9M",
@@ -40095,6 +40107,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			wildcharge: [
 				"9M",
 			],
+			wish: [
+				"9L50",
+			],
 			workup: [
 				"9M",
 			],
@@ -45984,6 +45999,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L30",
 				"9M",
 			],
+			watersport: [
+				"9L1",
+			],
 			weatherball: [
 				"9M",
 			],
@@ -46176,6 +46194,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			waterpulse: [
 				"9L30",
 				"9M",
+			],
+			watersport: [
+				"9L1",
 			],
 			weatherball: [
 				"9M",
@@ -59879,6 +59900,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			avalanche: [
 				"9M",
+			],
+			bestow: [
+				"9L1",
 			],
 			blizzard: [
 				"9L42",
@@ -102257,7 +102281,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			earthquake: [
-				"9L52",
+				"9L44",
 				"9M",
 			],
 			endure: [
@@ -102292,6 +102316,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			hammerarm: [
 				"9L48",
+			],
+			headlongrush: [
+				"9L70",
 			],
 			heavyslam: [
 				"9L40",
@@ -102348,7 +102375,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L20",
 			],
 			phantomforce: [
-				"9L44",
+				"9L52",
 			],
 			poltergeist: [
 				"9T",
@@ -102755,7 +102782,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			earthquake: [
-				"9L58",
+				"9L46",
 				"9M",
 			],
 			endure: [
@@ -102803,6 +102830,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			hammerarm: [
 				"9L52",
+			],
+			headlongrush: [
+				"9L70",
 			],
 			heatcrash: [
 				"9M",
@@ -102869,7 +102899,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L20",
 			],
 			phantomforce: [
-				"9L46",
+				"9L58",
 			],
 			poltergeist: [
 				"9T",
@@ -247582,6 +247612,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L35",
 				"9T",
 			],
+			bulldoze: [
+				"9M",
+			],
 			counter: [
 				"9E",
 			],
@@ -247639,6 +247672,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L30",
 				"9T",
 			],
+			ironhead: [
+				"9L20",
+			],
 			lashout: [
 				"9T",
 			],
@@ -247646,7 +247682,7 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9L1",
 			],
 			metalsound: [
-				"9L20",
+				"9E",
 			],
 			muddywater: [
 				"9L40",
@@ -247734,6 +247770,9 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 				"9T",
 			],
 			surf: [
+				"9M",
+			],
+			swagger: [
 				"9M",
 			],
 			tackle: [
@@ -280155,9 +280194,6 @@ export const Learnsets: import("../../../sim/dex-species").ModdedLearnsetDataTab
 			],
 			trailblaze: [
 				"9M",
-			],
-			tripleaxel: [
-				"9T",
 			],
 			whirlpool: [
 				"9M",

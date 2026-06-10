@@ -1380,8 +1380,9 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	blastoiseclone: {
 		abilities: {
-			"0": "Torrent",
-			H: "Rain Dish",
+			"0": "Mega Launcher",
+			"1": "Torrent",
+			H: "Drizzle",
 		},
 		baseSpecies: "Blastoise",
 		baseStats: {
@@ -2153,17 +2154,6 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		abilities: {
 			"0": "Levitate",
 			H: "Psychic Surge",
-		},
-		inherit: true,
-	},
-	clefable: {
-		baseStats: {
-			atk: 70,
-			def: 73,
-			hp: 92,
-			spa: 95,
-			spd: 90,
-			spe: 60,
 		},
 		inherit: true,
 	},
@@ -4078,10 +4068,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		baseStats: {
 			atk: 58,
 			def: 122,
-			hp: 65,
-			spa: 90,
+			hp: 55,
+			spa: 85,
 			spd: 75,
-			spe: 84,
+			spe: 99,
 		},
 		inherit: true,
 	},
@@ -4110,10 +4100,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		baseStats: {
 			atk: 58,
 			def: 122,
-			hp: 55,
-			spa: 85,
+			hp: 65,
+			spa: 90,
 			spd: 75,
-			spe: 99,
+			spe: 84,
 		},
 		inherit: true,
 	},
@@ -7631,10 +7621,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		baseStats: {
 			atk: 44,
 			def: 70,
-			hp: 49,
+			hp: 44,
 			spa: 66,
 			spd: 55,
-			spe: 51,
+			spe: 56,
 		},
 		inherit: true,
 	},
@@ -7663,10 +7653,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		baseStats: {
 			atk: 44,
 			def: 70,
-			hp: 44,
+			hp: 49,
 			spa: 66,
 			spd: 55,
-			spe: 56,
+			spe: 51,
 		},
 		inherit: true,
 	},

@@ -36,68 +36,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Ice Shard",
-                    "Seed Bomb",
-                    "Rock Slide"
-                ],
-                "abilities": [
-                    "Thick Fat"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Ice"
-                ],
-                "trainerId": 916,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Water Pulse",
-                    "Energy Ball",
-                    "Shadow Ball",
-                    "Blizzard"
-                ],
-                "abilities": [
-                    "Snow Warning"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Ice"
-                ],
-                "trainerId": 915,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 0,
-                    "def": 6,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Blizzard",
                     "Weather Ball",
                     "Energy Ball",
@@ -154,6 +92,65 @@
                     "def": 0,
                     "spa": 252,
                     "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Blizzard",
+                    "Energy Ball",
+                    "Earth Power",
+                    "Ice Shard"
+                ],
+                "abilities": [
+                    "Snow Warning"
+                ],
+                "teraTypes": [
+                    "Grass",
+                    "Ice"
+                ],
+                "trainerId": 452,
+                "nature": [
+                    "Quiet"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Icicle Crash",
+                    "Wood Hammer",
+                    "Earthquake",
+                    "Aurora Veil"
+                ],
+                "abilities": [
+                    "Snow Warning"
+                ],
+                "teraTypes": [
+                    "Grass",
+                    "Ice"
+                ],
+                "trainerId": 849,
+                "item": [
+                    "Occa Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 250,
+                    "atk": 248,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 12,
                     "spe": 0
                 }
             }
@@ -316,38 +313,8 @@
                 "movepool": [
                     "Rain Dance",
                     "Bug Buzz",
-                    "Sludge Bomb",
-                    "Energy Ball"
-                ],
-                "abilities": [
-                    "Sheer Force"
-                ],
-                "teraTypes": [
-                    "Bug"
-                ],
-                "trainerId": 923,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Rain Dance",
-                    "Bug Buzz",
-                    "Sludge Bomb",
-                    "Energy Ball"
+                    "Dark Pulse",
+                    "Sludge Bomb"
                 ],
                 "abilities": [
                     "Sheer Force"
@@ -357,18 +324,18 @@
                 ],
                 "trainerId": 855,
                 "item": [
-                    "Damp Rock"
+                    "Focus Sash"
                 ],
                 "nature": [
-                    "Calm"
+                    "Timid"
                 ],
                 "evs": {
-                    "hp": 252,
+                    "hp": 6,
                     "atk": 0,
                     "def": 0,
-                    "spa": 202,
+                    "spa": 252,
                     "spd": 0,
-                    "spe": 56
+                    "spe": 252
                 }
             },
             {
@@ -600,37 +567,6 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Thunder Fang",
-                    "Brave Bird",
-                    "Double-Edge"
-                ],
-                "abilities": [
-                    "Rock Head"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Flying"
-                ],
-                "trainerId": 892,
-                "item": [
-                    "Assault Vest"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 202,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 56
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
                     "Ice Fang",
                     "Thunder Fang",
                     "Fire Fang",
@@ -718,6 +654,37 @@
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Brave Bird",
+                    "Stone Edge",
+                    "Crunch",
+                    "Earthquake"
+                ],
+                "abilities": [
+                    "Rock Head"
+                ],
+                "teraTypes": [
+                    "Rock",
+                    "Flying"
+                ],
+                "trainerId": 1018,
+                "item": [
+                    "Life Orb"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
                     "spe": 252
                 }
             }
@@ -1527,7 +1494,7 @@
                     "Rage Fist",
                     "Earthquake",
                     "Drain Punch",
-                    "Rock Slide"
+                    "Stone Edge"
                 ],
                 "abilities": [
                     "Defiant"
@@ -1536,7 +1503,7 @@
                     "Fighting",
                     "Ghost"
                 ],
-                "trainerId": 899,
+                "trainerId": 901,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -1622,11 +1589,11 @@
         "level": 88,
         "sets": [
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Support",
                 "movepool": [
                     "Leech Life",
                     "Liquidation",
-                    "Crunch",
+                    "Sticky Web",
                     "Poison Jab"
                 ],
                 "abilities": [
@@ -1636,7 +1603,7 @@
                     "Water",
                     "Bug"
                 ],
-                "trainerId": 925,
+                "trainerId": 857,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -1948,7 +1915,7 @@
                     "Life Orb"
                 ],
                 "nature": [
-                    "Timid"
+                    "Jolly"
                 ],
                 "evs": {
                     "hp": 6,
@@ -2039,7 +2006,7 @@
                     "Fire",
                     "Rock"
                 ],
-                "trainerId": 893,
+                "trainerId": 891,
                 "item": [
                     "Focus Sash"
                 ],
@@ -2852,7 +2819,7 @@
                 "movepool": [
                     "Acrobatics",
                     "Earthquake",
-                    "Rock Climb",
+                    "Stone Edge",
                     "Steel Wing"
                 ],
                 "abilities": [
@@ -3009,7 +2976,7 @@
                     "Bolt Beak",
                     "Icicle Crash",
                     "Stone Edge",
-                    "Stomping Tantrum"
+                    "Bulldoze"
                 ],
                 "abilities": [
                     "Slush Rush"
@@ -3020,7 +2987,7 @@
                 ],
                 "trainerId": 918,
                 "item": [
-                    "Wide Lens"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Adamant"
@@ -3227,6 +3194,37 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Accelerock",
+                    "Aqua Jet",
+                    "First Impression",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Tough Claws"
+                ],
+                "teraTypes": [
+                    "Rock",
+                    "Bug"
+                ],
+                "trainerId": 857,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "Earthquake",
                     "Rock Slide",
                     "X-Scissor",
@@ -3250,37 +3248,6 @@
                     "hp": 252,
                     "atk": 6,
                     "def": 252,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Aqua Tail",
-                    "X-Scissor",
-                    "Stone Edge"
-                ],
-                "abilities": [
-                    "Battle Armor"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Bug"
-                ],
-                "trainerId": 857,
-                "item": [
-                    "Wide Lens"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 252,
-                    "def": 6,
                     "spa": 0,
                     "spd": 0,
                     "spe": 0
@@ -3379,7 +3346,7 @@
                 ],
                 "trainerId": 915,
                 "item": [
-                    "Weakness Policy"
+                    "Heavy-Duty Boots"
                 ],
                 "nature": [
                     "Timid"
@@ -3444,7 +3411,7 @@
                     "Psychic",
                     "Flying"
                 ],
-                "trainerId": 935,
+                "trainerId": 936,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -3500,37 +3467,6 @@
     "aurorus": {
         "level": 84,
         "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Aurora Veil",
-                    "Blizzard",
-                    "Thunderbolt",
-                    "Earth Power"
-                ],
-                "abilities": [
-                    "Snow Warning"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Ice"
-                ],
-                "trainerId": 891,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 6
-                }
-            },
             {
                 "role": "Bulky Attacker",
                 "movepool": [
@@ -3839,17 +3775,17 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Flamethrower",
-                    "Dazzling Gleam",
+                    "Moonblast",
                     "Thunderbolt",
-                    "Expanding Force"
+                    "Psychic"
                 ],
                 "abilities": [
-                    "Competitive"
+                    "Levitate"
                 ],
                 "teraTypes": [
                     "Psychic"
                 ],
-                "trainerId": 935,
+                "trainerId": 936,
                 "item": [
                     "Focus Sash"
                 ],
@@ -3861,6 +3797,36 @@
                     "atk": 0,
                     "def": 0,
                     "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Stealth Rock",
+                    "Taunt",
+                    "U-turn",
+                    "Knock Off"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "teraTypes": [
+                    "Psychic"
+                ],
+                "trainerId": 814,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
                     "spd": 0,
                     "spe": 252
                 }
@@ -3893,36 +3859,6 @@
                     "spa": 252,
                     "spd": 252,
                     "spe": 6
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Stealth Rock",
-                    "Taunt",
-                    "U-turn",
-                    "Knock Off"
-                ],
-                "abilities": [
-                    "Levitate"
-                ],
-                "teraTypes": [
-                    "Psychic"
-                ],
-                "trainerId": 814,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
                 }
             },
             {
@@ -5039,18 +4975,18 @@
                 ],
                 "trainerId": 917,
                 "item": [
-                    "Focus Sash"
+                    "Life Orb"
                 ],
                 "nature": [
                     "Adamant"
                 ],
                 "evs": {
-                    "hp": 252,
+                    "hp": 112,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 6
+                    "spe": 146
                 }
             },
             {
@@ -6368,9 +6304,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Healing Wish",
-                    "Egg Bomb",
                     "Counter",
-                    "Double-Edge"
+                    "Double-Edge",
+                    "Last Resort"
                 ],
                 "abilities": [
                     "Serene Grace"
@@ -6428,9 +6364,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Healing Wish",
-                    "Egg Bomb",
                     "Counter",
-                    "Double-Edge"
+                    "Double-Edge",
+                    "Last Resort"
                 ],
                 "abilities": [
                     "Serene Grace"
@@ -6455,12 +6391,12 @@
                 }
             },
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Support",
                 "movepool": [
-                    "Egg Bomb",
                     "Counter",
                     "Double-Edge",
-                    "Last Resort"
+                    "Last Resort",
+                    "Wish"
                 ],
                 "abilities": [
                     "Natural Cure"
@@ -7635,10 +7571,10 @@
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 4,
+                    "hp": 6,
                     "atk": 252,
                     "def": 0,
-                    "spa": 2,
+                    "spa": 0,
                     "spd": 0,
                     "spe": 252
                 }
@@ -7743,37 +7679,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Glacial Lance",
-                    "High Horsepower",
-                    "Zen Headbutt",
-                    "Body Press"
-                ],
-                "abilities": [
-                    "Unnerve"
-                ],
-                "teraTypes": [
-                    "Psychic",
-                    "Grass"
-                ],
-                "trainerId": 915,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 6,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 252,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Psychic",
                     "Giga Drain",
                     "Hidden Power",
@@ -7812,8 +7717,8 @@
                 "movepool": [
                     "Glacial Lance",
                     "High Horsepower",
-                    "Zen Headbutt",
-                    "Body Press"
+                    "Trick Room",
+                    "Zen Headbutt"
                 ],
                 "abilities": [
                     "As One (Glastrier)"
@@ -7847,9 +7752,9 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Astral Barrage",
-                    "Future Sight",
-                    "Giga Impact",
-                    "Hyper Beam"
+                    "Psychic",
+                    "Energy Ball",
+                    "Dark Pulse"
                 ],
                 "abilities": [
                     "As One (Spectrier)"
@@ -7857,23 +7762,22 @@
                 "teraTypes": [
                     "Psychic",
                     "Ghost"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Astral Barrage",
-                    "Giga Impact",
-                    "Rest",
-                    "Agility"
                 ],
-                "abilities": [
-                    "As One (Spectrier)"
+                "trainerId": 900,
+                "item": [
+                    "Assault Vest"
                 ],
-                "teraTypes": [
-                    "Psychic",
-                    "Ghost"
-                ]
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -8544,13 +8448,13 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Crunch",
                     "Fire Lash",
+                    "Leech Life",
                     "Power Whip",
-                    "Lunge"
+                    "Crunch"
                 ],
                 "abilities": [
-                    "Flame Body"
+                    "White Smoke"
                 ],
                 "teraTypes": [
                     "Fire",
@@ -8558,10 +8462,10 @@
                 ],
                 "trainerId": 858,
                 "item": [
-                    "Life Orb"
+                    "Focus Sash"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Jolly"
                 ],
                 "evs": {
                     "hp": 6,
@@ -8810,7 +8714,7 @@
                     "Energy Ball",
                     "Flamethrower",
                     "Shadow Ball",
-                    "Trick Room"
+                    "Dazzling Gleam"
                 ],
                 "abilities": [
                     "Levitate"
@@ -8821,10 +8725,10 @@
                 ],
                 "trainerId": 865,
                 "item": [
-                    "Passho Berry"
+                    "Weakness Policy"
                 ],
                 "nature": [
-                    "Calm"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 252,
@@ -8987,23 +8891,26 @@
                 }
             },
             {
-                "role": "Bulky Support",
+                "role": "Fast Attacker",
                 "movepool": [
-                    "Hurricane",
                     "Flamethrower",
-                    "Scorching Sands",
-                    "Will-O-Wisp"
+                    "Solar Beam",
+                    "Dragon Pulse",
+                    "Scorching Sands"
                 ],
                 "abilities": [
-                    "Blaze"
+                    "Drought"
                 ],
                 "teraTypes": [
                     "Fire",
                     "Flying"
                 ],
-                "trainerId": 163,
+                "trainerId": 863,
+                "item": [
+                    "Focus Sash"
+                ],
                 "nature": [
-                    "Hardy"
+                    "Timid"
                 ],
                 "evs": {
                     "hp": 6,
@@ -11648,6 +11555,36 @@
         "level": 81,
         "sets": [
             {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Ice Beam",
+                    "Moonblast",
+                    "Psychic",
+                    "Energy Ball"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "teraTypes": [
+                    "Psychic"
+                ],
+                "trainerId": 937,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Moonlight",
@@ -12095,6 +12032,36 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Dark Void",
+                    "Hidden Power",
+                    "Ice Beam",
+                    "Dark Pulse"
+                ],
+                "abilities": [
+                    "Bad Dreams"
+                ],
+                "teraTypes": [
+                    "Dark"
+                ],
+                "trainerId": 899,
+                "item": [
+                    "Wide Lens"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Dark Void",
                     "Dream Eater",
                     "Thunderbolt",
                     "Dark Pulse"
@@ -12194,7 +12161,7 @@
                     "Icicle Crash",
                     "Zen Headbutt",
                     "Earthquake",
-                    "Fire Punch"
+                    "Blaze Kick"
                 ],
                 "abilities": [
                     "Zen Mode"
@@ -12408,37 +12375,6 @@
     "decidueye": {
         "level": 84,
         "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Spirit Shackle",
-                    "Leaf Blade",
-                    "Brick Break",
-                    "Acrobatics"
-                ],
-                "abilities": [
-                    "Long Reach"
-                ],
-                "teraTypes": [
-                    "Grass",
-                    "Ghost"
-                ],
-                "trainerId": 901,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 252,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
             {
                 "role": "Bulky Support",
                 "movepool": [
@@ -13102,37 +13038,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Blizzard",
-                    "Surf",
-                    "Hidden Power",
-                    "Icicle Crash"
-                ],
-                "abilities": [
-                    "Snow Warning"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ice"
-                ],
-                "trainerId": 916,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 252,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Icicle Crash",
                     "Liquidation",
                     "Drill Run",
@@ -13336,7 +13241,7 @@
                     "Bulldoze"
                 ],
                 "abilities": [
-                    "Clear Body"
+                    "Filter"
                 ],
                 "teraTypes": [
                     "Rock",
@@ -13351,10 +13256,10 @@
                 ],
                 "evs": {
                     "hp": 252,
-                    "atk": 0,
-                    "def": 130,
+                    "atk": 252,
+                    "def": 6,
                     "spa": 0,
-                    "spd": 128,
+                    "spd": 0,
                     "spe": 0
                 }
             }
@@ -13641,6 +13546,36 @@
                 }
             },
             {
+                "role": "Bulky Setup",
+                "movepool": [
+                    "Earthquake",
+                    "Seed Bomb",
+                    "Ice Shard",
+                    "Rock Polish"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "teraTypes": [
+                    "Ground"
+                ],
+                "trainerId": 862,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 56,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 202
+                }
+            },
+            {
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Earthquake",
@@ -13717,33 +13652,6 @@
                 "trainerId": 585,
                 "nature": [
                     "Bashful"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Rapid Spin",
-                    "Assurance",
-                    "Slam",
-                    "Fury Attack"
-                ],
-                "abilities": [
-                    "Sturdy"
-                ],
-                "teraTypes": [
-                    "Ground"
-                ],
-                "trainerId": 344,
-                "nature": [
-                    "Docile"
                 ],
                 "evs": {
                     "hp": 84,
@@ -14154,6 +14062,65 @@
                 }
             },
             {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Dragon Darts",
+                    "Shadow Claw",
+                    "Psychic Fangs",
+                    "Sucker Punch"
+                ],
+                "abilities": [
+                    "Infiltrator"
+                ],
+                "teraTypes": [
+                    "Dragon",
+                    "Ghost"
+                ],
+                "trainerId": 900,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 202,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 56
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Take Down",
+                    "Dragon Rush",
+                    "Double-Edge",
+                    "Last Resort"
+                ],
+                "abilities": [
+                    "Infiltrator"
+                ],
+                "teraTypes": [
+                    "Dragon",
+                    "Ghost"
+                ],
+                "trainerId": 433,
+                "nature": [
+                    "Serious"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
                 "role": "Setup Sweeper",
                 "movepool": [
                     "Dragon Darts",
@@ -14187,34 +14154,6 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Take Down",
-                    "Dragon Rush",
-                    "Double-Edge",
-                    "Last Resort"
-                ],
-                "abilities": [
-                    "Infiltrator"
-                ],
-                "teraTypes": [
-                    "Dragon",
-                    "Ghost"
-                ],
-                "trainerId": 433,
-                "nature": [
-                    "Serious"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
                     "Phantom Force",
                     "Take Down",
                     "Dragon Rush",
@@ -14228,34 +14167,6 @@
                     "Ghost"
                 ],
                 "trainerId": 533,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Dragon Dance",
-                    "Phantom Force",
-                    "Take Down",
-                    "Dragon Rush"
-                ],
-                "abilities": [
-                    "Clear Body"
-                ],
-                "teraTypes": [
-                    "Dragon",
-                    "Ghost"
-                ],
-                "trainerId": 201,
                 "nature": [
                     "Hardy"
                 ],
@@ -14464,11 +14375,11 @@
         "level": 86,
         "sets": [
             {
-                "role": "Fast Attacker",
+                "role": "Setup Sweeper",
                 "movepool": [
-                    "Night Slash",
-                    "Poison Jab",
-                    "Ice Fang",
+                    "Swords Dance",
+                    "Crunch",
+                    "Rock Climb",
                     "Earthquake"
                 ],
                 "abilities": [
@@ -14480,7 +14391,7 @@
                 ],
                 "trainerId": 923,
                 "item": [
-                    "Assault Vest"
+                    "Shuca Berry"
                 ],
                 "nature": [
                     "Jolly"
@@ -14554,6 +14465,37 @@
                 }
             },
             {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Aqua Tail",
+                    "Night Slash",
+                    "Cross Poison",
+                    "Earthquake"
+                ],
+                "abilities": [
+                    "Sniper"
+                ],
+                "teraTypes": [
+                    "Poison",
+                    "Dark"
+                ],
+                "trainerId": 855,
+                "item": [
+                    "Assault Vest"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Scary Face",
@@ -14580,74 +14522,12 @@
                     "spd": 84,
                     "spe": 86
                 }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Cross Poison",
-                    "Night Slash",
-                    "Aqua Tail",
-                    "Earthquake"
-                ],
-                "abilities": [
-                    "Battle Armor"
-                ],
-                "teraTypes": [
-                    "Poison",
-                    "Dark"
-                ],
-                "trainerId": 1911,
-                "item": [
-                    "Scope Lens"
-                ],
-                "nature": [
-                    "Docile"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 6,
-                    "spe": 252
-                }
             }
         ]
     },
     "drednaw": {
         "level": 86,
         "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Stone Edge",
-                    "Earthquake",
-                    "Jaw Lock",
-                    "Ice Fang"
-                ],
-                "abilities": [
-                    "Strong Jaw"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Rock"
-                ],
-                "trainerId": 891,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
             {
                 "role": "Bulky Setup",
                 "movepool": [
@@ -14761,6 +14641,37 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": [
+                    "Liquidation",
+                    "Stone Edge",
+                    "Megahorn",
+                    "Swords Dance"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "teraTypes": [
+                    "Water",
+                    "Rock"
+                ],
+                "trainerId": 841,
+                "item": [
+                    "Lum Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
                 }
             }
         ]
@@ -15333,19 +15244,19 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Iron Head",
+                    "Bulldoze",
+                    "Magnet Bomb",
                     "Aerial Ace",
-                    "Shadow Claw"
+                    "Rock Tomb"
                 ],
                 "abilities": [
-                    "Sand Force"
+                    "Technician"
                 ],
                 "teraTypes": [
                     "Ground",
                     "Steel"
                 ],
-                "trainerId": 859,
+                "trainerId": 860,
                 "item": [
                     "Focus Sash"
                 ],
@@ -15495,42 +15406,11 @@
                 "movepool": [
                     "Iron Head",
                     "X-Scissor",
-                    "Rock Slide",
-                    "Beat Up"
+                    "Rock Climb",
+                    "Crunch"
                 ],
                 "abilities": [
-                    "Swarm"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Steel"
-                ],
-                "trainerId": 926,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 56,
-                    "atk": 202,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Iron Head",
-                    "X-Scissor",
-                    "Rock Slide",
-                    "Beat Up"
-                ],
-                "abilities": [
-                    "Hustle"
+                    "Heatproof"
                 ],
                 "teraTypes": [
                     "Bug",
@@ -15585,36 +15465,6 @@
     "dusknoir": {
         "level": 84,
         "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Ice Punch",
-                    "Drain Punch",
-                    "Shadow Sneak",
-                    "Will-O-Wisp"
-                ],
-                "abilities": [
-                    "Iron Fist"
-                ],
-                "teraTypes": [
-                    "Ghost"
-                ],
-                "trainerId": 901,
-                "item": [
-                    "Assault Vest"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 130,
-                    "def": 128,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 0
-                }
-            },
             {
                 "role": "Bulky Attacker",
                 "movepool": [
@@ -15727,6 +15577,36 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Shadow Punch",
+                    "Thunder Punch",
+                    "Ice Punch",
+                    "Drain Punch"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "teraTypes": [
+                    "Ghost"
+                ],
+                "trainerId": 1080,
+                "item": [
+                    "Lum Berry"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
                 }
             }
         ]
@@ -15916,6 +15796,36 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Thunderbolt",
+                    "Giga Drain",
+                    "Flamethrower",
+                    "Dragon Pulse"
+                ],
+                "abilities": [
+                    "Surge Surfer"
+                ],
+                "teraTypes": [
+                    "Electric"
+                ],
+                "trainerId": 921,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Thunderbolt",
                     "Flash Cannon",
                     "Flamethrower",
                     "Dragon Pulse"
@@ -15940,36 +15850,6 @@
                     "spa": 252,
                     "spd": 6,
                     "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Thunderbolt",
-                    "Giga Drain",
-                    "Flamethrower",
-                    "Volt Switch"
-                ],
-                "abilities": [
-                    "Levitate"
-                ],
-                "teraTypes": [
-                    "Electric"
-                ],
-                "trainerId": 874,
-                "item": [
-                    "Assault Vest"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 6
                 }
             },
             {
@@ -16000,12 +15880,12 @@
                 }
             },
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Support",
                 "movepool": [
-                    "Aqua Tail",
-                    "Dragon Claw",
-                    "Wild Charge",
-                    "Crunch"
+                    "Thunderbolt",
+                    "Giga Drain",
+                    "Flamethrower",
+                    "Volt Switch"
                 ],
                 "abilities": [
                     "Levitate"
@@ -16013,15 +15893,18 @@
                 "teraTypes": [
                     "Electric"
                 ],
-                "trainerId": 159,
+                "trainerId": 874,
+                "item": [
+                    "Assault Vest"
+                ],
                 "nature": [
-                    "Hardy"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 252,
-                    "atk": 252,
+                    "atk": 0,
                     "def": 0,
-                    "spa": 0,
+                    "spa": 252,
                     "spd": 0,
                     "spe": 6
                 }
@@ -16662,37 +16545,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Flare Blitz",
-                    "Brick Break",
-                    "Wild Charge"
-                ],
-                "abilities": [
-                    "Reckless"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Fighting"
-                ],
-                "trainerId": 865,
-                "item": [
-                    "Life Orb"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 6
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Assurance",
                     "Flamethrower",
                     "Submission",
@@ -17116,37 +16968,6 @@
         "level": 86,
         "sets": [
             {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Drill Run",
-                    "Iron Head",
-                    "Aerial Ace",
-                    "Megahorn"
-                ],
-                "abilities": [
-                    "Shell Armor"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Steel"
-                ],
-                "trainerId": 925,
-                "item": [
-                    "Wide Lens"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 6,
-                    "spe": 0
-                }
-            },
-            {
                 "role": "Bulky Setup",
                 "movepool": [
                     "Close Combat",
@@ -17265,15 +17086,15 @@
                     "Life Orb"
                 ],
                 "nature": [
-                    "Timid"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 0,
                     "atk": 0,
-                    "def": 158,
+                    "def": 6,
                     "spa": 252,
                     "spd": 0,
-                    "spe": 100
+                    "spe": 252
                 }
             },
             {
@@ -17341,6 +17162,36 @@
                 "movepool": [
                     "Psychic",
                     "Dazzling Gleam",
+                    "Power Gem",
+                    "Aura Sphere"
+                ],
+                "abilities": [
+                    "Magic Bounce"
+                ],
+                "teraTypes": [
+                    "Psychic"
+                ],
+                "trainerId": 868,
+                "item": [
+                    "Life Orb"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 0,
+                    "def": 158,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 100
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Psychic",
+                    "Dazzling Gleam",
                     "Aura Sphere",
                     "Power Gem"
                 ],
@@ -17361,33 +17212,6 @@
                     "hp": 0,
                     "atk": 0,
                     "def": 6,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Dazzling Gleam",
-                    "Psychic",
-                    "Wish",
-                    "Yawn"
-                ],
-                "abilities": [
-                    "Synchronize"
-                ],
-                "teraTypes": [
-                    "Psychic"
-                ],
-                "trainerId": 166,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 0,
                     "spa": 252,
                     "spd": 0,
                     "spe": 252
@@ -17489,7 +17313,7 @@
                 ],
                 "trainerId": 927,
                 "item": [
-                    "Expert Belt"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Adamant"
@@ -17520,18 +17344,18 @@
                 ],
                 "trainerId": 859,
                 "item": [
-                    "Expert Belt"
+                    "Assault Vest"
                 ],
                 "nature": [
                     "Adamant"
                 ],
                 "evs": {
-                    "hp": 4,
+                    "hp": 6,
                     "atk": 252,
-                    "def": 0,
-                    "spa": 2,
+                    "def": 252,
+                    "spa": 0,
                     "spd": 0,
-                    "spe": 252
+                    "spe": 0
                 }
             },
             {
@@ -18122,7 +17946,7 @@
                     "Normal",
                     "Psychic"
                 ],
-                "trainerId": 935,
+                "trainerId": 869,
                 "item": [
                     "Throat Spray"
                 ],
@@ -19013,7 +18837,7 @@
                 "movepool": [
                     "Megahorn",
                     "Earthquake",
-                    "Iron Tail",
+                    "Stone Edge",
                     "Dragon Rush"
                 ],
                 "abilities": [
@@ -19031,12 +18855,12 @@
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 56,
+                    "hp": 6,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 202
+                    "spe": 252
                 }
             },
             {
@@ -19258,37 +19082,6 @@
             {
                 "role": "Bulky Support",
                 "movepool": [
-                    "Gyro Ball",
-                    "Toxic Spikes",
-                    "Light Screen",
-                    "Reflect"
-                ],
-                "abilities": [
-                    "Sturdy"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Steel"
-                ],
-                "trainerId": 856,
-                "item": [
-                    "Light Clay"
-                ],
-                "nature": [
-                    "Careful"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 130,
-                    "spa": 0,
-                    "spd": 128,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
                     "Toxic Spikes",
                     "Earthquake",
                     "Gyro Ball",
@@ -19316,6 +19109,37 @@
                     "spd": 252,
                     "spe": 0
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Gyro Ball",
+                    "Bug Bite",
+                    "Drill Run",
+                    "Toxic Spikes"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "teraTypes": [
+                    "Bug",
+                    "Steel"
+                ],
+                "trainerId": 1909,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Serious"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -19328,7 +19152,7 @@
                     "Ice Beam",
                     "Shadow Ball",
                     "Thunderbolt",
-                    "Chilling Water"
+                    "Water Pulse"
                 ],
                 "abilities": [
                     "Cursed Body"
@@ -19337,7 +19161,7 @@
                     "Ice",
                     "Ghost"
                 ],
-                "trainerId": 901,
+                "trainerId": 915,
                 "item": [
                     "Focus Sash"
                 ],
@@ -19510,10 +19334,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Giga Drain",
                     "Ice Beam",
-                    "Hurricane",
-                    "Tailwind",
-                    "Bug Buzz"
+                    "Bug Buzz",
+                    "Dazzling Gleam"
                 ],
                 "abilities": [
                     "Ice Scales"
@@ -19522,19 +19346,19 @@
                     "Ice",
                     "Bug"
                 ],
-                "trainerId": 855,
+                "trainerId": 858,
                 "item": [
-                    "Focus Sash"
+                    "Weakness Policy"
                 ],
                 "nature": [
-                    "Modest"
+                    "Timid"
                 ],
                 "evs": {
-                    "hp": 0,
+                    "hp": 6,
                     "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 6,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 0,
                     "spe": 252
                 }
             },
@@ -19875,19 +19699,19 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Zen Headbutt",
+                    "Psycho Cut",
                     "Close Combat",
                     "Night Slash",
                     "Leaf Blade"
                 ],
                 "abilities": [
-                    "Justified"
+                    "Sharpness"
                 ],
                 "teraTypes": [
                     "Psychic",
                     "Fighting"
                 ],
-                "trainerId": 937,
+                "trainerId": 935,
                 "item": [
                     "Focus Sash"
                 ],
@@ -20006,7 +19830,7 @@
                 "movepool": [
                     "Thunder",
                     "Bug Buzz",
-                    "Giga Drain",
+                    "Energy Ball",
                     "Hidden Power"
                 ],
                 "abilities": [
@@ -20026,37 +19850,6 @@
                 "evs": {
                     "hp": 6,
                     "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Thunder",
-                    "Bug Buzz",
-                    "Giga Drain",
-                    "Hidden Power"
-                ],
-                "abilities": [
-                    "Compound Eyes"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Electric"
-                ],
-                "trainerId": 856,
-                "item": [
-                    "Throat Spray"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 4,
-                    "atk": 2,
                     "def": 0,
                     "spa": 252,
                     "spd": 0,
@@ -20647,37 +20440,6 @@
                 }
             },
             {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earth Power",
-                    "Sludge Bomb",
-                    "Surf",
-                    "Ice Beam"
-                ],
-                "abilities": [
-                    "Storm Drain"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ground"
-                ],
-                "trainerId": 862,
-                "item": [
-                    "Rindo Berry"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 6,
-                    "spe": 0
-                }
-            },
-            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Acid Armor",
@@ -20695,6 +20457,34 @@
                 "trainerId": 474,
                 "nature": [
                     "Hardy"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 88,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Muddy Water",
+                    "Body Slam",
+                    "Counter",
+                    "Mirror Coat"
+                ],
+                "abilities": [
+                    "Sticky Hold"
+                ],
+                "teraTypes": [
+                    "Water",
+                    "Ground"
+                ],
+                "trainerId": 273,
+                "nature": [
+                    "Serious"
                 ],
                 "evs": {
                     "hp": 84,
@@ -20725,6 +20515,37 @@
                     "Bug",
                     "Steel"
                 ],
+                "trainerId": 925,
+                "item": [
+                    "Douse Drive"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Flamethrower",
+                    "Thunderbolt",
+                    "Techno Blast",
+                    "Ice Beam"
+                ],
+                "abilities": [
+                    "Download"
+                ],
+                "teraTypes": [
+                    "Bug",
+                    "Steel"
+                ],
                 "trainerId": 923,
                 "item": [
                     "Douse Drive"
@@ -20733,12 +20554,12 @@
                     "Timid"
                 ],
                 "evs": {
-                    "hp": 56,
+                    "hp": 6,
                     "atk": 0,
                     "def": 0,
                     "spa": 252,
                     "spd": 0,
-                    "spe": 202
+                    "spe": 252
                 }
             }
         ]
@@ -20909,7 +20730,7 @@
                     "Ghost",
                     "Poison"
                 ],
-                "trainerId": 900,
+                "trainerId": 902,
                 "item": [
                     "Focus Sash"
                 ],
@@ -21088,6 +20909,36 @@
     "gigalith": {
         "level": 85,
         "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Power Gem",
+                    "Earth Power",
+                    "Flash Cannon",
+                    "Hidden Power"
+                ],
+                "abilities": [
+                    "Sand Stream"
+                ],
+                "teraTypes": [
+                    "Rock"
+                ],
+                "trainerId": 892,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 56,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 202,
+                    "spe": 0
+                }
+            },
             {
                 "role": "Bulky Attacker",
                 "movepool": [
@@ -21425,11 +21276,11 @@
                     "Modest"
                 ],
                 "evs": {
-                    "hp": 202,
+                    "hp": 252,
                     "atk": 0,
                     "def": 0,
-                    "spa": 56,
-                    "spd": 252,
+                    "spa": 252,
+                    "spd": 6,
                     "spe": 0
                 }
             },
@@ -21662,6 +21513,37 @@
         "level": 85,
         "sets": [
             {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Acrobatics",
+                    "Earthquake",
+                    "Thunder Fang",
+                    "Sky Uppercut"
+                ],
+                "abilities": [
+                    "Hyper Cutter"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Flying"
+                ],
+                "trainerId": 930,
+                "item": [
+                    "Flying Gem"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Earthquake",
@@ -21777,37 +21659,6 @@
                     "spa": 0,
                     "spd": 252,
                     "spe": 12
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Acrobatics",
-                    "Earthquake",
-                    "Thunder Fang",
-                    "Sky Uppercut"
-                ],
-                "abilities": [
-                    "Sand Veil"
-                ],
-                "teraTypes": [
-                    "Ground",
-                    "Flying"
-                ],
-                "trainerId": 860,
-                "item": [
-                    "Flying Gem"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 6,
-                    "spe": 252
                 }
             }
         ]
@@ -22364,11 +22215,11 @@
                 "movepool": [
                     "Aqua Jet",
                     "Liquidation",
-                    "Brick Break",
-                    "Poison Jab"
+                    "Sucker Punch",
+                    "First Impression"
                 ],
                 "abilities": [
-                    "Emergency Exit"
+                    "Run Away"
                 ],
                 "teraTypes": [
                     "Bug",
@@ -22527,7 +22378,7 @@
                 ],
                 "trainerId": 902,
                 "item": [
-                    "Weakness Policy"
+                    "Assault Vest"
                 ],
                 "nature": [
                     "Jolly"
@@ -24539,6 +24390,36 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Fake Out",
+                    "Bullet Punch",
+                    "Drain Punch",
+                    "Payback"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "teraTypes": [
+                    "Fighting"
+                ],
+                "trainerId": 904,
+                "item": [
+                    "Flame Orb"
+                ],
+                "nature": [
+                    "Sassy"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "Close Combat",
                     "Reversal",
                     "Counter",
@@ -24613,33 +24494,6 @@
                 "trainerId": 573,
                 "nature": [
                     "Bashful"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Close Combat",
-                    "Reversal",
-                    "Counter",
-                    "Heavy Slam"
-                ],
-                "abilities": [
-                    "Thick Fat"
-                ],
-                "teraTypes": [
-                    "Fighting"
-                ],
-                "trainerId": 182,
-                "nature": [
-                    "Serious"
                 ],
                 "evs": {
                     "hp": 84,
@@ -25277,10 +25131,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Megahorn",
-                    "Stone Edge",
-                    "Earthquake",
-                    "Brick Break"
+                    "Pin Missile",
+                    "Rock Blast",
+                    "Arm Thrust",
+                    "Earthquake"
                 ],
                 "abilities": [
                     "Moxie"
@@ -25289,9 +25143,9 @@
                     "Bug",
                     "Fighting"
                 ],
-                "trainerId": 924,
+                "trainerId": 906,
                 "item": [
-                    "Wide Lens"
+                    "Loaded Dice"
                 ],
                 "nature": [
                     "Jolly"
@@ -25435,36 +25289,6 @@
         "level": 84,
         "sets": [
             {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Stone Edge",
-                    "Thunder Fang",
-                    "Ice Fang"
-                ],
-                "abilities": [
-                    "Sand Stream"
-                ],
-                "teraTypes": [
-                    "Ground"
-                ],
-                "trainerId": 927,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Sassy"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 6,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 252,
-                    "spe": 0
-                }
-            },
-            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Earthquake",
@@ -25522,12 +25346,12 @@
                 }
             },
             {
-                "role": "Bulky Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Earthquake",
-                    "Stealth Rock",
+                    "Stone Edge",
                     "Thunder Fang",
-                    "Ice Fang"
+                    "Fire Fang"
                 ],
                 "abilities": [
                     "Sand Stream"
@@ -25535,7 +25359,7 @@
                 "teraTypes": [
                     "Ground"
                 ],
-                "trainerId": 860,
+                "trainerId": 859,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -25544,11 +25368,11 @@
                 ],
                 "evs": {
                     "hp": 252,
-                    "atk": 4,
+                    "atk": 6,
                     "def": 0,
                     "spa": 0,
                     "spd": 252,
-                    "spe": 2
+                    "spe": 0
                 }
             },
             {
@@ -25571,6 +25395,36 @@
                 ],
                 "nature": [
                     "Naughty"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 80,
+                    "spa": 0,
+                    "spd": 178,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Earthquake",
+                    "Crunch",
+                    "Stealth Rock",
+                    "Slack Off"
+                ],
+                "abilities": [
+                    "Sand Stream"
+                ],
+                "teraTypes": [
+                    "Ground"
+                ],
+                "trainerId": 702,
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Docile"
                 ],
                 "evs": {
                     "hp": 252,
@@ -25851,6 +25705,36 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Earthquake",
+                    "Close Combat",
+                    "Stone Edge",
+                    "Sucker Punch"
+                ],
+                "abilities": [
+                    "Contrary"
+                ],
+                "teraTypes": [
+                    "Fighting"
+                ],
+                "trainerId": 903,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "Drill Run",
                     "Bullet Punch",
                     "Endeavor",
@@ -25961,42 +25845,43 @@
                     "spd": 84,
                     "spe": 86
                 }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Dig",
-                    "Detect",
-                    "Close Combat",
-                    "Counter"
-                ],
-                "abilities": [
-                    "Guts"
-                ],
-                "teraTypes": [
-                    "Fighting"
-                ],
-                "trainerId": 1098,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
             }
         ]
     },
     "honchkrow": {
         "level": 85,
         "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Brave Bird",
+                    "Sucker Punch",
+                    "Defog",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Moxie"
+                ],
+                "teraTypes": [
+                    "Dark",
+                    "Flying"
+                ],
+                "trainerId": 887,
+                "item": [
+                    "Heavy-Duty Boots"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
             {
                 "role": "Bulky Support",
                 "movepool": [
@@ -26062,34 +25947,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Feint Attack",
-                    "Dark Pulse",
-                    "Torment",
-                    "Brave Bird"
-                ],
-                "abilities": [
-                    "Insomnia"
-                ],
-                "teraTypes": [
-                    "Dark",
-                    "Flying"
-                ],
-                "trainerId": 399,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Night Slash",
                     "Feint Attack",
                     "Dark Pulse",
@@ -26105,6 +25962,34 @@
                 "trainerId": 382,
                 "nature": [
                     "Serious"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Feint Attack",
+                    "Dark Pulse",
+                    "Torment",
+                    "Brave Bird"
+                ],
+                "abilities": [
+                    "Insomnia"
+                ],
+                "teraTypes": [
+                    "Dark",
+                    "Flying"
+                ],
+                "trainerId": 399,
+                "nature": [
+                    "Hardy"
                 ],
                 "evs": {
                     "hp": 84,
@@ -26174,7 +26059,7 @@
                     "Psychic",
                     "Ghost"
                 ],
-                "trainerId": 935,
+                "trainerId": 901,
                 "item": [
                     "Focus Sash"
                 ],
@@ -26928,7 +26813,7 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Expanding Force",
-                    "Shadow Ball",
+                    "Aura Sphere",
                     "Energy Ball",
                     "Hyper Voice"
                 ],
@@ -26981,6 +26866,37 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Expanding Force",
+                    "Shadow Ball",
+                    "Energy Ball",
+                    "Hyper Voice"
+                ],
+                "abilities": [
+                    "Psychic Surge"
+                ],
+                "teraTypes": [
+                    "Psychic",
+                    "Normal"
+                ],
+                "trainerId": 867,
+                "item": [
+                    "Terrain Extender"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 52,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 250,
+                    "spd": 8,
+                    "spe": 200
                 }
             }
         ]
@@ -28264,37 +28180,6 @@
                 }
             },
             {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Night Slash",
-                    "Aqua Cutter",
-                    "Rock Climb",
-                    "Aerial Ace"
-                ],
-                "abilities": [
-                    "Sharpness"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Water"
-                ],
-                "trainerId": 894,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Brine",
@@ -28805,6 +28690,37 @@
                     "spd": 0,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Aerial Ace",
+                    "Kowtow Cleave",
+                    "Sucker Punch",
+                    "Stone Edge"
+                ],
+                "abilities": [
+                    "Supreme Overlord"
+                ],
+                "teraTypes": [
+                    "Dark",
+                    "Steel"
+                ],
+                "trainerId": 887,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -29132,16 +29048,16 @@
                     "Bug",
                     "Rock"
                 ],
-                "trainerId": 894,
+                "trainerId": 923,
                 "item": [
-                    "Weakness Policy"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 252,
-                    "atk": 6,
+                    "hp": 6,
+                    "atk": 252,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
@@ -29163,7 +29079,7 @@
                     "Bug",
                     "Rock"
                 ],
-                "trainerId": 856,
+                "trainerId": 894,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -29171,8 +29087,8 @@
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 6,
-                    "atk": 252,
+                    "hp": 252,
+                    "atk": 6,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
@@ -29512,6 +29428,37 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Boomburst",
+                    "Clanging Scales",
+                    "Flash Cannon",
+                    "Aura Sphere"
+                ],
+                "abilities": [
+                    "Bulletproof"
+                ],
+                "teraTypes": [
+                    "Dragon",
+                    "Fighting"
+                ],
+                "trainerId": 904,
+                "item": [
+                    "Throat Spray"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "Flash Cannon",
                     "Clanging Scales",
                     "Aura Sphere",
@@ -29524,38 +29471,10 @@
                     "Dragon",
                     "Fighting"
                 ],
-                "trainerId": 903,
+                "trainerId": 941,
                 "item": [
                     "Throat Spray"
                 ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 6,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Clanging Scales",
-                    "Aura Sphere",
-                    "Flamethrower",
-                    "Flash Cannon"
-                ],
-                "abilities": [
-                    "Bulletproof"
-                ],
-                "teraTypes": [
-                    "Dragon",
-                    "Fighting"
-                ],
-                "trainerId": 437,
                 "nature": [
                     "Timid"
                 ],
@@ -29630,28 +29549,28 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Boomburst",
                     "Clanging Scales",
-                    "Focus Blast",
-                    "Flamethrower"
+                    "Aura Sphere",
+                    "Flamethrower",
+                    "Flash Cannon"
                 ],
                 "abilities": [
-                    "Soundproof"
+                    "Bulletproof"
                 ],
                 "teraTypes": [
                     "Dragon",
                     "Fighting"
                 ],
-                "trainerId": 294,
+                "trainerId": 437,
                 "nature": [
-                    "Hardy"
+                    "Timid"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 0,
                     "atk": 0,
                     "def": 0,
                     "spa": 252,
-                    "spd": 0,
+                    "spd": 6,
                     "spe": 252
                 }
             }
@@ -29841,6 +29760,37 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Earthquake",
+                    "Rock Climb",
+                    "Beat Up",
+                    "Fire Fang"
+                ],
+                "abilities": [
+                    "Moxie"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Dark"
+                ],
+                "trainerId": 930,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Earthquake",
                     "Crunch",
                     "Outrage",
                     "Brick Break"
@@ -29866,37 +29816,6 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Brick Break",
-                    "Crunch",
-                    "Outrage"
-                ],
-                "abilities": [
-                    "Moxie"
-                ],
-                "teraTypes": [
-                    "Ground",
-                    "Dark"
-                ],
-                "trainerId": 860,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 8,
-                    "spe": 250
                 }
             },
             {
@@ -29954,6 +29873,37 @@
                     "spd": 0,
                     "spe": 6
                 }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Earthquake",
+                    "Brick Break",
+                    "Crunch",
+                    "Outrage"
+                ],
+                "abilities": [
+                    "Moxie"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Dark"
+                ],
+                "trainerId": 945,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 8,
+                    "spe": 250
+                }
             }
         ]
     },
@@ -29996,28 +29946,12 @@
         "level": 78,
         "sets": [
             {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Rest",
-                    "Dragon Dance"
-                ],
-                "abilities": [
-                    "Pressure"
-                ],
-                "teraTypes": [
-                    "Dragon",
-                    "Ice"
-                ]
-            },
-            {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Draco Meteor",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
+                    "Dragon Pulse",
+                    "Ice Beam",
+                    "Earth Power",
+                    "Psychic"
                 ],
                 "abilities": [
                     "Pressure"
@@ -30025,7 +29959,22 @@
                 "teraTypes": [
                     "Dragon",
                     "Ice"
-                ]
+                ],
+                "trainerId": 915,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -30484,7 +30433,7 @@
                     "Aura Sphere",
                     "Surf",
                     "Ice Beam",
-                    "Shadow Ball"
+                    "Dragon Pulse"
                 ],
                 "abilities": [
                     "Levitate"
@@ -30493,7 +30442,7 @@
                     "Dragon",
                     "Psychic"
                 ],
-                "trainerId": 936,
+                "trainerId": 935,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -31372,9 +31321,9 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Ice Punch",
-                    "Thunder Punch",
-                    "Dizzy Punch",
-                    "Jump Kick"
+                    "Blaze Kick",
+                    "Strength",
+                    "High Jump Kick"
                 ],
                 "abilities": [
                     "Adaptability"
@@ -32232,36 +32181,6 @@
         "level": 84,
         "sets": [
             {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Facade",
-                    "Wild Charge",
-                    "Crunch",
-                    "Ice Fang"
-                ],
-                "abilities": [
-                    "Guts"
-                ],
-                "teraTypes": [
-                    "Electric"
-                ],
-                "trainerId": 919,
-                "item": [
-                    "Flame Orb"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 252,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Sucker Punch",
@@ -32276,6 +32195,36 @@
                     "Electric"
                 ],
                 "trainerId": 1048,
+                "item": [
+                    "Flame Orb"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Wild Charge",
+                    "Sucker Punch",
+                    "Crunch",
+                    "Ice Fang"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "teraTypes": [
+                    "Electric"
+                ],
+                "trainerId": 947,
                 "item": [
                     "Flame Orb"
                 ],
@@ -32324,36 +32273,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Wild Charge",
-                    "Sucker Punch",
-                    "Crunch",
-                    "Ice Fang"
-                ],
-                "abilities": [
-                    "Guts"
-                ],
-                "teraTypes": [
-                    "Electric"
-                ],
-                "trainerId": 947,
-                "item": [
-                    "Flame Orb"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 6
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Sucker Punch",
                     "Thunder Fang",
                     "Protect",
@@ -32379,6 +32298,36 @@
                     "spa": 252,
                     "spd": 6,
                     "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Wild Charge",
+                    "Swagger",
+                    "Superpower",
+                    "Sucker Punch"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "teraTypes": [
+                    "Electric"
+                ],
+                "trainerId": 683,
+                "item": [
+                    "Life Orb"
+                ],
+                "nature": [
+                    "Serious"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
                 }
             }
         ]
@@ -33264,9 +33213,9 @@
                     "Ice",
                     "Ground"
                 ],
-                "trainerId": 916,
+                "trainerId": 928,
                 "item": [
-                    "Wide Lens"
+                    "Assault Vest"
                 ],
                 "nature": [
                     "Jolly"
@@ -33278,6 +33227,37 @@
                     "spa": 0,
                     "spd": 8,
                     "spe": 250
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Ice Shard",
+                    "Earthquake",
+                    "Icicle Crash",
+                    "Rock Climb"
+                ],
+                "abilities": [
+                    "Thick Fat"
+                ],
+                "teraTypes": [
+                    "Ice",
+                    "Ground"
+                ],
+                "trainerId": 915,
+                "item": [
+                    "Assault Vest"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             },
             {
@@ -33340,37 +33320,6 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Ice Shard",
-                    "Earthquake",
-                    "Body Slam",
-                    "Detect"
-                ],
-                "abilities": [
-                    "Thick Fat"
-                ],
-                "teraTypes": [
-                    "Ice",
-                    "Ground"
-                ],
-                "trainerId": 1067,
-                "item": [
-                    "Leftovers"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 6
                 }
             }
         ]
@@ -33888,12 +33837,12 @@
                     "Adamant"
                 ],
                 "evs": {
-                    "hp": 112,
+                    "hp": 64,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 146
+                    "spe": 194
                 }
             }
         ]
@@ -33901,6 +33850,37 @@
     "masquerain": {
         "level": 88,
         "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bug Buzz",
+                    "Sticky Web",
+                    "Surf",
+                    "Energy Ball"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "teraTypes": [
+                    "Bug",
+                    "Flying"
+                ],
+                "trainerId": 925,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
             {
                 "role": "Bulky Support",
                 "movepool": [
@@ -34017,34 +33997,6 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Stun Spore",
-                    "Air Slash",
-                    "Hydro Pump",
-                    "Bug Buzz"
-                ],
-                "abilities": [
-                    "Intimidate"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Flying"
-                ],
-                "trainerId": 298,
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
                 }
             }
         ]
@@ -34271,7 +34223,7 @@
                     "Fighting",
                     "Psychic"
                 ],
-                "trainerId": 904,
+                "trainerId": 906,
                 "item": [
                     "Wide Lens"
                 ],
@@ -34956,13 +34908,13 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Expanding Force",
-                    "Draining Kiss",
+                    "Psychic",
+                    "Moonblast",
                     "Ice Beam",
                     "Shadow Ball"
                 ],
                 "abilities": [
-                    "Friend Guard"
+                    "Levitate"
                 ],
                 "teraTypes": [
                     "Psychic"
@@ -35093,7 +35045,7 @@
                     "Steel",
                     "Psychic"
                 ],
-                "trainerId": 936,
+                "trainerId": 935,
                 "item": [
                     "Assault Vest"
                 ],
@@ -35803,15 +35755,15 @@
                     "Life Orb"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Jolly"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 56,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 252
+                    "spe": 202
                 }
             },
             {
@@ -36153,7 +36105,7 @@
                 ],
                 "trainerId": 899,
                 "item": [
-                    "Expert Belt"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Timid"
@@ -36745,10 +36697,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Ice Beam",
                     "Thunderbolt",
+                    "Ice Beam",
                     "Psychic",
-                    "Hidden Power"
+                    "Scald"
                 ],
                 "abilities": [
                     "Screen Cleaner"
@@ -36757,20 +36709,20 @@
                     "Ice",
                     "Psychic"
                 ],
-                "trainerId": 915,
+                "trainerId": 917,
                 "item": [
-                    "Weakness Policy"
+                    "Focus Sash"
                 ],
                 "nature": [
-                    "Timid"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 0,
                     "atk": 0,
-                    "def": 202,
-                    "spa": 108,
+                    "def": 6,
+                    "spa": 252,
                     "spd": 0,
-                    "spe": 200
+                    "spe": 252
                 }
             },
             {
@@ -36903,9 +36855,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Earthquake",
-                    "Body Press",
                     "Heavy Slam",
-                    "Rock Slide"
+                    "Low Sweep",
+                    "Stone Edge"
                 ],
                 "abilities": [
                     "Stamina"
@@ -36921,11 +36873,41 @@
                     "Adamant"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 252,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
-                    "spd": 252,
+                    "spd": 6,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Earthquake",
+                    "Heavy Slam",
+                    "Low Sweep",
+                    "Stone Edge"
+                ],
+                "abilities": [
+                    "Stamina"
+                ],
+                "teraTypes": [
+                    "Ground"
+                ],
+                "trainerId": 861,
+                "item": [
+                    "Assault Vest"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
                     "spe": 0
                 }
             },
@@ -37219,34 +37201,34 @@
         "level": 81,
         "sets": [
             {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Prismatic Laser",
-                    "Giga Impact",
-                    "Stealth Rock",
-                    "Moonlight"
-                ],
-                "abilities": [
-                    "Prism Armor"
-                ],
-                "teraTypes": [
-                    "Psychic"
-                ]
-            },
-            {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Prismatic Laser",
+                    "Earth Power",
                     "Photon Geyser",
-                    "Giga Impact",
-                    "Hyper Beam"
+                    "Power Gem",
+                    "Heat Wave"
                 ],
                 "abilities": [
                     "Prism Armor"
                 ],
                 "teraTypes": [
                     "Psychic"
-                ]
+                ],
+                "trainerId": 935,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -37536,7 +37518,7 @@
                     "Poison",
                     "Ground"
                 ],
-                "trainerId": 862,
+                "trainerId": 859,
                 "item": [
                     "Life Orb"
                 ],
@@ -37647,7 +37629,7 @@
                     "Power Gem",
                     "Dazzling Gleam",
                     "Thunderbolt",
-                    "Sludge Bomb"
+                    "Sludge Wave"
                 ],
                 "abilities": [
                     "Beast Boost"
@@ -37658,18 +37640,18 @@
                 ],
                 "trainerId": 891,
                 "item": [
-                    "Air Balloon"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Timid"
                 ],
                 "evs": {
-                    "hp": 0,
+                    "hp": 6,
                     "atk": 0,
-                    "def": 252,
-                    "spa": 94,
+                    "def": 0,
+                    "spa": 252,
                     "spd": 0,
-                    "spe": 164
+                    "spe": 252
                 }
             }
         ]
@@ -38970,7 +38952,7 @@
                     "Psychic"
                 ],
                 "abilities": [
-                    "Inner Focus"
+                    "Trace"
                 ],
                 "teraTypes": [
                     "Normal",
@@ -39000,7 +38982,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Trick Room",
+                    "Psychic",
                     "Hidden Power",
                     "Bug Buzz",
                     "Shadow Ball"
@@ -39012,40 +38994,9 @@
                     "Bug",
                     "Psychic"
                 ],
-                "trainerId": 925,
+                "trainerId": 923,
                 "item": [
                     "Weakness Policy"
-                ],
-                "nature": [
-                    "Calm"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 130,
-                    "spa": 0,
-                    "spd": 128,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Trick Room",
-                    "Light Screen",
-                    "Bug Buzz",
-                    "Shadow Ball"
-                ],
-                "abilities": [
-                    "Swarm"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Psychic"
-                ],
-                "trainerId": 857,
-                "item": [
-                    "Light Clay"
                 ],
                 "nature": [
                     "Calm"
@@ -39804,37 +39755,6 @@
             {
                 "role": "Bulky Support",
                 "movepool": [
-                    "Earth Power",
-                    "Giga Drain",
-                    "Shadow Ball",
-                    "Shore Up"
-                ],
-                "abilities": [
-                    "Water Compaction"
-                ],
-                "teraTypes": [
-                    "Ghost",
-                    "Ground"
-                ],
-                "trainerId": 862,
-                "item": [
-                    "Leftovers"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 160,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 98,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
                     "Destiny Bond",
                     "Shore Up",
                     "Scorching Sands",
@@ -39885,6 +39805,37 @@
                     "def": 0,
                     "spa": 252,
                     "spd": 6,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Earth Power",
+                    "Giga Drain",
+                    "Shadow Ball",
+                    "Shore Up"
+                ],
+                "abilities": [
+                    "Water Compaction"
+                ],
+                "teraTypes": [
+                    "Ghost",
+                    "Ground"
+                ],
+                "trainerId": 945,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 98,
                     "spe": 0
                 }
             }
@@ -40477,12 +40428,12 @@
                     "Bug",
                     "Fighting"
                 ],
-                "trainerId": 903,
+                "trainerId": 924,
                 "item": [
                     "Focus Sash"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Lonely"
                 ],
                 "evs": {
                     "hp": 0,
@@ -41666,11 +41617,11 @@
         "level": 85,
         "sets": [
             {
-                "role": "Bulky Setup",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Giga Drain",
                     "Shadow Ball",
-                    "Shell Smash",
+                    "Dazzling Gleam",
                     "Psychic"
                 ],
                 "abilities": [
@@ -41679,9 +41630,9 @@
                 "teraTypes": [
                     "Ghost"
                 ],
-                "trainerId": 899,
+                "trainerId": 901,
                 "item": [
-                    "White Herb"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Timid"
@@ -41689,8 +41640,8 @@
                 "evs": {
                     "hp": 6,
                     "atk": 0,
-                    "def": 252,
-                    "spa": 0,
+                    "def": 0,
+                    "spa": 252,
                     "spd": 0,
                     "spe": 252
                 }
@@ -42789,7 +42740,7 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Fake Out",
-                    "Extreme Speed",
+                    "Giga Impact",
                     "Ice Punch",
                     "Brick Break"
                 ],
@@ -43091,25 +43042,25 @@
                     "Hidden Power"
                 ],
                 "abilities": [
-                    "Inner Focus"
+                    "Volt Absorb"
                 ],
                 "teraTypes": [
                     "Electric"
                 ],
                 "trainerId": 920,
                 "item": [
-                    "Air Balloon"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Modest"
                 ],
                 "evs": {
-                    "hp": 0,
+                    "hp": 6,
                     "atk": 0,
-                    "def": 252,
-                    "spa": 112,
+                    "def": 0,
+                    "spa": 252,
                     "spd": 0,
-                    "spe": 146
+                    "spe": 252
                 }
             }
         ]
@@ -43148,12 +43099,12 @@
                 }
             },
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Setup",
                 "movepool": [
                     "Rock Climb",
                     "Earthquake",
-                    "Iron Head",
-                    "Stone Edge"
+                    "Rock Polish",
+                    "Zen Headbutt"
                 ],
                 "abilities": [
                     "Mold Breaker"
@@ -43161,16 +43112,16 @@
                 "teraTypes": [
                     "Rock"
                 ],
-                "trainerId": 893,
+                "trainerId": 891,
                 "item": [
-                    "Choice Scarf"
+                    "Weakness Policy"
                 ],
                 "nature": [
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 6,
-                    "atk": 252,
+                    "hp": 252,
+                    "atk": 6,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
@@ -43191,7 +43142,7 @@
                 "teraTypes": [
                     "Rock"
                 ],
-                "trainerId": 891,
+                "trainerId": 892,
                 "item": [
                     "Focus Sash"
                 ],
@@ -43677,34 +43628,36 @@
         "level": 82,
         "sets": [
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Support",
                 "movepool": [
                     "Blizzard",
-                    "Thunderbolt",
-                    "Body Press",
-                    "Thunder Wave"
+                    "Explosion",
+                    "Rest",
+                    "Curse"
                 ],
                 "abilities": [
-                    "Filter"
+                    "Clear Body",
+                    "Ice Body"
                 ],
                 "teraTypes": [
                     "Ice"
+                ]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Blizzard",
+                    "Ice Beam",
+                    "Explosion",
+                    "Self-Destruct"
                 ],
-                "trainerId": 917,
-                "item": [
-                    "Weakness Policy"
+                "abilities": [
+                    "Clear Body",
+                    "Ice Body"
                 ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 252,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 0
-                }
+                "teraTypes": [
+                    "Ice"
+                ]
             }
         ]
     },
@@ -43760,7 +43713,7 @@
                 "teraTypes": [
                     "Electric"
                 ],
-                "trainerId": 921,
+                "trainerId": 919,
                 "item": [
                     "Focus Sash"
                 ],
@@ -43849,7 +43802,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Brick Break",
+                    "Drain Punch",
                     "Earthquake",
                     "Ice Punch",
                     "Thunder Punch"
@@ -43860,20 +43813,20 @@
                 "teraTypes": [
                     "Rock"
                 ],
-                "trainerId": 892,
+                "trainerId": 891,
                 "item": [
                     "Weakness Policy"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Jolly"
                 ],
                 "evs": {
                     "hp": 252,
                     "atk": 6,
                     "def": 0,
                     "spa": 0,
-                    "spd": 252,
-                    "spe": 0
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -44228,6 +44181,37 @@
         "level": 84,
         "sets": [
             {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Earthquake",
+                    "Thunder Punch",
+                    "Rock Climb",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Solid Rock"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Rock"
+                ],
+                "trainerId": 927,
+                "item": [
+                    "Weakness Policy"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 148,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 110,
+                    "spe": 0
+                }
+            },
+            {
                 "role": "Bulky Setup",
                 "movepool": [
                     "Stone Edge",
@@ -44256,6 +44240,37 @@
                     "spa": 252,
                     "spd": 0,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Rock Climb",
+                    "Crunch",
+                    "Dragon Rush",
+                    "Superpower"
+                ],
+                "abilities": [
+                    "Solid Rock"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Rock"
+                ],
+                "trainerId": 930,
+                "item": [
+                    "Choice Scarf"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             },
             {
@@ -44305,68 +44320,6 @@
                     "Rock"
                 ],
                 "trainerId": 1914,
-                "item": [
-                    "Choice Band"
-                ],
-                "nature": [
-                    "Quirky"
-                ],
-                "evs": {
-                    "hp": 250,
-                    "atk": 16,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 244,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Stone Edge",
-                    "Megahorn",
-                    "Ice Punch"
-                ],
-                "abilities": [
-                    "Reckless"
-                ],
-                "teraTypes": [
-                    "Ground",
-                    "Rock"
-                ],
-                "trainerId": 186,
-                "item": [
-                    "Choice Band"
-                ],
-                "nature": [
-                    "Naughty"
-                ],
-                "evs": {
-                    "hp": 250,
-                    "atk": 16,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 244,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Stone Edge",
-                    "Megahorn",
-                    "Thunder Punch"
-                ],
-                "abilities": [
-                    "Reckless"
-                ],
-                "teraTypes": [
-                    "Ground",
-                    "Rock"
-                ],
-                "trainerId": 702,
                 "item": [
                     "Choice Band"
                 ],
@@ -44932,6 +44885,37 @@
             {
                 "role": "Bulky Support",
                 "movepool": [
+                    "Blizzard",
+                    "Nasty Plot",
+                    "Thunderbolt",
+                    "Substitute"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "teraTypes": [
+                    "Electric",
+                    "Ice"
+                ],
+                "trainerId": 887,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
                     "Nasty Plot",
                     "Blizzard",
                     "Thunderbolt",
@@ -45347,9 +45331,9 @@
                 "role": "Bulky Support",
                 "movepool": [
                     "Trick Room",
-                    "Disable",
                     "Earthquake",
-                    "Night Shade"
+                    "Night Shade",
+                    "Guard Split"
                 ],
                 "abilities": [
                     "Cursed Body"
@@ -45360,7 +45344,38 @@
                 ],
                 "trainerId": 929,
                 "item": [
-                    "Leftovers"
+                    "Lum Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Trick Room",
+                    "Earthquake",
+                    "Night Shade",
+                    "Guard Split"
+                ],
+                "abilities": [
+                    "Cursed Body"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Ghost"
+                ],
+                "trainerId": 861,
+                "item": [
+                    "Lum Berry"
                 ],
                 "nature": [
                     "Adamant"
@@ -45368,9 +45383,9 @@
                 "evs": {
                     "hp": 252,
                     "atk": 0,
-                    "def": 130,
+                    "def": 6,
                     "spa": 0,
-                    "spd": 128,
+                    "spd": 252,
                     "spe": 0
                 }
             },
@@ -45438,37 +45453,6 @@
     "sableye": {
         "level": 90,
         "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Fake Out",
-                    "Recover",
-                    "Sucker Punch",
-                    "Drain Punch"
-                ],
-                "abilities": [
-                    "Prankster"
-                ],
-                "teraTypes": [
-                    "Dark",
-                    "Ghost"
-                ],
-                "trainerId": 902,
-                "item": [
-                    "Life Orb"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 2,
-                    "spd": 0,
-                    "spe": 4
-                }
-            },
             {
                 "role": "Bulky Support",
                 "movepool": [
@@ -45591,6 +45575,34 @@
                     "spa": 36,
                     "spd": 114,
                     "spe": 36
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Feint Attack",
+                    "Fake Out",
+                    "Shadow Claw",
+                    "Knock Off"
+                ],
+                "abilities": [
+                    "Magic Bounce"
+                ],
+                "teraTypes": [
+                    "Dark",
+                    "Ghost"
+                ],
+                "trainerId": 254,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 154,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 104,
+                    "spe": 252
                 }
             }
         ]
@@ -46082,12 +46094,12 @@
                 }
             },
             {
-                "role": "Bulky Support",
+                "role": "Bulky Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Stealth Rock",
+                    "Earth Power",
                     "Glare",
-                    "Rock Slide"
+                    "Flash Cannon",
+                    "Dragon Pulse"
                 ],
                 "abilities": [
                     "Sand Spit"
@@ -46100,13 +46112,13 @@
                     "Weakness Policy"
                 ],
                 "nature": [
-                    "Jolly"
+                    "Timid"
                 ],
                 "evs": {
-                    "hp": 6,
-                    "atk": 252,
+                    "hp": 252,
+                    "atk": 0,
                     "def": 0,
-                    "spa": 0,
+                    "spa": 6,
                     "spd": 0,
                     "spe": 252
                 }
@@ -46659,6 +46671,37 @@
         "level": 86,
         "sets": [
             {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Bug Bite",
+                    "Dual Wingbeat",
+                    "Brick Break",
+                    "Iron Head"
+                ],
+                "abilities": [
+                    "Technician"
+                ],
+                "teraTypes": [
+                    "Bug",
+                    "Steel"
+                ],
+                "trainerId": 925,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Bullet Punch",
@@ -46687,37 +46730,6 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "X-Scissor",
-                    "Night Slash",
-                    "Brick Break",
-                    "Iron Head"
-                ],
-                "abilities": [
-                    "Swarm"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Steel"
-                ],
-                "trainerId": 923,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
                 }
             },
             {
@@ -46838,6 +46850,37 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Rock Climb",
+                    "Poison Tail",
+                    "Earthquake",
+                    "X-Scissor"
+                ],
+                "abilities": [
+                    "Speed Boost"
+                ],
+                "teraTypes": [
+                    "Bug",
+                    "Poison"
+                ],
+                "trainerId": 856,
+                "item": [
+                    "Assault Vest"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 6
                 }
             },
             {
@@ -47305,37 +47348,6 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Hyper Voice",
-                    "Surf",
-                    "Sludge Bomb",
-                    "Hidden Power"
-                ],
-                "abilities": [
-                    "Water Absorb"
-                ],
-                "teraTypes": [
-                    "Water",
-                    "Ground"
-                ],
-                "trainerId": 927,
-                "item": [
-                    "Focus Sash"
-                ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hyper Voice",
                     "Muddy Water",
                     "Rain Dance",
                     "Hydro Pump"
@@ -47363,10 +47375,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Hyper Voice",
-                    "Surf",
-                    "Sludge Bomb",
-                    "Hidden Power"
+                    "Poison Jab",
+                    "Earthquake",
+                    "Drain Punch",
+                    "Rock Slide"
                 ],
                 "abilities": [
                     "Water Absorb"
@@ -47375,18 +47387,18 @@
                     "Water",
                     "Ground"
                 ],
-                "trainerId": 859,
+                "trainerId": 862,
                 "item": [
-                    "Throat Spray"
+                    "Focus Sash"
                 ],
                 "nature": [
-                    "Timid"
+                    "Jolly"
                 ],
                 "evs": {
-                    "hp": 2,
-                    "atk": 4,
+                    "hp": 6,
+                    "atk": 252,
                     "def": 0,
-                    "spa": 252,
+                    "spa": 0,
                     "spd": 0,
                     "spe": 252
                 }
@@ -47445,6 +47457,37 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Weather Ball",
+                    "Earth Power",
+                    "Focus Blast",
+                    "Stealth Rock"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "teraTypes": [
+                    "Water",
+                    "Ground"
+                ],
+                "trainerId": 842,
+                "item": [
+                    "Wise Glasses"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 252
                 }
             }
         ]
@@ -47986,7 +48029,7 @@
                     "Nasty Plot"
                 ],
                 "abilities": [
-                    "Pickpocket"
+                    "Chlorophyll"
                 ],
                 "teraTypes": [
                     "Grass",
@@ -48136,10 +48179,10 @@
             {
                 "role": "Bulky Support",
                 "movepool": [
-                    "Shell Smash",
-                    "Stealth Rock",
                     "Sticky Web",
-                    "Gyro Ball"
+                    "Stealth Rock",
+                    "Final Gambit",
+                    "Stone Edge"
                 ],
                 "abilities": [
                     "Contrary"
@@ -48148,19 +48191,19 @@
                     "Bug",
                     "Rock"
                 ],
-                "trainerId": 858,
+                "trainerId": 891,
                 "item": [
-                    "Sitrus Berry"
+                    "Lum Berry"
                 ],
                 "nature": [
-                    "Impish"
+                    "Bold"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 252,
                     "atk": 0,
-                    "def": 252,
+                    "def": 56,
                     "spa": 0,
-                    "spd": 252,
+                    "spd": 202,
                     "spe": 0
                 }
             },
@@ -48953,12 +48996,12 @@
                     "U-turn"
                 ],
                 "abilities": [
-                    "RKS System"
+                    "Serene Grace"
                 ],
                 "teraTypes": [
                     "Water"
                 ],
-                "trainerId": 887,
+                "trainerId": 309,
                 "item": [
                     "Choice Specs"
                 ],
@@ -48978,19 +49021,19 @@
                 "role": "Bulky Support",
                 "movepool": [
                     "Surf",
-                    "Flamethrower",
                     "Thunderbolt",
+                    "Flamethrower",
                     "U-turn"
                 ],
                 "abilities": [
-                    "Serene Grace"
+                    "RKS System"
                 ],
                 "teraTypes": [
                     "Water"
                 ],
-                "trainerId": 309,
+                "trainerId": 887,
                 "item": [
-                    "Choice Specs"
+                    "Water Memory"
                 ],
                 "nature": [
                     "Timid"
@@ -50864,6 +50907,36 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
+                    "Shadow Ball",
+                    "Psychic",
+                    "Draining Kiss",
+                    "Dark Pulse"
+                ],
+                "abilities": [
+                    "Grim Neigh"
+                ],
+                "teraTypes": [
+                    "Ghost"
+                ],
+                "trainerId": 899,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
                     "Psychic",
                     "Shadow Ball",
                     "Dark Pulse",
@@ -50875,7 +50948,7 @@
                 "teraTypes": [
                     "Ghost"
                 ],
-                "trainerId": 902,
+                "trainerId": 1002,
                 "item": [
                     "Focus Sash"
                 ],
@@ -51320,9 +51393,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Trick Room",
-                    "Body Press",
-                    "Heat Crash",
-                    "Rock Slide"
+                    "Gyro Ball",
+                    "Stone Edge",
+                    "Heat Crash"
                 ],
                 "abilities": [
                     "Beast Boost"
@@ -51331,19 +51404,19 @@
                     "Rock",
                     "Steel"
                 ],
-                "trainerId": 891,
+                "trainerId": 892,
                 "item": [
                     "Air Balloon"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Lonely"
                 ],
                 "evs": {
                     "hp": 252,
-                    "atk": 6,
+                    "atk": 252,
                     "def": 0,
                     "spa": 0,
-                    "spd": 252,
+                    "spd": 6,
                     "spe": 0
                 }
             }
@@ -51818,31 +51891,31 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Crunch",
                     "Earthquake",
                     "Thunder Fang",
+                    "Rock Climb",
                     "Iron Head"
                 ],
                 "abilities": [
-                    "Sheer Force"
+                    "Sturdy"
                 ],
                 "teraTypes": [
                     "Steel",
                     "Ground"
                 ],
-                "trainerId": 862,
+                "trainerId": 861,
                 "item": [
-                    "Life Orb"
+                    "Weakness Policy"
                 ],
                 "nature": [
                     "Adamant"
                 ],
                 "evs": {
-                    "hp": 252,
+                    "hp": 6,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
-                    "spd": 6,
+                    "spd": 252,
                     "spe": 0
                 }
             },
@@ -51884,7 +51957,7 @@
                 "movepool": [
                     "Body Press",
                     "Heat Crash",
-                    "Rock Slide",
+                    "Stone Edge",
                     "Earthquake"
                 ],
                 "abilities": [
@@ -53134,11 +53207,11 @@
                 }
             },
             {
-                "role": "Fast Attacker",
+                "role": "Bulky Support",
                 "movepool": [
                     "Acrobatics",
                     "Flare Blitz",
-                    "Tailwind",
+                    "U-turn",
                     "Steel Wing"
                 ],
                 "abilities": [
@@ -53193,6 +53266,37 @@
                 }
             },
             {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Acrobatics",
+                    "Flare Blitz",
+                    "Tailwind",
+                    "Steel Wing"
+                ],
+                "abilities": [
+                    "Gale Wings"
+                ],
+                "teraTypes": [
+                    "Fire",
+                    "Flying"
+                ],
+                "trainerId": 946,
+                "item": [
+                    "Flying Gem"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 76,
+                    "spa": 0,
+                    "spd": 80,
+                    "spe": 102
+                }
+            },
+            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Tailwind",
@@ -53221,34 +53325,6 @@
                     "spa": 0,
                     "spd": 8,
                     "spe": 252
-                }
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Acrobatics",
-                    "Agility",
-                    "Aerial Ace",
-                    "Tailwind"
-                ],
-                "abilities": [
-                    "Gale Wings"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Flying"
-                ],
-                "trainerId": 331,
-                "nature": [
-                    "Quirky"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
                 }
             }
         ]
@@ -53826,36 +53902,6 @@
                     "spd": 6,
                     "spe": 252
                 }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Wild Charge",
-                    "Raging Bull",
-                    "Iron Head"
-                ],
-                "abilities": [
-                    "Intimidate"
-                ],
-                "teraTypes": [
-                    "Fighting"
-                ],
-                "trainerId": 906,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 6,
-                    "spe": 252
-                }
             }
         ]
     },
@@ -54120,22 +54166,22 @@
                 "movepool": [
                     "Earthquake",
                     "Sacred Sword",
-                    "Aerial Ace",
-                    "Rock Slide"
+                    "X-Scissor",
+                    "Stone Edge"
                 ],
                 "abilities": [
-                    "Sharpness"
+                    "Solid Rock"
                 ],
                 "teraTypes": [
                     "Rock",
                     "Fighting"
                 ],
-                "trainerId": 903,
+                "trainerId": 891,
                 "item": [
-                    "Expert Belt"
+                    "Weakness Policy"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Jolly"
                 ],
                 "evs": {
                     "hp": 6,
@@ -54331,18 +54377,18 @@
                 ],
                 "trainerId": 919,
                 "item": [
-                    "Weakness Policy"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Timid"
                 ],
                 "evs": {
-                    "hp": 128,
+                    "hp": 6,
                     "atk": 0,
-                    "def": 202,
-                    "spa": 0,
-                    "spd": 52,
-                    "spe": 128
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -55353,7 +55399,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Boomburst",
+                    "Hyper Voice",
                     "Overdrive",
                     "Sludge Bomb",
                     "Snarl"
@@ -55366,6 +55412,37 @@
                     "Poison"
                 ],
                 "trainerId": 922,
+                "item": [
+                    "Throat Spray"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Boomburst",
+                    "Overdrive",
+                    "Sludge Bomb",
+                    "Snarl"
+                ],
+                "abilities": [
+                    "Punk Rock"
+                ],
+                "teraTypes": [
+                    "Electric",
+                    "Poison"
+                ],
+                "trainerId": 986,
                 "item": [
                     "Throat Spray"
                 ],
@@ -55785,12 +55862,12 @@
         "level": 86,
         "sets": [
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Setup",
                 "movepool": [
                     "Dragon Pulse",
                     "Scorching Sands",
-                    "Fire Blast",
-                    "Flash Cannon"
+                    "Flamethrower",
+                    "Shell Smash"
                 ],
                 "abilities": [
                     "Shell Armor"
@@ -55801,7 +55878,7 @@
                 ],
                 "trainerId": 865,
                 "item": [
-                    "Assault Vest"
+                    "White Herb"
                 ],
                 "nature": [
                     "Modest"
@@ -55810,9 +55887,9 @@
                     "hp": 252,
                     "atk": 0,
                     "def": 0,
-                    "spa": 252,
+                    "spa": 0,
                     "spd": 6,
-                    "spe": 0
+                    "spe": 252
                 }
             },
             {
@@ -56025,37 +56102,6 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Flamethrower",
-                    "Shadow Ball",
-                    "Scorching Sands",
-                    "Thunderbolt"
-                ],
-                "abilities": [
-                    "Cursed Body"
-                ],
-                "teraTypes": [
-                    "Fire",
-                    "Ghost"
-                ],
-                "trainerId": 900,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
                     "Eruption",
                     "Focus Blast",
                     "Shadow Ball",
@@ -56118,12 +56164,12 @@
         "level": 81,
         "sets": [
             {
-                "role": "Bulky Attacker",
+                "role": "Bulky Setup",
                 "movepool": [
                     "Earthquake",
-                    "Brick Break",
-                    "Crunch",
-                    "Ice Punch"
+                    "Rock Climb",
+                    "Dragon Dance",
+                    "Thunder Punch"
                 ],
                 "abilities": [
                     "Sand Stream"
@@ -56132,7 +56178,7 @@
                     "Rock",
                     "Dark"
                 ],
-                "trainerId": 927,
+                "trainerId": 893,
                 "item": [
                     "Weakness Policy"
                 ],
@@ -56140,40 +56186,9 @@
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 202,
-                    "atk": 56,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Earthquake",
-                    "Crunch",
-                    "Thunder Punch",
-                    "Rock Climb"
-                ],
-                "abilities": [
-                    "Sand Stream"
-                ],
-                "teraTypes": [
-                    "Rock",
-                    "Dark"
-                ],
-                "trainerId": 891,
-                "item": [
-                    "Weakness Policy"
-                ],
-                "nature": [
-                    "Adamant"
-                ],
-                "evs": {
-                    "hp": 56,
+                    "hp": 252,
                     "atk": 0,
-                    "def": 202,
+                    "def": 6,
                     "spa": 0,
                     "spd": 0,
                     "spe": 252
@@ -56270,6 +56285,37 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Stone Edge",
+                    "Crunch",
+                    "Fire Punch",
+                    "Thunder Punch"
+                ],
+                "abilities": [
+                    "Sand Stream"
+                ],
+                "teraTypes": [
+                    "Rock",
+                    "Dark"
+                ],
+                "trainerId": 697,
+                "item": [
+                    "Expert Belt"
+                ],
+                "nature": [
+                    "Bashful"
+                ],
+                "evs": {
+                    "hp": 226,
+                    "atk": 32,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
                 }
             }
         ]
@@ -56647,6 +56693,37 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Earthquake",
+                    "Hammer Arm",
+                    "Drain Punch",
+                    "Body Slam"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "teraTypes": [
+                    "Ground",
+                    "Normal"
+                ],
+                "trainerId": 861,
+                "item": [
+                    "Flame Orb"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "High Horsepower",
                     "Play Rough",
                     "Strength",
@@ -56978,9 +57055,9 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Flash Cannon",
                     "Blizzard",
-                    "Hyper Voice",
+                    "Aurora Veil",
+                    "Water Pulse",
                     "Hidden Power"
                 ],
                 "abilities": [
@@ -56989,18 +57066,18 @@
                 "teraTypes": [
                     "Ice"
                 ],
-                "trainerId": 918,
+                "trainerId": 916,
                 "item": [
-                    "Focus Sash"
+                    "Weakness Policy"
                 ],
                 "nature": [
                     "Timid"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 76,
                     "atk": 0,
-                    "def": 0,
-                    "spa": 252,
+                    "def": 182,
+                    "spa": 0,
                     "spd": 0,
                     "spe": 252
                 }
@@ -57821,11 +57898,11 @@
                 "movepool": [
                     "Thunderbolt",
                     "Bug Buzz",
-                    "Thunder Wave",
+                    "Protect",
                     "Energy Ball"
                 ],
                 "abilities": [
-                    "Levitate"
+                    "Speed Boost"
                 ],
                 "teraTypes": [
                     "Bug",
@@ -57836,15 +57913,15 @@
                     "Charti Berry"
                 ],
                 "nature": [
-                    "Modest"
+                    "Timid"
                 ],
                 "evs": {
-                    "hp": 202,
+                    "hp": 0,
                     "atk": 0,
                     "def": 0,
                     "spa": 252,
-                    "spd": 56,
-                    "spe": 0
+                    "spd": 60,
+                    "spe": 198
                 }
             },
             {
@@ -58213,6 +58290,36 @@
         "level": 89,
         "sets": [
             {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Thunderbolt",
+                    "Bug Buzz",
+                    "Water Pulse",
+                    "Dazzling Gleam"
+                ],
+                "abilities": [
+                    "Dazzling"
+                ],
+                "teraTypes": [
+                    "Bug"
+                ],
+                "trainerId": 858,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Bulky Support",
                 "movepool": [
                     "Encore",
@@ -58355,18 +58462,18 @@
                 ],
                 "trainerId": 923,
                 "item": [
-                    "Life Orb"
+                    "Heavy-Duty Boots"
                 ],
                 "nature": [
                     "Timid"
                 ],
                 "evs": {
-                    "hp": 202,
+                    "hp": 0,
                     "atk": 0,
                     "def": 0,
-                    "spa": 108,
-                    "spd": 0,
-                    "spe": 200
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 252
                 }
             },
             {
@@ -58556,10 +58663,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Waterfall",
-                    "Rock Slide",
-                    "Blizzard"
+                    "Super Fang",
+                    "Brine",
+                    "Ice Beam",
+                    "Hidden Power"
                 ],
                 "abilities": [
                     "Slush Rush"
@@ -58573,15 +58680,15 @@
                     "Weakness Policy"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Modest"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 0,
                     "atk": 0,
-                    "def": 252,
-                    "spa": 0,
-                    "spd": 252,
-                    "spe": 0
+                    "def": 140,
+                    "spa": 216,
+                    "spd": 142,
+                    "spe": 12
                 }
             },
             {
@@ -58773,18 +58880,18 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Brick Break",
-                    "Assurance",
-                    "Icicle Spear",
-                    "Fake Out"
+                    "Icicle Crash",
+                    "Fake Out",
+                    "Throat Chop"
                 ],
                 "abilities": [
-                    "Technician"
+                    "Pressure"
                 ],
                 "teraTypes": [
                     "Dark",
                     "Ice"
                 ],
-                "trainerId": 917,
+                "trainerId": 916,
                 "item": [
                     "Focus Sash"
                 ],
@@ -58792,11 +58899,11 @@
                     "Adamant"
                 ],
                 "evs": {
-                    "hp": 6,
+                    "hp": 0,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
-                    "spd": 0,
+                    "spd": 6,
                     "spe": 252
                 }
             },
@@ -58896,10 +59003,10 @@
             {
                 "role": "Bulky Support",
                 "movepool": [
-                    "Knock Off",
-                    "Ice Shard",
                     "Aerial Ace",
-                    "Icicle Spear"
+                    "Icicle Spear",
+                    "Ice Shard",
+                    "Knock Off"
                 ],
                 "abilities": [
                     "Technician"
@@ -58908,7 +59015,7 @@
                     "Dark",
                     "Ice"
                 ],
-                "trainerId": 308,
+                "trainerId": 887,
                 "item": [
                     "Loaded Dice"
                 ],
@@ -58916,11 +59023,11 @@
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 0,
+                    "hp": 6,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
-                    "spd": 6,
+                    "spd": 0,
                     "spe": 252
                 }
             }
@@ -59176,8 +59283,8 @@
                 "movepool": [
                     "Earthquake",
                     "Dragon Dance",
-                    "Liquidation",
-                    "Rock Slide"
+                    "Aqua Tail",
+                    "Zen Headbutt"
                 ],
                 "abilities": [
                     "Simple"
@@ -59188,18 +59295,18 @@
                 ],
                 "trainerId": 859,
                 "item": [
-                    "Rindo Berry"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Jolly"
                 ],
                 "evs": {
-                    "hp": 252,
+                    "hp": 6,
                     "atk": 252,
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 6
+                    "spe": 252
                 }
             },
             {
@@ -60153,37 +60260,6 @@
                 "role": "Fast Attacker",
                 "movepool": [
                     "Bug Buzz",
-                    "Air Slash",
-                    "Ancient Power",
-                    "Giga Drain"
-                ],
-                "abilities": [
-                    "Speed Boost"
-                ],
-                "teraTypes": [
-                    "Bug",
-                    "Flying"
-                ],
-                "trainerId": 858,
-                "item": [
-                    "Assault Vest"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 6,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Bug Buzz",
                     "Hurricane",
                     "Giga Drain",
                     "Protect"
@@ -60356,32 +60432,32 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Close Combat",
-                    "Focus Blast",
-                    "Giga Impact",
-                    "Hyper Beam"
+                    "Iron Head",
+                    "Play Rough",
+                    "Stone Edge",
+                    "Close Combat"
                 ],
                 "abilities": [
                     "Dauntless Shield"
                 ],
                 "teraTypes": [
                     "Fighting"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Close Combat",
-                    "Giga Impact",
-                    "Rest",
-                    "Iron Defense"
                 ],
-                "abilities": [
-                    "Dauntless Shield"
+                "trainerId": 903,
+                "item": [
+                    "White Herb"
                 ],
-                "teraTypes": [
-                    "Fighting"
-                ]
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 158,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 100
+                }
             }
         ]
     },
@@ -60612,12 +60688,12 @@
         "level": 82,
         "sets": [
             {
-                "role": "Setup Sweeper",
+                "role": "Fast Attacker",
                 "movepool": [
                     "Drill Peck",
                     "Thunderous Kick",
                     "Stomping Tantrum",
-                    "Trailblaze"
+                    "Throat Chop"
                 ],
                 "abilities": [
                     "Defiant"
@@ -60626,9 +60702,9 @@
                     "Fighting",
                     "Flying"
                 ],
-                "trainerId": 904,
+                "trainerId": 903,
                 "item": [
-                    "Expert Belt"
+                    "Weakness Policy"
                 ],
                 "nature": [
                     "Jolly"
@@ -60786,7 +60862,7 @@
                     "Flare Blitz"
                 ],
                 "abilities": [
-                    "Lightning Rod"
+                    "Reckless"
                 ],
                 "teraTypes": [
                     "Electric"
@@ -60920,6 +60996,36 @@
                 "teraTypes": [
                     "Electric"
                 ],
+                "trainerId": 920,
+                "item": [
+                    "Air Balloon"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 202,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 56
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Plasma Fists",
+                    "Drain Punch",
+                    "Play Rough",
+                    "Fire Punch"
+                ],
+                "abilities": [
+                    "Volt Absorb"
+                ],
+                "teraTypes": [
+                    "Electric"
+                ],
                 "trainerId": 919,
                 "item": [
                     "Air Balloon"
@@ -60934,6 +61040,36 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Plasma Fists",
+                    "Drain Punch",
+                    "Play Rough",
+                    "Fire Punch"
+                ],
+                "abilities": [
+                    "Volt Absorb"
+                ],
+                "teraTypes": [
+                    "Electric"
+                ],
+                "trainerId": 921,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
                 }
             }
         ]
@@ -61001,6 +61137,37 @@
                     "def": 0,
                     "spa": 252,
                     "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Flamethrower",
+                    "Hyper Voice",
+                    "Shadow Ball",
+                    "Hidden Power"
+                ],
+                "abilities": [
+                    "Illusion"
+                ],
+                "teraTypes": [
+                    "Normal",
+                    "Ghost"
+                ],
+                "trainerId": 899,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
                     "spe": 252
                 }
             },
@@ -61096,37 +61263,6 @@
                     "spd": 6,
                     "spe": 252
                 }
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Shadow Ball",
-                    "Grass Knot",
-                    "Flamethrower",
-                    "U-turn"
-                ],
-                "abilities": [
-                    "Illusion"
-                ],
-                "teraTypes": [
-                    "Normal",
-                    "Ghost"
-                ],
-                "trainerId": 874,
-                "item": [
-                    "Choice Specs"
-                ],
-                "nature": [
-                    "Timid"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 6,
-                    "spe": 252
-                }
             }
         ]
     },
@@ -61136,30 +61272,30 @@
             {
                 "role": "Fast Attacker",
                 "movepool": [
-                    "Core Enforcer",
-                    "Earth Power",
-                    "Sludge Wave",
-                    "Shock Wave"
+                    "Thousand Arrows",
+                    "Stone Edge",
+                    "Brick Break",
+                    "Outrage"
                 ],
                 "abilities": [
-                    "Aura Break"
+                    "Power Construct"
                 ],
                 "teraTypes": [
                     "Dragon",
                     "Ground"
                 ],
-                "trainerId": 928,
+                "trainerId": 927,
                 "item": [
-                    "Assault Vest"
+                    "Focus Sash"
                 ],
                 "nature": [
-                    "Timid"
+                    "Jolly"
                 ],
                 "evs": {
                     "hp": 6,
-                    "atk": 0,
+                    "atk": 252,
                     "def": 0,
-                    "spa": 252,
+                    "spa": 0,
                     "spd": 0,
                     "spe": 252
                 }
