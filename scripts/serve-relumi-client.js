@@ -187,6 +187,7 @@ const cachedNews = loadNewsFromPhp();
 function injectNews(html) {
 	html = html.replace(/<!-- newsid -->/g, cachedNews.newsid);
 	html = html.replace(/<!-- news -->/g, cachedNews.news);
+	html = html.replace(/<!--\s*build-tools\/news-embed\.php\s*-->/g, cachedNews.news);
 	return html;
 }
 
@@ -399,10 +400,15 @@ const server = http.createServer((req, res) => {
 		res.end();
 		return;
 	}
-	const normalized = decodeURIComponent(
-		rawPath === "/" ? "/index.html" : rawPath
-	);
-	const resolved = path.resolve(CLIENT_PLAY_DIR, `.${normalized}`);
+  const normalized = decodeURIComponent(
+    rawPath === "/" ? "/index.html" : rawPath
+  );
+
+  // The upstream build now creates an empty index.html placeholder that would
+  // be served as a blank page.  Always rewrite /index.html → /index-new.html
+  // so the preact-alpha client is the default.
+  const remapped = normalized === "/index.html" ? "/index-new.html" : normalized;
+  const resolved = path.resolve(CLIENT_PLAY_DIR, `.${remapped}`);
 
 	if (!resolved.startsWith(CLIENT_PLAY_DIR)) {
 		return send(res, 403, "Forbidden\n", {
