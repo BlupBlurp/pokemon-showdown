@@ -423,6 +423,11 @@ const server = http.createServer((req, res) => {
 		filePath = path.join(filePath, "index-new.html");
 	}
 
+	// Proxy /api/battlestats to the local game server (port 8000)
+	if (normalized === "/api/battlestats") {
+		return proxyToGameServer(req, reqUrl, res);
+	}
+
 	if (!fs.existsSync(filePath)) {
 		if (shouldServeIndexFallback(req, normalized)) {
 			const indexPath = path.join(CLIENT_PLAY_DIR, "index-new.html");
