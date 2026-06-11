@@ -182,6 +182,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		team: "random",
 		bestOfDefault: true,
 		ruleset: [
+			"PotD",
 			"Dynamax Clause",
 			"HP Percentage Mod",
 			"Cancel Mod",
@@ -253,6 +254,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		team: "random",
 		bestOfDefault: true,
 		ruleset: [
+			"PotD",
 			"Dynamax Clause",
 			"HP Percentage Mod",
 			"Cancel Mod",
