@@ -1008,7 +1008,8 @@ export class RoomBattle extends RoomGame<RoomBattlePlayer> {
 			player.sendRoom(`|request|null`);
 			player.active = false;
 			this.timer.checkActivity();
-			this.room.add(`|player|${player.slot}|`);
+			// Preserve avatar so it doesn't reset to default when the player disconnects
+			this.room.add(`|player|${player.slot}||${user.avatar}|`);
 		}
 	}
 
