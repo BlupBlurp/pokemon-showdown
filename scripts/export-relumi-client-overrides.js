@@ -420,6 +420,21 @@ function main() {
 		`\t\t\t\t\texports.BattlePokemonSprites[spriteSid] = relumiSpriteEntries[spriteSid];\n` +
 		`\t\t\t\t}\n` +
 		`\t\t\t}\n` +
+		`\t\t\t// Save original dimensions before overwriting, so upstream sprite rendering\n` +
+		`\t\t\t// can use the original 1x values when pref('useupstreamsprites') is enabled.\n` +
+		`\t\t\tif (!window.__originalBattlePokemonSpriteDims) {\n` +
+		`\t\t\t\twindow.__originalBattlePokemonSpriteDims = {};\n` +
+		`\t\t\t\tfor (var dsid in relumiAllSpriteDims) {\n` +
+		`\t\t\t\t\tif (exports.BattlePokemonSprites[dsid]) {\n` +
+		`\t\t\t\t\t\tvar orig = exports.BattlePokemonSprites[dsid];\n` +
+		`\t\t\t\t\t\tvar saved = {};\n` +
+		`\t\t\t\t\t\tfor (var f in relumiAllSpriteDims[dsid]) {\n` +
+		`\t\t\t\t\t\t\tif (orig[f]) saved[f] = {w: orig[f].w, h: orig[f].h};\n` +
+		`\t\t\t\t\t\t}\n` +
+		`\t\t\t\t\t\tif (Object.keys(saved).length) window.__originalBattlePokemonSpriteDims[dsid] = saved;\n` +
+		`\t\t\t\t\t}\n` +
+		`\t\t\t\t}\n` +
+		`\t\t\t}\n` +
 		`\t\t\t// Patch dimensions for all sprites whose GIFs have been updated on disk.\n` +
 		`\t\t\t// Overwrites stale front/back/frontf/backf values in the static pokedex-mini.js.\n` +
 		`\t\t\tfor (var dimSid in relumiAllSpriteDims) {\n` +
