@@ -299,10 +299,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		customhttpresponse?: typeof Config.customhttpresponse;
 	}) {
 		super();
-		// Default to dual-stack binding. When IPv6 is enabled, upgrade IPv4-any to ::.
-		if (!config.bindaddress || (Config.ipv6 !== false && config.bindaddress === "0.0.0.0")) {
-			config.bindaddress = "::";
-		}
+		if (!config.bindaddress) config.bindaddress = "::";
 
 		this.isTrustedProxyIp = config.proxyip
 			? IPTools.checker(config.proxyip)
