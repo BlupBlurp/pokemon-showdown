@@ -1102,7 +1102,9 @@ export class RandomTeams {
 
 		// Hard-code abilities here
 		if (species.id === 'drifblim') return moves.has('defog') ? 'Aftermath' : 'Unburden';
-		if (abilities.includes('Flash Fire') && this.dex.getEffectiveness('Fire', teraType) >= 1) return 'Flash Fire';
+		// Guard against undefined teraType (gen 8 mods lack Tera)
+		if (teraType && abilities.includes('Flash Fire') &&
+			this.dex.getEffectiveness('Fire', teraType) >= 1) return 'Flash Fire';
 		if ((species.id === 'thundurus' || species.id === 'tornadus') && !counter.get('Physical')) return 'Prankster';
 		if (species.id === 'swampert' && (counter.get('Water') || moves.has('flipturn'))) return 'Torrent';
 		if (species.id === 'toucannon' && counter.get('skilllink')) return 'Skill Link';
