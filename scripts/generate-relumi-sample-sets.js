@@ -11,7 +11,8 @@ const path = require("path");
 const { Dex } = require("../dist/sim/dex");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
 const { computeRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
-const { FORM_NUMBER_SPECIES_OVERRIDES } = require("./lib/relumi-pokedex-overrides");
+const { readJson, extractIndexedNames } = require("./lib/relumi-game-files");
+const { buildSpeciesIdByMonsForm } = require("./lib/relumi-species-mapping");
 
 const ROOT = getRelumiRepoRoot();
 const GAME_FILES_DIR = path.join(ROOT, "game-files");
@@ -21,77 +22,6 @@ const CLIENT_PLAY_DIR = path.resolve(
 const SAMPLE_SETS_PATH = path.join(
 	CLIENT_PLAY_DIR, "data", "sets", "gen8relumisinglesou.json"
 );
-
-function readJson(filePath) {
-	return JSON.parse(fs.readFileSync(filePath, "utf8"));
-}
-
-function getLabelString(entry) {
-	if (!entry || !entry.wordDataArray || !entry.wordDataArray.length) return "";
-	const firstWord = entry.wordDataArray[0];
-	if (!firstWord || typeof firstWord.str !== "string") return "";
-	return firstWord.str.trim().replace(/\u2019/g, "'");
-}
-
-function extractIndexedNames(labelDataArray) {
-	const map = new Map();
-	for (const entry of labelDataArray) {
-		if (!entry || typeof entry.arrayIndex !== "number") continue;
-		map.set(entry.arrayIndex, getLabelString(entry));
-	}
-	return map;
-}
-
-function deriveFormNo(row) {
-	if (row.id === row.monsno) return 0;
-	if (row.form_max > 1 && row.id >= row.form_index) {
-		const formNo = row.id - row.form_index + 1;
-		if (formNo >= 1 && formNo <= row.form_max - 1) return formNo;
-	}
-	return 0;
-}
-
-function findMappedSpeciesForForm(baseSpecies, monsNo, formNo, dex) {
-	const overrides = FORM_NUMBER_SPECIES_OVERRIDES[monsNo];
-	if (overrides && overrides[formNo]) {
-		const s = dex.species.get(overrides[formNo]);
-		if (s.exists) return s;
-		return null;
-	}
-	if (formNo === 0) return baseSpecies;
-	if (Array.isArray(baseSpecies.formeOrder) && baseSpecies.formeOrder[formNo]) {
-		const s = dex.species.get(baseSpecies.formeOrder[formNo]);
-		if (s.exists) return s;
-	}
-	if (
-		Array.isArray(baseSpecies.otherFormes) &&
-		baseSpecies.otherFormes[formNo - 1]
-	) {
-		const s = dex.species.get(baseSpecies.otherFormes[formNo - 1]);
-		if (s.exists) return s;
-	}
-	return null;
-}
-
-function buildSpeciesIdByMonsForm(personalRows, monsNames, dex) {
-	const map = new Map();
-	for (const row of personalRows) {
-		if (!row || row.valid_flag !== 1) continue;
-		if (!row.monsno || row.monsno <= 0) continue;
-		const baseName = (monsNames.get(row.monsno) || "").trim();
-		if (!baseName) continue;
-		const baseSpecies = dex.species.get(baseName);
-		if (!baseSpecies.exists) continue;
-		const formNo = deriveFormNo(row);
-		const resolved = findMappedSpeciesForForm(
-			baseSpecies, row.monsno, formNo, dex
-		);
-		if (resolved && resolved.exists) {
-			map.set(`${row.monsno}_${formNo}`, resolved.id);
-		}
-	}
-	return map;
-}
 
 function main() {
 	const monsJson = readJson(

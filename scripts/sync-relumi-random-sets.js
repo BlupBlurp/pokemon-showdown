@@ -86,7 +86,6 @@ const FALLBACK_BASE_ONLY_SPECIES = new Set([
 	"furfrou",
 	"minior",
 	"vivillon",
-	"minior",
 	"flabebe",
 	"florges",
 	"sawsbuck",
