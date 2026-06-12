@@ -487,6 +487,11 @@ export const Teams = new class Teams {
 
 		// moves
 		for (let move of set.moves) {
+			// Normalize move to canonical name (e.g. "bodyslam" -> "Body Slam")
+			const resolved = Dex.moves.get(move);
+			if (resolved.exists && resolved.name !== move) {
+				move = resolved.name;
+			}
 			if (move.startsWith(`Hidden Power `) && move.charAt(13) !== '[') {
 				move = `Hidden Power [${move.slice(13)}]`;
 			}
