@@ -58,6 +58,7 @@ const RELUMI_BASE_BANLIST = [
 	"Minior-Meteor",
 	"Wishiwashi-School",
 	"Marowak-Alola-Totem",
+	"Aegislash-Blade",
 ] as const;
 
 const RELUMI_GEN9_UNBANLIST = [
