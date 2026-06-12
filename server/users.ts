@@ -1468,6 +1468,8 @@ export class User extends Chat.MessageContext {
 			delay = (this.isPublicBot ? THROTTLE_DELAY_PUBLIC_BOT : this.trusted ? THROTTLE_DELAY_TRUSTED :
 				THROTTLE_DELAY) - (Date.now() - this.lastChatMessage);
 		}
+		// Clamp negative delay to 0 (can happen after user merge or if lastChatMessage is stale)
+		if (delay < 0) delay = 0;
 
 		this.chatQueueTimeout = setTimeout(
 			() => this.processChatQueue(),
