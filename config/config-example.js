@@ -8,12 +8,12 @@
 exports.port = 8000;
 
 /**
- * The server address - the address at which Pokemon Showdown should be hosting
- *   This should be kept set to 0.0.0.0 unless you know what you're doing.
+ * The server address - the address at which Pokemon Showdown should be hosting.
+ *   Use "::" for dual-stack (IPv4 + IPv6) or "0.0.0.0" for IPv4-only.
  *
  * @type {string}
  */
-exports.bindaddress = '0.0.0.0';
+exports.bindaddress = '::';
 
 /**
  * wsdeflate - compresses WebSocket messages
@@ -173,6 +173,15 @@ exports.debugdexsearchprocesses = true;
  * @type {ID}
  */
 exports.potd = '';
+
+/**
+ * ipv6 - enable IPv6 dual-stack support.
+ *   When enabled, the server accepts native IPv6 connections alongside IPv4.
+ *   IPv4-mapped IPv6 (::ffff:x.x.x.x) is always normalized to plain IPv4
+ *   regardless of this setting, since Cloudflare sends real IPv4 traffic that way.
+ * @type {boolean}
+ */
+exports.ipv6 = true;
 
 /**
  * crash guard - write errors to log file instead of crashing

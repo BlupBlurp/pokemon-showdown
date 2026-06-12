@@ -1297,16 +1297,26 @@ export const Punishments = new class {
 	) {
 		if (!expireTime) expireTime = Date.now() + RANGELOCK_DURATION;
 		if (!punishType) punishType = 'LOCK';
+		// Normalize single IPv6 addresses to /64 prefix for consistent ban/lock storage.
+		const storeKey = (IPTools.isIPv6(range) && !range.endsWith('::'))
+			? IPTools.getIPv6Range(range) : range;
 		const punishment = { type: punishType, id: '#rangelock', expireTime, reason } as Punishment;
-		Punishments.ips.add(range, punishment);
+		Punishments.ips.add(storeKey, punishment);
 
 		const ips = [];
 		const parsedRange = IPTools.stringToRange(range);
-		if (!parsedRange) throw new Error(`Invalid IP range: ${range}`);
-		const { minIP, maxIP } = parsedRange;
-
-		for (let ipNumber = minIP; ipNumber <= maxIP; ipNumber++) {
-			ips.push(IPTools.numberToIP(ipNumber)!); // range is already validated by stringToRange
+		if (!parsedRange) {
+			// IPv6 ranges can't be expanded to individual IPs; just store the range string.
+			if (IPTools.isIPv6(range)) {
+				ips.push(storeKey);
+			} else {
+				throw new Error(`Invalid IP range: ${range}`);
+			}
+		} else {
+			const { minIP, maxIP } = parsedRange;
+			for (let ipNumber = minIP; ipNumber <= maxIP; ipNumber++) {
+				ips.push(IPTools.numberToIP(ipNumber)!); // range is already validated by stringToRange
+			}
 		}
 
 		void Punishments.appendPunishment({
@@ -1590,15 +1600,18 @@ export const Punishments = new class {
 			if (type) return punishment.find(p => p.type === type);
 			allPunishments.push(...punishment);
 		}
-		let dotIndex = ip.lastIndexOf('.');
-		for (let i = 0; i < 4 && dotIndex > 0; i++) {
-			ip = ip.substr(0, dotIndex);
-			punishment = Punishments.ips.get(ip + '.*');
-			if (punishment) {
-				if (type) return punishment.find(p => p.type === type);
-				allPunishments.push(...punishment);
+		// Wildcard expansion only applies to IPv4 addresses.
+		if (!IPTools.isIPv6(ip)) {
+			let dotIndex = ip.lastIndexOf('.');
+			for (let i = 0; i < 4 && dotIndex > 0; i++) {
+				ip = ip.substr(0, dotIndex);
+				punishment = Punishments.ips.get(ip + '.*');
+				if (punishment) {
+					if (type) return punishment.find(p => p.type === type);
+					allPunishments.push(...punishment);
+				}
+				dotIndex = ip.lastIndexOf('.');
 			}
-			dotIndex = ip.lastIndexOf('.');
 		}
 		return allPunishments.length ? allPunishments : undefined;
 	}

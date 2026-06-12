@@ -24,30 +24,6 @@ import { StaticServer } from "../lib/static-server";
 
 type StreamWorker = ProcessManager.StreamWorker;
 
-function toCompatibleIp(ip: string): string {
-	ip = ip.trim();
-	if (IPTools.ipToNumber(ip) !== null) return ip;
-
-	// IPv4-mapped IPv6 addresses can be converted directly.
-	if (ip.startsWith("::ffff:")) {
-		const mapped = ip.slice(7);
-		if (IPTools.ipToNumber(mapped) !== null) return mapped;
-	}
-
-	// Pokemon Showdown's IP stack is IPv4-only; map unsupported IPs to
-	// deterministic pseudo-IPv4 addresses so alt checks remain stable.
-	let hash = 2166136261;
-	for (const char of ip) {
-		hash ^= char.charCodeAt(0);
-		hash = Math.imul(hash, 16777619);
-	}
-	const a = 64 + ((hash >>> 24) % 64);
-	const b = (hash >>> 16) & 0xFF;
-	const c = (hash >>> 8) & 0xFF;
-	const d = hash & 0xFF;
-	return `${a}.${b}.${c}.${d}`;
-}
-
 export const Sockets = new (class {
 	async onSpawn(worker: StreamWorker) {
 		const id = worker.workerid;
@@ -118,7 +94,7 @@ export const Sockets = new (class {
 
 		PM.env = {
 			PSPORT: Config.port,
-			PSBINDADDR: Config.bindaddress || "0.0.0.0",
+			PSBINDADDR: Config.bindaddress || "::",
 			PSNOSSL: Config.ssl ? 0 : 1,
 		};
 		PM.subscribeSpawn((worker) => void this.onSpawn(worker));
@@ -323,7 +299,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		customhttpresponse?: typeof Config.customhttpresponse;
 	}) {
 		super();
-		if (!config.bindaddress) config.bindaddress = "0.0.0.0";
+		if (!config.bindaddress) config.bindaddress = "::";
 
 		this.isTrustedProxyIp = config.proxyip
 			? IPTools.checker(config.proxyip)
@@ -492,6 +468,12 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		console.log(
 			`Worker ${PM.workerid} now listening on ${config.bindaddress}:${config.port}`,
 		);
+		// Log IPv6 status at startup.
+		const ipv6Enabled = config.bindaddress === "::" || config.bindaddress?.includes(':');
+		const ipv6Status = Config.ipv6 !== false && ipv6Enabled ? 'enabled' : 'disabled';
+		if (Config.ipv6 !== false) {
+			console.log(`IPv6 dual-stack support ${ipv6Status}.`);
+		}
 
 		if (this.serverSsl) {
 			server.installHandlers(this.serverSsl, {});
@@ -503,8 +485,9 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 			);
 		}
 
+		const displayAddr = (config.bindaddress === "0.0.0.0" || config.bindaddress === "::") ? "localhost" : config.bindaddress;
 		console.log(
-			`Test your server at http://${config.bindaddress === "0.0.0.0" ? "localhost" : config.bindaddress}:${config.port}`,
+			`Test your server at http://${displayAddr}:${config.port}`,
 		);
 	}
 
@@ -560,7 +543,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 				}
 			}
 		}
-		socketip = toCompatibleIp(socketip);
+		socketip = IPTools.normalizeIP(socketip);
 
 		this.push(`*${socketid}\n${socketip}\n${socket.protocol}`);
 
