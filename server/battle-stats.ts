@@ -108,6 +108,11 @@ interface CategoryOutput {
 			moves: PokemonCount[];
 			versatilityCount: number;
 			dominantScore: number;
+			counters: Array<{
+				species: string;
+				lossRate: number;
+				encounters: number;
+			}>;
 		}>;
 		highestWinRatePokemon: { species: string; winRate: number } | null;
 		lowestWinRatePokemon: { species: string; winRate: number } | null;
@@ -133,7 +138,7 @@ interface CategoryOutput {
 export interface BattleStatsApiResponse {
 	generatedAt: number;
 	cacheTtlMs: number;
-	request: { format: string; range: string };
+	request: { format: string; range: string; user?: string };
 	categories: CategoryOutput[];
 }
 
@@ -272,17 +277,22 @@ function topCounts(
  */
 export function aggregateBattleStats(
 	records: readonly BattleStatsRecord[],
-	query: { format: string; range: string },
+	query: { format: string; range: string; user?: string },
 	now = Date.now(),
 ): BattleStatsApiResponse {
 	const normalizedFormat =
 		query.format === "all" ? "all" : normalizeRelumiFormat(query.format);
 	const rangeStart = getRangeStart(query.range, now);
+	// Filter to tracked user if personal stats requested
+	const userFilter = query.user ? toID(query.user) : null;
+	let filteredRecords = userFilter
+		? records.filter((r) => toID(r.playerA) === userFilter || toID(r.playerB) === userFilter)
+		: records;
 	const allForFormat =
 		normalizedFormat === "all"
-			? records
+			? filteredRecords
 			: normalizedFormat
-				? records.filter((r) => r.format === normalizedFormat)
+				? filteredRecords.filter((r) => r.format === normalizedFormat)
 				: [];
 	const ranged =
 		rangeStart === null
@@ -470,6 +480,65 @@ export function aggregateBattleStats(
 			}
 		}
 
+		// Build counter map: for each species, track opposing species
+		// and how often the tracked species lost to them
+		const counterMap = new Map<string, Map<string, { encounters: number; losses: number }>>();
+		for (const battle of categoryRanged) {
+			const teams = [
+				{
+					mons: battle.teamA,
+					won: !!battle.winner && battle.winner === battle.playerA,
+				},
+				{
+					mons: battle.teamB,
+					won: !!battle.winner && battle.winner === battle.playerB,
+				},
+			];
+			for (const side of teams) {
+				const oppSide = teams.find((s) => s !== side)!;
+				for (const mon of side.mons) {
+					const speciesId = toID(mon.species);
+					let counters = counterMap.get(speciesId);
+					if (!counters) {
+						counters = new Map();
+						counterMap.set(speciesId, counters);
+					}
+					for (const oppMon of oppSide.mons) {
+						const oppId = toID(oppMon.species);
+						if (oppId === speciesId) continue;
+						let stats = counters.get(oppId);
+						if (!stats) {
+							stats = { encounters: 0, losses: 0 };
+							counters.set(oppId, stats);
+						}
+						stats.encounters++;
+						if (!side.won) stats.losses++;
+					}
+				}
+			}
+		}
+
+		// Build species ID → display name lookup for counter resolution
+		const speciesIdToName = new Map<string, string>();
+		for (const [speciesId, stat] of pokemonStats) {
+			speciesIdToName.set(speciesId, stat.name);
+		}
+
+		// Compute top counters per species (min 3 encounters, sorted by loss rate)
+		const getTopCounters = (speciesId: string): Array<{ species: string; lossRate: number; encounters: number }> => {
+			const stats = counterMap.get(toID(speciesId));
+			if (!stats) return [];
+			return [...stats.entries()]
+				.map(([oppId, s]) => ({
+					species: speciesIdToName.get(oppId) || oppId,
+					lossRate: s.encounters >= 3 ? (s.losses / s.encounters) * 100 : 0,
+					encounters: s.encounters,
+				}))
+				.filter((c) => c.encounters >= 3)
+				.sort((a, b) => b.lossRate - a.lossRate || b.encounters - a.encounters)
+				.slice(0, 5);
+		};
+
 		const pokemonRows = [...pokemonStats.values()].map((stat) => {
 			const usagePct = totalTeamSlots
 				? (stat.appearances / totalTeamSlots) * 100
@@ -488,6 +557,7 @@ export function aggregateBattleStats(
 				moves: topCounts(stat.moveCounts, stat.appearances, 6),
 				versatilityCount: stat.combinations.size,
 				dominantScore,
+				counters: getTopCounters(stat.name),
 			};
 		});
 		pokemonRows.sort(
@@ -649,13 +719,13 @@ class BattleStatsStore {
 	/**
 	 * Returns API stats payload with a 5-minute cache window.
 	 */
-	async getApiResponse(format: string, range: string) {
+	async getApiResponse(format: string, range: string, user?: string) {
 		await this.ensureLoaded();
-		const key = `${format}|${range}`;
+		const key = `${format}|${range}|${user || ''}`;
 		const cached = this.cache.get(key);
 		if (cached && cached.expiresAt > Date.now()) return cached.payload;
 
-		const payload = aggregateBattleStats(this.records, { format, range });
+		const payload = aggregateBattleStats(this.records, { format, range, user });
 		this.cache.set(key, {
 			expiresAt: Date.now() + STATS_CACHE_TTL,
 			payload,
@@ -704,8 +774,8 @@ export const BattleStats = new (class {
 	/**
 	 * Computes the public API payload for the requested filters.
 	 */
-	getApiResponse(format: string, range: string) {
-		return this.store.getApiResponse(format, range);
+	getApiResponse(format: string, range: string, user?: string) {
+		return this.store.getApiResponse(format, range, user);
 	}
 })();
 
@@ -723,6 +793,7 @@ export function maybeHandleBattleStatsRequest(
 
 	const format = toID(url.searchParams.get("format") || "all");
 	const range = toID(url.searchParams.get("range") || "all");
+	const user = url.searchParams.get("user") || undefined;
 	const validFormat = format === "all" || !!normalizeRelumiFormat(format);
 	const validRange = ["all", "7d", "30d"].includes(range);
 
@@ -751,7 +822,7 @@ export function maybeHandleBattleStatsRequest(
 
 	void (async () => {
 		try {
-			const payload = await BattleStats.getApiResponse(format, range);
+			const payload = await BattleStats.getApiResponse(format, range, user);
 			respond(200, payload);
 		} catch (e: any) {
 			Monitor?.crashlog?.(e, "Battle stats API");
