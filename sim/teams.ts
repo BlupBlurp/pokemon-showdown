@@ -416,6 +416,18 @@ export const Teams = new class Teams {
 	exportSet(set: PokemonSet, { hideStats, removeNicknames, useStatPoints }: ExportOptions = {}) {
 		let out = ``;
 
+		// Normalize species to canonical name (e.g. "SilvallyIce" -> "Silvally-Ice")
+		const resolvedSpecies = Dex.species.get(set.species);
+		if (resolvedSpecies.exists && resolvedSpecies.name !== set.species) {
+			set.species = resolvedSpecies.name;
+		}
+		// Clear name when it's just the base species of a forme (not a real nickname),
+		// so the forme species is displayed directly and battle-log.ts icon injection
+		// uses the species branch (replacing the full canonical name).
+		if (resolvedSpecies.exists && set.name === resolvedSpecies.baseSpecies) {
+			set.name = '';
+		}
+
 		// core
 		if (typeof removeNicknames === 'function' && set.name && set.name !== set.species) {
 			set.name = removeNicknames(set.name) || set.species;
@@ -427,10 +439,22 @@ export const Teams = new class Teams {
 		}
 		if (set.gender === 'M') out += ` (M)`;
 		if (set.gender === 'F') out += ` (F)`;
-		if (set.item) out += ` @ ${set.item}`;
+		if (set.item) {
+			// Normalize item to canonical name (e.g. "heavydutyboots" -> "Heavy-Duty Boots")
+			const resolvedItem = Dex.items.get(set.item);
+			if (resolvedItem.exists && resolvedItem.name !== set.item) {
+				set.item = resolvedItem.name;
+			}
+			out += ` @ ${set.item}`;
+		}
 		out += `  \n`;
 
 		if (set.ability) {
+			// Normalize ability to canonical name (e.g. "superluck" -> "Super Luck")
+			const resolvedAbility = Dex.abilities.get(set.ability);
+			if (resolvedAbility.exists && resolvedAbility.name !== set.ability) {
+				set.ability = resolvedAbility.name;
+			}
 			out += `Ability: ${set.ability}  \n`;
 		}
 
