@@ -516,7 +516,7 @@ server.on("error", (err) => {
 	process.exit(1);
 });
 
-server.listen(PORT, "::", () => {
+server.listen(PORT, "0.0.0.0", () => {
 	console.log(
 		`Relumi client host ready at http://localhost:${PORT}/ (preact-alpha) and http://localhost:${PORT}/index-old.html (legacy Backbone)`,
 	);

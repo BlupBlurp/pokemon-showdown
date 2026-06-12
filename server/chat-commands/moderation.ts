@@ -1043,9 +1043,7 @@ export const commands: Chat.ChatCommands = {
 		const range = target.endsWith('*');
 		if (range) this.checkCan('rangeban');
 
-		const isUnlockValid = (range ? IPTools.ipRangeRegex : IPTools.ipRegex).test(target) ||
-			(!range && IPTools.ipv6Regex.test(target));
-		if (!isUnlockValid) {
+		if (!(range ? IPTools.ipRangeRegex : IPTools.ipRegex).test(target)) {
 			throw new Chat.ErrorMessage("Please enter a valid IP address.");
 		}
 
@@ -1223,14 +1221,10 @@ export const commands: Chat.ChatCommands = {
 		[target, reason] = this.splitOne(target);
 		let isIP = false;
 		let descriptor = '';
-		if (IPTools.ipRangeRegex.test(target) || IPTools.ipv6Regex.test(target)) {
+		if (IPTools.ipRangeRegex.test(target)) {
 			isIP = true;
 			if (IPTools.ipRegex.test(target)) {
 				descriptor = 'the IP ';
-			} else if (IPTools.isIPv6(target) && !target.endsWith('*')) {
-				// Convert single IPv6 addresses to /64 prefix.
-				target = IPTools.getIPv6Range(target);
-				descriptor = 'the IP range ';
 			} else {
 				descriptor = 'the IP range ';
 			}
@@ -1270,24 +1264,20 @@ export const commands: Chat.ChatCommands = {
 	yearbanip: 'banip',
 	banip(target, room, user, connection, cmd) {
 		const [ip, reason] = this.splitOne(target);
-		const isBanIpValid = /^[0-9.]+(?:\.\*)?$/.test(ip) || IPTools.ipv6Regex.test(ip);
-		if (!ip || !isBanIpValid) return this.parse('/help banip');
+		if (!ip || !/^[0-9.]+(?:\.\*)?$/.test(ip)) return this.parse('/help banip');
 		if (!reason) throw new Chat.ErrorMessage("/banip requires a ban reason");
 
 		this.checkCan('rangeban');
-		// Convert native IPv6 addresses to /64 prefix for ban purposes.
-		const isV6Range = IPTools.isIPv6(ip) && !ip.endsWith('*');
-		const banIp = isV6Range ? IPTools.getIPv6Range(ip) : ip;
-		const ipDesc = `IP ${(ip.endsWith('*') || isV6Range) ? `range ` : ``}${banIp}`;
+		const ipDesc = `IP ${(ip.endsWith('*') ? `range ` : ``)}${ip}`;
 
 		const year = cmd.startsWith('year');
 		const time = year ? Date.now() + 365 * 24 * 60 * 60 * 1000 : null;
 
-		const curPunishment = Punishments.ipSearch(banIp, 'BAN');
+		const curPunishment = Punishments.ipSearch(ip, 'BAN');
 		if (curPunishment?.type === 'BAN' && !time) {
 			throw new Chat.ErrorMessage(`The ${ipDesc} is already temporarily banned.`);
 		}
-		Punishments.punishRange(banIp, reason, time, 'BAN');
+		Punishments.punishRange(ip, reason, time, 'BAN');
 
 		const duration = year ? 'year' : 'hour';
 		if (!this.room || this.room.roomid !== 'staff') {
@@ -1300,7 +1290,7 @@ export const commands: Chat.ChatCommands = {
 		this.globalModlog(
 			`${year ? "YEAR" : ""}RANGEBAN`,
 			null,
-			`${ip.endsWith('*') || isV6Range ? banIp : `[${banIp}]`}: ${reason}`
+			`${ip.endsWith('*') ? ip : `[${ip}]`}: ${reason}`
 		);
 	},
 	baniphelp: [
@@ -1362,18 +1352,14 @@ export const commands: Chat.ChatCommands = {
 	yearnamelockip: 'lockip',
 	lockip(target, room, user, connection, cmd) {
 		const [ip, reason] = this.splitOne(target);
-		const isLockIpValid = /^[0-9.]+(?:\\.\\*)?$/.test(ip) || IPTools.ipv6Regex.test(ip);
-		if (!ip || !isLockIpValid) return this.parse('/help lockip');
+		if (!ip || !/^[0-9.]+(?:\.\*)?$/.test(ip)) return this.parse('/help lockip');
 		if (!reason) throw new Chat.ErrorMessage("/lockip requires a lock reason");
 
 		this.checkCan('rangeban');
-		// Convert native IPv6 addresses to /64 prefix for lock purposes.
-		const isV6Range = IPTools.isIPv6(ip) && !ip.endsWith('*');
-		const lockIp = isV6Range ? IPTools.getIPv6Range(ip) : ip;
-		const ipDesc = ip.endsWith('*') || isV6Range ? `IP range ${lockIp}` : `IP ${lockIp}`;
+		const ipDesc = ip.endsWith('*') ? `IP range ${ip}` : `IP ${ip}`;
 
 		const year = cmd.startsWith('year');
-		const curPunishment = Punishments.byWeight(Punishments.ipSearch(lockIp) || [])[0];
+		const curPunishment = Punishments.byWeight(Punishments.ipSearch(ip) || [])[0];
 		if (!year && curPunishment && (curPunishment.type === 'BAN' || curPunishment.type === 'LOCK')) {
 			const punishDesc = curPunishment.type === 'BAN' ? `temporarily banned` : `temporarily locked`;
 			throw new Chat.ErrorMessage(`The ${ipDesc} is already ${punishDesc}.`);
@@ -1381,14 +1367,14 @@ export const commands: Chat.ChatCommands = {
 
 		const time = year ? Date.now() + 365 * 24 * 60 * 60 * 1000 : null;
 		const type = cmd.includes('name') ? 'NAMELOCK' : 'LOCK';
-		Punishments.punishRange(lockIp, reason, time, type);
+		Punishments.punishRange(ip, reason, time, type);
 
 		this.addGlobalModAction(`${user.name} ${year ? 'year' : 'hour'}-${type.toLowerCase()}ed the ${ipDesc}: ${reason}`);
 		this.globalModlog(
 			`${year ? 'YEAR' : 'RANGE'}${type}`,
 			null,
-			`${ip.endsWith('*') || isV6Range ? lockIp : `[${lockIp}]`}: ${reason}`,
-			ip.endsWith('*') ? `${ip.slice(0, -2)}` : isV6Range ? lockIp : ip
+			`${ip.endsWith('*') ? ip : `[${ip}]`}: ${reason}`,
+			ip.endsWith('*') ? `${ip.slice(0, -2)}` : ip
 		);
 	},
 	lockiphelp: [

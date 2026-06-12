@@ -47,8 +47,6 @@ export const IPTools = new class {
 	readonly ipRegex = /^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])$/;
 	readonly ipRangeRegex = /^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]|\*)){0,2}\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]|\*)$/;
 	readonly hostRegex = /^.+\..{2,}$/;
-	/** Simple check: does the string look like an IPv6 address (contains colons, no dots? handles ::ffff: edges). */
-	readonly ipv6Regex = /^[0-9a-fA-F:]+$/;
 
 	async lookup(ip: string) {
 		const [dnsbl, host] = await Promise.all([
@@ -92,8 +90,6 @@ export const IPTools = new class {
 	 */
 	queryDnsbl(ip: string) {
 		if (!Config.dnsbl) return Promise.resolve(null);
-		// DNSBLs are IPv4-only; skip lookups for native IPv6 addresses.
-		if (IPTools.isIPv6(ip)) return Promise.resolve(null);
 		if (IPTools.dnsblCache.has(ip)) {
 			return Promise.resolve(IPTools.dnsblCache.get(ip) || null);
 		}
@@ -107,58 +103,14 @@ export const IPTools = new class {
 	 * IP parsing
 	 *********************************************************/
 
-	/**
-	 * Canonical IP normalization: must be called on every raw IP before any downstream logic.
-	 * - IPv4-mapped IPv6 (::ffff:x.x.x.x) → plain IPv4 (x.x.x.x)
-	 * - Native IPv4 or native IPv6 pass through unchanged.
-	 */
-	normalizeIP(ip: string): string {
-		ip = ip.trim();
-		if (ip.startsWith('::ffff:')) {
-			const mapped = ip.slice(7);
-			// Only convert if the suffix is actually a valid IPv4 quad.
-			if (this.ipRegex.test(mapped)) return mapped;
-		}
-		return ip;
-	}
-
-	/** True if the (normalized) IP is a native IPv6 address. */
-	isIPv6(ip: string): boolean {
-		return ip.includes(':') && !ip.includes('.');
-	}
-
-	/**
-	 * Return the /64 prefix for a native IPv6 address.
-	 * Example: "2001:db8:abcd:0012:1234:5678:9abc:def0" → "2001:db8:abcd:0012::"
-	 */
-	getIPv6Range(ip: string, prefixBits: number = 64): string {
-		if (!this.isIPv6(ip)) throw new Error(`getIPv6Range called on non-IPv6 address: ${ip}`);
-		// Expand :: shorthand so we can split reliably
-		const expanded = this._expandIPv6(ip);
-		const groups = expanded.split(':');
-		const keepGroups = Math.floor(prefixBits / 16);
-		return groups.slice(0, keepGroups).join(':') + '::';
-	}
-
-	/** Expand a compressed IPv6 address into its full 8-group form. */
-	private _expandIPv6(ip: string): string {
-		if (ip.includes('::')) {
-			const parts = ip.split('::');
-			const left = parts[0] ? parts[0].split(':').filter(Boolean) : [];
-			const right = parts[1] ? parts[1].split(':').filter(Boolean) : [];
-			const missing = 8 - left.length - right.length;
-			const zeros = new Array(missing).fill('0');
-			return [...left, ...zeros, ...right].join(':');
-		}
-		return ip;
-	}
-
 	ipToNumber(ip: string) {
-		ip = this.normalizeIP(ip);
-		if (this.isIPv6(ip)) {
-			// Native IPv6 addresses can't be converted to a 32-bit number.
+		ip = ip.trim();
+		if (ip.includes(':') && !ip.includes('.')) {
+			// IPv6, which PS does not support
 			return null;
 		}
+		if (ip.startsWith('::ffff:')) ip = ip.slice(7);
+		else if (ip.startsWith('::')) ip = ip.slice(2);
 		let num = 0;
 		const parts = ip.split('.');
 		if (parts.length !== 4) return null;
@@ -524,12 +476,6 @@ export const IPTools = new class {
 		return new Promise<string>(resolve => {
 			if (!ip) {
 				resolve('');
-				return;
-			}
-
-			// Native IPv6: resolve to a simple unknown host.
-			if (IPTools.isIPv6(ip)) {
-				resolve('ipv6?/unknown');
 				return;
 			}
 

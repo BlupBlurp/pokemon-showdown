@@ -472,7 +472,7 @@ export const commands: Chat.ChatCommands = {
 		if (!target) return this.parse('/help host');
 		this.checkCan('alts');
 		target = target.trim();
-		if (!net.isIPv4(target) && !net.isIPv6(target)) throw new Chat.ErrorMessage('You must pass a valid IP to /host.');
+		if (!net.isIPv4(target)) throw new Chat.ErrorMessage('You must pass a valid IPv4 IP to /host.');
 		const { dnsbl, host, hostType } = await IPTools.lookup(target);
 		const dnsblMessage = dnsbl ? ` [${dnsbl}]` : ``;
 		this.sendReply(`IP ${target}: ${host || "ERROR"} [${hostType}]${dnsblMessage}`);
