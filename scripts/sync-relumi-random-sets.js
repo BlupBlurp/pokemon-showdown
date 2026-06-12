@@ -508,7 +508,6 @@ function buildCandidate(
 		realMoveIds: dedupedRealMoveIds.length ? dedupedRealMoveIds : validMoveIds,
 		movepool,
 		abilities,
-		teraTypes: species.types.slice(),
 		signature,
 		balancedLevel: getBalancedLevel(species),
 		singlesRole: inferSinglesRole(species, validMoveIds, dex),
@@ -604,7 +603,6 @@ function buildSetFromCandidate(candidate, isDoubles) {
 		role: isDoubles ? candidate.doublesRole : candidate.singlesRole,
 		movepool: candidate.movepool,
 		abilities: candidate.abilities,
-		teraTypes: candidate.teraTypes,
 	};
 	if (
 		Number.isInteger(candidate.trainerId) &&
