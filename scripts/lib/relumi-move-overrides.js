@@ -2,6 +2,9 @@
 
 // Manual and hardcoded move overrides that should persist across sync runs.
 const MANUAL_MOVE_OVERRIDES = {
+	return: {
+		basePower: 0,
+	},
 	hail: {
 		name: "Snowscape",
 		shortDesc: "For 5 turns, snow begins to fall.",

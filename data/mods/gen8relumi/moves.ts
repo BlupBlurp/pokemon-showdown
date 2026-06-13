@@ -888,7 +888,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		pp: 5,
 	},
 	return: {
-		basePower: 70,
+		basePower: 0,
 		inherit: true,
 	},
 	revelationdance: {
