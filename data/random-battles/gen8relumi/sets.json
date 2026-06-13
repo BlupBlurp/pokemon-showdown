@@ -35366,35 +35366,6 @@
             }
         ]
     },
-    "pichuspikyeared": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Zap Cannon",
-                    "Iron Tail",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Static"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Zap Cannon",
-                    "Thunder",
-                    "Iron Tail",
-                    "Hyper Voice"
-                ],
-                "abilities": [
-                    "Static"
-                ]
-            }
-        ]
-    },
     "pidgeot": {
         "level": 87,
         "sets": [

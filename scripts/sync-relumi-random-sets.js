@@ -92,6 +92,7 @@ const FALLBACK_BASE_ONLY_SPECIES = new Set([
 	"deerling",
 ]);
 const { FORM_NUMBER_SPECIES_OVERRIDES } = require("./lib/relumi-pokedex-overrides");
+const { MANUAL_RANDOM_SETS_BANS } = require("./lib/relumi-random-sets-overrides");
 const TRAINER_FORM_NUMBER_SPECIES_OVERRIDES = FORM_NUMBER_SPECIES_OVERRIDES;
 const STRICT_TRAINER_FORM_SPECIES = new Set(
 	Object.keys(TRAINER_FORM_NUMBER_SPECIES_OVERRIDES).map(n => Number(n))
@@ -292,6 +293,10 @@ function isDisallowedRandomBattleForm(species) {
 
 function isExcludedRelumiRandomBattleSpecies(species) {
 	if (!species || !species.exists) return true;
+
+	// Manual species bans: any entry here is excluded from random set
+	// generation regardless of the other filter passes below.
+	if (MANUAL_RANDOM_SETS_BANS.has(species.id)) return true;
 
 	// Relumi has no tera mechanic in battle formats, so exclude all Ogerpon tera formes.
 	if (species.baseSpecies === "Ogerpon" && String(species.id || "").endsWith("tera")) {
