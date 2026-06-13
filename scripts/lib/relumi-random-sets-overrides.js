@@ -7,8 +7,37 @@
 // Entries are Showdown species IDs (lowercase, no spaces). Listed species are
 // fully excluded from both trainer-derived and fallback candidate sets.
 const MANUAL_RANDOM_SETS_BANS = new Set([
-	// Event-only formes that exist in the dex but are not legal in Relumi.
 	"pichuspikyeared",
+	"aegislashblade",
+	"castformrainy",
+	"castformsunny",
+	"castformsnowy",
+	"cherrimsunshine",
+	"cramorantgorging",
+	"cramorantgulping",
+	"darmanitangalarzen",
+	"darmanitanzen",
+	"dudunsparcethreesegment",
+	"eiscuenoice",
+	"eternatuseternamax",
+	"genesectburn",
+	"genesectchill",
+	"genesectdouse",
+	"genesectshock",
+	"greninjaash",
+	"mausholdfour",
+	"mimikyubusted",
+	"morpekohangry",
+	"necrozmaultra",
+	"ogerpon",
+	"palafinhero",
+	"pikachucosplay",
+	"sinistchamasterpiece",
+	"terapagosstellar",
+	"terapagosterastal",
+	"wishiwashischool",
+	"zarudedada",
+	"zygardecomplete",
 ]);
 
 module.exports = { MANUAL_RANDOM_SETS_BANS };

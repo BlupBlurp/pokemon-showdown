@@ -436,35 +436,6 @@
             }
         ]
     },
-    "aegislashblade": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Flash Cannon",
-                    "Giga Impact",
-                    "Head Smash"
-                ],
-                "abilities": [
-                    "Stance Change"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Steel Beam",
-                    "Giga Impact",
-                    "Rest",
-                    "Iron Defense"
-                ],
-                "abilities": [
-                    "Stance Change"
-                ]
-            }
-        ]
-    },
     "aerodactyl": {
         "level": 85,
         "sets": [
@@ -7232,93 +7203,6 @@
             }
         ]
     },
-    "castformrainy": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hydro Pump",
-                    "Last Resort",
-                    "Rest",
-                    "Work Up"
-                ],
-                "abilities": [
-                    "Forecast"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hydro Pump",
-                    "Scald",
-                    "Last Resort",
-                    "Future Sight"
-                ],
-                "abilities": [
-                    "Forecast"
-                ]
-            }
-        ]
-    },
-    "castformsnowy": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Blizzard",
-                    "Ice Beam",
-                    "Last Resort",
-                    "Future Sight"
-                ],
-                "abilities": [
-                    "Forecast"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Blizzard",
-                    "Last Resort",
-                    "Rest",
-                    "Work Up"
-                ],
-                "abilities": [
-                    "Forecast"
-                ]
-            }
-        ]
-    },
-    "castformsunny": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Fire Blast",
-                    "Flamethrower",
-                    "Last Resort",
-                    "Future Sight"
-                ],
-                "abilities": [
-                    "Forecast"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Fire Blast",
-                    "Last Resort",
-                    "Rest",
-                    "Work Up"
-                ],
-                "abilities": [
-                    "Forecast"
-                ]
-            }
-        ]
-    },
     "celebi": {
         "level": 81,
         "sets": [
@@ -8054,35 +7938,6 @@
                     "spd": 84,
                     "spe": 86
                 }
-            }
-        ]
-    },
-    "cherrimsunshine": {
-        "level": 88,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Solar Blade",
-                    "Giga Impact",
-                    "Morning Sun",
-                    "Growth"
-                ],
-                "abilities": [
-                    "Flower Gift"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Solar Blade",
-                    "Petal Dance",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Flower Gift"
-                ]
             }
         ]
     },
@@ -9912,64 +9767,6 @@
             }
         ]
     },
-    "cramorantgorging": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hydro Pump",
-                    "Giga Impact",
-                    "Rest",
-                    "Defog"
-                ],
-                "abilities": [
-                    "Gulp Missile"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hydro Pump",
-                    "Hurricane",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Gulp Missile"
-                ]
-            }
-        ]
-    },
-    "cramorantgulping": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hydro Pump",
-                    "Giga Impact",
-                    "Rest",
-                    "Defog"
-                ],
-                "abilities": [
-                    "Gulp Missile"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hydro Pump",
-                    "Hurricane",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Gulp Missile"
-                ]
-            }
-        ]
-    },
     "crawdaunt": {
         "level": 87,
         "sets": [
@@ -10761,64 +10558,6 @@
                     "spd": 6,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "darmanitangalarzen": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Overheat",
-                    "Flare Blitz",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Zen Mode"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Overheat",
-                    "Focus Punch",
-                    "Rest",
-                    "Belly Drum"
-                ],
-                "abilities": [
-                    "Zen Mode"
-                ]
-            }
-        ]
-    },
-    "darmanitanzen": {
-        "level": 84,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Overheat",
-                    "Flare Blitz",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Zen Mode"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Overheat",
-                    "Focus Punch",
-                    "Rest",
-                    "Belly Drum"
-                ],
-                "abilities": [
-                    "Zen Mode"
-                ]
             }
         ]
     },
@@ -13161,39 +12900,6 @@
             }
         ]
     },
-    "dudunsparcethreesegment": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Giga Impact",
-                    "Hyper Beam",
-                    "Outrage",
-                    "Solar Beam"
-                ],
-                "abilities": [
-                    "Serene Grace",
-                    "Run Away",
-                    "Rattled"
-                ]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Giga Impact",
-                    "Outrage",
-                    "Stealth Rock",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Serene Grace",
-                    "Run Away",
-                    "Rattled"
-                ]
-            }
-        ]
-    },
     "dugtrio": {
         "level": 89,
         "sets": [
@@ -14004,35 +13710,6 @@
                     "spd": 8,
                     "spe": 0
                 }
-            }
-        ]
-    },
-    "eiscuenoice": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Blizzard",
-                    "Giga Impact",
-                    "Rest",
-                    "Belly Drum"
-                ],
-                "abilities": [
-                    "Ice Face"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Blizzard",
-                    "Ice Beam",
-                    "Giga Impact",
-                    "Head Smash"
-                ],
-                "abilities": [
-                    "Ice Face"
-                ]
             }
         ]
     },
@@ -15075,35 +14752,6 @@
     },
     "eternatus": {
         "level": 76,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Eternabeam",
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Pressure"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Eternabeam",
-                    "Giga Impact",
-                    "Recover",
-                    "Agility"
-                ],
-                "abilities": [
-                    "Pressure"
-                ]
-            }
-        ]
-    },
-    "eternatuseternamax": {
-        "level": 72,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -18000,122 +17648,6 @@
             }
         ]
     },
-    "genesectburn": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Bug Buzz",
-                    "Explosion",
-                    "Spikes",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Bug Buzz",
-                    "Flash Cannon",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            }
-        ]
-    },
-    "genesectchill": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Bug Buzz",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Steel Beam",
-                    "Explosion",
-                    "Rest",
-                    "Iron Defense"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            }
-        ]
-    },
-    "genesectdouse": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Bug Buzz",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Steel Beam",
-                    "Explosion",
-                    "Rest",
-                    "Iron Defense"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            }
-        ]
-    },
-    "genesectshock": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Steel Beam",
-                    "Bug Buzz",
-                    "Explosion",
-                    "Self-Destruct"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Steel Beam",
-                    "Explosion",
-                    "Rest",
-                    "Iron Defense"
-                ],
-                "abilities": [
-                    "Download"
-                ]
-            }
-        ]
-    },
     "gengar": {
         "level": 86,
         "sets": [
@@ -20763,35 +20295,6 @@
                     "spd": 220,
                     "spe": 16
                 }
-            }
-        ]
-    },
-    "greninjaash": {
-        "level": 79,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hydro Cannon",
-                    "Giga Impact",
-                    "Spikes",
-                    "Rest"
-                ],
-                "abilities": [
-                    "Battle Bond"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Hydro Cannon",
-                    "Hydro Pump",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Battle Bond"
-                ]
             }
         ]
     },
@@ -29764,39 +29267,6 @@
             }
         ]
     },
-    "mausholdfour": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Giga Impact",
-                    "Hyper Beam",
-                    "Play Rough",
-                    "Dig"
-                ],
-                "abilities": [
-                    "Friend Guard",
-                    "Cheek Pouch",
-                    "Technician"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Giga Impact",
-                    "Play Rough",
-                    "Rest",
-                    "Curse"
-                ],
-                "abilities": [
-                    "Friend Guard",
-                    "Cheek Pouch",
-                    "Technician"
-                ]
-            }
-        ]
-    },
     "mawile": {
         "level": 90,
         "sets": [
@@ -31391,35 +30861,6 @@
             }
         ]
     },
-    "mimikyubusted": {
-        "level": 87,
-        "sets": [
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Play Rough",
-                    "Dazzling Gleam",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Disguise"
-                ]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Play Rough",
-                    "Giga Impact",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Disguise"
-                ]
-            }
-        ]
-    },
     "minior": {
         "level": 86,
         "sets": [
@@ -31866,35 +31307,6 @@
                     "spd": 0,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "morpekohangry": {
-        "level": 89,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Aura Wheel",
-                    "Outrage",
-                    "Rest",
-                    "Agility"
-                ],
-                "abilities": [
-                    "Hunger Switch"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Aura Wheel",
-                    "Thunder",
-                    "Outrage",
-                    "Thrash"
-                ],
-                "abilities": [
-                    "Hunger Switch"
-                ]
             }
         ]
     },
@@ -32619,35 +32031,6 @@
                 ],
                 "abilities": [
                     "Prism Armor"
-                ]
-            }
-        ]
-    },
-    "necrozmaultra": {
-        "level": 73,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Prismatic Laser",
-                    "Giga Impact",
-                    "Stealth Rock",
-                    "Moonlight"
-                ],
-                "abilities": [
-                    "Neuroforce"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Prismatic Laser",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Neuroforce"
                 ]
             }
         ]
@@ -33743,35 +33126,6 @@
             }
         ]
     },
-    "ogerpon": {
-        "level": 83,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Solar Blade",
-                    "Superpower",
-                    "Spikes",
-                    "Synthesis"
-                ],
-                "abilities": [
-                    "Defiant"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Solar Blade",
-                    "Wood Hammer",
-                    "Superpower",
-                    "Throat Chop"
-                ],
-                "abilities": [
-                    "Defiant"
-                ]
-            }
-        ]
-    },
     "ogerponcornerstone": {
         "level": 83,
         "sets": [
@@ -34586,35 +33940,6 @@
     },
     "palafin": {
         "level": 88,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Hydro Pump",
-                    "Focus Punch",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Zero to Hero"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Hydro Pump",
-                    "Surf",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Zero to Hero"
-                ]
-            }
-        ]
-    },
-    "palafinhero": {
-        "level": 78,
         "sets": [
             {
                 "role": "Setup Sweeper",
@@ -35501,35 +34826,6 @@
         ]
     },
     "pikachubelle": {
-        "level": 90,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Volt Tackle",
-                    "Focus Punch",
-                    "Rest",
-                    "Agility"
-                ],
-                "abilities": [
-                    "Lightning Rod"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Volt Tackle",
-                    "Zap Cannon",
-                    "Focus Punch",
-                    "Iron Tail"
-                ],
-                "abilities": [
-                    "Lightning Rod"
-                ]
-            }
-        ]
-    },
-    "pikachucosplay": {
         "level": 90,
         "sets": [
             {
@@ -42947,37 +42243,6 @@
             }
         ]
     },
-    "sinistchamasterpiece": {
-        "level": 85,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Leaf Storm",
-                    "Draco Meteor",
-                    "Strength Sap",
-                    "Rage Powder"
-                ],
-                "abilities": [
-                    "Hospitality",
-                    "Heatproof"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Leaf Storm",
-                    "Seed Bomb",
-                    "Draco Meteor",
-                    "Outrage"
-                ],
-                "abilities": [
-                    "Hospitality",
-                    "Heatproof"
-                ]
-            }
-        ]
-    },
     "sirfetchd": {
         "level": 85,
         "sets": [
@@ -47227,64 +46492,6 @@
                 ],
                 "abilities": [
                     "Tera Shift"
-                ]
-            }
-        ]
-    },
-    "terapagosstellar": {
-        "level": 76,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Double-Edge",
-                    "Meteor Beam",
-                    "Rock Polish",
-                    "Gravity"
-                ],
-                "abilities": [
-                    "Teraform Zero"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Double-Edge",
-                    "Tera Starstorm",
-                    "Meteor Beam",
-                    "Earth Power"
-                ],
-                "abilities": [
-                    "Teraform Zero"
-                ]
-            }
-        ]
-    },
-    "terapagosterastal": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Double-Edge",
-                    "Meteor Beam",
-                    "Rock Polish",
-                    "Gravity"
-                ],
-                "abilities": [
-                    "Tera Shell"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Double-Edge",
-                    "Tera Starstorm",
-                    "Meteor Beam",
-                    "Earth Power"
-                ],
-                "abilities": [
-                    "Tera Shell"
                 ]
             }
         ]
@@ -51994,35 +51201,6 @@
             }
         ]
     },
-    "wishiwashischool": {
-        "level": 80,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Hydro Pump",
-                    "Double-Edge",
-                    "Rest",
-                    "Helping Hand"
-                ],
-                "abilities": [
-                    "Schooling"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Hydro Pump",
-                    "Surf",
-                    "Double-Edge",
-                    "Earthquake"
-                ],
-                "abilities": [
-                    "Schooling"
-                ]
-            }
-        ]
-    },
     "wobbuffet": {
         "level": 90,
         "sets": [
@@ -53069,35 +52247,6 @@
             }
         ]
     },
-    "zarudedada": {
-        "level": 81,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Solar Blade",
-                    "Focus Punch",
-                    "Rest",
-                    "Bulk Up"
-                ],
-                "abilities": [
-                    "Leaf Guard"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Solar Blade",
-                    "Solar Beam",
-                    "Focus Punch",
-                    "Giga Impact"
-                ],
-                "abilities": [
-                    "Leaf Guard"
-                ]
-            }
-        ]
-    },
     "zebstrika": {
         "level": 86,
         "sets": [
@@ -53574,35 +52723,6 @@
                 ],
                 "abilities": [
                     "Aura Break",
-                    "Power Construct"
-                ]
-            }
-        ]
-    },
-    "zygardecomplete": {
-        "level": 75,
-        "sets": [
-            {
-                "role": "Bulky Support",
-                "movepool": [
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Rest",
-                    "Coil"
-                ],
-                "abilities": [
-                    "Power Construct"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Draco Meteor",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
                     "Power Construct"
                 ]
             }
