@@ -102,7 +102,7 @@ exports.subprocesses = {
 	 *   this means or you are unfamiliar with PS' networking code, leave this set
 	 *   to 1.
 	 */
-	network: 2,
+	network: 1,
 	/**
 	 * for simulating battles
 	 *   You should leave this at 1 unless your server has a very large
@@ -216,6 +216,8 @@ exports.routes = {
 	client: "play.pokemonshowdown.com",
 	dex: "dex.pokemonshowdown.com",
 	replays: "play.relumishowdown.dpdns.org",
+	// Relumi: used for team share URLs and other custom client links.
+	teams: "play.relumishowdown.dpdns.org",
 };
 
 // Relumi: server identifier for replay ID prefixes.
@@ -824,16 +826,25 @@ exports.grouplist = [
 
 // Relumi: serve getteams/getteam from the local teams DB so the client teambuilder
 // loads teams uploaded to our own server instead of the official PS login server.
+//
+// This handler is invoked by the official customhttpresponse hook in sockets.ts
+// for every HTTP request the game server receives. It intercepts GET requests with
+// act=getteams or act=getteam query params and serves team data from PostgreSQL.
+//
+// Team saves go through the WebSocket /teams save command (teams.ts chat plugin);
+// this handler only covers the read path.
 (function () {
 	// Try the teams plugin's pool first (avoids duplicate connections in main process);
 	// fall back to our own pool for socket workers where the plugin isn't loaded.
-	let ownPool = null;
 	let teamsMod = null;
 	try {
 		teamsMod = require('../dist/server/chat-plugins/teams');
 	} catch (e) {}
 
-	function getPool() {
+	let ownPool = null;
+
+	/** Returns a pg.Pool, preferring the shared teamsPool from teams.ts when available. */
+	function getTeamsPool() {
 		if (teamsMod && teamsMod.teamsPool) return teamsMod.teamsPool;
 		if (!ownPool) {
 			const { Pool } = require('pg');
@@ -850,14 +861,17 @@ exports.grouplist = [
 		return ownPool;
 	}
 
-	// Parse "userid,token" from the sid cookie set by the PS login server.
-	function getUseridFromCookies(cookieHeader) {
+	/**
+	 * Extracts the user ID from the "sid" cookie (format: "userid,token").
+	 * With noguestsecurity enabled, we trust the cookie as-is without
+	 * cryptographic verification.
+	 */
+	function parseUserIdFromCookies(cookieHeader) {
 		if (!cookieHeader) return null;
 		for (const part of cookieHeader.split(';')) {
 			const [k, ...rest] = part.trim().split('=');
 			if (k.trim() === 'sid') {
 				const val = decodeURIComponent(rest.join('='));
-				// sid format: "userid,token"
 				const userid = val.split(',')[0].toLowerCase().replace(/[^a-z0-9]/g, '');
 				return userid || null;
 			}
@@ -865,7 +879,11 @@ exports.grouplist = [
 		return null;
 	}
 
-	function sendJSON(res, data) {
+	/**
+	 * Sends a JSON response with the ']' prefix.
+	 * The ']' prefix is a PS convention to prevent JSON hijacking.
+	 */
+	function sendJSONResponse(res, data) {
 		const body = ']' + JSON.stringify(data);
 		res.writeHead(200, {
 			'Content-Type': 'text/plain; charset=utf-8',
@@ -875,85 +893,53 @@ exports.grouplist = [
 		res.end(body);
 	}
 
+	/**
+	 * Extracts species names from a packed team string.
+	 *
+	 * The packed team is stored without a format prefix (the format is in a
+	 * separate DB column). Each set is separated by ']'; within a set, fields
+	 * are '|'-separated. Field 0 = nickname, field 1 = species.
+	 */
+	function extractTeamSpeciesList(packedTeam) {
+		const species = [];
+		for (const setStr of packedTeam.split(']')) {
+			if (!setStr) continue;
+			const fields = setStr.split('|');
+			species.push(fields[1] || fields[0] || '');
+		}
+		return species;
+	}
+
 	exports.customhttpresponse = function (req, res) {
 		const reqUrl = new URL(req.url, 'http://localhost');
 		const act = reqUrl.searchParams.get('act');
-
-		// Serve replay JSON data for the client's built-in battle viewer.
-		// Client fetches /{replayid}.json from routes.replays.
-		const replayJsonMatch = req.url.match(/^\/(.+)\.json$/);
-		if (replayJsonMatch) {
-			const replayid = replayJsonMatch[1];
-			getPool().query(
-				'SELECT log, players, id FROM replays WHERE id = $1',
-				[replayid]
-			).then(result => {
-				const row = result.rows[0];
-				if (!row) {
-					res.writeHead(404, { 'Content-Type': 'application/json' });
-					res.end(JSON.stringify({ error: 'Replay not found' }));
-					return;
-				}
-				res.writeHead(200, {
-					'Content-Type': 'application/json',
-					'Access-Control-Allow-Origin': '*',
-				});
-				res.end(JSON.stringify({
-					players: row.players.split(','),
-					log: row.log,
-				}));
-			}).catch(err => {
-				console.error('[Relumi] replay JSON error:', err.message);
-				res.writeHead(500, { 'Content-Type': 'application/json' });
-				res.end(JSON.stringify({ error: 'Database error' }));
-			});
-			return true;
-		}
-
 		if (act !== 'getteams' && act !== 'getteam') return false;
 
-		const userid = getUseridFromCookies(req.headers.cookie);
-		if (!userid) {
-			sendJSON(res, { actionerror: 'Not logged in.' });
-			return true;
-		}
-
 		if (act === 'getteams') {
-			// Return a lightweight list: teamid, name, format, species list, privacy.
-			getPool().query(
+			// Listing teams by owner requires knowing who the user is.
+			const userid = parseUserIdFromCookies(req.headers.cookie);
+			if (!userid) {
+				sendJSONResponse(res, { actionerror: 'Not logged in.' });
+				return true;
+			}
+
+			// Return a lightweight list for the teambuilder: teamid, name,
+			// format, comma-separated species list, and privacy flag.
+			getTeamsPool().query(
 				'SELECT teamid, title, format, team, private FROM teams WHERE ownerid = $1 ORDER BY date DESC LIMIT 200',
 				[userid]
 			).then(result => {
-				const teams = result.rows.map(row => {
-					// Unpack packed team to extract species names for the bandwidth-saving format.
-					const species = [];
-					let buf = row.team;
-					// Strip team metadata prefix if present (pipeCount check).
-					const endIdx = buf.indexOf(']');
-					if (endIdx > 0) {
-						const firstPart = buf.slice(0, endIdx);
-						const pipeCount = firstPart.split('|').length - 1;
-						if (pipeCount === 12 || pipeCount === 1) buf = buf.slice(buf.indexOf('|') + 1);
-					}
-					// Each set is separated by ']'; within a set, fields are '|'-separated.
-					// Field 0 = name, field 1 = species (or name if blank).
-					for (const setStr of buf.split(']')) {
-						if (!setStr) continue;
-						const fields = setStr.split('|');
-						species.push(fields[1] || fields[0] || '');
-					}
-					return {
-						teamid: row.teamid,
-						name: row.title || `Untitled ${row.teamid}`,
-						format: row.format,
-						team: species.join(','),
-						private: row.private || null,
-					};
-				});
-				sendJSON(res, { teams });
+				const teams = result.rows.map(row => ({
+					teamid: row.teamid,
+					name: row.title || `Untitled ${row.teamid}`,
+					format: row.format,
+					team: extractTeamSpeciesList(row.team).join(','),
+					private: row.private || null,
+				}));
+				sendJSONResponse(res, { teams });
 			}).catch(err => {
 				console.error('[Relumi] getteams DB error:', err.message);
-				sendJSON(res, { actionerror: 'Database error.' });
+				sendJSONResponse(res, { actionerror: 'Database error.' });
 			});
 			return true;
 		}
@@ -961,28 +947,32 @@ exports.grouplist = [
 		if (act === 'getteam') {
 			const teamid = parseInt(reqUrl.searchParams.get('teamid'), 10);
 			if (isNaN(teamid)) {
-				sendJSON(res, { actionerror: 'Invalid team ID.' });
+				sendJSONResponse(res, { actionerror: 'Invalid team ID.' });
 				return true;
 			}
-			getPool().query(
+			getTeamsPool().query(
 				'SELECT team, private, ownerid FROM teams WHERE teamid = $1',
 				[teamid]
 			).then(result => {
 				const row = result.rows[0];
 				if (!row) {
-					sendJSON(res, { actionerror: 'Team not found.' });
+					sendJSONResponse(res, { actionerror: 'Team not found.' });
 					return;
 				}
-				// Only the owner can load a private team without a password.
-				const password = reqUrl.searchParams.get('password') || '';
-				if (row.private && row.ownerid !== userid && password !== row.private) {
-					sendJSON(res, { actionerror: 'That team is private.' });
-					return;
+				// Public teams are accessible to anyone; private teams require
+				// either the correct password or the team owner's cookie.
+				if (row.private) {
+					const userid = parseUserIdFromCookies(req.headers.cookie);
+					const password = reqUrl.searchParams.get('password') || '';
+					if (row.ownerid !== userid && password !== row.private) {
+						sendJSONResponse(res, { actionerror: 'That team is private.' });
+						return;
+					}
 				}
-				sendJSON(res, { team: row.team, privacy: row.private || null });
+				sendJSONResponse(res, { team: row.team, privacy: row.private || null });
 			}).catch(err => {
 				console.error('[Relumi] getteam DB error:', err.message);
-				sendJSON(res, { actionerror: 'Database error.' });
+				sendJSONResponse(res, { actionerror: 'Database error.' });
 			});
 			return true;
 		}
