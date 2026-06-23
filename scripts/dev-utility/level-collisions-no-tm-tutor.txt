@@ -1,0 +1,2563 @@
+=== Gen8 Relumi Level Collision Finder ===
+
+Finding Pokemon that learn two or more different moves at the same level.
+(Level 1 is ignored. Pokemon with no vanilla data and collisions that also occur in vanilla gens 7-9 are filtered out.)
+
+--- bellsprout ---
+  Level 10: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv10
+      sleeppowder: Lv10
+      stunspore: Lv10
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv15
+        sleeppowder: Lv13
+        stunspore: Lv17
+      Gen 8:
+        poisonpowder: 8V
+        sleeppowder: 8V
+        stunspore: 8V
+      Gen 7:
+        poisonpowder: Lv15, 7V
+        sleeppowder: Lv13, 7V
+        stunspore: Lv17, 7V
+
+--- exeggcute ---
+  Level 19: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv19, Egg
+      sleeppowder: Lv19, Egg
+      stunspore: Lv19, Egg
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Egg
+        sleeppowder: Egg
+        stunspore: Egg
+      Gen 8:
+        poisonpowder: Egg, 8V
+        sleeppowder: Egg, 8V
+        stunspore: Egg, 8V
+      Gen 7:
+        poisonpowder: Lv21, 7V
+        sleeppowder: Lv23, 7V
+        stunspore: Lv19, 7V
+
+--- exeggutor ---
+  Level 32: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv32
+      sleeppowder: Lv32
+      stunspore: Lv32
+    Vanilla learnset:
+      Gen 8:
+        poisonpowder: (not learned)
+        sleeppowder: (not learned)
+        stunspore: 8V
+
+--- exeggutoralola ---
+  Level 32: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv32
+      sleeppowder: Lv32
+      stunspore: Lv32
+    Vanilla learnset:
+      Gen 8:
+        poisonpowder: (not learned)
+        sleeppowder: (not learned)
+        stunspore: 8V
+
+--- gloom ---
+  Level 10: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv10
+      sleeppowder: Lv10
+      stunspore: Lv10
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv14
+        sleeppowder: Lv18
+        stunspore: Lv16
+      Gen 8:
+        poisonpowder: Lv14, 8V
+        sleeppowder: Lv18, 8V
+        stunspore: Lv16, 8V
+      Gen 7:
+        poisonpowder: Lv13, 7V
+        sleeppowder: Lv15, 7V
+        stunspore: Lv14, 7V
+
+--- grumpig ---
+  Level 10: growl, odorsleuth, psybeam
+    Gen8Relumi entries:
+      growl: Lv10
+      odorsleuth: Lv10
+      psybeam: Lv10
+    Vanilla learnset:
+      Gen 9:
+        growl: (not learned)
+        odorsleuth: (not learned)
+        psybeam: Lv1, TM
+      Gen 7:
+        growl: (not learned)
+        odorsleuth: Lv1
+        psybeam: Lv1
+
+--- oddish ---
+  Level 10: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv10
+      sleeppowder: Lv10
+      stunspore: Lv10
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv14
+        sleeppowder: Lv18
+        stunspore: Lv16
+      Gen 8:
+        poisonpowder: Lv14, 8V
+        sleeppowder: Lv18, 8V
+        stunspore: Lv16, 8V
+      Gen 7:
+        poisonpowder: Lv13, 7V
+        sleeppowder: Lv15, 7V
+        stunspore: Lv14, 7V
+
+--- shroomish ---
+  Level 19: poisonpowder, spore, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv19
+      spore: Lv19
+      stunspore: Lv19
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv19
+        spore: Lv40
+        stunspore: Lv5
+      Gen 7:
+        poisonpowder: Lv19
+        spore: Lv40
+        stunspore: Lv5
+
+--- spoink ---
+  Level 10: growl, odorsleuth, psybeam
+    Gen8Relumi entries:
+      growl: Lv10
+      odorsleuth: Lv10
+      psybeam: Lv10
+    Vanilla learnset:
+      Gen 9:
+        growl: Lv10
+        odorsleuth: (not learned)
+        psybeam: Lv14, TM
+      Gen 7:
+        growl: (not learned)
+        odorsleuth: Lv10
+        psybeam: Lv14
+
+--- tangela ---
+  Level 13: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv13
+      sleeppowder: Lv13
+      stunspore: Lv13
+    Vanilla learnset:
+      Gen 8:
+        poisonpowder: Lv20, 8V
+        sleeppowder: Lv36, 8V
+        stunspore: Lv4, 8V
+      Gen 7:
+        poisonpowder: Lv14, 7V
+        sleeppowder: Lv4, 7V
+        stunspore: Lv30, 7V
+
+--- tangrowth ---
+  Level 13: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv13
+      sleeppowder: Lv13
+      stunspore: Lv13
+    Vanilla learnset:
+      Gen 8:
+        poisonpowder: Lv20
+        sleeppowder: Lv36
+        stunspore: Lv1
+      Gen 7:
+        poisonpowder: Lv14
+        sleeppowder: Lv4
+        stunspore: Lv30
+
+--- venomoth ---
+  Level 15: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv15
+      sleeppowder: Lv15
+      stunspore: Lv15
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv13
+        sleeppowder: Lv29
+        stunspore: Lv23
+      Gen 8:
+        poisonpowder: 8V
+        sleeppowder: 8V
+        stunspore: 8V
+      Gen 7:
+        poisonpowder: Lv13, 7V
+        sleeppowder: Lv29, 7V
+        stunspore: Lv23, 7V
+
+--- venonat ---
+  Level 15: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv15
+      sleeppowder: Lv15
+      stunspore: Lv15
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv13
+        sleeppowder: Lv29
+        stunspore: Lv23
+      Gen 8:
+        poisonpowder: 8V
+        sleeppowder: 8V
+        stunspore: 8V
+      Gen 7:
+        poisonpowder: Lv13, 7V
+        sleeppowder: Lv29, 7V
+        stunspore: Lv23, 7V
+
+--- victreebel ---
+  Level 12: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv12
+      sleeppowder: Lv12
+      stunspore: Lv12
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: (not learned)
+        sleeppowder: Lv1
+        stunspore: (not learned)
+      Gen 7:
+        poisonpowder: 7V
+        sleeppowder: Lv1, 7V
+        stunspore: 7V
+
+--- weepinbell ---
+  Level 10: poisonpowder, sleeppowder, stunspore
+    Gen8Relumi entries:
+      poisonpowder: Lv10
+      sleeppowder: Lv10
+      stunspore: Lv10
+    Vanilla learnset:
+      Gen 9:
+        poisonpowder: Lv15
+        sleeppowder: Lv13
+        stunspore: Lv17
+      Gen 8:
+        poisonpowder: 8V
+        sleeppowder: 8V
+        stunspore: 8V
+      Gen 7:
+        poisonpowder: Lv15, 7V
+        sleeppowder: Lv13, 7V
+        stunspore: Lv17, 7V
+
+--- absol ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22
+      slash: Lv22
+    Vanilla learnset:
+      Gen 8:
+        nightslash: Lv30
+        slash: Lv25
+      Gen 7:
+        nightslash: Lv29
+        slash: Lv22
+
+--- absol ---
+  Level 49: futuresight, razorwind
+    Gen8Relumi entries:
+      futuresight: Lv49
+      razorwind: Lv49
+    Vanilla learnset:
+      Gen 8:
+        futuresight: Lv50, TM
+        razorwind: (not learned)
+      Gen 7:
+        futuresight: Lv1
+        razorwind: Lv49
+
+--- aggron ---
+  Level 48: autotomize, doubleedge
+    Gen8Relumi entries:
+      autotomize: Lv48
+      doubleedge: Lv48
+    Vanilla learnset:
+      Gen 8:
+        autotomize: Lv48
+        doubleedge: Lv80
+      Gen 7:
+        autotomize: Lv51
+        doubleedge: Lv45
+
+--- ampharos ---
+  Level 25: electroball, takedown
+    Gen8Relumi entries:
+      electroball: Lv25
+      takedown: Lv25
+    Vanilla learnset:
+      Gen 9:
+        electroball: Lv25, TM
+        takedown: Lv20, TM
+      Gen 7:
+        electroball: Lv25
+        takedown: Lv20
+
+--- arceus ---
+  Level 50: healingwish, judgment
+    Gen8Relumi entries:
+      healingwish: Lv50
+      judgment: Lv50
+    Vanilla learnset:
+      Gen 9:
+        healingwish: Lv50
+        judgment: Lv100
+      Gen 7:
+        healingwish: (not learned)
+        judgment: Lv100, Event
+
+--- aron ---
+  Level 40: autotomize, doubleedge
+    Gen8Relumi entries:
+      autotomize: Lv40
+      doubleedge: Lv40
+    Vanilla learnset:
+      Gen 8:
+        autotomize: Lv40
+        doubleedge: Lv56
+      Gen 7:
+        autotomize: Lv43
+        doubleedge: Lv40
+
+--- azumarill ---
+  Level 12: bubblebeam, slam
+    Gen8Relumi entries:
+      bubblebeam: Lv12
+      slam: Lv12
+    Vanilla learnset:
+      Gen 9:
+        bubblebeam: Lv6
+        slam: Lv12
+      Gen 8:
+        bubblebeam: Lv6
+        slam: Lv12
+      Gen 7:
+        bubblebeam: Lv13, 7V
+        slam: (not learned)
+
+--- banette ---
+  Level 34: crushclaw, embargo
+    Gen8Relumi entries:
+      crushclaw: Lv34
+      embargo: Lv34
+    Vanilla learnset:
+      Gen 7:
+        crushclaw: (not learned)
+        embargo: Lv34, TM
+
+--- basculin ---
+  Level 52: doubleedge, wavecrash
+    Gen8Relumi entries:
+      doubleedge: Lv52
+      wavecrash: Lv52
+    Vanilla learnset:
+      Gen 9:
+        doubleedge: Lv52, TM
+        wavecrash: Lv44
+      Gen 8:
+        doubleedge: Lv52
+        wavecrash: (not learned)
+      Gen 7:
+        doubleedge: Lv26
+        wavecrash: (not learned)
+
+--- beautifly ---
+  Level 18: megadrain, silverwind
+    Gen8Relumi entries:
+      megadrain: Lv18
+      silverwind: Lv18
+    Vanilla learnset:
+      Gen 7:
+        megadrain: Lv22
+        silverwind: Lv25
+
+--- blaziken ---
+  Level 39: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv39
+      slash: Lv39
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv25
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv25
+      Gen 7:
+        nightslash: (not learned)
+        slash: Lv44
+
+--- budew ---
+  Level 12: sleeppowder, stunspore
+    Gen8Relumi entries:
+      sleeppowder: Lv12, Egg
+      stunspore: Lv12
+    Vanilla learnset:
+      Gen 8:
+        sleeppowder: Egg
+        stunspore: Lv1
+      Gen 7:
+        sleeppowder: Egg
+        stunspore: Lv10
+
+--- buizel ---
+  Level 7: tailwhip, watergun
+    Gen8Relumi entries:
+      tailwhip: Lv7
+      watergun: Lv7
+    Vanilla learnset:
+      Gen 9:
+        tailwhip: (not learned)
+        watergun: Lv15
+      Gen 7:
+        tailwhip: (not learned)
+        watergun: Lv15
+
+--- butterfree ---
+  Level 19: psybeam, silverwind
+    Gen8Relumi entries:
+      psybeam: Lv19
+      silverwind: Lv19
+    Vanilla learnset:
+      Gen 8:
+        psybeam: Lv16, 8V
+        silverwind: (not learned)
+      Gen 7:
+        psybeam: Lv17, 7V
+        silverwind: Lv19
+
+--- cacnea ---
+  Level 19: assurance, feintattack
+    Gen8Relumi entries:
+      assurance: Lv19
+      feintattack: Lv19
+    Vanilla learnset:
+      Gen 7:
+        assurance: (not learned)
+        feintattack: Lv19
+
+--- cacturne ---
+  Level 19: assurance, feintattack
+    Gen8Relumi entries:
+      assurance: Lv19
+      feintattack: Lv19
+    Vanilla learnset:
+      Gen 7:
+        assurance: (not learned)
+        feintattack: Lv19
+
+--- carnivine ---
+  Level 15: metalclaw, razorleaf
+    Gen8Relumi entries:
+      metalclaw: Lv15
+      razorleaf: Lv15, Egg
+    Vanilla learnset:
+      Gen 7:
+        metalclaw: (not learned)
+        razorleaf: Egg
+
+--- charizard ---
+  Level 54: bellydrum, inferno
+    Gen8Relumi entries:
+      bellydrum: Lv54
+      inferno: Lv54
+    Vanilla learnset:
+      Gen 9:
+        bellydrum: Event
+        inferno: Lv54
+      Gen 8:
+        bellydrum: (not learned)
+        inferno: Lv54
+      Gen 7:
+        bellydrum: (not learned)
+        inferno: Lv62
+
+--- charizardclone ---
+  Level 54: bellydrum, inferno
+    Gen8Relumi entries:
+      bellydrum: Lv54
+      inferno: Lv54
+    Vanilla learnset:
+
+--- chingling ---
+  Level 19: entrainment, takedown
+    Gen8Relumi entries:
+      entrainment: Lv19
+      takedown: Lv19
+    Vanilla learnset:
+      Gen 9:
+        entrainment: Lv19
+        takedown: (not learned)
+      Gen 7:
+        entrainment: Lv19
+        takedown: (not learned)
+
+--- clefable ---
+  Level 14: defensecurl, doubleslap
+    Gen8Relumi entries:
+      defensecurl: Lv14
+      doubleslap: Lv14
+    Vanilla learnset:
+      Gen 9:
+        defensecurl: Lv1
+        doubleslap: (not learned)
+      Gen 8:
+        defensecurl: Lv1, 8V
+        doubleslap: (not learned)
+      Gen 7:
+        defensecurl: 7V
+        doubleslap: Lv1, 7V
+
+--- clefable ---
+  Level 24: drainingkiss, followme
+    Gen8Relumi entries:
+      drainingkiss: Lv24
+      followme: Lv24
+    Vanilla learnset:
+      Gen 9:
+        drainingkiss: TM
+        followme: Lv1
+      Gen 8:
+        drainingkiss: TM
+        followme: Lv1
+
+--- clefable ---
+  Level 34: bodyslam, minimize
+    Gen8Relumi entries:
+      bodyslam: Lv34
+      minimize: Lv34
+    Vanilla learnset:
+      Gen 9:
+        bodyslam: TM
+        minimize: (not learned)
+      Gen 8:
+        bodyslam: TM
+        minimize: Lv1
+      Gen 7:
+        bodyslam: 7V
+        minimize: Lv1, 7V
+
+--- clefairy ---
+  Level 4: encore, storedpower
+    Gen8Relumi entries:
+      encore: Lv4
+      storedpower: Lv4
+    Vanilla learnset:
+      Gen 9:
+        encore: Lv8, TM
+        storedpower: Lv4, TM
+      Gen 8:
+        encore: Lv1, TM, 8V
+        storedpower: Lv4, TM
+      Gen 7:
+        encore: Lv1, 7V
+        storedpower: Lv28
+
+--- clodsire ---
+  Level 51: haze, mist
+    Gen8Relumi entries:
+      haze: Lv51
+      mist: Lv51
+    Vanilla learnset:
+      Gen 9:
+        haze: TM
+        mist: (not learned)
+
+--- cloyster ---
+  Level 18: bubblebeam, toxicspikes
+    Gen8Relumi entries:
+      bubblebeam: Lv18
+      toxicspikes: Lv18
+    Vanilla learnset:
+      Gen 9:
+        bubblebeam: (not learned)
+        toxicspikes: Lv1, TM
+      Gen 8:
+        bubblebeam: (not learned)
+        toxicspikes: Lv1, TM
+      Gen 7:
+        bubblebeam: 7V
+        toxicspikes: Lv1
+
+--- cloyster ---
+  Level 38: iceshard, pinmissile
+    Gen8Relumi entries:
+      iceshard: Lv38
+      pinmissile: Lv38
+    Vanilla learnset:
+      Gen 9:
+        iceshard: Lv1
+        pinmissile: (not learned)
+      Gen 8:
+        iceshard: Lv1
+        pinmissile: TM
+
+--- combusken ---
+  Level 38: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv38
+      slash: Lv38
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv25
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv25
+      Gen 7:
+        nightslash: (not learned)
+        slash: Lv42
+
+--- cresselia ---
+  Level 18: futuresight, psybeam
+    Gen8Relumi entries:
+      futuresight: Lv18
+      psybeam: Lv18
+    Vanilla learnset:
+      Gen 9:
+        futuresight: Lv66, TM
+        psybeam: Lv18, TM
+      Gen 8:
+        futuresight: Lv66, TM
+        psybeam: Lv18
+      Gen 7:
+        futuresight: Lv38, Event
+        psybeam: (not learned)
+
+--- darkrai ---
+  Level 26: embargo, haze
+    Gen8Relumi entries:
+      embargo: Lv26
+      haze: Lv26
+    Vanilla learnset:
+      Gen 9:
+        embargo: (not learned)
+        haze: Lv57, TM
+      Gen 7:
+        embargo: TM
+        haze: Lv57
+
+--- darmanitan ---
+  Level 12: incinerate, psybeam
+    Gen8Relumi entries:
+      incinerate: Lv12
+      psybeam: Lv12
+    Vanilla learnset:
+      Gen 8:
+        incinerate: Lv12
+        psybeam: (not learned)
+      Gen 7:
+        incinerate: Lv1
+        psybeam: (not learned)
+
+--- darmanitan ---
+  Level 44: blazekick, futuresight
+    Gen8Relumi entries:
+      blazekick: Lv44
+      futuresight: Lv44
+    Vanilla learnset:
+      Gen 8:
+        blazekick: (not learned)
+        futuresight: TM
+
+--- darmanitangalar ---
+  Level 52: blazekick, icehammer
+    Gen8Relumi entries:
+      blazekick: Lv52
+      icehammer: Lv52
+    Vanilla learnset:
+
+--- dedenne ---
+  Level 35: discharge, drainingkiss
+    Gen8Relumi entries:
+      discharge: Lv35
+      drainingkiss: Lv35
+    Vanilla learnset:
+      Gen 9:
+        discharge: Lv40
+        drainingkiss: TM
+      Gen 8:
+        discharge: Lv40
+        drainingkiss: (not learned)
+      Gen 7:
+        discharge: Lv50
+        drainingkiss: (not learned)
+
+--- delcatty ---
+  Level 20: doubleslap, furyswipes
+    Gen8Relumi entries:
+      doubleslap: Lv20
+      furyswipes: Lv20
+    Vanilla learnset:
+      Gen 7:
+        doubleslap: Lv1
+        furyswipes: (not learned)
+
+--- delcatty ---
+  Level 56: doubleedge, wish
+    Gen8Relumi entries:
+      doubleedge: Lv56
+      wish: Lv56
+    Vanilla learnset:
+
+--- dewott ---
+  Level 5: focusenergy, tailwhip
+    Gen8Relumi entries:
+      focusenergy: Lv5
+      tailwhip: Lv5
+    Vanilla learnset:
+      Gen 9:
+        focusenergy: Lv13
+        tailwhip: Lv1
+      Gen 7:
+        focusenergy: Lv13
+        tailwhip: Lv1
+
+--- dodrio ---
+  Level 54: bravebird, highjumpkick
+    Gen8Relumi entries:
+      bravebird: Lv54
+      highjumpkick: Lv54
+    Vanilla learnset:
+      Gen 9:
+        bravebird: TM
+        highjumpkick: (not learned)
+
+--- doduo ---
+  Level 33: acupressure, jumpkick
+    Gen8Relumi entries:
+      acupressure: Lv33
+      jumpkick: Lv33
+    Vanilla learnset:
+      Gen 9:
+        acupressure: Lv30
+        jumpkick: (not learned)
+      Gen 8:
+        acupressure: (not learned)
+        jumpkick: 8V
+      Gen 7:
+        acupressure: Lv33
+        jumpkick: Lv40
+
+--- dugtrio ---
+  Level 37: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv37
+      slash: Lv37
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv1
+        slash: Lv24
+      Gen 8:
+        nightslash: Lv1
+        slash: Lv24, 8V
+      Gen 7:
+        nightslash: Lv1
+        slash: Lv41, 7V
+
+--- durant ---
+  Level 48: entrainment, metalsound
+    Gen8Relumi entries:
+      entrainment: Lv48
+      metalsound: Lv48
+    Vanilla learnset:
+      Gen 8:
+        entrainment: Lv48
+        metalsound: Lv40
+      Gen 7:
+        entrainment: Lv36
+        metalsound: Lv1
+
+--- dustox ---
+  Level 18: psybeam, silverwind
+    Gen8Relumi entries:
+      psybeam: Lv18
+      silverwind: Lv18
+    Vanilla learnset:
+      Gen 7:
+        psybeam: Lv22
+        silverwind: Lv25
+
+--- ekans ---
+  Level 28: acidspray, poisontail
+    Gen8Relumi entries:
+      acidspray: Lv28
+      poisontail: Lv28, Egg
+    Vanilla learnset:
+      Gen 9:
+        acidspray: Lv28, TM
+        poisontail: TM, Egg
+      Gen 7:
+        acidspray: Lv28
+        poisontail: Egg
+
+--- entei ---
+  Level 6: ember, flamewheel
+    Gen8Relumi entries:
+      ember: Lv6
+      flamewheel: Lv6
+    Vanilla learnset:
+      Gen 9:
+        ember: Lv1
+        flamewheel: Lv6
+      Gen 8:
+        ember: Lv1
+        flamewheel: Lv6
+      Gen 7:
+        ember: Lv8, 7V
+        flamewheel: (not learned)
+
+--- farfetchd ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22, Egg
+      slash: Lv22
+    Vanilla learnset:
+      Gen 8:
+        nightslash: Egg
+        slash: Lv40, 8V
+      Gen 7:
+        nightslash: Lv33, Egg
+        slash: Lv19, 7V
+
+--- farfetchdgalar ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22, Egg
+      slash: Lv22
+    Vanilla learnset:
+      Gen 8:
+        nightslash: Egg
+        slash: (not learned)
+
+--- fearow ---
+  Level 23: assurance, takedown
+    Gen8Relumi entries:
+      assurance: Lv23
+      takedown: Lv23
+    Vanilla learnset:
+      Gen 7:
+        assurance: Lv23
+        takedown: 7V
+
+--- feraligatr ---
+  Level 34: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv34
+      slash: Lv34
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv37
+      Gen 7:
+        nightslash: (not learned)
+        slash: Lv45, 7V
+
+--- flaaffy ---
+  Level 25: electroball, takedown
+    Gen8Relumi entries:
+      electroball: Lv25
+      takedown: Lv25
+    Vanilla learnset:
+      Gen 9:
+        electroball: Lv25, TM
+        takedown: Lv20, TM
+      Gen 7:
+        electroball: Lv25
+        takedown: Lv20
+
+--- floatzel ---
+  Level 7: tailwhip, watergun
+    Gen8Relumi entries:
+      tailwhip: Lv7
+      watergun: Lv7
+    Vanilla learnset:
+      Gen 9:
+        tailwhip: (not learned)
+        watergun: Lv15
+      Gen 7:
+        tailwhip: (not learned)
+        watergun: Lv15
+
+--- froslass ---
+  Level 54: auroraveil, destinybond
+    Gen8Relumi entries:
+      auroraveil: Lv54
+      destinybond: Lv54
+    Vanilla learnset:
+      Gen 9:
+        auroraveil: Lv54
+        destinybond: Lv1
+      Gen 8:
+        auroraveil: Lv54
+        destinybond: Lv1
+      Gen 7:
+        auroraveil: TM
+        destinybond: Lv1
+
+--- gastrodon ---
+  Level 40: counter, mirrorcoat
+    Gen8Relumi entries:
+      counter: Lv40
+      mirrorcoat: Lv40
+    Vanilla learnset:
+
+--- gastrodon ---
+  Level 44: acidarmor, amnesia
+    Gen8Relumi entries:
+      acidarmor: Lv44
+      amnesia: Lv44
+    Vanilla learnset:
+      Gen 9:
+        acidarmor: (not learned)
+        amnesia: TM
+      Gen 8:
+        acidarmor: (not learned)
+        amnesia: TM
+
+--- gastrodoneast ---
+  Level 40: counter, mirrorcoat
+    Gen8Relumi entries:
+      counter: Lv40
+      mirrorcoat: Lv40
+    Vanilla learnset:
+
+--- gastrodoneast ---
+  Level 44: acidarmor, amnesia
+    Gen8Relumi entries:
+      acidarmor: Lv44
+      amnesia: Lv44
+    Vanilla learnset:
+      Gen 9:
+        acidarmor: (not learned)
+        amnesia: TM
+      Gen 8:
+        acidarmor: (not learned)
+        amnesia: TM
+
+--- gible ---
+  Level 25: bite, slash
+    Gen8Relumi entries:
+      bite: Lv25
+      slash: Lv25
+    Vanilla learnset:
+      Gen 9:
+        bite: Lv25
+        slash: Lv30
+      Gen 8:
+        bite: Lv25
+        slash: Lv30
+      Gen 7:
+        bite: (not learned)
+        slash: Lv25
+
+--- glaceon ---
+  Level 25: aurorabeam, barrier
+    Gen8Relumi entries:
+      aurorabeam: Lv25
+      barrier: Lv25
+    Vanilla learnset:
+      Gen 7:
+        aurorabeam: (not learned)
+        barrier: Lv29
+
+--- gligar ---
+  Level 19: feintattack, mudbomb
+    Gen8Relumi entries:
+      feintattack: Lv19
+      mudbomb: Lv19
+    Vanilla learnset:
+      Gen 7:
+        feintattack: Lv19, 7V
+        mudbomb: (not learned)
+
+--- gligar ---
+  Level 22: acrobatics, slash
+    Gen8Relumi entries:
+      acrobatics: Lv22
+      slash: Lv22
+    Vanilla learnset:
+      Gen 9:
+        acrobatics: Lv22, TM
+        slash: Lv27
+      Gen 7:
+        acrobatics: Lv22, TM
+        slash: Lv27, 7V
+
+--- gliscor ---
+  Level 19: feintattack, mudbomb
+    Gen8Relumi entries:
+      feintattack: Lv19
+      mudbomb: Lv19
+    Vanilla learnset:
+      Gen 7:
+        feintattack: Lv19
+        mudbomb: (not learned)
+
+--- gliscor ---
+  Level 22: acrobatics, nightslash
+    Gen8Relumi entries:
+      acrobatics: Lv22
+      nightslash: Lv22
+    Vanilla learnset:
+      Gen 9:
+        acrobatics: Lv22, TM
+        nightslash: Lv27
+      Gen 7:
+        acrobatics: Lv22, TM
+        nightslash: Lv27
+
+--- golduck ---
+  Level 27: hypnosis, soak
+    Gen8Relumi entries:
+      hypnosis: Lv27
+      soak: Lv27
+    Vanilla learnset:
+      Gen 9:
+        hypnosis: (not learned)
+        soak: Lv27
+      Gen 8:
+        hypnosis: (not learned)
+        soak: Lv27
+      Gen 7:
+        hypnosis: (not learned)
+        soak: Lv31
+
+--- grimer ---
+  Level 46: belch, memento
+    Gen8Relumi entries:
+      belch: Lv46
+      memento: Lv46
+    Vanilla learnset:
+      Gen 9:
+        belch: Lv46
+        memento: Lv48
+      Gen 7:
+        belch: Lv46
+        memento: Lv48
+
+--- grimeralola ---
+  Level 46: belch, memento
+    Gen8Relumi entries:
+      belch: Lv46
+      memento: Lv46
+    Vanilla learnset:
+      Gen 9:
+        belch: Lv46
+        memento: Lv48
+      Gen 7:
+        belch: Lv46
+        memento: Lv48
+
+--- gulpin ---
+  Level 17: acidspray, sludge
+    Gen8Relumi entries:
+      acidspray: Lv17
+      sludge: Lv17
+    Vanilla learnset:
+      Gen 9:
+        acidspray: Lv17, TM
+        sludge: Lv10
+      Gen 7:
+        acidspray: Lv17
+        sludge: Lv10
+
+--- happiny ---
+  Level 4: copycat, defensecurl
+    Gen8Relumi entries:
+      copycat: Lv4
+      defensecurl: Lv4
+    Vanilla learnset:
+      Gen 9:
+        copycat: Lv1
+        defensecurl: Lv4
+      Gen 8:
+        copycat: Lv1
+        defensecurl: Lv4
+      Gen 7:
+        copycat: Lv5
+        defensecurl: (not learned)
+
+--- heatran ---
+  Level 6: leer, metalclaw
+    Gen8Relumi entries:
+      leer: Lv6
+      metalclaw: Lv6
+    Vanilla learnset:
+      Gen 9:
+        leer: Lv1
+        metalclaw: Lv6, TM
+      Gen 8:
+        leer: Lv1
+        metalclaw: Lv6
+      Gen 7:
+        leer: Lv9
+        metalclaw: (not learned)
+
+--- hitmonlee ---
+  Level 41: highjumpkick, mindreader
+    Gen8Relumi entries:
+      highjumpkick: Lv41
+      mindreader: Lv41
+    Vanilla learnset:
+      Gen 9:
+        highjumpkick: Lv44
+        mindreader: (not learned)
+      Gen 8:
+        highjumpkick: Lv44, 8V
+        mindreader: Lv28
+      Gen 7:
+        highjumpkick: Lv29, 7V
+        mindreader: Lv33, 7V
+
+--- hitmontop ---
+  Level 21: agility, wideguard
+    Gen8Relumi entries:
+      agility: Lv21
+      wideguard: Lv21
+    Vanilla learnset:
+      Gen 9:
+        agility: Lv28, TM
+        wideguard: Lv21
+      Gen 8:
+        agility: Lv28, TM
+        wideguard: Lv21
+      Gen 7:
+        agility: Lv37, 7V
+        wideguard: Lv46
+
+--- honchkrow ---
+  Level 20: assurance, nightshade
+    Gen8Relumi entries:
+      assurance: Lv20
+      nightshade: Lv20
+    Vanilla learnset:
+      Gen 9:
+        assurance: (not learned)
+        nightshade: TM
+
+--- hoothoot ---
+  Level 6: echoedvoice, hypnosis
+    Gen8Relumi entries:
+      echoedvoice: Lv6
+      hypnosis: Lv6
+    Vanilla learnset:
+      Gen 9:
+        echoedvoice: Lv6
+        hypnosis: Lv36
+      Gen 8:
+        echoedvoice: Lv6
+        hypnosis: Lv36
+      Gen 7:
+        echoedvoice: Lv13, TM
+        hypnosis: Lv4, 7V
+
+--- jigglypuff ---
+  Level 4: echoedvoice, pound
+    Gen8Relumi entries:
+      echoedvoice: Lv4
+      pound: Lv4
+    Vanilla learnset:
+      Gen 9:
+        echoedvoice: Lv4
+        pound: Lv1
+      Gen 8:
+        echoedvoice: Lv4
+        pound: Lv1, 8V
+      Gen 7:
+        echoedvoice: TM
+        pound: Lv5, 7V
+
+--- jynx ---
+  Level 12: confusion, fakeout
+    Gen8Relumi entries:
+      confusion: Lv12
+      fakeout: Lv12
+    Vanilla learnset:
+      Gen 8:
+        confusion: Lv12, 8V
+        fakeout: (not learned)
+
+--- kabutopsmissingno ---
+  Level 30: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv30
+      slash: Lv1, Lv30
+    Vanilla learnset:
+
+--- kecleon ---
+  Level 16: disable, feintattack
+    Gen8Relumi entries:
+      disable: Lv16, Egg
+      feintattack: Lv16
+    Vanilla learnset:
+      Gen 7:
+        disable: Egg
+        feintattack: Lv16
+
+--- kleavor ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22, Egg
+      slash: Lv22
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv24
+
+--- krabby ---
+  Level 32: guillotine, razorshell
+    Gen8Relumi entries:
+      guillotine: Lv32
+      razorshell: Lv32
+    Vanilla learnset:
+      Gen 8:
+        guillotine: Lv48, 8V
+        razorshell: Lv32, TM
+      Gen 7:
+        guillotine: Lv31, 7V
+        razorshell: (not learned)
+
+--- kricketune ---
+  Level 25: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv25
+      slash: Lv25
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv42
+        slash: Lv26
+      Gen 7:
+        nightslash: Lv42
+        slash: Lv26
+
+--- lairon ---
+  Level 46: autotomize, doubleedge
+    Gen8Relumi entries:
+      autotomize: Lv46
+      doubleedge: Lv46
+    Vanilla learnset:
+      Gen 8:
+        autotomize: Lv46
+        doubleedge: Lv70
+      Gen 7:
+        autotomize: Lv47
+        doubleedge: Lv43
+
+--- lilligant ---
+  Level 49: fierydance, petaldance
+    Gen8Relumi entries:
+      fierydance: Lv49
+      petaldance: Lv49
+    Vanilla learnset:
+      Gen 9:
+        fierydance: (not learned)
+        petaldance: Lv0
+      Gen 8:
+        fierydance: (not learned)
+        petaldance: Lv0
+      Gen 7:
+        fierydance: (not learned)
+        petaldance: Lv46
+
+--- lilliganthisui ---
+  Level 14: razorleaf, sleeppowder
+    Gen8Relumi entries:
+      razorleaf: Lv14
+      sleeppowder: Lv14
+    Vanilla learnset:
+      Gen 9:
+        razorleaf: (not learned)
+        sleeppowder: Lv1
+
+--- linoone ---
+  Level 13: headbutt, odorsleuth
+    Gen8Relumi entries:
+      headbutt: Lv13
+      odorsleuth: Lv13
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv12
+        odorsleuth: (not learned)
+      Gen 7:
+        headbutt: Lv11
+        odorsleuth: Lv13
+
+--- linoonegalar ---
+  Level 13: headbutt, odorsleuth
+    Gen8Relumi entries:
+      headbutt: Lv13
+      odorsleuth: Lv13
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv12
+        odorsleuth: (not learned)
+
+--- lombre ---
+  Level 9: bubble, mist
+    Gen8Relumi entries:
+      bubble: Lv9
+      mist: Lv9
+    Vanilla learnset:
+      Gen 9:
+        bubble: (not learned)
+        mist: Lv9
+      Gen 8:
+        bubble: (not learned)
+        mist: Lv9
+      Gen 7:
+        bubble: Lv9
+        mist: (not learned)
+
+--- ludicolo ---
+  Level 9: bubble, mist
+    Gen8Relumi entries:
+      bubble: Lv9
+      mist: Lv9
+    Vanilla learnset:
+      Gen 9:
+        bubble: (not learned)
+        mist: Lv1
+      Gen 8:
+        bubble: (not learned)
+        mist: Lv1
+
+--- luvdisc ---
+  Level 37: babydolleyes, moonblast
+    Gen8Relumi entries:
+      babydolleyes: Lv37
+      moonblast: Lv37
+    Vanilla learnset:
+      Gen 9:
+        babydolleyes: Lv37
+        moonblast: (not learned)
+
+--- magby ---
+  Level 12: clearsmog, feintattack
+    Gen8Relumi entries:
+      clearsmog: Lv12
+      feintattack: Lv12
+    Vanilla learnset:
+      Gen 9:
+        clearsmog: Lv12
+        feintattack: (not learned)
+      Gen 8:
+        clearsmog: Lv12
+        feintattack: (not learned)
+      Gen 7:
+        clearsmog: Lv19
+        feintattack: Lv12
+
+--- magmar ---
+  Level 12: clearsmog, feintattack
+    Gen8Relumi entries:
+      clearsmog: Lv12
+      feintattack: Lv12
+    Vanilla learnset:
+      Gen 9:
+        clearsmog: Lv12
+        feintattack: (not learned)
+      Gen 8:
+        clearsmog: Lv12, 8V
+        feintattack: (not learned)
+      Gen 7:
+        clearsmog: Lv19
+        feintattack: Lv12
+
+--- magmortar ---
+  Level 12: clearsmog, feintattack
+    Gen8Relumi entries:
+      clearsmog: Lv12
+      feintattack: Lv12
+    Vanilla learnset:
+      Gen 9:
+        clearsmog: Lv12
+        feintattack: (not learned)
+      Gen 8:
+        clearsmog: Lv12
+        feintattack: (not learned)
+      Gen 7:
+        clearsmog: Lv19
+        feintattack: Lv12
+
+--- mantine ---
+  Level 16: headbutt, wideguard
+    Gen8Relumi entries:
+      headbutt: Lv16
+      wideguard: Lv16, Egg
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv28
+        wideguard: Lv16
+      Gen 7:
+        headbutt: Lv16, 7V
+        wideguard: Lv23, Egg
+
+--- mantyke ---
+  Level 16: headbutt, wideguard
+    Gen8Relumi entries:
+      headbutt: Lv16
+      wideguard: Lv16, Egg
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv28
+        wideguard: Lv16
+      Gen 7:
+        headbutt: Lv16
+        wideguard: Lv23, Egg
+
+--- mareep ---
+  Level 22: electroball, takedown
+    Gen8Relumi entries:
+      electroball: Lv22
+      takedown: Lv22, Egg
+    Vanilla learnset:
+      Gen 9:
+        electroball: Lv22, TM
+        takedown: Lv18, TM
+      Gen 7:
+        electroball: Lv22
+        takedown: Lv18, Egg, 7V
+
+--- marill ---
+  Level 12: bubblebeam, slam
+    Gen8Relumi entries:
+      bubblebeam: Lv12
+      slam: Lv12
+    Vanilla learnset:
+      Gen 9:
+        bubblebeam: Lv6
+        slam: Lv12
+      Gen 8:
+        bubblebeam: Lv6
+        slam: Lv12
+      Gen 7:
+        bubblebeam: Lv13, 7V
+        slam: (not learned)
+
+--- masquerain ---
+  Level 32: silverwind, supersonic
+    Gen8Relumi entries:
+      silverwind: Lv32
+      supersonic: Lv32
+    Vanilla learnset:
+      Gen 7:
+        silverwind: Lv32
+        supersonic: (not learned)
+
+--- mawile ---
+  Level 19: batonpass, feintattack
+    Gen8Relumi entries:
+      batonpass: Lv19
+      feintattack: Lv19
+    Vanilla learnset:
+      Gen 8:
+        batonpass: Lv8, TM
+        feintattack: (not learned)
+      Gen 7:
+        batonpass: Lv25
+        feintattack: Lv21
+
+--- meowth ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv36
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv36, 8V
+      Gen 7:
+        nightslash: Lv49
+        slash: Lv33, 7V
+
+--- meowthalola ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv36
+        slash: (not learned)
+      Gen 8:
+        nightslash: Lv36
+        slash: 8V
+      Gen 7:
+        nightslash: Lv49
+        slash: Lv33
+
+--- mewtwomkiarmored ---
+  Level 26: guardswap, powerswap
+    Gen8Relumi entries:
+      guardswap: Lv26
+      powerswap: Lv26
+    Vanilla learnset:
+
+--- mewtwomkiiarmored ---
+  Level 26: guardswap, powerswap
+    Gen8Relumi entries:
+      guardswap: Lv26
+      powerswap: Lv26
+    Vanilla learnset:
+
+--- mewtwoshadow ---
+  Level 26: guardswap, powerswap
+    Gen8Relumi entries:
+      guardswap: Lv26
+      powerswap: Lv26
+    Vanilla learnset:
+
+--- mewtwoshadowmega ---
+  Level 26: guardswap, powerswap
+    Gen8Relumi entries:
+      guardswap: Lv26
+      powerswap: Lv26
+    Vanilla learnset:
+
+--- mightyena ---
+  Level 32: embargo, headbutt
+    Gen8Relumi entries:
+      embargo: Lv32
+      headbutt: Lv32
+    Vanilla learnset:
+      Gen 7:
+        embargo: Lv32, TM
+        headbutt: (not learned)
+
+--- milotic ---
+  Level 48: coil, mirrorcoat
+    Gen8Relumi entries:
+      coil: Lv48
+      mirrorcoat: Lv48
+    Vanilla learnset:
+      Gen 9:
+        coil: Lv48
+        mirrorcoat: (not learned)
+      Gen 8:
+        coil: Lv48
+        mirrorcoat: (not learned)
+      Gen 7:
+        coil: Lv41
+        mirrorcoat: (not learned)
+
+--- miltank ---
+  Level 25: bodyslam, headbutt
+    Gen8Relumi entries:
+      bodyslam: Lv25
+      headbutt: Lv25
+    Vanilla learnset:
+      Gen 8:
+        bodyslam: Lv40, TM
+        headbutt: Lv25
+      Gen 7:
+        bodyslam: Lv24, 7V
+        headbutt: 7V
+
+--- minun ---
+  Level 49: entrainment, extremespeed
+    Gen8Relumi entries:
+      entrainment: Lv49
+      extremespeed: Lv49
+    Vanilla learnset:
+      Gen 9:
+        entrainment: Lv49
+        extremespeed: (not learned)
+      Gen 7:
+        entrainment: Lv49
+        extremespeed: (not learned)
+
+--- mismagius ---
+  Level 25: confuseray, drainingkiss
+    Gen8Relumi entries:
+      confuseray: Lv25
+      drainingkiss: Lv25
+    Vanilla learnset:
+      Gen 9:
+        confuseray: TM
+        drainingkiss: TM
+
+--- mismagius ---
+  Level 55: grudge, hypnosis
+    Gen8Relumi entries:
+      grudge: Lv55
+      hypnosis: Lv55
+    Vanilla learnset:
+
+--- mothim ---
+  Level 20: gust, stringshot
+    Gen8Relumi entries:
+      gust: Lv20
+      stringshot: Lv20
+    Vanilla learnset:
+      Gen 7:
+        gust: Lv26
+        stringshot: (not learned)
+
+--- ninetales ---
+  Level 28: confuseray, feintattack
+    Gen8Relumi entries:
+      confuseray: Lv28
+      feintattack: Lv28
+    Vanilla learnset:
+      Gen 9:
+        confuseray: Lv1, TM
+        feintattack: (not learned)
+      Gen 8:
+        confuseray: Lv1
+        feintattack: (not learned)
+      Gen 7:
+        confuseray: Lv1, 7V
+        feintattack: (not learned)
+
+--- ninetalesalola ---
+  Level 28: confuseray, feintattack
+    Gen8Relumi entries:
+      confuseray: Lv28
+      feintattack: Lv28
+    Vanilla learnset:
+      Gen 9:
+        confuseray: Lv1, TM
+        feintattack: (not learned)
+      Gen 8:
+        confuseray: Lv1
+        feintattack: (not learned)
+      Gen 7:
+        confuseray: Lv1
+        feintattack: (not learned)
+
+--- ninjask ---
+  Level 23: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv23
+      slash: Lv23
+    Vanilla learnset:
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv50
+      Gen 7:
+        nightslash: (not learned)
+        slash: Lv23
+
+--- obstagoon ---
+  Level 13: headbutt, odorsleuth
+    Gen8Relumi entries:
+      headbutt: Lv13
+      odorsleuth: Lv13
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv12
+        odorsleuth: (not learned)
+
+--- omanyte ---
+  Level 10: bite, sandattack
+    Gen8Relumi entries:
+      bite: Lv10, Egg
+      sandattack: Lv10
+    Vanilla learnset:
+      Gen 8:
+        bite: Egg, 8V
+        sandattack: Lv10
+      Gen 7:
+        bite: Lv7, 7V
+        sandattack: (not learned)
+
+--- onix ---
+  Level 28: sandtomb, slam
+    Gen8Relumi entries:
+      sandtomb: Lv28
+      slam: Lv28
+    Vanilla learnset:
+      Gen 8:
+        sandtomb: Lv28, TM
+        slam: Lv36, 8V
+      Gen 7:
+        sandtomb: Lv37
+        slam: Lv28, 7V
+
+--- pachirisu ---
+  Level 25: discharge, electroball
+    Gen8Relumi entries:
+      discharge: Lv25
+      electroball: Lv25
+    Vanilla learnset:
+      Gen 9:
+        discharge: Lv41
+        electroball: Lv25, TM
+      Gen 7:
+        discharge: Lv41
+        electroball: Lv25
+
+--- persian ---
+  Level 12: furyswipes, payday
+    Gen8Relumi entries:
+      furyswipes: Lv12
+      payday: Lv12
+    Vanilla learnset:
+      Gen 9:
+        furyswipes: Lv31
+        payday: Lv12
+      Gen 8:
+        furyswipes: Lv31, 8V
+        payday: Lv12, TM, 8V
+      Gen 7:
+        furyswipes: Lv14, 7V
+        payday: 7V
+
+--- persian ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv42
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv42, 8V
+      Gen 7:
+        nightslash: Lv61
+        slash: Lv37, 7V
+
+--- persianalola ---
+  Level 21: feintattack, payday
+    Gen8Relumi entries:
+      feintattack: Lv21
+      payday: Lv21
+    Vanilla learnset:
+      Gen 9:
+        feintattack: (not learned)
+        payday: Lv12
+      Gen 8:
+        feintattack: (not learned)
+        payday: Lv12, TM, 8V
+      Gen 7:
+        feintattack: Lv22
+        payday: (not learned)
+
+--- persianalola ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv42
+        slash: (not learned)
+      Gen 8:
+        nightslash: Lv42
+        slash: 8V
+      Gen 7:
+        nightslash: Lv61
+        slash: Lv37
+
+--- pidgeot ---
+  Level 31: agility, razorwind
+    Gen8Relumi entries:
+      agility: Lv31
+      razorwind: Lv31
+    Vanilla learnset:
+      Gen 8:
+        agility: 8V
+        razorwind: 8V
+      Gen 7:
+        agility: Lv32, 7V
+        razorwind: 7V
+
+--- pidgeotto ---
+  Level 31: agility, razorwind
+    Gen8Relumi entries:
+      agility: Lv31
+      razorwind: Lv31
+    Vanilla learnset:
+      Gen 8:
+        agility: 8V
+        razorwind: 8V
+      Gen 7:
+        agility: Lv32, 7V
+        razorwind: 7V
+
+--- pidgey ---
+  Level 27: agility, razorwind
+    Gen8Relumi entries:
+      agility: Lv27
+      razorwind: Lv27
+    Vanilla learnset:
+      Gen 8:
+        agility: 8V
+        razorwind: 8V
+      Gen 7:
+        agility: Lv29, 7V
+        razorwind: 7V
+
+--- poliwrath ---
+  Level 26: machpunch, mudshot
+    Gen8Relumi entries:
+      machpunch: Lv26
+      mudshot: Lv26
+    Vanilla learnset:
+      Gen 9:
+        machpunch: (not learned)
+        mudshot: Lv1, TM
+      Gen 8:
+        machpunch: (not learned)
+        mudshot: Lv1, TM
+
+--- poochyena ---
+  Level 28: embargo, headbutt
+    Gen8Relumi entries:
+      embargo: Lv28
+      headbutt: Lv28
+    Vanilla learnset:
+      Gen 7:
+        embargo: Lv28, TM
+        headbutt: (not learned)
+
+--- psyduck ---
+  Level 27: hypnosis, soak
+    Gen8Relumi entries:
+      hypnosis: Lv27, Egg
+      soak: Lv27
+    Vanilla learnset:
+      Gen 9:
+        hypnosis: Egg
+        soak: Lv27
+      Gen 8:
+        hypnosis: Egg
+        soak: Lv27
+      Gen 7:
+        hypnosis: Egg, 7V
+        soak: Lv31
+
+--- quagsire ---
+  Level 19: amnesia, mudbomb
+    Gen8Relumi entries:
+      amnesia: Lv19
+      mudbomb: Lv19
+    Vanilla learnset:
+      Gen 9:
+        amnesia: Lv40, TM
+        mudbomb: (not learned)
+      Gen 8:
+        amnesia: Lv40, TM
+        mudbomb: (not learned)
+      Gen 7:
+        amnesia: Lv24, 7V
+        mudbomb: Lv19
+
+--- qwilfish ---
+  Level 12: fellstinger, minimize
+    Gen8Relumi entries:
+      fellstinger: Lv12
+      minimize: Lv12
+    Vanilla learnset:
+      Gen 9:
+        fellstinger: Lv12
+        minimize: Lv16
+      Gen 8:
+        fellstinger: Lv12
+        minimize: Lv16
+      Gen 7:
+        fellstinger: Lv1
+        minimize: Lv9, 7V
+
+--- raichu ---
+  Level 55: agility, teeterdance
+    Gen8Relumi entries:
+      agility: Lv55
+      teeterdance: Lv55
+    Vanilla learnset:
+      Gen 9:
+        agility: Lv1, TM
+        teeterdance: (not learned)
+      Gen 8:
+        agility: Lv1, TM
+        teeterdance: (not learned)
+
+--- raticate ---
+  Level 16: hyperfang, takedown
+    Gen8Relumi entries:
+      hyperfang: Lv16
+      takedown: Lv16
+    Vanilla learnset:
+      Gen 8:
+        hyperfang: 8V
+        takedown: (not learned)
+      Gen 7:
+        hyperfang: Lv16, 7V
+        takedown: 7V
+
+--- raticatealola ---
+  Level 16: hyperfang, takedown
+    Gen8Relumi entries:
+      hyperfang: Lv16
+      takedown: Lv16
+    Vanilla learnset:
+      Gen 8:
+        hyperfang: 8V
+        takedown: (not learned)
+      Gen 7:
+        hyperfang: Lv16
+        takedown: (not learned)
+
+--- rattata ---
+  Level 16: hyperfang, takedown
+    Gen8Relumi entries:
+      hyperfang: Lv16
+      takedown: Lv16
+    Vanilla learnset:
+      Gen 8:
+        hyperfang: 8V
+        takedown: (not learned)
+      Gen 7:
+        hyperfang: Lv16, 7V
+        takedown: 7V
+
+--- rattataalola ---
+  Level 16: hyperfang, takedown
+    Gen8Relumi entries:
+      hyperfang: Lv16
+      takedown: Lv16
+    Vanilla learnset:
+      Gen 8:
+        hyperfang: 8V
+        takedown: (not learned)
+      Gen 7:
+        hyperfang: Lv16
+        takedown: (not learned)
+
+--- roselia ---
+  Level 12: sleeppowder, stunspore
+    Gen8Relumi entries:
+      sleeppowder: Lv12, Egg
+      stunspore: Lv12
+    Vanilla learnset:
+      Gen 8:
+        sleeppowder: Egg
+        stunspore: Lv1
+      Gen 7:
+        sleeppowder: Egg
+        stunspore: Lv10
+
+--- roserade ---
+  Level 14: sleeppowder, stunspore
+    Gen8Relumi entries:
+      sleeppowder: Lv14
+      stunspore: Lv14
+    Vanilla learnset:
+      Gen 8:
+        sleeppowder: (not learned)
+        stunspore: Lv1
+
+--- sableye ---
+  Level 4: foresight, nightshade
+    Gen8Relumi entries:
+      foresight: Lv4
+      nightshade: Lv4
+    Vanilla learnset:
+      Gen 9:
+        foresight: (not learned)
+        nightshade: Lv21, TM
+      Gen 8:
+        foresight: (not learned)
+        nightshade: Lv21
+      Gen 7:
+        foresight: Lv4
+        nightshade: Lv6
+
+--- sandshrew ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24, Egg
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Egg
+        slash: Lv30
+      Gen 8:
+        nightslash: Egg
+        slash: Lv30, 8V
+      Gen 7:
+        nightslash: Egg
+        slash: Lv26, 7V
+
+--- sandslash ---
+  Level 25: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv25
+      slash: Lv25
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv36
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv36, 8V
+      Gen 7:
+        nightslash: (not learned)
+        slash: Lv28, 7V
+
+--- scizor ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22
+      slash: Lv22
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv24
+      Gen 8:
+        nightslash: (not learned)
+        slash: Lv24
+      Gen 7:
+        nightslash: Lv45
+        slash: Lv29, 7V
+
+--- scyther ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22, Egg
+      slash: Lv22
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Egg
+        slash: Lv24
+      Gen 8:
+        nightslash: Egg
+        slash: Lv24, 8V
+      Gen 7:
+        nightslash: Lv45, Egg
+        slash: Lv29, 7V
+
+--- shellos ---
+  Level 37: counter, mirrorcoat
+    Gen8Relumi entries:
+      counter: Lv37, Egg
+      mirrorcoat: Lv37, Egg
+    Vanilla learnset:
+      Gen 9:
+        counter: Egg
+        mirrorcoat: Egg
+      Gen 8:
+        counter: Egg
+        mirrorcoat: Egg
+      Gen 7:
+        counter: Egg
+        mirrorcoat: Egg
+
+--- shellos ---
+  Level 40: acidarmor, amnesia
+    Gen8Relumi entries:
+      acidarmor: Lv40, Egg
+      amnesia: Lv40, Egg
+    Vanilla learnset:
+      Gen 9:
+        acidarmor: Egg
+        amnesia: TM
+      Gen 8:
+        acidarmor: Egg
+        amnesia: TM
+      Gen 7:
+        acidarmor: Egg
+        amnesia: Egg
+
+--- sirfetchd ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22
+      slash: Lv22
+    Vanilla learnset:
+
+--- skarmory ---
+  Level 34: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv34, Egg
+      slash: Lv34
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Egg
+        slash: Lv24
+      Gen 8:
+        nightslash: Egg
+        slash: Lv24
+      Gen 7:
+        nightslash: Lv53
+        slash: Lv39
+
+--- skitty ---
+  Level 16: doubleslap, furyswipes
+    Gen8Relumi entries:
+      doubleslap: Lv16
+      furyswipes: Lv16
+    Vanilla learnset:
+      Gen 7:
+        doubleslap: Lv16
+        furyswipes: (not learned)
+
+--- skuntank ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22
+      slash: Lv22
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv38
+        slash: (not learned)
+      Gen 8:
+        nightslash: Lv38
+        slash: (not learned)
+      Gen 7:
+        nightslash: Lv31
+        slash: Lv25
+
+--- slaking ---
+  Level 27: amnesia, headbutt
+    Gen8Relumi entries:
+      amnesia: Lv27
+      headbutt: Lv27
+    Vanilla learnset:
+      Gen 9:
+        amnesia: Lv17, TM
+        headbutt: (not learned)
+      Gen 7:
+        amnesia: Lv17
+        headbutt: (not learned)
+
+--- solrock ---
+  Level 5: firespin, hypnosis
+    Gen8Relumi entries:
+      firespin: Lv5
+      hypnosis: Lv5
+    Vanilla learnset:
+      Gen 8:
+        firespin: TM
+        hypnosis: Lv5
+      Gen 7:
+        firespin: Lv5
+        hypnosis: (not learned)
+
+--- spearow ---
+  Level 22: assurance, takedown
+    Gen8Relumi entries:
+      assurance: Lv22
+      takedown: Lv22
+    Vanilla learnset:
+      Gen 7:
+        assurance: Lv22
+        takedown: 7V
+
+--- spinda ---
+  Level 10: feintattack, hypnosis
+    Gen8Relumi entries:
+      feintattack: Lv10
+      hypnosis: Lv10
+    Vanilla learnset:
+      Gen 7:
+        feintattack: Lv10
+        hypnosis: Lv19
+
+--- spinda ---
+  Level 23: bodyslam, dizzypunch
+    Gen8Relumi entries:
+      bodyslam: Lv23
+      dizzypunch: Lv23
+    Vanilla learnset:
+      Gen 7:
+        bodyslam: (not learned)
+        dizzypunch: Lv23
+
+--- starly ---
+  Level 41: doubleedge, finalgambit
+    Gen8Relumi entries:
+      doubleedge: Lv41, Egg
+      finalgambit: Lv41
+    Vanilla learnset:
+      Gen 9:
+        doubleedge: TM, Egg
+        finalgambit: Lv41
+      Gen 7:
+        doubleedge: Egg
+        finalgambit: Lv41
+
+--- steelix ---
+  Level 28: sandtomb, slam
+    Gen8Relumi entries:
+      sandtomb: Lv28
+      slam: Lv28
+    Vanilla learnset:
+      Gen 8:
+        sandtomb: Lv28, TM
+        slam: Lv36
+      Gen 7:
+        sandtomb: (not learned)
+        slam: Lv28, 7V
+
+--- stunky ---
+  Level 22: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv22
+      slash: Lv22, Egg
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv36
+        slash: Egg
+      Gen 8:
+        nightslash: Lv36
+        slash: Egg
+      Gen 7:
+        nightslash: Lv31
+        slash: Lv25
+
+--- sudowoodo ---
+  Level 18: mimic, slam
+    Gen8Relumi entries:
+      mimic: Lv18
+      slam: Lv1, Lv18
+    Vanilla learnset:
+      Gen 9:
+        mimic: Lv16
+        slam: Lv0
+      Gen 8:
+        mimic: Lv16
+        slam: Lv0
+      Gen 7:
+        mimic: Lv15, 7V
+        slam: Lv1, 7V
+
+--- swalot ---
+  Level 17: acidspray, sludge
+    Gen8Relumi entries:
+      acidspray: Lv17
+      sludge: Lv17
+    Vanilla learnset:
+      Gen 9:
+        acidspray: Lv17, TM
+        sludge: Lv1
+      Gen 7:
+        acidspray: Lv17
+        sludge: Lv1
+
+--- swellow ---
+  Level 27: agility, quickguard
+    Gen8Relumi entries:
+      agility: Lv27
+      quickguard: Lv27
+    Vanilla learnset:
+      Gen 7:
+        agility: Lv33
+        quickguard: Lv27
+
+--- taillow ---
+  Level 25: agility, quickguard
+    Gen8Relumi entries:
+      agility: Lv25
+      quickguard: Lv25
+    Vanilla learnset:
+      Gen 7:
+        agility: Lv29
+        quickguard: Lv25
+
+--- teddiursa ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24, Egg
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Egg
+        slash: Lv22
+      Gen 7:
+        nightslash: Egg
+        slash: Lv29, 7V
+
+--- tentacool ---
+  Level 31: barrier, muddywater
+    Gen8Relumi entries:
+      barrier: Lv31
+      muddywater: Lv31, Egg
+    Vanilla learnset:
+      Gen 9:
+        barrier: (not learned)
+        muddywater: TM
+      Gen 8:
+        barrier: 8V
+        muddywater: TM
+      Gen 7:
+        barrier: Lv28, 7V
+        muddywater: Egg
+
+--- torchic ---
+  Level 32: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv32, Egg
+      slash: Lv32
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Egg
+        slash: Lv21
+      Gen 8:
+        nightslash: Egg
+        slash: Lv21
+      Gen 7:
+        nightslash: Egg
+        slash: Lv37
+
+--- torkoal ---
+  Level 16: clearsmog, flamewheel
+    Gen8Relumi entries:
+      clearsmog: Lv16, Egg
+      flamewheel: Lv16
+    Vanilla learnset:
+      Gen 9:
+        clearsmog: Lv16
+        flamewheel: Lv20
+      Gen 8:
+        clearsmog: Lv16
+        flamewheel: Lv20
+      Gen 7:
+        clearsmog: Egg
+        flamewheel: Lv18
+
+--- toxtricity ---
+  Level 52: magneticflux, shiftgear
+    Gen8Relumi entries:
+      magneticflux: Lv52
+      shiftgear: Lv52
+    Vanilla learnset:
+      Gen 9:
+        magneticflux: (not learned)
+        shiftgear: Lv52
+      Gen 8:
+        magneticflux: (not learned)
+        shiftgear: Lv52
+
+--- toxtricitylowkey ---
+  Level 52: magneticflux, shiftgear
+    Gen8Relumi entries:
+      magneticflux: Lv52
+      shiftgear: Lv52
+    Vanilla learnset:
+      Gen 9:
+        magneticflux: Lv52
+        shiftgear: (not learned)
+      Gen 8:
+        magneticflux: Lv52
+        shiftgear: (not learned)
+
+--- ursaluna ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv22
+
+--- ursalunabloodmoon ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv22, Event
+
+--- ursaring ---
+  Level 24: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv24
+      slash: Lv24
+    Vanilla learnset:
+      Gen 9:
+        nightslash: (not learned)
+        slash: Lv22
+      Gen 7:
+        nightslash: (not learned)
+        slash: Lv29, 7V
+
+--- venusaurclone ---
+  Level 14: poisonpowder, sleeppowder
+    Gen8Relumi entries:
+      poisonpowder: Lv14
+      sleeppowder: Lv14
+    Vanilla learnset:
+
+--- victini ---
+  Level 52: fusionbolt, fusionflare
+    Gen8Relumi entries:
+      fusionbolt: Lv52
+      fusionflare: Lv52
+    Vanilla learnset:
+
+--- victini ---
+  Level 66: blueflare, boltstrike
+    Gen8Relumi entries:
+      blueflare: Lv66
+      boltstrike: Lv66
+    Vanilla learnset:
+
+--- victini ---
+  Level 77: flareblitz, vcreate
+    Gen8Relumi entries:
+      flareblitz: Lv1, Lv77
+      vcreate: Lv77
+    Vanilla learnset:
+      Gen 8:
+        flareblitz: Lv77, TM
+        vcreate: Lv1, Event
+      Gen 7:
+        flareblitz: Lv73
+        vcreate: Event
+
+--- vileplume ---
+  Level 57: quiverdance, teeterdance
+    Gen8Relumi entries:
+      quiverdance: Lv57
+      teeterdance: Lv57
+    Vanilla learnset:
+
+--- vileplume ---
+  Level 72: leafstorm, strengthsap
+    Gen8Relumi entries:
+      leafstorm: Lv72
+      strengthsap: Lv72
+    Vanilla learnset:
+      Gen 9:
+        leafstorm: TM
+        strengthsap: (not learned)
+
+--- vulpix ---
+  Level 23: extrasensory, feintattack
+    Gen8Relumi entries:
+      extrasensory: Lv23, Egg
+      feintattack: Lv23, Egg
+    Vanilla learnset:
+      Gen 9:
+        extrasensory: Lv28
+        feintattack: (not learned)
+      Gen 8:
+        extrasensory: Lv28
+        feintattack: (not learned)
+      Gen 7:
+        extrasensory: Lv31, Egg
+        feintattack: Lv23, Egg, 7V
+
+--- vulpixalola ---
+  Level 23: extrasensory, feintattack
+    Gen8Relumi entries:
+      extrasensory: Lv23, Egg
+      feintattack: Lv23
+    Vanilla learnset:
+      Gen 9:
+        extrasensory: Lv28
+        feintattack: (not learned)
+      Gen 8:
+        extrasensory: Lv28
+        feintattack: (not learned)
+      Gen 7:
+        extrasensory: Lv31, Egg
+        feintattack: Lv23
+
+--- wooper ---
+  Level 19: amnesia, mudbomb
+    Gen8Relumi entries:
+      amnesia: Lv19
+      mudbomb: Lv19
+    Vanilla learnset:
+      Gen 9:
+        amnesia: Lv32, TM
+        mudbomb: (not learned)
+      Gen 8:
+        amnesia: Lv32, TM
+        mudbomb: (not learned)
+      Gen 7:
+        amnesia: Lv23, 7V
+        mudbomb: Lv19
+
+--- wooperpaldea ---
+  Level 43: haze, mist
+    Gen8Relumi entries:
+      haze: Lv43
+      mist: Lv43
+    Vanilla learnset:
+      Gen 9:
+        haze: TM, Egg
+        mist: Egg
+
+--- wormadam ---
+  Level 20: razorleaf, stringshot
+    Gen8Relumi entries:
+      razorleaf: Lv20
+      stringshot: Lv20
+    Vanilla learnset:
+      Gen 7:
+        razorleaf: Lv26
+        stringshot: (not learned)
+
+--- zangoose ---
+  Level 16: nightslash, slash
+    Gen8Relumi entries:
+      nightslash: Lv16, Egg
+      slash: Lv16
+    Vanilla learnset:
+      Gen 9:
+        nightslash: Lv1
+        slash: Lv19
+      Gen 7:
+        nightslash: Egg
+        slash: Lv19
+
+--- zigzagoon ---
+  Level 13: headbutt, odorsleuth
+    Gen8Relumi entries:
+      headbutt: Lv13
+      odorsleuth: Lv13
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv12
+        odorsleuth: (not learned)
+      Gen 7:
+        headbutt: Lv11
+        odorsleuth: Lv13
+
+--- zigzagoongalar ---
+  Level 13: headbutt, odorsleuth
+    Gen8Relumi entries:
+      headbutt: Lv13
+      odorsleuth: Lv13
+    Vanilla learnset:
+      Gen 8:
+        headbutt: Lv12
+        odorsleuth: (not learned)
+
+=== Summary ===
+Total Pokemon with level collisions (no TM/Tutor): 177
+Total levels with collisions (no TM/Tutor): 195
