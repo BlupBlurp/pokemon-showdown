@@ -291,10 +291,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			protect: 1,
 		},
 		inherit: true,
-		recoil: [
-			33,
-			100,
-		],
+		recoil: [33, 100],
 		shortDesc: "[nerf]Has 33% recoil.[/nerf]",
 	},
 	dragonrush: {
@@ -1106,10 +1103,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 110,
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/3 the HP lost by the target, rounded half up, but not less than 1 HP.",
 		inherit: true,
-		recoil: [
-			33,
-			100,
-		],
+		recoil: [33, 100],
 		shortDesc: "Has [buff]1/3[/buff] recoil.",
 	},
 	supercellslam: {

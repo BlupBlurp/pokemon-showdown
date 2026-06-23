@@ -174,9 +174,16 @@ function formatTsKey(key) {
 	return JSON.stringify(key);
 }
 
+function isPrimitive(v) {
+	return v === null || typeof v !== "object" || v instanceof Boolean || v instanceof Number || v instanceof String;
+}
+
 function formatTsValue(value, indentLevel = 0) {
 	if (Array.isArray(value)) {
 		if (!value.length) return "[]";
+		if (value.every(isPrimitive)) {
+			return `[${value.map(entry => formatTsValue(entry, indentLevel)).join(", ")}]`;
+		}
 		const indent = "\t".repeat(indentLevel);
 		const childIndent = "\t".repeat(indentLevel + 1);
 		const lines = value.map(

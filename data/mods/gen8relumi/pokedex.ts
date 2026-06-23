@@ -45,10 +45,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Unburden",
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Dark",
-		],
+		types: ["Bug", "Dark"],
 	},
 	aerodactyl: {
 		abilities: {
@@ -73,18 +70,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 75,
 			spe: 130,
 		},
-		eggGroups: [
-			"Flying",
-		],
+		eggGroups: ["Flying"],
 		forme: "Form 2",
 		gen: 8,
 		heightm: 1.8,
 		name: "Aerodactyl-Form 2",
 		num: 142,
-		types: [
-			"Rock",
-			"Ghost",
-		],
+		types: ["Rock", "Ghost"],
 		weightkg: 59,
 	},
 	aggron: {
@@ -102,9 +94,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		inherit: true,
-		types: [
-			"Steel",
-		],
+		types: ["Steel"],
 	},
 	alakazam: {
 		abilities: {
@@ -128,22 +118,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Berry",
-			"Alcremie-Love",
-			"Alcremie-Star",
-			"Alcremie-Clover",
-			"Alcremie-Flower",
-			"Alcremie-Ribbon",
-			"Alcremie-Ruby-Cream",
-			"Alcremie-Matcha-Cream",
-			"Alcremie-Mint-Cream",
-			"Alcremie-Lemon-Cream",
-			"Alcremie-Salted-Cream",
-			"Alcremie-Ruby-Swirl",
-			"Alcremie-Caramel-Swirl",
-			"Alcremie-Rainbow-Swirl",
-		],
+		cosmeticFormes: ["Alcremie-Berry", "Alcremie-Love", "Alcremie-Star", "Alcremie-Clover", "Alcremie-Flower", "Alcremie-Ribbon", "Alcremie-Ruby-Cream", "Alcremie-Matcha-Cream", "Alcremie-Mint-Cream", "Alcremie-Lemon-Cream", "Alcremie-Salted-Cream", "Alcremie-Ruby-Swirl", "Alcremie-Caramel-Swirl", "Alcremie-Rainbow-Swirl"],
 		inherit: true,
 	},
 	alcremieberry: {
@@ -167,14 +142,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Caramel-Swirl-Berry",
-			"Alcremie-Caramel-Swirl-Love",
-			"Alcremie-Caramel-Swirl-Star",
-			"Alcremie-Caramel-Swirl-Clover",
-			"Alcremie-Caramel-Swirl-Flower",
-			"Alcremie-Caramel-Swirl-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Caramel-Swirl-Berry", "Alcremie-Caramel-Swirl-Love", "Alcremie-Caramel-Swirl-Star", "Alcremie-Caramel-Swirl-Clover", "Alcremie-Caramel-Swirl-Flower", "Alcremie-Caramel-Swirl-Ribbon"],
 		inherit: true,
 	},
 	alcremiecaramelswirlberry: {
@@ -263,14 +231,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Lemon-Cream-Berry",
-			"Alcremie-Lemon-Cream-Love",
-			"Alcremie-Lemon-Cream-Star",
-			"Alcremie-Lemon-Cream-Clover",
-			"Alcremie-Lemon-Cream-Flower",
-			"Alcremie-Lemon-Cream-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Lemon-Cream-Berry", "Alcremie-Lemon-Cream-Love", "Alcremie-Lemon-Cream-Star", "Alcremie-Lemon-Cream-Clover", "Alcremie-Lemon-Cream-Flower", "Alcremie-Lemon-Cream-Ribbon"],
 		inherit: true,
 	},
 	alcremielemoncreamberry: {
@@ -336,14 +297,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Matcha-Cream-Berry",
-			"Alcremie-Matcha-Cream-Love",
-			"Alcremie-Matcha-Cream-Star",
-			"Alcremie-Matcha-Cream-Clover",
-			"Alcremie-Matcha-Cream-Flower",
-			"Alcremie-Matcha-Cream-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Matcha-Cream-Berry", "Alcremie-Matcha-Cream-Love", "Alcremie-Matcha-Cream-Star", "Alcremie-Matcha-Cream-Clover", "Alcremie-Matcha-Cream-Flower", "Alcremie-Matcha-Cream-Ribbon"],
 		inherit: true,
 	},
 	alcremiematchacreamberry: {
@@ -402,14 +356,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Mint-Cream-Berry",
-			"Alcremie-Mint-Cream-Love",
-			"Alcremie-Mint-Cream-Star",
-			"Alcremie-Mint-Cream-Clover",
-			"Alcremie-Mint-Cream-Flower",
-			"Alcremie-Mint-Cream-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Mint-Cream-Berry", "Alcremie-Mint-Cream-Love", "Alcremie-Mint-Cream-Star", "Alcremie-Mint-Cream-Clover", "Alcremie-Mint-Cream-Flower", "Alcremie-Mint-Cream-Ribbon"],
 		inherit: true,
 	},
 	alcremiemintcreamberry: {
@@ -468,14 +415,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Rainbow-Swirl-Berry",
-			"Alcremie-Rainbow-Swirl-Love",
-			"Alcremie-Rainbow-Swirl-Star",
-			"Alcremie-Rainbow-Swirl-Clover",
-			"Alcremie-Rainbow-Swirl-Flower",
-			"Alcremie-Rainbow-Swirl-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Rainbow-Swirl-Berry", "Alcremie-Rainbow-Swirl-Love", "Alcremie-Rainbow-Swirl-Star", "Alcremie-Rainbow-Swirl-Clover", "Alcremie-Rainbow-Swirl-Flower", "Alcremie-Rainbow-Swirl-Ribbon"],
 		inherit: true,
 	},
 	alcremierainbowswirlberry: {
@@ -541,14 +481,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Ruby-Cream-Berry",
-			"Alcremie-Ruby-Cream-Love",
-			"Alcremie-Ruby-Cream-Star",
-			"Alcremie-Ruby-Cream-Clover",
-			"Alcremie-Ruby-Cream-Flower",
-			"Alcremie-Ruby-Cream-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Ruby-Cream-Berry", "Alcremie-Ruby-Cream-Love", "Alcremie-Ruby-Cream-Star", "Alcremie-Ruby-Cream-Clover", "Alcremie-Ruby-Cream-Flower", "Alcremie-Ruby-Cream-Ribbon"],
 		inherit: true,
 	},
 	alcremierubycreamberry: {
@@ -607,14 +540,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 121,
 			spe: 64,
 		},
-		cosmeticFormes: [
-			"Alcremie-Ruby-Swirl-Berry",
-			"Alcremie-Ruby-Swirl-Love",
-			"Alcremie-Ruby-Swirl-Star",
-			"Alcremie-Ruby-Swirl-Clover",
-			"Alcremie-Ruby-Swirl-Flower",
-			"Alcremie-Ruby-Swirl-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Ruby-Swirl-Berry", "Alcremie-Ruby-Swirl-Love", "Alcremie-Ruby-Swirl-Star", "Alcremie-Ruby-Swirl-Clover", "Alcremie-Ruby-Swirl-Flower", "Alcremie-Ruby-Swirl-Ribbon"],
 		inherit: true,
 	},
 	alcremierubyswirlberry: {
@@ -675,14 +601,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 64,
 		},
 		color: "White",
-		cosmeticFormes: [
-			"Alcremie-Salted-Cream-Berry",
-			"Alcremie-Salted-Cream-Love",
-			"Alcremie-Salted-Cream-Star",
-			"Alcremie-Salted-Cream-Clover",
-			"Alcremie-Salted-Cream-Flower",
-			"Alcremie-Salted-Cream-Ribbon",
-		],
+		cosmeticFormes: ["Alcremie-Salted-Cream-Berry", "Alcremie-Salted-Cream-Love", "Alcremie-Salted-Cream-Star", "Alcremie-Salted-Cream-Clover", "Alcremie-Salted-Cream-Flower", "Alcremie-Salted-Cream-Ribbon"],
 		forme: "Salted-Cream",
 		inherit: true,
 		isCosmeticForme: true,
@@ -752,10 +671,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 80,
 		},
 		inherit: true,
-		types: [
-			"Dragon",
-			"Fairy",
-		],
+		types: ["Dragon", "Fairy"],
 	},
 	amaura: {
 		abilities: {
@@ -783,10 +699,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Battery",
 		},
 		inherit: true,
-		types: [
-			"Electric",
-			"Dragon",
-		],
+		types: ["Electric", "Dragon"],
 	},
 	annihilape: {
 		baseStats: {
@@ -843,13 +756,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 80,
 			spe: 80,
 		},
-		cosmeticFormes: [
-			"Arbok-V1",
-			"Arbok-V2",
-			"Arbok-V3",
-			"Arbok-V4",
-			"Arbok-V5",
-		],
+		cosmeticFormes: ["Arbok-V1", "Arbok-V2", "Arbok-V3", "Arbok-V4", "Arbok-V5"],
 		inherit: true,
 	},
 	arbokv1: {
@@ -994,10 +901,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	aromatisse: {
 		inherit: true,
-		types: [
-			"Fairy",
-			"Poison",
-		],
+		types: ["Fairy", "Poison"],
 	},
 	aron: {
 		abilities: {
@@ -1014,9 +918,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 40,
 		},
 		inherit: true,
-		types: [
-			"Steel",
-		],
+		types: ["Steel"],
 	},
 	arrokuda: {
 		abilities: {
@@ -1052,10 +954,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 50,
 		},
 		inherit: true,
-		types: [
-			"Normal",
-			"Fairy",
-		],
+		types: ["Normal", "Fairy"],
 	},
 	aurorus: {
 		abilities: {
@@ -1095,10 +994,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Competitive",
 		},
 		inherit: true,
-		types: [
-			"Psychic",
-			"Fairy",
-		],
+		types: ["Psychic", "Fairy"],
 	},
 	azumarill: {
 		abilities: {
@@ -1162,10 +1058,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 70,
 		},
 		inherit: true,
-		types: [
-			"Ghost",
-			"Normal",
-		],
+		types: ["Ghost", "Normal"],
 	},
 	barboach: {
 		abilities: {
@@ -1373,10 +1266,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 78,
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Steel",
-		],
+		types: ["Water", "Steel"],
 	},
 	blastoiseclone: {
 		abilities: {
@@ -1393,19 +1283,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 105,
 			spe: 78,
 		},
-		eggGroups: [
-			"Monster",
-			"Water 1",
-		],
+		eggGroups: ["Monster", "Water 1"],
 		forme: "Clone",
 		gen: 8,
 		heightm: 1.6,
 		name: "Blastoise-Clone",
 		num: 9,
-		types: [
-			"Water",
-			"Steel",
-		],
+		types: ["Water", "Steel"],
 		weightkg: 85.5,
 	},
 	blastoisegmax: {
@@ -1418,10 +1302,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 78,
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Steel",
-		],
+		types: ["Water", "Steel"],
 	},
 	blaziken: {
 		abilities: {
@@ -1761,10 +1642,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 36,
 		},
 		inherit: true,
-		types: [
-			"Grass",
-			"Steel",
-		],
+		types: ["Grass", "Steel"],
 	},
 	carracosta: {
 		abilities: {
@@ -1892,10 +1770,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 100,
 		},
 		inherit: true,
-		types: [
-			"Fire",
-			"Dragon",
-		],
+		types: ["Fire", "Dragon"],
 	},
 	charizardclone: {
 		abilities: {
@@ -1912,19 +1787,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 85,
 			spe: 100,
 		},
-		eggGroups: [
-			"Monster",
-			"Dragon",
-		],
+		eggGroups: ["Monster", "Dragon"],
 		forme: "Clone",
 		gen: 8,
 		heightm: 1.7,
 		name: "Charizard-Clone",
 		num: 6,
-		types: [
-			"Fire",
-			"Dragon",
-		],
+		types: ["Fire", "Dragon"],
 		weightkg: 90.5,
 	},
 	charizardgmax: {
@@ -1942,10 +1811,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 100,
 		},
 		inherit: true,
-		types: [
-			"Fire",
-			"Dragon",
-		],
+		types: ["Fire", "Dragon"],
 	},
 	charjabug: {
 		abilities: {
@@ -2008,10 +1874,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 90,
 		},
 		inherit: true,
-		types: [
-			"Grass",
-			"Fire",
-		],
+		types: ["Grass", "Fire"],
 	},
 	chesnaught: {
 		abilities: {
@@ -2164,10 +2027,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Sticky Hold",
 		},
 		inherit: true,
-		types: [
-			"Fighting",
-			"Water",
-		],
+		types: ["Fighting", "Water"],
 	},
 	clodsire: {
 		baseStats: {
@@ -2400,10 +2260,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Sheer Force",
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Dark",
-		],
+		types: ["Water", "Dark"],
 	},
 	crustle: {
 		baseStats: {
@@ -2718,18 +2575,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 100,
 			spe: 90,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Primal",
 		gen: 8,
 		heightm: 5.4,
 		name: "Dialga-Primal",
 		num: 483,
-		types: [
-			"Steel",
-			"Dragon",
-		],
+		types: ["Steel", "Dragon"],
 		weightkg: 683,
 	},
 	diancie: {
@@ -2972,10 +2824,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 55,
 		},
 		inherit: true,
-		types: [
-			"Normal",
-			"Dragon",
-		],
+		types: ["Normal", "Dragon"],
 	},
 	dudunsparcethreesegment: {
 		abilities: {
@@ -2992,10 +2841,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 55,
 		},
 		inherit: true,
-		types: [
-			"Normal",
-			"Dragon",
-		],
+		types: ["Normal", "Dragon"],
 	},
 	dugtrioalola: {
 		abilities: {
@@ -3020,10 +2866,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 45,
 		},
 		inherit: true,
-		types: [
-			"Normal",
-			"Dragon",
-		],
+		types: ["Normal", "Dragon"],
 	},
 	durant: {
 		abilities: {
@@ -3120,17 +2963,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 85,
 			spe: 90,
 		},
-		eggGroups: [
-			"Field",
-		],
+		eggGroups: ["Field"],
 		forme: "Bandana Partner",
 		gen: 8,
 		heightm: 0.3,
 		name: "Eevee-Bandana Partner",
 		num: 133,
-		types: [
-			"Normal",
-		],
+		types: ["Normal"],
 		weightkg: 6.5,
 	},
 	eeveestarter: {
@@ -3205,10 +3044,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Iron Fist",
 		},
 		inherit: true,
-		types: [
-			"Electric",
-			"Fighting",
-		],
+		types: ["Electric", "Fighting"],
 	},
 	electrike: {
 		abilities: {
@@ -3398,10 +3234,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 110,
 		},
 		inherit: true,
-		types: [
-			"Fighting",
-			"Flying",
-		],
+		types: ["Fighting", "Flying"],
 	},
 	farfetchdgalar: {
 		abilities: {
@@ -3461,10 +3294,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 78,
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Dark",
-		],
+		types: ["Water", "Dark"],
 	},
 	finneon: {
 		abilities: {
@@ -3544,10 +3374,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	florges: {
 		inherit: true,
-		types: [
-			"Fairy",
-			"Grass",
-		],
+		types: ["Fairy", "Grass"],
 	},
 	flygon: {
 		abilities: {
@@ -3564,10 +3391,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 110,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Dragon",
-		],
+		types: ["Bug", "Dragon"],
 	},
 	fomantis: {
 		abilities: {
@@ -3758,18 +3582,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 75,
 			spe: 110,
 		},
-		eggGroups: [
-			"Amorphous",
-		],
+		eggGroups: ["Amorphous"],
 		forme: "Stitched",
 		gen: 8,
 		heightm: 1.5,
 		name: "Gengar-Stitched",
 		num: 94,
-		types: [
-			"Ghost",
-			"Poison",
-		],
+		types: ["Ghost", "Poison"],
 		weightkg: 40.5,
 	},
 	geodude: {
@@ -3851,10 +3670,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 80,
 		},
 		inherit: true,
-		types: [
-			"Ice",
-			"Rock",
-		],
+		types: ["Ice", "Rock"],
 	},
 	glameow: {
 		abilities: {
@@ -3938,10 +3754,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Swift Swim",
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Psychic",
-		],
+		types: ["Water", "Psychic"],
 	},
 	golem: {
 		abilities: {
@@ -4005,10 +3818,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		inherit: true,
-		types: [
-			"Dragon",
-			"Poison",
-		],
+		types: ["Dragon", "Poison"],
 	},
 	goodrahisui: {
 		abilities: {
@@ -4154,10 +3964,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 42,
 		},
 		inherit: true,
-		types: [
-			"Fighting",
-			"Water",
-		],
+		types: ["Fighting", "Water"],
 	},
 	graveler: {
 		abilities: {
@@ -4277,18 +4084,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 90,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Meta",
 		gen: 8,
 		heightm: 3.5,
 		name: "Groudon-Meta",
 		num: 383,
-		types: [
-			"Dark",
-			"Poison",
-		],
+		types: ["Dark", "Poison"],
 		weightkg: 950,
 	},
 	grovyle: {
@@ -4668,10 +4470,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 100,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Fairy",
-		],
+		types: ["Bug", "Fairy"],
 	},
 	incineroar: {
 		abilities: {
@@ -4852,19 +4651,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 70,
 			spe: 80,
 		},
-		eggGroups: [
-			"Water 1",
-			"Water 3",
-		],
+		eggGroups: ["Water 1", "Water 3"],
 		forme: "Missingno",
 		gen: 8,
 		heightm: 1.3,
 		name: "Kabutops-Missingno",
 		num: 141,
-		types: [
-			"Rock",
-			"Ghost",
-		],
+		types: ["Rock", "Ghost"],
 		weightkg: 40.5,
 	},
 	kadabra: {
@@ -5071,9 +4864,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 50,
 		},
 		inherit: true,
-		types: [
-			"Steel",
-		],
+		types: ["Steel"],
 	},
 	lampent: {
 		abilities: {
@@ -5137,10 +4928,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 85,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Fighting",
-		],
+		types: ["Bug", "Fighting"],
 	},
 	ledyba: {
 		abilities: {
@@ -5157,10 +4945,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 55,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Fighting",
-		],
+		types: ["Bug", "Fighting"],
 	},
 	lickilicky: {
 		abilities: {
@@ -5272,10 +5057,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 105,
 		},
 		inherit: true,
-		types: [
-			"Normal",
-			"Fighting",
-		],
+		types: ["Normal", "Fighting"],
 	},
 	loudred: {
 		abilities: {
@@ -5307,18 +5089,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 110,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Shadow",
 		gen: 8,
 		heightm: 5.2,
 		name: "Lugia-Shadow",
 		num: 249,
-		types: [
-			"Dark",
-			"Flying",
-		],
+		types: ["Dark", "Flying"],
 		weightkg: 216,
 	},
 	lumineon: {
@@ -5339,10 +5116,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	lunala: {
 		inherit: true,
-		types: [
-			"Ghost",
-			"Fairy",
-		],
+		types: ["Ghost", "Fairy"],
 	},
 	lunatone: {
 		baseStats: {
@@ -5386,10 +5160,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 125,
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Fairy",
-		],
+		types: ["Water", "Fairy"],
 	},
 	luxio: {
 		abilities: {
@@ -5398,10 +5169,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Quick Feet",
 		},
 		inherit: true,
-		types: [
-			"Electric",
-			"Dark",
-		],
+		types: ["Electric", "Dark"],
 	},
 	luxray: {
 		abilities: {
@@ -5418,10 +5186,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 95,
 		},
 		inherit: true,
-		types: [
-			"Electric",
-			"Dark",
-		],
+		types: ["Electric", "Dark"],
 	},
 	lycanroc: {
 		baseStats: {
@@ -5481,40 +5246,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 	},
 	magikarp: {
-		cosmeticFormes: [
-			"Magikarp-V1",
-			"Magikarp-V2",
-			"Magikarp-V3",
-			"Magikarp-V4",
-			"Magikarp-V5",
-			"Magikarp-V6",
-			"Magikarp-V7",
-			"Magikarp-V8",
-			"Magikarp-V9",
-			"Magikarp-V10",
-			"Magikarp-V11",
-			"Magikarp-V12",
-			"Magikarp-V13",
-			"Magikarp-V14",
-			"Magikarp-V15",
-			"Magikarp-V16",
-			"Magikarp-V17",
-			"Magikarp-V18",
-			"Magikarp-V19",
-			"Magikarp-V20",
-			"Magikarp-V21",
-			"Magikarp-V22",
-			"Magikarp-V23",
-			"Magikarp-V24",
-			"Magikarp-V25",
-			"Magikarp-V26",
-			"Magikarp-V27",
-			"Magikarp-V28",
-			"Magikarp-V29",
-			"Magikarp-V30",
-			"Magikarp-V31",
-			"Magikarp-V32",
-		],
+		cosmeticFormes: ["Magikarp-V1", "Magikarp-V2", "Magikarp-V3", "Magikarp-V4", "Magikarp-V5", "Magikarp-V6", "Magikarp-V7", "Magikarp-V8", "Magikarp-V9", "Magikarp-V10", "Magikarp-V11", "Magikarp-V12", "Magikarp-V13", "Magikarp-V14", "Magikarp-V15", "Magikarp-V16", "Magikarp-V17", "Magikarp-V18", "Magikarp-V19", "Magikarp-V20", "Magikarp-V21", "Magikarp-V22", "Magikarp-V23", "Magikarp-V24", "Magikarp-V25", "Magikarp-V26", "Magikarp-V27", "Magikarp-V28", "Magikarp-V29", "Magikarp-V30", "Magikarp-V31", "Magikarp-V32"],
 		inherit: true,
 	},
 	magikarpv1: {
@@ -5840,10 +5572,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 50,
 		},
 		inherit: true,
-		types: [
-			"Grass",
-			"Ground",
-		],
+		types: ["Grass", "Ground"],
 	},
 	mareep: {
 		abilities: {
@@ -5890,17 +5619,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 80,
 			spe: 45,
 		},
-		eggGroups: [
-			"Monster",
-		],
+		eggGroups: ["Monster"],
 		forme: "Ghost",
 		gen: 8,
 		heightm: 1.7,
 		name: "Marowak-Ghost",
 		num: 105,
-		types: [
-			"Ghost",
-		],
+		types: ["Ghost"],
 		weightkg: 98,
 	},
 	marshtomp: {
@@ -5921,10 +5646,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 100,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Water",
-		],
+		types: ["Bug", "Water"],
 	},
 	mawile: {
 		abilities: {
@@ -5979,10 +5701,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 80,
 		},
 		inherit: true,
-		types: [
-			"Grass",
-			"Fairy",
-		],
+		types: ["Grass", "Fairy"],
 	},
 	meowstic: {
 		baseStats: {
@@ -6036,10 +5755,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Friend Guard",
 		},
 		inherit: true,
-		types: [
-			"Psychic",
-			"Fairy",
-		],
+		types: ["Psychic", "Fairy"],
 	},
 	metagross: {
 		abilities: {
@@ -6078,17 +5794,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 130,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Mk I Armored",
 		gen: 8,
 		heightm: 2,
 		name: "Mewtwo-Mk I Armored",
 		num: 150,
-		types: [
-			"Psychic",
-		],
+		types: ["Psychic"],
 		weightkg: 122,
 	},
 	mewtwomkiiarmored: {
@@ -6105,17 +5817,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 130,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Mk Ii Armored",
 		gen: 8,
 		heightm: 2,
 		name: "Mewtwo-Mk Ii Armored",
 		num: 150,
-		types: [
-			"Psychic",
-		],
+		types: ["Psychic"],
 		weightkg: 122,
 	},
 	mewtwoshadow: {
@@ -6132,18 +5840,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 130,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Shadow",
 		gen: 8,
 		heightm: 2,
 		name: "Mewtwo-Shadow",
 		num: 150,
-		types: [
-			"Psychic",
-			"Dark",
-		],
+		types: ["Psychic", "Dark"],
 		weightkg: 122,
 	},
 	mewtwoshadowmega: {
@@ -6160,17 +5863,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 130,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Shadow Mega",
 		gen: 8,
 		heightm: 2,
 		name: "Mewtwo-Shadow Mega",
 		num: 150,
-		types: [
-			"Psychic",
-		],
+		types: ["Psychic"],
 		weightkg: 122,
 	},
 	mightyena: {
@@ -6212,10 +5911,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Wonder Skin",
 		},
 		inherit: true,
-		types: [
-			"Water",
-			"Fairy",
-		],
+		types: ["Water", "Fairy"],
 	},
 	mimejr: {
 		abilities: {
@@ -6256,24 +5952,9 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 	},
 	minior: {
-		cosmeticFormes: [
-			"Minior-Orange",
-			"Minior-Yellow",
-			"Minior-Green",
-			"Minior-Blue",
-			"Minior-Indigo",
-			"Minior-Violet",
-		],
+		cosmeticFormes: ["Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
 		inherit: true,
-		otherFormes: [
-			"Minior-Meteor",
-			"Minior-Blue Meteor",
-			"Minior-Yellow Meteor",
-			"Minior-Green Meteor",
-			"Minior-Indigo Meteor",
-			"Minior-Orange Meteor",
-			"Minior-Violet Meteor",
-		],
+		otherFormes: ["Minior-Meteor", "Minior-Blue Meteor", "Minior-Yellow Meteor", "Minior-Green Meteor", "Minior-Indigo Meteor", "Minior-Orange Meteor", "Minior-Violet Meteor"],
 	},
 	miniorbluemeteor: {
 		abilities: {
@@ -6289,18 +5970,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Blue",
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Blue Meteor",
 		gen: 8,
 		heightm: 0.3,
 		name: "Minior-Blue Meteor",
 		num: 774,
-		types: [
-			"Rock",
-			"Flying",
-		],
+		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
 	miniorgreenmeteor: {
@@ -6317,18 +5993,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Green",
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Green Meteor",
 		gen: 8,
 		heightm: 0.3,
 		name: "Minior-Green Meteor",
 		num: 774,
-		types: [
-			"Rock",
-			"Flying",
-		],
+		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
 	miniorindigometeor: {
@@ -6345,18 +6016,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Indigo",
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Indigo Meteor",
 		gen: 8,
 		heightm: 0.3,
 		name: "Minior-Indigo Meteor",
 		num: 774,
-		types: [
-			"Rock",
-			"Flying",
-		],
+		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
 	miniororangemeteor: {
@@ -6373,18 +6039,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Orange",
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Orange Meteor",
 		gen: 8,
 		heightm: 0.3,
 		name: "Minior-Orange Meteor",
 		num: 774,
-		types: [
-			"Rock",
-			"Flying",
-		],
+		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
 	miniorvioletmeteor: {
@@ -6401,18 +6062,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Violet",
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Violet Meteor",
 		gen: 8,
 		heightm: 0.3,
 		name: "Minior-Violet Meteor",
 		num: 774,
-		types: [
-			"Rock",
-			"Flying",
-		],
+		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
 	minioryellowmeteor: {
@@ -6429,18 +6085,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		battleOnly: "Minior-Yellow",
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Yellow Meteor",
 		gen: 8,
 		heightm: 0.3,
 		name: "Minior-Yellow Meteor",
 		num: 774,
-		types: [
-			"Rock",
-			"Flying",
-		],
+		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
 	minun: {
@@ -6465,10 +6116,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Prankster",
 		},
 		inherit: true,
-		types: [
-			"Ghost",
-			"Fairy",
-		],
+		types: ["Ghost", "Fairy"],
 	},
 	mismagius: {
 		abilities: {
@@ -6476,10 +6124,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Prankster",
 		},
 		inherit: true,
-		types: [
-			"Ghost",
-			"Fairy",
-		],
+		types: ["Ghost", "Fairy"],
 	},
 	moltres: {
 		abilities: {
@@ -6612,17 +6257,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	necrozmadawnwings: {
 		inherit: true,
-		types: [
-			"Psychic",
-			"Fairy",
-		],
+		types: ["Psychic", "Fairy"],
 	},
 	necrozmaduskmane: {
 		inherit: true,
-		types: [
-			"Psychic",
-			"Fire",
-		],
+		types: ["Psychic", "Fire"],
 	},
 	nickit: {
 		abilities: {
@@ -6687,10 +6326,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 109,
 		},
 		inherit: true,
-		types: [
-			"Fire",
-			"Fairy",
-		],
+		types: ["Fire", "Fairy"],
 	},
 	noctowl: {
 		abilities: {
@@ -6707,10 +6343,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 60,
 		},
 		inherit: true,
-		types: [
-			"Psychic",
-			"Flying",
-		],
+		types: ["Psychic", "Flying"],
 	},
 	noivern: {
 		baseStats: {
@@ -6832,18 +6465,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 75,
 			spe: 100,
 		},
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Crystal",
 		gen: 8,
 		heightm: 8.8,
 		name: "Onix-Crystal",
 		num: 95,
-		types: [
-			"Rock",
-			"Ice",
-		],
+		types: ["Rock", "Ice"],
 		weightkg: 210,
 	},
 	oranguru: {
@@ -6993,18 +6621,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 120,
 			spe: 100,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Primal",
 		gen: 8,
 		heightm: 4.2,
 		name: "Palkia-Primal",
 		num: 484,
-		types: [
-			"Water",
-			"Dragon",
-		],
+		types: ["Water", "Dragon"],
 		weightkg: 336,
 	},
 	palossand: {
@@ -7234,10 +6857,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Pixilate",
 		},
 		inherit: true,
-		types: [
-			"Fairy",
-			"Flying",
-		],
+		types: ["Fairy", "Flying"],
 	},
 	pignite: {
 		abilities: {
@@ -7286,18 +6906,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 50,
 			spe: 90,
 		},
-		eggGroups: [
-			"Field",
-			"Fairy",
-		],
+		eggGroups: ["Field", "Fairy"],
 		forme: "Clone",
 		gen: 8,
 		heightm: 0.4,
 		name: "Pikachu-Clone",
 		num: 25,
-		types: [
-			"Electric",
-		],
+		types: ["Electric"],
 		weightkg: 6,
 	},
 	pikachucosplay: {
@@ -7414,10 +7029,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	pincurchin: {
 		inherit: true,
-		types: [
-			"Electric",
-			"Water",
-		],
+		types: ["Electric", "Water"],
 	},
 	pineco: {
 		abilities: {
@@ -7522,9 +7134,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Magic Guard",
 		},
 		inherit: true,
-		types: [
-			"Fairy",
-		],
+		types: ["Fairy"],
 	},
 	poochyena: {
 		abilities: {
@@ -7876,10 +7486,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 115,
 		},
 		inherit: true,
-		types: [
-			"Fairy",
-			"Fire",
-		],
+		types: ["Fairy", "Fire"],
 	},
 	raticate: {
 		abilities: {
@@ -7950,18 +7557,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 95,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Illusory",
 		gen: 8,
 		heightm: 7,
 		name: "Rayquaza-Illusory",
 		num: 384,
-		types: [
-			"Dragon",
-			"Fairy",
-		],
+		types: ["Dragon", "Fairy"],
 		weightkg: 206.5,
 	},
 	regice: {
@@ -8025,17 +7627,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 85,
 			spe: 131,
 		},
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Caph Starmobile",
 		gen: 8,
 		heightm: 1.8,
 		name: "Revavroom-Caph Starmobile",
 		num: 966,
-		types: [
-			"Fighting",
-		],
+		types: ["Fighting"],
 		weightkg: 120,
 	},
 	revavroomnavistarmobile: {
@@ -8051,17 +7649,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 70,
 			spe: 130,
 		},
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Navi Starmobile",
 		gen: 8,
 		heightm: 1.8,
 		name: "Revavroom-Navi Starmobile",
 		num: 966,
-		types: [
-			"Poison",
-		],
+		types: ["Poison"],
 		weightkg: 120,
 	},
 	revavroomruchbahstarmobile: {
@@ -8077,17 +7671,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 90,
 			spe: 132,
 		},
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Ruchbah Starmobile",
 		gen: 8,
 		heightm: 1.8,
 		name: "Revavroom-Ruchbah Starmobile",
 		num: 966,
-		types: [
-			"Fairy",
-		],
+		types: ["Fairy"],
 		weightkg: 120,
 	},
 	revavroomschedarstarmobile: {
@@ -8103,17 +7693,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 51,
 			spe: 128,
 		},
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Schedar Starmobile",
 		gen: 8,
 		heightm: 1.8,
 		name: "Revavroom-Schedar Starmobile",
 		num: 966,
-		types: [
-			"Fire",
-		],
+		types: ["Fire"],
 		weightkg: 120,
 	},
 	revavroomseginstarmobile: {
@@ -8129,17 +7715,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 38,
 			spe: 129,
 		},
-		eggGroups: [
-			"Mineral",
-		],
+		eggGroups: ["Mineral"],
 		forme: "Segin Starmobile",
 		gen: 8,
 		heightm: 1.8,
 		name: "Revavroom-Segin Starmobile",
 		num: 966,
-		types: [
-			"Dark",
-		],
+		types: ["Dark"],
 		weightkg: 120,
 	},
 	rhydon: {
@@ -8495,10 +8077,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 120,
 		},
 		inherit: true,
-		types: [
-			"Grass",
-			"Dragon",
-		],
+		types: ["Grass", "Dragon"],
 	},
 	sceptilemega: {
 		baseStats: {
@@ -8655,10 +8234,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 80,
 		},
 		inherit: true,
-		types: [
-			"Poison",
-			"Dark",
-		],
+		types: ["Poison", "Dark"],
 	},
 	sharpedo: {
 		abilities: {
@@ -8681,17 +8257,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 100,
 			spe: 100,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Polluted Land",
 		gen: 8,
 		heightm: 0.2,
 		name: "Shaymin-Polluted Land",
 		num: 492,
-		types: [
-			"Grass",
-		],
+		types: ["Grass"],
 		weightkg: 2.1,
 	},
 	shayminpollutedsky: {
@@ -8707,18 +8279,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 75,
 			spe: 127,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Polluted Sky",
 		gen: 8,
 		heightm: 0.4,
 		name: "Shaymin-Polluted Sky",
 		num: 492,
-		types: [
-			"Grass",
-			"Flying",
-		],
+		types: ["Grass", "Flying"],
 		weightkg: 5.2,
 	},
 	shelgon: {
@@ -9200,10 +8767,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 40,
 		},
 		inherit: true,
-		types: [
-			"Dragon",
-			"Poison",
-		],
+		types: ["Dragon", "Poison"],
 	},
 	sliggoohisui: {
 		abilities: {
@@ -9246,18 +8810,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			"1": "Own Tempo",
 			H: "Moody",
 		},
-		cosmeticFormes: [
-			"Smeargle-Black",
-			"Smeargle-White",
-			"Smeargle-Red",
-			"Smeargle-Green",
-			"Smeargle-Yellow",
-			"Smeargle-Blue",
-			"Smeargle-Brown",
-			"Smeargle-Orange",
-			"Smeargle-Pink",
-			"Smeargle-Purple",
-		],
+		cosmeticFormes: ["Smeargle-Black", "Smeargle-White", "Smeargle-Red", "Smeargle-Green", "Smeargle-Yellow", "Smeargle-Blue", "Smeargle-Brown", "Smeargle-Orange", "Smeargle-Pink", "Smeargle-Purple"],
 		inherit: true,
 	},
 	smeargleblack: {
@@ -9412,10 +8965,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	solgaleo: {
 		inherit: true,
-		types: [
-			"Steel",
-			"Fire",
-		],
+		types: ["Steel", "Fire"],
 	},
 	solrock: {
 		baseStats: {
@@ -9481,10 +9031,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	spritzee: {
 		inherit: true,
-		types: [
-			"Fairy",
-			"Poison",
-		],
+		types: ["Fairy", "Poison"],
 	},
 	squirtle: {
 		abilities: {
@@ -9699,10 +9246,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 50,
 		},
 		inherit: true,
-		types: [
-			"Fairy",
-			"Flying",
-		],
+		types: ["Fairy", "Flying"],
 	},
 	swalot: {
 		abilities: {
@@ -10096,10 +9640,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Pixilate",
 		},
 		inherit: true,
-		types: [
-			"Fairy",
-			"Flying",
-		],
+		types: ["Fairy", "Flying"],
 	},
 	trapinch: {
 		baseStats: {
@@ -10111,10 +9652,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 10,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Ground",
-		],
+		types: ["Bug", "Ground"],
 	},
 	treecko: {
 		abilities: {
@@ -10283,10 +9821,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Pixilate",
 		},
 		inherit: true,
-		types: [
-			"Fairy",
-			"Flying",
-		],
+		types: ["Fairy", "Flying"],
 	},
 	unown: {
 		baseStats: {
@@ -10309,17 +9844,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	ursaring: {
 		inherit: true,
-		types: [
-			"Ground",
-			"Normal",
-		],
+		types: ["Ground", "Normal"],
 	},
 	urshifurapidstrikegmax: {
 		inherit: true,
-		types: [
-			"Fighting",
-			"Dark",
-		],
+		types: ["Fighting", "Dark"],
 	},
 	uxie: {
 		abilities: {
@@ -10327,10 +9856,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			H: "Analytic",
 		},
 		inherit: true,
-		types: [
-			"Psychic",
-			"Fairy",
-		],
+		types: ["Psychic", "Fairy"],
 	},
 	vanilluxe: {
 		baseStats: {
@@ -10406,19 +9932,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 100,
 			spe: 80,
 		},
-		eggGroups: [
-			"Monster",
-			"Grass",
-		],
+		eggGroups: ["Monster", "Grass"],
 		forme: "Clone",
 		gen: 8,
 		heightm: 2,
 		name: "Venusaur-Clone",
 		num: 3,
-		types: [
-			"Grass",
-			"Poison",
-		],
+		types: ["Grass", "Poison"],
 		weightkg: 100,
 	},
 	venusaurgmax: {
@@ -10468,10 +9988,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 70,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Dragon",
-		],
+		types: ["Bug", "Dragon"],
 	},
 	victreebel: {
 		abilities: {
@@ -10521,27 +10038,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 66,
 			spe: 89,
 		},
-		cosmeticFormes: [
-			"Vivillon-Archipelago",
-			"Vivillon-Continental",
-			"Vivillon-Elegant",
-			"Vivillon-Garden",
-			"Vivillon-High Plains",
-			"Vivillon-Icy Snow",
-			"Vivillon-Jungle",
-			"Vivillon-Marine",
-			"Vivillon-Modern",
-			"Vivillon-Monsoon",
-			"Vivillon-Ocean",
-			"Vivillon-Polar",
-			"Vivillon-River",
-			"Vivillon-Sandstorm",
-			"Vivillon-Savanna",
-			"Vivillon-Sun",
-			"Vivillon-Tundra",
-			"Vivillon-Fancy",
-			"Vivillon-Pokeball",
-		],
+		cosmeticFormes: ["Vivillon-Archipelago", "Vivillon-Continental", "Vivillon-Elegant", "Vivillon-Garden", "Vivillon-High Plains", "Vivillon-Icy Snow", "Vivillon-Jungle", "Vivillon-Marine", "Vivillon-Modern", "Vivillon-Monsoon", "Vivillon-Ocean", "Vivillon-Polar", "Vivillon-River", "Vivillon-Sandstorm", "Vivillon-Savanna", "Vivillon-Sun", "Vivillon-Tundra", "Vivillon-Fancy", "Vivillon-Pokeball"],
 		inherit: true,
 	},
 	vivillonfancy: {
@@ -10591,10 +10088,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 100,
 		},
 		inherit: true,
-		types: [
-			"Bug",
-			"Electric",
-		],
+		types: ["Bug", "Electric"],
 	},
 	voltorb: {
 		abilities: {
@@ -11045,10 +10539,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	zeraora: {
 		inherit: true,
-		types: [
-			"Electric",
-			"Fighting",
-		],
+		types: ["Electric", "Fighting"],
 	},
 	zigzagoon: {
 		baseStats: {
@@ -11116,18 +10607,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 1,
 			spe: 1,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Cell",
 		gen: 8,
 		heightm: 0.3,
 		name: "Zygarde-Cell",
 		num: 718,
-		types: [
-			"Dragon",
-			"Ground",
-		],
+		types: ["Dragon", "Ground"],
 		weightkg: 1,
 	},
 	zygardecore: {
@@ -11143,18 +10629,13 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spd: 10,
 			spe: 10,
 		},
-		eggGroups: [
-			"Undiscovered",
-		],
+		eggGroups: ["Undiscovered"],
 		forme: "Core",
 		gen: 8,
 		heightm: 0.3,
 		name: "Zygarde-Core",
 		num: 718,
-		types: [
-			"Dragon",
-			"Ground",
-		],
+		types: ["Dragon", "Ground"],
 		weightkg: 1,
 	},
 };
