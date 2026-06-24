@@ -21,11 +21,11 @@ The column value will be ignored for repeat sections.
 // The rules that formats use are stored in data/rulesets.ts
 
 const RELUMI_BASE_BANLIST = [
-	"pokemontag:mega",
-	"pokemontag:gigantamax",
-	"pokemontag:teraforme",
-	"pokemontag:stellarforme",
-	"pokemontag:pikachucap",
+	"tag:mega",
+	"tag:gigantamax",
+	"tag:teraforme",
+	"tag:stellarforme",
+	"tag:pikachucap",
 	"Revavroom-Caph Starmobile",
 	"Revavroom-Navi Starmobile",
 	"Revavroom-Ruchbah Starmobile",
@@ -202,6 +202,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"Max Move Count = 24",
 			"Max Level = 9999",
 			"Default Level = 100",
+			"-CAP",
 		],
 	},
 	{
@@ -228,7 +229,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon"],
+		banlist: [...RELUMI_BASE_BANLIST, "tag:futurepokemon"],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	{
@@ -242,7 +243,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon", ...RELUMI_OU_BANLIST],
+		banlist: [...RELUMI_BASE_BANLIST, "tag:futurepokemon", ...RELUMI_OU_BANLIST],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	{
@@ -275,6 +276,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"Max Move Count = 24",
 			"Max Level = 9999",
 			"Default Level = 100",
+			"-CAP",
 		],
 	},
 	{
@@ -303,7 +305,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon"],
+		banlist: [...RELUMI_BASE_BANLIST, "tag:futurepokemon"],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	{
@@ -318,7 +320,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"+Future",
 			"+LGPE",
 		],
-		banlist: [...RELUMI_BASE_BANLIST, "pokemontag:futurepokemon", ...RELUMI_OU_BANLIST],
+		banlist: [...RELUMI_BASE_BANLIST, "tag:futurepokemon", ...RELUMI_OU_BANLIST],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
 	/*
@@ -871,7 +873,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				if (species.natDexTier === "Unreleased") {
 					const basePokemon = this.toID(species.baseSpecies);
 					if (this.ruleTable.has(`+pokemon:${species.id}`) || this.ruleTable.has(`+basepokemon:${basePokemon}`) ||
-						this.ruleTable.has('+pokemontag:unobtainable')) {
+						this.ruleTable.has('+tag:unobtainable')) {
 						return;
 					}
 					return [`${set.name || set.species} does not exist in the National Dex.`];
@@ -1345,7 +1347,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				const natdex = this.ruleTable.has('natdexmod');
 				if (natdex && item.id !== 'ultranecroziumz') continue;
 				const species = this.dex.species.get(set.species);
-				if (species.isNonstandard && !this.ruleTable.has(`+pokemontag:${this.toID(species.isNonstandard)}`)) {
+				if (species.isNonstandard && !this.ruleTable.has(`+tag:${this.toID(species.isNonstandard)}`)) {
 					return [`${species.baseSpecies} does not exist in gen 9.`];
 				}
 				if (((item.itemUser?.includes(species.name) || item.forcedForme === species.name) &&
@@ -1704,7 +1706,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			}
 			if (
 				allThings.some(y => effectFunctions.some(x => x.get(y).isNonstandard &&
-					!this.ruleTable.has(`+pokemontag:${this.toID(x.get(y).isNonstandard)}`)))
+					!this.ruleTable.has(`+tag:${this.toID(x.get(y).isNonstandard)}`)))
 			) {
 				return this.validateSet(set, teamHas);
 			}
@@ -1984,13 +1986,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			if (Array.isArray(problems) && problems.length) return problems;
 			const crossNonstandard = (!this.ruleTable.has('natdexmod') && crossSpecies.isNonstandard === 'Past') ||
 				crossSpecies.isNonstandard === 'Future';
-			const crossIsCap = !this.ruleTable.has('+pokemontag:cap') && crossSpecies.isNonstandard === 'CAP';
+			const crossIsCap = !this.ruleTable.has('+tag:cap') && crossSpecies.isNonstandard === 'CAP';
 			if (!crossSpecies.exists || crossNonstandard || crossIsCap) return this.validateSet(set, teamHas);
 			const species = this.dex.species.get(set.species);
 			const check = this.checkSpecies(set, species, species, {});
 			if (check) return [check];
 			const nonstandard = !this.ruleTable.has('natdexmod') && species.isNonstandard === 'Past';
-			const isCap = !this.ruleTable.has('+pokemontag:cap') && species.isNonstandard === 'CAP';
+			const isCap = !this.ruleTable.has('+tag:cap') && species.isNonstandard === 'CAP';
 			if (!species.exists || nonstandard || isCap || species === crossSpecies) return this.validateSet(set, teamHas);
 			if (!species.nfe) return [`${species.name} cannot cross evolve because it doesn't evolve.`];
 			const crossIsUnreleased = (crossSpecies.tier === "Unreleased" && crossSpecies.isNonstandard === "Unobtainable" &&
@@ -2409,7 +2411,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			if (!teamHas.abilityMap) {
 				teamHas.abilityMap = Object.create(null);
 				for (const pokemon of Dex.species.all()) {
-					if (pokemon.isNonstandard && !this.ruleTable.has(`+pokemontag:${this.toID(pokemon.isNonstandard)}`)) continue;
+					if (pokemon.isNonstandard && !this.ruleTable.has(`+tag:${this.toID(pokemon.isNonstandard)}`)) continue;
 					if (pokemon.battleOnly) continue;
 					if (this.ruleTable.isBannedSpecies(pokemon)) continue;
 
@@ -2429,7 +2431,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 			const species = this.dex.species.get(set.species);
 			if (!species.exists || species.num < 1) return [`The Pok\u00e9mon "${set.species}" does not exist.`];
-			if (species.isNonstandard && !this.ruleTable.has(`+pokemontag:${this.toID(species.isNonstandard)}`)) {
+			if (species.isNonstandard && !this.ruleTable.has(`+tag:${this.toID(species.isNonstandard)}`)) {
 				return [`${species.name} is not obtainable in Generation ${this.dex.gen}.`];
 			}
 
@@ -2783,7 +2785,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 						continue;
 					}
 					if (pokemove.isNonstandard &&
-						!(this.ruleTable.has(`+pokemontag:${this.toID(pokemove.isNonstandard)}`) ||
+						!(this.ruleTable.has(`+tag:${this.toID(pokemove.isNonstandard)}`) ||
 							this.ruleTable.has(`+pokemon:${pokemove.id}`) ||
 							this.ruleTable.has(`+basepokemon:${this.toID(pokemove.baseSpecies)}`))) {
 						problems.push(`${pokemove.isNonstandard} Pok\u00e9mon are not allowed to be used as Pokemoves.`);
@@ -3685,7 +3687,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		onValidateSet(set, format, setHas, teamHas) {
 			if (set.item) {
 				const item = this.dex.items.get(set.item);
-				if (item.megaStone && !(this.ruleTable.has(`+item:${item.id}`) || this.ruleTable.has(`+pokemontag:mega`))) {
+				if (item.megaStone && !(this.ruleTable.has(`+item:${item.id}`) || this.ruleTable.has(`+tag:mega`))) {
 					return [`Mega Evolution is banned.`];
 				}
 				if (item.zMove && !(this.ruleTable.has(`+item:${item.id}`))) {
@@ -3917,7 +3919,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			this.add('-message', `https://play.pokemonshowdown.com/petmods`);
 		},
 		onValidateSet(set) {
-			if (this.ruleTable.tagRules.includes("+pokemontag:cap")) {
+			if (this.ruleTable.has("+tag:cap")) {
 				const { tierSpecies } = this.getValidationSpecies(set);
 				if (tierSpecies.isNonstandard !== "CAP")
 					return [`${set.name || set.species} does not exist in Pet Mods Advent.`];
