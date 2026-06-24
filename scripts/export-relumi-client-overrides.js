@@ -287,14 +287,35 @@ function buildRelumiBanConfig(formatsPath) {
 	);
 	const ouBanlist = parseConstStringArray(formatsPath, RELUMI_BAN_CONSTANTS.ou);
 
-	const baseTagBans = baseBanlist.filter((entry) => entry.startsWith("pokemontag:"));
+	const baseTagBans = baseBanlist.filter((entry) => entry.startsWith("tag:"));
 	const basePokemonBans = baseBanlist
-		.filter((entry) => !entry.startsWith("pokemontag:"))
+		.filter((entry) => !entry.startsWith("tag:"))
 		.map((entry) => toID(entry));
+
+	// Pre-compute which species IDs match each banned tag, using the server-side
+	// tag filter functions from data/tags.ts. This eliminates the need for the
+	// client to reimplement form detection logic (isMega, isGigantamax, etc.).
+	const { Tags } = require("../dist/data/tags");
+	const { Dex } = require("../dist/sim/dex");
+	const dex = Dex.mod("gen8relumi");
+	const bannedSpeciesByTag = {};
+	for (const tagBan of baseTagBans) {
+		const tagId = toID(tagBan.replace(/^tag:/, ""));
+		const tag = Tags[tagId];
+		if (!tag || !tag.speciesFilter) continue;
+		const matches = [];
+		for (const species of dex.species.all()) {
+			if (tag.speciesFilter(species)) {
+				matches.push(species.id);
+			}
+		}
+		if (matches.length) bannedSpeciesByTag[tagId] = matches;
+	}
 
 	return deepSort({
 		baseTagBans,
 		basePokemonBans,
+		bannedSpeciesByTag,
 		gen9Allowlist: gen9Allowlist.map((entry) => toID(entry)),
 		ouPokemonBans: ouBanlist.map((entry) => toID(entry)),
 	});
