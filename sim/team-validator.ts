@@ -1869,7 +1869,8 @@ export class TeamValidator {
 		}
 
 		if (isGmax) {
-			banReason = ruleTable.check('pokemon:' + tierSpecies.id + 'gmax');
+			banReason = ruleTable.check('pokemon:' + tierSpecies.id + 'gmax') ||
+				ruleTable.check('tag:gigantamax', setHas);
 			if (banReason) {
 				return `Gigantamaxing ${species.name} is ${banReason}.`;
 			}
