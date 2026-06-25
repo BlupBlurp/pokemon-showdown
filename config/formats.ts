@@ -229,6 +229,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"+Future",
 			"+LGPE",
 		],
+		// tag:futurepokemon only bans species, not future moves/items/abilities (-Future would ban all)
 		banlist: [...RELUMI_BASE_BANLIST, "tag:futurepokemon"],
 		unbanlist: [...RELUMI_GEN9_UNBANLIST],
 	},
@@ -600,7 +601,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9 Champions] OU",
 		mod: 'champions',
 		ruleset: ['Standard'],
-		banlist: ['AG', 'Uber', 'Moody', 'Quick Claw', 'Baton Pass', 'Last Respects', 'Shed Tail'],
+		banlist: ['AG', 'Uber', 'Moody', 'Light Clay', 'Quick Claw', 'Baton Pass', 'Last Respects', 'Shed Tail'],
 	},
 	{
 		name: "[Gen 9 Champions] UU",
