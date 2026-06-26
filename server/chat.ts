@@ -34,6 +34,12 @@ import { Dex } from '../sim';
 import { PrivateMessages } from './private-messages';
 import * as pathModule from 'path';
 import * as JSX from './chat-jsx';
+import {
+	getLuminescentPokemonUrl as getLuminescentPokemonUrlFromModule,
+	getLuminescentMoveUrl as getLuminescentMoveUrlFromModule,
+	getLuminescentAbilityUrl as getLuminescentAbilityUrlFromModule,
+	getLuminescentItemUrl as getLuminescentItemUrlFromModule,
+} from './luminescent-urls';
 
 export type PageHandler = (this: PageContext, query: string[], user: User, connection: Connection)
 => Promise<string | null | void | JSX.VNode> | string | null | void | JSX.VNode;
@@ -2435,11 +2441,18 @@ export const Chat = new class {
 		return Chat.getReadmoreBlock(str, true, cutoff);
 	}
 
+	// Relumi: luminescent.team URL builders to replace dex.pokemonshowdown.com links.
+	// Delegates to the shared server/luminescent-urls.ts module.
+	getLuminescentPokemonUrl = getLuminescentPokemonUrlFromModule;
+	getLuminescentMoveUrl = getLuminescentMoveUrlFromModule;
+	getLuminescentAbilityUrl = getLuminescentAbilityUrlFromModule;
+	getLuminescentItemUrl = getLuminescentItemUrlFromModule;
+
 	getDataPokemonHTML(species: Species, gen = 8, tier = '') {
 		let buf = '<li class="result">';
 		buf += `<span class="col numcol">${tier || species.tier}</span> `;
 		buf += `<span class="col iconcol"><psicon pokemon="${species.id}"/></span> `;
-		buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/pokemon/${species.id}" target="_blank">${species.name}</a></span> `;
+		buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="${Chat.getLuminescentPokemonUrl(species)}" target="_blank">${species.name}</a></span> `;
 		buf += '<span class="col typecol">';
 		if (species.types) {
 			for (const type of species.types) {
@@ -2484,7 +2497,7 @@ export const Chat = new class {
 	}
 	getDataMoveHTML(move: Move, isChampions = false) {
 		let buf = `<ul class="utilichart"><li class="result">`;
-		buf += `<span class="col movenamecol"><a href="https://${Config.routes.dex}/moves/${move.id}">${move.name}</a></span> `;
+		buf += `<span class="col movenamecol"><a href="${Chat.getLuminescentMoveUrl(move.id)}">${move.name}</a></span> `;
 		// encoding is important for the ??? type icon
 		const encodedMoveType = encodeURIComponent(move.type);
 		buf += `<span class="col typecol"><img src="//${Config.routes.client}/sprites/types/${encodedMoveType}.png" alt="${move.type}" width="32" height="14">`;
@@ -2503,14 +2516,14 @@ export const Chat = new class {
 	}
 	getDataAbilityHTML(ability: Ability) {
 		let buf = `<ul class="utilichart"><li class="result">`;
-		buf += `<span class="col namecol"><a href="https://${Config.routes.dex}/abilities/${ability.id}">${ability.name}</a></span> `;
+		buf += `<span class="col namecol"><a href="${Chat.getLuminescentAbilityUrl(ability.id)}">${ability.name}</a></span> `;
 		buf += `<span class="col abilitydesccol">${ability.shortDesc || ability.desc}</span> `;
 		buf += `</li><li style="clear:both"></li></ul>`;
 		return buf;
 	}
 	getDataItemHTML(item: Item) {
 		let buf = `<ul class="utilichart"><li class="result">`;
-		buf += `<span class="col itemiconcol"><psicon item="${item.id}"></span> <span class="col namecol"><a href="https://${Config.routes.dex}/items/${item.id}">${item.name}</a></span> `;
+		buf += `<span class="col itemiconcol"><psicon item="${item.id}"></span> <span class="col namecol"><a href="${Chat.getLuminescentItemUrl(item.id)}">${item.name}</a></span> `;
 		buf += `<span class="col itemdesccol">${item.shortDesc || item.desc}</span> `;
 		buf += `</li><li style="clear:both"></li></ul>`;
 		return buf;

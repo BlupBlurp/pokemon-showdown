@@ -214,7 +214,7 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
 exports.routes = {
 	root: "pokemonshowdown.com",
 	client: "play.pokemonshowdown.com",
-	dex: "dex.pokemonshowdown.com",
+	dex: "luminescent.team",
 	replays: "play.relumishowdown.dpdns.org",
 	// Relumi: used for team share URLs and other custom client links.
 	teams: "play.relumishowdown.dpdns.org",

@@ -1061,7 +1061,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		effectType: 'Rule',
 		name: 'Endless Battle Clause',
 		desc: "Prevents players from forcing a battle which their opponent cannot end except by forfeit",
-		// implemented in sim/battle.js, see https://dex.pokemonshowdown.com/articles/battlerules#endlessbattleclause for the specification.
+		// implemented in sim/battle.js, see https://luminescent.team/articles/battlerules#endlessbattleclause for the specification.
 		onBegin() {
 			this.add('rule', 'Endless Battle Clause: Forcing endless battles is banned');
 		},
@@ -3073,7 +3073,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			let buf = '<li class="result">';
 			buf += `<span class="col numcol">${species.tier}</span> `;
 			buf += `<span class="col iconcol"><psicon pokemon="${species.id}"/></span> `;
-			buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/pokemon/${species.id}" target="_blank">${species.name}</a></span> `;
+			buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/pokedex/${species.id}" target="_blank">${species.name}</a></span> `;
 			buf += '<span class="col typecol">';
 			if (species.types) {
 				for (const type of species.types) {
@@ -3127,7 +3127,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 				let buf = '<li class="result">';
 				buf += `<span class="col numcol">${species.tier}</span> `;
 				buf += `<span class="col iconcol"><psicon pokemon="${species.id}"/></span> `;
-				buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/pokemon/${species.id}" target="_blank">${species.name}</a></span> `;
+				buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/pokedex/${species.id}" target="_blank">${species.name}</a></span> `;
 				buf += '<span class="col typecol">';
 				if (species.types) {
 					for (const type of species.types) {

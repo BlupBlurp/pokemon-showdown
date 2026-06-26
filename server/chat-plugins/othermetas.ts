@@ -344,9 +344,9 @@ export const commands: Chat.ChatCommands = {
 				buf += `<span class="col itemiconcol"><psicon item="${toID(itemName)}"/></span> `;
 			}
 			if (aStone.name === "Dragon Ascent") {
-				buf += `<span class="col movenamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/moves/${targetid}" target="_blank">Dragon Ascent</a></span> `;
+				buf += `<span class="col movenamecol" style="white-space:nowrap"><a href="${Chat.getLuminescentMoveUrl('dragonascent')}" target="_blank">Dragon Ascent</a></span> `;
 			} else {
-				buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/items/${aStone.id}" target="_blank">${aStone.name}</a></span> `;
+				buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="${Chat.getLuminescentItemUrl(aStone.name)}" target="_blank">${aStone.name}</a></span> `;
 			}
 			if (deltas.type && deltas.type !== 'mono') {
 				buf += `<span class="col typecol"><img src="https://${Config.routes.client}/sprites/types/${deltas.type}.png" alt="${deltas.type}" height="14" width="32"></span> `;
@@ -523,7 +523,7 @@ export const commands: Chat.ChatCommands = {
 		let buf = '<div class="message"><ul class="utilichart"><li class="result">';
 		buf += '<span class="col numcol">Fusion</span> ';
 		buf += `<span class="col iconcol"><psicon pokemon="${species.id}"/></span> `;
-		buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="https://${Config.routes.dex}/pokemon/${species.id}" target="_blank">${species.name}</a></span> `;
+		buf += `<span class="col pokemonnamecol" style="white-space:nowrap"><a href="${Chat.getLuminescentPokemonUrl(species)}" target="_blank">${species.name}</a></span> `;
 		buf += '<span class="col typecol">';
 		if (species.types && fusion.name.length) {
 			for (const type of species.types) {

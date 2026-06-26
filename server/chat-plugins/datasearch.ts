@@ -1600,7 +1600,7 @@ function runDexsearch(target: string, cmd: string, message: string, isTest: bool
 
 		function mapPokemonResults(inputArr: Species[]) {
 			return inputArr.map(
-				result => `<a href="//${Config.routes.dex}/pokemon/${toID(result.name)}" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="${result.name}" style="vertical-align:-7px;margin:-2px" />${result.name}</a>`
+				result => `<a href="${Chat.getLuminescentPokemonUrl(result)}" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="${result.name}" style="vertical-align:-7px;margin:-2px" />${result.name}</a>`
 			).join(", ");
 		}
 
@@ -2346,7 +2346,7 @@ function runMovesearch(target: string, cmd: string, message: string, isTest: boo
 
 		function mapMoveResults(inputArray: string[]) {
 			return inputArray.map(
-				result => `<a href="//${Config.routes.dex}/moves/${toID(result)}" target="_blank" class="subtle" style="white-space:nowrap">${result}</a>` +
+				result => `<a href="${Chat.getLuminescentMoveUrl(result)}" target="_blank" class="subtle" style="white-space:nowrap">${result}</a>` +
 					(sort ?
 						// eslint-disable-next-line @typescript-eslint/no-base-to-string
 						` (${dex[toID(result)][sort.slice(0, -1) as keyof Move] === true ? '-' : dex[toID(result)][sort.slice(0, -1) as keyof Move]})` :
@@ -2611,7 +2611,8 @@ function runItemsearch(target: string, cmd: string, message: string) {
 
 	function mapItemResults(inputArr: (string | Item)[]) {
 		return inputArr.map(
-			result => `<a href="//${Config.routes.dex}/items/${toID(result)}" target="_blank" class="subtle" style="white-space:nowrap"><psicon item="${result}" style="vertical-align:-7px" />${result}</a>`
+			// Relumi: Use luminescent.team item pages where available.
+			result => `<a href="${Chat.getLuminescentItemUrl(result)}" target="_blank" class="subtle" style="white-space:nowrap"><psicon item="${result}" style="vertical-align:-7px" />${result}</a>`
 		).join(", ");
 	}
 
@@ -2790,7 +2791,8 @@ function runAbilitysearch(target: string, cmd: string, message: string) {
 
 	function mapAbilityResults(inputArr: (string | Ability)[]) {
 		return inputArr.map(
-			result => `<a href="//${Config.routes.dex}/abilities/${toID(result)}" target="_blank" class="subtle" style="white-space:nowrap">${result}</a>`
+			// Relumi: luminescent.team has no ability pages yet; use placeholder.
+			result => `<a href="${Chat.getLuminescentAbilityUrl(result)}" target="_blank" class="subtle" style="white-space:nowrap">${result}</a>`
 		).join(", ");
 	}
 

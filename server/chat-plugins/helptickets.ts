@@ -1060,7 +1060,7 @@ const ticketPages: { [k: string]: string } = {
 const cheatingScenarios = [
 	[
 		`My opponent's Pokemon used moves it couldn't learn`,
-		`It was probably a disguised Zoroark (<psicon pokemon="zoroark" />), which has the ability <a href="//${Config.routes.dex}/abilities/illusion">Illusion</a>. This happens often in Random Battles!`,
+		`It was probably a disguised Zoroark (<psicon pokemon="zoroark" />), which has the ability <a href="#">Illusion</a>. This happens often in Random Battles!`,
 	],
 	[
 		`My opponent got very lucky (critical hits, freezes, flinches, etc.)`,
@@ -1080,7 +1080,7 @@ const cheatingScenarios = [
 	],
 	[
 		`My Pokemon's Ability didn't work`,
-		`Perhaps Weezing's <a href="//${Config.routes.dex}/abilities/neutralizinggas">Neutralizing Gas</a> was active (<psicon pokemon="weezinggalar" />), or another effect, like <a href="https://dex.pokemonshowdown.com/abilities/moldbreaker">Mold Breaker</a>, was suppressing the Ability.`,
+		`Perhaps Weezing's <a href="#">Neutralizing Gas</a> was active (<psicon pokemon="weezinggalar" />), or another effect, like <a href="#">Mold Breaker</a>, was suppressing the Ability.`,
 	],
 	[
 		`My Pokemon's move failed when I attacked the opponent in a Double Battle)`,

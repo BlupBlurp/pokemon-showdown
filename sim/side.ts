@@ -84,9 +84,9 @@ export interface PokemonSwitchRequestData {
 	pokeball: ID;
 	/** Current ability. Only sent in Gen 7+. */
 	ability?: ID;
-	/** @see https://dex.pokemonshowdown.com/abilities/commander */
+	/** @see https://luminescent.team/abilities/commander */
 	commanding?: boolean;
-	/** @see https://dex.pokemonshowdown.com/moves/revivalblessing */
+	/** @see https://luminescent.team/moves/revival-blessing */
 	reviving?: boolean;
 	teraType?: string;
 	terastallized?: string;
