@@ -166,7 +166,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isCosmeticForme: true,
 		name: "Alcremie-Caramel-Swirl-Flower",
 	},
-	alcremiecaramelswirlove: {
+	alcremiecaramelswirllove: {
 		baseSpecies: "Alcremie-Caramel-Swirl",
 		color: "Yellow",
 		forme: "Love",
@@ -439,7 +439,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isCosmeticForme: true,
 		name: "Alcremie-Rainbow-Swirl-Flower",
 	},
-	alcremierainbowswirlove: {
+	alcremierainbowswirllove: {
 		baseSpecies: "Alcremie-Rainbow-Swirl",
 		color: "Yellow",
 		forme: "Love",
@@ -564,7 +564,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		isCosmeticForme: true,
 		name: "Alcremie-Ruby-Swirl-Flower",
 	},
-	alcremierubyswirlove: {
+	alcremierubyswirllove: {
 		baseSpecies: "Alcremie-Ruby-Swirl",
 		color: "Yellow",
 		forme: "Love",
