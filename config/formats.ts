@@ -203,6 +203,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"Max Level = 9999",
 			"Default Level = 100",
 			"-CAP",
+			"Custom Types Mod",
 		],
 	},
 	{
@@ -278,6 +279,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"Max Level = 9999",
 			"Default Level = 100",
 			"-CAP",
+			"Custom Types Mod",
 		],
 	},
 	{

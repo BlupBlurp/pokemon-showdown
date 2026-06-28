@@ -1795,6 +1795,22 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]', '[from] format: Camomons Mod');
 		},
 	},
+	customtypesmod: {
+		effectType: 'Rule',
+		name: 'Custom Types Mod',
+		desc: "When a Pok&eacute;mon's set specifies customTypes (used by Relumi testing formats), broadcast the overridden types immediately on switch-in so the client shows them on the same turn instead of the species' base types.",
+		onSwitchInPriority: 100,
+		onSwitchIn(pokemon) {
+			const seenPokemon = pokemon.illusion || pokemon;
+			const realTypeString = seenPokemon.getTypes(true, true).join('/');
+			if (realTypeString !== this.dex.species.get(seenPokemon.species.name).types.join('/') &&
+				!pokemon.terastallized) {
+				const broadcastType = seenPokemon.getTypes(true).join('/');
+				this.add('-start', pokemon, 'typechange', broadcastType, '[silent]');
+				seenPokemon.apparentType = broadcastType;
+			}
+		},
+	},
 	allowtradeback: {
 		effectType: 'ValidatorRule',
 		name: 'Allow Tradeback',
