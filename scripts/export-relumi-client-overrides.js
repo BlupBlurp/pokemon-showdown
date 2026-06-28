@@ -7,6 +7,7 @@ const path = require("path");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
 const { deepSort } = require("./lib/relumi-deep-sort");
 const { parseExportedObject } = require("./lib/relumi-parse-exported-object");
+const { buildFormIndexMap: buildFormIndexMapShared } = require("./lib/relumi-form-index");
 
 const ROOT = getRelumiRepoRoot();
 const SERVER_MOD_DIR = path.join(ROOT, "data", "mods", "gen8relumi");
@@ -279,67 +280,8 @@ function buildRelumiSpriteData(speciesOverrides) {
 	return { iconIndexes, spriteEntries, customFormIds };
 }
 
-/**
- * Pre-compute form index map for the teambuilder sort order.
- * Uses the server-side Dex (where Species.formeOrder exists) to compute
- * correct form indices: base=0, formeOrder[1+]=1..n, gmax=n, custom=n+1..
- * This avoids the client-side Species class limitation (no formeOrder property).
- */
 function buildFormIndexMap(dex) {
-	const map = {};
-	const speciesList = dex.species.all();
-
-	// Group species by base ID to process formes together
-	const groups = {};
-	for (const species of speciesList) {
-		const baseId = toID(species.baseSpecies || species.name);
-		if (!groups[baseId]) groups[baseId] = [];
-		groups[baseId].push(species);
-	}
-
-	for (const [baseId, forms] of Object.entries(groups)) {
-		// Include base species without formes too (always index 0)
-		if (forms.length === 1 && forms[0].id === baseId && !forms[0].otherFormes) {
-			map[baseId] = 0;
-			continue;
-		}
-
-		const baseSpecies = dex.species.get(baseId);
-		// Server-side Species has formeOrder; read it directly.
-		const formeOrder = baseSpecies.formeOrder || [baseSpecies.name];
-		const foIDs = formeOrder.map(f => toID(f));
-		const gmaxId = baseId + 'gmax';
-		const hasGmax = dex.species.get(gmaxId).exists;
-		// Build custom form IDs from ALL forms in the group (not just otherFormes,
-		// which only lists gen9 forms and misses Relumi custom forms like Smeargle
-		// recolors or Clone variants). Exclude base, formeOrder entries, and Gmax.
-		const otherIDs = forms
-			.map(function(f) { return f.id; })
-			.filter(function(f) { return f !== baseId && !foIDs.includes(f) && f !== gmaxId && !f.endsWith('gmax'); });
-		otherIDs.sort();
-
-		for (const species of forms) {
-			const sid = species.id;
-			if (sid === baseId) {
-				map[sid] = 0;
-				continue;
-			}
-			const fi = foIDs.indexOf(sid);
-			if (fi >= 0) {
-				map[sid] = fi;
-				continue;
-			}
-			if (sid === gmaxId || (sid.endsWith('gmax') && hasGmax)) {
-				map[sid] = formeOrder.length;
-				continue;
-			}
-			// Custom forms after Gmax, sorted alphabetically among themselves
-			const offset = hasGmax ? formeOrder.length + 1 : formeOrder.length;
-			const oi = otherIDs.indexOf(sid);
-			map[sid] = offset + Math.max(0, oi);
-		}
-	}
-	return deepSort(map);
+	return deepSort(buildFormIndexMapShared(dex, toID));
 }
 
 function buildRelumiBanConfig(formatsPath) {
