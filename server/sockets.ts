@@ -18,7 +18,7 @@ import * as path from "path";
 import * as ConfigLoader from "./config-loader";
 import { crashlogger, ProcessManager, Streams } from "../lib";
 import { IPTools } from "./ip-tools";
-import { maybeHandleBattleStatsRequest } from "./battle-stats";
+import { maybeHandleBattleStatsRequest, maybeHandleBattleStatsSpeciesTrendsRequest, maybeHandleBattleStatsRandomTeamRequest } from "./battle-stats";
 import { type ChannelID, extractChannelMessages } from "../sim/battle";
 import { StaticServer } from "../lib/static-server";
 
@@ -415,6 +415,12 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 						return;
 					}
 					if (maybeHandleBattleStatsRequest(req, res)) {
+						return;
+					}
+					if (maybeHandleBattleStatsSpeciesTrendsRequest(req, res)) {
+						return;
+					}
+					if (maybeHandleBattleStatsRandomTeamRequest(req, res)) {
 						return;
 					}
 

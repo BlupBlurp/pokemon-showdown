@@ -29,6 +29,7 @@ export interface BattleStatsPokemon {
 	ability: string;
 	item: string;
 	moves: string[];
+	nature: string;
 	ivs: SparseStatsTable;
 	evs: SparseStatsTable;
 }
@@ -40,6 +41,13 @@ export interface BattleStatsRecord {
 	playerA: string;
 	playerB: string;
 	winner: string | null;
+	/**
+	 * How the battle ended. Mirrors `RoomBattle.endType` and is the source
+	 * of truth for forfeit/disconnect counts. The surviving player is still
+	 * recorded as `winner`, so `!winner` is not a reliable forfeit signal.
+	 * Records persisted before this field existed will fall back to 'unknown'.
+	 */
+	endType: 'normal' | 'forced' | 'forfeit' | 'tie' | 'unknown';
 	turns: number;
 	teamA: BattleStatsPokemon[];
 	teamB: BattleStatsPokemon[];
@@ -54,6 +62,8 @@ interface PokemonCount {
 	name: string;
 	count: number;
 	pct: number;
+	wins: number;
+	winRate: number;
 }
 
 interface CategoryOutput {
@@ -133,6 +143,13 @@ interface CategoryOutput {
 		mostCommonTeamArchetype: null;
 		formatHealthIndicator: number;
 	};
+	topTeams: Array<{
+		signature: string;
+		appearances: number;
+		wins: number;
+		winRate: number;
+		team: BattleStatsPokemon[];
+	}>;
 }
 
 export interface BattleStatsApiResponse {
@@ -244,6 +261,7 @@ export function toBattleStatsPokemon(set: PokemonSet): BattleStatsPokemon {
 		ability: set.ability || "",
 		item: set.item || "",
 		moves: [...(set.moves || [])],
+		nature: set.nature || "",
 		ivs: { ...(set.ivs || {}) },
 		evs: { ...(set.evs || {}) },
 	};
@@ -256,20 +274,117 @@ function getRangeStart(range: string, now: number): number | null {
 	return null;
 }
 
+interface RawCount {
+	count: number;
+	wins: number;
+}
+
 function topCounts(
-	counts: Map<string, number>,
+	counts: Map<string, RawCount>,
 	denominator: number,
 	limit: number,
 ): PokemonCount[] {
 	if (!denominator) return [];
 	return [...counts.entries()]
-		.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+		.sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0]))
 		.slice(0, limit)
-		.map(([name, count]) => ({
+		.map(([name, { count, wins }]) => ({
 			name,
 			count,
 			pct: (count / denominator) * 100,
+			wins,
+			winRate: count ? (wins / count) * 100 : 0,
 		}));
+}
+
+/**
+ * Daily usage/win-rate trend for a single species. `dayKey` is an ISO date
+ * (`YYYY-MM-DD`) string; `appearances` counts how often the species showed
+ * up in any team of that day's records; `slots` is the total team-slot
+ * denominator for the day so usage% and win-rate are comparable across days.
+ */
+interface SpeciesTrendDay {
+	dayKey: string;
+	appearances: number;
+	wins: number;
+	slots: number;
+}
+
+/**
+ * Per-day usage/win-rate series for a single species over the requested
+ * range. Sorted chronologically (oldest first).
+ */
+export interface SpeciesTrendResult {
+	species: string;
+	days: Array<{ date: string; usagePct: number; winRate: number }>;
+}
+
+/**
+ * Aggregates per-day usage and win-rate trends for a single species ID.
+ * Returns an empty array when there is no data in the range.
+ */
+export function aggregateSpeciesTrends(
+	records: readonly BattleStatsRecord[],
+	speciesId: string,
+	rangeStart: number | null,
+): SpeciesTrendResult {
+	const target = toID(speciesId);
+	const filtered =
+		rangeStart === null ? records : records.filter((r) => r.timestamp >= rangeStart);
+
+	const dayMap = new Map<string, SpeciesTrendDay>();
+	for (const record of filtered) {
+		// Bucket by calendar-day (UTC) to keep data comparable across time zones.
+		const dayKey = new Date(record.timestamp).toISOString().slice(0, 10);
+		let bucket = dayMap.get(dayKey);
+		if (!bucket) {
+			bucket = { dayKey, appearances: 0, wins: 0, slots: 0 };
+			dayMap.set(dayKey, bucket);
+		}
+		const teams = [
+			{
+				mons: record.teamA,
+				won: !!record.winner && record.winner === record.playerA,
+			},
+			{
+				mons: record.teamB,
+				won: !!record.winner && record.winner === record.playerB,
+			},
+		];
+		for (const side of teams) {
+			bucket.slots += side.mons.length;
+			for (const mon of side.mons) {
+				if (toID(mon.species) !== target) continue;
+				bucket.appearances++;
+				if (side.won) bucket.wins++;
+			}
+		}
+	}
+
+	const days = [...dayMap.values()]
+		.sort((a, b) => a.dayKey.localeCompare(b.dayKey))
+		.map((b) => ({
+			date: b.dayKey,
+			usagePct: b.slots ? (b.appearances / b.slots) * 100 : 0,
+			winRate: b.appearances ? (b.wins / b.appearances) * 100 : 0,
+		}));
+
+	return { species: target, days };
+}
+
+/**
+ * Picks a uniformly-random team (teamA or teamB) from one random record
+ * matching the format filter. Returns null when no records exist.
+ */
+function pickRandomTeam(
+	records: readonly BattleStatsRecord[],
+): BattleStatsPokemon[] | null {
+	if (!records.length) return null;
+	const idx = Math.floor(Math.random() * records.length);
+	const record = records[idx];
+	// 50/50 bias between which team's set we surface for export.
+	const team = Math.random() < 0.5 ? record.teamA : record.teamB;
+	return team.map((m) => ({ ...m, moves: [...m.moves], ivs: { ...m.ivs }, evs: { ...m.evs } }));
 }
 
 /**
@@ -329,7 +444,15 @@ export function aggregateBattleStats(
 			(r) => r.timestamp >= cutoff30d,
 		).length;
 		const totalTurns = categoryRanged.reduce((sum, r) => sum + r.turns, 0);
-		const forfeits = categoryRanged.filter((r) => !r.winner).length;
+		// Forfeits + DC auto-walkovers. `RoomBattle.endType` is set to
+		// 'forfeit' by `forfeitPlayer` (manual /forfeit, single-game DC
+		// timer, BestOf-series DC overflow) and to 'forced' when a user
+		// loses via inappropriate-name rename (room-battle.ts). In both
+		// cases the surviving player is still recorded as `winner`, so
+		// `!winner` is not a reliable forfeit signal.
+		const forfeits = categoryRanged.filter(
+			(r) => r.endType === 'forfeit' || r.endType === 'forced',
+		).length;
 
 		const hourBuckets = new Array<number>(24).fill(0);
 		for (const battle of categoryRanged) {
@@ -407,13 +530,22 @@ export function aggregateBattleStats(
 				name: string;
 				appearances: number;
 				wins: number;
-				abilityCounts: Map<string, number>;
-				itemCounts: Map<string, number>;
-				moveCounts: Map<string, number>;
+				abilityCounts: Map<string, RawCount>;
+				itemCounts: Map<string, RawCount>;
+				moveCounts: Map<string, RawCount>;
 				combinations: Set<string>;
 			}
 		>();
 		const pairCounts = new Map<string, number>();
+		const teamSignatures = new Map<
+			string,
+			{
+				appearances: number;
+				wins: number;
+				representative: BattleStatsPokemon[];
+				lastTimestamp: number;
+			}
+		>();
 		let totalTeamSlots = 0;
 		for (const battle of categoryRanged) {
 			const teams = [
@@ -437,6 +569,20 @@ export function aggregateBattleStats(
 						pairCounts.set(key, (pairCounts.get(key) || 0) + 1);
 					}
 				}
+				// Aggregate teams by sorted-species signature so we can surface
+				// the most common archetypes and their win rates.
+				const sig = uniqueSpecies.join("/");
+				let teamEntry = teamSignatures.get(sig);
+				if (!teamEntry) {
+					teamEntry = { appearances: 0, wins: 0, representative: side.mons, lastTimestamp: battle.timestamp };
+					teamSignatures.set(sig, teamEntry);
+				}
+				teamEntry.appearances++;
+				if (side.won) teamEntry.wins++;
+				if (battle.timestamp >= teamEntry.lastTimestamp) {
+					teamEntry.representative = side.mons;
+					teamEntry.lastTimestamp = battle.timestamp;
+				}
 				for (const mon of side.mons) {
 					const speciesId = toID(mon.species);
 					if (!pokemonStats.has(speciesId)) {
@@ -455,24 +601,22 @@ export function aggregateBattleStats(
 					if (side.won) entry.wins++;
 					const ability = mon.ability || "none";
 					const item = mon.item || "none";
-					entry.abilityCounts.set(
-						ability,
-						(entry.abilityCounts.get(ability) || 0) + 1,
-					);
-					entry.itemCounts.set(
-						item,
-						(entry.itemCounts.get(item) || 0) + 1,
-					);
-					for (const move of mon.moves || []) {
-						entry.moveCounts.set(
-							move,
-							(entry.moveCounts.get(move) || 0) + 1,
-						);
+					const abilityCount = entry.abilityCounts.get(ability) || { count: 0, wins: 0 };
+					abilityCount.count++;
+					if (side.won) abilityCount.wins++;
+					entry.abilityCounts.set(ability, abilityCount);
+					const itemCount = entry.itemCounts.get(item) || { count: 0, wins: 0 };
+					itemCount.count++;
+					if (side.won) itemCount.wins++;
+					entry.itemCounts.set(item, itemCount);
+					const moveNames = [...(mon.moves || [])];
+					for (const move of moveNames) {
+						const moveCount = entry.moveCounts.get(move) || { count: 0, wins: 0 };
+						moveCount.count++;
+						if (side.won) moveCount.wins++;
+						entry.moveCounts.set(move, moveCount);
 					}
-					const comboMoves = [...(mon.moves || [])]
-						.map(toID)
-						.sort()
-						.join(",");
+					const comboMoves = moveNames.map(toID).sort().join(",");
 					entry.combinations.add(
 						`${toID(ability)}|${toID(item)}|${comboMoves}`,
 					);
@@ -604,6 +748,24 @@ export function aggregateBattleStats(
 			? users.size / categoryRanged.length
 			: 0;
 
+		// Pick top 5 most-used team archetypes (sorted-species signature) with
+		// a representative full team (most recent occurrence) for export.
+		const topTeams = [...teamSignatures.entries()]
+			.map(([signature, info]) => ({
+				signature,
+				appearances: info.appearances,
+				wins: info.wins,
+				winRate: info.appearances ? (info.wins / info.appearances) * 100 : 0,
+				team: info.representative,
+			}))
+			.sort(
+				(a, b) =>
+					b.appearances - a.appearances ||
+					b.winRate - a.winRate ||
+					a.signature.localeCompare(b.signature),
+			)
+			.slice(0, 5);
+
 		return {
 			id: categoryId,
 			label: config.label,
@@ -662,6 +824,7 @@ export function aggregateBattleStats(
 				mostCommonTeamArchetype: null,
 				formatHealthIndicator: formatHealth,
 			},
+			topTeams,
 		};
 	});
 
@@ -689,10 +852,12 @@ class BattleStatsStore {
 			const raw = FS(STATS_PATH).readIfExistsSync();
 			if (raw) {
 				for (const line of raw.split("\n")) {
-					if (!line.trim()) continue;
-					try {
-						this.records.push(JSON.parse(line));
-					} catch (e: any) {
+					if (!line.trim()) continue;						try {
+							// Backfill endType for records persisted before the
+							// field was added so legacy data still aggregates.
+							const parsed = JSON.parse(line);
+							this.records.push({ endType: 'unknown', ...parsed });
+						} catch (e: any) {
 						Monitor?.warn?.(
 							`Battle stats record parse failure: ${e.message}`,
 						);
@@ -732,6 +897,15 @@ class BattleStatsStore {
 		});
 		return payload;
 	}
+
+	/**
+	 * Read-only accessor for the in-memory records list. Used by one-off
+	 * aggregations (per-species trends, random team) that do not need the
+	 * cached API payload.
+	 */
+	getRecords(): readonly BattleStatsRecord[] {
+		return this.records;
+	}
 }
 
 export const BattleStats = new (class {
@@ -763,6 +937,13 @@ export const BattleStats = new (class {
 			playerA: battle.p1.name,
 			playerB: battle.p2.name,
 			winner: winnerName,
+			// `battle.endType` is set by RoomBattle.forfeitPlayer / similar
+			// hooks and is the only reliable signal that a battle ended via
+			// forfeit, forced DC/W, or normally. The surviving player is still
+			// recorded as `winner` in forfeit cases, so we capture endType here.
+			// Cast widens `RoomBattle.endType` ('forfeit'|'forced'|'normal')
+			// to include 'unknown' / 'tie' for legacy or BestOf-series records.
+			endType: (battle.endType as BattleStatsRecord['endType'] | undefined) ?? 'unknown',
 			turns: battle.turn,
 			teamA: teamA.map(toBattleStatsPokemon),
 			teamB: teamB.map(toBattleStatsPokemon),
@@ -777,7 +958,62 @@ export const BattleStats = new (class {
 	getApiResponse(format: string, range: string, user?: string) {
 		return this.store.getApiResponse(format, range, user);
 	}
+
+	/**
+	 * Aggregates per-day usage/win-rate trends for a species over a range.
+	 * Format defaults to the single-format filter; pass `all` to span formats.
+	 */
+	async getSpeciesTrends(speciesId: string, format: string, range: string) {
+		await this.store.ensureLoaded();
+		const normalizedFormat =
+			format === "all" ? "all" : normalizeRelumiFormat(format);
+		const now = Date.now();
+		const rangeStart = getRangeStart(range, now);
+		const matching = normalizedFormat === "all"
+			? this.store.getRecords()
+			: normalizedFormat
+				? this.store.getRecords().filter((r) => r.format === normalizedFormat)
+				: [];
+		return aggregateSpeciesTrends(matching, speciesId, rangeStart);
+	}
+
+	/**
+	 * Returns a uniformly-random team (BattleStatsPokemon[]) from a random
+	 * tracked-format battle. Returns null when no records match.
+	 */
+	async getRandomTeam(format: string): Promise<BattleStatsPokemon[] | null> {
+		await this.store.ensureLoaded();
+		const normalizedFormat =
+			format === "all" ? "all" : normalizeRelumiFormat(format);
+		const records = this.store.getRecords();
+		const matching = normalizedFormat === "all"
+			? records
+			: normalizedFormat
+				? records.filter((r) => r.format === normalizedFormat)
+				: [];
+		return pickRandomTeam(matching);
+	}
 })();
+
+/**
+ * Shared HTTP response helper for battle-stats routes. Centralizes CORS
+ * headers, content type, and OPTIONS handling so each handler stays thin.
+ */
+function sendJsonResponse(
+	req: http.IncomingMessage,
+	res: http.ServerResponse,
+	status: number,
+	data: AnyObject,
+) {
+	res.writeHead(status, {
+		"Content-Type": "application/json; charset=utf-8",
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Methods": "GET, OPTIONS",
+		"Access-Control-Allow-Headers": "Content-Type",
+		"Cache-Control": "no-store",
+	});
+	res.end(JSON.stringify(data));
+}
 
 /**
  * Handles `/api/battlestats` requests from the static HTTP server.
@@ -797,24 +1033,13 @@ export function maybeHandleBattleStatsRequest(
 	const validFormat = format === "all" || !!normalizeRelumiFormat(format);
 	const validRange = ["all", "7d", "30d"].includes(range);
 
-	const respond = (status: number, data: AnyObject) => {
-		res.writeHead(status, {
-			"Content-Type": "application/json; charset=utf-8",
-			"Access-Control-Allow-Origin": "*",
-			"Access-Control-Allow-Methods": "GET, OPTIONS",
-			"Access-Control-Allow-Headers": "Content-Type",
-			"Cache-Control": "no-store",
-		});
-		res.end(JSON.stringify(data));
-	};
-
 	if (req.method === "OPTIONS") {
-		respond(204, {});
+		sendJsonResponse(req, res, 204, {});
 		return true;
 	}
 
 	if (!validFormat || !validRange) {
-		respond(400, {
+		sendJsonResponse(req, res, 400, {
 			error: "Invalid query. format must be one of tracked relumi formats or all; range must be 7d, 30d, or all.",
 		});
 		return true;
@@ -823,10 +1048,96 @@ export function maybeHandleBattleStatsRequest(
 	void (async () => {
 		try {
 			const payload = await BattleStats.getApiResponse(format, range, user);
-			respond(200, payload);
+			sendJsonResponse(req, res, 200, payload);
 		} catch (e: any) {
 			Monitor?.crashlog?.(e, "Battle stats API");
-			respond(500, { error: "Failed to load battle stats." });
+			sendJsonResponse(req, res, 500, { error: "Failed to load battle stats." });
+		}
+	})();
+
+	return true;
+}
+
+/**
+ * Handles `/api/battlestats/species-trends` for per-day usage/win-rate line
+ * charts in the panel. Returns `{ species, days: [{date, usagePct, winRate}] }`.
+ */
+export function maybeHandleBattleStatsSpeciesTrendsRequest(
+	req: http.IncomingMessage,
+	res: http.ServerResponse,
+): boolean {
+	const urlString = req.url;
+	if (!urlString) return false;
+	const url = new URL(urlString, "http://localhost");
+	if (url.pathname !== "/api/battlestats/species-trends") return false;
+
+	const format = toID(url.searchParams.get("format") || "all");
+	const range = toID(url.searchParams.get("range") || "all");
+	const species = url.searchParams.get("species") || "";
+	const validFormat = format === "all" || !!normalizeRelumiFormat(format);
+	const validRange = ["all", "7d", "30d"].includes(range);
+
+	if (req.method === "OPTIONS") {
+		sendJsonResponse(req, res, 204, {});
+		return true;
+	}
+
+	if (!validFormat || !validRange || !species) {
+		sendJsonResponse(req, res, 400, {
+			error: "Invalid query. species is required; format must be a tracked format or all; range must be 7d, 30d, or all.",
+		});
+		return true;
+	}
+
+	void (async () => {
+		try {
+			const payload = await BattleStats.getSpeciesTrends(species, format, range);
+			sendJsonResponse(req, res, 200, payload);
+		} catch (e: any) {
+			Monitor?.crashlog?.(e, "Battle stats trends API");
+			sendJsonResponse(req, res, 500, { error: "Failed to compute species trends." });
+		}
+	})();
+
+	return true;
+}
+
+/**
+ * Handles `/api/battlestats/random-team` for the "Random team" panel button.
+ * Returns either `{ team: BattleStatsPokemon[] }` or `{ team: null }` when
+ * no records are available.
+ */
+export function maybeHandleBattleStatsRandomTeamRequest(
+	req: http.IncomingMessage,
+	res: http.ServerResponse,
+): boolean {
+	const urlString = req.url;
+	if (!urlString) return false;
+	const url = new URL(urlString, "http://localhost");
+	if (url.pathname !== "/api/battlestats/random-team") return false;
+
+	const format = toID(url.searchParams.get("format") || "all");
+	const validFormat = format === "all" || !!normalizeRelumiFormat(format);
+
+	if (req.method === "OPTIONS") {
+		sendJsonResponse(req, res, 204, {});
+		return true;
+	}
+
+	if (!validFormat) {
+		sendJsonResponse(req, res, 400, {
+			error: "Invalid query. format must be a tracked relumi format or all.",
+		});
+		return true;
+	}
+
+	void (async () => {
+		try {
+			const team = await BattleStats.getRandomTeam(format);
+			sendJsonResponse(req, res, 200, { team });
+		} catch (e: any) {
+			Monitor?.crashlog?.(e, "Battle stats random team API");
+			sendJsonResponse(req, res, 500, { error: "Failed to fetch a random team." });
 		}
 	})();
 

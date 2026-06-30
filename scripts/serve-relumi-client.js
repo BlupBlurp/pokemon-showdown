@@ -423,8 +423,14 @@ const server = http.createServer((req, res) => {
 		filePath = path.join(filePath, "index-new.html");
 	}
 
-	// Proxy /api/battlestats to the local game server (port 8000)
-	if (normalized === "/api/battlestats") {
+	// Proxy /api/battlestats to the local game server (port 8000). Match the
+	// exact endpoint AND any sub-endpoint (e.g. /species-trends, /random-team)
+	// so all stats routes resolve through the game server. Query strings
+	// are stripped from `normalized` upstream, so just the path matters.
+	if (
+		normalized === "/api/battlestats" ||
+		normalized.startsWith("/api/battlestats/")
+	) {
 		return proxyToGameServer(req, reqUrl, res);
 	}
 
