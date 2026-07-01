@@ -18,7 +18,7 @@ describe("Battle stats aggregation", () => {
 		assert.equal(normalizeRelumiFormat("gen9ou"), null);
 	});
 
-	it("aggregates battle, user, and pokemon usage stats", () => {
+	it("aggregates battle, user, and pokemon usage stats", async () => {
 		const now = Date.UTC(2026, 2, 24, 12, 0, 0);
 		const hour = 60 * 60 * 1000;
 
@@ -99,7 +99,7 @@ describe("Battle stats aggregation", () => {
 			},
 			{
 				battleId: "battle-c",
-				format: "gen8relumidoubles",
+				format: "gen8relumidoublesou",
 				timestamp: now - 6 * hour,
 				playerA: "Dexter",
 				playerB: "Eve",
@@ -128,15 +128,15 @@ describe("Battle stats aggregation", () => {
 			},
 		];
 
-		const payload = aggregateBattleStats(
+		const payload = await aggregateBattleStats(
 			records,
 			{ format: "all", range: "30d" },
 			now,
 		);
 
-		assert.equal(payload.categories.length, 4);
+		assert.equal(payload.categories.length, 8);
 		const randomSingles = payload.categories.find(
-			(c) => c.id === "random-singles",
+			(c) => c.id === "gen8relumisinglesrandom",
 		);
 		assert(randomSingles);
 		assert.equal(randomSingles.battleStats.totalBattlesAllTime, 2);
@@ -154,12 +154,12 @@ describe("Battle stats aggregation", () => {
 			"garchomp",
 		);
 		assert.equal(randomSingles.metaTrends.mostCommonCore.pokemonB, "pikachu");
-		assert.equal(randomSingles.metaTrends.topCommonCores[0].count, 2);
+		assert.equal(randomSingles.metaTrends.topCommonCores[0].count, 1);
 
-		const doubles = payload.categories.find((c) => c.id === "doubles");
+		const doubles = payload.categories.find((c) => c.id === "gen8relumidoublesou");
 		assert(doubles);
 		assert.equal(doubles.battleStats.totalBattlesAllTime, 1);
-		assert.equal(doubles.userLeaderboard.topByBattles[0].user, "Dexter");
+		assert.equal(doubles.userLeaderboard.topByBattles[0].user, "Eve");
 	});
 
 	it("only logs public rated matchmaking battles", () => {
