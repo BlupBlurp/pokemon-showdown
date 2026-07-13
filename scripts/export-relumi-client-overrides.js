@@ -4,6 +4,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const https = require("https");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
 const { deepSort } = require("./lib/relumi-deep-sort");
 const { parseExportedObject } = require("./lib/relumi-parse-exported-object");
@@ -30,6 +31,12 @@ const CLIENT_LOG_PATH = path.join(
 	"play.pokemonshowdown.com",
 	"data",
 	"relumi-overrides.js"
+);
+const UPSTREAM_POKEDEX_MINI_URL = "https://play.pokemonshowdown.com/data/pokedex-mini.js";
+const UPSTREAM_SPRITES_CACHE_PATH = path.join(
+	ROOT,
+	".cache",
+	"upstream-pokedex-mini.json"
 );
 const ABILITIES_TEXT_PATH = path.join(ROOT, "data", "text", "abilities.ts");
 const MOVES_TEXT_PATH = path.join(ROOT, "data", "text", "moves.ts");
@@ -94,7 +101,7 @@ function buildTeambuilderLearnsets(table) {
 		for (const [moveId, rawSources] of Object.entries(sourceLearnset)) {
 			if (Array.isArray(rawSources)) {
 				learnset[moveId] = rawSources
-					.map((source) => String(source).toLowerCase())
+					.map(source => String(source).toLowerCase())
 					.join(",");
 			} else if (typeof rawSources === "string") {
 				learnset[moveId] = rawSources.toLowerCase();
@@ -177,6 +184,222 @@ function readGifDimensions(gifPath) {
 		return { w: buf.readUInt16LE(6), h: buf.readUInt16LE(8) };
 	} catch {
 		return null;
+	}
+}
+
+/**
+ * Strip JS comments so brace counting is not confused by braces inside comments.
+ * Handles both line comments and block comments while ignoring them inside strings.
+ */
+function stripComments(text) {
+	let result = "";
+	let inString = false;
+	let escape = false;
+	let inLineComment = false;
+	let inBlockComment = false;
+	for (let i = 0; i < text.length; i++) {
+		const ch = text[i];
+		const next = text[i + 1];
+		if (inLineComment) {
+			if (ch === "\n") inLineComment = false;
+			continue;
+		}
+		if (inBlockComment) {
+			if (ch === "*" && next === "/") inBlockComment = false;
+			continue;
+		}
+		if (inString) {
+			result += ch;
+			if (escape) {
+				escape = false;
+			} else if (ch === "\\") {
+				escape = true;
+			} else if (ch === '"') {
+				inString = false;
+			}
+			continue;
+		}
+		if (ch === '"') {
+			inString = true;
+			result += ch;
+		} else if (ch === "/" && next === "/") {
+			inLineComment = true;
+			i++;
+		} else if (ch === "/" && next === "*") {
+			inBlockComment = true;
+			i++;
+		} else {
+			result += ch;
+		}
+	}
+	return result;
+}
+
+/**
+ * Parse the upstream pokedex-mini.js text into a BattlePokemonSprites dimension
+ * table without executing the remote code. The file only contains a single
+ * `exports.BattlePokemonSprites = {...}` assignment with numeric dimensions,
+ * so we extract the object literal and convert it to JSON.
+ */
+function parseUpstreamBattlePokemonSprites(text) {
+	const cleanText = stripComments(text);
+	const marker = "exports.BattlePokemonSprites = ";
+	const startIdx = cleanText.indexOf(marker);
+	if (startIdx === -1) {
+		throw new Error("Could not find BattlePokemonSprites in upstream pokedex-mini.js");
+	}
+
+	let braceStart = startIdx + marker.length;
+	while (braceStart < cleanText.length && /\s/.test(cleanText[braceStart])) braceStart++;
+	if (cleanText[braceStart] !== "{") {
+		throw new Error("BattlePokemonSprites assignment does not start with an object literal");
+	}
+
+	let depth = 0;
+	let inString = false;
+	let escape = false;
+	let end = braceStart;
+	for (let i = braceStart; i < cleanText.length; i++) {
+		const ch = cleanText[i];
+		if (inString) {
+			if (escape) {
+				escape = false;
+			} else if (ch === "\\") {
+				escape = true;
+			} else if (ch === '"') {
+				inString = false;
+			}
+			continue;
+		}
+		if (ch === '"') {
+			inString = true;
+		} else if (ch === "{") {
+			depth++;
+		} else if (ch === "}") {
+			depth--;
+			if (depth === 0) {
+				end = i + 1;
+				break;
+			}
+		}
+	}
+	if (depth !== 0) {
+		throw new Error("Could not find matching closing brace for BattlePokemonSprites");
+	}
+
+	const objectLiteral = cleanText.slice(braceStart, end);
+	// Quote unquoted object keys so the literal is valid JSON. The upstream
+	// file contains only numeric values and nested {w, h} objects, so this is safe.
+	const jsonText = objectLiteral
+		.replace(/([{,]\s*)([a-zA-Z_$][a-zA-Z0-9_$]*)\s*:/g, '$1"$2":')
+		.replace(/,\s*}/g, "}");
+	return JSON.parse(jsonText);
+}
+
+/**
+ * Fetch the upstream (play.pokemonshowdown.com) pokedex-mini.js and return
+ * its BattlePokemonSprites dimension table. This gives us the true 1x
+ * dimensions for upstream animated GIFs, which we embed into relumi-overrides.js
+ * so the client can render upstream sprites at their native size.
+ *
+ * The result is cached locally so offline builds can still succeed.
+ */
+function fetchUpstreamBattlePokemonSprites() {
+	return new Promise((resolve, reject) => {
+		https
+			.get(UPSTREAM_POKEDEX_MINI_URL, { timeout: 30000 }, res => {
+				if (res.statusCode !== 200) {
+					res.resume();
+					return reject(
+						new Error(`Upstream pokedex-mini.js returned status ${res.statusCode}`)
+					);
+				}
+				const chunks = [];
+				res.on("data", chunk => chunks.push(chunk));
+				res.on("end", () => {
+					try {
+						const text = Buffer.concat(chunks).toString("utf8");
+						const sprites = parseUpstreamBattlePokemonSprites(text);
+						const dims = stripUpstreamSpriteDimensions(sprites);
+						cacheUpstreamSpriteDimensions(dims);
+						resolve(dims);
+					} catch (err) {
+						reject(err);
+					}
+				});
+			})
+			.on("error", reject)
+			.on("timeout", function () {
+				this.destroy(new Error("Upstream pokedex-mini.js request timed out"));
+			});
+	});
+}
+
+function isValidDim(dim) {
+	return dim && typeof dim === "object" &&
+		typeof dim.w === "number" && typeof dim.h === "number";
+}
+
+/**
+ * Reduce the upstream BattlePokemonSprites table to only the fields the
+ * client needs for dimension lookups, keeping the generated file smaller.
+ * Skips malformed entries so a future upstream format change cannot break
+ * the client.
+ */
+function stripUpstreamSpriteDimensions(sprites) {
+	const out = {};
+	for (const id in sprites) {
+		const entry = sprites[id];
+		if (!entry || typeof entry !== "object") continue;
+		const stripped = {};
+		if (isValidDim(entry.front)) stripped.front = entry.front;
+		if (isValidDim(entry.frontf)) stripped.frontf = entry.frontf;
+		if (isValidDim(entry.back)) stripped.back = entry.back;
+		if (isValidDim(entry.backf)) stripped.backf = entry.backf;
+		out[id] = stripped;
+	}
+	return out;
+}
+
+function cacheUpstreamSpriteDimensions(dims) {
+	try {
+		fs.mkdirSync(path.dirname(UPSTREAM_SPRITES_CACHE_PATH), { recursive: true });
+		fs.writeFileSync(UPSTREAM_SPRITES_CACHE_PATH, JSON.stringify(dims), "utf8");
+	} catch (err) {
+		console.warn("[relumi] Failed to cache upstream sprite dimensions:", err.message);
+	}
+}
+
+function loadCachedUpstreamSpriteDimensions() {
+	try {
+		const text = fs.readFileSync(UPSTREAM_SPRITES_CACHE_PATH, "utf8");
+		return JSON.parse(text);
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Load upstream sprite dimensions, fetching from the network when possible
+ * and falling back to a local cache for offline builds.
+ */
+async function loadUpstreamBattlePokemonSprites() {
+	try {
+		const dims = await fetchUpstreamBattlePokemonSprites();
+		console.log("[relumi] Fetched upstream sprite dimensions from network.");
+		return dims;
+	} catch (err) {
+		console.warn("[relumi] Could not fetch upstream sprite dimensions:", err.message);
+		const cached = loadCachedUpstreamSpriteDimensions();
+		if (cached) {
+			console.log("[relumi] Using cached upstream sprite dimensions.");
+			return cached;
+		}
+		throw new Error(
+			"No cached upstream sprite dimensions found. " +
+			"Run the build with network access once to populate the cache, " +
+			"or commit a seed cache to the repository."
+		);
 	}
 }
 
@@ -292,10 +515,10 @@ function buildRelumiBanConfig(formatsPath) {
 	);
 	const ouBanlist = parseConstStringArray(formatsPath, RELUMI_BAN_CONSTANTS.ou);
 
-	const baseTagBans = baseBanlist.filter((entry) => entry.startsWith("tag:"));
+	const baseTagBans = baseBanlist.filter(entry => entry.startsWith("tag:"));
 	const basePokemonBans = baseBanlist
-		.filter((entry) => !entry.startsWith("tag:"))
-		.map((entry) => toID(entry));
+		.filter(entry => !entry.startsWith("tag:"))
+		.map(entry => toID(entry));
 
 	// Pre-compute which species IDs match each banned tag, using the server-side
 	// tag filter functions from data/tags.ts. This eliminates the need for the
@@ -322,12 +545,14 @@ function buildRelumiBanConfig(formatsPath) {
 		baseTagBans,
 		basePokemonBans,
 		bannedSpeciesByTag,
-		gen9Allowlist: gen9Allowlist.map((entry) => toID(entry)),
-		ouPokemonBans: ouBanlist.map((entry) => toID(entry)),
+		gen9Allowlist: gen9Allowlist.map(entry => toID(entry)),
+		ouPokemonBans: ouBanlist.map(entry => toID(entry)),
 	});
 }
 
-function main() {
+async function main() {
+	const upstreamBattlePokemonSprites = await loadUpstreamBattlePokemonSprites();
+
 	const pokedex = parseExportedObject(
 		path.join(SERVER_MOD_DIR, "pokedex.ts"),
 		"Pokedex"
@@ -415,6 +640,7 @@ function main() {
 		`\tvar relumiIconIndexes = ${JSON.stringify(iconIndexes)};\n` +
 		`\tvar relumiSpriteEntries = ${JSON.stringify(spriteEntries)};\n` +
 		`\tvar relumiAllSpriteDims = ${JSON.stringify(allSpriteDims)};\n` +
+		`\tvar upstreamBattlePokemonSprites = ${JSON.stringify(upstreamBattlePokemonSprites)};\n` +
 		`\tif (typeof exports !== "undefined") {\n` +
 		`\t\tif (exports.BattlePokedex) {\n` +
 		`\t\t\tfor (var vanillaSid in speciesOverrides) {\n` +
@@ -445,24 +671,12 @@ function main() {
 		`\t\t// Keys match species.id (e.g. "charizardclone"); the GIF file must be named\n` +
 		`\t\t// after species.spriteid (e.g. "charizard-clone.gif") in sprites/ani/ and sprites/ani-back/.\n` +
 		`\t\tif (exports.BattlePokemonSprites) {\n` +
+		`\t\t\t// Expose the true upstream 1x dimensions so the client can render\n` +
+		`\t\t\t// upstream sprites at their native size when useupstreamsprites is on.\n` +
+		`\t\t\texports.__upstreamBattlePokemonSprites = upstreamBattlePokemonSprites;\n` +
 		`\t\t\tfor (var spriteSid in relumiSpriteEntries) {\n` +
 		`\t\t\t\tif (!exports.BattlePokemonSprites[spriteSid]) {\n` +
 		`\t\t\t\t\texports.BattlePokemonSprites[spriteSid] = relumiSpriteEntries[spriteSid];\n` +
-		`\t\t\t\t}\n` +
-		`\t\t\t}\n` +
-		`\t\t\t// Save original dimensions before overwriting, so upstream sprite rendering\n` +
-		`\t\t\t// can use the original 1x values when pref('useupstreamsprites') is enabled.\n` +
-		`\t\t\tif (!window.__originalBattlePokemonSpriteDims) {\n` +
-		`\t\t\t\twindow.__originalBattlePokemonSpriteDims = {};\n` +
-		`\t\t\t\tfor (var dsid in relumiAllSpriteDims) {\n` +
-		`\t\t\t\t\tif (exports.BattlePokemonSprites[dsid]) {\n` +
-		`\t\t\t\t\t\tvar orig = exports.BattlePokemonSprites[dsid];\n` +
-		`\t\t\t\t\t\tvar saved = {};\n` +
-		`\t\t\t\t\t\tfor (var f in relumiAllSpriteDims[dsid]) {\n` +
-		`\t\t\t\t\t\t\tif (orig[f]) saved[f] = {w: orig[f].w, h: orig[f].h};\n` +
-		`\t\t\t\t\t\t}\n` +
-		`\t\t\t\t\t\tif (Object.keys(saved).length) window.__originalBattlePokemonSpriteDims[dsid] = saved;\n` +
-		`\t\t\t\t\t}\n` +
 		`\t\t\t\t}\n` +
 		`\t\t\t}\n` +
 		`\t\t\t// Patch dimensions for all sprites whose GIFs have been updated on disk.\n` +
@@ -614,9 +828,7 @@ function main() {
 	console.log(`- Sprite dimension overrides: ${Object.keys(allSpriteDims).length}`);
 }
 
-try {
-	main();
-} catch (err) {
+main().catch(err => {
 	console.error(err);
 	process.exit(1);
-}
+});
