@@ -86,6 +86,7 @@ export const crqHandlers: { [k: string]: Chat.CRQHandler } = {
 			const replays = await Replays.searchPublic({ format, minRating, username });
 			return { replays };
 		} catch (e) {
+			Monitor.log(`replaylist query failed: ${e}`);
 			return { replays: [] };
 		}
 	},

@@ -237,25 +237,25 @@ export const Replays = new class {
 				return replays.query()`SELECT uploadtime, id, format, players, rating, password
 					FROM replayplayers
 					WHERE playerid LIKE ${usernamePattern} AND formatid = ${format} AND private = 0 AND COALESCE(rating, 0) >= ${minRating}
-					ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+					ORDER BY uploadtime DESC LIMIT 51 OFFSET ${limit1}`.then(this.toReplays);
 			}
 			return replays.query()`SELECT uploadtime, id, format, players, rating, password
 				FROM replayplayers
 				WHERE playerid LIKE ${usernamePattern} AND private = 0 AND COALESCE(rating, 0) >= ${minRating}
-				ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+				ORDER BY uploadtime DESC LIMIT 51 OFFSET ${limit1}`.then(this.toReplays);
 		}
 
 		if (format) {
-			return replays.query()`SELECT uploadtime, id, format, players, rating, password
-				FROM replays
+			return replays.query()`SELECT DISTINCT uploadtime, id, format, players, rating, password
+				FROM replayplayers
 				WHERE private = 0 AND formatid = ${format} AND COALESCE(rating, 0) >= ${minRating}
-				ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+				ORDER BY uploadtime DESC LIMIT 51 OFFSET ${limit1}`.then(this.toReplays);
 		}
 
-		return replays.query()`SELECT uploadtime, id, format, players, rating, password
-			FROM replays
+		return replays.query()`SELECT DISTINCT uploadtime, id, format, players, rating, password
+			FROM replayplayers
 			WHERE private = 0 AND COALESCE(rating, 0) >= ${minRating}
-			ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+			ORDER BY uploadtime DESC LIMIT 51 OFFSET ${limit1}`.then(this.toReplays);
 	}
 
 	fullSearch(term: string, page = 0): Promise<Replay[]> {
