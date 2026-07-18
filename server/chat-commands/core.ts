@@ -17,6 +17,7 @@
 import { Utils, ProcessManager } from '../../lib';
 import type { UserSettings } from '../users';
 import type { GlobalPermission, RoomPermission } from '../user-groups';
+import { Replays } from '../replays';
 
 export const crqHandlers: { [k: string]: Chat.CRQHandler } = {
 	userdetails(target, user, trustable) {
@@ -76,6 +77,17 @@ export const crqHandlers: { [k: string]: Chat.CRQHandler } = {
 	roomlist(target, user, trustable) {
 		if (!trustable) return false;
 		return { rooms: Rooms.global.getBattles(target) };
+	},
+	async replist(target, user, trustable) {
+		if (!trustable) return false;
+		const [format, eloFilter, username] = target.split(',').map(x => x.trim());
+		const minRating = +eloFilter || 0;
+		try {
+			const replays = await Replays.searchPublic({ format, minRating, username });
+			return { replays };
+		} catch (e) {
+			return { replays: [] };
+		}
 	},
 	rooms(target, user, trustable) {
 		if (!trustable) return false;

@@ -213,6 +213,51 @@ export const Replays = new class {
 		}
 	}
 
+	searchPublic(args: {
+		format?: string,
+		minRating?: number,
+		username?: string,
+		page?: number,
+	}): Promise<Replay[]> {
+		if (!replaysDB) return Promise.resolve([]);
+
+		const page = args.page || 0;
+		if (page > 100) return Promise.resolve([]);
+
+		let limit1 = 50 * page;
+		if (limit1 < 0) limit1 = 0;
+
+		const format = args.format ? toID(args.format) : null;
+		const minRating = args.minRating || 0;
+		const username = args.username ? toID(args.username) : null;
+
+		if (username) {
+			const usernamePattern = username + '%';
+			if (format) {
+				return replays.query()`SELECT uploadtime, id, format, players, rating, password
+					FROM replayplayers
+					WHERE playerid LIKE ${usernamePattern} AND formatid = ${format} AND private = 0 AND COALESCE(rating, 0) >= ${minRating}
+					ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+			}
+			return replays.query()`SELECT uploadtime, id, format, players, rating, password
+				FROM replayplayers
+				WHERE playerid LIKE ${usernamePattern} AND private = 0 AND COALESCE(rating, 0) >= ${minRating}
+				ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+		}
+
+		if (format) {
+			return replays.query()`SELECT uploadtime, id, format, players, rating, password
+				FROM replays
+				WHERE private = 0 AND formatid = ${format} AND COALESCE(rating, 0) >= ${minRating}
+				ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+		}
+
+		return replays.query()`SELECT uploadtime, id, format, players, rating, password
+			FROM replays
+			WHERE private = 0 AND COALESCE(rating, 0) >= ${minRating}
+			ORDER BY uploadtime DESC LIMIT ${limit1}, 51`.then(this.toReplays);
+	}
+
 	fullSearch(term: string, page = 0): Promise<Replay[]> {
 		if (page > 0) return Promise.resolve([]);
 
