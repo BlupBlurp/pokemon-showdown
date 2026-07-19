@@ -842,6 +842,23 @@ exports.grouplist = [
 	} catch (e) {}
 
 	let ownPool = null;
+	let replaysPool = null;
+
+	/** Returns a pg.Pool for the replays database. */
+	function getReplaysPool() {
+		if (replaysPool) return replaysPool;
+		const { Pool } = require('pg');
+		replaysPool = new Pool({
+			host: exports.replaysdb.host,
+			port: exports.replaysdb.port,
+			user: exports.replaysdb.user,
+			password: exports.replaysdb.password,
+			database: exports.replaysdb.database,
+			ssl: exports.replaysdb.ssl || { rejectUnauthorized: false },
+			max: 5,
+		});
+		return replaysPool;
+	}
 
 	/** Returns a pg.Pool, preferring the shared teamsPool from teams.ts when available. */
 	function getTeamsPool() {
@@ -911,6 +928,86 @@ exports.grouplist = [
 	}
 
 	exports.customhttpresponse = function (req, res) {
+		// --- Replay JSON serving ---
+		// Serve replay data directly from PostgreSQL when the client requests
+		// /battle-<id>.json. This is needed because Config.routes.replays points
+		// to the game server itself (there is no separate replay server).
+		if (req.url && req.url.startsWith('/battle-') && req.url.endsWith('.json')) {
+			const path = req.url.slice(1); // remove leading '/'
+			const fullId = path.slice('battle-'.length, -5); // strip "battle-" prefix and ".json" suffix
+
+			// Check for password suffix: <baseid>-<31charpw>pw
+			let baseId = fullId;
+			let suppliedPassword = null;
+			const dashIdx = fullId.lastIndexOf('-');
+			if (dashIdx > 0) {
+				const suffix = fullId.slice(dashIdx + 1);
+				if (suffix.endsWith('pw') && suffix.length === 33) {
+					// 33 = 31 password chars + "pw"
+					baseId = fullId.slice(0, dashIdx);
+					suppliedPassword = suffix.slice(0, -2);
+				}
+			}
+
+			getReplaysPool().query(
+				'SELECT id, format, players, log, inputlog, uploadtime, rating, formatid, private, password FROM replays WHERE id = $1',
+				[baseId]
+			).then(result => {
+				const row = result.rows[0];
+				if (!row) {
+					res.writeHead(404);
+					res.end('404 Not Found');
+					return;
+				}
+
+				// Private replays with passwords require the correct password.
+				// Replays that are private without a password ("unlisted") are
+				// accessible to anyone with the direct link.
+				if (row.password && suppliedPassword !== row.password) {
+					res.writeHead(404);
+					res.end('404 Not Found');
+					return;
+				}
+
+				// Increment view count asynchronously (don't wait on it).
+				getReplaysPool().query(
+					'UPDATE replays SET views = views + 1 WHERE id = $1',
+					[baseId]
+				).catch(err => {
+					console.error('[Relumi] replay view update error:', err.message);
+				});				// Format players as an array, stripping '!' privacy prefix.
+				const players = row.players ? row.players.split(',').map(function (p) {
+					return p.startsWith('!') ? p.slice(1) : p;
+				}) : [];
+
+				// Send raw JSON (no ']' prefix) since the client uses JSON.parse
+				// directly on replay responses, unlike login server API responses.
+				const body = JSON.stringify({
+					id: row.id,
+					format: row.format,
+					players: players,
+					log: row.log,
+					inputlog: row.inputlog,
+					uploadtime: row.uploadtime,
+					rating: row.rating,
+					formatid: row.formatid,
+					private: row.private,
+					password: row.password,
+				});
+				res.writeHead(200, {
+					'Content-Type': 'application/json; charset=utf-8',
+					'Cache-Control': 'no-store',
+					'Access-Control-Allow-Origin': '*',
+				});
+				res.end(body);
+			}).catch(err => {
+				console.error('[Relumi] replay lookup error:', err.message);
+				res.writeHead(500);
+				res.end('500 Internal Server Error');
+			});
+			return true;
+		}
+
 		const reqUrl = new URL(req.url, 'http://localhost');
 		const act = reqUrl.searchParams.get('act');
 		if (act !== 'getteams' && act !== 'getteam') return false;
