@@ -631,107 +631,107 @@ export const commands: Chat.ChatCommands = {
 			}
 			let details: { [k: string]: string } = {};
 			switch (newTarget.searchType) {
-				case 'nature':
-					const nature = Dex.natures.get(newTarget.name);
-					buffer += `${nature.name} nature: `;
-					if (nature.plus) {
-						buffer += `+10% ${Dex.stats.names[nature.plus]}, -10% ${Dex.stats.names[nature.minus!]}.`;
-					} else {
-						buffer += `No effect.`;
+			case 'nature':
+				const nature = Dex.natures.get(newTarget.name);
+				buffer += `${nature.name} nature: `;
+				if (nature.plus) {
+					buffer += `+10% ${Dex.stats.names[nature.plus]}, -10% ${Dex.stats.names[nature.minus!]}.`;
+				} else {
+					buffer += `No effect.`;
+				}
+				return this.sendReply(buffer);
+			case 'pokemon':
+				let pokemon = dex.species.get(newTarget.name);
+				if (format?.onModifySpecies) {
+					pokemon = format.onModifySpecies.call({ dex, clampIntRange: Utils.clampIntRange, toID } as Battle, pokemon) || pokemon;
+				}
+				let tierDisplay = room?.settings.dataCommandTierDisplay;
+				if (!tierDisplay && room?.battle) {
+					if (room.battle.format.includes('doubles') || room.battle.format.includes('vgc')) {
+						tierDisplay = 'doubles tiers';
+					} else if (room.battle.format.includes('nationaldex')) {
+						tierDisplay = 'National Dex tiers';
 					}
-					return this.sendReply(buffer);
-				case 'pokemon':
-					let pokemon = dex.species.get(newTarget.name);
-					if (format?.onModifySpecies) {
-						pokemon = format.onModifySpecies.call({ dex, clampIntRange: Utils.clampIntRange, toID } as Battle, pokemon) || pokemon;
+				}
+				if (!tierDisplay) tierDisplay = 'tiers';
+				const displayedTier = tierDisplay === 'tiers' ? pokemon.tier :
+					tierDisplay === 'doubles tiers' ? pokemon.doublesTier :
+					tierDisplay === 'National Dex tiers' ? pokemon.natDexTier :
+					pokemon.num >= 0 ? String(pokemon.num) : pokemon.tier;
+				buffer += `${prefix}${Chat.getDataPokemonHTML(pokemon, dex.gen, displayedTier)}\n`;
+				if (showDetails) {
+					let weighthit = 20;
+					if (pokemon.weighthg >= 2000) {
+						weighthit = 120;
+					} else if (pokemon.weighthg >= 1000) {
+						weighthit = 100;
+					} else if (pokemon.weighthg >= 500) {
+						weighthit = 80;
+					} else if (pokemon.weighthg >= 250) {
+						weighthit = 60;
+					} else if (pokemon.weighthg >= 100) {
+						weighthit = 40;
 					}
-					let tierDisplay = room?.settings.dataCommandTierDisplay;
-					if (!tierDisplay && room?.battle) {
-						if (room.battle.format.includes('doubles') || room.battle.format.includes('vgc')) {
-							tierDisplay = 'doubles tiers';
-						} else if (room.battle.format.includes('nationaldex')) {
-							tierDisplay = 'National Dex tiers';
-						}
-					}
-					if (!tierDisplay) tierDisplay = 'tiers';
-					const displayedTier = tierDisplay === 'tiers' ? pokemon.tier :
-						tierDisplay === 'doubles tiers' ? pokemon.doublesTier :
-						tierDisplay === 'National Dex tiers' ? pokemon.natDexTier :
-						pokemon.num >= 0 ? String(pokemon.num) : pokemon.tier;
-					buffer += `${prefix}${Chat.getDataPokemonHTML(pokemon, dex.gen, displayedTier)}\n`;
-					if (showDetails) {
-						let weighthit = 20;
-						if (pokemon.weighthg >= 2000) {
-							weighthit = 120;
-						} else if (pokemon.weighthg >= 1000) {
-							weighthit = 100;
-						} else if (pokemon.weighthg >= 500) {
-							weighthit = 80;
-						} else if (pokemon.weighthg >= 250) {
-							weighthit = 60;
-						} else if (pokemon.weighthg >= 100) {
-							weighthit = 40;
-						}
-						details = {
-							"Dex#": String(pokemon.num),
-							Gen: String(pokemon.gen) || 'CAP',
-							Height: `${pokemon.heightm} m`,
-						};
-						details["Weight"] = `${pokemon.weighthg / 10} kg <em>(${weighthit} BP)</em>`;
-						const gmaxMove = pokemon.canGigantamax || dex.species.get(pokemon.changesFrom).canGigantamax;
-						if (gmaxMove && dex.gen === 8) details["G-Max Move"] = gmaxMove;
-						if (dex.gen === 1) details["Crit Rate"] = `${((pokemon.baseStats.spe * 100) / 512).toFixed(2)}%`;
-						if (pokemon.color && dex.gen >= 5) details["Dex Colour"] = pokemon.color;
-						if (pokemon.eggGroups && dex.gen >= 2) details["Egg Group(s)"] = pokemon.eggGroups.join(", ");
-						const evos: string[] = [];
-						for (const evoName of pokemon.evos) {
-							const evo = dex.species.get(evoName);
-							if (evo.gen <= dex.gen) {
-								const condition = evo.evoCondition ? ` ${evo.evoCondition}` : ``;
-								switch (evo.evoType) {
-									case 'levelExtra':
-										evos.push(`${evo.name} (level-up${condition})`);
-										break;
-									case 'levelFriendship':
-										evos.push(`${evo.name} (level-up with high Friendship${condition})`);
-										break;
-									case 'levelHold':
-										evos.push(`${evo.name} (level-up holding ${evo.evoItem}${condition})`);
-										break;
-									case 'useItem':
-										evos.push(`${evo.name} (${evo.evoItem})`);
-										break;
-									case 'levelMove':
-										evos.push(`${evo.name} (level-up with ${evo.evoMove}${condition})`);
-										break;
-									case 'other':
-										evos.push(`${evo.name} (${evo.evoCondition})`);
-										break;
-									case 'trade':
-										evos.push(`${evo.name} (trade${evo.evoItem ? ` holding ${evo.evoItem}` : condition})`);
-										break;
-									default:
-										evos.push(`${evo.name} (${evo.evoLevel}${condition})`);
-								}
+					details = {
+						"Dex#": String(pokemon.num),
+						Gen: String(pokemon.gen) || 'CAP',
+						Height: `${pokemon.heightm} m`,
+					};
+					details["Weight"] = `${pokemon.weighthg / 10} kg <em>(${weighthit} BP)</em>`;
+					const gmaxMove = pokemon.canGigantamax || dex.species.get(pokemon.changesFrom).canGigantamax;
+					if (gmaxMove && dex.gen === 8) details["G-Max Move"] = gmaxMove;
+					if (dex.gen === 1) details["Crit Rate"] = `${((pokemon.baseStats.spe * 100) / 512).toFixed(2)}%`;
+					if (pokemon.color && dex.gen >= 5) details["Dex Colour"] = pokemon.color;
+					if (pokemon.eggGroups && dex.gen >= 2) details["Egg Group(s)"] = pokemon.eggGroups.join(", ");
+					const evos: string[] = [];
+					for (const evoName of pokemon.evos) {
+						const evo = dex.species.get(evoName);
+						if (evo.gen <= dex.gen) {
+							const condition = evo.evoCondition ? ` ${evo.evoCondition}` : ``;
+							switch (evo.evoType) {
+							case 'levelExtra':
+								evos.push(`${evo.name} (level-up${condition})`);
+								break;
+							case 'levelFriendship':
+								evos.push(`${evo.name} (level-up with high Friendship${condition})`);
+								break;
+							case 'levelHold':
+								evos.push(`${evo.name} (level-up holding ${evo.evoItem}${condition})`);
+								break;
+							case 'useItem':
+								evos.push(`${evo.name} (${evo.evoItem})`);
+								break;
+							case 'levelMove':
+								evos.push(`${evo.name} (level-up with ${evo.evoMove}${condition})`);
+								break;
+							case 'other':
+								evos.push(`${evo.name} (${evo.evoCondition})`);
+								break;
+							case 'trade':
+								evos.push(`${evo.name} (trade${evo.evoItem ? ` holding ${evo.evoItem}` : condition})`);
+								break;
+							default:
+								evos.push(`${evo.name} (${evo.evoLevel}${condition})`);
 							}
 						}
-						if (pokemon.prevo) {
-							details["Pre-Evolution"] = pokemon.prevo;
-						}
-						if (!evos.length) {
-							details[`<font color="#686868">Does Not Evolve</font>`] = "";
-						} else {
-							details["Evolution"] = evos.join(", ");
-						}
 					}
-					break;
-				case 'item':
-					const item = dex.items.get(newTarget.name);
-					buffer += `${prefix}${Chat.getDataItemHTML(item)}\n`;
-					if (showDetails) {
-						details = {
-							Gen: String(item.gen),
-						};
+					if (pokemon.prevo) {
+						details["Pre-Evolution"] = pokemon.prevo;
+					}
+					if (!evos.length) {
+						details[`<span class="gray">Does Not Evolve</span>`] = "";
+					} else {
+						details["Evolution"] = evos.join(", ");
+					}
+				}
+				break;
+			case 'item':
+				const item = dex.items.get(newTarget.name);
+				buffer += `${prefix}${Chat.getDataItemHTML(item)}\n`;
+				if (showDetails) {
+					details = {
+						Gen: String(item.gen),
+					};
 
 						if (dex.gen >= 4) {
 							if (item.fling) {
@@ -889,7 +889,7 @@ export const commands: Chat.ChatCommands = {
 
 			if (showDetails) {
 				buffer += `${prefix}<font size="1">${Object.entries(details).map(([detail, value]) => (
-					value === '' ? detail : `<font color="#686868">${detail}:</font> ${value}`
+					value === '' ? detail : `<span class="gray">${detail}:</span> ${value}`
 				)).join("&nbsp;|&ThickSpace;")}</font>\n`;
 			}
 		}
