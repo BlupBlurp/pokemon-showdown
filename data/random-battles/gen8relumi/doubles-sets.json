@@ -1786,16 +1786,16 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Head Smash",
-                    "Extreme Speed",
                     "Flare Blitz",
-                    "Wild Charge"
+                    "Extreme Speed",
+                    "Stealth Rock"
                 ],
                 "abilities": [
                     "Rock Head"
                 ],
-                "trainerId": 872,
+                "trainerId": 874,
                 "item": [
-                    "Choice Band"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Jolly"
@@ -6026,19 +6026,19 @@
         "level": 85,
         "sets": [
             {
-                "role": "Doubles Wallbreaker",
+                "role": "Doubles Support",
                 "movepool": [
-                    "Esper Wing",
+                    "Psychic",
                     "Hurricane",
-                    "Calm Mind",
-                    "Roost"
+                    "Heat Wave",
+                    "Tailwind"
                 ],
                 "abilities": [
-                    "Tinted Lens"
+                    "Sheer Force"
                 ],
-                "trainerId": 871,
+                "trainerId": 873,
                 "item": [
-                    "Wise Glasses"
+                    "Life Orb"
                 ],
                 "nature": [
                     "Timid"
@@ -6046,9 +6046,9 @@
                 "evs": {
                     "hp": 0,
                     "atk": 0,
-                    "def": 0,
+                    "def": 6,
                     "spa": 252,
-                    "spd": 6,
+                    "spd": 0,
                     "spe": 252
                 }
             },
@@ -8624,33 +8624,6 @@
                 }
             },
             {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Moonblast",
-                    "Ice Beam",
-                    "Calm Mind",
-                    "Moonlight"
-                ],
-                "abilities": [
-                    "Magic Guard"
-                ],
-                "trainerId": 871,
-                "item": [
-                    "Life Orb"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 6,
-                    "spe": 0
-                }
-            },
-            {
                 "role": "Doubles Support",
                 "movepool": [
                     "Moonblast",
@@ -8702,6 +8675,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Moonblast",
+                    "Soft-Boiled",
+                    "Calm Mind",
+                    "Flamethrower"
+                ],
+                "abilities": [
+                    "Magic Guard"
+                ],
+                "trainerId": 1983,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 198,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 60
                 }
             }
         ]
@@ -9337,33 +9337,6 @@
                 }
             },
             {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Body Press",
-                    "Bulk Up",
-                    "Brave Bird",
-                    "Roost"
-                ],
-                "abilities": [
-                    "Pressure"
-                ],
-                "trainerId": 874,
-                "item": [
-                    "Rocky Helmet"
-                ],
-                "nature": [
-                    "Careful"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 6,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 252,
-                    "spe": 0
-                }
-            },
-            {
                 "role": "Doubles Support",
                 "movepool": [
                     "Tailwind",
@@ -9438,6 +9411,33 @@
                     "def": 252,
                     "spa": 0,
                     "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Brave Bird",
+                    "Body Press",
+                    "Bulk Up",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "trainerId": 844,
+                "item": [
+                    "Rocky Helmet"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
                     "spe": 0
                 }
             }
@@ -10623,28 +10623,28 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Leaf Storm",
                     "Triple Arrows",
-                    "U-turn",
-                    "Leaf Blade",
-                    "Defog"
+                    "Vacuum Wave",
+                    "Confuse Ray"
                 ],
                 "abilities": [
                     "Scrappy"
                 ],
-                "trainerId": 872,
+                "trainerId": 871,
                 "item": [
-                    "Heavy-Duty Boots"
+                    "Life Orb"
                 ],
                 "nature": [
-                    "Impish"
+                    "Timid"
                 ],
                 "evs": {
-                    "hp": 250,
-                    "atk": 164,
-                    "def": 96,
-                    "spa": 0,
-                    "spd": 0,
-                    "spe": 0
+                    "hp": 0,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 252
                 }
             },
             {
@@ -12062,30 +12062,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Take Down",
-                    "Dragon Rush",
-                    "Double-Edge",
-                    "Last Resort"
-                ],
-                "abilities": [
-                    "Infiltrator"
-                ],
-                "trainerId": 433,
-                "nature": [
-                    "Serious"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Dragon Darts",
                     "Psychic Fangs",
                     "Sucker Punch",
@@ -12122,6 +12098,30 @@
                     "Clear Body"
                 ],
                 "trainerId": 533,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Dragon Dance",
+                    "Phantom Force",
+                    "Take Down",
+                    "Dragon Rush"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "trainerId": 201,
                 "nature": [
                     "Hardy"
                 ],
@@ -12231,9 +12231,9 @@
                 "abilities": [
                     "Multiscale"
                 ],
-                "trainerId": 433,
+                "trainerId": 533,
                 "nature": [
-                    "Serious"
+                    "Hardy"
                 ],
                 "evs": {
                     "hp": 84,
@@ -12873,30 +12873,29 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Giga Impact",
-                    "Hyper Beam",
-                    "Outrage",
-                    "Solar Beam"
+                    "Roost",
+                    "Coil",
+                    "Body Slam",
+                    "Dragon Rush"
                 ],
                 "abilities": [
-                    "Serene Grace",
-                    "Run Away",
-                    "Rattled"
-                ]
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Giga Impact",
-                    "Outrage",
-                    "Stealth Rock",
-                    "Rest"
+                    "Serene Grace"
                 ],
-                "abilities": [
-                    "Serene Grace",
-                    "Run Away",
-                    "Rattled"
-                ]
+                "trainerId": 873,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -13578,6 +13577,33 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Coil",
+                    "Supercell Slam",
+                    "Drain Punch",
+                    "Knock Off"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "trainerId": 872,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Coil",
                     "Volt Tackle",
                     "Gastro Acid",
                     "Zap Cannon"
@@ -13596,33 +13622,6 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
-                }
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Thunderbolt",
-                    "Giga Drain",
-                    "Flamethrower",
-                    "Volt Switch"
-                ],
-                "abilities": [
-                    "Levitate"
-                ],
-                "trainerId": 874,
-                "item": [
-                    "Assault Vest"
-                ],
-                "nature": [
-                    "Modest"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 0,
-                    "spa": 252,
-                    "spd": 0,
-                    "spe": 6
                 }
             }
         ]
@@ -15589,10 +15588,10 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Power Whip",
                     "Leech Seed",
-                    "Body Press",
-                    "Spikes",
-                    "Iron Defense"
+                    "Gyro Ball",
+                    "Curse"
                 ],
                 "abilities": [
                     "Iron Barbs"
@@ -15602,14 +15601,14 @@
                     "Leftovers"
                 ],
                 "nature": [
-                    "Impish"
+                    "Sassy"
                 ],
                 "evs": {
-                    "hp": 252,
+                    "hp": 250,
                     "atk": 0,
-                    "def": 252,
+                    "def": 8,
                     "spa": 0,
-                    "spd": 6,
+                    "spd": 252,
                     "spe": 0
                 }
             },
@@ -17228,7 +17227,7 @@
                 "abilities": [
                     "Rough Skin"
                 ],
-                "trainerId": 873,
+                "trainerId": 872,
                 "item": [
                     "White Herb"
                 ],
@@ -17491,33 +17490,6 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Earth Power",
-                    "Clear Smog",
-                    "Scald",
-                    "Recover"
-                ],
-                "abilities": [
-                    "Storm Drain"
-                ],
-                "trainerId": 873,
-                "item": [
-                    "Leftovers"
-                ],
-                "nature": [
-                    "Calm"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 6,
-                    "spa": 0,
-                    "spd": 252,
-                    "spe": 0
-                }
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
                     "Acid Armor",
                     "Amnesia",
                     "Recover",
@@ -17561,6 +17533,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Earth Power",
+                    "Sludge Bomb",
+                    "Surf",
+                    "Ice Beam"
+                ],
+                "abilities": [
+                    "Storm Drain"
+                ],
+                "trainerId": 840,
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 244,
+                    "atk": 0,
+                    "def": 12,
+                    "spa": 250,
+                    "spd": 0,
+                    "spe": 4
                 }
             },
             {
@@ -18451,27 +18450,27 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Earthquake",
-                    "Swords Dance",
-                    "Roost",
-                    "Stealth Rock"
+                    "Wing Attack",
+                    "Protect",
+                    "Roost"
                 ],
                 "abilities": [
-                    "Poison Heal"
+                    "Hyper Cutter"
                 ],
-                "trainerId": 873,
+                "trainerId": 186,
                 "item": [
                     "Toxic Orb"
                 ],
                 "nature": [
-                    "Careful"
+                    "Impish"
                 ],
                 "evs": {
                     "hp": 246,
                     "atk": 0,
                     "def": 0,
                     "spa": 0,
-                    "spd": 252,
-                    "spe": 12
+                    "spd": 244,
+                    "spe": 20
                 }
             }
         ]
@@ -19172,30 +19171,6 @@
     "goodra": {
         "level": 81,
         "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Muddy Water",
-                    "Sludge Wave",
-                    "Dragon Rush",
-                    "Power Whip"
-                ],
-                "abilities": [
-                    "Water Absorb"
-                ],
-                "trainerId": 433,
-                "nature": [
-                    "Serious"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
             {
                 "role": "Bulky Attacker",
                 "movepool": [
@@ -24692,30 +24667,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Outrage",
-                    "Hydro Pump",
-                    "Hyper Beam",
-                    "Rain Dance"
-                ],
-                "abilities": [
-                    "Sniper"
-                ],
-                "trainerId": 433,
-                "nature": [
-                    "Serious"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Hydro Pump",
                     "Hurricane",
                     "Ice Beam",
@@ -24735,6 +24686,30 @@
                     "spa": 252,
                     "spd": 6,
                     "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Outrage",
+                    "Hydro Pump",
+                    "Hyper Beam",
+                    "Rain Dance"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "trainerId": 591,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
                 }
             }
         ]
@@ -26654,33 +26629,6 @@
                     "def": 0,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Close Combat",
-                    "Leaf Blade",
-                    "Victory Dance",
-                    "Sleep Powder"
-                ],
-                "abilities": [
-                    "Hustle"
-                ],
-                "trainerId": 873,
-                "item": [
-                    "Wide Lens"
-                ],
-                "nature": [
-                    "Jolly"
-                ],
-                "evs": {
-                    "hp": 0,
-                    "atk": 252,
-                    "def": 0,
-                    "spa": 0,
-                    "spd": 6,
                     "spe": 252
                 }
             },
@@ -29300,6 +29248,33 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Sucker Punch",
+                    "Iron Head",
+                    "Play Rough",
+                    "Ice Punch"
+                ],
+                "abilities": [
+                    "Huge Power"
+                ],
+                "trainerId": 873,
+                "item": [
+                    "Assault Vest"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
                     "Body Slam",
                     "Ice Punch",
                     "Play Rough",
@@ -30626,7 +30601,7 @@
                 "movepool": [
                     "Scald",
                     "Ice Beam",
-                    "Haze",
+                    "Dragon Tail",
                     "Recover"
                 ],
                 "abilities": [
@@ -30634,7 +30609,7 @@
                 ],
                 "trainerId": 872,
                 "item": [
-                    "Flame Orb"
+                    "Leftovers"
                 ],
                 "nature": [
                     "Bold"
@@ -30642,10 +30617,10 @@
                 "evs": {
                     "hp": 252,
                     "atk": 0,
-                    "def": 252,
+                    "def": 250,
                     "spa": 0,
                     "spd": 0,
-                    "spe": 6
+                    "spe": 8
                 }
             }
         ]
@@ -33832,6 +33807,33 @@
                 }
             },
             {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Nuzzle",
+                    "Volt Switch",
+                    "Hidden Power",
+                    "Charge Beam"
+                ],
+                "abilities": [
+                    "Electric Surge"
+                ],
+                "trainerId": 873,
+                "item": [
+                    "Red Card"
+                ],
+                "nature": [
+                    "Hasty"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Doubles Support",
                 "movepool": [
                     "Follow Me",
@@ -33899,33 +33901,6 @@
                 "trainerId": 397,
                 "nature": [
                     "Bashful"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Sweet Kiss",
-                    "Thunder Wave",
-                    "Thunderbolt",
-                    "Fake Tears"
-                ],
-                "abilities": [
-                    "Volt Absorb"
-                ],
-                "trainerId": 415,
-                "item": [
-                    "Sitrus Berry"
-                ],
-                "nature": [
-                    "Quirky"
                 ],
                 "evs": {
                     "hp": 84,
@@ -35710,6 +35685,33 @@
                 }
             },
             {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Tri Attack",
+                    "Shadow Ball",
+                    "Nasty Plot",
+                    "Ice Beam"
+                ],
+                "abilities": [
+                    "Adaptability"
+                ],
+                "trainerId": 872,
+                "item": [
+                    "Life Orb"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 252
+                }
+            },
+            {
                 "role": "Doubles Support",
                 "movepool": [
                     "Trick Room",
@@ -35782,30 +35784,6 @@
                     "spa": 252,
                     "spd": 0,
                     "spe": 252
-                }
-            },
-            {
-                "role": "Doubles Support",
-                "movepool": [
-                    "Trick Room",
-                    "Psychic",
-                    "Zap Cannon",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Adaptability"
-                ],
-                "trainerId": 655,
-                "nature": [
-                    "Serious"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
                 }
             }
         ]
@@ -39186,30 +39164,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Double-Edge",
-                    "Fly",
-                    "Hydro Pump",
-                    "Outrage"
-                ],
-                "abilities": [
-                    "Intimidate"
-                ],
-                "trainerId": 433,
-                "nature": [
-                    "Serious"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Dragon Claw",
                     "Fire Fang",
                     "Iron Tail",
@@ -39253,6 +39207,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Earthquake",
+                    "Iron Head",
+                    "Dragon Claw",
+                    "Thunder Fang"
+                ],
+                "abilities": [
+                    "Moxie"
+                ],
+                "trainerId": 807,
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -39452,15 +39433,15 @@
                 "movepool": [
                     "Ceaseless Edge",
                     "Razor Shell",
-                    "Knock Off",
-                    "Sacred Sword"
+                    "Aqua Jet",
+                    "Knock Off"
                 ],
                 "abilities": [
                     "Sharpness"
                 ],
                 "trainerId": 871,
                 "item": [
-                    "Choice Scarf"
+                    "Focus Sash"
                 ],
                 "nature": [
                     "Jolly"
@@ -40005,6 +39986,33 @@
                     "spa": 8,
                     "spd": 0,
                     "spe": 250
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Energy Ball",
+                    "Draco Meteor",
+                    "Focus Blast",
+                    "Endeavor"
+                ],
+                "abilities": [
+                    "Unburden"
+                ],
+                "trainerId": 433,
+                "item": [
+                    "White Herb"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 88,
+                    "spd": 84,
+                    "spe": 86
                 }
             },
             {
@@ -43083,33 +43091,6 @@
                 }
             },
             {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Psychic",
-                    "Sludge Bomb",
-                    "Flamethrower",
-                    "Scald"
-                ],
-                "abilities": [
-                    "Regenerator"
-                ],
-                "trainerId": 871,
-                "item": [
-                    "Assault Vest"
-                ],
-                "nature": [
-                    "Calm"
-                ],
-                "evs": {
-                    "hp": 252,
-                    "atk": 0,
-                    "def": 12,
-                    "spa": 126,
-                    "spd": 120,
-                    "spe": 0
-                }
-            },
-            {
                 "role": "Doubles Support",
                 "movepool": [
                     "Psych Up",
@@ -43361,6 +43342,33 @@
             {
                 "role": "Doubles Support",
                 "movepool": [
+                    "Fake Out",
+                    "Acrobatics",
+                    "Close Combat",
+                    "Dire Claw"
+                ],
+                "abilities": [
+                    "Unburden"
+                ],
+                "trainerId": 873,
+                "item": [
+                    "Electric Seed"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Doubles Support",
+                "movepool": [
                     "Poison Jab",
                     "Fake Out",
                     "Close Combat",
@@ -43410,30 +43418,6 @@
                     "spa": 0,
                     "spd": 8,
                     "spe": 252
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Double Team",
-                    "Close Combat",
-                    "Counter",
-                    "Sucker Punch"
-                ],
-                "abilities": [
-                    "Poison Touch"
-                ],
-                "trainerId": 399,
-                "nature": [
-                    "Bashful"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
                 }
             }
         ]
@@ -47995,6 +47979,33 @@
                 "abilities": [
                     "Shell Armor"
                 ],
+                "trainerId": 433,
+                "item": [
+                    "White Herb"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 88,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
+                    "Dragon Pulse",
+                    "Scorching Sands",
+                    "Flamethrower",
+                    "Shell Smash"
+                ],
+                "abilities": [
+                    "Shell Armor"
+                ],
                 "trainerId": 865,
                 "item": [
                     "White Herb"
@@ -48199,14 +48210,14 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Eruption",
-                    "Focus Blast",
+                    "Scorching Sands",
                     "Shadow Ball",
                     "Extrasensory"
                 ],
                 "abilities": [
                     "Flash Fire"
                 ],
-                "trainerId": 873,
+                "trainerId": 871,
                 "item": [
                     "Choice Scarf"
                 ],
