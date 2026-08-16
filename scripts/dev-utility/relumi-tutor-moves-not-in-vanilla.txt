@@ -1,0 +1,243 @@
+=== Relumi Tutor Moves Not Learned in Vanilla (Any Method) ===
+
+#5 Charmeleon (charmeleon): ancientpower
+#6 Charizard (charizard): ancientpower
+#7 Squirtle (squirtle): zapcannon
+#8 Wartortle (wartortle): lifedew, zapcannon
+#9 Blastoise (blastoise): lifedew, zapcannon
+#15 Beedrill (beedrill): irondefense
+#16 Pidgey (pidgey): dualwingbeat
+#17 Pidgeotto (pidgeotto): dualwingbeat
+#18 Pidgeot (pidgeot): dualwingbeat
+#19 Rattata (rattata): laserfocus
+#19 Rattata-Alola (rattataalola): mudslap, swift
+#20 Raticate (raticate): laserfocus
+#20 Raticate-Alola (raticatealola): mudslap, swift
+#21 Spearow (spearow): dualwingbeat
+#22 Fearow (fearow): dualwingbeat
+#25 Pikachu (pikachu): icepunch
+#25 Pikachu-Belle (pikachubelle): covet, curse, electroweb, endeavor, helpinghand, knockoff, laserfocus, magnetrise, mudslap, risingvoltage, rollout, seismictoss, signalbeam, snore, swift, thunderpunch, uproar, zapcannon
+#25 Pikachu-Cosplay (pikachucosplay): curse, endeavor, laserfocus, mudslap, risingvoltage, rollout, seismictoss, swift, uproar, zapcannon
+#25 Pikachu-Libre (pikachulibre): covet, curse, electroweb, endeavor, helpinghand, knockoff, laserfocus, magnetrise, mudslap, risingvoltage, rollout, seismictoss, signalbeam, snore, swift, thunderpunch, uproar, zapcannon
+#25 Pikachu-Original (pikachuoriginal): curse, mudslap, rollout, seismictoss, zapcannon
+#25 Pikachu-PhD (pikachuphd): covet, curse, electroweb, endeavor, helpinghand, knockoff, laserfocus, magnetrise, mudslap, risingvoltage, rollout, seismictoss, signalbeam, snore, swift, thunderpunch, uproar, zapcannon
+#25 Pikachu-Pop-Star (pikachupopstar): covet, curse, electroweb, endeavor, helpinghand, knockoff, laserfocus, magnetrise, mudslap, risingvoltage, rollout, seismictoss, signalbeam, snore, swift, thunderpunch, uproar, zapcannon
+#25 Pikachu-Rock-Star (pikachurockstar): covet, curse, electroweb, endeavor, helpinghand, knockoff, laserfocus, magnetrise, mudslap, risingvoltage, rollout, seismictoss, signalbeam, snore, swift, thunderpunch, uproar, zapcannon
+#25 Pikachu-Starter (pikachustarter): covet, curse, electroweb, endeavor, knockoff, laserfocus, magnetrise, mudslap, risingvoltage, rollout, signalbeam, snore, uproar, zapcannon
+#26 Raichu (raichu): icepunch
+#26 Raichu-Alola (raichualola): icepunch, mudslap, rollout, zapcannon
+#27 Sandshrew-Alola (sandshrewalola): mudslap
+#28 Sandslash-Alola (sandslashalola): mudslap
+#30 Nidorina (nidorina): suckerpunch
+#31 Nidoqueen (nidoqueen): suckerpunch
+#37 Vulpix (vulpix): healbell
+#37 Vulpix-Alola (vulpixalola): ominouswind
+#38 Ninetales (ninetales): healbell, wonderroom
+#38 Ninetales-Alola (ninetalesalola): ominouswind, scorchingsands
+#52 Meowth-Alola (meowthalola): mudslap, zapcannon
+#52 Meowth-Galar (meowthgalar): lastresort, mudslap, zapcannon
+#53 Persian-Alola (persianalola): mudslap, zapcannon
+#58 Growlithe-Hisui (growlithehisui): ancientpower, mudslap, snore, swift
+#59 Arcanine-Hisui (arcaninehisui): ancientpower, covet, laserfocus, mudslap, snore, swift
+#74 Geodude (geodude): allyswitch
+#74 Geodude-Alola (geodudealola): allyswitch, ancientpower, poweruppunch, suckerpunch
+#75 Graveler (graveler): allyswitch
+#75 Graveler-Alola (graveleralola): ancientpower, poweruppunch, suckerpunch, zapcannon
+#76 Golem (golem): allyswitch, spikes
+#76 Golem-Alola (golemalola): ancientpower, furycutter, poweruppunch, rollout, spikes, suckerpunch, zapcannon
+#77 Ponyta-Galar (ponytagalar): heatwave
+#78 Rapidash-Galar (rapidashgalar): heatwave, scorchingsands
+#79 Slowpoke-Galar (slowpokegalar): afteryou, aquatail, magiccoat, mudslap, signalbeam, zapcannon
+#80 Slowbro-Galar (slowbrogalar): afteryou, aquatail, block, furycutter, magiccoat, mudslap, seismictoss, signalbeam, zapcannon
+#81 Magnemite (magnemite): allyswitch
+#82 Magneton (magneton): allyswitch
+#83 Farfetch’d-Galar (farfetchdgalar): aircutter, laserfocus, lastresort, mudslap, ominouswind, tailwind, twister, uproar
+#88 Grimer-Alola (grimeralola): zapcannon
+#89 Muk-Alola (mukalola): poweruppunch, zapcannon
+#100 Voltorb-Hisui (voltorbhisui): magiccoat, magnetrise, signalbeam, snore, suckerpunch, synthesis, zapcannon
+#101 Electrode-Hisui (electrodehisui): magiccoat, magnetrise, signalbeam, snore, suckerpunch, synthesis, worryseed, zapcannon
+#103 Exeggutor-Alola (exeggutoralola): ancientpower, rollout
+#105 Marowak-Alola (marowakalola): furycutter, poweruppunch
+#106 Hitmonlee (hitmonlee): allyswitch
+#107 Hitmonchan (hitmonchan): allyswitch
+#110 Weezing-Galar (weezinggalar): rollout, zapcannon
+#122 Mr. Mime-Galar (mrmimegalar): covet, curse, firepunch, magiccoat, mudslap, poweruppunch, seismictoss, signalbeam, teleport, thunderpunch, zapcannon
+#128 Tauros-Paldea-Aqua (taurospaldeaaqua): helpinghand, icywind, pursuit, roleplay, snore, spite, uproar, zapcannon
+#128 Tauros-Paldea-Blaze (taurospaldeablaze): helpinghand, icywind, pursuit, roleplay, snore, spite, uproar, zapcannon
+#128 Tauros-Paldea-Combat (taurospaldeacombat): helpinghand, icywind, pursuit, roleplay, snore, spite, uproar, zapcannon
+#133 Eevee-Starter (eeveestarter): healbell, laserfocus, snore
+#140 Kabuto (kabuto): dive
+#144 Articuno-Galar (articunogalar): laserfocus, mudslap, ominouswind, signalbeam, skyattack, twister
+#145 Zapdos-Galar (zapdosgalar): aircutter, laserfocus, mudslap, ominouswind, signalbeam, skyattack, twister
+#146 Moltres-Galar (moltresgalar): aircutter, laserfocus, mudslap, ominouswind, scorchingsands, twister
+#151 Mew (mew): aromatherapy, healblock, pursuit
+#155 Cyndaquil (cyndaquil): scorchingsands
+#156 Quilava (quilava): scorchingsands
+#157 Typhlosion (typhlosion): poltergeist, spite
+#157 Typhlosion-Hisui (typhlosionhisui): covet, furycutter, mudslap, ominouswind, poweruppunch, scorchingsands, seismictoss, snore
+#165 Ledyba (ledyba): dualwingbeat
+#166 Ledian (ledian): dualwingbeat
+#172 Pichu (pichu): icepunch
+#172 Pichu-Spiky-eared (pichuspikyeared): covet, curse, electroweb, seismictoss, thunderpunch, zapcannon
+#175 Togepi (togepi): allyswitch
+#176 Togetic (togetic): allyswitch
+#193 Yanma (yanma): dualwingbeat
+#198 Murkrow (murkrow): drillrun
+#206 Dunsparce (dunsparce): dracometeor
+#211 Qwilfish-Hisui (qwilfishhisui): bounce, dive, foulplay, rollout, signalbeam, snore
+#214 Heracross (heracross): outrage
+#215 Sneasel-Hisui (sneaselhisui): foulplay, furycutter, knockoff, laserfocus, mudslap, poweruppunch, seismictoss, snore, superpower, thunderpunch
+#216 Teddiursa (teddiursa): stompingtantrum
+#218 Slugma (slugma): scorchingsands
+#222 Corsola-Galar (corsolagalar): endeavor, mudslap, ominouswind, painsplit, rollout
+#228 Houndour (houndour): scorchingsands
+#229 Houndoom (houndoom): scorchingsands
+#231 Phanpy (phanpy): spikes
+#232 Donphan (donphan): spikes
+#236 Tyrogue (tyrogue): allyswitch
+#237 Hitmontop (hitmontop): allyswitch
+#254 Sceptile (sceptile): dracometeor
+#263 Zigzagoon-Galar (zigzagoongalar): covet, foulplay, furycutter, lastresort, mudslap, rollout, superfang
+#264 Linoone (linoone): foulplay, knockoff, superpower
+#264 Linoone-Galar (linoonegalar): covet, furycutter, lastresort, mudslap, rollout, superfang
+#267 Beautifly (beautifly): dualwingbeat, irondefense, leechlife
+#269 Dustox (dustox): dualwingbeat, irondefense, leechlife
+#276 Taillow (taillow): dualwingbeat
+#277 Swellow (swellow): dualwingbeat
+#291 Ninjask (ninjask): spikes
+#296 Makuhita (makuhita): ironhead
+#299 Nosepass (nosepass): allyswitch
+#309 Electrike (electrike): zapcannon
+#310 Manectric (manectric): zapcannon
+#311 Plusle (plusle): zapcannon
+#312 Minun (minun): zapcannon
+#331 Cacnea (cacnea): scorchingsands
+#332 Cacturne (cacturne): scorchingsands
+#343 Baltoy (baltoy): irondefense
+#358 Chimecho (chimecho): ominouswind
+#363 Spheal (spheal): liquidation
+#364 Sealeo (sealeo): liquidation
+#367 Huntail (huntail): irondefense
+#368 Gorebyss (gorebyss): irondefense
+#375 Metang (metang): zapcannon
+#376 Metagross (metagross): zapcannon
+#385 Jirachi (jirachi): zapcannon
+#390 Chimchar (chimchar): scorchingsands, seismictoss
+#391 Monferno (monferno): scorchingsands, seismictoss
+#392 Infernape (infernape): seismictoss
+#398 Staraptor (staraptor): seismictoss
+#400 Bibarel (bibarel): seismictoss
+#403 Shinx (shinx): zapcannon
+#404 Luxio (luxio): zapcannon
+#405 Luxray (luxray): zapcannon
+#408 Cranidos (cranidos): icepunch, seismictoss
+#409 Rampardos (rampardos): icepunch, seismictoss
+#410 Shieldon (shieldon): selfdestruct
+#411 Bastiodon (bastiodon): selfdestruct
+#413 Wormadam (wormadam): earthpower, gunkshot, irondefense, ironhead, magnetrise, mudslap
+#413 Wormadam-Trash (wormadamtrash): steelbeam
+#414 Mothim (mothim): dualwingbeat
+#416 Vespiquen (vespiquen): seismictoss
+#417 Pachirisu (pachirisu): zapcannon
+#418 Buizel (buizel): seismictoss
+#419 Floatzel (floatzel): seismictoss
+#424 Ambipom (ambipom): seismictoss, zapcannon
+#425 Drifloon (drifloon): seismictoss
+#426 Drifblim (drifblim): seismictoss
+#427 Buneary (buneary): seismictoss
+#428 Lopunny (lopunny): seismictoss
+#429 Mismagius (mismagius): zapcannon
+#430 Honchkrow (honchkrow): drillrun
+#433 Chingling (chingling): ominouswind
+#436 Bronzor (bronzor): selfdestruct
+#437 Bronzong (bronzong): selfdestruct
+#438 Bonsly (bonsly): irondefense, seismictoss
+#439 Mime Jr. (mimejr): irondefense, seismictoss, zapcannon, zenheadbutt
+#440 Happiny (happiny): zapcannon
+#441 Chatot (chatot): dualwingbeat
+#442 Spiritomb (spiritomb): selfdestruct
+#446 Munchlax (munchlax): seismictoss, zapcannon
+#447 Riolu (riolu): seismictoss
+#448 Lucario (lucario): seismictoss
+#453 Croagunk (croagunk): earthpower, seismictoss
+#454 Toxicroak (toxicroak): earthpower, seismictoss
+#455 Carnivine (carnivine): leechlife
+#459 Snover (snover): seismictoss
+#460 Abomasnow (abomasnow): seismictoss
+#463 Lickilicky (lickilicky): seismictoss
+#464 Rhyperior (rhyperior): seismictoss, zapcannon
+#466 Electivire (electivire): seismictoss, zapcannon
+#467 Magmortar (magmortar): seismictoss, zapcannon
+#468 Togekiss (togekiss): seismictoss, zapcannon
+#470 Leafeon (leafeon): zapcannon
+#471 Glaceon (glaceon): zapcannon
+#475 Gallade (gallade): seismictoss
+#476 Probopass (probopass): selfdestruct
+#477 Dusknoir (dusknoir): seismictoss
+#479 Rotom (rotom): zapcannon
+#479 Rotom-Fan (rotomfan): allyswitch, electroweb, foulplay, helpinghand, mudslap, ominouswind, painsplit, poltergeist, risingvoltage, signalbeam, snore, spite, suckerpunch, swift, trick, uproar
+#479 Rotom-Frost (rotomfrost): allyswitch, electroweb, foulplay, helpinghand, mudslap, ominouswind, painsplit, poltergeist, risingvoltage, signalbeam, snore, spite, suckerpunch, swift, trick, uproar
+#479 Rotom-Heat (rotomheat): allyswitch, electroweb, foulplay, helpinghand, mudslap, ominouswind, painsplit, poltergeist, risingvoltage, signalbeam, snore, spite, suckerpunch, swift, trick, uproar
+#479 Rotom-Mow (rotommow): allyswitch, electroweb, foulplay, helpinghand, mudslap, ominouswind, painsplit, poltergeist, risingvoltage, signalbeam, snore, spite, suckerpunch, swift, trick, uproar
+#479 Rotom-Wash (rotomwash): allyswitch, electroweb, foulplay, helpinghand, mudslap, ominouswind, painsplit, poltergeist, risingvoltage, signalbeam, snore, spite, suckerpunch, swift, trick, uproar
+#480 Uxie (uxie): seismictoss
+#486 Regigigas (regigigas): seismictoss, selfdestruct
+#493 Arceus (arceus): zapcannon
+#496 Servine (servine): twister
+#497 Serperior (serperior): twister
+#499 Pignite (pignite): suckerpunch
+#500 Emboar (emboar): suckerpunch
+#503 Samurott (samurott): lashout
+#550 Basculin-White-Striped (basculinwhitestriped): aquatail
+#571 Zoroark-Hisui (zoroarkhisui): ominouswind
+#627 Rufflet (rufflet): twister
+#628 Braviary-Hisui (braviaryhisui): ominouswind, twister
+#641 Tornadus (tornadus): twister
+#642 Thundurus (thundurus): twister
+#645 Landorus (landorus): twister
+#658 Greninja-Bond (greninjabond): dive, poweruppunch
+#666 Vivillon-Fancy (vivillonfancy): skittersmack
+#666 Vivillon-Pokeball (vivillonpokeball): skittersmack
+#670 Floette-Eternal (floetteeternal): metronome, swift, trick
+#700 Sylveon (sylveon): allyswitch
+#709 Trevenant (trevenant): suckerpunch
+#713 Avalugg-Hisui (avalugghisui): earthpower
+#718 Zygarde-10% (zygarde10): block, breakingswipe, dracometeor, earthpower, painsplit, scaleshot, scorchingsands, skittersmack, snore, spite, stompingtantrum, superpower, swift, zenheadbutt
+#724 Decidueye (decidueye): coaching
+#724 Decidueye-Hisui (decidueyehisui): spikes
+#729 Brionne (brionne): lifedew
+#730 Primarina (primarina): lifedew
+#773 Silvally (silvally): firepledge, waterpledge
+#800 Necrozma-Dawn-Wings (necrozmadawnwings): allyswitch, breakingswipe, earthpower, expandingforce, gravity, heatwave, irondefense, ironhead, knockoff, magnetrise, meteorbeam, outrage, signalbeam, snore, swift
+#800 Necrozma-Dusk-Mane (necrozmaduskmane): allyswitch, breakingswipe, earthpower, expandingforce, gravity, heatwave, irondefense, ironhead, knockoff, magnetrise, meteorbeam, outrage, signalbeam, snore, swift
+#800 Necrozma-Ultra (necrozmaultra): allyswitch, earthpower, gravity, heatwave, irondefense, ironhead, knockoff, magnetrise, outrage, signalbeam, snore
+#801 Magearna-Original (magearnaoriginal): afteryou, healbell, lastresort, magnetrise, signalbeam
+#811 Thwackey (thwackey): worryseed
+#812 Rillaboom (rillaboom): worryseed
+#814 Raboot (raboot): suckerpunch
+#815 Cinderace (cinderace): suckerpunch
+#823 Corviknight (corviknight): skyattack
+#869 Alcremie (alcremie): lastresort
+#876 Indeedee-F (indeedeef): gravity
+#888 Zacian-Crowned (zaciancrowned): helpinghand, irondefense, ironhead, laserfocus, snore, solarblade, steelbeam, swift
+#889 Zamazenta-Crowned (zamazentacrowned): coaching, helpinghand, irondefense, ironhead, laserfocus, snore, steelbeam, swift
+#898 Calyrex-Ice (calyrexice): endeavor, liquidation, painsplit, scaleshot, spite
+#901 Ursaluna (ursaluna): vacuumwave
+#901 Ursaluna-Bloodmoon (ursalunabloodmoon): covet, curse, metronome
+#904 Overqwil (overqwil): aquatail, selfdestruct
+#925 Maushold (maushold): covet, curse, endeavor, ironhead, uproar, zenheadbutt
+#931 Squawkabilly (squawkabilly): earthpower, metronome, seedbomb, solarblade, swift, terrainpulse
+#947 Brambleghast (brambleghast): block
+#964 Palafin (palafin): bounce
+#966 Revavroom (revavroom): selfdestruct
+#978 Tatsugiri (tatsugiri): aquatail, curse, dive, liquidation, stompingtantrum, zenheadbutt
+#978 Tatsugiri-Stretchy (tatsugiristretchy): aquatail, curse, dive, liquidation, stompingtantrum, zenheadbutt
+#999 Gimmighoul (gimmighoul): ironhead, lowkick, poltergeist, steelbeam, thunderpunch, trick
+#1007 Koraidon (koraidon): coaching, expandingforce, firepunch, furycutter, icepunch, icywind, knockoff, liquidation, metronome, swift, thunderpunch, trick, vacuumwave
+#1008 Miraidon (miraidon): coaching, expandingforce, firepunch, furycutter, icepunch, icywind, knockoff, liquidation, lowkick, metronome, swift, thunderpunch, trick, vacuumwave
+#1011 Dipplin (dipplin): rollout, suckerpunch
+#1012 Poltchageist (poltchageist): dracometeor, grassyglide, outrage, rollout, seedbomb, suckerpunch
+#1012 Poltchageist-Artisan (poltchageistartisan): dracometeor, grassyglide, outrage, rollout, seedbomb, suckerpunch
+#1013 Sinistcha (sinistcha): dracometeor, grassyglide, outrage, rollout, seedbomb, suckerpunch
+#1013 Sinistcha-Masterpiece (sinistchamasterpiece): dracometeor, grassyglide, outrage, rollout, seedbomb, suckerpunch
+#1019 Hydrapple (hydrapple): rollout, suckerpunch

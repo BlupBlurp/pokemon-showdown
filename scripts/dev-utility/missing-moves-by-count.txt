@@ -1,0 +1,427 @@
+=== Moves learned in vanilla but removed from Relumi (per Pokemon) ===
+
+Vanilla species: 1287
+Compared (present in both files): 1171
+Skipped (no Relumi learnset): 116 (95 CAP, 21 other)
+Species with at least one missing move: 961
+Distinct missing moves: 417
+Filtered (egg move on first stage): 329
+
+count	move
+914	round
+817	confide
+712	secretpower
+487	naturalgift
+443	captivate
+363	mimic
+360	headbutt
+323	bodyslam
+256	doubleedge
+215	megakick
+207	echoedvoice
+203	megapunch
+201	bide
+183	hail
+181	retaliate
+171	rage
+157	incinerate
+152	telekinesis
+138	snatch
+136	brutalswing
+129	honeclaws
+115	takedown
+115	throatchop
+111	assurance
+109	dynamicpunch
+104	acrobatics
+103	naturepower
+101	defensecurl
+95	detect
+92	smackdown
+86	skullbash
+84	counter
+83	embargo
+81	mudshot
+75	storedpower
+74	revenge
+73	nightmare
+66	reflect (TM)
+64	batonpass
+62	agility
+62	sludgewave
+56	refresh
+55	hydropump
+55	psywave
+55	reversal
+52	dragontail
+51	payday
+49	encore
+49	submission
+48	mudsport
+47	focusenergy
+41	drainingkiss
+41	powerswap
+41	sandtomb
+40	bubblebeam
+40	guardswap
+40	triattack
+39	muddywater
+39	watersport
+37	chipaway
+37	stringshot
+35	frostbreath
+35	watergun
+33	electroball
+32	dragonrage
+30	amnesia
+29	quash
+28	firespin
+27	celebrate
+27	luckychant
+27	magicalleaf
+27	mefirst
+27	punishment
+27	razorwind
+27	silverwind
+27	wakeupslap
+26	speedswap
+25	fissure
+24	bugbite
+24	feintattack
+24	wringout
+22	flameburst
+22	futuresight
+22	megadrain
+22	mirrormove
+22	skydrop
+21	eerieimpulse
+20	sweetscent
+19	beatup
+19	darkestlariat
+19	defog (TM)
+19	doubleslap
+19	synchronoise
+18	tackle
+18	tailslap
+17	slash
+16	odorsleuth
+16	venomdrench
+15	aurasphere
+15	bestow
+15	bubble
+15	leer
+15	rototiller
+13	psychup (TM)
+13	smellingsalts
+13	sonicboom
+13	whirlpool (TM)
+12	assist
+12	bravebird
+12	camouflage
+12	furyswipes
+12	mirrorshot
+12	phantomforce
+12	powerwhip
+12	scaryface (TM)
+11	barrier
+11	leafstorm
+10	crunch (TM)
+10	pinmissile
+10	sing
+10	trumpcard
+10	workup (TM)
+9	blazekick
+9	bodypress (TM)
+9	dragonbreath
+9	furyattack
+9	happyhour
+9	megahorn
+9	pluck (TM)
+9	rockthrow
+9	wish
+8	cosmicpower
+8	flareblitz
+8	frustration (TM)
+8	heartstamp
+8	iceball
+8	razorshell
+8	return (TM)
+8	whirlwind
+7	auroraveil
+7	charm (TM)
+7	followme
+7	horndrill
+7	iondeluge
+7	morningsun
+7	playrough (TM)
+7	psychocut (TM)
+7	sleeptalk (TM)
+7	spotlight
+6	attract (TM)
+6	brickbreak (TM)
+6	flamethrower (TM)
+6	heavyslam (TM)
+6	holdback (TM)
+6	irontail (TM)
+6	mist
+6	peck
+6	pollenpuff (TM)
+6	sandattack
+6	smartstrike (TM)
+6	spiderweb
+6	steamroller
+6	swagger (TM)
+6	toxicspikes
+6	venoshock (TM)
+6	weatherball (TM)
+5	calmmind (TM)
+5	extrasensory
+5	foresight
+5	haze
+5	imprison (TM)
+5	jumpkick
+5	miracleeye
+5	mirrorcoat
+5	quickattack
+5	screech (TM)
+5	sharpen
+5	substitute (TM)
+5	sweetkiss
+5	teeterdance
+5	tickle
+5	yawn
+4	closecombat (TM)
+4	cometpunch
+4	confusion
+4	dig (TM)
+4	disarmingvoice
+4	dreameater (TM)
+4	eggbomb
+4	extremespeed
+4	facade (TM)
+4	faketears (TM)
+4	gigaimpact (TM)
+4	grassyterrain (TM)
+4	healbell (Tutor)
+4	highhorsepower (TM)
+4	hornattack
+4	karatechop
+4	metalsound
+4	nightshade
+4	psybeam
+4	psychicterrain (TM)
+4	rest (TM)
+4	safeguard (TM)
+4	scald (TM)
+4	skyuppercut
+4	slam
+4	surf (TM)
+4	thrash
+4	volttackle
+3	acidspray
+3	airslash (TM)
+3	bite
+3	block (Tutor)
+3	bulldoze (TM)
+3	constrict
+3	crosspoison (TM)
+3	crushclaw
+3	discharge
+3	endure (TM)
+3	fireblast (TM)
+3	firefang (TM)
+3	grasswhistle
+3	growl
+3	hex (TM)
+3	holdhands
+3	hypervoice (TM)
+3	iciclespear (TM)
+3	magnitude
+3	moonblast
+3	mudbomb
+3	mysticalpower
+3	payback (TM)
+3	powdersnow
+3	psychicfangs (TM)
+3	rockblast (TM)
+3	rockslide (TM)
+3	shadowball (TM)
+3	softboiled
+3	solarbeam (TM)
+3	spikecannon
+3	sunnyday (TM)
+3	thunder (TM)
+3	thundershock
+2	acid
+2	aerialace (TM)
+2	aurorabeam
+2	blastburn (Tutor)
+2	chargebeam (TM)
+2	clamp
+2	clearsmog
+2	cottonguard
+2	disable
+2	doubleteam (TM)
+2	dragondance (TM)
+2	electricterrain (TM)
+2	falseswipe (TM)
+2	featherdance
+2	feint
+2	flamecharge (TM)
+2	flash (TM)
+2	flatter
+2	fling (TM)
+2	focusblast (TM)
+2	focuspunch (TM)
+2	frenzyplant (Tutor)
+2	gigadrain (TM)
+2	grassknot (TM)
+2	howl
+2	hydrocannon (Tutor)
+2	icefang (TM)
+2	iceshard
+2	inferno
+2	magnetbomb
+2	meditate
+2	meteormash
+2	moongeistbeam
+2	nightslash
+2	playnice
+2	powertrip
+2	present
+2	protect (TM)
+2	rapidspin
+2	razorleaf
+2	recover
+2	reflecttype
+2	sandstorm (TM)
+2	shadowclaw (TM)
+2	sheercold
+2	simplebeam
+2	skillswap (TM)
+2	sleeppowder
+2	snarl (TM)
+2	stealthrock (TM)
+2	strength (TM)
+2	sunsteelstrike
+2	swordsdance (TM)
+2	tailwhip
+2	taunt (TM)
+2	thunderfang (TM)
+2	toxic (TM)
+2	tripleaxel (Tutor)
+2	wideguard
+1	acidarmor
+1	acupressure
+1	allyswitch (Tutor)
+1	aquaring
+1	aromatherapy (Tutor)
+1	avalanche (TM)
+1	babydolleyes
+1	behemothbash
+1	behemothblade
+1	bellydrum
+1	bleakwindstorm
+1	blizzard (TM)
+1	boomburst
+1	brine (TM)
+1	bulkup (TM)
+1	charge
+1	confuseray
+1	craftyshield
+1	darkpulse (TM)
+1	dazzlinggleam (TM)
+1	destinybond
+1	dizzypunch
+1	doublehit
+1	doublekick
+1	dragonpulse (TM)
+1	drainpunch (TM)
+1	earthquake (TM)
+1	endeavor (Tutor)
+1	energyball (TM)
+1	expandingforce (Tutor)
+1	fakeout
+1	firstimpression
+1	flail
+1	floatyfall
+1	flowershield
+1	fly (TM)
+1	forcepalm
+1	glaciate
+1	guardsplit
+1	gust
+1	harden
+1	healpulse
+1	heartswap
+1	hyperbeam (TM)
+1	hyperspacefury
+1	hypnosis
+1	infestation (TM)
+1	lashout (Tutor)
+1	lastresort (Tutor)
+1	leaftornado
+1	lunarblessing
+1	magicroom (Tutor)
+1	matblock
+1	meanlook
+1	metalburst
+1	metronome (Tutor)
+1	minimize
+1	mysticalfire (TM)
+1	nastyplot (TM)
+1	needlearm
+1	octazooka
+1	overheat (TM)
+1	painsplit (Tutor)
+1	partingshot
+1	perishsong
+1	petalblizzard
+1	petaldance
+1	pikapapow
+1	poisongas
+1	poisontail
+1	pound
+1	powder
+1	powersplit
+1	psychoboost
+1	quickguard
+1	raindance (TM)
+1	recycle (TM)
+1	relicsong
+1	rockclimb (TM)
+1	rockpolish (TM)
+1	rollingkick
+1	sacredsword
+1	sandsearstorm
+1	seedbomb (Tutor)
+1	seismictoss (Tutor)
+1	shiftgear
+1	sludgebomb (TM)
+1	snore (Tutor)
+1	solarblade (Tutor)
+1	spark
+1	sparklingaria
+1	splishysplash
+1	spore
+1	steelwing (TM)
+1	stomp
+1	stompingtantrum (Tutor)
+1	stoneedge (TM)
+1	superpower (Tutor)
+1	swift (Tutor)
+1	switcheroo
+1	thief (TM)
+1	thunderbolt (TM)
+1	trick (Tutor)
+1	twineedle
+1	uturn (TM)
+1	vcreate
+1	waterpulse (TM)
+1	wildboltstorm
+1	withdraw
+1	wonderroom (Tutor)
+1	xscissor (TM)
+1	zenheadbutt (Tutor)
+1	zingzap
+1	zippyzap
