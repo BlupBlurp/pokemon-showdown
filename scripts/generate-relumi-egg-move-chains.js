@@ -91,6 +91,15 @@ function isBattleOnlyForm(s) {
 	return !!s.battleOnly || s.forme === "Gmax";
 }
 
+/**
+ * True for Create-A-Pokémon species. CAP species all carry a negative `num`;
+ * gen 9 CAPs are otherwise mis-flagged as "Future" (their gen exceeds the
+ * mod's gen 8), so checking `isNonstandard` alone misses them.
+ */
+function isCapSpecies(s) {
+	return s.num < 0;
+}
+
 function main() {
 	const dex = Dex.mod("gen8relumi");
 	const speciesTable = dex.species;
@@ -103,6 +112,7 @@ function main() {
 	for (const s of speciesTable.all()) {
 		if (!s.exists) continue;
 		if (EXCLUDED_NONSTANDARD.has(s.isNonstandard)) continue;
+		if (isCapSpecies(s)) continue; // CAP Pokémon never belong in Relumi routes
 		if (s.id === "ditto") continue; // genderless; cannot pass egg moves
 		if (isBattleOnlyForm(s)) continue; // battle-only forms cannot breed
 		if (!s.eggGroups.length || s.eggGroups[0] === "Undiscovered") continue;
@@ -188,6 +198,7 @@ function main() {
 		const s = speciesTable.get(sid);
 		if (!s.exists) continue;
 		if (isBattleOnlyForm(s)) continue; // battle-only forms are never bred, so no entries
+		if (isCapSpecies(s)) continue; // CAP Pokémon never belong in Relumi routes
 		const info = getTargetInfo(sid);
 		for (const moveId of info.eggMoves) {
 			if (info.ownNatural.has(moveId)) continue;
