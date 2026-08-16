@@ -10651,8 +10651,8 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Grass Pledge",
-                    "Close Combat",
-                    "Seed Bomb",
+                    "Triple Arrows",
+                    "Leaf Storm",
                     "Confuse Ray"
                 ],
                 "abilities": [
@@ -10660,24 +10660,24 @@
                 ],
                 "trainerId": 1938,
                 "nature": [
-                    "Careful"
+                    "Calm"
                 ],
                 "evs": {
-                    "hp": 2,
-                    "atk": 252,
+                    "hp": 0,
+                    "atk": 4,
                     "def": 0,
-                    "spa": 0,
+                    "spa": 252,
                     "spd": 252,
-                    "spe": 4
+                    "spe": 2
                 }
             },
             {
-                "role": "Bulky Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Triple Arrows",
-                    "Leaf Blade",
+                    "Leaf Storm",
                     "Tailwind",
-                    "Knock Off"
+                    "Astonish"
                 ],
                 "abilities": [
                     "Scrappy"
@@ -10687,13 +10687,13 @@
                     "Razor Claw"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 6,
-                    "atk": 252,
+                    "atk": 0,
                     "def": 0,
-                    "spa": 0,
+                    "spa": 252,
                     "spd": 0,
                     "spe": 252
                 }
@@ -17846,7 +17846,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Explosion",
+                    "Misty Explosion",
                     "Rock Blast",
                     "Sandstorm",
                     "Meteor Beam"
@@ -17860,9 +17860,9 @@
                 ],
                 "evs": {
                     "hp": 252,
-                    "atk": 252,
+                    "atk": 0,
                     "def": 0,
-                    "spa": 0,
+                    "spa": 252,
                     "spd": 6,
                     "spe": 0
                 }
@@ -17870,10 +17870,37 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Stone Edge",
-                    "Rock Slide",
+                    "Power Gem",
+                    "Ancient Power",
                     "Body Press",
-                    "Explosion"
+                    "Misty Explosion"
+                ],
+                "abilities": [
+                    "Sand Stream"
+                ],
+                "trainerId": 1958,
+                "item": [
+                    "Smooth Rock"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 4,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 2
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Power Gem",
+                    "Ancient Power",
+                    "Body Press",
+                    "Misty Explosion"
                 ],
                 "abilities": [
                     "Sand Stream"
@@ -17883,15 +17910,15 @@
                     "Smooth Rock"
                 ],
                 "nature": [
-                    "Adamant"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 252,
-                    "atk": 252,
+                    "atk": 4,
                     "def": 0,
-                    "spa": 2,
+                    "spa": 252,
                     "spd": 0,
-                    "spe": 4
+                    "spe": 2
                 }
             }
         ]
@@ -33263,7 +33290,7 @@
                     "Superpower",
                     "Giga Impact",
                     "Bulk Up",
-                    "Curse"
+                    "Confide"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -34331,7 +34358,7 @@
                     "Gunk Shot",
                     "Poltergeist",
                     "Foul Play",
-                    "Rollout"
+                    "Secret Power"
                 ],
                 "abilities": [
                     "Poison Puppeteer"
@@ -39509,11 +39536,11 @@
         "level": 85,
         "sets": [
             {
-                "role": "Bulky Support",
+                "role": "Bulky Attacker",
                 "movepool": [
-                    "Earthquake",
-                    "Stone Edge",
-                    "Coil",
+                    "Earth Power",
+                    "Sand Tomb",
+                    "Wrap",
                     "Glare"
                 ],
                 "abilities": [
@@ -39521,13 +39548,13 @@
                 ],
                 "trainerId": 443,
                 "nature": [
-                    "Adamant"
+                    "Modest"
                 ],
                 "evs": {
                     "hp": 244,
-                    "atk": 250,
+                    "atk": 0,
                     "def": 0,
-                    "spa": 0,
+                    "spa": 250,
                     "spd": 12,
                     "spe": 4
                 }
@@ -46460,7 +46487,7 @@
                     "Double-Edge",
                     "Meteor Beam",
                     "Rock Polish",
-                    "Gravity"
+                    "Confide"
                 ],
                 "abilities": [
                     "Tera Shift"
@@ -49296,7 +49323,7 @@
                     "Psychic",
                     "Giga Impact",
                     "Recover",
-                    "Endure"
+                    "Confide"
                 ],
                 "abilities": [
                     "Mold Breaker",

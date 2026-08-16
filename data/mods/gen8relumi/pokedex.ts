@@ -3234,7 +3234,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 110,
 		},
 		inherit: true,
-		types: ["Fighting", "Flying"],
+		types: ["Flying"],
 	},
 	farfetchdgalar: {
 		abilities: {
@@ -7839,12 +7839,12 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	},
 	rotom: {
 		baseStats: {
-			atk: 50,
-			def: 77,
+			atk: 65,
+			def: 89,
 			hp: 50,
-			spa: 95,
-			spd: 77,
-			spe: 101,
+			spa: 106,
+			spd: 89,
+			spe: 121,
 		},
 		inherit: true,
 	},

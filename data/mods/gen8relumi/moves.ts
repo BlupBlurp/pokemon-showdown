@@ -26,7 +26,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	armorcannon: {
 		basePower: 100,
 		flags: {
-			metronome: 1,
 			mirror: 1,
 			protect: 1,
 			pulse: 1,
@@ -50,6 +49,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		pp: 15,
 	},
+	barrage: {
+		accuracy: 100,
+		basePower: 20,
+		category: "Special",
+		inherit: true,
+		type: "Psychic",
+	},
 	beakblast: {
 		basePower: 120,
 		inherit: true,
@@ -58,31 +64,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		multihit: 6,
 	},
-	bitterblade: {
-		category: "Status",
-		inherit: true,
-	},
 	blazekick: {
 		accuracy: 100,
 		basePower: 90,
-		inherit: true,
-	},
-	blazingtorque: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			failcopycat: 1,
-			failencore: 1,
-			failinstruct: 1,
-			failmefirst: 1,
-			failmimic: 1,
-			metronome: 1,
-			mirror: 1,
-			noassist: 1,
-			nosketch: 1,
-			nosleeptalk: 1,
-			protect: 1,
-		},
 		inherit: true,
 	},
 	bonemerang: {
@@ -115,9 +99,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		pp: 15,
 	},
 	chillingwater: {
-		category: "Physical",
 		flags: {
-			contact: 1,
 			metronome: 1,
 			mirror: 1,
 			protect: 1,
@@ -125,13 +107,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	chillyreception: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
 		gen: 8,
 		inherit: true,
 		isNonstandard: null,
@@ -140,41 +115,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
-	collisioncourse: {
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
-	combattorque: {
-		flags: {
-			contact: 1,
-			failcopycat: 1,
-			failencore: 1,
-			failinstruct: 1,
-			failmefirst: 1,
-			failmimic: 1,
-			metronome: 1,
-			mirror: 1,
-			noassist: 1,
-			nosketch: 1,
-			nosleeptalk: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
-	comeuppance: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			failmefirst: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
+	cometpunch: {
+		accuracy: 100,
+		basePower: 15,
 		inherit: true,
 	},
 	covet: {
@@ -233,16 +176,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		shortDesc: "[nerf]30% chance[/nerf] to sleep, poison, or paralyze target.",
 	},
-	doodle: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	doublehit: {
 		accuracy: 100,
 		basePower: 40,
@@ -252,16 +185,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 50,
 		inherit: true,
 	},
-	doubleshock: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	doubleslap: {
 		accuracy: 100,
 		inherit: true,
@@ -269,6 +192,15 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	dracometeor: {
 		accuracy: 100,
+		inherit: true,
+	},
+	dragoncheer: {
+		flags: {
+			allyanim: 1,
+			bypasssub: 1,
+			metronome: 1,
+			sound: 1,
+		},
 		inherit: true,
 	},
 	dragonclaw: {
@@ -306,16 +238,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
-	electrodrift: {
-		category: "Physical",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	electroshot: {
 		inherit: true,
 		self: {
@@ -323,17 +245,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 				spa: 1,
 			},
 		},
-	},
-	filletaway: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-			snatch: 1,
-		},
-		inherit: true,
 	},
 	firefang: {
 		accuracy: 100,
@@ -397,27 +308,18 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 20,
 		inherit: true,
 	},
+	furyswipes: {
+		accuracy: 100,
+		basePower: 20,
+		critRatio: 2,
+		inherit: true,
+	},
 	geargrind: {
 		accuracy: 100,
 		inherit: true,
 	},
-	gigatonhammer: {
-		category: "Status",
-		flags: {
-			cantusetwice: 1,
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	glaciallance: {
 		basePower: 120,
-		inherit: true,
-	},
-	glaiverush: {
-		category: "Status",
 		inherit: true,
 	},
 	gravapple: {
@@ -461,14 +363,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			protect: 1,
 		},
 		inherit: true,
+		pp: 35,
+		type: "Normal",
 	},
 	hyperdrill: {
 		basePower: 120,
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-		},
 		inherit: true,
 	},
 	hyperfang: {
@@ -497,10 +396,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
-	icespinner: {
-		category: "Status",
-		inherit: true,
-	},
 	iciclecrash: {
 		accuracy: 100,
 		inherit: true,
@@ -523,7 +418,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	ivycudgel: {
-		category: "Status",
 		flags: {
 			contact: 1,
 			metronome: 1,
@@ -536,31 +430,11 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		type: "Water",
 	},
-	jetpunch: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-			punch: 1,
-		},
-		inherit: true,
-		priority: 0,
-	},
 	lastrespects: {
-		basePower: 30,
 		basePowerCallback: function basePowerCallback(pokemon, target, move) {
 			return 50 + 30 * pokemon.side.totalFainted;
 		},
-		category: "Status",
 		desc: "Power is equal to 50+(X*30), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
 		inherit: true,
 		shortDesc: "[nerf]+30 power[/nerf] for each time a party member fainted.",
 	},
@@ -568,42 +442,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
-	luminacrash: {
-		category: "Physical",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	lusterpurge: {
 		basePower: 95,
 		inherit: true,
 	},
-	magicaltorque: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			failcopycat: 1,
-			failencore: 1,
-			failinstruct: 1,
-			failmefirst: 1,
-			failmimic: 1,
-			metronome: 1,
-			mirror: 1,
-			noassist: 1,
-			nosketch: 1,
-			nosleeptalk: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	makeitrain: {
-		category: "Physical",
 		flags: {
-			contact: 1,
 			metronome: 1,
 			mirror: 1,
 			protect: 1,
@@ -611,7 +455,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	matchagotcha: {
-		category: "Physical",
 		flags: {
 			contact: 1,
 			defrost: 1,
@@ -679,10 +522,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		},
 		shortDesc: "[nerf]10% chance[/nerf] to lower the target's Sp. Atk by 1.",
 	},
-	mortalspin: {
-		category: "Status",
-		inherit: true,
-	},
 	mountaingale: {
 		basePower: 120,
 		inherit: true,
@@ -729,34 +568,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 90,
 		inherit: true,
 	},
-	noxioustorque: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			failcopycat: 1,
-			failencore: 1,
-			failinstruct: 1,
-			failmefirst: 1,
-			failmimic: 1,
-			metronome: 1,
-			mirror: 1,
-			noassist: 1,
-			nosketch: 1,
-			nosleeptalk: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
-	orderup: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	overdrive: {
 		basePower: 90,
 		inherit: true,
@@ -786,27 +597,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		pp: 15,
 	},
-	populationbomb: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-			slicing: 1,
-		},
-		inherit: true,
-	},
-	pounce: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	powergem: {
 		basePower: 90,
 		inherit: true,
@@ -824,8 +614,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		pp: 5,
 	},
 	psyblade: {
-		category: "Status",
 		inherit: true,
+		pp: 35,
+		type: "Normal",
 	},
 	psychicnoise: {
 		flags: {
@@ -857,16 +648,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		shortDesc: "[nerf]+25 power[/nerf] for each time user was hit. Max 6 hits.",
 	},
-	ragingbull: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	ragingfury: {
 		flags: {
 			contact: 1,
@@ -890,18 +671,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	revelationdance: {
 		basePower: 100,
-		inherit: true,
-	},
-	revivalblessing: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			heal: 1,
-			metronome: 1,
-			mirror: 1,
-			nosketch: 1,
-			protect: 1,
-		},
 		inherit: true,
 	},
 	rockblast: {
@@ -936,25 +705,12 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		pp: 5,
 	},
-	ruination: {
-		category: "Physical",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	saltcure: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
 		inherit: true,
+		secondary: {
+			chance: 100,
+			status: "brn",
+		},
 	},
 	scaleshot: {
 		accuracy: 100,
@@ -977,29 +733,14 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		pp: 15,
 	},
 	shedtail: {
-		category: "Special",
 		flags: {
-			contact: 1,
 			metronome: 1,
-			mirror: 1,
-			protect: 1,
 		},
 		inherit: true,
 	},
 	shoreup: {
 		inherit: true,
 		pp: 5,
-	},
-	silktrap: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
-		inherit: true,
-		priority: 0,
 	},
 	slackoff: {
 		inherit: true,
@@ -1031,13 +772,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	snowscape: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
 		gen: 8,
 		inherit: true,
 		isNonstandard: null,
@@ -1046,20 +780,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 		pp: 5,
 	},
-	spicyextract: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-			reflectable: 1,
-		},
+	spikecannon: {
 		inherit: true,
-	},
-	spinout: {
-		category: "Status",
-		inherit: true,
+		type: "Steel",
 	},
 	spiritshackle: {
 		basePower: 90,
@@ -1111,7 +834,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		inherit: true,
 	},
 	syrupbomb: {
-		category: "Physical",
 		flags: {
 			bullet: 1,
 			contact: 1,
@@ -1129,29 +851,8 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		inherit: true,
 	},
-	terablast: {
-		category: "Physical",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			mustpressure: 1,
-			protect: 1,
-		},
-		inherit: true,
-	},
 	thunderfang: {
 		accuracy: 100,
-		inherit: true,
-	},
-	tidyup: {
-		category: "Special",
-		flags: {
-			contact: 1,
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
 		inherit: true,
 	},
 	trailblaze: {
@@ -1180,20 +881,8 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		],
 		shortDesc: "High crit. Target: [buff]50% -1 Sp. Defense[/buff], 30% flinch.",
 	},
-	tripledive: {
-		basePower: 35,
-		inherit: true,
-	},
 	tropkick: {
 		basePower: 85,
-		inherit: true,
-	},
-	twinbeam: {
-		flags: {
-			metronome: 1,
-			mirror: 1,
-			protect: 1,
-		},
 		inherit: true,
 	},
 	veeveevolley: {
@@ -1202,24 +891,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	waterpulse: {
 		basePower: 70,
-		inherit: true,
-	},
-	wickedtorque: {
-		category: "Status",
-		flags: {
-			contact: 1,
-			failcopycat: 1,
-			failencore: 1,
-			failinstruct: 1,
-			failmefirst: 1,
-			failmimic: 1,
-			metronome: 1,
-			mirror: 1,
-			noassist: 1,
-			nosketch: 1,
-			nosleeptalk: 1,
-			protect: 1,
-		},
 		inherit: true,
 	},
 	wildcharge: {
