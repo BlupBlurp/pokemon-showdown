@@ -33,6 +33,8 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		ironfist: {
 			inherit: true,
+			desc: "This Pokemon's punch-based attacks have their power multiplied by 1.5.",
+			shortDesc: "This Pokemon's punch-based attacks have [buff]1.5x power[/buff]. Sucker Punch is not boosted.",
 			onBasePowerPriority: 23,
 			onBasePower(basePower, attacker, defender, move) {
 				if (move.flags["punch"]) {
@@ -43,6 +45,8 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		galewings: {
 			inherit: true,
+			shortDesc: "[buff]This Pokemon's Flying-type moves have their priority increased by 1.[/buff]",
+			desc: "This Pokemon's Flying-type moves have their priority increased by 1.",
 			onModifyPriority(priority, pokemon, target, move) {
 				// Priority to all Flying-type moves (gen 6 behavior, no HP requirement)
 				if (move?.type === "Flying") return priority + 1;
@@ -50,6 +54,8 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		runaway: {
 			inherit: true,
+			shortDesc: "[buff]This Pokemon cannot be trapped by any moves, abilities, or effects.[/buff]",
+			desc: "This Pokemon cannot be trapped by any moves, abilities, or effects.",
 			onTrapPokemonPriority: -10,
 			onTrapPokemon(pokemon) {
 				pokemon.trapped = false;
@@ -61,6 +67,8 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		protean: {
 			inherit: true,
+			desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+			shortDesc: "[buff]This Pokemon's type changes to match the type of the move it is about to use.[/buff]",
 			onPrepareHit(source, target, move) {
 				// Restored gen 8 behavior: no one-time restriction
 				if (
@@ -85,6 +93,8 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		libero: {
 			inherit: true,
+			desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+			shortDesc: "[buff]This Pokemon's type changes to match the type of the move it is about to use.[/buff]",
 			onPrepareHit(source, target, move) {
 				// Restored gen 8 behavior: no one-time restriction
 				if (
@@ -109,6 +119,8 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 		},
 		zenmode: {
 			inherit: true,
+			shortDesc: "[buff]This Pokemon is always in its Zen form when in battle.[/buff]",
+			desc: "This Pokemon's form changes to its Zen form when it enters battle and remains in that form.",
 			onSwitchIn(pokemon) {
 				// Transform to Zen Mode on switch-in if not already in Zen form
 				if (

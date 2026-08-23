@@ -913,7 +913,7 @@ export abstract class BasicRoom {
 		// this doesn't update parentid or subroom user symbols because it's
 		// intended to be used for cleanup only
 	}
-	setPrivate(privacy: PrivacySetting) {
+	setPrivate(privacy: PrivacySetting, password?: string) {
 		this.settings.isPrivate = privacy;
 		this.saveSettings();
 
@@ -932,11 +932,12 @@ export abstract class BasicRoom {
 			if (privacy) {
 				if (this.roomid.endsWith("pw")) return true;
 
-				// This is the same password generation approach as genPassword in the client replays.lib.php
-				// but obviously will not match given mt_rand there uses a different RNG and seed.
-				let password = "";
-				for (let i = 0; i < 31; i++)
-					password += ALPHABET[crypto.randomInt(0, ALPHABET.length - 1)];
+				if (!password) {
+					// This is the same password generation approach as genPassword in the client replays.lib.php
+					// but obviously will not match given mt_rand there uses a different RNG and seed.
+					password = '';
+					for (let i = 0; i < 31; i++) password += ALPHABET[crypto.randomInt(0, ALPHABET.length - 1)];
+				}
 
 				this.rename(
 					this.title,
@@ -2360,16 +2361,12 @@ export class GameRoom extends BasicRoom {
 			options === "auto";
 		if (silent) connection = undefined;
 		const isPrivate = this.settings.isPrivate || this.hideReplay;
-		const hidden =
-			options === "auto"
-				? 10
-				: options === "forpunishment" || (this as any).unlistReplay
-					? 2
-					: isPrivate
-						? 1
-						: 0;
-		if (isPrivate && hidden === 10) {
-			password = battle.password ||= Replays.generatePassword();
+		const hidden = options === 'auto' ? 10 :
+			options === 'forpunishment' || (this as any).unlistReplay ? 2 :
+			isPrivate ? 1 :
+			0;
+		if (isPrivate && hidden !== 2) {
+			password = (battle.password ||= Replays.generatePassword());
 		}
 		if (battle.replaySaved !== true && hidden === 10) {
 			battle.replaySaved = "auto";
