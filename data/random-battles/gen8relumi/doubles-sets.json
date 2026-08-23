@@ -938,9 +938,9 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Dragon Pulse",
                     "Perish Song",
                     "Brave Bird",
+                    "Petal Dance",
                     "Sky Attack"
                 ],
                 "abilities": [
@@ -2812,8 +2812,8 @@
                 "movepool": [
                     "Overheat",
                     "Armor Cannon",
-                    "Solar Beam",
-                    "Meteor Beam"
+                    "Hyper Beam",
+                    "Solar Beam"
                 ],
                 "abilities": [
                     "Flash Fire",
@@ -2824,7 +2824,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Overheat",
-                    "Solar Beam",
+                    "Hyper Beam",
                     "Rest",
                     "Calm Mind"
                 ],
@@ -4591,10 +4591,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Fury Cutter",
                     "Laser Focus",
                     "Toxic Spikes",
-                    "Pin Missile"
+                    "Pin Missile",
+                    "Double Hit"
                 ],
                 "abilities": [
                     "Adaptability"
@@ -7358,8 +7358,8 @@
                 "movepool": [
                     "Overheat",
                     "Flare Blitz",
-                    "Solar Blade",
-                    "Dragon Claw"
+                    "Giga Impact",
+                    "Solar Blade"
                 ],
                 "abilities": [
                     "Flash Fire",
@@ -7370,7 +7370,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Overheat",
-                    "Solar Blade",
+                    "Giga Impact",
                     "Rest",
                     "Bulk Up"
                 ],
@@ -8032,10 +8032,10 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Recover",
-                    "Hyper Voice",
                     "Heal Pulse",
-                    "Healing Wish"
+                    "Healing Wish",
+                    "Metal Sound",
+                    "Boomburst"
                 ],
                 "abilities": [
                     "Levitate"
@@ -13633,7 +13633,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Last Resort",
-                    "Double-Edge",
+                    "Skull Bash",
                     "Sparkly Swirl",
                     "Freezy Frost"
                 ],
@@ -15672,7 +15672,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Gunk Shot",
-                    "Draining Kiss",
+                    "Cross Poison",
                     "Future Sight",
                     "Heat Wave"
                 ],
@@ -16045,9 +16045,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Light of Ruin",
-                    "Moonblast",
-                    "Petal Dance",
-                    "Solar Beam"
+                    "Hyper Beam",
+                    "Rest",
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Flower Veil",
@@ -16058,9 +16058,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Light of Ruin",
-                    "Petal Dance",
-                    "Rest",
-                    "Calm Mind"
+                    "Moonblast",
+                    "Hyper Beam",
+                    "Solar Blade"
                 ],
                 "abilities": [
                     "Flower Veil",
@@ -18234,10 +18234,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Switcheroo",
                     "Snowscape",
                     "Blizzard",
-                    "Sheer Cold"
+                    "Sheer Cold",
+                    "Skull Bash"
                 ],
                 "abilities": [
                     "Levitate"
@@ -19755,7 +19755,7 @@
                     "Leaf Storm",
                     "Solar Beam",
                     "Explosion",
-                    "Giga Impact"
+                    "Self-Destruct"
                 ],
                 "abilities": [
                     "Pickup",
@@ -19788,7 +19788,7 @@
                     "Leaf Storm",
                     "Solar Beam",
                     "Explosion",
-                    "Giga Impact"
+                    "Self-Destruct"
                 ],
                 "abilities": [
                     "Pickup",
@@ -19821,7 +19821,7 @@
                     "Leaf Storm",
                     "Solar Beam",
                     "Explosion",
-                    "Giga Impact"
+                    "Self-Destruct"
                 ],
                 "abilities": [
                     "Pickup",
@@ -20573,10 +20573,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Rest",
                     "Sleep Talk",
                     "Snore",
-                    "Teeter Dance"
+                    "Teeter Dance",
+                    "Shadow Punch"
                 ],
                 "abilities": [
                     "Thick Fat"
@@ -21320,9 +21320,9 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Earth Power",
                     "Heat Wave",
                     "Stone Edge",
+                    "First Impression",
                     "Magma Storm"
                 ],
                 "abilities": [
@@ -22493,12 +22493,12 @@
         "level": 86,
         "sets": [
             {
-                "role": "Doubles Support",
+                "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Poltergeist",
                     "Giga Impact",
                     "Rest",
-                    "Ally Switch"
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Sand Rush",
@@ -24329,10 +24329,10 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Recover",
-                    "Substitute",
+                    "Conversion 2",
                     "Double-Edge",
-                    "Foul Play"
+                    "Foul Play",
+                    "Power Whip"
                 ],
                 "abilities": [
                     "Protean"
@@ -25362,7 +25362,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Focus Punch",
-                    "Close Combat",
+                    "Draco Meteor",
                     "Giga Impact",
                     "Hyper Beam"
                 ],
@@ -26233,10 +26233,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Psycho Cut",
                     "Giga Drain",
                     "Last Resort",
-                    "Power Whip"
+                    "Power Whip",
+                    "Petal Dance"
                 ],
                 "abilities": [
                     "Chlorophyll"
@@ -29748,8 +29748,8 @@
                 "movepool": [
                     "Steel Beam",
                     "Flash Cannon",
-                    "Thunderbolt",
-                    "Facade"
+                    "Self-Destruct",
+                    "Giga Impact"
                 ],
                 "abilities": [
                     "Magnet Pull"
@@ -29759,7 +29759,7 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Steel Beam",
-                    "Thunderbolt",
+                    "Self-Destruct",
                     "Rest",
                     "Iron Defense"
                 ],
@@ -30978,7 +30978,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Outrage",
+                    "Draco Meteor",
                     "Giga Impact",
                     "Rest",
                     "Agility"
@@ -30990,8 +30990,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Draco Meteor",
                     "Outrage",
-                    "Thunder",
                     "Giga Impact",
                     "Hyper Beam"
                 ],
@@ -35739,12 +35739,12 @@
                 }
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
-                    "Trick Room",
                     "Psychic",
                     "Zap Cannon",
-                    "Hyper Beam"
+                    "Hyper Beam",
+                    "Skull Bash"
                 ],
                 "abilities": [
                     "Adaptability"
@@ -38668,10 +38668,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Hex",
-                    "Substitute",
-                    "Trick",
-                    "Discharge"
+                    "Thunderbolt",
+                    "Dark Pulse",
+                    "Pain Split",
+                    "Thunder"
                 ],
                 "abilities": [
                     "Levitate"
@@ -38834,30 +38834,6 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Substitute",
-                    "Trick",
-                    "Discharge",
-                    "Uproar"
-                ],
-                "abilities": [
-                    "Levitate"
-                ],
-                "trainerId": 399,
-                "nature": [
-                    "Docile"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
                     "Volt Switch",
                     "Hydro Pump",
                     "Foul Play",
@@ -38880,6 +38856,30 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Thunderbolt",
+                    "Dark Pulse",
+                    "Pain Split",
+                    "Thunder"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "trainerId": 399,
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 88,
+                    "spd": 84,
+                    "spe": 86
                 }
             }
         ]
@@ -39215,9 +39215,9 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Double-Edge",
                     "Fly",
                     "Hydro Pump",
+                    "Skull Bash",
                     "Outrage"
                 ],
                 "abilities": [
@@ -42251,12 +42251,12 @@
         "level": 85,
         "sets": [
             {
-                "role": "Doubles Support",
+                "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Leaf Storm",
                     "Draco Meteor",
                     "Strength Sap",
-                    "Rage Powder"
+                    "Curse"
                 ],
                 "abilities": [
                     "Hospitality",
@@ -42267,7 +42267,7 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Leaf Storm",
-                    "Seed Bomb",
+                    "Poltergeist",
                     "Draco Meteor",
                     "Outrage"
                 ],
@@ -42469,9 +42469,9 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Iron Defense",
-                    "Counter",
                     "Brave Bird",
+                    "Magnet Bomb",
+                    "Skull Bash",
                     "Body Press"
                 ],
                 "abilities": [
@@ -42493,9 +42493,9 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Iron Defense",
-                    "Counter",
                     "Brave Bird",
+                    "Magnet Bomb",
+                    "Skull Bash",
                     "Body Press"
                 ],
                 "abilities": [
@@ -42936,10 +42936,10 @@
             {
                 "role": "Doubles Support",
                 "movepool": [
-                    "Psych Up",
                     "Future Sight",
                     "Heal Pulse",
-                    "Trick Room"
+                    "Trick Room",
+                    "Skull Bash"
                 ],
                 "abilities": [
                     "Regenerator"
@@ -43096,10 +43096,10 @@
             {
                 "role": "Doubles Support",
                 "movepool": [
-                    "Psych Up",
                     "Future Sight",
                     "Heal Pulse",
-                    "Trick Room"
+                    "Trick Room",
+                    "Skull Bash"
                 ],
                 "abilities": [
                     "Curious Medicine"
@@ -43120,10 +43120,10 @@
             {
                 "role": "Doubles Support",
                 "movepool": [
-                    "Psych Up",
                     "Future Sight",
                     "Heal Pulse",
-                    "Trick Room"
+                    "Trick Room",
+                    "Skull Bash"
                 ],
                 "abilities": [
                     "Regenerator"
@@ -44008,7 +44008,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Solar Blade",
-                    "Earth Power"
+                    "Foul Play"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44017,12 +44017,12 @@
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Giga Impact",
                     "Solar Blade",
                     "Rest",
-                    "Helping Hand"
+                    "Bulk Up"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44041,7 +44041,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Solar Blade",
-                    "Earth Power"
+                    "Foul Play"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44050,12 +44050,12 @@
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Giga Impact",
                     "Solar Blade",
                     "Rest",
-                    "Helping Hand"
+                    "Bulk Up"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44074,7 +44074,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Solar Blade",
-                    "Earth Power"
+                    "Foul Play"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44083,12 +44083,12 @@
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Giga Impact",
                     "Solar Blade",
                     "Rest",
-                    "Helping Hand"
+                    "Bulk Up"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44107,7 +44107,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Solar Blade",
-                    "Earth Power"
+                    "Foul Play"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44116,12 +44116,12 @@
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Giga Impact",
                     "Solar Blade",
                     "Rest",
-                    "Helping Hand"
+                    "Bulk Up"
                 ],
                 "abilities": [
                     "Intimidate",
@@ -44330,10 +44330,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Agility",
                     "Brave Bird",
                     "Double-Edge",
-                    "Final Gambit"
+                    "Final Gambit",
+                    "Skull Bash"
                 ],
                 "abilities": [
                     "Intimidate"
@@ -44574,6 +44574,30 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
+                    "Double-Edge",
+                    "Sandstorm",
+                    "Fissure",
+                    "Magnet Rise"
+                ],
+                "abilities": [
+                    "Rock Head"
+                ],
+                "trainerId": 585,
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 88,
+                    "def": 84,
+                    "spa": 84,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": [
                     "Earthquake",
                     "Thunder Fang",
                     "Rock Climb",
@@ -44596,30 +44620,6 @@
                     "spa": 0,
                     "spd": 252,
                     "spe": 0
-                }
-            },
-            {
-                "role": "Doubles Wallbreaker",
-                "movepool": [
-                    "Stone Edge",
-                    "Double-Edge",
-                    "Sandstorm",
-                    "Magnet Rise"
-                ],
-                "abilities": [
-                    "Rock Head"
-                ],
-                "trainerId": 585,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 88,
-                    "def": 84,
-                    "spa": 84,
-                    "spd": 84,
-                    "spe": 86
                 }
             }
         ]
@@ -45175,7 +45175,7 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Pain Split",
+                    "Sing",
                     "Body Slam",
                     "Sludge Bomb",
                     "Toxic"
@@ -45199,8 +45199,8 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Encore",
                     "Pain Split",
+                    "Sing",
                     "Body Slam",
                     "Sludge Bomb"
                 ],
@@ -46111,7 +46111,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Outrage",
+                    "Draco Meteor",
                     "Giga Impact",
                     "Rest",
                     "Curse"
@@ -46124,8 +46124,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Draco Meteor",
                     "Outrage",
-                    "Surf",
                     "Giga Impact",
                     "Hyper Beam"
                 ],
@@ -46142,10 +46142,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Outrage",
+                    "Draco Meteor",
                     "Giga Impact",
                     "Rest",
-                    "Curse"
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Commander",
@@ -46155,8 +46155,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Draco Meteor",
                     "Outrage",
-                    "Surf",
                     "Giga Impact",
                     "Hyper Beam"
                 ],
@@ -46173,10 +46173,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Outrage",
+                    "Draco Meteor",
                     "Giga Impact",
                     "Rest",
-                    "Curse"
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Commander",
@@ -46186,8 +46186,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Draco Meteor",
                     "Outrage",
-                    "Surf",
                     "Giga Impact",
                     "Hyper Beam"
                 ],
