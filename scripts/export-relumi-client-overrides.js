@@ -582,7 +582,17 @@ async function main() {
 		RELUMI_GEN9_SNOW_ABILITY_IDS
 	);
 	const relumiAbilityOverrides = buildRelumiAbilityTextOverrides(relumiAbilitiesText);
-	const abilityOverrides = { ...snowAbilityOverrides, ...relumiAbilityOverrides };
+
+	// Extract custom desc/shortDesc from the mod's ability data (e.g. Iron Fist 1.5x multiplier).
+	let modAbilityOverrides = {};
+	try {
+		const modAbilitiesCompiled = require("../dist/data/mods/gen8relumi/abilities.js").Abilities;
+		modAbilityOverrides = buildRelumiAbilityTextOverrides(modAbilitiesCompiled);
+	} catch (err) {
+		console.warn(`[relumi] Could not load mod abilities for text overrides: ${err.message}`);
+	}
+
+	const abilityOverrides = { ...snowAbilityOverrides, ...modAbilityOverrides, ...relumiAbilityOverrides };
 	const moveTextOverrides = buildMoveTextOverrides(
 		movesText,
 		RELUMI_GEN9_SNOW_MOVE_IDS
