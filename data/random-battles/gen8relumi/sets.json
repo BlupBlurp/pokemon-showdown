@@ -15399,9 +15399,9 @@
                 }
             },
             {
-                "role": "Fast Attacker",
+                "role": "Bulky Support",
                 "movepool": [
-                    "Power Whip",
+                    "Roost",
                     "Tailwind",
                     "Double-Edge",
                     "Brave Bird"
@@ -15425,10 +15425,10 @@
             {
                 "role": "Setup Sweeper",
                 "movepool": [
+                    "Assurance",
+                    "Take Down",
                     "Drill Peck",
-                    "Poison Jab",
-                    "Agility",
-                    "Seed Bomb"
+                    "Agility"
                 ],
                 "abilities": [
                     "Sniper"

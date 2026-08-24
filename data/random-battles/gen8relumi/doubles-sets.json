@@ -15401,7 +15401,7 @@
             {
                 "role": "Doubles Support",
                 "movepool": [
-                    "Power Whip",
+                    "Roost",
                     "Tailwind",
                     "Double-Edge",
                     "Brave Bird"
@@ -15425,10 +15425,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Assurance",
+                    "Take Down",
                     "Drill Peck",
-                    "Poison Jab",
-                    "Agility",
-                    "Seed Bomb"
+                    "Agility"
                 ],
                 "abilities": [
                     "Sniper"
