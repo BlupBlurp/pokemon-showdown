@@ -1576,7 +1576,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Earth Power",
-                    "Dazzling Gleam"
+                    "Pollen Puff"
                 ],
                 "abilities": [
                     "Seed Sower",
@@ -4277,7 +4277,7 @@
                     "Draco Meteor",
                     "Giga Impact",
                     "Rest",
-                    "Swords Dance"
+                    "Dragon Dance"
                 ],
                 "abilities": [
                     "Thermal Exchange",
@@ -5753,7 +5753,7 @@
                     "Sky Attack",
                     "Giga Impact",
                     "Stealth Rock",
-                    "Roost"
+                    "Rest"
                 ],
                 "abilities": [
                     "Big Pecks",
@@ -13633,9 +13633,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Last Resort",
-                    "Skull Bash",
-                    "Sparkly Swirl",
-                    "Freezy Frost"
+                    "Iron Tail",
+                    "Rest",
+                    "Curse"
                 ],
                 "abilities": [
                     "Run Away",
@@ -13647,9 +13647,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Last Resort",
-                    "Sparkly Swirl",
-                    "Rest",
-                    "Curse"
+                    "Skull Bash",
+                    "Iron Tail",
+                    "Dig"
                 ],
                 "abilities": [
                     "Run Away",
@@ -15401,7 +15401,7 @@
             {
                 "role": "Doubles Support",
                 "movepool": [
-                    "Roost",
+                    "Power Whip",
                     "Tailwind",
                     "Double-Edge",
                     "Brave Bird"
@@ -15425,10 +15425,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Assurance",
-                    "Take Down",
                     "Drill Peck",
-                    "Agility"
+                    "Poison Jab",
+                    "Agility",
+                    "Seed Bomb"
                 ],
                 "abilities": [
                     "Sniper"
@@ -15672,9 +15672,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Gunk Shot",
-                    "Cross Poison",
-                    "Future Sight",
-                    "Heat Wave"
+                    "Giga Impact",
+                    "Rest",
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -15682,12 +15682,12 @@
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Gunk Shot",
-                    "Future Sight",
-                    "Tailwind",
-                    "Charm"
+                    "Sludge Bomb",
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -16238,10 +16238,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Uproar",
                     "Megahorn",
                     "Dragon Rush",
-                    "Quiver Dance"
+                    "Quiver Dance",
+                    "Boomburst"
                 ],
                 "abilities": [
                     "Levitate"
@@ -19576,9 +19576,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Draco Meteor",
-                    "Flare Blitz",
-                    "Iron Head",
-                    "Stomping Tantrum"
+                    "Giga Impact",
+                    "Morning Sun",
+                    "Dragon Dance"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -19588,9 +19588,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Draco Meteor",
-                    "Iron Head",
-                    "Morning Sun",
-                    "Burning Bulwark"
+                    "Overheat",
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -20448,7 +20448,7 @@
                     "Precipice Blades",
                     "Earthquake",
                     "Eruption",
-                    "Giga Impact"
+                    "Focus Punch"
                 ],
                 "abilities": [
                     "Drought"
@@ -22339,7 +22339,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Dream Eater",
-                    "Hyperspace Fury",
+                    "Foul Play",
                     "Focus Punch",
                     "Giga Impact"
                 ],
@@ -22580,7 +22580,7 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Draco Meteor",
-                    "Earth Power",
+                    "Giga Impact",
                     "Recover",
                     "Curse"
                 ],
@@ -22595,8 +22595,8 @@
                 "movepool": [
                     "Draco Meteor",
                     "Outrage",
-                    "Earth Power",
-                    "Uproar"
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Supersweet Syrup",
@@ -23271,12 +23271,12 @@
         "level": 81,
         "sets": [
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Meteor Beam",
                     "Giga Impact",
-                    "Agility",
-                    "Quick Guard"
+                    "Rest",
+                    "Agility"
                 ],
                 "abilities": [
                     "Quark Drive"
@@ -23288,7 +23288,7 @@
                     "Meteor Beam",
                     "Stone Edge",
                     "Giga Impact",
-                    "Solar Blade"
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Quark Drive"
@@ -23333,20 +23333,20 @@
                 "movepool": [
                     "Steel Beam",
                     "Future Sight",
-                    "Hyper Beam",
-                    "Solar Blade"
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Quark Drive"
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Steel Beam",
-                    "Hyper Beam",
-                    "Iron Defense",
-                    "Quick Guard"
+                    "Giga Impact",
+                    "Rest",
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Quark Drive"
@@ -23419,9 +23419,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Solar Blade",
-                    "Close Combat",
+                    "Giga Impact",
                     "Rest",
-                    "Iron Defense"
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Quark Drive"
@@ -23431,9 +23431,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Solar Blade",
-                    "Energy Ball",
-                    "Close Combat",
-                    "Megahorn"
+                    "Solar Beam",
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Quark Drive"
@@ -29218,7 +29218,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Play Rough",
-                    "Dig"
+                    "Crunch"
                 ],
                 "abilities": [
                     "Friend Guard",
@@ -29936,8 +29936,8 @@
                 "movepool": [
                     "Future Sight",
                     "Dream Eater",
-                    "Hyper Beam",
-                    "Iron Tail"
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Keen Eye",
@@ -29949,7 +29949,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Future Sight",
-                    "Hyper Beam",
+                    "Giga Impact",
                     "Rest",
                     "Calm Mind"
                 ],
@@ -31835,9 +31835,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Future Sight",
-                    "Gunk Shot",
-                    "Poltergeist",
-                    "Uproar"
+                    "Giga Impact",
+                    "Rest",
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -31845,12 +31845,12 @@
                 ]
             },
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Future Sight",
-                    "Poltergeist",
-                    "Nasty Plot",
-                    "Helping Hand"
+                    "Gunk Shot",
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -33238,7 +33238,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Belch",
-                    "Earth Power"
+                    "High Horsepower"
                 ],
                 "abilities": [
                     "Lingering Aroma",
@@ -33271,7 +33271,7 @@
                     "Giga Impact",
                     "Hyper Beam",
                     "Belch",
-                    "Earth Power"
+                    "High Horsepower"
                 ],
                 "abilities": [
                     "Aroma Veil",
@@ -33287,10 +33287,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Superpower",
+                    "Focus Punch",
+                    "Close Combat",
                     "Giga Impact",
-                    "Bulk Up",
-                    "Confide"
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -33300,10 +33300,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Superpower",
-                    "Gunk Shot",
+                    "Focus Punch",
                     "Giga Impact",
-                    "Outrage"
+                    "Rest",
+                    "Bulk Up"
                 ],
                 "abilities": [
                     "Toxic Chain",
@@ -34891,7 +34891,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Zap Cannon",
+                    "Volt Tackle",
                     "Focus Punch",
                     "Rest",
                     "Agility"
@@ -34904,8 +34904,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Volt Tackle",
                     "Zap Cannon",
-                    "Thunder",
                     "Focus Punch",
                     "Iron Tail"
                 ],
@@ -35009,7 +35009,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Zap Cannon",
+                    "Volt Tackle",
                     "Focus Punch",
                     "Rest",
                     "Agility"
@@ -35022,8 +35022,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Volt Tackle",
                     "Zap Cannon",
-                    "Thunder",
                     "Focus Punch",
                     "Iron Tail"
                 ],
@@ -36584,9 +36584,9 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Draco Meteor",
-                    "Body Press",
-                    "Calm Mind",
-                    "Charge"
+                    "Giga Impact",
+                    "Rest",
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -36597,8 +36597,8 @@
                 "movepool": [
                     "Draco Meteor",
                     "Outrage",
-                    "Body Press",
-                    "Stomping Tantrum"
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -36688,12 +36688,12 @@
                 }
             },
             {
-                "role": "Bulky Attacker",
+                "role": "Doubles Support",
                 "movepool": [
-                    "Agility",
-                    "Teeter Dance",
                     "Discharge",
-                    "Volt Tackle"
+                    "Volt Tackle",
+                    "Light Screen",
+                    "Thunder"
                 ],
                 "abilities": [
                     "Static"
@@ -36746,10 +36746,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Agility",
                     "Discharge",
                     "Volt Tackle",
-                    "Signal Beam"
+                    "Signal Beam",
+                    "Thunder"
                 ],
                 "abilities": [
                     "Surge Surfer"
@@ -38668,8 +38668,8 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Thunderbolt",
                     "Dark Pulse",
+                    "Magnet Bomb",
                     "Pain Split",
                     "Thunder"
                 ],
@@ -38834,6 +38834,30 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Magnet Bomb",
+                    "Pain Split",
+                    "Thunder",
+                    "Parabolic Charge"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "trainerId": 399,
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 84,
+                    "atk": 84,
+                    "def": 84,
+                    "spa": 88,
+                    "spd": 84,
+                    "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "Volt Switch",
                     "Hydro Pump",
                     "Foul Play",
@@ -38856,30 +38880,6 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 6
-                }
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Thunderbolt",
-                    "Dark Pulse",
-                    "Pain Split",
-                    "Thunder"
-                ],
-                "abilities": [
-                    "Levitate"
-                ],
-                "trainerId": 399,
-                "nature": [
-                    "Docile"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
                 }
             }
         ]
@@ -42254,9 +42254,9 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Leaf Storm",
-                    "Draco Meteor",
-                    "Strength Sap",
-                    "Curse"
+                    "Hyper Beam",
+                    "Rest",
+                    "Calm Mind"
                 ],
                 "abilities": [
                     "Hospitality",
@@ -42267,9 +42267,9 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Leaf Storm",
-                    "Poltergeist",
-                    "Draco Meteor",
-                    "Outrage"
+                    "Solar Beam",
+                    "Hyper Beam",
+                    "Draco Meteor"
                 ],
                 "abilities": [
                     "Hospitality",
@@ -42773,10 +42773,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Superpower",
-                    "First Impression",
+                    "Close Combat",
                     "Giga Impact",
-                    "Hyper Beam"
+                    "Morning Sun",
+                    "Bulk Up"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -42785,10 +42785,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Close Combat",
                     "Superpower",
                     "Giga Impact",
-                    "Morning Sun",
-                    "Bulk Up"
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -46484,10 +46484,10 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Double-Edge",
-                    "Meteor Beam",
-                    "Rock Polish",
-                    "Confide"
+                    "Giga Impact",
+                    "Hyper Beam",
+                    "Solar Beam",
+                    "Meteor Beam"
                 ],
                 "abilities": [
                     "Tera Shift"
@@ -46496,10 +46496,10 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Double-Edge",
-                    "Tera Starstorm",
-                    "Meteor Beam",
-                    "Earth Power"
+                    "Giga Impact",
+                    "Solar Beam",
+                    "Stealth Rock",
+                    "Rest"
                 ],
                 "abilities": [
                     "Tera Shift"
@@ -50455,12 +50455,12 @@
         "level": 81,
         "sets": [
             {
-                "role": "Doubles Support",
+                "role": "Bulky Attacker",
                 "movepool": [
                     "Draco Meteor",
-                    "Flamethrower",
-                    "Hone Claws",
-                    "Light Screen"
+                    "Giga Impact",
+                    "Rest",
+                    "Dragon Dance"
                 ],
                 "abilities": [
                     "Protosynthesis"
@@ -50471,8 +50471,8 @@
                 "movepool": [
                     "Draco Meteor",
                     "Outrage",
-                    "Flamethrower",
-                    "Rock Climb"
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
                 "abilities": [
                     "Protosynthesis"
