@@ -2,7 +2,7 @@
 
 const { TYPE_ID_TO_NAME } = require("./lib/bdsp-type-id-to-name");
 const { compareJson } = require("./lib/relumi-deep-sort");
-const { MANUAL_MOVE_OVERRIDES } = require("./lib/relumi-move-overrides");
+const { MANUAL_MOVE_OVERRIDES, FLAG_OVERRIDES } = require("./lib/relumi-move-overrides");
 
 const DAMAGE_TYPE_TO_CATEGORY = {
 	0: "Status",
@@ -42,18 +42,6 @@ const RANK_EFF_TYPE_TO_STAT = [
 	"evasion",
 	"allStats",
 ];
-
-const FLAG_OVERRIDES = {
-	// Sharpness moves (slicing flag)
-	smartstrike: { slicing: 1 },
-	shadowclaw: { slicing: 1 },
-	dragonclaw: { slicing: 1 },
-	metalclaw: { slicing: 1 },
-	crushclaw: { slicing: 1 },
-	// Mega Launcher moves (pulse flag)
-	flashcannon: { pulse: 1 },
-	armorcannon: { pulse: 1 },
-};
 
 function gcd(a, b) {
 	let x = Math.abs(a);

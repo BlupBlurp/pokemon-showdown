@@ -1,5 +1,18 @@
 "use strict";
 
+const FLAG_OVERRIDES = {
+	// Sharpness moves (slicing flag)
+	smartstrike: { slicing: 1 },
+	shadowclaw: { slicing: 1 },
+	dragonclaw: { slicing: 1 },
+	metalclaw: { slicing: 1 },
+	crushclaw: { slicing: 1 },
+	direclaw: { slicing: 1 },
+	// Mega Launcher moves (pulse flag)
+	flashcannon: { pulse: 1 },
+	armorcannon: { pulse: 1 },
+};
+
 // Manual and hardcoded move overrides that should persist across sync runs.
 const MANUAL_MOVE_OVERRIDES = {
 	return: {
@@ -20,6 +33,15 @@ const MANUAL_MOVE_OVERRIDES = {
 	chillyreception: {
 		gen: 8,
 		isNonstandard: null,
+	},
+	barrage: {
+		overrideDefensiveStat: 'def',
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. Deals damage to the target based on its Defense instead of Special Defense.",
+		shortDesc: "Hits 2-5 times in one turn. [buff]Damages target based on Defense, not Sp. Def.[/buff]",
+	},
+	furyswipes: {
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. High critical hit ratio.",
+		shortDesc: "Hits 2-5 times in one turn. [buff]High critical hit ratio.[/buff]",
 	},
 	direclaw: {
 		secondary: {
@@ -126,4 +148,4 @@ const MANUAL_MOVE_OVERRIDES = {
 	},
 };
 
-module.exports = { MANUAL_MOVE_OVERRIDES };
+module.exports = { MANUAL_MOVE_OVERRIDES, FLAG_OVERRIDES };

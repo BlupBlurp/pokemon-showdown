@@ -53,7 +53,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		basePower: 20,
 		category: "Special",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. Deals damage to the target based on its Defense instead of Special Defense.",
 		inherit: true,
+		overrideDefensiveStat: "def",
+		shortDesc: "Hits 2-5 times in one turn. [buff]Damages target based on Defense, not Sp. Def.[/buff]",
 		type: "Psychic",
 	},
 	beakblast: {
@@ -166,6 +169,13 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	direclaw: {
 		desc: "Has a 30% chance to cause the target to either fall asleep, become poisoned, or become paralyzed.",
+		flags: {
+			contact: 1,
+			metronome: 1,
+			mirror: 1,
+			protect: 1,
+			slicing: 1,
+		},
 		inherit: true,
 		secondary: {
 			chance: 30,
@@ -312,7 +322,9 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		accuracy: 100,
 		basePower: 20,
 		critRatio: 2,
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. If the user is holding Loaded Dice, this move will hit 4-5 times. High critical hit ratio.",
 		inherit: true,
+		shortDesc: "Hits 2-5 times in one turn. [buff]High critical hit ratio.[/buff]",
 	},
 	geargrind: {
 		accuracy: 100,
