@@ -22363,7 +22363,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Dream Eater",
-                    "Foul Play",
+                    "Hyperspace Fury",
                     "Focus Punch",
                     "Giga Impact"
                 ],
@@ -51399,10 +51399,10 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Psybeam",
+                    "Flail",
                     "Attract",
                     "Psychic",
-                    "Flail"
+                    "Energy Ball"
                 ],
                 "abilities": [
                     "Battle Armor"
@@ -51426,7 +51426,7 @@
                     "Confusion",
                     "Bug Buzz",
                     "Growth",
-                    "Energy Ball"
+                    "Psybeam"
                 ],
                 "abilities": [
                     "Battle Armor"
@@ -51453,7 +51453,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Confusion",
-                    "Rock Blast",
+                    "Bug Buzz",
                     "Harden",
                     "Psybeam"
                 ],
@@ -51536,7 +51536,7 @@
                 "role": "Bulky Attacker",
                 "movepool": [
                     "Confusion",
-                    "Metal Burst",
+                    "Bug Buzz",
                     "Metal Sound",
                     "Psybeam"
                 ],
