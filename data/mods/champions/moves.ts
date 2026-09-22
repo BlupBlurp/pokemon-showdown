@@ -150,10 +150,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		isNonstandard: null,
 	},
-	courtchange: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
 	crabhammer: {
 		inherit: true,
 		accuracy: 95,
@@ -165,6 +161,36 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	crushgrip: {
 		inherit: true,
 		isNonstandard: "Past",
+	},
+	curse: {
+		inherit: true,
+		tracksTarget: true,
+		volatileStatus: undefined, // no inherit
+		onModifyMove(move, source, target) {
+			if (!source.hasType('Ghost')) {
+				move.target = 'self';
+			} else if (source !== target && source.isAlly(target)) {
+				move.target = 'randomNormal';
+			}
+		},
+		onTryHit(target, source, move) {
+			if (source.hasType('Ghost') && target.volatiles['curse']) {
+				return false;
+			}
+		},
+		onHit(target, source) {
+			if (!source.hasType('Ghost')) {
+				return !!this.boost({ spe: -1, atk: 1, def: 1 }, source, source);
+			}
+			this.directDamage(source.maxhp / 2, source, source);
+			if (source.isAlly(target)) {
+				const random = this.getRandomTarget(source, 'Curse');
+				if (!random) return false;
+				target = random;
+			}
+			delete target.volatiles['curse'];
+			target.addVolatile('curse');
+		},
 	},
 	cut: {
 		inherit: true,
@@ -197,6 +223,18 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 		},
 	},
+	disable: {
+		inherit: true,
+		condition: {
+			inherit: true,
+			onBeforeMove(attacker, defender, move) {
+				if (!(move.isZ && move.isZOrMaxPowered) && move.id === this.effectState.move && !move.flags['cantusetwice']) {
+					this.add('cant', attacker, 'Disable', move);
+					return false;
+				}
+			},
+		},
+	},
 	disarmingvoice: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -215,7 +253,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	doubleshock: {
 		inherit: true,
-		isNonstandard: "Past",
+		flags: { contact: 1, protect: 1, mirror: 1, punch: 1 },
 	},
 	dragonascent: {
 		inherit: true,
@@ -243,10 +281,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		isNonstandard: "Past",
 	},
 	dreameater: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
-	drumbeating: {
 		inherit: true,
 		isNonstandard: "Past",
 	},
@@ -421,10 +455,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		isNonstandard: "Past",
 	},
-	glaiverush: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
 	grasspledge: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -521,10 +551,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		isNonstandard: "Past",
 	},
-	jawlock: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
 	judgment: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -604,6 +630,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		isNonstandard: "Past",
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 	},
+	meteorassault: {
+		inherit: true,
+		basePower: 170,
+		isNonstandard: null,
+	},
 	metronome: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -614,7 +645,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	milkdrink: {
 		inherit: true,
-		isNonstandard: "Past",
+		target: "adjacentAllyOrSelf",
 	},
 	mimic: {
 		inherit: true,
@@ -669,15 +700,15 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		pp: 5,
 	},
+	octolock: {
+		inherit: true,
+		isNonstandard: null,
+	},
 	orderup: {
 		inherit: true,
 		isNonstandard: "Past",
 	},
 	originpulse: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
-	overdrive: {
 		inherit: true,
 		isNonstandard: "Past",
 	},
@@ -757,10 +788,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		pp: 5,
 	},
-	pyroball: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
 	ragefist: {
 		inherit: true,
 		// Hit counter reset is implemented in Pokemon#clearVolatile
@@ -780,10 +807,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	revelationdance: {
 		inherit: true,
 		basePower: 100,
-		isNonstandard: "Past",
-	},
-	revivalblessing: {
-		inherit: true,
 		isNonstandard: "Past",
 	},
 	roaroftime: {
@@ -855,10 +878,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		pp: 10,
 	},
-	shiftgear: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
 	shockwave: {
 		inherit: true,
 		isNonstandard: "Past",
@@ -881,7 +900,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	slash: {
 		inherit: true,
-		isNonstandard: "Past",
+		basePower: 80,
 	},
 	sludge: {
 		inherit: true,
@@ -903,7 +922,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	snipeshot: {
 		inherit: true,
 		basePower: 85,
-		isNonstandard: "Past",
 	},
 	snowscape: {
 		inherit: true,
@@ -957,6 +975,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	strength: {
 		inherit: true,
 		isNonstandard: "Past",
+	},
+	strengthsap: {
+		inherit: true,
+		pp: 5,
 	},
 	stuffcheeks: {
 		inherit: true,
@@ -1105,15 +1127,15 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		isNonstandard: "Past",
 	},
+	wish: {
+		inherit: true,
+		pp: 5,
+	},
 	withdraw: {
 		inherit: true,
 		isNonstandard: "Past",
 	},
 	workup: {
-		inherit: true,
-		isNonstandard: "Past",
-	},
-	zingzap: {
 		inherit: true,
 		isNonstandard: "Past",
 	},

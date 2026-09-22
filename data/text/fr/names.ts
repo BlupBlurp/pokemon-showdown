@@ -1,104 +1,3 @@
-export const TermNames: { [id: string]: TranslationString } = {
-	shiny: "Chromatique",
-	happiness: null, // NEEDS TRANSLATION
-	level: null, // NEEDS TRANSLATION
-	nickname: null, // NEEDS TRANSLATION
-	ev: "EV",
-	evs: "EVs",
-	iv: "IV",
-	ivs: "IVs",
-	dv: "DVs",
-	dvs: "DVs",
-	av: "AV",
-	avs: "AVs",
-	point: "Point",
-	points: "Points",
-	// n.b. used in Teambuilder, so it should be capitalized (unlike StatNames.stats)
-	stats: "Stats",
-
-	pokemon: "Pokémon",
-	move: "Capacité", // official term (SV)
-	moves: "Capacités",
-	item: "Objet", // official term
-	items: null, // NEEDS TRANSLATION
-	ability: "Talent", // SV en/fr_common 429; Champions fra btl_data_pokedetail 3
-	abilities: null, // NEEDS TRANSLATION
-	hiddenability: null, // NEEDS TRANSLATION
-	possibleabilities: null, // NEEDS TRANSLATION
-	team: null, // NEEDS TRANSLATION
-	teams: null, // NEEDS TRANSLATION
-	teamslist: null, // NEEDS TRANSLATION
-
-	type: "Type",
-	types: "Types",
-	teratype: null, // NEEDS TRANSLATION
-	nature: "Nature",
-	category: "Catégorie",
-	categories: "Catégories",
-	gender: "Sexe",
-	egggroup: null, // NEEDS TRANSLATION
-	egggroups: null, // NEEDS TRANSLATION
-	tag: null, // NEEDS TRANSLATION
-	article: "Article",
-	articles: "Articles",
-	tier: "Tier",
-	tiers: "Tiers",
-	format: null, // NEEDS TRANSLATION
-	formats: null, // NEEDS TRANSLATION
-	color: "Couleur",
-	form: null, // NEEDS TRANSLATION
-	forme: null, // NEEDS TRANSLATION
-	dexnum: null, // NEEDS TRANSLATION
-	generation: null, // NEEDS TRANSLATION
-	gennum: null, // NEEDS TRANSLATION
-	evolution: null, // NEEDS TRANSLATION
-	preevolution: null, // NEEDS TRANSLATION
-	doesnotevolve: null, // NEEDS TRANSLATION
-	zcrystal: null, // NEEDS TRANSLATION
-	target: null, // NEEDS TRANSLATION
-	height: "Taille",
-	numm: "{NUMBER} m",
-	weight: "Poids",
-	numkg: "{NUMBER} kg",
-	critrate: null, // NEEDS TRANSLATION
-	user: null, // NEEDS TRANSLATION
-	requiredmove: null, // NEEDS TRANSLATION
-	dynamaxpower: null, // NEEDS TRANSLATION
-	none: null, // NEEDS TRANSLATION
-	pastgensonly: null, // NEEDS TRANSLATION
-	flingbasepower: null, // NEEDS TRANSLATION
-	flingeffect: null, // NEEDS TRANSLATION
-	naturalgifttype: null, // NEEDS TRANSLATION
-	naturalgiftbasepower: null, // NEEDS TRANSLATION
-
-	megaevolution: null, // NEEDS TRANSLATION
-	zpower: null, // NEEDS TRANSLATION
-	zeffect: null, // NEEDS TRANSLATION
-	dynamax: null, // NEEDS TRANSLATION
-	dynamaxlevel: null, // NEEDS TRANSLATION
-	ultraburst: null, // NEEDS TRANSLATION
-	tera: null, // NEEDS TRANSLATION
-
-	supereffective: null, // NEEDS TRANSLATION
-	extremelyeffective: null, // NEEDS TRANSLATION
-	effective: null, // NEEDS TRANSLATION
-	notveryeffective: null, // NEEDS TRANSLATION
-	mostlyineffective: null, // NEEDS TRANSLATION
-	noeffect: null, // NEEDS TRANSLATION
-
-	weak: null, // NEEDS TRANSLATION
-	resist: null, // NEEDS TRANSLATION
-	immune: null, // NEEDS TRANSLATION
-
-	nicknamespecies: "{NICKNAME} ({SPECIES})",
-	label: null, // NEEDS TRANSLATION
-	noweather: null, // NEEDS TRANSLATION
-	noitem: null, // NEEDS TRANSLATION
-	noability: null, // NEEDS TRANSLATION
-	foescondition: null, // NEEDS TRANSLATION
-	speciesforme: null, // NEEDS TRANSLATION
-};
-
 export const StatNames: { [id: string]: TranslationString } = {
 	hp: "PV",
 	atk: "Attaque", "atk:grammar": "fs",
@@ -111,7 +10,7 @@ export const StatNames: { [id: string]: TranslationString } = {
 	spc: "Spécial", "spc:grammar": "ms",
 
 	// n.b. used in "stats were lowered" battle messages,
-	// so it should be lowercase (unlike TermNames.stats)
+	// so it should be lowercase (unlike "Stats" in ui.ts)
 	stats: "stats", "stats:grammar": "fp",
 };
 
@@ -126,59 +25,60 @@ export const StatShortNames: { [id: string]: TranslationString } = {
 };
 
 export const TypeNames: { [id: string]: TranslationString } = {
-	bug: "Insecte",
-	dark: "Ténèbres",
-	dragon: "Dragon",
-	electric: "Électrik",
-	fairy: "Fée",
-	fighting: "Combat",
-	fire: "Feu",
-	flying: "Vol",
-	ghost: "Spectre",
-	grass: "Plante",
-	ground: "Sol",
-	ice: "Glace",
-	normal: "Normal",
-	poison: "Poison",
-	psychic: "Psy",
-	rock: "Roche",
-	steel: "Acier",
-	stellar: "Stellaire",
-	water: "Eau",
+	Bug: "Insecte",
+	Dark: "Ténèbres",
+	Dragon: "Dragon",
+	Electric: "Électrik",
+	Fairy: "Fée",
+	Fighting: "Combat",
+	Fire: "Feu",
+	Flying: "Vol",
+	Ghost: "Spectre",
+	Grass: "Plante",
+	Ground: "Sol",
+	Ice: "Glace",
+	Normal: "Normal",
+	Poison: "Poison",
+	Psychic: "Psy",
+	Rock: "Roche",
+	Steel: "Acier",
+	Stellar: "Stellaire",
+	Water: "Eau",
+	"???": null, // NEEDS TRANSLATION
 };
 
 export const NatureNames: { [id: string]: TranslationString } = {
-	adamant: "Rigide",
-	bashful: "Pudique",
-	bold: "Assuré",
-	brave: "Brave",
-	calm: "Calme",
-	careful: "Prudent",
-	docile: "Docile",
-	gentle: "Gentil",
-	hardy: "Hardi",
-	hasty: "Pressé",
-	impish: "Malin",
-	jolly: "Jovial",
-	lax: "Lâche",
-	lonely: "Solo",
-	mild: "Doux",
-	modest: "Modeste",
-	naive: "Naïf",
-	naughty: "Mauvais",
-	quiet: "Discret",
-	quirky: "Bizarre",
-	rash: "Foufou",
-	relaxed: "Relax",
-	sassy: "Malpoli",
-	serious: "Sérieux",
-	timid: "Timide",
+	Adamant: "Rigide",
+	Bashful: "Pudique",
+	Bold: "Assuré",
+	Brave: "Brave",
+	Calm: "Calme",
+	Careful: "Prudent",
+	Docile: "Docile",
+	Gentle: "Gentil",
+	Hardy: "Hardi",
+	Hasty: "Pressé",
+	Impish: "Malin",
+	Jolly: "Jovial",
+	Lax: "Lâche",
+	Lonely: "Solo",
+	Mild: "Doux",
+	Modest: "Modeste",
+	Naive: "Naïf",
+	Naughty: "Mauvais",
+	Quiet: "Discret",
+	Quirky: "Bizarre",
+	Rash: "Foufou",
+	Relaxed: "Relax",
+	Sassy: "Malpoli",
+	Serious: "Sérieux",
+	Timid: "Timide",
 };
 
 export const GenderNames: { [id: string]: TranslationString } = {
-	male: "Mâle",
-	female: "Femelle",
-	genderless: null, // NEEDS TRANSLATION
+	M: "Mâle",
+	F: "Femelle",
+	N: null, // NEEDS TRANSLATION
 };
 
 export const StatusNames: { [id: string]: TranslationString } = {
@@ -223,32 +123,32 @@ export const TargetNames: { [id: string]: TranslationString } = {
 // from veekun/Poképédia who presumably got it from Pokédex 3D Pro
 // Stadium 2 names in comments
 export const EggGroupNames: { [id: string]: TranslationString } = {
-	monster: null, // NEEDS TRANSLATION
-	water1: null, // NEEDS TRANSLATION
-	bug: null, // NEEDS TRANSLATION
-	flying: null, // NEEDS TRANSLATION
-	field: null, // NEEDS TRANSLATION
-	fairy: null, // NEEDS TRANSLATION
-	grass: null, // NEEDS TRANSLATION
-	humanlike: null, // NEEDS TRANSLATION
-	water3: null, // NEEDS TRANSLATION
-	mineral: null, // NEEDS TRANSLATION
-	amorphous: null, // NEEDS TRANSLATION
-	water2: null, // NEEDS TRANSLATION
-	ditto: null, // NEEDS TRANSLATION
-	dragon: null, // NEEDS TRANSLATION
-	undiscovered: null, // NEEDS TRANSLATION
+	Monster: null, // NEEDS TRANSLATION
+	"Water 1": null, // NEEDS TRANSLATION
+	Bug: null, // NEEDS TRANSLATION
+	Flying: null, // NEEDS TRANSLATION
+	Field: null, // NEEDS TRANSLATION
+	Fairy: null, // NEEDS TRANSLATION
+	Grass: null, // NEEDS TRANSLATION
+	"Human-Like": null, // NEEDS TRANSLATION
+	"Water 3": null, // NEEDS TRANSLATION
+	Mineral: null, // NEEDS TRANSLATION
+	Amorphous: null, // NEEDS TRANSLATION
+	"Water 2": null, // NEEDS TRANSLATION
+	Ditto: null, // NEEDS TRANSLATION
+	Dragon: null, // NEEDS TRANSLATION
+	Undiscovered: null, // NEEDS TRANSLATION
 };
 
 export const ColorNames: { [id: string]: TranslationString } = {
-	black: "Noir",
-	blue: "Bleu",
-	brown: "Brun",
-	gray: "Gris",
-	green: "Vert",
-	pink: "Rose",
-	purple: "Violet",
-	red: "Rouge",
-	white: "Blanc",
-	yellow: "Jaune",
+	Black: "Noir",
+	Blue: "Bleu",
+	Brown: "Brun",
+	Gray: "Gris",
+	Green: "Vert",
+	Pink: "Rose",
+	Purple: "Violet",
+	Red: "Rouge",
+	White: "Blanc",
+	Yellow: "Jaune",
 };

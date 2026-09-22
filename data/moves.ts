@@ -2227,7 +2227,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		onAfterHit(target, source, move) {
-			if (!move.hasSheerForce && source.hp) {
+			if (!move.hasSheerForce) {
 				for (const side of source.side.foeSidesWithConditions()) {
 					side.addSideCondition('spikes');
 				}
@@ -3275,7 +3275,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		volatileStatus: 'curse',
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
-				move.target = move.nonGhostTarget!;
+				move.target = 'self';
 			} else if (source.isAlly(target)) {
 				move.target = 'randomNormal';
 			}
@@ -3302,7 +3302,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "normal",
-		nonGhostTarget: "self",
 		type: "Ghost",
 		zMove: { effect: 'curse' },
 		contestType: "Tough",
@@ -7868,9 +7867,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { snatch: 1, metronome: 1 },
 		onModifyMove(move, pokemon) {
-			if (pokemon.hasAbility('megasol') && !this.field.isWeather('sunnyday')) {
-				delete move.boosts;
-			} else if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				move.boosts = { atk: 2, spa: 2 };
 			}
 		},
@@ -14401,9 +14398,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onFoeBeforeSwitchOut(pokemon) {
 				const source: Pokemon = this.effectState.source;
 				this.debug('Pursuit start');
-				if (!source.isAdjacent(pokemon) || !source.hp ||
+				if (
+					!source.isAdjacent(pokemon) || !source.hp ||
 					(source.volatiles['encore'] && source.volatiles['encore'].move !== 'pursuit') ||
-					!this.queue.cancelMove(source)) return;
+					!this.queue.cancelMove(source)
+				) {
+					return;
+				}
+				if (!this.event.pursuitMessageShown) {
+					this.add('-activate', pokemon, 'move: Pursuit');
+					this.event.pursuitMessageShown = true;
+				}
 				// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
 				// If it is, then Mega Evolve before moving.
 				if (source.canMegaEvo || source.canUltraBurst || source.canTerastallize) {
@@ -16685,6 +16690,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			contact: 1, charge: 1, protect: 1, mirror: 1, gravity: 1, distance: 1,
 			metronome: 1, nosleeptalk: 1, noassist: 1, failinstruct: 1,
 		},
+		tracksTarget: true,
 		onModifyMove(move, source) {
 			if (!source.volatiles['skydrop']) {
 				move.accuracy = true;
@@ -18070,7 +18076,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		onAfterHit(target, source, move) {
-			if (!move.hasSheerForce && source.hp) {
+			if (!move.hasSheerForce) {
 				for (const side of source.side.foeSidesWithConditions()) {
 					side.addSideCondition('stealthrock');
 				}

@@ -344,7 +344,7 @@ export const commands: Chat.ChatCommands = {
 	pm: 'msg',
 	whisper: 'msg',
 	w: 'msg',
-	msg(target, room, user, connection) {
+	msg(target, room, user) {
 		if (!target) return this.parse('/help msg');
 		if (!target.includes(',')) {
 			this.errorReply(this.TL`You forgot the comma.`);
@@ -354,48 +354,26 @@ export const commands: Chat.ChatCommands = {
 
 		const { targetUser, targetUsername, rest: message } = this.splitUser(target);
 		const isCommand = !!Chat.parseCommand(message);
-		if (targetUsername === '~') {
-			this.pmTarget = null;
-			this.room = null;
-		} else if (!targetUser) {
-			if (Chat.PrivateMessages.offlineIsEnabled) {
-				if (isCommand) {
-					return this.parse(`/offlinemsg ${targetUsername},${message}`);
-				}
-				if (user.lastCommand === 'pm') {
-					// don't delete lastCommand so they can just keep sending pms
-					return this.parse(`/offlinemsg ${targetUsername},${message}`);
-				}
-				user.lastCommand = 'pm';
-				throw new Chat.ErrorMessage(
-					this.TL`User ${targetUsername} is offline. Send the message again to confirm. If you are using /msg, use /offlinemsg instead.`
-				);
-			}
-			let error = this.TL`User ${targetUsername} not found. Did you misspell their name?`;
-			error = `|pm|${this.user.getIdentity()}| ${targetUsername}|/error ${error}`;
-			connection.send(error);
-			return;
-		} else {
-			this.pmTarget = targetUser;
-			this.pmTargetName = targetUser.name;
-			this.room = null;
-		}
+		const offlineTarget = targetUser ? targetUser.getLastId() : targetUsername;
+		this.pmTarget = targetUser?.connected ? targetUser : null;
+		this.pmTargetName = targetUser?.connected ? targetUsername : offlineTarget;
+		this.room = null;
 
-		if (targetUser && !targetUser.connected) {
-			if (Chat.PrivateMessages.offlineIsEnabled) {
-				if (isCommand) {
-					return this.parse(`/offlinemsg ${targetUser.getLastId()},${message}`);
-				}
-				if (user.lastCommand === 'pm') {
-					// don't delete lastCommand so they can just keep sending pms
-					return this.parse(`/offlinemsg ${targetUser.getLastId()},${message}`);
-				}
-				user.lastCommand = 'pm';
-				throw new Chat.ErrorMessage(
-					this.TL`User ${targetUsername} is offline. Send the message again to confirm. If you are using /msg, use /offlinemsg instead.`
-				);
+		if (targetUsername === '~') {
+			this.pmTargetName = null;
+		} else if (!targetUser?.connected) {
+			if (!Chat.PrivateMessages.offlineIsEnabled) {
+				if (targetUser) throw new Chat.ErrorMessage(`${targetUsername} is offline.`);
+				throw new Chat.ErrorMessage(this.TL`User ${targetUsername} not found. Did you misspell their name?`);
 			}
-			throw new Chat.ErrorMessage(`${targetUsername} is offline.`);
+			if (isCommand || user.lastCommand === 'pm') {
+				// don't delete lastCommand so only the first offline DM needs to be repeated
+				return this.parse(`/offlinemsg ${offlineTarget},${message}`);
+			}
+			user.lastCommand = 'pm';
+			throw new Chat.ErrorMessage(
+				this.TL`User ${targetUsername} is offline. Send the message again to confirm. If you are using /msg, use /offlinemsg instead.`
+			);
 		}
 
 		return this.parse(message);
@@ -532,8 +510,11 @@ export const commands: Chat.ChatCommands = {
 			this.sendReply(this.TL`You are now blocking ${msg}private messages, except from staff and ${target}.`);
 		} else if (target === 'autoconfirmed' || target === 'trusted' || target === 'unlocked') {
 			if (!isOffline) user.settings.blockPMs = target;
-			target = this.TL(target);
-			this.sendReply(this.TL`You are now blocking ${msg}private messages, except from staff, friends, and ${target} users.`);
+			const statusNames: Record<string, string> = {
+				autoconfirmed: this.TL`autoconfirmed`, trusted: this.TL`trusted`, unlocked: this.TL`unlocked`,
+			};
+			const status = statusNames[target];
+			this.sendReply(this.TL`You are now blocking ${msg}private messages, except from staff, friends, and ${status} users.`);
 		} else if (target === 'friends') {
 			if (!isOffline) user.settings.blockPMs = target;
 			this.sendReply(this.TL`You are now blocking ${msg}private messages, except from staff and friends.`);
@@ -835,10 +816,10 @@ export const commands: Chat.ChatCommands = {
 			throw new Chat.ErrorMessage(this.TL`You have already consented to extraction with ${targetUser.name}.`);
 		}
 		battle.allowExtraction[targetUser.id].add(user.id);
-		this.addModAction(room.tr`${user.name} consents to sharing battle team and choices with ${targetUser.name}.`);
+		this.addModAction(room.TL`${user.name} consents to sharing battle team and choices with ${targetUser.name}.`);
 		if (!battle.inputLog) throw new Chat.ErrorMessage(this.TL`No input log found.`);
 		if (Object.keys(battle.playerTable).length === battle.allowExtraction[targetUser.id].size) {
-			this.addModAction(room.tr`${targetUser.name} has extracted the battle input log.`);
+			this.addModAction(room.TL`${targetUser.name} has extracted the battle input log.`);
 			const inputLog = battle.inputLog.map(Utils.escapeHTML).join(`<br />`);
 			targetUser.sendTo(
 				room,
@@ -865,7 +846,7 @@ export const commands: Chat.ChatCommands = {
 		this.checkCan('exportinputlog', null, room);
 		if (user.can('forcewin') || Dex.formats.get(battle.format).team) {
 			if (!battle.inputLog) throw new Chat.ErrorMessage(this.TL`No input log found.`);
-			this.addModAction(room.tr`${user.name} has extracted the battle input log.`);
+			this.addModAction(room.TL`${user.name} has extracted the battle input log.`);
 			const inputLog = battle.inputLog.map(Utils.escapeHTML).join(`<br />`);
 			user.sendTo(
 				room,
@@ -885,7 +866,7 @@ export const commands: Chat.ChatCommands = {
 					);
 				}
 			}
-			this.addModAction(room.tr`${user.name} wants to extract the battle input log.`);
+			this.addModAction(room.TL`${user.name} wants to extract the battle input log.`);
 		} else {
 			// Re-request to make the buttons appear again for users who have not allowed extraction
 			let logExported = true;
@@ -1202,7 +1183,7 @@ export const commands: Chat.ChatCommands = {
 		room.hideReplay = true;
 		// If a replay has already been saved, /savereplay again to update the uploaded replay's hidden status
 		if (room.battle.replaySaved) this.parse('/savereplay');
-		this.addModAction(room.tr`${user.name} hid the replay of this battle.`);
+		this.addModAction(room.TL`${user.name} hid the replay of this battle.`);
 	},
 	hidereplayhelp: [`/hidereplay - Hides the replay of the current battle. Requires: ${Users.PLAYER_SYMBOL} ~`],
 
@@ -1387,7 +1368,7 @@ export const commands: Chat.ChatCommands = {
 		this.checkCan('kick', targetUser, room);
 		if (room.battle.leaveGame(targetUser)) {
 			const displayReason = reason ? ` (${reason})` : ``;
-			this.addModAction(room.tr`${targetUser.name} was kicked from a battle by ${user.name}.${displayReason}`);
+			this.addModAction(room.TL`${targetUser.name} was kicked from a battle by ${user.name}.${displayReason}`);
 			this.modlog('KICKBATTLE', targetUser, reason, { noip: 1, noalts: 1 });
 		} else {
 			throw new Chat.ErrorMessage("/kickbattle - User isn't in battle.");
@@ -1427,7 +1408,7 @@ export const commands: Chat.ChatCommands = {
 			if (timer.timerRequesters.size) {
 				timer.stop(force ? undefined : user);
 				if (force) {
-					room.send(`|inactiveoff|${room.tr`Timer was turned off by staff. Please do not turn it back on until our staff say it's okay.`}`);
+					room.send(`|inactiveoff|${room.TL`Timer was turned off by staff. Please do not turn it back on until our staff say it's okay.`}`);
 				}
 			} else {
 				throw new Chat.ErrorMessage(this.TL`The timer is already off.`);
@@ -1449,10 +1430,10 @@ export const commands: Chat.ChatCommands = {
 		this.checkCan('autotimer');
 		if (this.meansNo(target) || target === 'stop') {
 			Config.forcetimer = false;
-			this.addModAction(room.tr`Forcetimer is now OFF: The timer is now opt-in. (set by ${user.name})`);
+			this.addModAction(room.TL`Forcetimer is now OFF: The timer is now opt-in. (set by ${user.name})`);
 		} else if (this.meansYes(target) || target === 'start' || !target) {
 			Config.forcetimer = true;
-			this.addModAction(room.tr`Forcetimer is now ON: All battles will be timed. (set by ${user.name})`);
+			this.addModAction(room.TL`Forcetimer is now ON: All battles will be timed. (set by ${user.name})`);
 		} else {
 			throw new Chat.ErrorMessage(this.TL`'${target}' is not a recognized forcetimer setting.`);
 		}
@@ -1567,9 +1548,11 @@ export const commands: Chat.ChatCommands = {
 			this.sendReply(this.TL`You are now blocking challenges, except from staff and ${target}.`);
 		} else if (target === 'autoconfirmed' || target === 'trusted' || target === 'unlocked' || target === 'friends') {
 			user.settings.blockChallenges = target;
-			if (target === 'friends') target = 'friended';
-			target = this.TL(target);
-			this.sendReply(this.TL`You are now blocking challenges, except from staff and ${target} users.`);
+			const statusNames: Record<string, string> = {
+				autoconfirmed: this.TL`autoconfirmed`, trusted: this.TL`trusted`, unlocked: this.TL`unlocked`, friends: this.TL`friended`,
+			};
+			const status = statusNames[target];
+			this.sendReply(this.TL`You are now blocking challenges, except from staff and ${status} users.`);
 		} else {
 			user.settings.blockChallenges = true;
 			this.sendReply(this.TL`You are now blocking all incoming challenge requests.`);

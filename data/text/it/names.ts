@@ -1,104 +1,3 @@
-export const TermNames: { [id: string]: TranslationString } = {
-	shiny: "Cromatico",
-	happiness: null, // NEEDS TRANSLATION
-	level: null, // NEEDS TRANSLATION
-	nickname: "Soprannome", // official: SV it_common 4414
-	ev: "EV",
-	evs: "EVs",
-	iv: "IV",
-	ivs: "IVs",
-	dv: "DVs",
-	dvs: "DVs",
-	av: "AV",
-	avs: "AVs",
-	point: null, // NEEDS TRANSLATION
-	points: null, // NEEDS TRANSLATION
-	// n.b. used in Teambuilder, so it should be capitalized (unlike StatNames.stats)
-	stats: "Statistiche",
-
-	pokemon: "Pokémon",
-	move: null, // NEEDS TRANSLATION
-	moves: null, // NEEDS TRANSLATION
-	item: null, // NEEDS TRANSLATION
-	items: null, // NEEDS TRANSLATION
-	ability: null, // NEEDS TRANSLATION
-	abilities: null, // NEEDS TRANSLATION
-	hiddenability: "Abilità speciale", // official: SV it_common 36040 ("con un’abilità speciale")
-	possibleabilities: null, // NEEDS TRANSLATION
-	team: null, // NEEDS TRANSLATION
-	teams: null, // NEEDS TRANSLATION
-	teamslist: null, // NEEDS TRANSLATION
-
-	type: "Tipo",
-	types: "Tipi",
-	teratype: null, // NEEDS TRANSLATION
-	nature: "Natura",
-	category: "Categoria",
-	categories: "Categorie",
-	gender: "Sesso",
-	egggroup: null, // NEEDS TRANSLATION
-	egggroups: null, // NEEDS TRANSLATION
-	tag: null, // NEEDS TRANSLATION
-	article: null, // NEEDS TRANSLATION
-	articles: null, // NEEDS TRANSLATION
-	tier: "Tier",
-	tiers: null, // NEEDS TRANSLATION
-	format: null, // NEEDS TRANSLATION
-	formats: null, // NEEDS TRANSLATION
-	color: "Colore",
-	form: null, // NEEDS TRANSLATION
-	forme: null, // NEEDS TRANSLATION
-	dexnum: null, // NEEDS TRANSLATION
-	generation: null, // NEEDS TRANSLATION
-	gennum: "Gen {NUMBER}",
-	evolution: null, // NEEDS TRANSLATION
-	preevolution: null, // NEEDS TRANSLATION
-	doesnotevolve: null, // NEEDS TRANSLATION
-	zcrystal: "Cristallo Z", // official: USUM it_common 21919
-	target: null, // NEEDS TRANSLATION
-	height: "Altezza",
-	numm: "{NUMBER} m",
-	weight: "Peso",
-	numkg: "{NUMBER} kg",
-	critrate: null, // NEEDS TRANSLATION
-	user: null, // NEEDS TRANSLATION
-	requiredmove: null, // NEEDS TRANSLATION
-	dynamaxpower: null, // NEEDS TRANSLATION
-	none: null, // NEEDS TRANSLATION
-	pastgensonly: null, // NEEDS TRANSLATION
-	flingbasepower: null, // NEEDS TRANSLATION
-	flingeffect: null, // NEEDS TRANSLATION
-	naturalgifttype: null, // NEEDS TRANSLATION
-	naturalgiftbasepower: null, // NEEDS TRANSLATION
-
-	megaevolution: null, // NEEDS TRANSLATION
-	zpower: null, // NEEDS TRANSLATION
-	zeffect: null, // NEEDS TRANSLATION
-	dynamax: null, // NEEDS TRANSLATION
-	dynamaxlevel: "Livello Dynamax", // official: SwSh it_common 846
-	ultraburst: "Ultraesplosione", // official: USUM it_common 8794
-	tera: null, // NEEDS TRANSLATION
-
-	supereffective: "Superefficace", // official: SV it_common 8613 ("È superefficace!")
-	extremelyeffective: "Iperefficace", // official: Champions it_ms 1925 ("È iperefficace!!")
-	effective: null, // NEEDS TRANSLATION
-	notveryeffective: null, // NEEDS TRANSLATION
-	mostlyineffective: "Quasi per niente efficace", // official: Champions it_ms 1928
-	noeffect: null, // NEEDS TRANSLATION
-
-	weak: null, // NEEDS TRANSLATION
-	resist: null, // NEEDS TRANSLATION
-	immune: null, // NEEDS TRANSLATION
-
-	nicknamespecies: "{NICKNAME} ({SPECIES})",
-	label: null, // NEEDS TRANSLATION
-	noweather: null, // NEEDS TRANSLATION
-	noitem: null, // NEEDS TRANSLATION
-	noability: null, // NEEDS TRANSLATION
-	foescondition: null, // NEEDS TRANSLATION
-	speciesforme: null, // NEEDS TRANSLATION
-};
-
 export const StatNames: { [id: string]: TranslationString } = {
 	hp: "PS", "hp:grammar": "mp",
 	atk: "Attacco", "atk:grammar": "ms",
@@ -111,7 +10,7 @@ export const StatNames: { [id: string]: TranslationString } = {
 	spc: "Speciale", "spc:grammar": "ms",
 
 	// n.b. used in "stats were lowered" battle messages,
-	// so it should be lowercase (unlike TermNames.stats)
+	// so it should be lowercase (unlike "Stats" in ui.ts)
 	stats: "statistiche", "stats:grammar": "fp",
 };
 
@@ -127,59 +26,60 @@ export const StatShortNames: { [id: string]: TranslationString } = {
 };
 
 export const TypeNames: { [id: string]: TranslationString } = {
-	bug: "Coleottero",
-	dark: "Buio",
-	dragon: "Drago",
-	electric: "Elettro",
-	fairy: "Folletto",
-	fighting: "Lotta",
-	fire: "Fuoco",
-	flying: "Volante",
-	ghost: "Spettro",
-	grass: "Erba",
-	ground: "Terra",
-	ice: "Ghiaccio",
-	normal: "Normale",
-	poison: "Veleno",
-	psychic: "Psico",
-	rock: "Roccia",
-	steel: "Acciaio",
-	stellar: "Astrale",
-	water: "Acqua",
+	Bug: "Coleottero",
+	Dark: "Buio",
+	Dragon: "Drago",
+	Electric: "Elettro",
+	Fairy: "Folletto",
+	Fighting: "Lotta",
+	Fire: "Fuoco",
+	Flying: "Volante",
+	Ghost: "Spettro",
+	Grass: "Erba",
+	Ground: "Terra",
+	Ice: "Ghiaccio",
+	Normal: "Normale",
+	Poison: "Veleno",
+	Psychic: "Psico",
+	Rock: "Roccia",
+	Steel: "Acciaio",
+	Stellar: "Astrale",
+	Water: "Acqua",
+	"???": null, // NEEDS TRANSLATION
 };
 
 export const NatureNames: { [id: string]: TranslationString } = {
-	adamant: "Decisa",
-	bashful: "Ritrosa",
-	bold: "Sicura",
-	brave: "Audace",
-	calm: "Calma",
-	careful: "Cauta",
-	docile: "Docile",
-	gentle: "Gentile",
-	hardy: "Ardita",
-	hasty: "Lesta",
-	impish: "Scaltra",
-	jolly: "Allegra",
-	lax: "Fiacca",
-	lonely: "Schiva",
-	mild: "Mite",
-	modest: "Modesta",
-	naive: "Ingenua",
-	naughty: "Birbona",
-	quiet: "Quieta",
-	quirky: "Furba",
-	rash: "Ardente",
-	relaxed: "Placida",
-	sassy: "Vivace",
-	serious: "Seria",
-	timid: "Timida",
+	Adamant: "Decisa",
+	Bashful: "Ritrosa",
+	Bold: "Sicura",
+	Brave: "Audace",
+	Calm: "Calma",
+	Careful: "Cauta",
+	Docile: "Docile",
+	Gentle: "Gentile",
+	Hardy: "Ardita",
+	Hasty: "Lesta",
+	Impish: "Scaltra",
+	Jolly: "Allegra",
+	Lax: "Fiacca",
+	Lonely: "Schiva",
+	Mild: "Mite",
+	Modest: "Modesta",
+	Naive: "Ingenua",
+	Naughty: "Birbona",
+	Quiet: "Quieta",
+	Quirky: "Furba",
+	Rash: "Ardente",
+	Relaxed: "Placida",
+	Sassy: "Vivace",
+	Serious: "Seria",
+	Timid: "Timida",
 };
 
 export const GenderNames: { [id: string]: TranslationString } = {
-	male: "Maschio",
-	female: "Femmina",
-	genderless: "Sconosciuto",
+	M: "Maschio",
+	F: "Femmina",
+	N: "Sconosciuto",
 };
 
 export const StatusNames: { [id: string]: TranslationString } = {
@@ -224,32 +124,32 @@ export const TargetNames: { [id: string]: TranslationString } = {
 // from veekun/Pokémon Central who presumably got it from Pokédex 3D Pro
 // Stadium 2 names in comments
 export const EggGroupNames: { [id: string]: TranslationString } = {
-	monster: null, // NEEDS TRANSLATION
-	water1: null, // NEEDS TRANSLATION
-	bug: null, // NEEDS TRANSLATION
-	flying: null, // NEEDS TRANSLATION
-	field: null, // NEEDS TRANSLATION
-	fairy: null, // NEEDS TRANSLATION
-	grass: null, // NEEDS TRANSLATION
-	humanlike: null, // NEEDS TRANSLATION
-	water3: null, // NEEDS TRANSLATION
-	mineral: null, // NEEDS TRANSLATION
-	amorphous: null, // NEEDS TRANSLATION
-	water2: null, // NEEDS TRANSLATION
-	ditto: null, // NEEDS TRANSLATION
-	dragon: null, // NEEDS TRANSLATION
-	undiscovered: null, // NEEDS TRANSLATION
+	Monster: null, // NEEDS TRANSLATION
+	"Water 1": null, // NEEDS TRANSLATION
+	Bug: null, // NEEDS TRANSLATION
+	Flying: null, // NEEDS TRANSLATION
+	Field: null, // NEEDS TRANSLATION
+	Fairy: null, // NEEDS TRANSLATION
+	Grass: null, // NEEDS TRANSLATION
+	"Human-Like": null, // NEEDS TRANSLATION
+	"Water 3": null, // NEEDS TRANSLATION
+	Mineral: null, // NEEDS TRANSLATION
+	Amorphous: null, // NEEDS TRANSLATION
+	"Water 2": null, // NEEDS TRANSLATION
+	Ditto: null, // NEEDS TRANSLATION
+	Dragon: null, // NEEDS TRANSLATION
+	Undiscovered: null, // NEEDS TRANSLATION
 };
 
 export const ColorNames: { [id: string]: TranslationString } = {
-	black: "Nero",
-	blue: "Blu",
-	brown: "Marrone",
-	gray: "Grigio",
-	green: "Verde",
-	pink: "Rosa",
-	purple: "Viola",
-	red: "Rosso",
-	white: "Bianco",
-	yellow: "Giallo",
+	Black: "Nero",
+	Blue: "Blu",
+	Brown: "Marrone",
+	Gray: "Grigio",
+	Green: "Verde",
+	Pink: "Rosa",
+	Purple: "Viola",
+	Red: "Rosso",
+	White: "Bianco",
+	Yellow: "Giallo",
 };

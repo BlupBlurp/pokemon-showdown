@@ -1,110 +1,9 @@
-export const TermNames: { [id: string]: TranslationString } = {
-	shiny: "いろちがい",
-	happiness: null, // NEEDS TRANSLATION
-	level: null, // NEEDS TRANSLATION
-	nickname: null, // NEEDS TRANSLATION
-	ev: null, // NEEDS TRANSLATION
-	evs: null, // NEEDS TRANSLATION
-	iv: null, // NEEDS TRANSLATION
-	ivs: null, // NEEDS TRANSLATION
-	dv: null, // NEEDS TRANSLATION
-	dvs: null, // NEEDS TRANSLATION
-	av: "覚醒値", // community term
-	avs: "覚醒値", // community term
-	point: null, // NEEDS TRANSLATION
-	points: null, // NEEDS TRANSLATION
-	// n.b. used in Teambuilder, so it should be capitalized (unlike StatNames.stats)
-	stats: "ステータス",
-
-	pokemon: "ポケモン",
-	move: null, // NEEDS TRANSLATION
-	moves: null, // NEEDS TRANSLATION
-	item: null, // NEEDS TRANSLATION
-	items: null, // NEEDS TRANSLATION
-	ability: null, // NEEDS TRANSLATION
-	abilities: null, // NEEDS TRANSLATION
-	hiddenability: null, // NEEDS TRANSLATION
-	possibleabilities: null, // NEEDS TRANSLATION
-	team: null, // NEEDS TRANSLATION
-	teams: null, // NEEDS TRANSLATION
-	teamslist: null, // NEEDS TRANSLATION
-
-	type: "タイプ",
-	types: "タイプ",
-	teratype: "テラスタイプ：{TYPE}", // official term (SV)
-	nature: "せいかく",
-	category: "ぶんるい",
-	categories: "ぶんるい",
-	gender: "せいべつ",
-	egggroup: null, // NEEDS TRANSLATION
-	egggroups: null, // NEEDS TRANSLATION
-	tag: null, // NEEDS TRANSLATION
-	article: null, // NEEDS TRANSLATION
-	articles: null, // NEEDS TRANSLATION
-	tier: null, // NEEDS TRANSLATION
-	tiers: null, // NEEDS TRANSLATION
-	format: null, // NEEDS TRANSLATION
-	formats: null, // NEEDS TRANSLATION
-	color: "色",
-	form: null, // NEEDS TRANSLATION
-	forme: null, // NEEDS TRANSLATION
-	dexnum: null, // NEEDS TRANSLATION
-	generation: null, // NEEDS TRANSLATION
-	gennum: null, // NEEDS TRANSLATION
-	evolution: null, // NEEDS TRANSLATION
-	preevolution: null, // NEEDS TRANSLATION
-	doesnotevolve: null, // NEEDS TRANSLATION
-	zcrystal: null, // NEEDS TRANSLATION
-	target: null, // NEEDS TRANSLATION
-	height: "高さ",
-	numm: null, // NEEDS TRANSLATION
-	weight: "重さ",
-	numkg: null, // NEEDS TRANSLATION
-	critrate: null, // NEEDS TRANSLATION
-	user: null, // NEEDS TRANSLATION
-	requiredmove: null, // NEEDS TRANSLATION
-	dynamaxpower: null, // NEEDS TRANSLATION
-	none: null, // NEEDS TRANSLATION
-	pastgensonly: null, // NEEDS TRANSLATION
-	flingbasepower: null, // NEEDS TRANSLATION
-	flingeffect: null, // NEEDS TRANSLATION
-	naturalgifttype: null, // NEEDS TRANSLATION
-	naturalgiftbasepower: null, // NEEDS TRANSLATION
-
-	megaevolution: "メガシンカ", // official term (XY)
-	zpower: "Ｚパワー", // official term (SM ja_common 8430)
-	zeffect: null, // NEEDS TRANSLATION
-	dynamax: "ダイマックス", // official term (SwSh)
-	dynamaxlevel: null, // NEEDS TRANSLATION
-	ultraburst: null, // NEEDS TRANSLATION
-	tera: "テラスタル", // official term (SV)
-
-	supereffective: "ばつぐん",
-	extremelyeffective: "ちょうばつぐん",
-	effective: null, // NEEDS TRANSLATION
-	notveryeffective: "いまひとつ",
-	mostlyineffective: "かなりいまひとつ",
-	noeffect: null, // NEEDS TRANSLATION
-
-	weak: null, // NEEDS TRANSLATION
-	resist: null, // NEEDS TRANSLATION
-	immune: null, // NEEDS TRANSLATION
-
-	nicknamespecies: null, // NEEDS TRANSLATION
-	label: null, // NEEDS TRANSLATION
-	noweather: null, // NEEDS TRANSLATION
-	noitem: null, // NEEDS TRANSLATION
-	noability: null, // NEEDS TRANSLATION
-	foescondition: null, // NEEDS TRANSLATION
-	speciesforme: null, // NEEDS TRANSLATION
-};
-
 export const StatNames: { [id: string]: TranslationString } = {
 	hp: "ＨＰ", atk: "攻撃", def: "防御", spa: "特攻", spd: "特防", spe: "素早さ",
 	accuracy: "命中率", evasion: "回避率", spc: "特殊",
 
 	// n.b. used in "stats were lowered" battle messages,
-	// so it should be lowercase (unlike TermNames.stats)
+	// so it should be lowercase (unlike "Stats" in ui.ts)
 	stats: "ステータス",
 };
 
@@ -118,59 +17,60 @@ export const StatShortNames: { [id: string]: TranslationString } = {
 };
 
 export const TypeNames: { [id: string]: TranslationString } = {
-	bug: "むし",
-	dark: "あく",
-	dragon: "ドラゴン",
-	electric: "でんき",
-	fairy: "フェアリー",
-	fighting: "かくとう",
-	fire: "ほのお",
-	flying: "ひこう",
-	ghost: "ゴースト",
-	grass: "くさ",
-	ground: "じめん",
-	ice: "こおり",
-	normal: "ノーマル",
-	poison: "どく",
-	psychic: "エスパー",
-	rock: "いわ",
-	steel: "はがね",
-	stellar: "ステラ",
-	water: "みず",
+	Bug: "むし",
+	Dark: "あく",
+	Dragon: "ドラゴン",
+	Electric: "でんき",
+	Fairy: "フェアリー",
+	Fighting: "かくとう",
+	Fire: "ほのお",
+	Flying: "ひこう",
+	Ghost: "ゴースト",
+	Grass: "くさ",
+	Ground: "じめん",
+	Ice: "こおり",
+	Normal: "ノーマル",
+	Poison: "どく",
+	Psychic: "エスパー",
+	Rock: "いわ",
+	Steel: "はがね",
+	Stellar: "ステラ",
+	Water: "みず",
+	"???": null, // NEEDS TRANSLATION
 };
 
 export const NatureNames: { [id: string]: TranslationString } = {
-	adamant: "いじっぱり",
-	bashful: "てれや",
-	bold: "ずぶとい",
-	brave: "ゆうかん",
-	calm: "おだやか",
-	careful: "しんちょう",
-	docile: "すなお",
-	gentle: "おとなしい",
-	hardy: "がんばりや",
-	hasty: "せっかち",
-	impish: "わんぱく",
-	jolly: "ようき",
-	lax: "のうてんき",
-	lonely: "さみしがり",
-	mild: "おっとり",
-	modest: "ひかえめ",
-	naive: "むじゃき",
-	naughty: "やんちゃ",
-	quiet: "れいせい",
-	quirky: "きまぐれ",
-	rash: "うっかりや",
-	relaxed: "のんき",
-	sassy: "なまいき",
-	serious: "まじめ",
-	timid: "おくびょう",
+	Adamant: "いじっぱり",
+	Bashful: "てれや",
+	Bold: "ずぶとい",
+	Brave: "ゆうかん",
+	Calm: "おだやか",
+	Careful: "しんちょう",
+	Docile: "すなお",
+	Gentle: "おとなしい",
+	Hardy: "がんばりや",
+	Hasty: "せっかち",
+	Impish: "わんぱく",
+	Jolly: "ようき",
+	Lax: "のうてんき",
+	Lonely: "さみしがり",
+	Mild: "おっとり",
+	Modest: "ひかえめ",
+	Naive: "むじゃき",
+	Naughty: "やんちゃ",
+	Quiet: "れいせい",
+	Quirky: "きまぐれ",
+	Rash: "うっかりや",
+	Relaxed: "のんき",
+	Sassy: "なまいき",
+	Serious: "まじめ",
+	Timid: "おくびょう",
 };
 
 export const GenderNames: { [id: string]: TranslationString } = {
-	male: "オス",
-	female: "メス",
-	genderless: "せいべつなし",
+	M: "オス",
+	F: "メス",
+	N: "せいべつなし",
 };
 
 export const StatusNames: { [id: string]: TranslationString } = {
@@ -216,32 +116,32 @@ export const TargetNames: { [id: string]: TranslationString } = {
 // veekun (presumably from Pokédex 3D Pro) uses kana (かいじゅう, タマゴみはっけん, ...)
 // these are Kanji forms, presumably from guidebooks
 export const EggGroupNames: { [id: string]: TranslationString } = {
-	monster: null, // NEEDS TRANSLATION
-	water1: null, // NEEDS TRANSLATION
-	bug: null, // NEEDS TRANSLATION
-	flying: null, // NEEDS TRANSLATION
-	field: null, // NEEDS TRANSLATION
-	fairy: null, // NEEDS TRANSLATION
-	grass: null, // NEEDS TRANSLATION
-	humanlike: null, // NEEDS TRANSLATION
-	water3: null, // NEEDS TRANSLATION
-	mineral: null, // NEEDS TRANSLATION
-	amorphous: null, // NEEDS TRANSLATION
-	water2: null, // NEEDS TRANSLATION
-	ditto: null, // NEEDS TRANSLATION
-	dragon: null, // NEEDS TRANSLATION
-	undiscovered: null, // NEEDS TRANSLATION
+	Monster: null, // NEEDS TRANSLATION
+	"Water 1": null, // NEEDS TRANSLATION
+	Bug: null, // NEEDS TRANSLATION
+	Flying: null, // NEEDS TRANSLATION
+	Field: null, // NEEDS TRANSLATION
+	Fairy: null, // NEEDS TRANSLATION
+	Grass: null, // NEEDS TRANSLATION
+	"Human-Like": null, // NEEDS TRANSLATION
+	"Water 3": null, // NEEDS TRANSLATION
+	Mineral: null, // NEEDS TRANSLATION
+	Amorphous: null, // NEEDS TRANSLATION
+	"Water 2": null, // NEEDS TRANSLATION
+	Ditto: null, // NEEDS TRANSLATION
+	Dragon: null, // NEEDS TRANSLATION
+	Undiscovered: null, // NEEDS TRANSLATION
 };
 
 export const ColorNames: { [id: string]: TranslationString } = {
-	black: "黒",
-	blue: "青",
-	brown: "茶",
-	gray: "灰",
-	green: "緑",
-	pink: "桃",
-	purple: "紫",
-	red: "赤",
-	white: "白",
-	yellow: "黄",
+	Black: "黒",
+	Blue: "青",
+	Brown: "茶",
+	Gray: "灰",
+	Green: "緑",
+	Pink: "桃",
+	Purple: "紫",
+	Red: "赤",
+	White: "白",
+	Yellow: "黄",
 };

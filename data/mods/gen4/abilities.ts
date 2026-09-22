@@ -550,7 +550,7 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 		onResidual(pokemon) {
-			if (!pokemon.removeVolatile('truant')) {
+			if (!pokemon.removeVolatile('truant') && pokemon.activeTurns) {
 				pokemon.addVolatile('truant');
 			}
 		},
