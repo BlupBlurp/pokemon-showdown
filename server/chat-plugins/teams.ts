@@ -451,7 +451,7 @@ export const commands: Chat.ChatCommands = {
 			if (result) {
 				connection.send(`|queryresponse|teamupload|` + JSON.stringify(result));
 			}
-			connection.popup(`Access your team now at https://psim.us/t/${result.teamid}!`);
+			connection.popup(`Access your team now at https://play.relumishowdown.dpdns.org/viewteam-${result.teamid}!`);
 		},
 		''(target) {
 			return this.parse('/teams user ' + toID(target) || this.user.id);
