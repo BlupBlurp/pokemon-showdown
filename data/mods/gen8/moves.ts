@@ -115,6 +115,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		onModifyMove(move, source, target) {
 			if (!source.hasType('Ghost')) {
 				move.target = 'self';
+			} else if (!target) {
+				move.target = 'randomNormal';
 			}
 		},
 		target: "randomNormal",
