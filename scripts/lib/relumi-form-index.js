@@ -22,9 +22,7 @@ function computeFormIndex(sid, baseId, foIDs, hasGmax, customIDs) {
 	return oi >= 0 ? offset + oi : -1;
 }
 
-/**
- * Build a full speciesId → formIndex map from a Dex.
- */
+/** speciesId → formIndex map for every species in a Dex. */
 function buildFormIndexMap(dex, toID) {
 	const map = {};
 	const speciesList = dex.species.all();

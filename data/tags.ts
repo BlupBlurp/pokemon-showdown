@@ -82,7 +82,7 @@ export const Tags: { [id: IDEntry]: TagData } = {
 		name: "Pokestar",
 		speciesFilter: species => species.tags.includes("Pokestar"),
 	},
-	// tag:futurepokemon only bans species, not future moves/items/abilities (-Future would ban all)
+	// species only; -Future would also ban future moves/items/abilities
 	futurepokemon: {
 		name: "Future Pokemon",
 		speciesFilter: species => species.isNonstandard === 'Future',

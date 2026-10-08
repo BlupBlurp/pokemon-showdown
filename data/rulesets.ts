@@ -1061,7 +1061,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		effectType: 'Rule',
 		name: 'Endless Battle Clause',
 		desc: "Prevents players from forcing a battle which their opponent cannot end except by forfeit",
-		// implemented in sim/battle.js, see https://luminescent.team/articles/battlerules#endlessbattleclause for the specification.
+		// implemented in sim/battle.js; spec: https://luminescent.team/articles/battlerules#endlessbattleclause
 		onBegin() {
 			this.add('rule', 'Endless Battle Clause: Forcing endless battles is banned');
 		},

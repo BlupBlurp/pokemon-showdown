@@ -19,7 +19,7 @@ const ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz'.split('');
 
 let teamsDB: null | PGDatabase = null;
 let teamsTable: undefined | DatabaseTable<StoredTeam, PGDatabase>;
-/** Shared pg.Pool for use by config.js's customhttpresponse handler. */
+/** pg.Pool shared with config.js's customhttpresponse handler. */
 export let teamsPool: pg.Pool | null = null;
 
 export interface StoredTeam {
@@ -179,7 +179,7 @@ export const TeamsHandler = new class {
 		if (sets.length > MAX_SETS) {
 			connection.popup(`Your team has too many Pokemon (max ${MAX_SETS}).`);
 		}
-		// Use mod-specific Dex for format to support custom Pokemon/moves from mods like gen8relumi
+		// mod-specific Dex so custom Pokemon/moves (gen8relumi etc.) validate
 		const modDex = Dex.forFormat(format);
 		let unownWord = '';
 		for (const set of sets) {
@@ -327,7 +327,7 @@ export const TeamsHandler = new class {
 		const url = `${teamData.teamid}${teamData.private ? `-${teamData.private}` : ''}`;
 		buf += `<br /><a class="subtle" href="/view-team-${url}">`;
 		buf += team.map(set => `<psicon pokemon="${set.species}" />`).join(' ');
-		// Relumi: use routes.teams for team share URLs pointing to our own client.
+		// share URLs point at our own client via routes.teams
 		buf += `</a><br /><a href="https://${Config.routes.teams}/viewteam-${url}">${!isFull ? 'View full team' : 'Shareable link to team'}</a>`;
 		buf += ` <small>(https://${Config.routes.teams}/viewteam-${url})</small>`;
 		buf += `<br />`;
@@ -741,7 +741,7 @@ export const pages: Chat.PageTable = {
 				throw new Chat.ErrorMessage(`Invalid owner name. Names must be under 18 characters long.`);
 			}
 			const format = toID(rawFormat);
-			// Skip existence check - mod formats (e.g. gen8relumisinglesou) aren't in base Dex
+			// mod formats aren't in the base Dex, so skip the existence check
 			const gen = Number(rawGen);
 			if (rawGen && (isNaN(gen) || (gen < 1 || gen > Dex.gen))) {
 				throw new Chat.ErrorMessage(`Invalid generation: '${rawGen}'`);

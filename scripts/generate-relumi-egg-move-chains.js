@@ -7,25 +7,19 @@
  * (the string "unobtainable" marks an egg move with no known breeding route).
  *
  * The chain solver mirrors the server's egg-move mechanics:
- * - Fathers are gender-restricted (must be male-capable, i.e. not genderless or
- *   female-only), breedable, have a learnset, and not be a CAP/Custom/Past
- *   nonstandard. Battle-only forms (Megas, Gigantamax, etc.) cannot breed and
- *   are excluded as both sources and entries. Gen 9 species (flagged "Future")
- *   are legal in several Relumi formats and stay in the breeding graph.
- * - Offspring (targets and chain intermediates) are not gender-restricted,
- *   matching the server's egg-move father search; a chain intermediate must be
+ * - Fathers must be male-capable, breedable, have a learnset, and not be
+ *   CAP/Custom/Past. Battle-only forms (Megas, Gmax) cannot breed and are
+ *   excluded as both sources and entries. Gen 9 species are flagged "Future"
+ *   but are legal in several Relumi formats, so they stay in the graph.
+ * - Offspring are not gender-restricted; a chain intermediate must be
  *   male-capable so it can pass the move onward.
- * - A "natural source" is a species that learns the move via level-up ("L"),
- *   TM ("M"), or tutor ("T") in its OWN learnset; the reported level is the
- *   species' own level-up level (not a pre-evolution's). Egg moves ("E")
- *   require breeding, and a species that only inherits a move from its
- *   pre-evolution is reached through the breed graph instead.
- * - Moves a target also learns via level-up/TM/tutor in its own learnset are
- *   skipped, since the badge already shows that method.
- * - When several members of one evolution family could be the source, only the
- *   earliest (base) form is kept (e.g. Lickitung over Lickilicky, and a single
- *   representative of the Slowpoke line instead of Slowbro + Slowking).
- * - Smeargle is a fallback for Field-group targets when no natural chain exists.
+ * - A "natural source" learns the move via L/M/T in its own learnset; the
+ *   reported level is its own, not a pre-evolution's.
+ * - Moves the target also learns via L/M/T are skipped, the badge already
+ *   shows that method.
+ * - When several members of one family could be the source, only the base
+ *   form is kept (Lickitung over Lickilicky, one of Slowbro/Slowking).
+ * - Smeargle is a fallback for Field-group targets with no natural chain.
  *
  * Runs after `node build` (needs dist/sim/dex) and reads the generated
  * data/mods/gen8relumi/learnsets.ts for the target species set.
@@ -49,9 +43,7 @@ const OUT_PATH = path.join(CLIENT_PLAY_DIR, "data", "relumi-egg-move-chains.js")
 
 const DIRECT_SOURCE_TYPES = new Set(["L", "M", "T"]);
 const METHOD_RANK = { L: 0, M: 1, T: 2 };
-// Nonstandard kinds that are not part of the Relumi roster. Gen 9 species are
-// flagged "Future" but are legal in several Relumi formats, so they stay in
-// the breeding graph.
+// CAP/Custom/Past aren't in the Relumi roster; "Future" (gen 9) species are.
 const EXCLUDED_NONSTANDARD = new Set(["CAP", "Custom", "Past"]);
 
 /** True when source `a` is preferable to display over source `b`. */
@@ -86,8 +78,7 @@ function describeMethod(src) {
 
 /** True for formes that only exist in battle (Megas, Gigantamax, etc.). */
 function isBattleOnlyForm(s) {
-	// `battleOnly` covers Megas and other in-battle formes; this mod's
-	// Gigantamax formes are only flagged via their "Gmax" forme name.
+	// this mod's Gmax formes are only flagged via the forme name
 	return !!s.battleOnly || s.forme === "Gmax";
 }
 
@@ -104,8 +95,7 @@ function main() {
 	const dex = Dex.mod("gen8relumi");
 	const speciesTable = dex.species;
 
-	// 1. Build the set of breedable "node" species over which the breeding
-	//    graph is defined.
+	// 1. Breedable "node" species the breeding graph is defined over.
 	const nodes = [];
 	const nodeIds = new Set();
 	const fathers = new Set();
@@ -119,11 +109,11 @@ function main() {
 		if (!speciesTable.getLearnsetData(s.id).learnset) continue;
 		nodes.push(s);
 		nodeIds.add(s.id);
-		// Only fathers are gender-restricted (must be male-capable).
+		// only fathers are gender-restricted
 		if (s.gender !== "N" && s.gender !== "F") fathers.add(s.id);
 	}
 
-	// 2. Egg-group membership over all node species.
+	// 2. egg-group membership over all nodes
 	const membersByGroup = new Map();
 	for (const s of nodes) {
 		for (const g of s.eggGroups) {
@@ -132,8 +122,7 @@ function main() {
 		}
 	}
 
-	// 3. Precompute, per father, the species that share an egg group with it
-	//    (the BFS adjacency).
+	// 3. BFS adjacency: per father, species sharing an egg group
 	const offspringNeighbors = new Map();
 	for (const s of nodes) {
 		if (!fathers.has(s.id)) continue;
@@ -146,11 +135,10 @@ function main() {
 		offspringNeighbors.set(s.id, Array.from(set));
 	}
 
-	// 4. Natural sources: fathers that learn the move via level-up/TM/tutor in
-	//    their OWN learnset. Pre-evolution moves are intentionally excluded so
-	//    the reported level is the father's own (e.g. Bibarel learns Amnesia at
-	//    Lv. 38, not Bidoof's Lv. 32); a species that only inherits a move from
-	//    its pre-evolution is reached through the breed graph instead.
+	// 4. natural sources: fathers that learn the move via L/M/T in their own
+	//    learnset. pre-evolution moves are excluded so the reported level is
+	//    the father's own (Bibarel's Amnesia Lv. 38, not Bidoof's Lv. 32);
+	//    inherit-only species go through the breed graph instead.
 	const naturalByFatherMove = new Map();
 	const sourcesByMove = new Map();
 	for (const s of nodes) {
@@ -165,11 +153,9 @@ function main() {
 		}
 	}
 
-	// 5. Targets are the species in the generated mod learnsets table (the
-	//    same set the client shows "Egg" badges for). A move is shown when it
-	//    is an egg move (own or pre-evolution learnset) AND the target does not
-	//    also learn it via level-up/TM/tutor in its own learnset (that method
-	//    is already shown in the badge).
+	// 5. targets are the species in the generated mod learnsets (what the
+	//    client shows "Egg" badges for); skip moves the target also learns
+	//    via L/M/T since the badge already shows that.
 	const targetIds = Object.keys(
 		parseExportedObject(MOD_LEARNSETS_PATH, "Learnsets")
 	).sort();
@@ -192,13 +178,13 @@ function main() {
 		return info;
 	}
 
-	// Collect (move -> targets) so each move's BFS runs once.
+	// move -> targets, so each move's BFS runs once
 	const targetsByMove = new Map();
 	for (const sid of targetIds) {
 		const s = speciesTable.get(sid);
 		if (!s.exists) continue;
-		if (isBattleOnlyForm(s)) continue; // battle-only forms are never bred, so no entries
-		if (isCapSpecies(s)) continue; // CAP Pokémon never belong in Relumi routes
+		if (isBattleOnlyForm(s)) continue; // battle-only forms are never bred
+		if (isCapSpecies(s)) continue; // CAP never belongs in Relumi routes
 		const info = getTargetInfo(sid);
 		for (const moveId of info.eggMoves) {
 			if (info.ownNatural.has(moveId)) continue;
@@ -228,10 +214,8 @@ function main() {
 	const smeargle = speciesTable.get("smeargle");
 	const smeargleOk = smeargle.exists && !smeargle.isNonstandard;
 
-	// Return { root, depth } for a species' evolution family: `root` is the
-	// base (unevolved) form and `depth` is how many pre-evolutions separate the
-	// species from it. Used to dedupe routes that pick different members of the
-	// same family as the natural source (e.g. Slowbro and Slowking).
+	// { root, depth } for a species' evolution family, used to dedupe routes
+	// that pick different family members as the natural source
 	function getLineInfo(sid) {
 		let cur = speciesTable.get(sid);
 		let depth = 0;
@@ -245,8 +229,8 @@ function main() {
 		return { root: cur.id, depth };
 	}
 
-	// 6. Run one multi-parent BFS per move, then resolve each target into all of
-	//    its alternative shortest chains.
+	// 6. one multi-parent BFS per move, then expand each target into all of
+	//    its shortest chains.
 	const chains = {};
 	const stats = { entries: 0, totalRoutes: 0, direct: 0, chained: 0, smeargle: 0, skipped: 0 };
 	for (const [moveId, targetList] of targetsByMove) {
@@ -296,12 +280,11 @@ function main() {
 				stats.skipped++;
 				continue;
 			}
-			// Prefer level-up routes (lower level first), then TM, then tutor,
-			// then alphabetically for a deterministic output.
+			// level-up routes first, then TM, tutor, alphabetical — keeps the
+			// output deterministic
 			found.sort((a, b) => compareChains(a, b, moveId, naturalByFatherMove));
-			// Dedupe routes whose natural source is in the same evolution family:
-			// keep only the earliest (base) form per family, so e.g. Lickitung is
-			// shown instead of Lickilicky, and Slowbro/Slowking collapse to one.
+			// one route per evolution family: keep the base form's source, so
+			// Lickitung shows instead of Lickilicky, Slowbro/Slowking collapse
 			const minDepthByRoot = new Map();
 			for (const chain of found) {
 				const src = chain[chain.length - 1];
@@ -332,7 +315,7 @@ function main() {
 		}
 	}
 
-	// Emit with sorted keys for a deterministic output.
+	// sorted keys for deterministic output
 	const sortedChains = {};
 	for (const key of Object.keys(chains).sort()) sortedChains[key] = chains[key];
 
@@ -355,8 +338,8 @@ function main() {
 
 /** Enumerate all distinct shortest chains from `startId` to sources. */
 function collectShortestChains(startId, dist, parents) {
-	// A source itself is a one-step chain (breed it directly as the father),
-	// rather than an empty chain that the client would render incorrectly.
+	// a source itself is a one-step chain (breed it directly as the father),
+	// not an empty chain the client would render wrong
 	if (dist.get(startId) === 0) return [[startId]];
 	const results = [];
 	const path = [];

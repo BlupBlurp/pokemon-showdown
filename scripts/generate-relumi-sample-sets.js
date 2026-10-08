@@ -54,8 +54,8 @@ function main() {
 		personalRows, monsNames, dex
 	);
 
-	// mappedSpeciesIds=null skips fallback sets (only actual trainer data)
-	// learnsetsDiffs=null is fine since we skip fallback
+	// mappedSpeciesIds=null skips fallback sets (trainer data only), and
+	// learnsetsDiffs is unused in that path
 	const result = computeRelumiRandomBattleSets({
 		trainerRows,
 		abilityNames,
@@ -69,7 +69,7 @@ function main() {
 
 	const singlesSets = result.singlesSets || {};
 
-	// Convert to sample sets format: { dex: { SpeciesName: { SetName: PokemonSet } } }
+	// sample-sets format: { dex: { SpeciesName: { SetName: PokemonSet } } }
 	const dexEntries = {};
 	for (const [speciesId, data] of Object.entries(singlesSets)) {
 		const species = dex.species.get(speciesId);
@@ -97,7 +97,7 @@ function main() {
 				pokemonSet.evs = setEntry.evs;
 			}
 
-			// Ensure unique set name
+			// dedupe set names
 			let setName = baseSetName;
 			let counter = 1;
 			while (sets[setName]) {

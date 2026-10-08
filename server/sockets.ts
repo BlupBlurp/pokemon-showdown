@@ -28,14 +28,14 @@ function toCompatibleIp(ip: string): string {
 	ip = ip.trim();
 	if (IPTools.ipToNumber(ip) !== null) return ip;
 
-	// IPv4-mapped IPv6 addresses can be converted directly.
+	// IPv4-mapped IPv6 converts directly
 	if (ip.startsWith("::ffff:")) {
 		const mapped = ip.slice(7);
 		if (IPTools.ipToNumber(mapped) !== null) return mapped;
 	}
 
-	// Pokemon Showdown's IP stack is IPv4-only; map unsupported IPs to
-	// deterministic pseudo-IPv4 addresses so alt checks remain stable.
+	// the IP stack is IPv4-only; map everything else to a deterministic
+	// pseudo-IPv4 so alt checks stay stable
 	let hash = 2166136261;
 	for (const char of ip) {
 		hash ^= char.charCodeAt(0);

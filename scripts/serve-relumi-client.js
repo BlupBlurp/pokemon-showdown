@@ -114,7 +114,7 @@ function loadNewsFromPhp() {
 	try {
 		const php = fs.readFileSync(NEWS_INC_PATH, "utf8");
 
-		// Extract ordered topic IDs from $latestNewsCache.
+		// ordered topic IDs from $latestNewsCache
 		const idsMatch = php.match(
 			/\$latestNewsCache\s*=\s*\[([^\]]+)\]/
 		);
@@ -123,7 +123,7 @@ function loadNewsFromPhp() {
 			.match(/'([^']+)'/g)
 			.map(s => s.replace(/'/g, ""));
 
-		// Extract each news entry keyed by its topic_id.
+		// news entries keyed by topic_id
 		const entries = {};
 		const entryRe =
 			/'(\d+)'\s*=>\s*\[([\s\S]*?)\]\s*(?:,\s*(?='|\])|\])/g;
@@ -132,13 +132,13 @@ function loadNewsFromPhp() {
 			const id = m[1];
 			const block = m[2];
 			const field = key => {
-				// Match single-quoted string values.
+				// single-quoted string values
 				const strRe = new RegExp(
 					"'" + key + "'\\s*=>\\s*'((?:[^'\\\\]|\\\\.)*)'"
 				);
 				const strMatch = block.match(strRe);
 				if (strMatch) return strMatch[1].replace(/\\'/g, "'");
-				// Match bare numeric values (e.g. 'date' => 1774939138).
+				// bare numeric values ('date' => 1774939138)
 				const numRe = new RegExp(
 					"'" + key + "'\\s*=>\\s*(\\d+)"
 				);
@@ -181,7 +181,7 @@ function loadNewsFromPhp() {
 	}
 }
 
-// Cache news at startup; re-read on each request would be wasteful.
+// news is cached at startup; re-reading per request would be wasteful
 const cachedNews = loadNewsFromPhp();
 
 function injectNews(html) {
@@ -209,11 +209,8 @@ function injectLocalDexOverride(html) {
 }
 
 // Force pushState off when the URL ends in .html so the legacy Backbone
-// router doesn't rewrite /index-old.html to / via history.pushState. The
-// upstream caches/index-old.html references the upstream's client.js
-// directly, so a source-only fix in src/oldclient/client.js isn't enough
-// on every path. This guard runs at HTML serve time and works no matter
-// which client.js the browser ends up loading.
+// router doesn't rewrite /index-old.html to /. Fixed at HTML serve time
+// because caches/index-old.html references the upstream client.js directly.
 function injectBackbonePushStateGuard(html) {
 	if (html.includes("relumi-backbone-pushstate-guard")) return html;
 	const guard =
@@ -267,8 +264,8 @@ function sendIndexHtml(res, indexPath) {
 }
 
 function proxyToGameServer(req, reqUrl, res) {
-	// Forward act=getteams / act=getteam to the local game server (port 8000)
-	// which handles them via customhttpresponse in config.js.
+	// forward act=getteams/getteam to the game server, which handles them via
+	// customhttpresponse in config.js
 	const headers = { ...req.headers };
 	delete headers.host;
 	delete headers["content-length"];
@@ -337,9 +334,8 @@ function proxyRemoteAsset(req, reqUrl, res) {
 				upstreamRes.headers["content-type"] ||
 				MIME_TYPES[ext] ||
 				"application/octet-stream";
-
-			// clean-cookies.php is loaded as a script by the upstream client.
-			// If upstream omits a content type, serve it as JS to avoid browser blocking.
+			// upstream serves clean-cookies.php as a script; without a content
+			// type browsers block it
 			if (ext === ".php" && reqUrl.startsWith("/js/")) {
 				type = "application/javascript; charset=utf-8";
 			}
@@ -351,9 +347,9 @@ function proxyRemoteAsset(req, reqUrl, res) {
 				"content-type": type,
 			};
 
-			// Upstream auth cookies are scoped for pokemonshowdown.com and can include
-			// Secure/SameSite=None, which browsers reject on local HTTP LAN hosts.
-			// Rewrite them to host-only local cookies so login state persists in dev.
+			// upstream auth cookies are scoped to pokemonshowdown.com and may be
+			// Secure/SameSite=None, which local HTTP LAN hosts reject; rewrite to
+			// host-only cookies so login state persists in dev
 			const setCookie = responseHeaders["set-cookie"];
 			if (setCookie) {
 				const rewriteCookie = cookie =>
@@ -404,9 +400,8 @@ const server = http.createServer((req, res) => {
 		rawPath === "/" ? "/index.html" : rawPath
 	);
 
-	// The upstream build now creates an empty index.html placeholder that would
-	// be served as a blank page.  Always rewrite /index.html → /index-new.html
-	// so the preact-alpha client is the default.
+	// the upstream build ships an empty index.html placeholder; rewrite it to
+	// the preact-alpha client
 	const remapped = normalized === "/index.html" ? "/index-new.html" : normalized;
 	const resolved = path.resolve(CLIENT_PLAY_DIR, `.${remapped}`);
 
@@ -418,15 +413,12 @@ const server = http.createServer((req, res) => {
 
 	let filePath = resolved;
 	if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-		// New preact-alpha client is the default; the legacy Backbone index is
-		// still reachable at its explicit `/index-old.html` URL.
+		// legacy Backbone index stays at its explicit /index-old.html URL
 		filePath = path.join(filePath, "index-new.html");
 	}
 
-	// Proxy /api/battlestats to the local game server (port 8000). Match the
-	// exact endpoint AND any sub-endpoint (e.g. /species-trends, /random-team)
-	// so all stats routes resolve through the game server. Query strings
-	// are stripped from `normalized` upstream, so just the path matters.
+	// /api/battlestats and its sub-endpoints proxy to the game server;
+	// query strings are already stripped from `normalized`, only the path matters
 	if (
 		normalized === "/api/battlestats" ||
 		normalized.startsWith("/api/battlestats/")
@@ -441,9 +433,7 @@ const server = http.createServer((req, res) => {
 				return sendIndexHtml(res, indexPath);
 			}
 		}
-
-		// Route getteams/getteam to the local game server so the teambuilder
-		// loads teams from our own Neon database instead of the official PS one.
+		// getteams/getteam come from our own Neon database, not official PS
 		if (normalized.startsWith("/~~") && normalized.includes("action.php")) {
 			const qs = reqUrl.includes("?") ? reqUrl.slice(reqUrl.indexOf("?") + 1) : "";
 			const params = new URLSearchParams(qs);
@@ -453,13 +443,12 @@ const server = http.createServer((req, res) => {
 			}
 		}
 
-		// Route replay .json requests to the local game server
-		// which serves them from the replays Postgres table.
+		// replay .json requests are served from the replays Postgres table
 		if (/^\/(.+)\.json$/.test(normalized)) {
 			return proxyToGameServer(req, reqUrl, res);
 		}
 
-		// Missing static assets proxy to upstream (sprites, fx, etc.).
+		// missing static assets (sprites, fx, etc.) proxy to upstream
 		return proxyRemoteAsset(req, reqUrl, res);
 	}
 

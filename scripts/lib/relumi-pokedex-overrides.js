@@ -15,8 +15,8 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		9: "Pikachu-Gmax",
 		10: "Pikachu-Clone",
 	},
-	// formNo 2 is the custom "GHOST" form; map it to a non-existent name so
-	// the strict-override path returns null and triggers custom form creation.
+	// formNo 2 is the custom "GHOST" form; a non-existent name makes the
+	// strict-override path return null and create a custom form instead.
 	105: {
 		0: "Marowak",
 		1: "Marowak-Alola",
@@ -58,9 +58,10 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		5: "Minior-Meteor-Indigo",
 		6: "Minior-Meteor-Violet",
 		7: "Minior",
-		// Forms 8-13: omit from override; game files extract meteor and core variants.
+		// forms 8-13 omitted: game files extract meteor and core variants
 	},
-	// Other cosmetic forms are mapped to the base species, they could be added here if there are ever individual balance changes
+	// other cosmetic forms map to the base species; add entries here if any
+	// ever get individual balance changes
 	666: {
 		18: "Vivillon-Fancy",
 		19: "Vivillon-Pokeball",
@@ -94,9 +95,8 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 	},
 };
 
-// Species that have form entries in extracted game files that should stay
-// cosmetic in Showdown. Map those rows to the base species instead of
-// generating synthetic custom forms.
+// Species whose game-file form rows should stay cosmetic: map those rows to
+// the base species instead of generating synthetic custom forms.
 const CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS = new Set([
 	"unown",
 	"sawsbuck",
@@ -104,15 +104,14 @@ const CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS = new Set([
 	"alcremie",
 	"furfrou",
 	"vivillon",
-	// Relumi custom cosmetic variants — no game-file form rows, but listed here
-	// so any future game-file rows for these species don't generate synthetic forms.
+	// Relumi custom cosmetic variants; no game-file rows, listed here so any
+	// future rows for these species don't generate synthetic forms.
 	"arbok",
 	"magikarp",
 	"smeargle",
 ]);
 
-// Manual learnset overrides that must persist across sync runs.
-// These are not always represented in extracted learnset tables.
+// Manual learnset overrides, for things the extracted learnset tables miss.
 const MANUAL_LEARNSET_OVERRIDES = {
 	rotomheat: {
 		overheat: ["9L1"],
@@ -172,8 +171,7 @@ function labeledCosmetic(baseId, baseName, variants) {
 	return entries;
 }
 
-// Manual pokedex overrides that must persist across sync runs.
-// Use for hardcoding species data not represented in extracted game files.
+// Manual pokedex overrides, for species data the extracted game files miss.
 const MANUAL_POKEDEX_OVERRIDES = {
 	calyrexice: {
 		abilities: {
@@ -186,9 +184,9 @@ const MANUAL_POKEDEX_OVERRIDES = {
 		},
 	},
 
-	// --- Minior: colored meteor formes so each core colour has its own meteor sprite ---
-	// Game files auto-extract meteor forms with IDs like miniorbluemeteor, miniorgreenmeteor, etc.
-	// The base Minior entry configures forme lists; apply battleOnly metadata to auto-extracted entries.
+	// Minior: one meteor forme per core colour, so each gets its own sprite.
+	// The base entry carries the forme lists; the auto-extracted
+	// minior<color>meteor entries get battleOnly below.
 	minior: {
 		inherit: true,
 		cosmeticFormes: ["Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
@@ -198,7 +196,7 @@ const MANUAL_POKEDEX_OVERRIDES = {
 			"Minior-Indigo Meteor", "Minior-Orange Meteor", "Minior-Violet Meteor",
 		],
 	},
-	// Game-file-extracted Minior meteor forms: add battleOnly metadata.
+	// battleOnly for the auto-extracted meteor forms
 	miniorbluemeteor: { battleOnly: "Minior-Blue" },
 	miniorgreenmeteor: { battleOnly: "Minior-Green" },
 	miniorindigometeor: { battleOnly: "Minior-Indigo" },
@@ -206,9 +204,8 @@ const MANUAL_POKEDEX_OVERRIDES = {
 	minioryellowmeteor: { battleOnly: "Minior-Yellow" },
 	miniorvioletmeteor: { battleOnly: "Minior-Violet" },
 
-	// Vivillon: surface Fancy/Pokeball variants in the cosmetic form picker.
-	// Upstream keeps them in otherFormes; the override promotes them to cosmeticFormes
-	// alongside the 17 vanilla pattern variants.
+	// promote Fancy/Pokeball from otherFormes to cosmeticFormes so they show
+	// in the form picker alongside the 17 patterns
 	vivillon: {
 		cosmeticFormes: [
 			"Vivillon-Archipelago", "Vivillon-Continental", "Vivillon-Elegant", "Vivillon-Garden",
@@ -252,7 +249,7 @@ function buildAlcremieCosmetic() {
 
 	const entries = {};
 
-	// Base Alcremie sweet variants
+	// base Alcremie sweet variants
 	for (const sweet of SWEETS) {
 		entries["alcremie" + sweet.toLowerCase()] = {
 			isCosmeticForme: true,
@@ -263,7 +260,7 @@ function buildAlcremieCosmetic() {
 		};
 	}
 
-	// Cream forms and their sweet variants
+	// cream forms + their sweet variants
 	for (const cream of CREAMS) {
 		const creamId = "alcremie" + cream.id;
 
@@ -296,7 +293,7 @@ function buildAlcremieCosmetic() {
 		}
 	}
 
-	// Base Alcremie entry listing all sweet and cream forme names.
+	// base entry lists every sweet and cream forme name
 	entries.alcremie = {
 		cosmeticFormes: [
 			"Alcremie-Berry", "Alcremie-Love", "Alcremie-Star",

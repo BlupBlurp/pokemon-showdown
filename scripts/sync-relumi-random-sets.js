@@ -294,11 +294,10 @@ function isDisallowedRandomBattleForm(species) {
 function isExcludedRelumiRandomBattleSpecies(species) {
 	if (!species || !species.exists) return true;
 
-	// Manual species bans: any entry here is excluded from random set
-	// generation regardless of the other filter passes below.
+	// manual bans apply before the other filters
 	if (MANUAL_RANDOM_SETS_BANS.has(species.id)) return true;
 
-	// Relumi has no tera mechanic in battle formats, so exclude all Ogerpon tera formes.
+	// no tera in Relumi battle formats, so no Ogerpon tera formes
 	if (species.baseSpecies === "Ogerpon" && String(species.id || "").endsWith("tera")) {
 		return true;
 	}
@@ -309,7 +308,7 @@ function isExcludedRelumiRandomBattleSpecies(species) {
 function shouldSkipFallbackForSpecies(species) {
 	if (!species || !species.exists) return true;
 
-	// These species should only include sets for their base forme.
+	// base-forme sets only
 	if (
 		FALLBACK_BASE_ONLY_SPECIES.has(species.baseSpecies.toLowerCase()) &&
 		species.id !== toId(species.baseSpecies)

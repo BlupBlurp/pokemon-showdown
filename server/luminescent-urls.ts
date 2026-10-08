@@ -15,7 +15,7 @@ declare const toID: (text: any) => string;
 const { computeFormIndex: computeFormIndexShared, buildFormIndexMap: buildFormIndexMapShared } =
 	require('../../scripts/lib/relumi-form-index');
 
-// Cache per Dex instance so we don't rebuild on every URL call
+// Cache per Dex instance
 const formIndexCache = new WeakMap();
 
 function computeFormIndex(species: { id: string; baseSpecies?: string; forme?: string; name: string }): number | undefined {
@@ -44,13 +44,13 @@ export function getLuminescentPokemonUrl(speciesOrId: { id: string; num: number;
 export function getLuminescentMoveUrl(nameOrId: string): string {
 	const move = Dex.moves.get(nameOrId);
 	if (!move.exists) return '#';
-	// Luminescent uses lowercase-with-hyphens: "Karate Chop" -> "karate-chop"
+	// lowercase-with-hyphens: "Karate Chop" -> "karate-chop"
 	const slug = move.name.toLowerCase().replace(/\s+/g, '-');
 	return `https://${Config.routes.dex}/moves/${slug}`;
 }
 
 export function getLuminescentAbilityUrl(_nameOrId?: string): string {
-	// Placeholder: luminescent.team has no ability pages yet.
+	// no ability pages on luminescent.team yet
 	return '#';
 }
 
@@ -58,7 +58,7 @@ export function getLuminescentItemUrl(nameOrId?: string): string {
 	if (!nameOrId) return '#';
 	const item = Dex.items.get(nameOrId);
 	if (!item.exists) return '#';
-	// Luminescent uses lowercase-with-hyphens: "Leftovers" -> "leftovers"
+	// lowercase-with-hyphens: "Leftovers" -> "leftovers"
 	const slug = item.name.toLowerCase().replace(/\s+/g, '-');
 	return `https://${Config.routes.dex}/items/${slug}`;
 }

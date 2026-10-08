@@ -15,12 +15,8 @@ const STATS_DIR = path.dirname(STATS_PATH);
 /** Rotate the active JSONL file when it exceeds 100 MB. */
 const STATS_ROTATE_SIZE = 100 * 1024 * 1024;
 
-/**
- * Returns all battle-stats JSONL files in the stats directory, sorted
- * so rotated archives (battles.1.jsonl, battles.2.jsonl, …) are read
- * before the active file (battles.jsonl).  This ensures the stats page
- * always reflects every record even after external log rotation.
- */
+/** All battle-stats JSONL files, archives (battles.1.jsonl, ...) before the active
+ * file (battles.jsonl). */
 async function getStatsFiles(): Promise<string[]> {
 	try {
 		const entries = await FS(STATS_DIR).readdirIfExists();
@@ -66,10 +62,9 @@ export interface BattleStatsRecord {
 	playerB: string;
 	winner: string | null;
 	/**
-	 * How the battle ended. Mirrors `RoomBattle.endType` and is the source
-	 * of truth for forfeit/disconnect counts. The surviving player is still
-	 * recorded as `winner`, so `!winner` is not a reliable forfeit signal.
-	 * Records persisted before this field existed will fall back to 'unknown'.
+	 * How the battle ended; mirrors `RoomBattle.endType`. The surviving player
+	 * is still recorded as `winner` in forfeits, so `!winner` is not a forfeit
+	 * signal. Records from before this field existed fall back to 'unknown'.
 	 */
 	endType: 'normal' | 'forced' | 'forfeit' | 'tie' | 'unknown';
 	turns: number;
@@ -243,9 +238,7 @@ const FORMAT_TO_CATEGORY: Record<RelumiTrackedFormat, StatsCategoryId> = {
 	gen8relumidoublesou: "gen8relumidoublesou",
 };
 
-/**
- * Converts a format string into a tracked Relumi format ID if eligible.
- */
+/** true if `format` is one of the tracked Relumi formats */
 export function normalizeRelumiFormat(
 	format: string,
 ): RelumiTrackedFormat | null {
@@ -257,9 +250,7 @@ export function normalizeRelumiFormat(
 	return null;
 }
 
-/**
- * Returns whether a battle should be included in public Relumi battle stats.
- */
+/** public rated matchmaking battles only */
 export function shouldLogBattleStats(battle: RoomBattle): boolean {
 	if (!battle.rated) return false;
 	if (battle.challengeType !== "rated") return false;
@@ -268,18 +259,14 @@ export function shouldLogBattleStats(battle: RoomBattle): boolean {
 	return true;
 }
 
-/**
- * Maps a tracked format ID to its API category key.
- */
+/** tracked format ID -> API category key */
 export function getCategoryForFormat(
 	format: RelumiTrackedFormat,
 ): StatsCategoryId {
 	return FORMAT_TO_CATEGORY[format];
 }
 
-/**
- * Reduces a full team set to the fields required by battle statistics.
- */
+/** strip a team set down to the fields battle statistics need */
 export function toBattleStatsPokemon(set: PokemonSet): BattleStatsPokemon {
 	return {
 		species: set.species,
@@ -299,11 +286,8 @@ function getRangeStart(range: string, now: number): number | null {
 	return null;
 }
 
-/**
- * Zero-allocation UTC date key (YYYY-MM-DD) from a Unix-epoch
- * millisecond timestamp.  Avoids constructing a Date object in hot
- * aggregation loops.  Based on Howard Hinnant's civil_from_days algorithm.
- */
+/** UTC date key (YYYY-MM-DD); Hinnant's civil_from_days, avoids a Date object
+ * in hot aggregation loops. */
 function formatUTCDateKey(ts: number): string {
 	const z = Math.floor(ts / 86400000) + 719468;
 	const era = Math.floor((z >= 0 ? z : z - 146096) / 146097);
@@ -344,12 +328,8 @@ function topCounts(
 		}));
 }
 
-/**
- * Daily usage/win-rate trend for a single species. `dayKey` is an ISO date
- * (`YYYY-MM-DD`) string; `appearances` counts how often the species showed
- * up in any team of that day's records; `slots` is the total team-slot
- * denominator for the day so usage% and win-rate are comparable across days.
- */
+/** one day of a species' usage/win-rate trend; `slots` is the day's team-slot
+ * denominator so usage% and win-rate are comparable across days */
 interface SpeciesTrendDay {
 	dayKey: string;
 	appearances: number;
@@ -357,21 +337,14 @@ interface SpeciesTrendDay {
 	slots: number;
 }
 
-/**
- * Per-day usage/win-rate series for a single species over the requested
- * range. Sorted chronologically (oldest first).
- */
+/** per-day usage/win-rate series for one species, oldest first */
 export interface SpeciesTrendResult {
 	species: string;
 	days: Array<{ date: string; usagePct: number; winRate: number }>;
 }
 
-/**
- * Aggregates per-day usage and win-rate trends for a single species ID.
- * Returns an empty array when there is no data in the range.
- * When `userFilter` is provided, only the specified player's own team
- * slots and species appearances are counted, matching "My stats only".
- */
+/** per-day usage and win-rate trends for one species. with `userFilter`, only
+ * that player's own slots/appearances count ("My stats only"). */
 export async function aggregateSpeciesTrends(
 	records: readonly BattleStatsRecord[],
 	speciesId: string,
@@ -385,7 +358,7 @@ export async function aggregateSpeciesTrends(
 	const dayMap = new Map<string, SpeciesTrendDay>();
 	let yieldCounter = 0;
 	for (const record of filtered) {
-		// Bucket by calendar-day (UTC) to keep data comparable across time zones.
+		// bucket by UTC calendar day
 		const dayKey = formatUTCDateKey(record.timestamp);
 		let bucket = dayMap.get(dayKey);
 		if (!bucket) {
@@ -429,28 +402,22 @@ export async function aggregateSpeciesTrends(
 	return { species: target, days };
 }
 
-/**
- * Picks a uniformly-random team (teamA or teamB) from one random record
- * matching the format filter. Returns null when no records exist.
- */
+/** uniform-random teamA/teamB from one random record; null when no records */
 function pickRandomTeam(
 	records: readonly BattleStatsRecord[],
 ): BattleStatsPokemon[] | null {
 	if (!records.length) return null;
 	const idx = Math.floor(Math.random() * records.length);
 	const record = records[idx];
-	// 50/50 bias between which team's set we surface for export.
+	// 50/50 pick between the two teams
 	const team = Math.random() < 0.5 ? record.teamA : record.teamB;
 	return team.map((m) => ({ ...m, moves: [...m.moves], ivs: { ...m.ivs }, evs: { ...m.evs } }));
 }
 
 /**
  * Aggregates battle records into the API response payload.
- *
- * Yields to the event loop via setImmediate every N records in hot
- * loops so the website stays responsive during large aggregations.
- * Records should be pre-filtered by caller when a user filter is
- * active (see BattleStatsStore.getRecordsForUser).
+ * Records should be pre-filtered by caller when a user filter is active
+ * (see BattleStatsStore.getRecordsForUser).
  */
 export async function aggregateBattleStats(
 	records: readonly BattleStatsRecord[],
@@ -481,8 +448,8 @@ export async function aggregateBattleStats(
 
 	const categories: CategoryOutput[] = [];
 	for (const categoryId of categoriesToInclude) {
-		// Yield between categories so the "all" format doesn't
-		// run 16 synchronous .filter() passes back-to-back.
+		// yield between categories so format=all doesn't run 16
+		// synchronous .filter() passes back-to-back
 		await new Promise<void>((r) => setImmediate(r));
 		const config = CATEGORY_CONFIG[categoryId];
 		const categoryAll = allForFormat.filter((r) =>
@@ -496,9 +463,7 @@ export async function aggregateBattleStats(
 		const cutoff7d = now - 7 * 24 * 60 * 60 * 1000;
 		const cutoff30d = now - 30 * 24 * 60 * 60 * 1000;
 
-		// Single-pass computation of time-window counts, turns, and
-		// forfeit totals to avoid iterating categoryAll / categoryRanged
-		// multiple times.
+		// single pass for the time-window counts
 		let battlesLast24h = 0;
 		let battlesLast7d = 0;
 		let battlesLast30d = 0;
@@ -640,8 +605,7 @@ export async function aggregateBattleStats(
 						pairCounts.set(key, (pairCounts.get(key) || 0) + 1);
 					}
 				}
-				// Aggregate teams by sorted-species signature so we can surface
-				// the most common archetypes and their win rates.
+			// teams keyed by sorted-species signature for archetype counting
 				const sig = uniqueSpecies.join("/");
 				let teamEntry = teamSignatures.get(sig);
 				if (!teamEntry) {
@@ -697,8 +661,7 @@ export async function aggregateBattleStats(
 				await new Promise<void>((r) => setImmediate(r));
 		}
 
-		// Build counter map: for each species, track opposing species
-		// and how often the tracked species lost to them
+		// counter map: per species, which opponents it lost to and how often
 		const counterMap = new Map<string, Map<string, { encounters: number; losses: number }>>();
 		yieldCounter = 0;
 		for (const battle of categoryRanged) {
@@ -741,13 +704,13 @@ export async function aggregateBattleStats(
 				await new Promise<void>((r) => setImmediate(r));
 		}
 
-		// Build species ID → display name lookup for counter resolution
+		// species ID -> display name, for counter rows
 		const speciesIdToName = new Map<string, string>();
 		for (const [speciesId, stat] of pokemonStats) {
 			speciesIdToName.set(speciesId, stat.name);
 		}
 
-		// Compute top counters per species (min 3 encounters, sorted by loss rate)
+		// top counters per species (3+ encounters, by loss rate)
 		const getTopCounters = (speciesId: string): Array<{ species: string; lossRate: number; encounters: number }> => {
 			const stats = counterMap.get(toID(speciesId));
 			if (!stats) return [];
@@ -838,8 +801,7 @@ export async function aggregateBattleStats(
 			? users.size / categoryRanged.length
 			: 0;
 
-		// Pick top 5 most-used team archetypes (sorted-species signature) with
-		// a representative full team (most recent occurrence) for export.
+		// top 5 team archetypes, each with a representative (most recent) team
 		const topTeams = [...teamSignatures.entries()]
 			.map(([signature, info]) => ({
 				signature,
@@ -934,34 +896,27 @@ class BattleStatsStore {
 	private speciesTrendsCache = new Map<string, CacheEntry<SpeciesTrendResult>>();
 	private lastReloadCheck = 0;
 
-	/** Index mapping toID(playerName) → records where that player appears.
-	 * Built after loading so `?user=…` queries skip scanning all records. */
+	/** index of toID(playerName) -> records containing that player, so `?user=`
+	 * queries skip scanning all records. */
 	private userIndex = new Map<string, BattleStatsRecord[]>();
 
-	// Per-file mtime tracking so reloadIfStale only re-reads files that
-	// actually changed.  Archives are immutable after rotation; tracking
-	// them individually avoids re-parsing them on every active-file append.
+	// per-file mtimes so reloadIfStale only re-reads changed files; archives
+	// are immutable after rotation
 	private fileMtimes = new Map<string, number>();
-	/** Number of non-empty lines last parsed from the *active* JSONL file
-	 * (identified as the last entry in the sorted file list).  Used by the
-	 * incremental fast-path to skip already-loaded records.
-	 *
-	 * NOTE: this counter is only authoritative in socket-worker processes
-	 * (which serve HTTP and never call addRecord).  In the main process
-	 * addRecord pushes records without updating it, but that's harmless
-	 * because reloadIfStale is never called from the main process. */
+	/** non-empty lines last parsed from the *active* JSONL file, used by the
+	 * incremental fast-path. only authoritative in socket-worker processes
+	 * (which serve HTTP and never call addRecord); harmless elsewhere because
+	 * reloadIfStale is never called from the main process. */
 	private activeFileLineCount = 0;
 
-	/** Coalesces concurrent cache-miss requests for the same key so only
-	 * one aggregation runs regardless of how many callers arrive. */
+	/** coalesces concurrent cache-miss requests for the same key */
 	private pendingRequests = new Map<string, Promise<any>>();
 
-	/** Lock that serialises reloadIfStale() calls so concurrent cache-miss
-	 * requests for different keys don't double-count appended records. */
+	/** serialises reloadIfStale so concurrent callers don't double-count
+	 * appended records. */
 	private reloadPromise: Promise<void> | null = null;
 
-	/** Lock that serialises aggregateBattleStats calls so concurrent
-	 * cache-miss requests for different keys don't multiply CPU load. */
+	/** serialises aggregations so concurrent cache misses don't multiply CPU load. */
 	private aggregateLock: Promise<void> | null = null;
 
 	/**
@@ -994,19 +949,13 @@ class BattleStatsStore {
 	}
 
 	/**
-	 * Re-reads the JSONL file when it has been modified by another process
-	 * (e.g. the chat worker that persists new battles). Called before
-	 * serving API responses on cache miss so data stays live without
-	 * requiring a server restart.
+	 * Re-reads JSONL files changed by another process (the chat worker that
+	 * persists new battles), so the API stays live without a restart.
 	 *
-	 * Uses per-file mtime tracking: when only the active file grew
-	 * (the common case of a few appended battles) we read just the new
-	 * lines and push them incrementally.  When any archive changed or a
-	 * new file appeared (rotation) we fall back to a full reload.
-	 *
-	 * Serialised via a lock promise so concurrent callers for different
-	 * cache keys don't race on the incremental fast-path and double-count
-	 * new records.
+	 * When only the active file grew (the common case) read just the new
+	 * lines; when an archive changed (rotation) fall back to a full reload.
+	 * Serialised via a lock so concurrent callers for different cache keys
+	 * don't race the incremental fast-path and double-count records.
 	 */
 	async reloadIfStale() {
 		if (this.reloadPromise) return this.reloadPromise;
@@ -1030,7 +979,8 @@ class BattleStatsStore {
 		let activeChanged = false;
 		let anyArchiveChanged = false;
 
-		// Check for new files and mtime changes on known files.
+		// check mtimes; a brand-new active file means rotation, which the
+		// incremental path can't handle
 		for (const file of files) {
 			try {
 				const stat = await fs.promises.stat(file);
@@ -1039,16 +989,13 @@ class BattleStatsStore {
 					this.fileMtimes.set(file, stat.mtimeMs);
 					if (file === activeFile) {
 						activeChanged = true;
-						// A brand-new active file means rotation happened —
-						// we can't know how many lines overlap with existing
-						// records so fall through to a full reload.
 						if (prev === undefined) anyArchiveChanged = true;
 					} else {
 						anyArchiveChanged = true;
 					}
 				}
 			} catch {
-				// File disappeared (e.g. external cleanup); treat as archive change.
+				// file disappeared; treat as archive change
 				this.fileMtimes.delete(file);
 				anyArchiveChanged = true;
 			}
@@ -1065,13 +1012,12 @@ class BattleStatsStore {
 		if (!activeChanged && !anyArchiveChanged) return;
 
 		if (anyArchiveChanged) {
-			// Full reload: rotation happened or archives were touched.
 			await this.fullReloadFromFiles(files);
 			return;
 		}
 
-		// Fast-path: only the active file grew.  Stream only new lines
-		// to avoid a synchronous 100MB string split stalling the event loop.
+		// fast-path: only the active file grew; stream just the new lines to
+		// avoid a synchronous 100MB string split stalling the event loop
 		const newRecords: BattleStatsRecord[] = [];
 		const stream = fs.createReadStream(activeFile, { encoding: 'utf-8' });
 		const rl = readline.createInterface({ input: stream, crlfDelay: Infinity });
@@ -1092,7 +1038,7 @@ class BattleStatsStore {
 						`Battle stats record parse failure: ${e.message}`,
 					);
 				}
-				// Yield every 5000 new lines so the event loop stays responsive.
+				// yield every 5000 new lines so the event loop stays responsive
 				if ((lineIdx - this.activeFileLineCount) % 5000 === 0)
 					await new Promise<void>((r) => setImmediate(r));
 			}
@@ -1104,7 +1050,7 @@ class BattleStatsStore {
 
 		if (newRecords.length) {
 			for (const rec of newRecords) this.records.push(rec);
-			// Incrementally update the user index instead of rebuilding from scratch.
+			// update the user index incrementally
 			await this.addToUserIndex(newRecords);
 			this.cache.clear();
 			this.speciesTrendsCache.clear();
@@ -1112,8 +1058,8 @@ class BattleStatsStore {
 	}
 
 	/**
-	 * Re-reads every known JSONL file and replaces the in-memory record
-	 * set.  Used on initial load and when archives change (rotation).
+	 * Re-reads every known JSONL file and replaces the in-memory records.
+	 * Used on initial load and when archives change (rotation).
 	 */
 	private async fullReloadFromFiles(files: string[]) {
 		const activeFile = files[files.length - 1];
@@ -1129,7 +1075,7 @@ class BattleStatsStore {
 			if (file === activeFile) this.activeFileLineCount = fileLineCount;
 		}
 
-		// Prune mtime entries for files that no longer exist.
+		// prune mtime entries for files that no longer exist
 		for (const knownFile of this.fileMtimes.keys()) {
 			if (!files.includes(knownFile)) this.fileMtimes.delete(knownFile);
 		}
@@ -1141,10 +1087,8 @@ class BattleStatsStore {
 	}
 
 	/**
-	 * Streams a JSONL file line-by-line into the provided target array,
-	 * yielding to the event loop every 5000 lines to avoid blocking
-	 * the main thread during full reloads of large files.
-	 * Returns the number of non-empty lines parsed.
+	 * Streams a JSONL file into `target`, returning the number of non-empty
+	 * lines parsed.
 	 */
 	private async parseFileStream(
 		file: string,
@@ -1170,33 +1114,26 @@ class BattleStatsStore {
 						`Battle stats record parse failure: ${e.message}`,
 					);
 				}
-				// Yield to the event loop every 5000 lines so other
-				// requests (chat, battles, timers) are not starved.
+				// yield to the event loop every 5000 lines
 				if (lineCount % 5000 === 0)
 					await new Promise<void>((r) => setImmediate(r));
 			}
 		} catch (e: any) {
-			// File deleted between stat and open (another process rotated it).
+			// deleted between stat and open (another process rotated it)
 			if (e.code === 'ENOENT') return 0;
 			throw e;
 		}
 		return lineCount;
 	}
 
-	/**
-	 * Rebuilds the user index from scratch by iterating this.records.
-	 * Called after initial load and full reloads. For incremental
-	 * additions use addToUserIndex instead.
-	 */
+	/** Rebuilds the user index from scratch; for incremental additions use
+	 * addToUserIndex instead. */
 	private async rebuildUserIndex() {
 		this.userIndex.clear();
 		await this.addToUserIndex(this.records);
 	}
 
-	/**
-	 * Adds the given records to the user index without clearing first.
-	 * Used for incremental fast-path updates.
-	 */
+	/** adds records to the user index without clearing first */
 	private async addToUserIndex(records: readonly BattleStatsRecord[]) {
 		let yieldCounter = 0;
 		for (const record of records) {
@@ -1216,41 +1153,33 @@ class BattleStatsStore {
 				}
 				arrB.push(record);
 			}
-			// Yield to the event loop during large full-rebuild passes.
+			// yield to the event loop during large full-rebuild passes
 			if (++yieldCounter % 10000 === 0)
 				await new Promise<void>((r) => setImmediate(r));
 		}
 	}
 
-	/**
-	 * Returns all records for a specific user, or an empty array if
-	 * the user has no battles. Used to skip scanning all records when
-	 * a user filter is active.
-	 */
+	/** records for one user, or an empty array; lets `?user=` queries skip
+	 * scanning all records. */
 	getRecordsForUser(user: string): readonly BattleStatsRecord[] {
 		return this.userIndex.get(toID(user)) ?? [];
 	}
 
 	/**
-	 * Persists a newly completed battle record.
-	 * Rotates the active file when it exceeds STATS_ROTATE_SIZE (100 MB),
-	 * archiving it with a date-stamped name so the stats page always reads
-	 * every record across all files.
+	 * Persists a newly completed battle record, rotating the active file
+	 * when it passes STATS_ROTATE_SIZE.
 	 */
 	async addRecord(record: BattleStatsRecord) {
 		await this.ensureLoaded();
 		this.records.push(record);
 		this.activeFileLineCount++;
 		await this.addToUserIndex([record]);
-		// Cache is intentionally NOT cleared on every battle — battles are
-		// frequent and the 5-minute TTL is an acceptable staleness window.
+		// cache intentionally not cleared on every battle; the 5-minute TTL is
+		// an acceptable staleness window
 		await FS(STATS_PATH).parentDir().mkdirp();
 		await FS(STATS_PATH).append(`${JSON.stringify(record)}\n`);
 
-		// Check whether the active file has grown past the rotation
-		// threshold.  If another process already rotated it the stat
-		// will throw ENOENT and we safely skip (the next append will
-		// recreate the file).
+		// stat will throw ENOENT if another process already rotated
 		try {
 			const stat = await fs.promises.stat(STATS_PATH);
 			this.fileMtimes.set(STATS_PATH, stat.mtimeMs);
@@ -1258,8 +1187,6 @@ class BattleStatsStore {
 				await this.rotateActiveFile();
 			}
 		} catch (e: any) {
-			// ENOENT: another process already rotated the file — expected.
-			// Log anything else so we notice if rotation breaks.
 			if (e.code !== 'ENOENT') {
 				Monitor?.warn?.(`Battle stats rotation error: ${e.message}`);
 			}
@@ -1268,9 +1195,8 @@ class BattleStatsStore {
 
 	/**
 	 * Atomically renames the active JSONL to a date-stamped archive.
-	 * Safe to call from multiple processes — the loser sees ENOENT and
-	 * returns harmlessly.  When a same-date archive already exists a
-	 * numeric suffix is appended ("…-2.jsonl", "…-3.jsonl", …).
+	 * Safe to call from multiple processes: the loser sees ENOENT and returns.
+	 * Same-date archives get a numeric suffix (-2, -3, ...).
 	 */
 	private async rotateActiveFile() {
 		const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
@@ -1279,12 +1205,12 @@ class BattleStatsStore {
 		while (true) {
 			try {
 				await fs.promises.stat(archivePath);
-				// File exists, increment suffix and retry
+				// file exists, try the next suffix
 				if (++suffix > 999) return; // safety cap
 				archivePath = path.join(STATS_DIR, `battles-${date}-${suffix}.jsonl`);
 			} catch (err: any) {
 				if (err.code !== 'ENOENT') throw err;
-				// File does not exist, safe to rename
+				// free, safe to rename
 				try {
 					await fs.promises.rename(STATS_PATH, archivePath);
 					return;
@@ -1297,11 +1223,8 @@ class BattleStatsStore {
 	}
 
 	/**
-	 * Returns API stats payload with a 5-minute cache window.
-	 * Reloads records from disk when the file has been touched by
-	 * another process since the last read (multi-process liveness).
-	 * Coalesces concurrent requests for the same key so only one
-	 * aggregation runs regardless of how many callers arrive.
+	 * Returns API stats payload with a 5-minute cache window, reloading
+	 * records touched by other processes and coalescing concurrent callers.
 	 */
 	async getApiResponse(format: string, range: string, user?: string) {
 		await this.ensureLoaded();
@@ -1313,7 +1236,7 @@ class BattleStatsStore {
 			this.cache.delete(key);
 		}
 
-		// If another caller is already computing this key, reuse its promise.
+		// reuse another caller's in-flight computation for this key
 		const pending = this.pendingRequests.get(key) as
 			| Promise<CacheEntry<BattleStatsApiResponse>>
 			| undefined;
@@ -1336,14 +1259,12 @@ class BattleStatsStore {
 	): Promise<CacheEntry<BattleStatsApiResponse>> {
 		await this.reloadIfStale();
 		const now = Date.now();
-		// When a user filter is active, use the pre-built index to avoid
-		// scanning all records. The index is rebuilt after every reload.
+		// use the pre-built user index instead of scanning all records
 		const records = user
 			? this.getRecordsForUser(user)
 			: this.records;
 
-		// Serialize aggregations so only one runs at a time,
-		// preventing thundering-herd CPU multiplication.
+		// one aggregation at a time
 		while (this.aggregateLock) await this.aggregateLock;
 		let releaseAggregateLock: () => void;
 		this.aggregateLock = new Promise<void>((r) => { releaseAggregateLock = r; });
@@ -1363,11 +1284,7 @@ class BattleStatsStore {
 		}
 	}
 
-	/**
-	 * Returns per-species daily usage/win-rate trends with the same
-	 * 5-minute cache window used by the main API.
-	 * Coalesces concurrent requests for the same key.
-	 */
+	/** per-species daily trends, same cache/coalescing as the main API */
 	async getSpeciesTrends(speciesId: string, format: string, range: string, user?: string) {
 		await this.ensureLoaded();
 		const key = `species-trends|${speciesId}|${format}|${range}|${user || ''}`;
@@ -1378,7 +1295,7 @@ class BattleStatsStore {
 			this.speciesTrendsCache.delete(key);
 		}
 
-		// If another caller is already computing this key, reuse its promise.
+		// reuse another caller's in-flight computation for this key
 		const pending = this.pendingRequests.get(key) as
 			| Promise<CacheEntry<SpeciesTrendResult>>
 			| undefined;
@@ -1412,8 +1329,7 @@ class BattleStatsStore {
 				? records.filter((r) => r.format === normalizedFormat)
 				: [];
 
-		// Serialize aggregations so only one runs at a time,
-		// preventing thundering-herd CPU multiplication.
+		// one aggregation at a time
 		while (this.aggregateLock) await this.aggregateLock;
 		let releaseAggregateLock: () => void;
 		this.aggregateLock = new Promise<void>((r) => { releaseAggregateLock = r; });
@@ -1433,12 +1349,8 @@ class BattleStatsStore {
 		}
 	}
 
-	/**
-	 * Read-only accessor for the in-memory records list. Used by one-off
-	 * aggregations (e.g. random team) that do not need a cached payload.
-	 * Callers that are served over HTTP should call reloadIfStale() first
-	 * so records from other processes are visible.
-	 */
+	/** read-only view of the in-memory records; callers served over HTTP
+	 * should call reloadIfStale() first so other processes' records show up. */
 	getRecords(): readonly BattleStatsRecord[] {
 		return this.records;
 	}
@@ -1473,12 +1385,9 @@ export const BattleStats = new (class {
 			playerA: battle.p1.name,
 			playerB: battle.p2.name,
 			winner: winnerName,
-			// `battle.endType` is set by RoomBattle.forfeitPlayer / similar
-			// hooks and is the only reliable signal that a battle ended via
-			// forfeit, forced DC/W, or normally. The surviving player is still
-			// recorded as `winner` in forfeit cases, so we capture endType here.
-			// Cast widens `RoomBattle.endType` ('forfeit'|'forced'|'normal')
-			// to include 'unknown' / 'tie' for legacy or BestOf-series records.
+			// endType is the only reliable forfeit/forced-DC signal: the surviving
+			// player is still recorded as winner. cast widens RoomBattle.endType to
+			// the 'unknown'/'tie' used by older records
 			endType: (battle.endType as BattleStatsRecord['endType'] | undefined) ?? 'unknown',
 			turns: battle.turn,
 			teamA: teamA.map(toBattleStatsPokemon),
@@ -1495,19 +1404,12 @@ export const BattleStats = new (class {
 		return this.store.getApiResponse(format, range, user);
 	}
 
-	/**
-	 * Aggregates per-day usage/win-rate trends for a species over a range.
-	 * Format defaults to the single-format filter; pass `all` to span formats.
-	 * Results are cached for the same TTL as the main API payload.
-	 */
+	/** per-species trends; pass `all` to span formats */
 	getSpeciesTrends(speciesId: string, format: string, range: string, user?: string) {
 		return this.store.getSpeciesTrends(speciesId, format, range, user);
 	}
 
-	/**
-	 * Returns a uniformly-random team (BattleStatsPokemon[]) from a random
-	 * tracked-format battle. Returns null when no records match.
-	 */
+	/** random team from a tracked-format battle; null when nothing matches */
 	async getRandomTeam(format: string): Promise<BattleStatsPokemon[] | null> {
 		await this.store.ensureLoaded();
 		await this.store.reloadIfStale();
@@ -1518,13 +1420,12 @@ export const BattleStats = new (class {
 		const records = this.store.getRecords();
 		if (!records.length) return null;
 
-		// Fast-path: format=all skips any scan and picks from all records.
+		// fast-path: format=all skips any scan
 		if (normalizedFormat === "all") return pickRandomTeam(records);
 
-		// Random-sample up to 200 records to avoid an O(n) synchronous
-		// scan of the full array. For formats with few battles, this
-		// still finds a match quickly; for large populations the odds
-		// of missing every probe are vanishingly small.
+		// random-sample up to 200 records instead of an O(n) scan; with few
+		// matching records this still finds one quickly, and the odds of
+		// missing every probe in a large population are tiny
 		const maxAttempts = Math.min(records.length, 200);
 		for (let attempt = 0; attempt < maxAttempts; attempt++) {
 			const idx = Math.floor(Math.random() * records.length);
@@ -1537,10 +1438,7 @@ export const BattleStats = new (class {
 	}
 })();
 
-/**
- * Shared HTTP response helper for battle-stats routes. Centralizes CORS
- * headers, content type, and OPTIONS handling so each handler stays thin.
- */
+/** shared HTTP response helper: CORS headers, content type, OPTIONS */
 function sendJsonResponse(
 	req: http.IncomingMessage,
 	res: http.ServerResponse,
@@ -1620,8 +1518,8 @@ export function maybeHandleBattleStatsRequest(
 }
 
 /**
- * Handles `/api/battlestats/species-trends` for per-day usage/win-rate line
- * charts in the panel. Returns `{ species, days: [{date, usagePct, winRate}] }`.
+ * Handles `/api/battlestats/species-trends` for the panel's per-day
+ * usage/win-rate line charts. Returns `{ species, days: [...] }`.
  */
 export function maybeHandleBattleStatsSpeciesTrendsRequest(
 	req: http.IncomingMessage,
@@ -1667,8 +1565,6 @@ export function maybeHandleBattleStatsSpeciesTrendsRequest(
 
 /**
  * Handles `/api/battlestats/random-team` for the "Random team" panel button.
- * Returns either `{ team: BattleStatsPokemon[] }` or `{ team: null }` when
- * no records are available.
  */
 export function maybeHandleBattleStatsRandomTeamRequest(
 	req: http.IncomingMessage,

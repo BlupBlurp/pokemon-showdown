@@ -584,7 +584,7 @@ export const commands: Chat.ChatCommands = {
 		const gen = parseInt(cmd.substr(-1));
 		if (gen) target += `, gen${gen}`;
 
-		// Detect whether the user explicitly supplied a format/mod so we can keep existing behavior.
+		// did the user explicitly supply a format/mod?
 		const rawTargets = target.split(',');
 		let hasExplicitFormat = false;
 		if (rawTargets.length > 1) {
@@ -593,7 +593,7 @@ export const commands: Chat.ChatCommands = {
 			hasExplicitFormat = firstMatch || lastMatch;
 		}
 		let { dex, format, targets } = this.splitFormat(target, true, true);
-		// Use Relumi by default for non-battle /data when no format/mod was explicitly specified.
+		// default non-battle /data to Relumi when no format/mod was given
 		if (!hasExplicitFormat && !room?.battle) {
 			dex = Dex.mod('gen8relumi');
 			format = null;

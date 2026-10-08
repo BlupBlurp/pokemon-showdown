@@ -83,11 +83,10 @@ const SICK_ID_TO_STATUS = {
 
 // Extract secondary effects (stat boosts, status, flinch) from game file fields.
 function extractRankEffects(row) {
-	// Map chance -> boosts object for grouping rank effects by chance
 	const effectsByChance = {};
 
 	if (row.category === 6 || row.category === 7) {
-		// Process up to 3 rank effects per move
+		// up to 3 rank effects per move
 		for (let i = 1; i <= 3; i++) {
 			const effType = row[`rankEffType${i}`];
 			const effValue = row[`rankEffValue${i}`];
@@ -105,7 +104,7 @@ function extractRankEffects(row) {
 				effectsByChance[chance] = {};
 			}
 
-			// If stat is "allStats", expand to all individual stats
+			// allStats expands to the five individual stats
 			if (statName === "allStats") {
 				Object.assign(effectsByChance[chance], {
 					atk: effValue,
@@ -122,13 +121,13 @@ function extractRankEffects(row) {
 
 	const effects = [];
 
-	// Build effects array from grouped boosts
+	// effects array from the chance-grouped boosts
 	for (const chanceStr of Object.keys(effectsByChance)) {
 		const chance = parseInt(chanceStr);
 		const boosts = effectsByChance[chance];
 		const effect = { chance };
 
-		// Category 7 = user stats change, use self wrapper
+		// category 7 = user stat change
 		if (row.category === 7) {
 			effect.self = { boosts };
 		} else {
@@ -140,7 +139,7 @@ function extractRankEffects(row) {
 
 	if (row.category === 4 && row.sickID && row.sickPer) {
 		let statusName = SICK_ID_TO_STATUS[row.sickID];
-		// Special case: Toxic poison uses sickID 5 with duration 15
+		// sickID 5 + duration 15 = toxic, not regular poison
 		if (row.sickID === 5 && row.sickTurnMin === 15 && row.sickTurnMax === 15) {
 			statusName = "tox";
 		}
@@ -155,7 +154,7 @@ function extractRankEffects(row) {
 		}
 	}
 
-	// Chance of 1 to flinch is a special case, so we ignore it.
+	// shrinkPer of 1 isn't a real flinch chance, ignore it
 	if (row.shrinkPer && row.shrinkPer > 1) {
 		effects.push({
 			chance: row.shrinkPer,
@@ -165,8 +164,7 @@ function extractRankEffects(row) {
 
 	if (effects.length === 0) return null;
 
-	// Special case: 100% user stat change with single chance level
-	// Return as direct self object without secondary wrapper
+	// a lone 100% user stat change is a direct self object, no wrapper
 	if (effects.length === 1 && effects[0].chance === 100 && row.category === 7 && effects[0].self) {
 		return {
 			self: {
@@ -194,7 +192,7 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 			continue;
 		}
 
-		// Relumi does not use Z-Moves / Max Moves in synced move data.
+		// no Z/Max moves in synced data
 		if (move.isZ || move.isMax) continue;
 
 		const updates = { inherit: true };
@@ -212,7 +210,7 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 			changed = true;
 		}
 
-		// `power === 1` is a game-file sentinel for variable/fixed power behavior.
+		// power === 1 is the game-file sentinel for variable/fixed power
 		if (
 			typeof row.power === "number" &&
 			row.power !== 1 &&
@@ -238,8 +236,8 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 			changed = true;
 		}
 
-		// Target mapping from source numeric codes is intentionally disabled for now.
-		// The codes are overloaded and can introduce noisy/incorrect overrides.
+		// target mapping from the numeric source codes is disabled: the codes
+		// are overloaded and generate noisy overrides
 
 		if (row.hitCountMax > 1 || row.hitCountMin > 1) {
 			let multihit;
@@ -283,28 +281,29 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 		}
 
 		if (row.hpRecoverRatio) {
-			// Intentionally ignored. Showdown handles max HP healing and recoil natively via code, so emitting them creates false positives.
+			// ignored: Showdown handles max HP healing and recoil in code, so
+			// emitting them here creates false positives
 		}
 
-		// Extract rank effects (stat boosts/debuffs) from game file data.
+		// rank effects (stat boosts/debuffs) from the game file
 		const rankEffects = extractRankEffects(row);
 		if (rankEffects) {
-			// Check if this is a direct self effect (100% user stat change, no secondary wrapper)
+			// direct self effect: 100% user stat change, no secondary wrapper
 			if (rankEffects.self && !rankEffects.chance) {
 				let isUnchanged = false;
 
-				// Check 1: Compare against direct move.self
+				// vs move.self
 				if (compareJson(rankEffects.self, move.self)) {
 					isUnchanged = true;
 				} else if (
-					// Check 2: Compare against secondary wrapper (100% chance) - semantically equivalent
+					// vs secondary wrapper (100% chance), equivalent
 					move.secondary &&
 					move.secondary.chance === 100 &&
 					compareJson(rankEffects.self, move.secondary.self)
 				) {
 					isUnchanged = true;
 				} else if (
-					// Check 3: Compare against move.selfBoost
+					// vs move.selfBoost
 					compareJson(rankEffects.self, move.selfBoost)
 				) {
 					isUnchanged = true;
@@ -319,13 +318,13 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 					changed = true;
 				}
 			} else if (Array.isArray(rankEffects)) {
-				// Multiple effects with different chances
+				// several effects, different chances
 				if (!compareJson(rankEffects, move.secondaries)) {
 					updates.secondaries = rankEffects;
 					changed = true;
 				}
 			} else {
-				// Single effect with chance field
+				// single effect with a chance field
 				let isUnchanged = false;
 
 				if (compareJson(rankEffects, move.secondary)) {
@@ -369,8 +368,8 @@ function buildMoveDiffs({ moveNames, wazaRows, dex }) {
 		if (changed) movesDiffs[move.id] = updates;
 	}
 
-	// Apply hardcoded overrides that are not represented in the source tables
-	// but need to persist in Showdown for Relumi's Gen 9 behavior.
+	// hardcoded flag overrides not present in the source tables but needed
+	// for Relumi's gen 9 behavior
 	for (const [moveId, flagAdds] of Object.entries(FLAG_OVERRIDES)) {
 		const move = dex.moves.get(moveId);
 		if (!move.exists) continue;

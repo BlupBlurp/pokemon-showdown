@@ -66,9 +66,8 @@ function collectBaseFormCandidates(baseSpecies, dex) {
 		for (const name of baseSpecies.otherFormes) tryPush(name);
 	}
 
-	// Gen 9 base formeOrder does not always list Past/nonstandard formes
-	// (for example many Gmax formes). Include all matching base-species formes
-	// so form-label mapping can target canonical existing IDs.
+	// gen 9 formeOrder doesn't always list Past/nonstandard formes (many Gmax
+	// formes), so also match against every same-base species in the dex
 	for (const species of dex.species.all()) {
 		if (species.baseSpecies !== baseSpecies.baseSpecies) continue;
 		tryPush(species.name);
@@ -114,7 +113,7 @@ function findMappedSpeciesForForm(
 	if (speciesOverrides && speciesOverrides[formNo]) {
 		const overrideSpecies = dex.species.get(speciesOverrides[formNo]);
 		if (overrideSpecies.exists) return overrideSpecies;
-		// Strict mode: do not fall back to formeOrder for explicitly mapped forms.
+		// explicit mapping is strict: no formeOrder fallback
 		return null;
 	}
 
@@ -157,8 +156,7 @@ function findMappedSpeciesForForm(
 		const idToken = normalizeFormForMatch(idSuffix);
 		if (idToken) candidateTokens.add(idToken);
 
-		// Sort tokens for order-independent matching (e.g., "gmax rapid strike"
-		// vs "rapid strike gmax").
+		// sorted tokens, so "gmax rapid strike" matches "rapid strike gmax"
 		const sortTokens = str =>
 			str.split(" ").filter(Boolean).sort().join(" ");
 
@@ -170,8 +168,8 @@ function findMappedSpeciesForForm(
 		}
 	}
 
-	// Some extracted game tables omit form labels. If label mapping fails,
-	// fall back to matching an existing forme by exact stats + typing.
+	// some game tables omit form labels; fall back to an exact stats +
+	// typing match
 	if (types && baseStats) {
 		const byData = candidates.filter(
 			candidate =>
@@ -186,11 +184,9 @@ function findMappedSpeciesForForm(
 
 // --- Utility: build a speciesId map from Personal table rows ---
 
-/**
- * Walk the Personal table and build a Map<"monsNo_formNo", speciesId>.
- * Only includes rows whose base species exists in the Dex.
- * This is the common mapping used by both the sync pipeline and the
- * sample-set generator.
+/**	 * Walk the Personal table and build a Map<"monsNo_formNo", speciesId>.
+	 * Only includes rows whose base species exists in the Dex. Shared by the
+	 * sync pipeline and the sample-set generator.
  *
  * @param {object[]} personalRows
  * @param {Map<number, string>} monsNames - BDSP monster name index.

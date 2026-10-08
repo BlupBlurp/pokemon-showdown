@@ -31,12 +31,12 @@ import {Learnsets as Gen8RelumiLearnsets} from '../../data/mods/gen8relumi/learn
 import {Learnsets as MainLearnsets} from '../../data/learnsets';
 import {Pokedex} from '../../data/pokedex';
 
-// ---- Move name normalization (like learnset IDs) ----
+// ---- move name normalization (like learnset IDs) ----
 function normalizeName(name: string): string {
 	return name.toLowerCase().replace(/[\s\-']/g, '');
 }
 
-// ---- Entry parsers ----
+// ---- entry parsers ----
 
 function getLevelNumber(entry: string): number | null {
 	const match = entry.match(/^\d+L(\d+)$/);
@@ -67,7 +67,7 @@ function getEntryLabel(entry: string): string {
 	return entry;
 }
 
-// ---- Main learnset entries ----
+// ---- main learnset entries ----
 
 function getMainLearnsetEntries(
 	pokemonId: string,
@@ -90,7 +90,7 @@ function getMainLearnsetEntries(
 	});
 }
 
-// ---- Vanilla collision detection ----
+// ---- vanilla collision detection ----
 
 /**
  * Returns true if ALL the given moves are learned at the same level
@@ -180,7 +180,7 @@ function buildTmMoveIdSet(): Set<number> {
 	return tmIds;
 }
 
-// ---- Main ----
+// ---- main ----
 
 interface CollisionBlock {
 	moveCount: number;

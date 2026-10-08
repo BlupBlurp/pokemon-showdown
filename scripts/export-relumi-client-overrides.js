@@ -176,7 +176,6 @@ function parseConstStringArray(tsPath, constName) {
 /** Read GIF dimensions from the file header (bytes 6-9, LE uint16 width then height). */
 function readGifDimensions(gifPath) {
 	try {
-		// GIF header: bytes 6-7 = width (LE uint16), bytes 8-9 = height (LE uint16)
 		const buf = Buffer.alloc(10);
 		const fd = fs.openSync(gifPath, "r");
 		fs.readSync(fd, buf, 0, 10, 0);
@@ -237,9 +236,8 @@ function stripComments(text) {
 
 /**
  * Parse the upstream pokedex-mini.js text into a BattlePokemonSprites dimension
- * table without executing the remote code. The file only contains a single
- * `exports.BattlePokemonSprites = {...}` assignment with numeric dimensions,
- * so we extract the object literal and convert it to JSON.
+ * table without executing the remote code: the file only contains a single
+ * `exports.BattlePokemonSprites = {...}` assignment with numeric dimensions.
  */
 function parseUpstreamBattlePokemonSprites(text) {
 	const cleanText = stripComments(text);
@@ -298,11 +296,8 @@ function parseUpstreamBattlePokemonSprites(text) {
 
 /**
  * Fetch the upstream (play.pokemonshowdown.com) pokedex-mini.js and return
- * its BattlePokemonSprites dimension table. This gives us the true 1x
- * dimensions for upstream animated GIFs, which we embed into relumi-overrides.js
- * so the client can render upstream sprites at their native size.
- *
- * The result is cached locally so offline builds can still succeed.
+ * its BattlePokemonSprites dimension table, giving the true 1x dimensions for
+ * upstream animated GIFs. Cached locally so offline builds still succeed.
  */
 function fetchUpstreamBattlePokemonSprites() {
 	return new Promise((resolve, reject) => {
@@ -341,10 +336,9 @@ function isValidDim(dim) {
 }
 
 /**
- * Reduce the upstream BattlePokemonSprites table to only the fields the
- * client needs for dimension lookups, keeping the generated file smaller.
- * Skips malformed entries so a future upstream format change cannot break
- * the client.
+ * Reduce the upstream BattlePokemonSprites table to the fields the client
+ * needs for dimension lookups. Skips malformed entries so a future upstream
+ * format change can't break the client.
  */
 function stripUpstreamSpriteDimensions(sprites) {
 	const out = {};
@@ -379,10 +373,7 @@ function loadCachedUpstreamSpriteDimensions() {
 	}
 }
 
-/**
- * Load upstream sprite dimensions, fetching from the network when possible
- * and falling back to a local cache for offline builds.
- */
+/** upstream sprite dimensions: network first, local cache as fallback */
 async function loadUpstreamBattlePokemonSprites() {
 	try {
 		const dims = await fetchUpstreamBattlePokemonSprites();
@@ -405,8 +396,8 @@ async function loadUpstreamBattlePokemonSprites() {
 
 /**
  * Scan sprites/ani and sprites/ani-back for all GIFs and return a map of
- * speciesId → { front?, frontf?, back?, backf? } with actual pixel dimensions.
- * This lets the client override stale dimensions in the static pokedex-mini.js.
+ * speciesId → { front?, frontf?, back?, backf? } with actual dimensions,
+ * overriding stale entries in the static pokedex-mini.js.
  */
 function buildAllSpriteDimensions() {
 	const ANI_DIR = path.join(CLIENT_ROOT, "play.pokemonshowdown.com", "sprites", "ani");
@@ -446,7 +437,7 @@ function buildAllSpriteDimensions() {
  * These are the forms that need BattlePokemonSprites + BattlePokemonIconIndexes entries.
  */
 function buildRelumiSpriteData(speciesOverrides) {
-	// Gather all custom form IDs, sorted by Pokédex number (then ID) for stable slot assignment.
+	// gather custom form IDs, sorted by Pokédex number (then ID)
 	const customFormIds = Object.keys(speciesOverrides)
 		.filter(sid => {
 			const data = speciesOverrides[sid];
@@ -465,15 +456,15 @@ function buildRelumiSpriteData(speciesOverrides) {
 			return numA !== numB ? numA - numB : a < b ? -1 : a > b ? 1 : 0;
 		});
 
-	// Assign icon sheet slots starting after the last upstream slot (1560+80=1640).
-	// Sorted order ensures the same form always gets the same slot across re-runs.
+	// icon slots start after the last upstream one (1560+80=1640); sorted ids
+	// keep slots stable across runs
 	const RELUMI_ICON_BASE = 1641;
 	const iconIndexes = {};
 	customFormIds.forEach((sid, i) => {
 		iconIndexes[sid] = RELUMI_ICON_BASE + i;
 	});
 
-	// Log the icon index mapping for reference when updating pokemonicons-sheet.png
+	// log the mapping for whoever is adding icons to pokemonicons-sheet.png
 	console.log(`\nCustom form icon indexes (add 40x30 icons to pokemonicons-sheet.png at these positions):`);
 	console.log(`-`.repeat(50));
 	customFormIds.forEach((sid, i) => {
@@ -489,7 +480,7 @@ function buildRelumiSpriteData(speciesOverrides) {
 	const spriteEntries = {};
 	customFormIds.forEach(sid => {
 		const data = speciesOverrides[sid];
-		// spriteid follows the same logic as the client: baseSpecies-forme (lowercased, no spaces)
+		// same spriteid logic as the client: baseSpecies-forme, lowercased
 		const spriteid = toID(data.baseSpecies) + "-" + toID(data.forme);
 		const frontDims = readGifDimensions(path.join(ANI_DIR, spriteid + ".gif")) || { w: 96, h: 96 };
 		const backDims = readGifDimensions(path.join(ANI_BACK_DIR, spriteid + ".gif")) || frontDims;
@@ -520,11 +511,9 @@ function buildRelumiBanConfig(formatsPath) {
 		.filter(entry => !entry.startsWith("tag:"))
 		.map(entry => toID(entry));
 
-	// Pre-compute which species IDs match each banned tag, using the server-side
-	// tag filter functions from data/tags.ts. This eliminates the need for the
-	// client to reimplement form detection logic (isMega, isGigantamax, etc.).
+	// precompute which species match each banned tag, with the server-side tag
+	// filters, so the client doesn't reimplement form detection (isMega etc.)
 	const { Tags } = require("../dist/data/tags");
-	// Re-use the Dex already loaded at the top of main(); avoid double-require.
 	const { Dex: ServerDexForBans } = require("../dist/sim/dex");
 	const dex = ServerDexForBans.mod("gen8relumi");
 	const bannedSpeciesByTag = {};
@@ -583,7 +572,7 @@ async function main() {
 	);
 	const relumiAbilityOverrides = buildRelumiAbilityTextOverrides(relumiAbilitiesText);
 
-	// Extract custom desc/shortDesc from the mod's ability data (e.g. Iron Fist 1.5x multiplier).
+	// custom desc/shortDesc from the mod's ability data (Iron Fist 1.5x etc.)
 	let modAbilityOverrides = {};
 	try {
 		const modAbilitiesCompiled = require("../dist/data/mods/gen8relumi/abilities.js").Abilities;
@@ -604,8 +593,7 @@ async function main() {
 	const { iconIndexes, spriteEntries } = buildRelumiSpriteData(speciesOverrides);
 	const allSpriteDims = buildAllSpriteDimensions();
 
-	// Precompute gen 8 shortDesc for moves/abilities so the client compares
-	// against the correct baseline (gen 8, not gen 9).
+	// precompute gen 8 shortDesc so the client diffs against gen 8 text, not gen 9
 	const gen8MoveDescs = {};
 	for (const id of [...Object.keys(moveOverrides), ...RELUMI_GEN9_SNOW_MOVE_IDS]) {
 		const entry = movesText[id];

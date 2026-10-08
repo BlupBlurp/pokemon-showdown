@@ -114,23 +114,13 @@ export interface PokemonSet {
 	 * Tera Type
 	 */
 	teraType?: string;
-	/**
-	 * Custom base stats override for Relumi testing formats.
-	 * When present, these values override the species' baseStats.
-	 */
+	/** base stats override for Relumi testing formats */
 	customBaseStats?: StatsTable;
-	/**
-	 * Custom types override for Relumi testing formats.
-	 * When present, these values override the species' types.
-	 */
+	/** custom types override for Relumi testing formats */
 	customTypes?: string[];
-	/**
-	 * Random-battle role metadata.
-	 */
+	/** random-battle role metadata */
 	role?: string;
-	/**
-	 * Source trainer metadata for in-game trainer-derived random sets.
-	 */
+	/** trainer metadata for in-game-trainer-derived random sets */
 	trainerId?: number;
 }
 
@@ -394,8 +384,7 @@ export const Teams = new class Teams {
 		if (dexTable) {
 			const obj = dexTable.get(name);
 			if (obj.exists) {
-				// If canonicalized name differs from input, input might be a modded cosmetic
-				// forme not in base dex - preserve the original to allow mod validation to work
+				// may be a modded cosmetic forme not in the base dex
 				return obj.name === name ? obj.name : name;
 			}
 		}
@@ -416,14 +405,13 @@ export const Teams = new class Teams {
 	exportSet(set: PokemonSet, { hideStats, removeNicknames, useStatPoints }: ExportOptions = {}) {
 		let out = ``;
 
-		// Normalize species to canonical name (e.g. "SilvallyIce" -> "Silvally-Ice")
+		// Normalize species to canonical name (SilvallyIce -> Silvally-Ice)
 		const resolvedSpecies = Dex.species.get(set.species);
 		if (resolvedSpecies.exists && resolvedSpecies.name !== set.species) {
 			set.species = resolvedSpecies.name;
 		}
-		// Clear name when it's just the base species of a forme (not a real nickname),
-		// so the forme species is displayed directly and battle-log.ts icon injection
-		// uses the species branch (replacing the full canonical name).
+		// clear name if it's just the base species of a forme (not a nickname),
+		// so battle-log.ts injects the forme icon instead of the canonical name
 		if (resolvedSpecies.exists && set.name === resolvedSpecies.baseSpecies) {
 			set.name = '';
 		}
@@ -440,7 +428,7 @@ export const Teams = new class Teams {
 		if (set.gender === 'M') out += ` (M)`;
 		if (set.gender === 'F') out += ` (F)`;
 		if (set.item) {
-			// Normalize item to canonical name (e.g. "heavydutyboots" -> "Heavy-Duty Boots")
+			// Normalize item to canonical name (heavydutyboots -> Heavy-Duty Boots)
 			const resolvedItem = Dex.items.get(set.item);
 			if (resolvedItem.exists && resolvedItem.name !== set.item) {
 				set.item = resolvedItem.name;
@@ -511,7 +499,7 @@ export const Teams = new class Teams {
 
 		// moves
 		for (let move of set.moves) {
-			// Normalize move to canonical name (e.g. "bodyslam" -> "Body Slam")
+			// Normalize move to canonical name (bodyslam -> Body Slam)
 			const resolved = Dex.moves.get(move);
 			if (resolved.exists && resolved.name !== move) {
 				move = resolved.name;
@@ -544,16 +532,13 @@ export const Teams = new class Teams {
 			if (line.endsWith(')') && line.includes('(')) {
 				const [name, species] = line.slice(0, -1).split('(');
 				const speciesObj = Dex.species.get(species);
-				// Preserve custom cosmetic formes: if input differs from canonicalized name,
-				// the input might be a modded cosmetic forme not in base dex
 				const inputSpecies = species.trim();
 				set.species = speciesObj.name === inputSpecies ? speciesObj.name : inputSpecies;
 				set.name = name.trim();
 			} else {
 				const speciesObj = Dex.species.get(line);
 				const inputSpecies = line.trim();
-				// Preserve custom cosmetic formes: if input differs from canonicalized name,
-				// the input might be a modded cosmetic forme not in base dex
+				// not in the base dex => may be a modded cosmetic forme
 				set.species = speciesObj.name === inputSpecies ? speciesObj.name : inputSpecies;
 				set.name = '';
 			}

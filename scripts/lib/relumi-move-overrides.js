@@ -13,7 +13,7 @@ const FLAG_OVERRIDES = {
 	armorcannon: { pulse: 1 },
 };
 
-// Manual and hardcoded move overrides that should persist across sync runs.
+// Manual move overrides, kept across sync runs.
 const MANUAL_MOVE_OVERRIDES = {
 	return: {
 		basePower: 0,

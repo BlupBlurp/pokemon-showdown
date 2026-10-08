@@ -2404,8 +2404,8 @@ export const Chat = new class {
 		return Chat.getReadmoreBlock(str, true, cutoff);
 	}
 
-	// Relumi: luminescent.team URL builders to replace dex.pokemonshowdown.com links.
-	// Delegates to the shared server/luminescent-urls.ts module.
+	// luminescent.team URL builders (server/luminescent-urls.ts) replacing
+	// dex.pokemonshowdown.com links
 	getLuminescentPokemonUrl = getLuminescentPokemonUrlFromModule;
 	getLuminescentMoveUrl = getLuminescentMoveUrlFromModule;
 	getLuminescentAbilityUrl = getLuminescentAbilityUrlFromModule;

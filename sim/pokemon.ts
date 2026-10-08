@@ -1390,7 +1390,7 @@ export class Pokemon {
 		this.species = species;
 
 		let types = species.types;
-		/* Apply custom type overrides from the set (used by Relumi testing formats) */
+		/* custom type overrides from the set (Relumi testing formats) */
 		if (this.battle.format.id.includes('testing') && this.set.customTypes?.length) {
 			types = this.set.customTypes;
 		}
@@ -1400,7 +1400,7 @@ export class Pokemon {
 		this.knownType = true;
 		this.weighthg = species.weighthg;
 
-		/* Apply custom base stat overrides from the set (used by Relumi testing formats) */
+		/* custom base stat overrides from the set (Relumi testing formats) */
 		let baseStats = species.baseStats;
 		if (this.battle.format.id.includes('testing') && this.set.customBaseStats) {
 			baseStats = {...baseStats, ...this.set.customBaseStats};

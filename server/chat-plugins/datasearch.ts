@@ -2609,7 +2609,7 @@ function runItemsearch(target: string, cmd: string, message: string) {
 
 	function mapItemResults(inputArr: (string | Item)[]) {
 		return inputArr.map(
-			// Relumi: Use luminescent.team item pages where available.
+			// luminescent.team item pages, where available
 			result => `<a href="${Chat.getLuminescentItemUrl(result)}" target="_blank" class="subtle" style="white-space:nowrap"><psicon item="${result}" style="vertical-align:-7px" />${result}</a>`
 		).join(", ");
 	}
@@ -2789,7 +2789,7 @@ function runAbilitysearch(target: string, cmd: string, message: string) {
 
 	function mapAbilityResults(inputArr: (string | Ability)[]) {
 		return inputArr.map(
-			// Relumi: luminescent.team has no ability pages yet; use placeholder.
+			// no ability pages on luminescent.team yet, so a placeholder
 			result => `<a href="${Chat.getLuminescentAbilityUrl(result)}" target="_blank" class="subtle" style="white-space:nowrap">${result}</a>`
 		).join(", ");
 	}

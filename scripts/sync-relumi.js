@@ -193,8 +193,8 @@ function formatTsValue(value, indentLevel = 0) {
 	}
 	if (typeof value === "function") {
 		const fnStr = value.toString();
-		// Ensure function is output as a valid function expression (with 'function' keyword)
-		// rather than method shorthand which may not parse correctly in object contexts
+		// output a function expression, not method shorthand, so the emitted
+		// object literal parses everywhere
 		if (!fnStr.startsWith("function") && !fnStr.startsWith("(")) {
 			return `function ${fnStr}`;
 		}
@@ -327,11 +327,11 @@ function buildSpeciesDiffs({
 	const unmappedRows = [];
 	const speciesIdByRowId = new Map();
 	const speciesIdByMonsForm = new Map();
-	// Keep a separate learnset mapping so cosmetic forms can validate moves
-	// without forcing mechanics/stat diffs onto cosmetic IDs.
+	// separate learnset mapping so cosmetic forms can validate moves without
+	// carrying mechanics/stat diffs
 	const learnsetSpeciesIdByRowId = new Map();
 	const learnsetSpeciesIdByMonsForm = new Map();
-	// Track all species IDs that should receive Relumi tier tags in formats-data.
+	// species IDs that get Relumi tier tags in formats-data
 	const relumiTaggedSpeciesIds = new Set();
 
 	for (const row of personalRows) {
@@ -375,7 +375,7 @@ function buildSpeciesDiffs({
 			mappedSpecies.isCosmeticForme &&
 			toID(mappedSpecies.baseSpecies) === baseSpecies.id
 		);
-		// Check if this form has an explicit override - if so, don't fall back to base
+		// explicit override: don't fall back to base
 		const hasExplicitOverride = !!(
 			FORM_NUMBER_SPECIES_OVERRIDES[row.monsno] &&
 			FORM_NUMBER_SPECIES_OVERRIDES[row.monsno][formNo]
@@ -397,8 +397,8 @@ function buildSpeciesDiffs({
 		const abilitySet = buildAbilitiesObject(row, abilityNames);
 
 		if (mappedOrBaseSpecies && mappedOrBaseSpecies.exists) {
-			// Cosmetic forms should still map to their own learnsets even when
-			// stats/types/abilities are inherited from the base species entry.
+			// cosmetic forms keep their own learnset entry even when their
+			// stats/types/abilities come from the base species
 			const learnsetSpeciesId =
 				mappedSpeciesIsCosmeticForm && mappedSpecies?.exists ?
 					mappedSpecies.id :
@@ -438,7 +438,7 @@ function buildSpeciesDiffs({
 			continue;
 		}
 
-		// Unmapped form/species: create a custom form entry when possible.
+		// unmapped: create a custom form entry when possible
 		if (baseSpecies.exists && formNo > 0) {
 			const forme = buildFormeFromLabel(
 				formLabel,
@@ -532,8 +532,8 @@ function buildLearnsetsDiffs({
 	for (const entry of tamagoRows) {
 		if (!entry || !entry.no || !Array.isArray(entry.wazaNo)) continue;
 		const formNo = Number(entry.formNo || 0);
-		// Learnsets are keyed by the learnset mapping, not the stats mapping,
-		// so cosmetic forms get explicit learnset entries when needed.
+		// keyed by the learnset mapping, not the stats mapping, so cosmetic
+		// forms get explicit learnset entries
 		const speciesId = learnsetSpeciesIdByMonsForm.get(
 			`${entry.no}_${formNo}`
 		);
@@ -692,8 +692,8 @@ function buildFormatsDataDiffs({ mappedSpeciesIds, dex }) {
 			const baseSpecies = dex.species.get(
 				species.baseSpecies || species.name
 			);
-			// Ensure exception species keep all cosmetic/alternate formes tagged
-			// even when extracted rows only touched a subset of their formes.
+		// exception species keep every cosmetic/alternate forme tagged, even
+		// when the extracted rows only touched a subset
 			if (
 				baseSpecies.exists &&
 				CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS.has(baseSpecies.id)
@@ -800,7 +800,7 @@ function main() {
 		dex,
 	});
 
-	// Apply manual pokedex overrides on top of generated diffs
+	// manual pokedex overrides go on top of the generated diffs
 	for (const [speciesId, override] of Object.entries(MANUAL_POKEDEX_OVERRIDES)) {
 		if (pokedexDiffs[speciesId]) {
 			Object.assign(pokedexDiffs[speciesId], override);
@@ -827,8 +827,8 @@ function main() {
 			tmLearnsetDir: PATHS.tmLearnsetDir,
 			moveTutorLearnsetDir: PATHS.moveTutorLearnsetDir,
 		});
-	// Use the tagged species set so cosmetic forms remain visible as Relumi
-	// in teambuilder/search even when their mechanics map to base species.
+	// keyed off the tagged set so cosmetic forms stay visible as Relumi in the
+	// teambuilder even when their mechanics map to base species
 	const formatsDataDiffs = buildFormatsDataDiffs({
 		mappedSpeciesIds: relumiTaggedSpeciesIds,
 		dex,

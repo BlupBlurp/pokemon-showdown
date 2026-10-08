@@ -88,8 +88,8 @@ function vanillaMovesForSpecies(vanilla: LearnsetTable, speciesId: string): Set<
 	for (const event of speciesData?.eventData || []) {
 		for (const moveId of event?.moves || []) moves.add(moveId);
 	}
-	// Egg moves are frequently listed only on the first stage of a line, so
-	// count them for every pre-evolution to avoid flagging them as new.
+	// egg moves are usually listed on the first stage of a line; count them
+	// for every pre-evolution to avoid flagging them as new
 	for (const preId of preEvolutionIds(speciesId)) {
 		for (const moveId of eggMovesForSpecies(vanilla[preId])) moves.add(moveId);
 	}
@@ -124,7 +124,7 @@ function csvCell(value: string): string {
 function relumiMethod(relumi: LearnsetTable, speciesId: string, moveId: string): string | null {
 	const sources = relumi[speciesId]?.learnset?.[moveId];
 	if (sources && sources.length > 0) return sources.join(', ');
-	// Egg moves are often only listed on the first stage; check pre-evolutions.
+	// egg moves are often only listed on the first stage; check pre-evolutions
 	for (const preId of preEvolutionIds(speciesId)) {
 		const preSources = relumi[preId]?.learnset?.[moveId];
 		if (preSources && preSources.some(isEggSource)) {
@@ -148,7 +148,7 @@ function main() {
 	const za = ZALearnsets as unknown as LearnsetTable;
 	const relumi = RelumiLearnsets as unknown as LearnsetTable;
 
-	// Union of every species that appears in either mod learnset.
+	// union of every species in either mod learnset
 	const speciesIds = [...new Set([...Object.keys(champions), ...Object.keys(za)])].sort();
 
 	const rows: Row[] = [];
@@ -158,7 +158,7 @@ function main() {
 	for (const speciesId of speciesIds) {
 		const vanillaData = vanilla[speciesId];
 		if (!vanillaData?.learnset) {
-			// Species with no vanilla learnset of their own; nothing to compare against.
+			// no vanilla learnset of their own, nothing to compare against
 			skippedSpecies++;
 			continue;
 		}
@@ -175,8 +175,8 @@ function main() {
 		const both = championsAdded.filter(m => zaMoves.has(m));
 		const onlyZA = zaAdded.filter(m => !championMoves.has(m));
 
-		// For the union of the three move columns, note which moves Relumi already
-		// teaches this Pokemon, with the learning method(s) shown in brackets.
+	// for the union of the three move columns, note what Relumi already
+	// teaches this Pokemon, with the method(s) in brackets
 		const addedUnion = [...new Set([...onlyChampions, ...both, ...onlyZA])].sort();
 		const alreadyInRelumi = addedUnion
 			.map(moveId => {

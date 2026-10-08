@@ -193,8 +193,7 @@ function main() {
 		let speciesMissingCount = 0;
 		for (const moveId of vanillaMoves) {
 			if (!relumiMoves.has(moveId)) {
-				// Skip moves the species can still get as an egg move from its
-				// first stage (Relumi only stores egg moves on the first stage).
+				// still obtainable as an egg move from the first stage
 				if (inheritedEggMoves.has(moveId)) {
 					filteredEggCount++;
 					continue;

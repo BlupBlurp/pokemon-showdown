@@ -441,16 +441,16 @@ export class DexSpecies {
 		const alias = this.dex.getAlias(id);
 		if (alias) {
 			const cosmeticForme = this.dex.data.Pokedex?.[id];
-			// Cosmetic aliases can have formats-data tier overrides, so detect
-			// cosmetic IDs from the alias target before using special-event logic.
+			// cosmetic aliases can carry formats-data tier overrides, so detect
+			// them from the alias target before the special-event path
 			const aliasDexEntry = this.dex.data.Pokedex?.[alias];
 			const isCosmeticAliasFromTarget = !!(
 				aliasDexEntry &&
 				Array.isArray(aliasDexEntry.cosmeticFormes) &&
 				aliasDexEntry.cosmeticFormes.some(forme => toID(forme) === id)
 			);
-			// Cosmetic aliases need base species data plus cosmetic overrides,
-			// not the special-event alias path that rewrites abilities.
+			// cosmetic alias: base species data + cosmetic overrides, not the
+			// special-event path (that one rewrites abilities)
 			if (cosmeticForme?.isCosmeticForme || isCosmeticAliasFromTarget) {
 				species = this.get(alias);
 				const cosmeticName =

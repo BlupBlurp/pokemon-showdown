@@ -1,11 +1,9 @@
 "use strict";
 
-// Manual species bans for Relumi random battle set generation.
-// Use this list to exclude species that are otherwise valid (not NFE, not
-// mega/primal/gmax) but should not appear in generated random sets.
-//
-// Entries are Showdown species IDs (lowercase, no spaces). Listed species are
-// fully excluded from both trainer-derived and fallback candidate sets.
+// Manual species bans for Relumi random battle set generation: species that
+// pass the normal filters (not NFE, not mega/primal/gmax) but shouldn't
+// appear in generated sets. Entries are Showdown species IDs; listed species
+// are excluded from both trainer-derived and fallback candidate sets.
 const MANUAL_RANDOM_SETS_BANS = new Set([
 	"pichuspikyeared",
 	"aegislashblade",
