@@ -268,7 +268,9 @@ export abstract class BasicRoom {
 		this.tour = null;
 
 		this.roomid = roomid;
-		this.title = title || roomid;
+		this.title = (title || roomid);
+		// should happen before making a roomlog, so we don't leave an orphaned roomlog
+		this.validateTitle(this.title, this.roomid);
 		this.parent = null;
 
 		this.userCount = 0;
@@ -350,7 +352,6 @@ export abstract class BasicRoom {
 		this.tour = null;
 		this.game = null;
 		this.battle = null;
-		this.validateTitle(this.title, this.roomid);
 	}
 
 	toString() {
@@ -550,14 +551,8 @@ export abstract class BasicRoom {
 		subGame = false,
 	): T | null {
 		// TODO: switch to `static readonly gameid` when all game files are TypeScripted
-		if (
-			subGame &&
-			this.subGame &&
-			this.subGame.constructor.name === constructor.name
-		)
-			return this.subGame as T;
-		if (this.game && this.game.constructor.name === constructor.name)
-			return this.game as T;
+		if (subGame && this.subGame?.constructor.name === constructor.name) return this.subGame as T;
+		if (this.game?.constructor.name === constructor.name) return this.game as T;
 		return null;
 	}
 	getMinorActivity<T extends MinorActivity>(
@@ -681,11 +676,9 @@ export abstract class BasicRoom {
 		}
 
 		for (const [i, entry] of this.muteQueue.entries()) {
-			if (
-				entry.userid === userid ||
-				(user && entry.guestNum === user.guestNum) ||
-				(autoconfirmed && entry.autoconfirmed === autoconfirmed)
-			) {
+			if (entry.userid === userid ||
+				(entry.guestNum === user?.guestNum) ||
+				(autoconfirmed && entry.autoconfirmed === autoconfirmed)) {
 				if (i === 0) {
 					this.muteQueue.splice(0, 1);
 					this.runMuteTimer(true);
@@ -782,11 +775,8 @@ export abstract class BasicRoom {
 			message += ` [${this.settings.modchat} or higher to talk]`;
 		}
 		if (this.settings.modjoin) {
-			const modjoin =
-				this.settings.modjoin === true
-					? this.settings.modchat
-					: this.settings.modjoin;
-			message += ` [${modjoin} or higher to join]`;
+			const modjoin = this.settings.modjoin === true ? this.settings.modchat : this.settings.modjoin;
+			if (modjoin) message += ` [${modjoin} or higher to join]`;
 		}
 		if (this.settings.slowchat) {
 			message += ` [Slowchat ${this.settings.slowchat}s]`;
@@ -1094,6 +1084,8 @@ export abstract class BasicRoom {
 			(this as any).parent.subRooms.delete(oldID);
 			(this as any).parent.subRooms.set(newID, this as ChatRoom);
 		}
+		const bestOfGame = this.parent?.bestOf?.games.find(game => game.room === oldID);
+		if (bestOfGame) bestOfGame.room = newID;
 		if (this.subRooms) {
 			for (const subRoom of this.subRooms.values()) {
 				(subRoom as any).parent = this as ChatRoom;
@@ -1672,10 +1664,12 @@ export class GlobalRoomState {
 			if (format.itemClauseDefault) displayCode |= 256;
 			this.formatList += ',' + displayCode.toString(16);
 
+			// virtual formats don't support challengeShow or tournamentShow
+			const virtualDisplayCode = displayCode & ~(4 | 8);
 			for (const formatAlias in Ladders.virtualFormats) {
 				const entry = Ladders.virtualFormats[formatAlias];
 				if (entry.format === format.id) {
-					this.formatList += `|${entry.name},${displayCode.toString(16)}`;
+					this.formatList += `|${entry.name},${virtualDisplayCode.toString(16)}`;
 				}
 			}
 		}
@@ -2552,18 +2546,16 @@ export const Rooms = {
 			return null;
 		}
 
-		const p1Special = players.length
-			? players[0].battleSettings.special
-			: undefined;
-		let mismatch = `"${p1Special}"`;
+		const p1Special = players.length ? players[0].battleSettings.special : undefined;
+		let mismatch = `"${p1Special!}"`;
 		for (const user of players) {
 			if (user.battleSettings.special !== p1Special) {
-				mismatch += ` vs. "${user.battleSettings.special}"`;
+				mismatch += ` vs. "${user.battleSettings.special!}"`;
 			}
 			user.battleSettings.special = undefined;
 		}
 
-		if (mismatch !== `"${p1Special}"`) {
+		if (mismatch !== `"${p1Special!}"`) {
 			for (const user of players) {
 				user.popup(`Your special battle settings don't match: ${mismatch}`);
 			}

@@ -13,7 +13,6 @@
  * @license MIT
  */
 
-/* eslint no-else-return: "error" */
 import { Utils, ProcessManager } from '../../lib';
 import type { UserSettings } from '../users';
 import type { GlobalPermission, RoomPermission } from '../user-groups';
@@ -446,6 +445,7 @@ export const commands: Chat.ChatCommands = {
 			} else {
 				targetRoom = room;
 			}
+			if (!targetRoom) return this.parse('/help invite');
 			if (users.length > 1 && !user.trusted) {
 				throw new Chat.ErrorMessage("You do not have permission to mass-invite users.");
 			}
@@ -552,7 +552,7 @@ export const commands: Chat.ChatCommands = {
 		if (isOffline) {
 			await Chat.PrivateMessages.deleteSettings(user.id);
 		} else {
-			// eslint-disable-next-line require-atomic-updates
+			// oxlint-disable-next-line ps/require-atomic-updates
 			user.settings.blockPMs = false;
 		}
 		user.update();
@@ -594,6 +594,28 @@ export const commands: Chat.ChatCommands = {
 		`/blockinvites [rank] - Allows only users with the given [rank] to invite you to rooms.`,
 		`Valid settings: autoconfirmed, trusted, unlocked, +, %, @, ~.`,
 		`/unblockinvites - Allows anyone to invite you to rooms.`,
+	],
+
+	blockbots: 'allowbots',
+	allowbots(target, room, user, connection, cmd) {
+		if (cmd.includes('block')) {
+			if (!user.settings.allowLadderBots) {
+				return this.errorReply(this.TL`You are not opted-in to playing against bots on the ladder.`);
+			}
+			user.settings.allowLadderBots = false;
+			this.sendReply(this.TL`You have opted out of playing against bots on the ladder.`);
+		} else {
+			if (user.settings.allowLadderBots) {
+				return this.errorReply(this.TL`You are already opted-in to playing against bots on the ladder.`);
+			}
+			user.settings.allowLadderBots = true;
+			this.sendReply(this.TL`You have opted in to matching against bots on the ladder.`);
+		}
+		return user.update();
+	},
+	allowbotshelp: [
+		`/allowbots - Opt in to matchmaking against bots on the ladder.`,
+		`/blockbots - Opt out of matchmaking against bots on the ladder.`,
 	],
 
 	status(target, room, user, connection, cmd) {
@@ -1106,7 +1128,7 @@ export const commands: Chat.ChatCommands = {
 		if (!room.game.forfeit) {
 			throw new Chat.ErrorMessage(this.TL`This kind of game can't be forfeited.`);
 		}
-		room.game.forfeit(user);
+		room.game.forfeit(user, room.bestOf ? ' forfeited the series.' : ' forfeited.');
 	},
 	forfeithelp: [
 		`/forfeit - Forfeits your currently active game, if it supports that.`,
@@ -1206,6 +1228,9 @@ export const commands: Chat.ChatCommands = {
 
 		if (!player) {
 			throw new Chat.ErrorMessage(`This battle does not support having players in ${slot}`);
+		}
+		if (player.eliminated) {
+			throw new Chat.ErrorMessage(this.TL`The player in slot ${slot} has already been eliminated.`);
 		}
 		if (!targetUser) {
 			battle.sendInviteForm(connection);
@@ -1481,12 +1506,6 @@ export const commands: Chat.ChatCommands = {
 				this.popupReply(this.TL`This server requires you to be rank ${groupName} or higher to search for a battle.`);
 				return false;
 			}
-			let custom;
-			const virtual = Ladders.virtualFormats[toID(target)];
-			if (virtual) {
-				target = virtual.format;
-				custom = virtual.custom;
-			}
 			const ladder = Ladders(target);
 			if (!user.registered && Config.forceregisterelo && await ladder.getRating(user.id) >= Config.forceregisterelo) {
 				user.send(
@@ -1495,7 +1514,7 @@ export const commands: Chat.ChatCommands = {
 				return false;
 			}
 			Chat.runHandlers('onLadderSearch', user, connection, ladder.formatid as ID);
-			return ladder.searchBattle(user, connection, custom);
+			return ladder.searchBattle(user, connection);
 		}
 		return Ladders.cancelSearches(user);
 	},
@@ -1591,7 +1610,7 @@ export const commands: Chat.ChatCommands = {
 		if (!this.pmTarget) return this.popupReply(this.TL`User "${this.pmTargetName || ''}" not found.`);
 
 		const chall = Ladders.challenges.search(user.id, this.pmTarget.id);
-		if (!chall || chall.from !== user.id) {
+		if (chall?.from !== user.id) {
 			connection.popup(`You are not challenging ${this.pmTarget.name}. Maybe they accepted/rejected before you cancelled?`);
 			return false;
 		}
@@ -1611,7 +1630,7 @@ export const commands: Chat.ChatCommands = {
 		if (!this.pmTarget) return this.popupReply(this.TL`User "${this.pmTargetName || ''}" not found.`);
 
 		const chall = Ladders.challenges.search(user.id, this.pmTarget.id);
-		if (!chall || chall.to !== user.id) {
+		if (chall?.to !== user.id) {
 			connection.popup(`${this.pmTarget.id} is not challenging you. Maybe they cancelled before you accepted?`);
 			return false;
 		}
@@ -1634,7 +1653,7 @@ export const commands: Chat.ChatCommands = {
 		if (!this.pmTarget) return this.popupReply(this.TL`User "${this.pmTargetName || ''}" not found.`);
 
 		const chall = Ladders.challenges.search(user.id, this.pmTarget.id);
-		if (!chall || chall.to !== user.id) {
+		if (chall?.to !== user.id) {
 			connection.popup(`${this.pmTarget.id} is not challenging you. Maybe they cancelled before you rejected?`);
 			return false;
 		}

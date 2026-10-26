@@ -1392,18 +1392,11 @@ export const commands: Chat.ChatCommands = {
 						allowed.filter(Boolean).map((avatar) => (
 							<p>
 								{hasButton ? (
-									<button
-										name="send"
-										value={`/avatar ${avatar}`}
-										class="button"
-									>
-										{Avatars.img(avatar!)}
-									</button>
+									<button name="send" value={`/avatar ${avatar}`} class="button">{Avatars.img(avatar)}</button>
 								) : (
-									Avatars.img(avatar!)
-								)}{" "}
-								{}
-								<code>/avatar {avatar!.replace("#", "")}</code>
+									Avatars.img(avatar)
+								)} {}
+								<code>/avatar {avatar.replace('#', '')}</code>
 							</p>
 						)),
 					);
@@ -1587,15 +1580,11 @@ export const commands: Chat.ChatCommands = {
 			// delete all
 			delete customAvatars[userid];
 			Avatars.save();
-			this.globalModlog("REMOVE AVATARS", userid, allowed.join(","));
-			this.sendReplyBox(
-				<div>
-					{allowed.map((curAvatar) => [Avatars.img(curAvatar!), " "])}
-					<br />
-					Removed from{" "}
-					<username class="username">{inputUsername}</username>
-				</div>,
-			);
+			this.globalModlog('REMOVE AVATARS', userid, allowed.join(','));
+			this.sendReplyBox(<div>
+				{allowed.map(curAvatar => [Avatars.img(curAvatar), ' '])}<br />
+				Removed from <username class="username">{inputUsername}</username>
+			</div>);
 		}
 	},
 	removeavatarhelp: "addavatarhelp",
