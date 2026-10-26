@@ -332,6 +332,7 @@ export interface UserSettings {
 	allowFriendNotifications: boolean;
 	displayBattlesToFriends: boolean;
 	hideLogins: boolean;
+	allowLadderBots: boolean;
 }
 
 // User
@@ -475,6 +476,7 @@ export class User extends Chat.MessageContext {
 			allowFriendNotifications: false,
 			displayBattlesToFriends: false,
 			hideLogins: false,
+			allowLadderBots: false,
 		};
 		this.battleSettings = {
 			team: '',
@@ -841,6 +843,7 @@ export class User extends Chat.MessageContext {
 			} else if (userType === '10') {
 				this.autoconfirmed = userid;
 				this.isUserBot = true;
+				this.settings.allowLadderBots = true;
 			}
 		}
 		if (Users.isTrusted(userid)) {
@@ -938,7 +941,7 @@ export class User extends Chat.MessageContext {
 		for (const roomid of this.games) {
 			const room = Rooms.get(roomid);
 			if (!room) {
-				Monitor.warn(`while renaming, room ${roomid} expired for user ${this.id} in rooms ${[...this.inRooms]} and games ${[...this.games]}`);
+				Monitor.warn(`while renaming, room ${roomid} expired for user ${this.id} in rooms ${[...this.inRooms].join(',')} and games ${[...this.games].join(',')}`);
 				this.games.delete(roomid);
 				continue;
 			}
@@ -1017,6 +1020,7 @@ export class User extends Chat.MessageContext {
 			this.locked = oldUser.locked;
 		}
 		if (oldUser.autoconfirmed) this.autoconfirmed = oldUser.autoconfirmed;
+		if (oldUser.isUserBot) this.isUserBot = true;
 
 		this.updateGroup(this.registered, true);
 		if (oldLocked !== this.locked || oldSemilocked !== this.semilocked) this.updateIdentity();
@@ -1134,7 +1138,7 @@ export class User extends Chat.MessageContext {
 		}
 		if (this.trusted) {
 			if (this.locked && this.permalocked) {
-				Monitor.log(`[CrisisMonitor] Trusted user '${this.id}' is ${this.permalocked !== this.id ? `an alt of permalocked user '${this.permalocked}'` : `a permalocked user`}, and was automatically demoted from ${this.distrust()}.`);
+				Monitor.log(`[CrisisMonitor] Trusted user '${this.id}' is ${this.permalocked !== this.id ? `an alt of permalocked user '${this.permalocked}'` : `a permalocked user`}, and was automatically demoted from ${this.distrust()!.join(',')}.`);
 				return;
 			}
 			this.locked = null;
@@ -1552,7 +1556,7 @@ export class User extends Chat.MessageContext {
 		for (const roomid of this.games) {
 			const game = Rooms.get(roomid)?.game;
 			if (!game) {
-				Monitor.warn(`while deallocating, room ${roomid} did not have a game for ${this.id} in rooms ${[...this.inRooms]} and games ${[...this.games]}`);
+				Monitor.warn(`while deallocating, room ${roomid} did not have a game for ${this.id} in rooms ${[...this.inRooms].join(',')} and games ${[...this.games].join(',')}`);
 				this.games.delete(roomid);
 				continue;
 			}

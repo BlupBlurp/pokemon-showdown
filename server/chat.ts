@@ -26,6 +26,7 @@ To reload chat commands:
 import type { RoomPermission, GlobalPermission } from './user-groups';
 import type { Punishment } from './punishments';
 import type { PartialModlogEntry } from './modlog';
+import type { LadderRating } from './ladders';
 import type * as ConfigLoader from './config-loader';
 import * as Friends from './friends';
 import { FS, Utils } from '../lib';
@@ -99,7 +100,7 @@ interface Handlers {
 	onBattleCreate: (battle: RoomBattle, players: ID[]) => void;
 	onLadderSearch: (user: User, connection: Connection, format: ID) => void;
 	onBattleRanked: (
-		battle: Rooms.RoomBattle, winner: ID, ratings: (AnyObject | null | undefined)[], players: ID[]
+		battle: Rooms.RoomBattle, winner: ID, ratings: (LadderRating | null)[], players: ID[]
 	) => void;
 	onRename: (user: User, oldID: ID, newID: ID) => void;
 	onTicketCreate: (ticket: import('./chat-plugins/helptickets').TicketState, user: User) => void;
@@ -495,7 +496,7 @@ export class PageContext extends MessageContext {
 			}
 			Monitor.crashlog(err, 'A chat page', {
 				user: this.user.name,
-				room: this.room && this.room.roomid,
+				room: this.room?.roomid ?? null,
 				pageid: this.pageid,
 			});
 			this.setHTML(
@@ -555,7 +556,7 @@ export class CommandContext extends MessageContext {
 		recursionDepth?: number, isQuiet?: boolean, broadcastPrefix?: string, bypassRoomCheck?: boolean,
 	}) {
 		super(
-			options.user, options.room && options.room.settings.language ?
+			options.user, options.room?.settings.language ?
 				options.room.settings.language : options.user.language
 		);
 
@@ -776,7 +777,7 @@ export class CommandContext extends MessageContext {
 			throw new Chat.ErrorMessage(`Your username contains emojis, which this room doesn't allow.`);
 		}
 		// Removes extra spaces and null characters
-		// eslint-disable-next-line no-control-regex
+		// oxlint-disable-next-line no-control-regex
 		message = message.trim().replace(/[ \u0000\u200B-\u200F]+/g, ' ');
 
 		if (room.settings.filterStretching && /(.+?)\1{7,}/i.test(message)) {
@@ -917,7 +918,7 @@ export class CommandContext extends MessageContext {
 		}
 		this.privateModAction(msg);
 		if (this.room?.roomid !== 'staff') {
-			Rooms.get('staff')?.addByUser(this.user, `${this.room ? `<<${this.room.roomid}>>` : `<PM:${this.pmTarget}>`} ${msg}`).update();
+			Rooms.get('staff')?.addByUser(this.user, `${this.room ? `<<${this.room.roomid}>>` : `<PM:${this.pmTarget!}>`} ${msg}`).update();
 		}
 	}
 	addGlobalModAction(msg: string) {
@@ -926,7 +927,7 @@ export class CommandContext extends MessageContext {
 		}
 		this.addModAction(msg);
 		if (this.room?.roomid !== 'staff') {
-			Rooms.get('staff')?.addByUser(this.user, `${this.room ? `<<${this.room.roomid}>>` : `<PM:${this.pmTarget}>`} ${msg}`).update();
+			Rooms.get('staff')?.addByUser(this.user, `${this.room ? `<<${this.room.roomid}>>` : `<PM:${this.pmTarget!}>`} ${msg}`).update();
 		}
 	}
 
@@ -1093,7 +1094,7 @@ export class CommandContext extends MessageContext {
 		const cooldownMessage = overrideCooldown === true ? null : (overrideCooldown || broadcastMessage);
 
 		if (
-			cooldownMessage && this.room && this.room.lastBroadcast === cooldownMessage &&
+			cooldownMessage && this.room?.lastBroadcast === cooldownMessage &&
 			this.room.lastBroadcastTime >= Date.now() - BROADCAST_COOLDOWN
 		) {
 			throw new Chat.ErrorMessage(`You can't broadcast this because it was just broadcasted. If this was intentional, use !rebroadcast ${this.message}`);
@@ -1194,7 +1195,7 @@ export class CommandContext extends MessageContext {
 							this.TL`Because moderated chat is set, your account must be staff in a public room or have a global rank to speak in this room.`
 						);
 					}
-					const groupName = Config.groups[room.settings.modchat] && Config.groups[room.settings.modchat].name ||
+					const groupName = Config.groups[room.settings.modchat]?.name ||
 						room.settings.modchat;
 					throw new Chat.ErrorMessage(
 						this.TL`Because moderated chat is set, you must be of rank ${groupName} or higher to speak in this room.`
@@ -1230,7 +1231,7 @@ export class CommandContext extends MessageContext {
 				}
 				if (Config.pmmodchat && !Users.globalAuth.atLeast(user, Config.pmmodchat) &&
 					!Users.Auth.hasPermission(targetUser, 'promote', Config.pmmodchat as GroupSymbol)) {
-					const groupName = Config.groups[Config.pmmodchat] && Config.groups[Config.pmmodchat].name || Config.pmmodchat;
+					const groupName = Config.groups[Config.pmmodchat]?.name || Config.pmmodchat;
 					throw new Chat.ErrorMessage(this.TL`On this server, you must be of rank ${groupName} or higher to PM users.`);
 				}
 				if (!this.checkCanPM(targetUser)) {
@@ -1395,10 +1396,10 @@ export class CommandContext extends MessageContext {
 				if (tagName === '!--') continue;
 				if (isClosingTag) {
 					if (LEGAL_AUTOCLOSE_TAGS.includes(tagName)) continue;
-					if (!stack.length) {
+					const expectedTagName = stack.pop();
+					if (expectedTagName === undefined) {
 						throw new Chat.ErrorMessage(`Extraneous </${tagName}> without an opening tag.`);
 					}
-					const expectedTagName = stack.pop();
 					if (tagName !== expectedTagName) {
 						throw new Chat.ErrorMessage(`Extraneous </${tagName}> where </${expectedTagName}> was expected.`);
 					}
@@ -1433,7 +1434,10 @@ export class CommandContext extends MessageContext {
 					}
 				}
 				if (tagName === 'button') {
-					if ((!this.room || this.room.settings.isPersonal || this.room.settings.isPrivate === true) && !this.user.can('lock')) {
+					if (
+						(this.room === null || this.room.settings.isPersonal || this.room.settings.isPrivate === true) &&
+						!this.user.can('lock')
+					) {
 						const buttonName = / name ?= ?"([^"]*)"/i.exec(tagContent)?.[1];
 						const buttonValue = / value ?= ?"([^"]*)"/i.exec(tagContent)?.[1];
 						const msgCommandRegex = /^\/(?:msg|pm|w|whisper|botmsg) /;
@@ -1461,7 +1465,7 @@ export class CommandContext extends MessageContext {
 				}
 			}
 			if (stack.length) {
-				throw new Chat.ErrorMessage(`Missing </${stack.pop()}>.`);
+				throw new Chat.ErrorMessage(`Missing </${stack.pop()!}>.`);
 			}
 		}
 
@@ -1637,7 +1641,7 @@ export const Chat = new class {
 			// \u1100-\u11F9              Hangul jamo
 			// \u3131-\u318E              Hangul compatibility jamo
 			name = name.replace(
-				// eslint-disable-next-line no-misleading-character-class
+				// oxlint-disable-next-line no-misleading-character-class
 				/[^a-zA-Z0-9 /\\.~()<>^*%&=+$#_'?!"\u00A1-\u00BF\u00D7\u00F7\u02B9-\u0362\u2012-\u2027\u2030-\u205E\u2050-\u205F\u2190-\u23FA\u2500-\u2BD1\u2E80-\u32FF\u3400-\u9FFF\uF900-\uFAFF\uFE00-\uFE6F\uAC00-\uD7A3\u1100-\u11F9\u3131-\u318E-]+/g,
 				''
 			);
@@ -1676,7 +1680,7 @@ export const Chat = new class {
 				/[^a-z0-9][a-z0-9][^a-z0-9]/.test(name.toLowerCase() + ' ') || /[\u00ae\u00a9].*[a-zA-Z0-9]/.test(name)
 			) {
 				name = name.replace(
-					// eslint-disable-next-line no-misleading-character-class
+					// oxlint-disable-next-line no-misleading-character-class
 					/[\u00A1-\u00BF\u00D7\u00F7\u02B9-\u0362\u2012-\u2027\u2030-\u205E\u2050-\u205F\u2190-\u23FA\u2500-\u2BD1\u2E80-\u32FF\u3400-\u9FFF\uF900-\uFAFF\uFE00-\uFE6F]+/g,
 					''
 				).replace(/[^A-Za-z0-9]{2,}/g, ' ').trim();
@@ -1766,7 +1770,7 @@ export const Chat = new class {
 		Chat.languages.set('english' as ID, 'English');
 		for (const dirname of directories) {
 			const language = Dex.text.findLanguage(dirname);
-			if (!language || language.code !== dirname) continue;
+			if (language?.code !== dirname) continue;
 			const files = await FS(`${TRANSLATION_DIRECTORY}/${dirname}`).readdir();
 			const catalogs: TranslationCatalog[] = [];
 			for (const filename of files.sort()) {
@@ -1824,7 +1828,7 @@ export const Chat = new class {
 			if (!migrationVersion) continue;
 			if (migrationVersion > curVersion) {
 				migrationsToRun.push({ version: migrationVersion, file: migrationFile });
-				Monitor.adminlog(`Pushing to migrationsToRun: ${migrationVersion} at ${migrationFile} - mainModule ${process.mainModule === module} !process.send ${!process.send}`);
+				Monitor.adminlog(`Pushing to migrationsToRun: ${migrationVersion} at ${migrationFile} - mainModule ${(process.mainModule === module) as DebugOutput} !process.send ${!process.send as DebugOutput}`);
 			}
 		}
 		Utils.sortBy(migrationsToRun, ({ version }) => version);
