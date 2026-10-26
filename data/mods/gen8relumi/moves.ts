@@ -348,9 +348,7 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 	},
 	hail: {
 		inherit: true,
-		name: "Snowscape",
-		shortDesc: "For 5 turns, snow begins to fall.",
-		weather: "snowscape",
+		isNonstandard: null,
 	},
 	heartstamp: {
 		basePower: 75,
@@ -476,10 +474,6 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 			protect: 1,
 		},
 		inherit: true,
-	},
-	maxhailstorm: {
-		inherit: true,
-		weather: "snowscape",
 	},
 	megadrain: {
 		basePower: 60,

@@ -7135,7 +7135,7 @@
                     "Weather Ball",
                     "Scald",
                     "Energy Ball",
-                    "Snowscape"
+                    "Hail"
                 ],
                 "abilities": [
                     "Forecast"
@@ -7205,8 +7205,8 @@
                 "role": "Doubles Wallbreaker",
                 "movepool": [
                     "Headbutt",
+                    "Hail",
                     "Rain Dance",
-                    "Snowscape",
                     "Sunny Day"
                 ],
                 "abilities": [
@@ -16485,7 +16485,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Snowscape",
+                    "Hail",
                     "Blizzard",
                     "Shadow Ball",
                     "Double Team"
@@ -18199,7 +18199,7 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Snowscape",
+                    "Hail",
                     "Blizzard",
                     "Aurora Veil",
                     "Toxic"
@@ -18312,7 +18312,7 @@
                     "Icicle Crash",
                     "Protect",
                     "Switcheroo",
-                    "Snowscape"
+                    "Hail"
                 ],
                 "abilities": [
                     "Refrigerate"
@@ -39773,7 +39773,7 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Snowscape",
+                    "Hail",
                     "Swords Dance",
                     "Blizzard",
                     "Metal Burst"
@@ -39823,7 +39823,7 @@
                 "movepool": [
                     "Icicle Crash",
                     "Poison Jab",
-                    "Snowscape",
+                    "Hail",
                     "Swords Dance"
                 ],
                 "abilities": [
@@ -50561,7 +50561,7 @@
             {
                 "role": "Doubles Wallbreaker",
                 "movepool": [
-                    "Snowscape",
+                    "Hail",
                     "Body Press",
                     "Hydro Pump",
                     "Blizzard"

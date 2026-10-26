@@ -19,12 +19,8 @@ const MANUAL_MOVE_OVERRIDES = {
 		basePower: 0,
 	},
 	hail: {
-		name: "Snowscape",
-		shortDesc: "For 5 turns, snow begins to fall.",
-		weather: "snowscape",
-	},
-	maxhailstorm: {
-		weather: "snowscape",
+		// Hail is restored alongside Snowscape in Relumi.
+		isNonstandard: null,
 	},
 	snowscape: {
 		gen: 8,

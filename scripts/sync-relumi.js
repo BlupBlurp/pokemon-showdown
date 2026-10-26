@@ -138,9 +138,8 @@ function mapWazaNoToMoveId(wazaNo, moveNames, dex, cache, unmappedMoves) {
 		cache.set(wazaNo, null);
 		return null;
 	}
-	const resolvedMoveId = move.id === "hail" ? "snowscape" : move.id;
-	cache.set(wazaNo, resolvedMoveId);
-	return resolvedMoveId;
+	cache.set(wazaNo, move.id);
+	return move.id;
 }
 
 function sortedUniqueNumbers(list) {

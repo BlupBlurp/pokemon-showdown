@@ -258,7 +258,7 @@ function collectLevelUpMovesForTrainer(species, trainerLevel, dex, learnsetsDiff
 		const move = dex.moves.get(moveId);
 		if (!move.exists) continue;
 		learnedAtLevel.push({
-			id: move.id === "hail" ? "snowscape" : move.id,
+			id: move.id,
 			level: bestLevel,
 		});
 	}
@@ -738,7 +738,7 @@ function computeRelumiRandomBattleSets({
 					if (moveName && moveName !== "\u2014\u2014\u2014") {
 						const move = dex.moves.get(moveName);
 						if (move.exists) {
-							moveId = move.id === "hail" ? "snowscape" : move.id;
+							moveId = move.id;
 						}
 					}
 				} else {
