@@ -17,10 +17,9 @@ const AVATARS_FILE = "config/avatars.json";
  * - 'example.png' - side server custom avatars in config/avatars/ in your server
  */
 type AvatarID = string;
-const AVATAR_FORMATS_MESSAGE =
-	Config.serverid === "showdown"
-		? "Custom avatars start with '#', like '#splxraiders'."
-		: "Custom avatars look like 'example.png'. Custom avatars should be put in `config/avatars/`. Your server must be registered for custom avatars to work.";
+const AVATAR_FORMATS_MESSAGE = Config.serverid === 'showdown' ?
+	"Custom avatars start with '#', like '#splxraiders'." :
+	"Custom avatars look like 'example.png'. Custom avatars should be put in `config/avatars/`.";
 
 interface AvatarEntry {
 	timeReceived?: number;
@@ -1460,7 +1459,7 @@ export const commands: Chat.ChatCommands = {
 	},
 	avatarshelp: [
 		`/avatars - Explains how to change avatars.`,
-		`/avatars [username] - Shows custom avatars available to a user.`,
+		`/avatars [username] - Shows custom avatars available to a user. Requires: % @ ~`,
 		`!avatars - Show everyone that information. Requires: + % @ # ~`,
 	],
 
