@@ -11,7 +11,7 @@ const path = require("path");
 const { Dex } = require("../dist/sim/dex");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
 const { computeRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
-const { readJson, extractIndexedNames } = require("./lib/relumi-game-files");
+const { readYaml, extractIndexedNames } = require("./lib/relumi-game-files");
 const { buildSpeciesIdByMonsForm } = require("./lib/relumi-species-mapping");
 
 const ROOT = getRelumiRepoRoot();
@@ -24,29 +24,29 @@ const SAMPLE_SETS_PATH = path.join(
 );
 
 function main() {
-	const monsJson = readJson(
-		path.join(GAME_FILES_DIR, "english_ss_monsname.json")
+	const monsData = readYaml(
+		path.join(GAME_FILES_DIR, "english_ss_monsname.asset")
 	);
-	const abilityJson = readJson(
-		path.join(GAME_FILES_DIR, "english_ss_tokusei.json")
+	const abilityData = readYaml(
+		path.join(GAME_FILES_DIR, "english_ss_tokusei.asset")
 	);
-	const moveJson = readJson(
-		path.join(GAME_FILES_DIR, "english_ss_wazaname.json")
+	const moveData = readYaml(
+		path.join(GAME_FILES_DIR, "english_ss_wazaname.asset")
 	);
-	const personalJson = readJson(
-		path.join(GAME_FILES_DIR, "PersonalTable.json")
+	const personalData = readYaml(
+		path.join(GAME_FILES_DIR, "PersonalTable.asset")
 	);
-	const trainerJson = readJson(
-		path.join(GAME_FILES_DIR, "TrainerTable.json")
+	const trainerData = readYaml(
+		path.join(GAME_FILES_DIR, "TrainerTable.asset")
 	);
 
-	const monsNames = extractIndexedNames(monsJson.labelDataArray || []);
+	const monsNames = extractIndexedNames(monsData.labelDataArray || []);
 	const abilityNames = extractIndexedNames(
-		abilityJson.labelDataArray || []
+		abilityData.labelDataArray || []
 	);
-	const moveNames = extractIndexedNames(moveJson.labelDataArray || []);
-	const personalRows = personalJson.Personal || [];
-	const trainerRows = trainerJson.TrainerPoke || [];
+	const moveNames = extractIndexedNames(moveData.labelDataArray || []);
+	const personalRows = personalData.Personal || [];
+	const trainerRows = trainerData.TrainerPoke || [];
 
 	const dex = Dex.mod("gen8");
 

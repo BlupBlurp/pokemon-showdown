@@ -31,6 +31,9 @@ import {Learnsets as Gen8RelumiLearnsets} from '../../data/mods/gen8relumi/learn
 import {Learnsets as MainLearnsets} from '../../data/learnsets';
 import {Pokedex} from '../../data/pokedex';
 
+// Unity YAML reader shared with the sync scripts.
+const {readYaml} = require('../lib/relumi-game-files');
+
 // ---- move name normalization (like learnset IDs) ----
 function normalizeName(name: string): string {
 	return name.toLowerCase().replace(/[\s\-']/g, '');
@@ -137,9 +140,9 @@ function collideInVanilla(
 // ---- Relumi TM/Tutor lookup ----
 
 function buildMoveIdLookup(): Map<string, number> {
-	// Parse english_ss_wazaname.json to get move ID -> English name
-	const wazanamePath = path.resolve(__dirname, '../../game-files/english_ss_wazaname.json');
-	const wazanameData = JSON.parse(fs.readFileSync(wazanamePath, 'utf-8'));
+	// Parse english_ss_wazaname.asset to get move ID -> English name
+	const wazanamePath = path.resolve(__dirname, '../../game-files/english_ss_wazaname.asset');
+	const wazanameData = readYaml(wazanamePath);
 	const labelArray: Array<{arrayIndex: number; wordDataArray: Array<{str: string}>}> = wazanameData.labelDataArray;
 
 	// Build normalized name -> move ID
@@ -170,8 +173,8 @@ function buildTutorMoveIdSet(): Set<number> {
 }
 
 function buildTmMoveIdSet(): Set<number> {
-	const itemTablePath = path.resolve(__dirname, '../../game-files/ItemTable.json');
-	const itemData = JSON.parse(fs.readFileSync(itemTablePath, 'utf-8'));
+	const itemTablePath = path.resolve(__dirname, '../../game-files/ItemTable.asset');
+	const itemData = readYaml(itemTablePath);
 	const wazaMachines: Array<{wazaNo: number}> = itemData.WazaMachine || [];
 	const tmIds = new Set<number>();
 	for (const machine of wazaMachines) {

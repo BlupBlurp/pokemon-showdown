@@ -16,7 +16,7 @@ const {
 	MANUAL_POKEDEX_OVERRIDES,
 } = require("./lib/relumi-pokedex-overrides");
 const { TYPE_ID_TO_NAME } = require("./lib/bdsp-type-id-to-name");
-const { readJson, getLabelString, extractIndexedNames, deriveFormNo } = require("./lib/relumi-game-files");
+const { readJson, readYaml, getLabelString, extractIndexedNames, deriveFormNo } = require("./lib/relumi-game-files");
 const { findMappedSpeciesForForm, normalizeForTokenization } = require("./lib/relumi-species-mapping");
 const { deepSort, compareJson } = require("./lib/relumi-deep-sort");
 const { parseExportedObject } = require("./lib/relumi-parse-exported-object");
@@ -26,22 +26,22 @@ const GAME_FILES_DIR = path.join(ROOT, "game-files");
 const RELUMI_MOD_DIR = path.join(ROOT, "data", "mods", "gen8relumi");
 
 const PATHS = {
-	monsNames: path.join(GAME_FILES_DIR, "english_ss_monsname.json"),
-	abilityNames: path.join(GAME_FILES_DIR, "english_ss_tokusei.json"),
-	moveNames: path.join(GAME_FILES_DIR, "english_ss_wazaname.json"),
-	formNames: path.join(GAME_FILES_DIR, "english_ss_zkn_form.json"),
-	tamagoWazaTable: path.join(GAME_FILES_DIR, "TamagoWazaTable.json"),
-	wazaOboeTable: path.join(GAME_FILES_DIR, "WazaOboeTable.json"),
-	itemTable: path.join(GAME_FILES_DIR, "ItemTable.json"),
+	monsNames: path.join(GAME_FILES_DIR, "english_ss_monsname.asset"),
+	abilityNames: path.join(GAME_FILES_DIR, "english_ss_tokusei.asset"),
+	moveNames: path.join(GAME_FILES_DIR, "english_ss_wazaname.asset"),
+	formNames: path.join(GAME_FILES_DIR, "english_ss_zkn_form.asset"),
+	tamagoWazaTable: path.join(GAME_FILES_DIR, "TamagoWazaTable.asset"),
+	wazaOboeTable: path.join(GAME_FILES_DIR, "WazaOboeTable.asset"),
+	itemTable: path.join(GAME_FILES_DIR, "ItemTable.asset"),
 	tmLearnsetDir: path.join(GAME_FILES_DIR, "TMLearnset"),
 	moveTutorLearnsetDir: path.join(GAME_FILES_DIR, "MoveTutorLearnset"),
-	personalTable: path.join(GAME_FILES_DIR, "PersonalTable.json"),
-	wazaTable: path.join(GAME_FILES_DIR, "WazaTable.json"),
+	personalTable: path.join(GAME_FILES_DIR, "PersonalTable.asset"),
+	wazaTable: path.join(GAME_FILES_DIR, "WazaTable.asset"),
 	pokedexTs: path.join(RELUMI_MOD_DIR, "pokedex.ts"),
 	movesTs: path.join(RELUMI_MOD_DIR, "moves.ts"),
 	learnsetsTs: path.join(RELUMI_MOD_DIR, "learnsets.ts"),
 	formatsDataTs: path.join(RELUMI_MOD_DIR, "formats-data.ts"),
-	trainerTable: path.join(GAME_FILES_DIR, "TrainerTable.json"),
+	trainerTable: path.join(GAME_FILES_DIR, "TrainerTable.asset"),
 	relumiRandomSets: path.join(
 		ROOT,
 		"data",
@@ -745,27 +745,27 @@ function logDiffSummary(title, diff) {
 function main() {
 	ensureGameFilesExist();
 
-	const monsJson = readJson(PATHS.monsNames);
-	const abilityJson = readJson(PATHS.abilityNames);
-	const moveJson = readJson(PATHS.moveNames);
-	const formJson = readJson(PATHS.formNames);
-	const tamagoJson = readJson(PATHS.tamagoWazaTable);
-	const wazaOboeJson = readJson(PATHS.wazaOboeTable);
-	const itemJson = readJson(PATHS.itemTable);
-	const personalJson = readJson(PATHS.personalTable);
-	const wazaJson = readJson(PATHS.wazaTable);
-	const trainerJson = readJson(PATHS.trainerTable);
+	const monsData = readYaml(PATHS.monsNames);
+	const abilityData = readYaml(PATHS.abilityNames);
+	const moveData = readYaml(PATHS.moveNames);
+	const formData = readYaml(PATHS.formNames);
+	const tamagoData = readYaml(PATHS.tamagoWazaTable);
+	const wazaOboeData = readYaml(PATHS.wazaOboeTable);
+	const itemData = readYaml(PATHS.itemTable);
+	const personalData = readYaml(PATHS.personalTable);
+	const wazaData = readYaml(PATHS.wazaTable);
+	const trainerData = readYaml(PATHS.trainerTable);
 
-	const monsNames = extractIndexedNames(monsJson.labelDataArray || []);
-	const abilityNames = extractIndexedNames(abilityJson.labelDataArray || []);
-	const moveNames = extractIndexedNames(moveJson.labelDataArray || []);
-	const formNames = extractFormNames(formJson.labelDataArray || []);
-	const tamagoRows = tamagoJson.Data || [];
-	const wazaOboeRows = wazaOboeJson.WazaOboe || [];
-	const machineMoveMap = extractMachineMoveMap(itemJson);
-	const personalRows = personalJson.Personal || [];
-	const wazaRows = wazaJson.Waza || [];
-	const trainerRows = trainerJson.TrainerPoke || [];
+	const monsNames = extractIndexedNames(monsData.labelDataArray || []);
+	const abilityNames = extractIndexedNames(abilityData.labelDataArray || []);
+	const moveNames = extractIndexedNames(moveData.labelDataArray || []);
+	const formNames = extractFormNames(formData.labelDataArray || []);
+	const tamagoRows = tamagoData.Data || [];
+	const wazaOboeRows = wazaOboeData.WazaOboe || [];
+	const machineMoveMap = extractMachineMoveMap(itemData);
+	const personalRows = personalData.Personal || [];
+	const wazaRows = wazaData.Waza || [];
+	const trainerRows = trainerData.TrainerPoke || [];
 
 	const dex = Dex.mod("gen8");
 

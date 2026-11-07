@@ -1,6 +1,7 @@
 "use strict";
 
 const fs = require("fs");
+const yaml = require("js-yaml");
 
 /** Read and parse a JSON file. Fails the process on error (sync scripts only). */
 function readJson(filePath) {
@@ -8,6 +9,28 @@ function readJson(filePath) {
 		return JSON.parse(fs.readFileSync(filePath, "utf8"));
 	} catch (err) {
 		console.error(`Failed to read or parse JSON: ${filePath}`);
+		console.error(err.message);
+		process.exit(1);
+	}
+}
+
+/**
+ * Read a Unity TextAsset YAML file and return its MonoBehaviour payload.
+ * The game files ship as Unity YAML; the metadata envelope is dropped so
+ * callers see the same shape the old JSON exports had.
+ */
+function readYaml(filePath) {
+	try {
+		const raw = fs.readFileSync(filePath, "utf8");
+		// strip Unity's YAML directives and `!u!` document tag for js-yaml
+		const body = raw
+			.replace(/^%YAML[^\n]*\n/, "")
+			.replace(/^%TAG[^\n]*\n/, "")
+			.replace(/^--- !u!\d+.*$/m, "---");
+		const doc = yaml.load(body);
+		return doc && doc.MonoBehaviour ? doc.MonoBehaviour : doc;
+	} catch (err) {
+		console.error(`Failed to read or parse YAML: ${filePath}`);
 		console.error(err.message);
 		process.exit(1);
 	}
@@ -49,4 +72,4 @@ function deriveFormNo(row) {
 	return 0;
 }
 
-module.exports = { readJson, getLabelString, extractIndexedNames, deriveFormNo };
+module.exports = { readJson, readYaml, getLabelString, extractIndexedNames, deriveFormNo };
