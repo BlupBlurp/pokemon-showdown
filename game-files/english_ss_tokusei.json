@@ -39,7 +39,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "—",
+                    "str": "???",
                     "strWidth": 25.59375
                 }
             ]
@@ -8019,7 +8019,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "As One",
+                    "str": "As One with Glastrier",
                     "strWidth": 96.25
                 }
             ]
@@ -8049,7 +8049,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "As One",
+                    "str": "As One with Spectrier",
                     "strWidth": 96.25
                 }
             ]
@@ -9039,7 +9039,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "Mind's Eye",
+                    "str": "Mind’s Eye",
                     "strWidth": 141.5
                 }
             ]
@@ -9069,7 +9069,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "Embody Aspect",
+                    "str": "Embody Teal Aspect",
                     "strWidth": 202.15625
                 }
             ]
@@ -9099,7 +9099,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "Embody Aspect",
+                    "str": "Embody Hearthflame Aspect",
                     "strWidth": 202.15625
                 }
             ]
@@ -9129,7 +9129,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "Embody Aspect",
+                    "str": "Embody Wellspring Aspect",
                     "strWidth": 202.15625
                 }
             ]
@@ -9159,7 +9159,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "Embody Aspect",
+                    "str": "Embody Cornerstone Aspect",
                     "strWidth": 202.15625
                 }
             ]
@@ -9341,6 +9341,276 @@
                     "tagValue": 0.0,
                     "str": "Poison Puppeteer",
                     "strWidth": 227.9375
+                }
+            ]
+        },
+        {
+            "labelIndex": 311,
+            "arrayIndex": 311,
+            "labelName": "TOKUSEI_311",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Piercing Drill",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 312,
+            "arrayIndex": 312,
+            "labelName": "TOKUSEI_312",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Dragonize",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 313,
+            "arrayIndex": 313,
+            "labelName": "TOKUSEI_313",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Eelevate",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 314,
+            "arrayIndex": 314,
+            "labelName": "TOKUSEI_314",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "???",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 315,
+            "arrayIndex": 315,
+            "labelName": "TOKUSEI_315",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Mega Sol",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 316,
+            "arrayIndex": 316,
+            "labelName": "TOKUSEI_316",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Fire Mane",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 317,
+            "arrayIndex": 317,
+            "labelName": "TOKUSEI_317",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "???",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 318,
+            "arrayIndex": 318,
+            "labelName": "TOKUSEI_318",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Spicy Spray",
+                    "strWidth": 25.59375
+                }
+            ]
+        },
+        {
+            "labelIndex": 319,
+            "arrayIndex": 319,
+            "labelName": "TOKUSEI_319",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Aura Guard",
+                    "strWidth": 25.59375
                 }
             ]
         }

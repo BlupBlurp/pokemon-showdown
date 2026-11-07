@@ -29798,11 +29798,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -29831,11 +29831,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -29864,11 +29864,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -29897,11 +29897,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_01_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -31464,7 +31464,7 @@
             "TypeID": 91,
             "ColorID": 0,
             "FightType": 0,
-            "ArenaID": 42,
+            "ArenaID": 66,
             "EffectID": -1,
             "Gold": 31,
             "UseItem1": 0,
@@ -32042,11 +32042,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32075,11 +32075,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32108,11 +32108,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32141,11 +32141,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER4_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32174,11 +32174,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32207,11 +32207,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32240,11 +32240,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32273,11 +32273,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER3_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32306,11 +32306,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32339,11 +32339,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32372,11 +32372,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32405,11 +32405,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER7_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32438,11 +32438,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32471,11 +32471,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32504,11 +32504,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -32537,11 +32537,11 @@
             "MsgBattle": [
                 "",
                 "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_POKE_LAST_HP_HALF",
+                "bk008",
+                "1-LEADER6_02_TRMSG_FIGHT_LOSE",
                 "ee501"
             ],
             "SeqBattle": [
@@ -338235,7 +338235,7 @@
         {
             "ID": 886,
             "P1MonsNo": 484,
-            "P1FormNo": 0,
+            "P1FormNo": 2,
             "P1IsRare": 0,
             "P1Level": 70,
             "P1Sex": 3,
@@ -338261,7 +338261,7 @@
             "P1EffortSpDef": 0,
             "P1EffortAgi": 0,
             "P2MonsNo": 483,
-            "P2FormNo": 0,
+            "P2FormNo": 2,
             "P2IsRare": 0,
             "P2Level": 70,
             "P2Sex": 3,
@@ -344858,7 +344858,7 @@
             "P4EffortSpDef": 0,
             "P4EffortAgi": 252,
             "P5MonsNo": 718,
-            "P5FormNo": 3,
+            "P5FormNo": 0,
             "P5IsRare": 0,
             "P5Level": 100,
             "P5Sex": 3,
@@ -345043,7 +345043,7 @@
             "P5EffortSpDef": 108,
             "P5EffortAgi": 0,
             "P6MonsNo": 718,
-            "P6FormNo": 3,
+            "P6FormNo": 0,
             "P6IsRare": 0,
             "P6Level": 100,
             "P6Sex": 3,
@@ -345202,7 +345202,7 @@
             "P5EffortSpDef": 0,
             "P5EffortAgi": 200,
             "P6MonsNo": 718,
-            "P6FormNo": 3,
+            "P6FormNo": 0,
             "P6IsRare": 0,
             "P6Level": 100,
             "P6Sex": 3,
@@ -345361,7 +345361,7 @@
             "P5EffortSpDef": 4,
             "P5EffortAgi": 252,
             "P6MonsNo": 718,
-            "P6FormNo": 3,
+            "P6FormNo": 0,
             "P6IsRare": 0,
             "P6Level": 100,
             "P6Sex": 3,

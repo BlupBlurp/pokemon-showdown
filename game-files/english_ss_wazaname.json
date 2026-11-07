@@ -39,7 +39,7 @@
                     "eventID": 7,
                     "tagIndex": -1,
                     "tagValue": 0.0,
-                    "str": "———",
+                    "str": "???",
                     "strWidth": 76.78125
                 }
             ]
@@ -27611,6 +27611,36 @@
                     "tagValue": 0.0,
                     "str": "Malignant Chain",
                     "strWidth": 212.34375
+                }
+            ]
+        },
+        {
+            "labelIndex": 920,
+            "arrayIndex": 920,
+            "labelName": "WAZANAME_920",
+            "styleInfo": {
+                "styleIndex": 121,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 420,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Nihil Light",
+                    "strWidth": 76.78125
                 }
             ]
         }
