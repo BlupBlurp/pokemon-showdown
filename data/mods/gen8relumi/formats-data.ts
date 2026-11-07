@@ -19,6 +19,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	absolmegaz: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	accelgor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -359,6 +363,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	barbaraclemega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	barboach: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -392,6 +400,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	baxcalibur: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	baxcaliburmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -719,6 +731,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	chandeluremega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	chansey: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -779,6 +795,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	chesnaughtmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	chespin: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -800,6 +820,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	chimecho: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	chimechomega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -844,6 +868,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	clefable: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	clefablemega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -947,6 +975,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	crabominablemega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	crabrawler: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1039,6 +1071,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	darkraimega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	darmanitan: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1108,6 +1144,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	delphox: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	delphoxmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -1223,6 +1263,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	dragalgemega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	dragapult: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1235,11 +1279,19 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	dragonitemega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	drakloak: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
 	drampa: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	drampamega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -1359,6 +1411,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	eelektrossmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	eevee: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1423,6 +1479,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	emboarmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	emolga: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1471,6 +1531,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	excadrillmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	exeggcute: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1488,6 +1552,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	falinks: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	falinksmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -1516,6 +1584,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	feraligatr: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	feraligatrmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -1611,6 +1683,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	floettemega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	floetteorange: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1688,6 +1764,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	froslass: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	froslassmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -1772,6 +1852,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	garchompmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	garchompmegaz: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -1907,6 +1991,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	glimmoramega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	gliscor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -1947,7 +2035,15 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	golisopodmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	golurk: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	golurkmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -2044,6 +2140,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	greninjabond: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	greninjamega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -2163,6 +2263,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	hawluchamega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	haxorus: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -2172,6 +2276,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	heatran: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	heatranmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -2703,6 +2811,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	lucariomegaz: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	ludicolo: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -2787,7 +2899,15 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	magearnamega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	magearnaoriginal: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	magearnaoriginalmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -2820,6 +2940,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	malamar: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	malamarmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -2931,6 +3055,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	meganiummega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	melmetal: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -2960,6 +3088,14 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	meowsticf: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	meowsticfmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	meowsticmmega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3007,19 +3143,19 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	mewtwoarmorchi: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	mewtwoarmorgamma: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	mewtwomegax: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
 	mewtwomegay: {
-		doublesTier: "Relumi",
-		tier: "Relumi",
-	},
-	mewtwomkiarmored: {
-		doublesTier: "Relumi",
-		tier: "Relumi",
-	},
-	mewtwomkiiarmored: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3079,7 +3215,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	miniorbluemeteor: {
+	miniorbluecoremeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3087,7 +3223,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	miniorgreenmeteor: {
+	miniorgreencoremeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3095,7 +3231,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	miniorindigometeor: {
+	miniorindigocoremeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3107,7 +3243,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	miniororangemeteor: {
+	miniororangecoremeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3115,7 +3251,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	miniorvioletmeteor: {
+	miniorvioletcoremeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3123,7 +3259,7 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
-	minioryellowmeteor: {
+	minioryellowcoremeteor: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -3795,6 +3931,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	pyroarmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	pyukumuku: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -3848,6 +3988,14 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	raichualola: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	raichumegax: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	raichumegay: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -4175,6 +4323,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	scolipedemega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	scorbunny: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -4183,7 +4335,15 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	scovillainmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	scrafty: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	scraftymega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -4447,6 +4607,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	skarmorymega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	skeledirge: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -4679,6 +4843,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	staraptormega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	staravia: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -4688,6 +4856,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	starmie: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	starmiemega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -4843,11 +5015,23 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	tatsugiricurlymega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	tatsugiridroopy: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	tatsugiridroopymega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	tatsugiristretchy: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	tatsugiristretchymega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
@@ -5327,6 +5511,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	victreebelmega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	vigoroth: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -5683,6 +5871,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},
+	zeraoramega: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
 	zigzagoon: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
@@ -5732,6 +5924,10 @@ export const FormatsData: import("../../../sim/dex-species").ModdedSpeciesFormat
 		tier: "Relumi",
 	},
 	zygardecore: {
+		doublesTier: "Relumi",
+		tier: "Relumi",
+	},
+	zygardemega: {
 		doublesTier: "Relumi",
 		tier: "Relumi",
 	},

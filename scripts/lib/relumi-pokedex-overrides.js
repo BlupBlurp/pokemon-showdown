@@ -22,12 +22,15 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		1: "Marowak-Alola",
 		2: "Marowak-Ghost",
 	},
+	// forms 3 and 4 name species that don't exist in the base gen8 dex, so the
+	// strict-override path falls through to custom form creation; their real
+	// names come from CUSTOM_FORM_NAME_OVERRIDES
 	150: {
 		0: "Mewtwo",
 		1: "Mewtwo-Mega-X",
 		2: "Mewtwo-Mega-Y",
-		3: "Mewtwo-MkII",
-		4: "Mewtwo-MkI",
+		3: "Mewtwo-Armor-Gamma",
+		4: "Mewtwo-Armor-Chi",
 		5: "Mewtwo-Shadow",
 		6: "Mewtwo-Mega-Shadow",
 	},
@@ -67,13 +70,12 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		19: "Vivillon-Pokeball",
 	},
 	718: {
-		0: "Zygarde",
-		1: "Zygarde-10%",
-		2: "Zygarde-10%",
-		3: "Zygarde",
-		4: "Zygarde-Complete",
-		5: "Zygarde-Core",
-		6: "Zygarde-Cell",
+		0: "Zygarde-10%",
+		1: "Zygarde",
+		2: "Zygarde-Complete",
+		3: "Zygarde-Mega",
+		4: "Zygarde-Core",
+		5: "Zygarde-Cell",
 	},
 	849: {
 		0: "Toxtricity",
@@ -93,6 +95,15 @@ const FORM_NUMBER_SPECIES_OVERRIDES = {
 		8: "Alcremie-Rainbow-Swirl",
 		9: "Alcremie-Gmax",
 	},
+};
+
+// Custom forme suffixes for game-file labels that don't produce a unique
+// Showdown ID on their own. Keyed by `<monsNo>_<formNo>`.
+const CUSTOM_FORM_NAME_OVERRIDES = {
+	// "γ Armor Mewtwo" / "χ Armor Mewtwo"; toID strips the Greek letters, so
+	// both labels would otherwise collapse to "Mewtwo-Armor"
+	"150_3": "Armor-Gamma",
+	"150_4": "Armor-Chi",
 };
 
 // Species whose game-file form rows should stay cosmetic: map those rows to
@@ -186,23 +197,24 @@ const MANUAL_POKEDEX_OVERRIDES = {
 
 	// Minior: one meteor forme per core colour, so each gets its own sprite.
 	// The base entry carries the forme lists; the auto-extracted
-	// minior<color>meteor entries get battleOnly below.
+	// minior<color>coremeteor entries get battleOnly below.
 	minior: {
 		inherit: true,
 		cosmeticFormes: ["Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
 		otherFormes: [
 			"Minior-Meteor",
-			"Minior-Blue Meteor", "Minior-Yellow Meteor", "Minior-Green Meteor",
-			"Minior-Indigo Meteor", "Minior-Orange Meteor", "Minior-Violet Meteor",
+			"Minior-Blue Core Meteor", "Minior-Yellow Core Meteor", "Minior-Green Core Meteor",
+			"Minior-Indigo Core Meteor", "Minior-Orange Core Meteor", "Minior-Violet Core Meteor",
 		],
 	},
-	// battleOnly for the auto-extracted meteor forms
-	miniorbluemeteor: { battleOnly: "Minior-Blue" },
-	miniorgreenmeteor: { battleOnly: "Minior-Green" },
-	miniorindigometeor: { battleOnly: "Minior-Indigo" },
-	miniororangemeteor: { battleOnly: "Minior-Orange" },
-	minioryellowmeteor: { battleOnly: "Minior-Yellow" },
-	miniorvioletmeteor: { battleOnly: "Minior-Violet" },
+	// battleOnly for the auto-extracted meteor forms (game-file labels now
+	// read "<Colour> Core Meteor Form Minior")
+	miniorbluecoremeteor: { battleOnly: "Minior-Blue" },
+	miniorgreencoremeteor: { battleOnly: "Minior-Green" },
+	miniorindigocoremeteor: { battleOnly: "Minior-Indigo" },
+	miniororangecoremeteor: { battleOnly: "Minior-Orange" },
+	minioryellowcoremeteor: { battleOnly: "Minior-Yellow" },
+	miniorvioletcoremeteor: { battleOnly: "Minior-Violet" },
 
 	// promote Fancy/Pokeball from otherFormes to cosmeticFormes so they show
 	// in the form picker alongside the 17 patterns
@@ -309,6 +321,7 @@ function buildAlcremieCosmetic() {
 
 module.exports = {
 	FORM_NUMBER_SPECIES_OVERRIDES,
+	CUSTOM_FORM_NAME_OVERRIDES,
 	CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS,
 	MANUAL_LEARNSET_OVERRIDES,
 	MANUAL_POKEDEX_OVERRIDES,

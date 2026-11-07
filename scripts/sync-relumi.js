@@ -10,6 +10,7 @@ const { buildRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
 const {
 	FORM_NUMBER_SPECIES_OVERRIDES,
+	CUSTOM_FORM_NAME_OVERRIDES,
 	CUSTOM_FORM_BASE_SPECIES_EXCEPTIONS,
 	MANUAL_LEARNSET_OVERRIDES,
 	MANUAL_POKEDEX_OVERRIDES,
@@ -439,11 +440,9 @@ function buildSpeciesDiffs({
 
 		// unmapped: create a custom form entry when possible
 		if (baseSpecies.exists && formNo > 0) {
-			const forme = buildFormeFromLabel(
-				formLabel,
-				baseSpecies.baseSpecies,
-				formNo
-			);
+			// explicit names win when the label would collapse to a colliding ID
+			const forme = CUSTOM_FORM_NAME_OVERRIDES[`${row.monsno}_${formNo}`] ||
+				buildFormeFromLabel(formLabel, baseSpecies.baseSpecies, formNo);
 			const customName = `${baseSpecies.baseSpecies}-${forme}`;
 			const customId = makeUniqueCustomFormId(
 				baseSpecies.id,

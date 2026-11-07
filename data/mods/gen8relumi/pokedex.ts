@@ -4270,6 +4270,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
+	heatranmega: {
+		abilities: {
+			"0": "Flash Fire",
+			"1": "Flame Body",
+			H: "Shell Armor",
+		},
+		inherit: true,
+	},
 	heliolisk: {
 		abilities: {
 			"0": "Dry Skin",
@@ -5780,7 +5788,7 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		inherit: true,
 	},
-	mewtwomkiarmored: {
+	mewtwoarmorchi: {
 		abilities: {
 			"0": "Pressure",
 			H: "Unnerve",
@@ -5795,15 +5803,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 130,
 		},
 		eggGroups: ["Undiscovered"],
-		forme: "Mk I Armored",
+		forme: "Armor-Chi",
 		gen: 8,
 		heightm: 2,
-		name: "Mewtwo-Mk I Armored",
+		name: "Mewtwo-Armor-Chi",
 		num: 150,
 		types: ["Psychic"],
 		weightkg: 122,
 	},
-	mewtwomkiiarmored: {
+	mewtwoarmorgamma: {
 		abilities: {
 			"0": "Pressure",
 			H: "Unnerve",
@@ -5818,10 +5826,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 			spe: 130,
 		},
 		eggGroups: ["Undiscovered"],
-		forme: "Mk Ii Armored",
+		forme: "Armor-Gamma",
 		gen: 8,
 		heightm: 2,
-		name: "Mewtwo-Mk Ii Armored",
+		name: "Mewtwo-Armor-Gamma",
 		num: 150,
 		types: ["Psychic"],
 		weightkg: 122,
@@ -5954,9 +5962,9 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	minior: {
 		cosmeticFormes: ["Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
 		inherit: true,
-		otherFormes: ["Minior-Meteor", "Minior-Blue Meteor", "Minior-Yellow Meteor", "Minior-Green Meteor", "Minior-Indigo Meteor", "Minior-Orange Meteor", "Minior-Violet Meteor"],
+		otherFormes: ["Minior-Meteor", "Minior-Blue Core Meteor", "Minior-Yellow Core Meteor", "Minior-Green Core Meteor", "Minior-Indigo Core Meteor", "Minior-Orange Core Meteor", "Minior-Violet Core Meteor"],
 	},
-	miniorbluemeteor: {
+	miniorbluecoremeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5971,15 +5979,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		battleOnly: "Minior-Blue",
 		eggGroups: ["Mineral"],
-		forme: "Blue Meteor",
+		forme: "Blue Core Meteor",
 		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Blue Meteor",
+		name: "Minior-Blue Core Meteor",
 		num: 774,
 		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
-	miniorgreenmeteor: {
+	miniorgreencoremeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -5994,15 +6002,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		battleOnly: "Minior-Green",
 		eggGroups: ["Mineral"],
-		forme: "Green Meteor",
+		forme: "Green Core Meteor",
 		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Green Meteor",
+		name: "Minior-Green Core Meteor",
 		num: 774,
 		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
-	miniorindigometeor: {
+	miniorindigocoremeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -6017,15 +6025,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		battleOnly: "Minior-Indigo",
 		eggGroups: ["Mineral"],
-		forme: "Indigo Meteor",
+		forme: "Indigo Core Meteor",
 		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Indigo Meteor",
+		name: "Minior-Indigo Core Meteor",
 		num: 774,
 		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
-	miniororangemeteor: {
+	miniororangecoremeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -6040,15 +6048,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		battleOnly: "Minior-Orange",
 		eggGroups: ["Mineral"],
-		forme: "Orange Meteor",
+		forme: "Orange Core Meteor",
 		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Orange Meteor",
+		name: "Minior-Orange Core Meteor",
 		num: 774,
 		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
-	miniorvioletmeteor: {
+	miniorvioletcoremeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -6063,15 +6071,15 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		battleOnly: "Minior-Violet",
 		eggGroups: ["Mineral"],
-		forme: "Violet Meteor",
+		forme: "Violet Core Meteor",
 		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Violet Meteor",
+		name: "Minior-Violet Core Meteor",
 		num: 774,
 		types: ["Rock", "Flying"],
 		weightkg: 40,
 	},
-	minioryellowmeteor: {
+	minioryellowcoremeteor: {
 		abilities: {
 			"0": "Shields Down",
 		},
@@ -6086,10 +6094,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		},
 		battleOnly: "Minior-Yellow",
 		eggGroups: ["Mineral"],
-		forme: "Yellow Meteor",
+		forme: "Yellow Core Meteor",
 		gen: 8,
 		heightm: 0.3,
-		name: "Minior-Yellow Meteor",
+		name: "Minior-Yellow Core Meteor",
 		num: 774,
 		types: ["Rock", "Flying"],
 		weightkg: 40,
@@ -7310,6 +7318,17 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 	},
 	pyroar: {
+		baseStats: {
+			atk: 109,
+			def: 72,
+			hp: 86,
+			spa: 68,
+			spd: 66,
+			spe: 106,
+		},
+		inherit: true,
+	},
+	pyroarmega: {
 		baseStats: {
 			atk: 109,
 			def: 72,
@@ -10541,6 +10560,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		inherit: true,
 		types: ["Electric", "Fighting"],
 	},
+	zeraoramega: {
+		inherit: true,
+		types: ["Electric", "Fighting"],
+	},
 	zigzagoon: {
 		baseStats: {
 			atk: 40,
@@ -10585,12 +10608,14 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 	zygarde: {
 		abilities: {
 			"0": "Aura Break",
+			H: "Power Construct",
 		},
 		inherit: true,
 	},
 	zygarde10: {
 		abilities: {
 			"0": "Aura Break",
+			H: "Power Construct",
 		},
 		inherit: true,
 	},
@@ -10610,11 +10635,11 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 		forme: "Cell",
 		gen: 8,
-		heightm: 0.3,
+		heightm: 0.6,
 		name: "Zygarde-Cell",
 		num: 718,
 		types: ["Dragon", "Ground"],
-		weightkg: 1,
+		weightkg: 0.5,
 	},
 	zygardecore: {
 		abilities: {
@@ -10632,10 +10657,10 @@ export const Pokedex: import("../../../sim/dex-species").ModdedSpeciesDataTable 
 		eggGroups: ["Undiscovered"],
 		forme: "Core",
 		gen: 8,
-		heightm: 0.3,
+		heightm: 1.1,
 		name: "Zygarde-Core",
 		num: 718,
 		types: ["Dragon", "Ground"],
-		weightkg: 1,
+		weightkg: 0.5,
 	},
 };

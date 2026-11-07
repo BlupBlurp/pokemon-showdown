@@ -11270,28 +11270,30 @@
         "level": 77,
         "sets": [
             {
-                "role": "Fast Attacker",
+                "role": "Bulky Support",
                 "movepool": [
-                    "Flash Cannon",
                     "Roar of Time",
-                    "Earth Power",
-                    "Aura Sphere"
+                    "Giga Impact",
+                    "Stealth Rock",
+                    "Rest"
                 ],
                 "abilities": [
-                    "Pressure"
+                    "Pressure",
+                    "Telepathy"
+                ]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Roar of Time",
+                    "Steel Beam",
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
-                "trainerId": 886,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
-                }
+                "abilities": [
+                    "Pressure",
+                    "Telepathy"
+                ]
             }
         ]
     },
@@ -33997,28 +33999,30 @@
         "level": 77,
         "sets": [
             {
-                "role": "Fast Attacker",
+                "role": "Setup Sweeper",
                 "movepool": [
-                    "Hydro Pump",
-                    "Spacial Rend",
-                    "Earth Power",
-                    "Aura Sphere"
+                    "Draco Meteor",
+                    "Focus Punch",
+                    "Rest",
+                    "Bulk Up"
                 ],
                 "abilities": [
-                    "Pressure"
+                    "Pressure",
+                    "Telepathy"
+                ]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Draco Meteor",
+                    "Outrage",
+                    "Focus Punch",
+                    "Giga Impact"
                 ],
-                "trainerId": 886,
-                "nature": [
-                    "Docile"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
-                }
+                "abilities": [
+                    "Pressure",
+                    "Telepathy"
+                ]
             }
         ]
     },
@@ -52755,6 +52759,37 @@
         "level": 81,
         "sets": [
             {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Draco Meteor",
+                    "Giga Impact",
+                    "Rest",
+                    "Coil"
+                ],
+                "abilities": [
+                    "Aura Break",
+                    "Power Construct"
+                ]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Draco Meteor",
+                    "Outrage",
+                    "Giga Impact",
+                    "Hyper Beam"
+                ],
+                "abilities": [
+                    "Aura Break",
+                    "Power Construct"
+                ]
+            }
+        ]
+    },
+    "zygarde10": {
+        "level": 86,
+        "sets": [
+            {
                 "role": "Fast Attacker",
                 "movepool": [
                     "Thousand Arrows",
@@ -52780,37 +52815,6 @@
                     "spd": 0,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "zygarde10": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Setup Sweeper",
-                "movepool": [
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Rest",
-                    "Coil"
-                ],
-                "abilities": [
-                    "Aura Break",
-                    "Power Construct"
-                ]
-            },
-            {
-                "role": "Fast Attacker",
-                "movepool": [
-                    "Draco Meteor",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Aura Break",
-                    "Power Construct"
-                ]
             }
         ]
     }

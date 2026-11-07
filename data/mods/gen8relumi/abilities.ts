@@ -154,7 +154,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 				if (pokemon.hp > pokemon.maxhp / 2) {
 					// Transform to meteor forme if not already in any meteor forme.
 					if (!pokemon.species.forme.endsWith('Meteor')) {
-						const coloredMeteor = 'Minior-' + pokemon.species.forme + ' Meteor';
+						const coloredMeteor = 'Minior-' + pokemon.species.forme + ' Core Meteor';
 						const target = this.dex.species.get(coloredMeteor).exists ? coloredMeteor : 'Minior-Meteor';
 						pokemon.formeChange(target);
 					}
@@ -169,7 +169,7 @@ export const Abilities: import("../../../sim/dex-abilities").ModdedAbilityDataTa
 				if (pokemon.baseSpecies.baseSpecies !== 'Minior' || pokemon.transformed || !pokemon.hp) return;
 				if (pokemon.hp > pokemon.maxhp / 2) {
 					if (!pokemon.species.forme.endsWith('Meteor')) {
-						const coloredMeteor = 'Minior-' + pokemon.species.forme + ' Meteor';
+						const coloredMeteor = 'Minior-' + pokemon.species.forme + ' Core Meteor';
 						const target = this.dex.species.get(coloredMeteor).exists ? coloredMeteor : 'Minior-Meteor';
 						pokemon.formeChange(target);
 					}

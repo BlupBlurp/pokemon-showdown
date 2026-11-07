@@ -574,6 +574,10 @@ export const Moves: import("../../../sim/dex-moves").ModdedMoveDataTable = {
 		basePower: 90,
 		inherit: true,
 	},
+	nihillight: {
+		basePower: 200,
+		inherit: true,
+	},
 	overdrive: {
 		basePower: 90,
 		inherit: true,

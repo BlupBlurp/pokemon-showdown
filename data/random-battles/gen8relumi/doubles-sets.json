@@ -11272,26 +11272,28 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Flash Cannon",
                     "Roar of Time",
-                    "Earth Power",
-                    "Aura Sphere"
+                    "Giga Impact",
+                    "Stealth Rock",
+                    "Rest"
                 ],
                 "abilities": [
-                    "Pressure"
+                    "Pressure",
+                    "Telepathy"
+                ]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Roar of Time",
+                    "Steel Beam",
+                    "Giga Impact",
+                    "Hyper Beam"
                 ],
-                "trainerId": 886,
-                "nature": [
-                    "Hardy"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
-                }
+                "abilities": [
+                    "Pressure",
+                    "Telepathy"
+                ]
             }
         ]
     },
@@ -33999,26 +34001,28 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Hydro Pump",
-                    "Spacial Rend",
-                    "Earth Power",
-                    "Aura Sphere"
+                    "Draco Meteor",
+                    "Focus Punch",
+                    "Rest",
+                    "Bulk Up"
                 ],
                 "abilities": [
-                    "Pressure"
+                    "Pressure",
+                    "Telepathy"
+                ]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Draco Meteor",
+                    "Outrage",
+                    "Focus Punch",
+                    "Giga Impact"
                 ],
-                "trainerId": 886,
-                "nature": [
-                    "Docile"
-                ],
-                "evs": {
-                    "hp": 84,
-                    "atk": 84,
-                    "def": 84,
-                    "spa": 88,
-                    "spd": 84,
-                    "spe": 86
-                }
+                "abilities": [
+                    "Pressure",
+                    "Telepathy"
+                ]
             }
         ]
     },
@@ -52757,6 +52761,37 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": [
+                    "Draco Meteor",
+                    "Giga Impact",
+                    "Rest",
+                    "Coil"
+                ],
+                "abilities": [
+                    "Aura Break",
+                    "Power Construct"
+                ]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Draco Meteor",
+                    "Outrage",
+                    "Giga Impact",
+                    "Hyper Beam"
+                ],
+                "abilities": [
+                    "Aura Break",
+                    "Power Construct"
+                ]
+            }
+        ]
+    },
+    "zygarde10": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
                     "Thousand Arrows",
                     "Stone Edge",
                     "Brick Break",
@@ -52780,37 +52815,6 @@
                     "spd": 0,
                     "spe": 252
                 }
-            }
-        ]
-    },
-    "zygarde10": {
-        "level": 86,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Draco Meteor",
-                    "Giga Impact",
-                    "Rest",
-                    "Coil"
-                ],
-                "abilities": [
-                    "Aura Break",
-                    "Power Construct"
-                ]
-            },
-            {
-                "role": "Bulky Attacker",
-                "movepool": [
-                    "Draco Meteor",
-                    "Outrage",
-                    "Giga Impact",
-                    "Hyper Beam"
-                ],
-                "abilities": [
-                    "Aura Break",
-                    "Power Construct"
-                ]
             }
         ]
     }
