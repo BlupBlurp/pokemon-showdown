@@ -1006,6 +1006,33 @@
                     "spd": 0,
                     "spe": 0
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Draco Meteor",
+                    "Hyper Beam",
+                    "Ice Beam",
+                    "Flamethrower"
+                ],
+                "abilities": [
+                    "Cloud Nine"
+                ],
+                "towerTeam": "bt-218-4",
+                "item": [
+                    "White Herb"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -1091,6 +1118,60 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Double Team",
+                    "Baton Pass",
+                    "Agility",
+                    "Double Hit"
+                ],
+                "abilities": [
+                    "Technician"
+                ],
+                "towerTeam": "bt-116-4",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Impish"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 158,
+                    "def": 156,
+                    "spa": 12,
+                    "spd": 12,
+                    "spe": 12
+                }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Shadow Ball",
+                    "Thunderbolt",
+                    "Swift",
+                    "Nasty Plot"
+                ],
+                "abilities": [
+                    "Technician"
+                ],
+                "towerTeam": "bt-268",
+                "item": [
+                    "Wise Glasses"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -1550,6 +1631,33 @@
                     "spa": 2,
                     "spd": 0,
                     "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Poison Fang",
+                    "Dig",
+                    "Bite",
+                    "Glare"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-84-2",
+                "item": [
+                    "Persim Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 32,
+                    "spd": 28,
+                    "spe": 140
                 }
             }
         ]
@@ -2661,6 +2769,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Sticky Web",
+                    "Toxic Spikes",
+                    "Night Shade",
+                    "Toxic Thread"
+                ],
+                "abilities": [
+                    "Insomnia"
+                ],
+                "towerTeam": "bt-57",
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -2919,6 +3054,87 @@
                     "spa": 252,
                     "spd": 252,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Agility",
+                    "Ice Beam",
+                    "Water Pulse",
+                    "Rest"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-260",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Sheer Cold",
+                    "Mind Reader",
+                    "Substitute",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-252-3",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Sheer Cold",
+                    "Ice Beam",
+                    "Aerial Ace",
+                    "Roar"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-213-3",
+                "item": [
+                    "Wacan Berry"
+                ],
+                "nature": [
+                    "Calm"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 6,
+                    "spd": 252,
+                    "spe": 0
                 }
             }
         ]
@@ -4558,6 +4774,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bug Buzz",
+                    "Mega Drain",
+                    "Attract",
+                    "Quiver Dance"
+                ],
+                "abilities": [
+                    "Swarm"
+                ],
+                "towerTeam": "bt-42",
+                "item": [
+                    "Mental Herb"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 160,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -4634,6 +4877,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": [
+                    "Poison Jab",
+                    "Fell Stinger",
+                    "Endeavor",
+                    "Agility"
+                ],
+                "abilities": [
+                    "Swarm"
+                ],
+                "towerTeam": "bt-65-2",
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 160,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
                 }
             }
         ]
@@ -5065,6 +5335,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Defense Curl",
+                    "Rollout",
+                    "Waterfall",
+                    "Yawn"
+                ],
+                "abilities": [
+                    "Simple"
+                ],
+                "towerTeam": "bt-63-3",
+                "item": [
+                    "Metronome"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 140,
+                    "spa": 30,
+                    "spd": 28,
+                    "spe": 32
                 }
             }
         ]
@@ -6589,6 +6886,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Sleep Powder",
+                    "Quiver Dance",
+                    "Substitute",
+                    "Bug Buzz"
+                ],
+                "abilities": [
+                    "Compound Eyes"
+                ],
+                "towerTeam": "bt-56",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -6700,6 +7024,33 @@
                     "spa": 36,
                     "spd": 36,
                     "spe": 36
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Seed Bomb",
+                    "Sucker Punch",
+                    "Poison Jab",
+                    "Revenge"
+                ],
+                "abilities": [
+                    "Water Absorb"
+                ],
+                "towerTeam": "bt-87-3",
+                "item": [
+                    "Scope Lens"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -7043,6 +7394,33 @@
                     "spd": 60,
                     "spe": 60
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Power Whip",
+                    "Crunch",
+                    "Sweet Scent",
+                    "Leech Seed"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-75-3",
+                "item": [
+                    "Rose Incense"
+                ],
+                "nature": [
+                    "Sassy"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 160,
+                    "spa": 8,
+                    "spd": 160,
+                    "spe": 10
+                }
             }
         ]
     },
@@ -7223,6 +7601,33 @@
                     "spa": 252,
                     "spd": 0,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Ember",
+                    "Water Pulse",
+                    "Shock Wave",
+                    "Weather Ball"
+                ],
+                "abilities": [
+                    "Forecast"
+                ],
+                "towerTeam": "bt-39-3",
+                "item": [
+                    "Persim Berry"
+                ],
+                "nature": [
+                    "Hasty"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 32,
+                    "def": 30,
+                    "spa": 140,
+                    "spd": 28,
+                    "spe": 140
                 }
             }
         ]
@@ -8153,6 +8558,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Extrasensory",
+                    "Yawn",
+                    "Uproar",
+                    "Shadow Ball"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-12-2",
+                "item": [
+                    "Grip Claw"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 160,
+                    "spd": 48,
+                    "spe": 158
                 }
             }
         ]
@@ -9327,6 +9759,33 @@
                     "spd": 220,
                     "spe": 16
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Bubble Beam",
+                    "Mirror Coat",
+                    "Attract",
+                    "Ancient Power"
+                ],
+                "abilities": [
+                    "Natural Cure"
+                ],
+                "towerTeam": "bt-63",
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Impish"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 158,
+                    "spd": 48,
+                    "spe": 48
+                }
             }
         ]
     },
@@ -9705,6 +10164,33 @@
                     "spd": 0,
                     "spe": 6
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Mirror Coat",
+                    "Energy Ball",
+                    "Stone Edge",
+                    "Ingrain"
+                ],
+                "abilities": [
+                    "Storm Drain"
+                ],
+                "towerTeam": "bt-263-2",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Relaxed"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -9980,6 +10466,87 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Trick Room",
+                    "Icy Wind",
+                    "Calm Mind",
+                    "Psyshock"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-304-3",
+                "item": [
+                    "Mental Herb"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Calm Mind",
+                    "Moonlight",
+                    "Stored Power",
+                    "Substitute"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-306",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Lunar Dance",
+                    "Safeguard",
+                    "Future Sight",
+                    "Psychic"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-276",
+                "item": [
+                    "Focus Band"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
                 }
             }
         ]
@@ -10854,6 +11421,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Fake Out",
+                    "Sing",
+                    "Double Team",
+                    "Shadow Ball"
+                ],
+                "abilities": [
+                    "Cute Charm"
+                ],
+                "towerTeam": "bt-21-4",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Lonely"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 160,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -10957,6 +11551,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Present",
+                    "Ice Beam",
+                    "Aerial Ace",
+                    "Hail"
+                ],
+                "abilities": [
+                    "Vital Spirit"
+                ],
+                "towerTeam": "bt-34",
+                "item": [
+                    "Never-Melt Ice"
+                ],
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
                 }
             }
         ]
@@ -11233,6 +11854,60 @@
                     "spa": 220,
                     "spd": 16,
                     "spe": 16
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Encore",
+                    "Disable",
+                    "Rest",
+                    "Ice Beam"
+                ],
+                "abilities": [
+                    "Thick Fat"
+                ],
+                "towerTeam": "bt-212-3",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Calm"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Aqua Jet",
+                    "Ice Shard",
+                    "Fake Out",
+                    "Protect"
+                ],
+                "abilities": [
+                    "Thick Fat"
+                ],
+                "towerTeam": "bt-166",
+                "item": [
+                    "Razor Fang"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 158,
+                    "def": 12,
+                    "spa": 12,
+                    "spd": 12,
+                    "spe": 156
                 }
             }
         ]
@@ -11542,6 +12217,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Drill Peck",
+                    "Tri Attack",
+                    "Sleep Talk",
+                    "Rest"
+                ],
+                "abilities": [
+                    "Early Bird"
+                ],
+                "towerTeam": "bt-87-4",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -14546,6 +15248,60 @@
                     "spd": 252,
                     "spe": 0
                 }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Fire Blast",
+                    "Extrasensory",
+                    "Shadow Ball",
+                    "Calm Mind"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-291",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Fire Fang",
+                    "Iron Tail",
+                    "Bite",
+                    "Double Team"
+                ],
+                "abilities": [
+                    "Inner Focus"
+                ],
+                "towerTeam": "bt-226-4",
+                "item": [
+                    "Passho Berry"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -15359,6 +16115,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Slash",
+                    "Knock Off",
+                    "Swords Dance",
+                    "Agility"
+                ],
+                "abilities": [
+                    "Defiant"
+                ],
+                "towerTeam": "bt-12-2",
+                "item": [
+                    "Leek"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 160,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -15470,6 +16253,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Drill Peck",
+                    "Tri Attack",
+                    "Facade",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Keen Eye"
+                ],
+                "towerTeam": "bt-128",
+                "item": [
+                    "Sharp Beak"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -16882,6 +17692,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Slam",
+                    "Protect",
+                    "Helping Hand",
+                    "Follow Me"
+                ],
+                "abilities": [
+                    "Keen Eye"
+                ],
+                "towerTeam": "bt-47-3",
+                "item": [
+                    "Liechi Berry"
+                ],
+                "nature": [
+                    "Serious"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 32,
+                    "spd": 28,
+                    "spe": 140
+                }
             }
         ]
     },
@@ -18050,6 +18887,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Psybeam",
+                    "Thunderbolt",
+                    "Wish",
+                    "Skill Swap"
+                ],
+                "abilities": [
+                    "Sap Sipper"
+                ],
+                "towerTeam": "bt-109",
+                "item": [
+                    "Petaya Berry"
+                ],
+                "nature": [
+                    "Quiet"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 10,
+                    "def": 8,
+                    "spa": 160,
+                    "spd": 160,
+                    "spe": 12
+                }
             }
         ]
     },
@@ -18330,6 +19194,60 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Ice Beam",
+                    "Shadow Ball",
+                    "Water Pulse",
+                    "Safeguard"
+                ],
+                "abilities": [
+                    "Moody"
+                ],
+                "towerTeam": "bt-279",
+                "item": [
+                    "Scope Lens"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Double Team",
+                    "Sheer Cold",
+                    "Rest",
+                    "Sleep Talk"
+                ],
+                "abilities": [
+                    "Moody"
+                ],
+                "towerTeam": "bt-224-4",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -19457,6 +20375,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Hydro Pump",
+                    "Psychic",
+                    "Baton Pass",
+                    "Shell Smash"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-102-2",
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -21369,6 +22314,87 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Explosion",
+                    "Fire Fang",
+                    "Crunch",
+                    "Iron Head"
+                ],
+                "abilities": [
+                    "Flash Fire"
+                ],
+                "towerTeam": "bt-278",
+                "item": [
+                    "Quick Claw"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Flamethrower",
+                    "Earth Power",
+                    "Dragon Pulse",
+                    "Ancient Power"
+                ],
+                "abilities": [
+                    "Flash Fire"
+                ],
+                "towerTeam": "bt-265",
+                "item": [
+                    "Shuca Berry"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Heat Wave",
+                    "Protect",
+                    "Flash Cannon",
+                    "Magma Storm"
+                ],
+                "abilities": [
+                    "Flash Fire"
+                ],
+                "towerTeam": "bt-330",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -21880,6 +22906,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Mach Punch",
+                    "Ice Punch",
+                    "Detect",
+                    "Counter"
+                ],
+                "abilities": [
+                    "Iron Fist"
+                ],
+                "towerTeam": "bt-116",
+                "item": [
+                    "King's Rock"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -22596,6 +23649,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Whirlpool",
+                    "Scary Face",
+                    "Screech",
+                    "Bite"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-125-2",
+                "item": [
+                    "Persim Berry"
+                ],
+                "nature": [
+                    "Quiet"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 12
+                }
             }
         ]
     },
@@ -22871,6 +23951,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bug Buzz",
+                    "Wish",
+                    "Quick Attack",
+                    "Helping Hand"
+                ],
+                "abilities": [
+                    "Tinted Lens"
+                ],
+                "towerTeam": "bt-70-2",
+                "item": [
+                    "Liechi Berry"
+                ],
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 158,
+                    "spd": 48,
+                    "spe": 48
                 }
             }
         ]
@@ -23984,6 +25091,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Aerial Ace",
+                    "Swagger",
+                    "Psych Up",
+                    "Synthesis"
+                ],
+                "abilities": [
+                    "Chlorophyll"
+                ],
+                "towerTeam": "bt-77-3",
+                "item": [
+                    "Lax Incense"
+                ],
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -24176,6 +25310,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Slash",
+                    "Dig",
+                    "Night Slash",
+                    "Metal Sound"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-73-3",
+                "item": [
+                    "Scope Lens"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -24864,6 +26025,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Crabhammer",
+                    "Metal Claw",
+                    "Knock Off",
+                    "Protect"
+                ],
+                "abilities": [
+                    "Hyper Cutter"
+                ],
+                "towerTeam": "bt-126",
+                "item": [
+                    "Scope Lens"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -26137,6 +27325,114 @@
                     "spd": 0,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Calm Mind",
+                    "Recover",
+                    "Stored Power",
+                    "Mystical Fire"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-253-3",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Psychic",
+                    "Energy Ball",
+                    "Grass Knot",
+                    "Recover"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-267",
+                "item": [
+                    "Colbur Berry"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Mist Ball",
+                    "Dragon Pulse",
+                    "Calm Mind",
+                    "Safeguard"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-255-2",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Psychic",
+                    "Dragon Pulse",
+                    "Thunderbolt",
+                    "Surf"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-263",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -26195,6 +27491,87 @@
                     "spa": 252,
                     "spd": 252,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Dragon Dance",
+                    "Recover",
+                    "Dragon Claw",
+                    "Shadow Claw"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-256",
+                "item": [
+                    "Lum Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Draco Meteor",
+                    "Psychic",
+                    "Thunder",
+                    "Hyper Beam"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-291",
+                "item": [
+                    "White Herb"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Luster Purge",
+                    "Water Pulse",
+                    "Dragon Breath",
+                    "Recover"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-263",
+                "item": [
+                    "Haban Berry"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -26411,6 +27788,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Light Screen",
+                    "Baton Pass",
+                    "Swords Dance",
+                    "Agility"
+                ],
+                "abilities": [
+                    "Early Bird"
+                ],
+                "towerTeam": "bt-5-4",
+                "item": [
+                    "Focus Band"
+                ],
+                "nature": [
+                    "Bashful"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 158,
+                    "spe": 48
                 }
             }
         ]
@@ -26808,6 +28212,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Extreme Speed",
+                    "Sand Attack",
+                    "Covet",
+                    "Tickle"
+                ],
+                "abilities": [
+                    "Gluttony"
+                ],
+                "towerTeam": "bt-59-2",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 32,
+                    "spd": 28,
+                    "spe": 140
                 }
             }
         ]
@@ -27544,6 +28975,33 @@
                     "spd": 6,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Confusion",
+                    "Cosmic Power",
+                    "Light Screen",
+                    "Sandstorm"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-80",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Quiet"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 28,
+                    "def": 140,
+                    "spa": 32,
+                    "spd": 140,
+                    "spe": 30
+                }
             }
         ]
     },
@@ -27625,6 +29083,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Sweet Kiss",
+                    "Attract",
+                    "Water Pulse",
+                    "Rain Dance"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-18",
+                "item": [
+                    "Quick Claw"
+                ],
+                "nature": [
+                    "Relaxed"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 158,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 48
                 }
             }
         ]
@@ -28052,6 +29537,33 @@
                     "spa": 0,
                     "spd": 252,
                     "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Rock Slide",
+                    "Ember",
+                    "Acid Armor",
+                    "Sandstorm"
+                ],
+                "abilities": [
+                    "Flame Body"
+                ],
+                "towerTeam": "bt-101",
+                "item": [
+                    "Lax Incense"
+                ],
+                "nature": [
+                    "Gentle"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 140,
+                    "spd": 28,
+                    "spe": 32
                 }
             }
         ]
@@ -28952,6 +30464,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Bubble Beam",
+                    "Aerial Ace",
+                    "Rain Dance",
+                    "Psybeam"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-96-3",
+                "item": [
+                    "Mystic Water"
+                ],
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -29009,6 +30548,87 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Brick Break",
+                    "Earthquake",
+                    "Rock Tomb",
+                    "Iron Head"
+                ],
+                "abilities": [
+                    "Battle Armor"
+                ],
+                "towerTeam": "bt-149",
+                "item": [
+                    "Thick Club"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 158,
+                    "def": 12,
+                    "spa": 12,
+                    "spd": 12,
+                    "spe": 156
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Thunder Punch",
+                    "Stone Edge",
+                    "Earthquake",
+                    "Low Kick"
+                ],
+                "abilities": [
+                    "Battle Armor"
+                ],
+                "towerTeam": "bt-289",
+                "item": [
+                    "Thick Club"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Earthquake",
+                    "Double-Edge",
+                    "Aerial Ace",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Battle Armor"
+                ],
+                "towerTeam": "bt-239",
+                "item": [
+                    "Thick Club"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 226,
+                    "def": 4,
+                    "spa": 4,
+                    "spd": 4,
+                    "spe": 224
                 }
             }
         ]
@@ -30535,6 +32155,33 @@
                     "spd": 44,
                     "spe": 124
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bite",
+                    "Poison Fang",
+                    "Taunt",
+                    "Roar"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-101",
+                "item": [
+                    "Mental Herb"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 32,
+                    "spd": 28,
+                    "spe": 140
+                }
             }
         ]
     },
@@ -30751,6 +32398,60 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Endure",
+                    "Reversal",
+                    "Milk Drink",
+                    "Rock Slide"
+                ],
+                "abilities": [
+                    "Scrappy"
+                ],
+                "towerTeam": "bt-272-2",
+                "item": [
+                    "Salac Berry"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Defense Curl",
+                    "Rollout",
+                    "Milk Drink",
+                    "Seismic Toss"
+                ],
+                "abilities": [
+                    "Thick Fat"
+                ],
+                "towerTeam": "bt-205",
+                "item": [
+                    "Muscle Band"
+                ],
+                "nature": [
+                    "Impish"
+                ],
+                "evs": {
+                    "hp": 212,
+                    "atk": 212,
+                    "def": 68,
+                    "spa": 6,
+                    "spd": 4,
+                    "spe": 8
                 }
             }
         ]
@@ -30995,6 +32696,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Spark",
+                    "Charm",
+                    "Encore",
+                    "Helping Hand"
+                ],
+                "abilities": [
+                    "Minus"
+                ],
+                "towerTeam": "bt-6-4",
+                "item": [
+                    "Salac Berry"
+                ],
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 160,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -31220,6 +32948,87 @@
                     "spd": 6,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Air Slash",
+                    "Agility",
+                    "Heat Wave",
+                    "Will-O-Wisp"
+                ],
+                "abilities": [
+                    "Flame Body"
+                ],
+                "towerTeam": "bt-258",
+                "item": [
+                    "King's Rock"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Mystical Fire",
+                    "Hurricane",
+                    "Will-O-Wisp",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Flame Body"
+                ],
+                "towerTeam": "bt-258-3",
+                "item": [
+                    "Lax Incense"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Overheat",
+                    "Sky Attack",
+                    "Fire Blast",
+                    "U-turn"
+                ],
+                "abilities": [
+                    "Flame Body"
+                ],
+                "towerTeam": "bt-254",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -31387,6 +33196,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Psybeam",
+                    "Gust",
+                    "Poison Powder",
+                    "Bug Buzz"
+                ],
+                "abilities": [
+                    "Tinted Lens"
+                ],
+                "towerTeam": "bt-84",
+                "item": [
+                    "Coba Berry"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 32,
+                    "def": 30,
+                    "spa": 140,
+                    "spd": 28,
+                    "spe": 140
                 }
             }
         ]
@@ -31797,6 +33633,87 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Gunk Shot",
+                    "Brick Break",
+                    "Shadow Punch",
+                    "Rock Slide"
+                ],
+                "abilities": [
+                    "Poison Touch"
+                ],
+                "towerTeam": "bt-229-4",
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Poison Jab",
+                    "Minimize",
+                    "Acid Armor",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Poison Touch"
+                ],
+                "towerTeam": "bt-201-2",
+                "item": [
+                    "Black Sludge"
+                ],
+                "nature": [
+                    "Impish"
+                ],
+                "evs": {
+                    "hp": 212,
+                    "atk": 68,
+                    "def": 212,
+                    "spa": 6,
+                    "spd": 4,
+                    "spe": 8
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Gunk Shot",
+                    "Fling",
+                    "Explosion",
+                    "Shadow Punch"
+                ],
+                "abilities": [
+                    "Poison Touch"
+                ],
+                "towerTeam": "bt-275",
+                "item": [
+                    "Quick Claw"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 6
                 }
             }
         ]
@@ -32301,6 +34218,33 @@
                     "spd": 4,
                     "spe": 4
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Stone Edge",
+                    "Avalanche",
+                    "Iron Tail",
+                    "Aerial Ace"
+                ],
+                "abilities": [
+                    "Poison Point"
+                ],
+                "towerTeam": "bt-289-2",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Brave"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -32707,6 +34651,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Baton Pass",
+                    "Swords Dance",
+                    "Endure",
+                    "Dig"
+                ],
+                "abilities": [
+                    "Speed Boost"
+                ],
+                "towerTeam": "bt-75-3",
+                "item": [
+                    "Petaya Berry"
+                ],
+                "nature": [
+                    "Mild"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -33363,6 +35334,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Bubble Beam",
+                    "Rock Blast",
+                    "Tickle",
+                    "Ancient Power"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-114",
+                "item": [
+                    "Shell Bell"
+                ],
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 12
                 }
             }
         ]
@@ -34273,6 +36271,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Slash",
+                    "Psybeam",
+                    "Spore",
+                    "Flash"
+                ],
+                "abilities": [
+                    "Effect Spore"
+                ],
+                "towerTeam": "bt-2-4",
+                "item": [
+                    "Sticky Barb"
+                ],
+                "nature": [
+                    "Rash"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -34651,6 +36676,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Fake Out",
+                    "Slash",
+                    "Torment",
+                    "Swagger"
+                ],
+                "abilities": [
+                    "Technician"
+                ],
+                "towerTeam": "bt-68-3",
+                "item": [
+                    "Silk Scarf"
+                ],
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 32,
+                    "atk": 140,
+                    "def": 140,
+                    "spa": 30,
+                    "spd": 28,
+                    "spe": 140
                 }
             }
         ]
@@ -35356,6 +37408,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Spark",
+                    "Fake Tears",
+                    "Quick Attack",
+                    "Helping Hand"
+                ],
+                "abilities": [
+                    "Plus"
+                ],
+                "towerTeam": "bt-43",
+                "item": [
+                    "Petaya Berry"
+                ],
+                "nature": [
+                    "Docile"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 160,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
             }
         ]
     },
@@ -36000,6 +38079,33 @@
                     "spd": 252,
                     "spe": 0
                 }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Cross Chop",
+                    "Stomping Tantrum",
+                    "Swagger",
+                    "Thief"
+                ],
+                "abilities": [
+                    "Defiant"
+                ],
+                "towerTeam": "bt-73-3",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -36595,6 +38701,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bubble Beam",
+                    "Pin Missile",
+                    "Spikes",
+                    "Minimize"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-79",
+                "item": [
+                    "Cheri Berry"
+                ],
+                "nature": [
+                    "Impish"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 32,
+                    "def": 140,
+                    "spa": 28,
+                    "spd": 140,
+                    "spe": 30
+                }
             }
         ]
     },
@@ -36940,6 +39073,114 @@
                 ],
                 "nature": [
                     "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": [
+                    "Rain Dance",
+                    "Thunder",
+                    "Calm Mind",
+                    "Iron Tail"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-225-3",
+                "item": [
+                    "Magnet"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Scald",
+                    "Calm Mind",
+                    "Rest",
+                    "Double Team"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-233-4",
+                "item": [
+                    "Lax Incense"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Shadow Ball",
+                    "Scald",
+                    "Thunderbolt",
+                    "Volt Switch"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-246-2",
+                "item": [
+                    "Wise Glasses"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Thunderbolt",
+                    "Volt Switch",
+                    "Shadow Ball",
+                    "Scald"
+                ],
+                "abilities": [
+                    "Inner Focus"
+                ],
+                "towerTeam": "bt-276-3",
+                "item": [
+                    "Choice Specs"
+                ],
+                "nature": [
+                    "Timid"
                 ],
                 "evs": {
                     "hp": 6,
@@ -37335,6 +39576,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Endeavor",
+                    "Super Fang",
+                    "Scary Face",
+                    "Quick Attack"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "towerTeam": "bt-80",
+                "item": [
+                    "Silk Scarf"
+                ],
+                "nature": [
+                    "Naive"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 32,
+                    "spd": 28,
+                    "spe": 140
+                }
             }
         ]
     },
@@ -37457,27 +39725,136 @@
                 "role": "Bulky Support",
                 "movepool": [
                     "Blizzard",
-                    "Explosion",
-                    "Rest",
-                    "Curse"
+                    "Thunderbolt",
+                    "Amnesia",
+                    "Rest"
                 ],
                 "abilities": [
-                    "Clear Body",
                     "Ice Body"
-                ]
+                ],
+                "towerTeam": "bt-312",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 174,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 84,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": [
+                    "Focus Blast",
+                    "Blizzard",
+                    "Giga Impact",
+                    "Rock Polish"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-297",
+                "item": [
+                    "Ganlon Berry"
+                ],
+                "nature": [
+                    "Serious"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Ice Beam",
+                    "Ancient Power",
+                    "Charge Beam",
+                    "Rest"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-250",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
             },
             {
                 "role": "Bulky Attacker",
                 "movepool": [
-                    "Blizzard",
                     "Ice Beam",
-                    "Explosion",
-                    "Self-Destruct"
+                    "Thunderbolt",
+                    "Hyper Beam",
+                    "Flash Cannon"
                 ],
                 "abilities": [
-                    "Clear Body",
-                    "Ice Body"
-                ]
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-266-2",
+                "item": [
+                    "Shell Bell"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 6,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Thunder",
+                    "Blizzard",
+                    "Focus Blast",
+                    "Flash Cannon"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-299-2",
+                "item": [
+                    "Zoom Lens"
+                ],
+                "nature": [
+                    "Quiet"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -37598,6 +39975,87 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Crush Grip",
+                    "Protect",
+                    "Stone Edge",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Slow Start"
+                ],
+                "towerTeam": "bt-252",
+                "item": [
+                    "Chople Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Substitute",
+                    "Double Team",
+                    "Thunder Wave",
+                    "Ice Punch"
+                ],
+                "abilities": [
+                    "Slow Start"
+                ],
+                "towerTeam": "bt-261",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Swagger",
+                    "Psych Up",
+                    "Crush Grip",
+                    "Aerial Ace"
+                ],
+                "abilities": [
+                    "Slow Start"
+                ],
+                "towerTeam": "bt-260",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -37626,6 +40084,114 @@
                     "hp": 252,
                     "atk": 6,
                     "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Superpower",
+                    "Stone Edge",
+                    "Rock Tomb",
+                    "Strength"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "towerTeam": "bt-243-3",
+                "item": [
+                    "Passho Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Explosion",
+                    "Stone Edge",
+                    "Earthquake",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-245-3",
+                "item": [
+                    "Quick Claw"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 6,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 252,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Rock Slide",
+                    "Protect",
+                    "Ice Punch",
+                    "Thunder Punch"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "towerTeam": "bt-304-2",
+                "item": [
+                    "Custap Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": [
+                    "Rock Polish",
+                    "Earthquake",
+                    "Stone Edge",
+                    "Body Press"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "towerTeam": "bt-267-3",
+                "item": [
+                    "Liechi Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 6,
                     "spa": 0,
                     "spd": 0,
                     "spe": 252
@@ -37660,6 +40226,114 @@
                     "def": 252,
                     "spa": 0,
                     "spd": 252,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Curse",
+                    "Rest",
+                    "Flash Cannon",
+                    "Metal Claw"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-269",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Relaxed"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Explosion",
+                    "Double Team",
+                    "Swagger",
+                    "Substitute"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-257",
+                "item": [
+                    "Quick Claw"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Rain Dance",
+                    "Thunder",
+                    "Stealth Rock",
+                    "Protect"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-251-2",
+                "item": [
+                    "Damp Rock"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Explosion",
+                    "Iron Head",
+                    "Flash Cannon",
+                    "Thunderbolt"
+                ],
+                "abilities": [
+                    "Clear Body"
+                ],
+                "towerTeam": "bt-282-3",
+                "item": [
+                    "Life Orb"
+                ],
+                "nature": [
+                    "Brave"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
                     "spe": 0
                 }
             }
@@ -37738,6 +40412,60 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Ancient Power",
+                    "Water Pulse",
+                    "Harden",
+                    "Amnesia"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "towerTeam": "bt-137",
+                "item": [
+                    "Liechi Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 160,
+                    "spa": 10,
+                    "spd": 8,
+                    "spe": 12
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Waterfall",
+                    "Head Smash",
+                    "Earthquake",
+                    "Body Press"
+                ],
+                "abilities": [
+                    "Swift Swim"
+                ],
+                "towerTeam": "bt-144-5",
+                "item": [
+                    "Figy Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -38795,6 +41523,60 @@
                     "spa": 252,
                     "spd": 252,
                     "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Thunderbolt",
+                    "Leaf Storm",
+                    "Volt Switch",
+                    "Thunder Wave"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-308-2",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 6
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Thunderbolt",
+                    "Leaf Storm",
+                    "Volt Switch",
+                    "Trick"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-308-3",
+                "item": [
+                    "Choice Specs"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -41039,6 +43821,33 @@
                     "spd": 0,
                     "spe": 220
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Poison Tail",
+                    "Bite",
+                    "Glare",
+                    "Screech"
+                ],
+                "abilities": [
+                    "Shed Skin"
+                ],
+                "towerTeam": "bt-97-5",
+                "item": [
+                    "Scope Lens"
+                ],
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -41320,6 +44129,60 @@
                     "spd": 0,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Shadow Claw",
+                    "Metal Claw",
+                    "X-Scissor",
+                    "Aerial Ace"
+                ],
+                "abilities": [
+                    "Wonder Guard"
+                ],
+                "towerTeam": "bt-28-2",
+                "item": [
+                    "Choice Band"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 160,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 158
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Shadow Claw",
+                    "Leech Life",
+                    "Shadow Sneak",
+                    "Night Slash"
+                ],
+                "abilities": [
+                    "Wonder Guard"
+                ],
+                "towerTeam": "bt-311",
+                "item": [
+                    "Focus Sash"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 0,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
             }
         ]
     },
@@ -41399,6 +44262,60 @@
                     "spa": 60,
                     "spd": 60,
                     "spe": 108
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Double Team",
+                    "Leech Seed",
+                    "Swagger",
+                    "Synthesis"
+                ],
+                "abilities": [
+                    "Early Bird"
+                ],
+                "towerTeam": "bt-156",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 158,
+                    "spa": 156,
+                    "spd": 12,
+                    "spe": 12
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Explosion",
+                    "Fake Out",
+                    "X-Scissor",
+                    "Sucker Punch"
+                ],
+                "abilities": [
+                    "Chlorophyll"
+                ],
+                "towerTeam": "bt-277",
+                "item": [
+                    "Quick Claw"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]
@@ -41511,6 +44428,60 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Power Trick",
+                    "Double Team",
+                    "Wrap",
+                    "Toxic"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "towerTeam": "bt-253-2",
+                "item": [
+                    "Bright Powder"
+                ],
+                "nature": [
+                    "Impish"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Wrap",
+                    "Power Split",
+                    "Toxic",
+                    "Rest"
+                ],
+                "abilities": [
+                    "Sturdy"
+                ],
+                "towerTeam": "bt-150-3",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 212,
+                    "atk": 68,
+                    "def": 4,
+                    "spa": 6,
+                    "spd": 212,
+                    "spe": 8
                 }
             }
         ]
@@ -42816,6 +45787,87 @@
                     "spd": 202,
                     "spe": 56
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Counter",
+                    "Encore",
+                    "Body Slam",
+                    "Slack Off"
+                ],
+                "abilities": [
+                    "Truant"
+                ],
+                "towerTeam": "bt-239",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 48,
+                    "atk": 226,
+                    "def": 4,
+                    "spa": 4,
+                    "spd": 224,
+                    "spe": 4
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Hyper Beam",
+                    "Blizzard",
+                    "Fire Blast",
+                    "Thunderbolt"
+                ],
+                "abilities": [
+                    "Truant"
+                ],
+                "towerTeam": "bt-240-3",
+                "item": [
+                    "Wide Lens"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Giga Impact",
+                    "Earthquake",
+                    "Night Slash",
+                    "Hammer Arm"
+                ],
+                "abilities": [
+                    "Truant"
+                ],
+                "towerTeam": "bt-277-3",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 6
+                }
             }
         ]
     },
@@ -42949,6 +46001,33 @@
                     "atk": 0,
                     "def": 246,
                     "spa": 16,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Yawn",
+                    "Zen Headbutt",
+                    "Earthquake",
+                    "Brick Break"
+                ],
+                "abilities": [
+                    "Regenerator"
+                ],
+                "towerTeam": "bt-278-2",
+                "item": [
+                    "Lum Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
                     "spd": 0,
                     "spe": 0
                 }
@@ -43765,6 +46844,33 @@
                     "spd": 0,
                     "spe": 0
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Confusion",
+                    "Cosmic Power",
+                    "Light Screen",
+                    "Sandstorm"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-39-3",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Quiet"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 32,
+                    "def": 140,
+                    "spa": 28,
+                    "spd": 140,
+                    "spe": 30
+                }
             }
         ]
     },
@@ -43907,6 +47013,33 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Flail",
+                    "Teeter Dance",
+                    "Psybeam",
+                    "Icy Wind"
+                ],
+                "abilities": [
+                    "Own Tempo"
+                ],
+                "towerTeam": "bt-63",
+                "item": [
+                    "Silk Scarf"
+                ],
+                "nature": [
+                    "Relaxed"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 158,
+                    "spa": 48,
+                    "spd": 48,
+                    "spe": 48
                 }
             }
         ]
@@ -44267,6 +47400,33 @@
                     "spa": 36,
                     "spd": 36,
                     "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Extrasensory",
+                    "Confuse Ray",
+                    "Stomp",
+                    "Sand Attack"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-100-3",
+                "item": [
+                    "Twisted Spoon"
+                ],
+                "nature": [
+                    "Gentle"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -45117,6 +48277,87 @@
                     "spd": 128,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Tailwind",
+                    "Icy Wind",
+                    "Scald",
+                    "Snarl"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-140-8",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Hail",
+                    "Scald",
+                    "Ice Beam",
+                    "Blizzard"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-279",
+                "item": [
+                    "Icy Rock"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Rest",
+                    "Icy Wind",
+                    "Calm Mind",
+                    "Scald"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-267-2",
+                "item": [
+                    "Wacan Berry"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 4,
+                    "spd": 0,
+                    "spe": 2
+                }
             }
         ]
     },
@@ -45194,6 +48435,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Petal Dance",
+                    "Ingrain",
+                    "Leech Seed",
+                    "Light Screen"
+                ],
+                "abilities": [
+                    "Solar Power"
+                ],
+                "towerTeam": "bt-55-3",
+                "item": [
+                    "Persim Berry"
+                ],
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 140,
+                    "def": 30,
+                    "spa": 32,
+                    "spd": 28,
+                    "spe": 140
+                }
             }
         ]
     },
@@ -45270,6 +48538,33 @@
                     "spa": 0,
                     "spd": 128,
                     "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Stockpile",
+                    "Ice Beam",
+                    "Shadow Ball",
+                    "Sludge Bomb"
+                ],
+                "abilities": [
+                    "Sticky Hold"
+                ],
+                "towerTeam": "bt-74-3",
+                "item": [
+                    "Black Sludge"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 160
                 }
             }
         ]
@@ -46302,6 +49597,87 @@
                     "spa": 84,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Double-Edge",
+                    "Payback",
+                    "Stone Edge",
+                    "Substitute"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-277-2",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Earthquake",
+                    "Facade",
+                    "Iron Tail",
+                    "Rest"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-278-2",
+                "item": [
+                    "Chesto Berry"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Thrash",
+                    "Zen Headbutt",
+                    "Earthquake",
+                    "Giga Impact"
+                ],
+                "abilities": [
+                    "Intimidate"
+                ],
+                "towerTeam": "bt-151",
+                "item": [
+                    "Lum Berry"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 158,
+                    "def": 12,
+                    "spa": 12,
+                    "spd": 12,
+                    "spe": 156
                 }
             }
         ]
@@ -47928,6 +51304,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Magical Leaf",
+                    "Whirlwind",
+                    "Aerial Ace",
+                    "Steel Wing"
+                ],
+                "abilities": [
+                    "Chlorophyll"
+                ],
+                "towerTeam": "bt-141",
+                "item": [
+                    "Sitrus Berry"
+                ],
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -48665,6 +52068,60 @@
                     "spd": 36,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Foul Play",
+                    "Helping Hand",
+                    "Snarl",
+                    "Detect"
+                ],
+                "abilities": [
+                    "Inner Focus"
+                ],
+                "towerTeam": "bt-301",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Foul Play",
+                    "Swagger",
+                    "Yawn",
+                    "Protect"
+                ],
+                "abilities": [
+                    "Inner Focus"
+                ],
+                "towerTeam": "bt-259-3",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 0,
+                    "spd": 6,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -48971,6 +52428,60 @@
                     "spa": 0,
                     "spd": 0,
                     "spe": 106
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Facade",
+                    "Aerial Ace",
+                    "Sleep Talk",
+                    "Rest"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "towerTeam": "bt-284",
+                "item": [
+                    "Flame Orb"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Facade",
+                    "Earthquake",
+                    "Rock Tomb",
+                    "Protect"
+                ],
+                "abilities": [
+                    "Guts"
+                ],
+                "towerTeam": "bt-204",
+                "item": [
+                    "Flame Orb"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 68,
+                    "atk": 212,
+                    "def": 6,
+                    "spa": 8,
+                    "spd": 4,
+                    "spe": 212
                 }
             }
         ]
@@ -49775,6 +53286,33 @@
                     "spd": 128,
                     "spe": 252
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bug Buzz",
+                    "Sludge Bomb",
+                    "Power Gem",
+                    "Roost"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-293-2",
+                "item": [
+                    "Wise Glasses"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 6,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 0
+                }
             }
         ]
     },
@@ -50284,6 +53822,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Bug Buzz",
+                    "Confuse Ray",
+                    "Quick Attack",
+                    "Helping Hand"
+                ],
+                "abilities": [
+                    "Swarm"
+                ],
+                "towerTeam": "bt-56",
+                "item": [
+                    "Liechi Berry"
+                ],
+                "nature": [
+                    "Quirky"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 158,
+                    "spd": 48,
+                    "spe": 48
+                }
             }
         ]
     },
@@ -50499,6 +54064,60 @@
                     "spa": 220,
                     "spd": 16,
                     "spe": 16
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Curse",
+                    "Earthquake",
+                    "Waterfall",
+                    "Double Team"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-265-2",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 252,
+                    "def": 6,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Defense Curl",
+                    "Rollout",
+                    "Waterfall",
+                    "Avalanche"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-182-2",
+                "item": [
+                    "Wacan Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 68,
+                    "atk": 212,
+                    "def": 6,
+                    "spa": 8,
+                    "spd": 4,
+                    "spe": 212
                 }
             }
         ]
@@ -50936,6 +54555,60 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Fire Blast",
+                    "Sludge Bomb",
+                    "Will-O-Wisp",
+                    "Pain Split"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-259-3",
+                "item": [
+                    "Black Sludge"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Will-O-Wisp",
+                    "Double Team",
+                    "Sludge Bomb",
+                    "Substitute"
+                ],
+                "abilities": [
+                    "Levitate"
+                ],
+                "towerTeam": "bt-155",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Calm"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 12,
+                    "spa": 158,
+                    "spd": 156,
+                    "spe": 12
+                }
             }
         ]
     },
@@ -51235,6 +54908,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Sing",
+                    "Disable",
+                    "Wish",
+                    "Dazzling Gleam"
+                ],
+                "abilities": [
+                    "Competitive"
+                ],
+                "towerTeam": "bt-53-3",
+                "item": [
+                    "Silk Scarf"
+                ],
+                "nature": [
+                    "Relaxed"
+                ],
+                "evs": {
+                    "hp": 140,
+                    "atk": 28,
+                    "def": 140,
+                    "spa": 32,
+                    "spd": 140,
+                    "spe": 30
+                }
             }
         ]
     },
@@ -51365,6 +55065,33 @@
                     "spd": 50,
                     "spe": 52
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Counter",
+                    "Mirror Coat",
+                    "Encore",
+                    "Safeguard"
+                ],
+                "abilities": [
+                    "Shadow Tag"
+                ],
+                "towerTeam": "bt-53-2",
+                "item": [
+                    "Leftovers"
+                ],
+                "nature": [
+                    "Careful"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 48,
+                    "def": 48,
+                    "spa": 48,
+                    "spd": 158,
+                    "spe": 48
+                }
             }
         ]
     },
@@ -51446,6 +55173,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": [
+                    "Razor Leaf",
+                    "Psybeam",
+                    "Protect",
+                    "Bug Buzz"
+                ],
+                "abilities": [
+                    "Overcoat"
+                ],
+                "towerTeam": "bt-55-3",
+                "item": [
+                    "Coba Berry"
+                ],
+                "nature": [
+                    "Modest"
+                ],
+                "evs": {
+                    "hp": 30,
+                    "atk": 28,
+                    "def": 140,
+                    "spa": 32,
+                    "spd": 140,
+                    "spe": 140
                 }
             }
         ]
@@ -51752,6 +55506,33 @@
                     "spd": 12,
                     "spe": 248
                 }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Air Slash",
+                    "Night Shade",
+                    "Wish",
+                    "Future Sight"
+                ],
+                "abilities": [
+                    "Magic Bounce"
+                ],
+                "towerTeam": "bt-97-3",
+                "item": [
+                    "Sharp Beak"
+                ],
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 12,
+                    "def": 10,
+                    "spa": 160,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -51952,6 +55733,33 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Aerial Ace",
+                    "Steel Wing",
+                    "Thief",
+                    "U-turn"
+                ],
+                "abilities": [
+                    "Speed Boost"
+                ],
+                "towerTeam": "bt-182",
+                "item": [
+                    "Charti Berry"
+                ],
+                "nature": [
+                    "Adamant"
+                ],
+                "evs": {
+                    "hp": 68,
+                    "atk": 212,
+                    "def": 6,
+                    "spa": 8,
+                    "spd": 4,
+                    "spe": 212
                 }
             }
         ]
@@ -52211,6 +56019,33 @@
                     "spd": 84,
                     "spe": 86
                 }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Slash",
+                    "Double Kick",
+                    "Roar",
+                    "Quick Attack"
+                ],
+                "abilities": [
+                    "Toxic Boost"
+                ],
+                "towerTeam": "bt-109-2",
+                "item": [
+                    "Persim Berry"
+                ],
+                "nature": [
+                    "Hardy"
+                ],
+                "evs": {
+                    "hp": 160,
+                    "atk": 160,
+                    "def": 10,
+                    "spa": 12,
+                    "spd": 8,
+                    "spe": 160
+                }
             }
         ]
     },
@@ -52269,6 +56104,87 @@
                     "spa": 88,
                     "spd": 84,
                     "spe": 86
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Discharge",
+                    "Volt Switch",
+                    "Roost",
+                    "Hurricane"
+                ],
+                "abilities": [
+                    "Static"
+                ],
+                "towerTeam": "bt-263-3",
+                "item": [
+                    "Magnet"
+                ],
+                "nature": [
+                    "Bold"
+                ],
+                "evs": {
+                    "hp": 252,
+                    "atk": 0,
+                    "def": 252,
+                    "spa": 6,
+                    "spd": 0,
+                    "spe": 0
+                }
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": [
+                    "Rain Dance",
+                    "Thunder",
+                    "Charge Beam",
+                    "Drill Peck"
+                ],
+                "abilities": [
+                    "Static"
+                ],
+                "towerTeam": "bt-226-3",
+                "item": [
+                    "Sharp Beak"
+                ],
+                "nature": [
+                    "Timid"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 0,
+                    "def": 0,
+                    "spa": 252,
+                    "spd": 0,
+                    "spe": 252
+                }
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": [
+                    "Drill Peck",
+                    "U-turn",
+                    "Steel Wing",
+                    "Ancient Power"
+                ],
+                "abilities": [
+                    "Pressure"
+                ],
+                "towerTeam": "bt-211-3",
+                "item": [
+                    "King's Rock"
+                ],
+                "nature": [
+                    "Jolly"
+                ],
+                "evs": {
+                    "hp": 6,
+                    "atk": 252,
+                    "def": 0,
+                    "spa": 0,
+                    "spd": 0,
+                    "spe": 252
                 }
             }
         ]

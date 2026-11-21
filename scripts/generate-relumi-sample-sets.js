@@ -3,14 +3,18 @@
 
 /*
  * Generates gen8relumisinglesou.json (sample sets for TeamBuilder) from
- * in-game trainer data, including all Pokemon (NFE + fully evolved).
+ * in-game trainer data, including battle tower opponents, and all Pokemon
+ * (NFE + fully evolved).
  */
 
 const fs = require("fs");
 const path = require("path");
 const { Dex } = require("../dist/sim/dex");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
-const { computeRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
+const {
+	computeRelumiRandomBattleSets,
+	readRelumiTowerTrainerRows,
+} = require("./sync-relumi-random-sets");
 const { readYaml, extractIndexedNames } = require("./lib/relumi-game-files");
 const { buildSpeciesIdByMonsForm } = require("./lib/relumi-species-mapping");
 
@@ -46,7 +50,10 @@ function main() {
 	);
 	const moveNames = extractIndexedNames(moveData.labelDataArray || []);
 	const personalRows = personalData.Personal || [];
-	const trainerRows = trainerData.TrainerPoke || [];
+	// battle tower opponents share the TrainerPoke shape and add sample-set variety
+	const trainerRows = (trainerData.TrainerPoke || []).concat(
+		readRelumiTowerTrainerRows(GAME_FILES_DIR)
+	);
 
 	const dex = Dex.mod("gen8");
 
@@ -79,7 +86,9 @@ function main() {
 		for (const setEntry of data.sets || []) {
 			const ability = (setEntry.abilities && setEntry.abilities[0]) || "No Ability";
 			const role = setEntry.role || "Set";
-			const trainerTag = setEntry.trainerId ? ` - ID ${setEntry.trainerId}` : "";
+			const trainerTag = setEntry.trainerId ?
+				` - ID ${setEntry.trainerId}` :
+				(setEntry.towerTeam ? ` - ${setEntry.towerTeam}` : "");
 			const baseSetName = `${ability} (${role})${trainerTag}`;
 
 			const pokemonSet = {

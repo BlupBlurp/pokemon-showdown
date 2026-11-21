@@ -6,7 +6,10 @@ const fs = require("fs");
 const path = require("path");
 const { Dex, toID } = require("../dist/sim/dex");
 const { buildMoveDiffs } = require("./sync-relumi-moves");
-const { buildRelumiRandomBattleSets } = require("./sync-relumi-random-sets");
+const {
+	buildRelumiRandomBattleSets,
+	readRelumiTowerTrainerRows,
+} = require("./sync-relumi-random-sets");
 const { getRelumiRepoRoot } = require("./lib/relumi-paths");
 const {
 	FORM_NUMBER_SPECIES_OVERRIDES,
@@ -765,7 +768,10 @@ function main() {
 	const machineMoveMap = extractMachineMoveMap(itemData);
 	const personalRows = personalData.Personal || [];
 	const wazaRows = wazaData.Waza || [];
-	const trainerRows = trainerData.TrainerPoke || [];
+	// battle tower opponents share the TrainerPoke shape and add set variety
+	const trainerRows = (trainerData.TrainerPoke || []).concat(
+		readRelumiTowerTrainerRows(GAME_FILES_DIR)
+	);
 
 	const dex = Dex.mod("gen8");
 

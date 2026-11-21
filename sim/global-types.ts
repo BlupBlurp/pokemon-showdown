@@ -596,6 +596,8 @@ declare namespace RandomTeamsTypes {
 		teraType?: string;
 		role?: Role;
 		trainerId?: number;
+		/** battle tower team key (e.g. `bt-21`) for tower-derived sets */
+		towerTeam?: string;
 	}
 	export interface RandomFactorySet {
 		name: string;
@@ -636,6 +638,8 @@ declare namespace RandomTeamsTypes {
 	export interface RandomSetData {
 		role: Role;
 		trainerId?: number;
+		/** battle tower team key (e.g. `bt-21`) for tower-derived sets */
+		towerTeam?: string;
 		movepool: string[];
 		abilities?: string[];
 		item?: string[];

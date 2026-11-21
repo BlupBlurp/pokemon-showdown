@@ -1,6 +1,8 @@
 "use strict";
 
 const fs = require("fs");
+const path = require("path");
+const { readYaml } = require("./lib/relumi-game-files");
 
 const RECOVERY_MOVES = new Set([
 	"healorder",
@@ -192,6 +194,114 @@ function normalizeTrainerEvs(rawEvs, species) {
 	}
 
 	return evs;
+}
+
+/**
+ * Read the battle tower tables and return reachable TrainerPoke rows, reshaped
+ * as one-slot TrainerTable rows so they share the trainer candidate loop.
+ * Only stock rows referenced by a TowerMatchingTable range are used, matching
+ * the damage calc's battle tower data.
+ */
+function readRelumiTowerTrainerRows(gameFilesDir) {
+	const towerTable = readYaml(path.join(gameFilesDir, "TowerTrainerTable.asset"));
+	const trainerRows = towerTable.TrainerData || [];
+	const stockRowsByRule = [
+		readYaml(path.join(gameFilesDir, "TowerSingleStockTable.asset")).TowerSingleStock || [],
+		readYaml(path.join(gameFilesDir, "TowerDoubleStockTable.asset")).TowerDoubleStock || [],
+	];
+	const matchingRows = readYaml(
+		path.join(gameFilesDir, "TowerMatchingTable.asset")
+	).TowerMatching || [];
+
+	const pokeRows = new Map();
+	for (const row of towerTable.TrainerPoke || []) {
+		const id = Number(row.ID || 0);
+		if (id) pokeRows.set(id, row);
+	}
+
+	// Matching ids pack rule (1 single / 2 double), class (1 Normal / 2 Master),
+	// rank and round; only valid rows describe reachable stock.
+	const stockRangesByRule = [[], []];
+	for (const row of matchingRows) {
+		const matchingId = Number(row.ID || 0);
+		const rule = Math.floor(matchingId / 10000);
+		const towerClass = Math.floor(matchingId / 1000) % 10;
+		const rank = Math.floor(matchingId / 10) % 100;
+		const roundNo = matchingId % 10;
+		if ((rule !== 1 && rule !== 2) || (towerClass !== 1 && towerClass !== 2) || !rank || !roundNo) continue;
+		stockRangesByRule[rule - 1].push([
+			Number(row.StockIDMin || 0),
+			Number(row.StockIDMax || 0),
+		]);
+	}
+
+	const towerRows = [];
+	const seenPokeIds = new Set();
+	// Team numbers match the damage calc's `bt-<trainer>` keys, so a set keeps
+	// the exact tower team it was first found on.
+	const teamCounts = {};
+	for (const rule of [1, 2]) {
+		const ranges = stockRangesByRule[rule - 1];
+		for (const stockRow of stockRowsByRule[rule - 1]) {
+			const stockId = Number(stockRow.ID || 0);
+			if (!ranges.some(([min, max]) => stockId >= min && stockId <= max)) continue;
+
+			// A stock row registers one team per listed trainer; a double row
+			// lists two, and later teams for one trainer get a numeric suffix.
+			const stockTrainerIds = Array.isArray(stockRow.TrainerID) ?
+				stockRow.TrainerID : [stockRow.TrainerID];
+			let towerTeam = "";
+			const seenTrainerIndexes = new Set();
+			for (const value of stockTrainerIds) {
+				const trainerIndex = Number(value);
+				if (!Number.isInteger(trainerIndex) || trainerIndex < 0 || trainerIndex >= trainerRows.length) continue;
+				if (seenTrainerIndexes.has(trainerIndex)) continue;
+				seenTrainerIndexes.add(trainerIndex);
+				const teamNumber = (teamCounts[trainerIndex] || 0) + 1;
+				teamCounts[trainerIndex] = teamNumber;
+				if (!towerTeam) {
+					towerTeam = teamNumber === 1 ?
+						`bt-${trainerIndex}` : `bt-${trainerIndex}-${teamNumber}`;
+				}
+			}
+			if (!towerTeam) continue;
+
+			for (const value of stockRow.PokeID || []) {
+				const pokeId = Number(value || 0);
+				if (!pokeId || seenPokeIds.has(pokeId)) continue;
+				seenPokeIds.add(pokeId);
+				const row = pokeRows.get(pokeId);
+				if (row) towerRows.push(towerPokeRowToTrainerRow(row, towerTeam));
+			}
+		}
+	}
+	return towerRows;
+}
+
+/** Map one TowerTrainerTable.TrainerPoke row to the P1 fields of a TrainerTable row. */
+function towerPokeRowToTrainerRow(row, towerTeam) {
+	const trainerRow = { ID: 0, towerTeam };
+	for (const field of [
+		"MonsNo",
+		"FormNo",
+		"Level",
+		"Waza1",
+		"Waza2",
+		"Waza3",
+		"Waza4",
+		"Tokusei",
+		"Item",
+		"Seikaku",
+		"EffortHp",
+		"EffortAtk",
+		"EffortDef",
+		"EffortSpAtk",
+		"EffortSpDef",
+		"EffortAgi",
+	]) {
+		trainerRow[`P1${field}`] = row[field];
+	}
+	return trainerRow;
 }
 
 function buildItemNameByNo(dex) {
@@ -417,9 +527,23 @@ function computeMoveOverlapScore(a, b) {
 	return overlap;
 }
 
+/**
+ * Trainer-derived sets outrank battle tower sets, which outrank fallbacks.
+ * Tower rows are all level 50 (the tower's level cap), so treating that as a
+ * trainer level would let them replace existing trainer-tagged sets under the
+ * per-species set cap; the tier keeps them in spare slots instead.
+ */
+function getCandidateTier(candidate) {
+	if (candidate.trainerId) return 0;
+	if (candidate.towerTeam) return 1;
+	return 2;
+}
+
 function chooseDiverseCandidates(candidates) {
 	if (!candidates.length) return [];
 	const sorted = candidates.slice().sort((a, b) => {
+		const tierDiff = getCandidateTier(a) - getCandidateTier(b);
+		if (tierDiff) return tierDiff;
 		if (a.trainerLevel !== b.trainerLevel)
 			return b.trainerLevel - a.trainerLevel;
 		const aRealLen = (a.realMoveIds || a.moveIds).length;
@@ -443,10 +567,18 @@ function chooseDiverseCandidates(candidates) {
 	const chosen = [deduped[0]];
 
 	while (chosen.length < targetCount) {
+		// only the best remaining tier competes, so tower sets fill spare slots
+		let nextTier = 3;
+		for (const candidate of deduped) {
+			if (chosen.includes(candidate)) continue;
+			nextTier = Math.min(nextTier, getCandidateTier(candidate));
+		}
+		if (nextTier === 3) break;
+
 		let best = null;
 		let bestScore = -1;
 		for (const candidate of deduped) {
-			if (chosen.includes(candidate)) continue;
+			if (chosen.includes(candidate) || getCandidateTier(candidate) !== nextTier) continue;
 			const overlapPenalty = chosen.reduce(
 				(total, existing) =>
 					total + computeMoveOverlapScore(existing, candidate),
@@ -480,7 +612,8 @@ function buildCandidate(
 	trainerLevel,
 	dex,
 	trainerSetData = null,
-	realMoveIds = null
+	realMoveIds = null,
+	towerTeam = null
 ) {
 	const dedupedMoveIds = [];
 	for (const moveId of moveIds) {
@@ -508,6 +641,7 @@ function buildCandidate(
 	return {
 		trainerLevel,
 		trainerSetData,
+		towerTeam,
 		moveIds: validMoveIds,
 		realMoveIds: dedupedRealMoveIds.length ? dedupedRealMoveIds : validMoveIds,
 		movepool,
@@ -614,6 +748,9 @@ function buildSetFromCandidate(candidate, isDoubles) {
 		candidate.trainerId <= MAX_TRAINER_ID
 	) {
 		set.trainerId = candidate.trainerId;
+	}
+	if (candidate.towerTeam) {
+		set.towerTeam = candidate.towerTeam;
 	}
 	if (candidate.trainerSetData) {
 		if (candidate.trainerSetData.item) {
@@ -816,7 +953,8 @@ function computeRelumiRandomBattleSets({
 				trainerLevel,
 				dex,
 				trainerSetData,
-				realMoveIds
+				realMoveIds,
+				trainer.towerTeam || null
 			);
 			if (trainerId > 0 && trainerId <= MAX_TRAINER_ID) {
 				candidate.trainerId = trainerId;
@@ -906,5 +1044,6 @@ function buildRelumiRandomBattleSets({
 module.exports = {
 	buildRelumiRandomBattleSets,
 	computeRelumiRandomBattleSets,
+	readRelumiTowerTrainerRows,
 	writeRelumiRandomBattleSetsFiles,
 };
